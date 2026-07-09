@@ -139,6 +139,7 @@ function rendersSprawlSummarySection(contract) {
   const summary = contract.sprawl.summary;
   const summaryLines = [
     `- Evidence artifact: ${contract.sprawl.evidencePath}`,
+    `- Sprawl report: ${contract.sprawl.reportPath}`,
     `- Total source files scanned: ${summary.totalSourceFilesScanned}`,
     `- Focused files: ${summary.focusedFiles}`,
     `- Watchlist files: ${summary.watchlistFiles}`,
@@ -179,7 +180,7 @@ function formatsSprawlHotspotRow(hotspot) {
     hotspot.responsibilityClusterCount,
     hotspot.genericMechanicCount,
     hotspot.findingCodes.join(', ') || 'none',
-    hotspot.fixRoute,
+    hotspot.recommendedOwnerAction || hotspot.fixRoute,
     '|',
   ].join(' ');
 }

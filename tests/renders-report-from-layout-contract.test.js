@@ -55,6 +55,8 @@ function buildsContract() {
     executionSketchTemplate,
     sprawl: {
       evidencePath: 'evidence/runs/run-123/sprawl/domain-body-sprawl.contract.v1.json',
+      reportPath: 'evidence/runs/run-123/sprawl/domain-body-sprawl.report.md',
+      hotspotTablePath: 'evidence/runs/run-123/sprawl/domain-body-sprawl-hotspots.table.md',
       summary: {
         totalSourceFilesScanned: 3,
         focusedFiles: 1,
@@ -71,8 +73,11 @@ function buildsContract() {
             executableMethodCount: 5,
             responsibilityClusterCount: 2,
             genericMechanicCount: 1,
+            sterilityFindingCount: 0,
+            blockerCount: 0,
             findingCodes: ['package-worthy-mechanic-inside-domain-body'],
             fixRoute: 'move generic mechanics to a package primitive',
+            recommendedOwnerAction: 'move generic mechanics to a package primitive',
           },
         ],
       },
@@ -207,6 +212,7 @@ test('rendersReportFromLayoutContract renders compact sprawl summary from the sp
   assert.equal(result.isValid, true);
   assert.match(result.reportContent, /## Domain Body Sprawl Summary/);
   assert.match(result.reportContent, /Evidence artifact: evidence\/runs\/run-123\/sprawl\/domain-body-sprawl\.contract\.v1\.json/);
+  assert.match(result.reportContent, /Sprawl report: evidence\/runs\/run-123\/sprawl\/domain-body-sprawl\.report\.md/);
   assert.match(result.reportContent, /Package extraction candidates: 1/);
   assert.match(result.reportContent, /package-worthy-mechanic-inside-domain-body/);
   assert.match(result.reportContent, /move generic mechanics to a package primitive/);

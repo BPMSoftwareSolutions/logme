@@ -184,6 +184,9 @@
       "method-inventory.v1.json",
       "sterility-findings.v1.json",
       "sterility-summary.v1.json",
+      "domain-body-sprawl.contract.v1.json",
+      "domain-body-sprawl.report.md",
+      "domain-body-sprawl-hotspots.table.md",
       "domain-body-sterility.report.md",
       "domain-body-sterility.receipt.v1.json"
     ]

@@ -71,6 +71,8 @@ test('buildsDomainBodySprawlContract inventories file responsibility signals and
     const reportEntry = contract.sourceFiles.find((entry) => entry.filePath === 'src/domain/report.js');
     assert.equal(contract.schemaVersion, 'domain-body-sprawl.contract.v1');
     assert.equal(contract.evidencePath, 'evidence/runs/run-123/sprawl/domain-body-sprawl.contract.v1.json');
+    assert.equal(contract.reportPath, 'evidence/runs/run-123/sprawl/domain-body-sprawl.report.md');
+    assert.equal(contract.hotspotTablePath, 'evidence/runs/run-123/sprawl/domain-body-sprawl-hotspots.table.md');
     assert.equal(reportEntry.lineCount, 5);
     assert.equal(reportEntry.executableMethodCount, 2);
     assert.equal(reportEntry.importedModuleCount, 2);
@@ -84,6 +86,9 @@ test('buildsDomainBodySprawlContract inventories file responsibility signals and
     assert.ok(orphanEntry.findingCodes.includes('orphan-source-file'));
     assert.equal(contract.summary.totalSourceFilesScanned, 2);
     assert.equal(contract.summary.orphanArtifacts > 0, true);
+    assert.equal(typeof contract.summary.topSprawlHotspots[0].sterilityFindingCount, 'number');
+    assert.equal(typeof contract.summary.topSprawlHotspots[0].blockerCount, 'number');
+    assert.equal(typeof contract.summary.topSprawlHotspots[0].recommendedOwnerAction, 'string');
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }

@@ -83,6 +83,7 @@
     "missingTelemetry",
     "missingReceipt",
     "sprawl.summary.totalSourceFilesScanned",
+    "sprawl.reportPath",
     "provenance.sourceInventoryHash",
     "provenance.runId"
   ],
