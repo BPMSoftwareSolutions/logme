@@ -59,6 +59,7 @@ Targeted verification performed:
 | `domainBoundMethods` equals all methods by construction | The report claims domain ownership without independent ownership proof. | Require ownership evidence or label the metric as inventory count. |
 | `Execution Step` can read as runtime order | The column is currently derived from audit/inventory sequencing unless tied to telemetry. | Rename or prove the field with telemetry and execution signature evidence. |
 | Runtime timing can be confused with static scan data | Line numbers come from source inventory, but execution step, timestamp, and duration must come from observed runtime telemetry. | Separate static source facts from telemetry-observed runtime facts. |
+| Dense report text hides the execution story | A product owner should see the runtime body, blockers, and evidence flow before reading tables. | Lead with clean ASCII execution sketches and keep dense details secondary. |
 | `includeTestFiles` is `no` | The report cannot claim test support or TDD coverage from the current scan. | Add explicit test evidence before any tested/support claim. |
 | External package methods are summarized as ignored | The report says package-governed without linking a package contract or receipt. | Require package governance proof or show as unverified. |
 | Clean report labels are configured text | A label like "No findings" can be rendered if the contract says so, unless guarded by count validation. | Gate clean labels on computed zero findings. |
@@ -71,6 +72,7 @@ Targeted verification performed:
 | Report freshness gate | `report.md` proves the source hash, config hash, generation command, timestamp, and run id behind the projection. |
 | Report contract enforcement | A non-empty schema validates every generated report contract before markdown is written. |
 | Summary-to-row consistency | Counts, coverage, findings, and verdict are recomputed from the same method inventory and cannot disagree. |
+| ASCII execution-flow report | The first report view is a clean ASCII sketch of declared path, observed telemetry, receipts, and blockers. |
 | Evidence-only language | Report text does not use support, proof, execution, runtime, or sterile language without backing evidence. |
 | Gherkin-driven report features | Every report feature has acceptance criteria before implementation and tests map to those scenarios. |
 | Development-time report truth guardrails | Developers can detect report contamination locally with one command before commit. |
@@ -289,6 +291,147 @@ Feature: Projection language honesty
     And the finding code should be:
       | finding |
       | projection-language-overclaim |
+```
+
+## Feature: ASCII Execution Flow Report
+
+```gherkin
+Feature: ASCII execution flow report
+
+  As an adversarial product owner
+  I want report.md to open with a clean ASCII execution sketch
+  So that I can see the runtime body, evidence, and blockers without decoding dense report prose.
+
+  Scenario: Render executive execution flow first
+    Given report.md has been generated from the current report contract
+    When the report is rendered
+    Then the first product-facing section should be an ASCII execution flow sketch
+    And the sketch should show:
+      | element |
+      | verdict |
+      | run id |
+      | declared source authority |
+      | static source inventory |
+      | telemetry observation |
+      | receipt evidence |
+      | blocker count |
+      | promotion decision |
+    And dense method tables should appear only after the sketch and blocker summary.
+
+  Scenario: Render clean ASCII only
+    Given the report is rendered for Markdown, terminal, and CI log review
+    When the ASCII execution sketch is produced
+    Then the sketch should use only portable ASCII characters:
+      | character |
+      | + |
+      | - |
+      | | |
+      | ` |
+      | > |
+      | / |
+      | \ |
+    And the sketch should not depend on Unicode box drawing, emoji, color, or terminal-specific rendering.
+
+  Scenario: Show declared versus observed flow
+    Given the report has static source inventory
+    And runtime telemetry exists for the run
+    When the ASCII execution sketch is rendered
+    Then it should separate:
+      | lane |
+      | declared flow |
+      | observed telemetry |
+      | receipt proof |
+      | blockers |
+    And runtime observation should come only from telemetry events
+    And source inventory should not be presented as runtime execution.
+
+  Scenario: Render executable body contract as file-system execution tree
+    Given an executable body contract declares ordered execution nodes
+    And each node may declare contract paths, runtime paths, telemetry paths, receipt paths, gates, or parity evidence
+    When the ASCII execution sketch is rendered
+    Then every declared body node should appear in execution order
+    And each node should show:
+      | field |
+      | node id |
+      | node label |
+      | contract path |
+      | runtime path |
+      | source line range |
+      | telemetry path |
+      | observed runtime step |
+      | observed duration ms |
+      | receipt path |
+      | status |
+      | blocker |
+    And missing telemetry should render as `not observed`
+    And missing receipts should render as `missing`
+    And no runtime observation field should be populated from the static contract alone.
+
+  Scenario: Preserve product-readable execution tree shape
+    Given the executable body contract contains sections such as acceptance source, surface receipt, canonical binding, shared runner, root contract resolution, gates, routing, provider call, receipt writeback, and surface parity
+    When report.md renders the body tree
+    Then the report should keep the tree grouped by those body sections
+    And each section should fit on screen without requiring the product owner to read a dense paragraph
+    And every section should make the evidence route visible as:
+      """
+      contract -> runtime -> telemetry -> receipt -> status
+      """
+    And the report should show blockers directly under the section where truth broke.
+
+  Scenario: Show blocked report as a worklist
+    Given the generated report verdict is `DOMAIN BODY CONTAMINATED`
+    When the ASCII execution sketch is rendered
+    Then the sketch should show the blocked state before any dense details
+    And it should list the top actionable findings as:
+      | field |
+      | finding code |
+      | method |
+      | source path |
+      | line range |
+      | telemetry status |
+      | one-line fix route |
+    And the report should not require a product owner to read the full method table to discover the blocker.
+
+  Scenario: Render a compact happy-path sketch
+    Given the report verdict is clean
+    And every required runtime node has telemetry and receipt proof
+    When the ASCII execution sketch is rendered
+    Then the sketch should show:
+      """
+      +------------------------------------------------------------+
+      | REPORT TRUTH                                               |
+      +------------------------------------------------------------+
+      | Verdict        : STERILE DOMAIN BODY                       |
+      | Run            : <run-id>                                  |
+      | Promotion      : ALLOWED                                   |
+      +------------------------------------------------------------+
+      | Gherkin -> Contract -> Source -> Telemetry -> Receipt      |
+      |    ok         ok          ok        observed     written   |
+      +------------------------------------------------------------+
+      """
+    And every `ok`, `observed`, or `written` label should be backed by evidence.
+
+  Scenario: Render a compact blocked sketch
+    Given the report verdict is contaminated
+    When the ASCII execution sketch is rendered
+    Then the sketch should show:
+      """
+      +------------------------------------------------------------+
+      | REPORT TRUTH                                               |
+      +------------------------------------------------------------+
+      | Verdict        : DOMAIN BODY CONTAMINATED                  |
+      | Promotion      : BLOCKED                                   |
+      | Blockers       : <count>                                   |
+      +------------------------------------------------------------+
+      | Declared Source -> Static Inventory -> Telemetry -> Receipt |
+      |       ok              has gaps          missing    unknown  |
+      +------------------------------------------------------------+
+      | Top blockers                                                |
+      | 1. <finding-code> <path>:<line-start>-<line-end>            |
+      |    fix: <one-line-fix-route>                               |
+      +------------------------------------------------------------+
+      """
+    And the report should not bury the blocked state below prose or dense tables.
 ```
 
 ## Feature: Domain Ownership Boundary Proof
@@ -602,11 +745,12 @@ Feature: PI readiness gate for report truth
 | --- | --- | --- |
 | 1 | Contract the report | Non-empty report schema, provenance header, freshness gate, and schema validation tests. |
 | 2 | Make counts undeniable | Summary-to-row validator, finding-to-row tie-out, verdict derivation tests, and blocked clean-label cases. |
-| 3 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
-| 4 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
-| 5 | Add development-time guardrails | One local command detects contaminated reports before commit without stdout noise. |
-| 6 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
-| 7 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
+| 3 | Make the report skimmable | ASCII execution-flow sketch appears first, with blockers and promotion state visible before dense details. |
+| 4 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
+| 5 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
+| 6 | Add development-time guardrails | One local command detects contaminated reports before commit without stdout noise. |
+| 7 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
+| 8 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
 
 ## Definition Of Done
 
@@ -615,6 +759,7 @@ Feature: PI readiness gate for report truth
 | Acceptance | Each report feature has Gherkin scenarios before implementation. |
 | Schema | `sterility-report.schema.v1.json` rejects missing required fields. |
 | Tests | Unit and audit tests prove every report section and verdict rule. |
+| Presentation | Product-facing report begins with a clean ASCII execution-flow sketch and blocker summary. |
 | Evidence | Generated report links to its evidence packet and receipt. |
 | Development loop | Local verification fails when tests pass but the report is contaminated. |
 | CI/CD | Pull requests and promotions run report truth gates and publish evidence artifacts. |
@@ -629,6 +774,7 @@ Feature: PI readiness gate for report truth
 | Should `report.md` be committed? | Keep it generated and ignored, but require committed schema, tests, and sample fixtures. Publish run artifacts through evidence packets or CI artifacts. |
 | Are `packages/` methods domain-bound? | Count them only when a contract says they are domain-owned or package-governed. Otherwise render them as unverified support mechanics. |
 | Is `Execution Step` a runtime concept? | Yes. If the value is scan order, call it `Inventory Step`. |
+| Should product owners read dense method tables first? | No. The report should open with an ASCII execution sketch, verdict, blockers, and promotion state. |
 | Can the report claim test coverage when `includeTestFiles` is `no`? | No. It can claim source testimony only until test evidence is added. |
 | Can stdout telemetry be report evidence? | No. Persist bounded telemetry artifacts and reference them from the report. |
 | Is green test output enough for developer readiness? | No. Local readiness requires tests passing and the report truth gate passing. |

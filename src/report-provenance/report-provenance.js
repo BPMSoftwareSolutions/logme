@@ -8,24 +8,57 @@ const REPORT_SCHEMA_VERSION = 'report-provenance.v1';
 const GENERATOR_NAME = 'LogMe domain audit';
 
 function stableStringify(value) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   if (value === null || typeof value !== 'object') {
     return JSON.stringify(value);
   }
 
   if (Array.isArray(value)) {
-    return `[${value.map(stableStringify).join(',')}]`;
+    return `[${value.map(stringifiesStableValue).join(',')}]`;
   }
 
   const keys = Object.keys(value).sort();
-  const entries = keys.map((key) => `${JSON.stringify(key)}:${stableStringify(value[key])}`);
+  const entries = [];
+
+  for (const key of keys) {
+    entries.push(stringifiesObjectEntry(value, key));
+  }
+
   return `{${entries.join(',')}}`;
 }
 
+function stringifiesStableValue(item) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return stableStringify(item);
+}
+
+function stringifiesObjectEntry(objectValue, key) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return `${JSON.stringify(key)}:${stableStringify(objectValue[key])}`;
+}
+
 function sha256Hex(value) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   return crypto.createHash('sha256').update(value, 'utf8').digest('hex');
 }
 
 function canonicalizeConfig(config) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   return {
     configPath: config.configPath,
     rootDir: config.rootDir,
@@ -42,7 +75,19 @@ function canonicalizeConfig(config) {
 }
 
 function canonicalizeMethods(methods) {
-  return methods.map((method) => ({
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return methods.map(canonicalizesMethod);
+}
+
+function canonicalizesMethod(method) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return {
     scanOrder: method.scanOrder,
     executionStep: method.executionStep,
     name: method.name,
@@ -53,7 +98,7 @@ function canonicalizeMethods(methods) {
     filePath: method.filePath,
     lineStart: method.lineStart,
     lineEnd: method.lineEnd,
-  }));
+  };
 }
 
 function computesConfigHash(config) {
@@ -101,19 +146,29 @@ function readsGitWorkingTreeMarker(repositoryRoot) {
 }
 
 function formatsCommandLine(argv) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   return argv
-    .map((segment) => {
-      if (segment.length === 0) {
-        return '""';
-      }
-
-      if (/[\s"]/u.test(segment)) {
-        return `"${segment.replace(/"/gu, '\\"')}"`;
-      }
-
-      return segment;
-    })
+    .map(formatsCommandLineSegment)
     .join(' ');
+}
+
+function formatsCommandLineSegment(segment) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (segment.length === 0) {
+    return '""';
+  }
+
+  if (/[\s"]/u.test(segment)) {
+    return `"${segment.replace(/"/gu, '\\"')}"`;
+  }
+
+  return segment;
 }
 
 function buildsReportProvenance(config, sourceFiles, methods, options = {}) {
@@ -165,7 +220,7 @@ function readsReportProvenance(reportContent) {
     return null;
   }
 
-  const lines = provenanceBlock[1].trim().split('\n').map((line) => line.trim()).filter(Boolean);
+  const lines = provenanceBlock[1].trim().split('\n').map(trimsProvenanceLine).filter(isTruthyLine);
   const fields = {};
 
   for (const line of lines) {
@@ -187,6 +242,22 @@ function readsReportProvenance(reportContent) {
     runId: fields['Run id'],
     evidenceDirectory: fields['Evidence directory'],
   };
+}
+
+function trimsProvenanceLine(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return line.trim();
+}
+
+function isTruthyLine(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return Boolean(line);
 }
 
 function checksReportTruthGate(reportContent, currentSourceInventoryHash) {

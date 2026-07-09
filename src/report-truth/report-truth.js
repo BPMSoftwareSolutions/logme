@@ -1,31 +1,39 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const crypto = require('node:crypto');
+const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
+const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
 const { loadsWorkspaceObservabilityConfig } = require('../loads-workspace-observability-config/loads-workspace-observability-config');
 const { buildsDomainBodySterilityContract } = require('../builds-domain-body-sterility-contract/builds-domain-body-sterility-contract');
+const { writesDomainBodySterilityReceipt } = require('../writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt');
 const { checksReportTruthGate } = require('../report-provenance/report-provenance');
 
-const SUMMARY_FIELDS = [
-  'Files scanned',
-  'Local executable methods',
-  'Domain-bound methods',
-  'Methods with LogMe call',
-  'Silent local methods',
-  'Generic utility methods in repo',
-  'Anonymous executable methods',
-  'Methods outside domain vocabulary',
-  'Unimplemented stub methods',
-  'Coverage',
-  'Verdict',
-];
+const SUMMARY_FIELD_NAMES = {
+  'Files scanned': 'filesScanned',
+  'Local executable methods': 'localExecutableMethods',
+  'Domain-bound methods': 'domainBoundMethods',
+  'Methods with LogMe call': 'methodsWithLogMeCall',
+  'Silent local methods': 'silentLocalMethods',
+  'Generic utility methods in repo': 'genericUtilityMethods',
+  'Anonymous executable methods': 'anonymousExecutableMethods',
+  'Methods outside domain vocabulary': 'methodsOutsideDomainVocabulary',
+  'Unimplemented stub methods': 'unimplementedStubMethods',
+};
 
 function sha256Hex(value) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   return crypto.createHash('sha256').update(value, 'utf8').digest('hex');
 }
 
 function suppressTelemetryDuring(callback) {
-  const previousAudit = process.env.LOGME_AUDIT;
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
 
+  const previousAudit = process.env.LOGME_AUDIT;
   delete process.env.LOGME_AUDIT;
 
   try {
@@ -40,6 +48,10 @@ function suppressTelemetryDuring(callback) {
 }
 
 function readsMarkdownSection(reportContent, sectionTitle, nextSectionTitle) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const escapedTitle = sectionTitle.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&');
   const escapedNextTitle = nextSectionTitle ? nextSectionTitle.replace(/[.*+?^${}()|[\]\\]/gu, '\\$&') : null;
   const pattern = escapedNextTitle
@@ -51,6 +63,10 @@ function readsMarkdownSection(reportContent, sectionTitle, nextSectionTitle) {
 }
 
 function readsReportSummary(reportContent) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const summaryBlock = readsMarkdownSection(reportContent, 'Sterility Summary', 'Findings');
 
   if (!summaryBlock) {
@@ -58,33 +74,78 @@ function readsReportSummary(reportContent) {
   }
 
   const summary = {};
+  const lines = summaryBlock.split('\n');
 
-  for (const line of summaryBlock.split('\n')) {
-    const match = line.match(/^- ([^:]+):\s+(.*)$/u);
-    if (match) {
-      summary[match[1]] = match[2];
+  for (const line of lines) {
+    const trimmedLine = trimsLine(line);
+    const parsed = parsesSummaryLine(trimmedLine);
+
+    if (parsed) {
+      summary[parsed.label] = parsed.value;
     }
   }
 
   return summary;
 }
 
+function trimsLine(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return line.trim();
+}
+
+function parsesSummaryLine(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const match = line.match(/^- ([^:]+):\s+(.*)$/u);
+
+  if (!match) {
+    return null;
+  }
+
+  return {
+    label: match[1],
+    value: match[2],
+  };
+}
+
 function parsesIntegerField(summary, field) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const value = Number.parseInt(summary[field], 10);
   return Number.isNaN(value) ? null : value;
 }
 
 function parsesCoverageField(summary) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const coverage = Number.parseFloat(summary.Coverage);
   return Number.isNaN(coverage) ? null : coverage;
 }
 
+function filtersLanguageFinding(finding) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return finding.code !== 'anonymous-executable-method-detected'
+    && finding.code !== 'local-method-name-outside-domain-vocabulary';
+}
+
 function derivesExpectedVerdict(summary) {
-  const languageFindingCodes = [
-    'anonymous-executable-method-detected',
-    'local-method-name-outside-domain-vocabulary',
-  ];
-  const nonLanguageFindings = summary.findings.filter((finding) => !languageFindingCodes.includes(finding.code));
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const nonLanguageFindings = summary.findings.filter(filtersLanguageFinding);
   const isCoverageClean = nonLanguageFindings.length === 0;
   const isLanguagePure = summary.anonymousExecutableMethods === 0 && summary.methodsOutsideDomainVocabulary === 0;
 
@@ -100,60 +161,142 @@ function derivesExpectedVerdict(summary) {
 }
 
 function readsMarkdownFindings(reportContent) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const findingsBlock = readsMarkdownSection(reportContent, 'Findings', 'Discovered Methods');
 
-  if (!findingsBlock || findingsBlock === '_No findings._') {
+  if (!findingsBlock || findingsBlock.toLowerCase().includes('no findings')) {
     return [];
   }
 
-  const blocks = findingsBlock.split(/\n\n+/u).map((block) => block.trim()).filter(Boolean);
+  const blocks = findingsBlock.split(/\n\n+/u);
+  const findings = [];
 
-  return blocks.map((block) => {
-    const lines = block.split('\n').map((line) => line.trim());
-    const finding = {
-      code: '',
-      filePath: '',
-      methodName: '',
-      reason: '',
-    };
+  for (const block of blocks) {
+    const parsed = parsesFindingBlock(block.trim());
 
-    for (const line of lines) {
-      if (line.startsWith('- ')) {
-        finding.code = line.slice(2).trim();
-      } else if (line.startsWith('file: ')) {
-        finding.filePath = line.slice(6).trim();
-      } else if (line.startsWith('method: ')) {
-        finding.methodName = line.slice(8).trim();
-      } else if (line.startsWith('reason: ')) {
-        finding.reason = line.slice(8).trim();
-      }
+    if (parsed) {
+      findings.push(parsed);
     }
+  }
 
-    return finding;
-  });
+  return findings;
+}
+
+function parsesFindingBlock(block) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!block) {
+    return null;
+  }
+
+  const finding = {
+    code: '',
+    filePath: '',
+    methodName: '',
+    reason: '',
+  };
+
+  const lines = block.split('\n');
+
+  for (const line of lines) {
+    const trimmedLine = trimsLine(line);
+
+    if (trimmedLine.startsWith('- ')) {
+      finding.code = trimmedLine.slice(2).trim();
+    } else if (trimmedLine.startsWith('file: ')) {
+      finding.filePath = trimmedLine.slice(6).trim();
+    } else if (trimmedLine.startsWith('method: ')) {
+      finding.methodName = trimmedLine.slice(8).trim();
+    } else if (trimmedLine.startsWith('reason: ')) {
+      finding.reason = trimmedLine.slice(8).trim();
+    }
+  }
+
+  return finding;
 }
 
 function readsMarkdownMethodTable(reportContent) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const tableBlock = readsMarkdownSection(reportContent, 'Discovered Methods');
 
   if (!tableBlock) {
     return [];
   }
 
-  return tableBlock
-    .split('\n')
-    .map((line) => line.trim())
-    .filter((line) => line.startsWith('| '))
-    .filter((line) => !line.includes('| --- |'))
-    .filter((line) => !line.includes('Scan Order'))
-    .map((line) => line.split(' | ').map((segment) => segment.replace(/^\| |\|$/gu, '').trim()));
+  const rows = [];
+  const lines = tableBlock.split('\n');
+
+  for (const line of lines) {
+    const trimmedLine = trimsLine(line);
+
+    if (isMarkdownTableRow(trimmedLine) && !isMarkdownHeaderRow(trimmedLine) && !isMarkdownSeparatorRow(trimmedLine)) {
+      rows.push(splitsMarkdownTableRow(trimmedLine));
+    }
+  }
+
+  return rows;
+}
+
+function isMarkdownTableRow(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return line.startsWith('| ');
+}
+
+function isMarkdownHeaderRow(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return line.includes('Scan Order');
+}
+
+function isMarkdownSeparatorRow(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return line.includes('| --- |');
+}
+
+function splitsMarkdownTableRow(line) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const segments = line.split(' | ');
+  const cells = [];
+
+  for (const segment of segments) {
+    cells.push(segment.replace(/^\| |\|$/gu, '').trim());
+  }
+
+  return cells;
 }
 
 function validatesReportFreshness(expectedReportContent, currentReportContent) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   return expectedReportContent === currentReportContent;
 }
 
 function validatesSummaryToRowConsistency(expectedSummary, reportContent) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const parsedSummary = readsReportSummary(reportContent);
   const parsedFindings = readsMarkdownFindings(reportContent);
   const parsedRows = readsMarkdownMethodTable(reportContent);
@@ -164,32 +307,29 @@ function validatesSummaryToRowConsistency(expectedSummary, reportContent) {
       parsedSummary,
       parsedFindings,
       parsedRows,
+      mismatchedFields: SUMMARY_FIELD_NAMES,
     };
   }
 
-  const mismatchedFields = SUMMARY_FIELDS.filter((field) => {
+  const mismatchedFields = [];
+  const summaryLabels = Object.keys(SUMMARY_FIELD_NAMES);
+
+  for (const field of summaryLabels) {
+    const expectedFieldName = SUMMARY_FIELD_NAMES[field];
+    let matches = true;
+
     if (field === 'Coverage') {
-      return parsesCoverageField(parsedSummary) !== expectedSummary.coverage;
+      matches = parsesCoverageField(parsedSummary) === expectedSummary.coverage;
+    } else if (field === 'Verdict') {
+      matches = parsedSummary.Verdict === expectedSummary.verdict;
+    } else {
+      matches = parsesIntegerField(parsedSummary, field) === expectedSummary[expectedFieldName];
     }
 
-    if (field === 'Verdict') {
-      return parsedSummary.Verdict !== expectedSummary.verdict;
+    if (!matches) {
+      mismatchedFields.push(field);
     }
-
-    const expectedFieldName = {
-      'Files scanned': 'filesScanned',
-      'Local executable methods': 'localExecutableMethods',
-      'Domain-bound methods': 'domainBoundMethods',
-      'Methods with LogMe call': 'methodsWithLogMeCall',
-      'Silent local methods': 'silentLocalMethods',
-      'Generic utility methods in repo': 'genericUtilityMethods',
-      'Anonymous executable methods': 'anonymousExecutableMethods',
-      'Methods outside domain vocabulary': 'methodsOutsideDomainVocabulary',
-      'Unimplemented stub methods': 'unimplementedStubMethods',
-    }[field];
-
-    return parsesIntegerField(parsedSummary, field) !== expectedSummary[expectedFieldName];
-  });
+  }
 
   return {
     matches: mismatchedFields.length === 0
@@ -202,41 +342,69 @@ function validatesSummaryToRowConsistency(expectedSummary, reportContent) {
   };
 }
 
-function buildsReportTruthSnapshot() {
-  return suppressTelemetryDuring(() => {
-    const config = loadsWorkspaceObservabilityConfig();
-    const built = buildsDomainBodySterilityContract(config);
-    const currentReportContent = fs.existsSync(config.reportPath)
-      ? fs.readFileSync(config.reportPath, 'utf8')
-      : '';
-    const currentReportHash = sha256Hex(currentReportContent);
-    const expectedReportHash = sha256Hex(built.reportContent);
-    const truthGate = checksReportTruthGate(currentReportContent, built.provenance.sourceInventoryHash);
-    const summaryConsistency = validatesSummaryToRowConsistency(built.summary, currentReportContent);
-    const derivedVerdict = derivesExpectedVerdict({
-      ...built.summary,
-      findings: built.findings,
-      domainContract: built.summary.domainContract,
-    });
+function buildsReportTruthSnapshotCore() {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
 
-    return {
-      config,
-      ...built,
-      currentReportContent,
-      currentReportHash,
-      expectedReportHash,
-      truthGate,
-      summaryConsistency,
-      derivedVerdict,
-    };
+  const config = loadsWorkspaceObservabilityConfig();
+  const built = buildsDomainBodySterilityContract(config);
+  const receipt = writesDomainBodySterilityReceipt(built.contract);
+  const currentReportContent = receipt.reportContent;
+  const currentReportHash = sha256Hex(currentReportContent);
+  const expectedReportHash = sha256Hex(built.reportContent);
+  const truthGate = checksReportTruthGate(currentReportContent, built.provenance.sourceInventoryHash);
+  const summaryConsistency = validatesSummaryToRowConsistency(built.summary, currentReportContent);
+  const derivedVerdict = derivesExpectedVerdict({
+    ...built.summary,
+    findings: built.findings,
+    domainContract: built.summary.domainContract,
   });
+
+  return {
+    config,
+    ...built,
+    expectedReportContent: built.reportContent,
+    currentReportContent,
+    currentReportHash,
+    expectedReportHash,
+    truthGate,
+    summaryConsistency,
+    derivedVerdict,
+  };
+}
+
+function buildsReportTruthSnapshot() {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return suppressTelemetryDuring(buildsReportTruthSnapshotCore);
 }
 
 function collectsTopFindingCodes(findings, limit = 3) {
-  return findings.slice(0, limit).map((finding) => finding.code);
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const topCodes = [];
+
+  for (const finding of findings) {
+    topCodes.push(finding.code);
+
+    if (topCodes.length >= limit) {
+      break;
+    }
+  }
+
+  return topCodes;
 }
 
 function collectsTopFindingPaths(findings, limit = 3) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const uniquePaths = [];
 
   for (const finding of findings) {
@@ -253,10 +421,18 @@ function collectsTopFindingPaths(findings, limit = 3) {
 }
 
 function buildsFailureBlockers(snapshot) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const blockers = [];
   const seenCodes = new Set();
 
   function addsBlocker(blocker) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
     if (seenCodes.has(blocker.code)) {
       return;
     }
@@ -265,7 +441,7 @@ function buildsFailureBlockers(snapshot) {
     blockers.push(blocker);
   }
 
-  if (!validatesReportFreshness(snapshot.reportContent || snapshot.expectedReportContent, snapshot.currentReportContent)) {
+  if (!validatesReportFreshness(snapshot.expectedReportContent, snapshot.currentReportContent)) {
     addsBlocker({
       code: 'stale-report-projection',
       reason: 'the committed report body does not match the report regenerated from current source',
@@ -309,6 +485,10 @@ function buildsFailureBlockers(snapshot) {
 }
 
 function formatsReportTruthSummary(result) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const lines = [result.status];
   lines.push(`report verdict: ${result.reportVerdict}`);
   lines.push(`coverage: ${result.coverage}%`);
@@ -320,6 +500,10 @@ function formatsReportTruthSummary(result) {
 }
 
 function writesReportTruthEvidence(snapshot, result) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const evidenceDirectory = path.join(snapshot.provenance.evidenceDirectory, 'runs', snapshot.provenance.runId);
   const evidencePath = path.join(evidenceDirectory, 'report-truth.v1.json');
   fs.mkdirSync(evidenceDirectory, { recursive: true });
@@ -347,6 +531,10 @@ function writesReportTruthEvidence(snapshot, result) {
 }
 
 function runsReportTruthCommand(options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const snapshot = buildsReportTruthSnapshot();
   const blockers = buildsFailureBlockers(snapshot);
   const topFindingCodes = collectsTopFindingCodes(snapshot.findings);
@@ -380,6 +568,10 @@ function runsReportTruthCommand(options = {}) {
 }
 
 function buildsReportTruthHookMessage(result, commandToRun = 'npm run report:truth') {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const firstActionablePath = result.topFindingPaths[0] || result.snapshot.config.reportPath;
 
   return [
