@@ -101,3 +101,56 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
   assert.match(report, /\| 1 \| testMethod \| function-declaration \| yes \|/);
   assert.match(report, /\| 2 \| anotherMethod \| class-method \| no \|/);
 });
+
+test('rendersDomainBodySterilityReport shows stub findings in the report body', () => {
+  const contract = {
+    domainContract: {
+      reportTitle: 'Test Domain Report',
+      laws: ['Methods must be named clearly'],
+      cleanFindingsLabel: '_No findings._',
+    },
+    rootDir: '/test/root',
+    includeExtensions: ['.js'],
+    configPath: '/test/root/logme.config.json',
+    forbiddenLocalUtilityNames: ['utils'],
+    includeTestFiles: false,
+    excludeFiles: ['report.md'],
+    filesScanned: 1,
+    localExecutableMethods: 1,
+    domainBoundMethods: 1,
+    methodsWithLogMeCall: 1,
+    silentLocalMethods: 0,
+    genericUtilityMethods: 0,
+    anonymousExecutableMethods: 0,
+    methodsOutsideDomainVocabulary: 0,
+    unimplementedStubMethods: 1,
+    coverage: 100,
+    verdict: 'DOMAIN BODY CONTAMINATED',
+    findings: [
+      {
+        code: 'unimplemented-stub-detected',
+        filePath: '/test/root/src/stub.js',
+        methodName: 'stubMethod',
+        reason: 'scaffolded stub not implemented',
+      },
+    ],
+    methods: [
+      {
+        scanOrder: 1,
+        name: 'stubMethod',
+        kind: 'function',
+        hasLogMeCall: true,
+        filePath: '/test/root/src/stub.js',
+        lineStart: 1,
+        lineEnd: 3,
+      },
+    ],
+  };
+
+  const report = rendersDomainBodySterilityReport(contract);
+
+  assert.match(report, /- Unimplemented stub methods: 1/);
+  assert.match(report, /unimplemented-stub-detected/);
+  assert.match(report, /method: stubMethod/);
+  assert.match(report, /scaffolded stub not implemented/);
+});

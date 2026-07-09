@@ -22,6 +22,8 @@ function loadsWorkspaceObservabilityConfig() {
     excludeDirectories: normalizesConfigStringArray(config.excludeDirectories),
     forbiddenLocalUtilityNames: normalizesConfigStringArray(config.forbiddenLocalUtilityNames),
     excludeFiles: normalizesConfigStringArray(config.excludeFiles),
+    includeTestFiles: config.includeTestFiles,
+    stubMarker: config.stubMarker,
     forbiddenMethodNames: normalizesConfigStringArray(config.domainContract.domainVocabulary.forbiddenMethodNames),
     reportPath: resolvesConfiguredRootPath(PACKAGE_ROOT, config.reportPath),
     domainContract: config.domainContract,

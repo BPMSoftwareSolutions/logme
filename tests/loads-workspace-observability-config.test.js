@@ -19,6 +19,11 @@ test('loadsWorkspaceObservabilityConfig lowercases every normalized string list'
   assert.deepEqual(config.excludeDirectories, ['.git', 'node_modules', 'evidence', 'tests']);
   assert.deepEqual(config.forbiddenLocalUtilityNames, ['utils', 'helpers', 'common', 'shared', 'lib', 'misc']);
   assert.deepEqual(config.excludeFiles, ['report.md']);
+  assert.equal(config.includeTestFiles, false);
+  assert.equal(
+    config.stubMarker,
+    '// STUB: not yet implemented. Scaffolded from the declared file-system body contract.',
+  );
   assert.deepEqual(
     config.forbiddenMethodNames,
     ['arrow-function', 'function-expression', 'walk', 'visit', 'handler', 'callback', 'temp', 'data', 'misc', 'process', 'dostuff', 'helper'],
