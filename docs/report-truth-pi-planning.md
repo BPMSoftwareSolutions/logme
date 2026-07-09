@@ -60,6 +60,7 @@ Targeted verification performed:
 | `Execution Step` can read as runtime order | The column is currently derived from audit/inventory sequencing unless tied to telemetry. | Rename or prove the field with telemetry and execution signature evidence. |
 | Runtime timing can be confused with static scan data | Line numbers come from source inventory, but execution step, timestamp, and duration must come from observed runtime telemetry. | Separate static source facts from telemetry-observed runtime facts. |
 | Dense report text hides the execution story | A product owner should see the runtime body, blockers, and evidence flow before reading tables. | Lead with clean ASCII execution sketches and keep dense details secondary. |
+| Report layout is hardcoded in renderer code | Product owners cannot safely change section order, labels, ASCII templates, or visible fields without a code deployment. | Move report structure into validated contracts and templates. |
 | `includeTestFiles` is `no` | The report cannot claim test support or TDD coverage from the current scan. | Add explicit test evidence before any tested/support claim. |
 | External package methods are summarized as ignored | The report says package-governed without linking a package contract or receipt. | Require package governance proof or show as unverified. |
 | Clean report labels are configured text | A label like "No findings" can be rendered if the contract says so, unless guarded by count validation. | Gate clean labels on computed zero findings. |
@@ -73,6 +74,7 @@ Targeted verification performed:
 | Report contract enforcement | A non-empty schema validates every generated report contract before markdown is written. |
 | Summary-to-row consistency | Counts, coverage, findings, and verdict are recomputed from the same method inventory and cannot disagree. |
 | ASCII execution-flow report | The first report view is a clean ASCII sketch of declared path, observed telemetry, receipts, and blockers. |
+| Data-driven report layout | Product-owned contracts and templates control report structure, section order, labels, and sketch fields without code changes. |
 | Evidence-only language | Report text does not use support, proof, execution, runtime, or sterile language without backing evidence. |
 | Gherkin-driven report features | Every report feature has acceptance criteria before implementation and tests map to those scenarios. |
 | Development-time report truth guardrails | Developers can detect report contamination locally with one command before commit. |
@@ -367,6 +369,66 @@ Feature: ASCII execution flow report
     And missing receipts should render as `missing`
     And no runtime observation field should be populated from the static contract alone.
 
+  Scenario: Render required ASCII body tree shape
+    Given an executable body contract declares ordered execution nodes
+    When the ASCII execution sketch is rendered
+    Then the report should include a tree shaped like:
+      """
+      +------------------------------------------------------------+
+      | EXECUTABLE BODY TREE                                      |
+      +------------------------------------------------------------+
+      | 00 ACCEPTANCE SOURCE                                      |
+      | contract  : docs/features/<feature>.feature.md      ok     |
+      | runtime   : not executable                         n/a    |
+      | telemetry : not required                           n/a    |
+      | receipt   : not required                           n/a    |
+      | status    : ok                                            |
+      |                                                            |
+      | 01 <NODE LABEL>                                           |
+      | contract  : contracts/<contract>.json              ok     |
+      | runtime   : src/<runtime-file>.js:<start>-<end>    ok     |
+      | telemetry : evidence/runs/<run-id>/<events>.jsonl observed |
+      | duration  : <duration-ms> ms                              |
+      | receipt   : evidence/runs/<run-id>/<receipt>.json  written |
+      | status    : ok                                            |
+      +------------------------------------------------------------+
+      """
+    And every executable node should use the same contract/runtime/telemetry/duration/receipt/status row pattern
+    And every path should be repo-relative
+    And runtime rows should include source line range.
+
+  Scenario: Render blocked ASCII body tree shape
+    Given an executable body node is missing telemetry or receipt evidence
+    When the ASCII execution sketch is rendered
+    Then the report should include the blocked node inline like:
+      """
+      +------------------------------------------------------------+
+      | EXECUTABLE BODY TREE                                      |
+      +------------------------------------------------------------+
+      | 03 <NODE LABEL>                                           |
+      | contract  : contracts/<contract>.json              ok     |
+      | runtime   : src/<runtime-file>.js:<start>-<end>    ok     |
+      | telemetry : not observed                          missing |
+      | duration  : not observed                                  |
+      | receipt   : evidence/runs/<run-id>/<receipt>.json  missing |
+      | status    : blocked                                       |
+      | blocker   : <finding-code>                                |
+      | fix       : <one-line-fix-route>                          |
+      +------------------------------------------------------------+
+      """
+    And the blocked node should appear before the dense method table
+    And the product owner should not need to infer the broken node from findings prose.
+
+  Scenario: Reject header-only execution sketch
+    Given report.md renders an ASCII execution sketch
+    But it does not render ordered executable body nodes
+    And it does not show contract, runtime, telemetry, receipt, status, and blocker per node
+    When the report presentation gate runs
+    Then the report should fail
+    And the finding code should be:
+      | finding |
+      | executable-body-tree-missing |
+
   Scenario: Preserve product-readable execution tree shape
     Given the executable body contract contains sections such as acceptance source, surface receipt, canonical binding, shared runner, root contract resolution, gates, routing, provider call, receipt writeback, and surface parity
     When report.md renders the body tree
@@ -432,6 +494,87 @@ Feature: ASCII execution flow report
       +------------------------------------------------------------+
       """
     And the report should not bury the blocked state below prose or dense tables.
+```
+
+## Feature: Data-Driven Report Layout
+
+```gherkin
+Feature: Data-driven report layout
+
+  As an adversarial product owner
+  I want report structure and presentation controlled by validated contracts and templates
+  So that I can change the report format without deploying source code.
+
+  Scenario: Change report section order without code changes
+    Given the report layout contract declares section order
+    And the report renderer reads the layout contract at generation time
+    When a product owner changes section order in the layout contract
+    And the report generator runs
+    Then report.md should render sections in the new order
+    And no application source code change should be required.
+
+  Scenario: Change report labels without code changes
+    Given the report layout contract declares product-facing labels
+    When a product owner changes a section title, field label, status label, or promotion label in the layout contract
+    And the report generator runs
+    Then report.md should render the updated labels
+    And the underlying evidence fields should remain schema-validated.
+
+  Scenario: Change ASCII execution sketch without code changes
+    Given the ASCII execution sketch is declared in a template file
+    And the template references report data using declared variables
+    When a product owner changes sketch spacing, grouping, labels, or visible fields in the template
+    And the report generator runs
+    Then report.md should reflect the updated sketch
+    And no renderer code change should be required
+    And every template variable should resolve against the report data contract.
+
+  Scenario: Validate report layout contract before rendering
+    Given the report layout contract is loaded
+    When layout validation runs
+    Then the contract should define:
+      | field |
+      | schema version |
+      | report title |
+      | section order |
+      | section ids |
+      | section templates |
+      | required data fields |
+      | optional data fields |
+      | blocker display rules |
+      | promotion display rules |
+    And report.md should be rendered only after layout validation passes.
+
+  Scenario: Block template variable that has no data source
+    Given a report template references a variable
+    But the variable is not declared in the report data contract
+    When the report generator validates templates
+    Then generation should fail
+    And the finding code should be:
+      | finding |
+      | report-template-variable-unbound |
+    And report.md should not be written with a blank, invented, or misleading value.
+
+  Scenario: Block product template from weakening truth gates
+    Given a product owner changes the report layout contract or template
+    When the report generator validates truth gates
+    Then the template should not be able to hide:
+      | required truth |
+      | verdict |
+      | blocker count |
+      | stale provenance |
+      | silent local methods |
+      | anonymous executable methods |
+      | missing telemetry |
+      | missing receipt |
+      | promotion decision |
+    And generation should fail if the layout omits required truth fields.
+
+  Scenario: Keep renderer code as a generic engine
+    Given report layout, section order, labels, and ASCII sketches are declared in contracts or templates
+    When a report presentation change is requested
+    Then the expected change should be made in product-owned report contracts or templates
+    And renderer source code should change only when a new rendering primitive, validator, or data field is needed.
 ```
 
 ## Feature: Domain Ownership Boundary Proof
@@ -746,11 +889,12 @@ Feature: PI readiness gate for report truth
 | 1 | Contract the report | Non-empty report schema, provenance header, freshness gate, and schema validation tests. |
 | 2 | Make counts undeniable | Summary-to-row validator, finding-to-row tie-out, verdict derivation tests, and blocked clean-label cases. |
 | 3 | Make the report skimmable | ASCII execution-flow sketch appears first, with blockers and promotion state visible before dense details. |
-| 4 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
-| 5 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
-| 6 | Add development-time guardrails | One local command detects contaminated reports before commit without stdout noise. |
-| 7 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
-| 8 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
+| 4 | Make layout data-driven | Product-owned report contracts and templates control section order, labels, and ASCII sketch fields. |
+| 5 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
+| 6 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
+| 7 | Add development-time guardrails | One local command detects contaminated reports before commit without stdout noise. |
+| 8 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
+| 9 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
 
 ## Definition Of Done
 
@@ -760,6 +904,7 @@ Feature: PI readiness gate for report truth
 | Schema | `sterility-report.schema.v1.json` rejects missing required fields. |
 | Tests | Unit and audit tests prove every report section and verdict rule. |
 | Presentation | Product-facing report begins with a clean ASCII execution-flow sketch and blocker summary. |
+| Data-driven layout | Section order, labels, and ASCII templates can change through validated contracts without renderer code changes. |
 | Evidence | Generated report links to its evidence packet and receipt. |
 | Development loop | Local verification fails when tests pass but the report is contaminated. |
 | CI/CD | Pull requests and promotions run report truth gates and publish evidence artifacts. |
@@ -775,6 +920,7 @@ Feature: PI readiness gate for report truth
 | Are `packages/` methods domain-bound? | Count them only when a contract says they are domain-owned or package-governed. Otherwise render them as unverified support mechanics. |
 | Is `Execution Step` a runtime concept? | Yes. If the value is scan order, call it `Inventory Step`. |
 | Should product owners read dense method tables first? | No. The report should open with an ASCII execution sketch, verdict, blockers, and promotion state. |
+| Should report format changes require code deployment? | No. Structure, section order, labels, and templates should be product-owned data validated by renderer gates. |
 | Can the report claim test coverage when `includeTestFiles` is `no`? | No. It can claim source testimony only until test evidence is added. |
 | Can stdout telemetry be report evidence? | No. Persist bounded telemetry artifacts and reference them from the report. |
 | Is green test output enough for developer readiness? | No. Local readiness requires tests passing and the report truth gate passing. |

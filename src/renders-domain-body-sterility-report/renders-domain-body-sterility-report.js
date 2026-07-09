@@ -3,6 +3,7 @@ const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
 const { rendersMarkdownTable } = require('../../packages/logme-report-primitives/src/renders-markdown-table');
 const { rendersMarkdownSummary } = require('../../packages/logme-report-primitives/src/renders-markdown-summary');
+const { rendersAsciiExecutionFlow } = require('../../packages/logme-report-primitives/src/renders-ascii-execution-flow');
 
 function rendersDomainBodySterilityReport(contract) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -11,6 +12,79 @@ function rendersDomainBodySterilityReport(contract) {
 
   const findingRows = rendersMarkdownSummary(contract);
   const table = rendersMarkdownTable(contract.methods);
+
+  function findsMethodForFinding(finding) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    function matchesFindingMethod(method) {
+      if (process.env.LOGME_AUDIT === '1') {
+        LogMe(sampleMethod);
+      }
+
+      return method.filePath === finding.filePath && method.name === finding.methodName;
+    }
+
+    function matchesFindingPath(method) {
+      if (process.env.LOGME_AUDIT === '1') {
+        LogMe(sampleMethod);
+      }
+
+      return method.filePath === finding.filePath;
+    }
+
+    return contract.methods.find(matchesFindingMethod)
+      || contract.methods.find(matchesFindingPath)
+      || null;
+  }
+
+  function formatsBlockerFixRoute(finding) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    const fixRoutes = {
+      'stale-report-projection': 'regenerate the report from the current source inventory',
+      'contaminated-verdict': 'resolve the contaminated finding and rerun the audit',
+      'summary-to-row-mismatch': 'rebuild the summary from the current findings and methods table',
+      'unsupported-clean-or-sterile-claim': 'align the verdict with the current findings',
+    };
+
+    return fixRoutes[finding.code] || 'inspect the cited method and rerun the report';
+  }
+
+  function formatsBlockerLine(finding) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    const method = findsMethodForFinding(finding);
+    const sourcePath = method ? method.filePath : finding.filePath;
+    const lineRange = method ? `${method.lineStart}-${method.lineEnd}` : 'unknown';
+    const telemetryStatus = method && method.hasLogMeCall ? 'observed' : 'missing';
+
+    return [
+      `- finding code: ${finding.code}`,
+      `  method: ${finding.methodName || 'unknown'}`,
+      `  source path: ${sourcePath}`,
+      `  line range: ${lineRange}`,
+      `  telemetry status: ${telemetryStatus}`,
+      `  one-line fix route: ${formatsBlockerFixRoute(finding)}`,
+    ].join('\n');
+  }
+
+  function rendersBlockerSummary(contractWithFindings) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    if (contractWithFindings.findings.length === 0) {
+      return '_No blockers. Promotion allowed._';
+    }
+
+    return contractWithFindings.findings.slice(0, 3).map(formatsBlockerLine).join('\n\n');
+  }
 
   function formatsProvenanceLine(label, value) {
     if (process.env.LOGME_AUDIT === '1') {
@@ -30,6 +104,16 @@ function rendersDomainBodySterilityReport(contract) {
 
   return [
     `# ${contract.domainContract.reportTitle}`,
+    '',
+    '## Execution Flow Sketch',
+    '',
+    '```text',
+    rendersAsciiExecutionFlow(contract),
+    '```',
+    '',
+    '## Blocker Summary',
+    '',
+    rendersBlockerSummary(contract),
     '',
     '## Provenance',
     '',

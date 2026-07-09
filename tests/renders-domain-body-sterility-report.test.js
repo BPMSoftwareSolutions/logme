@@ -12,6 +12,7 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
       cleanFindingsLabel: '_No findings._',
     },
     rootDir: '/test/root',
+    reportPath: '/test/root/report.md',
     includeExtensions: ['.js', '.ts'],
     configPath: '/test/root/logme.config.json',
     forbiddenLocalUtilityNames: ['utils', 'helpers'],
@@ -118,6 +119,15 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
 
   // Check title
   assert.match(report, /^# Test Domain Report/);
+
+  // Check execution sketch and blocker summary are front-loaded
+  assert.match(report, /## Execution Flow Sketch/);
+  assert.match(report, /```text/);
+  assert.match(report, /REPORT TRUTH/);
+  assert.match(report, /Promotion\s+: BLOCKED/);
+  assert.match(report, /## Blocker Summary/);
+  assert.match(report, /finding code: test-finding-1/);
+  assert.match(report, /Receipt evidence\s+: report\.md/);
 
   // Check Provenance section
   assert.match(report, /## Provenance/);
@@ -270,4 +280,9 @@ test('rendersDomainBodySterilityReport shows stub findings in the report body', 
   assert.match(report, /unimplemented-stub-detected/);
   assert.match(report, /method: stubMethod/);
   assert.match(report, /scaffolded stub not implemented/);
+  assert.match(report, /## Execution Flow Sketch/);
+  assert.match(report, /Promotion\s+: BLOCKED/);
+  assert.match(report, /## Blocker Summary/);
+  assert.match(report, /finding code: unimplemented-stub-detected/);
+  assert.match(report, /telemetry status: observed/);
 });

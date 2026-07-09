@@ -114,6 +114,8 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
 
     // Assert reportContent contains expected sections from rendered report
     assert.match(receipt.reportContent, /^# Test Sterility Report/);
+    assert.match(receipt.reportContent, /## Execution Flow Sketch/);
+    assert.match(receipt.reportContent, /## Blocker Summary/);
     assert.match(receipt.reportContent, /## Provenance/);
     assert.match(receipt.reportContent, /## Config/);
     assert.match(receipt.reportContent, /## Sterility Summary/);
