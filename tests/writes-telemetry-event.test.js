@@ -12,7 +12,7 @@ test('writesTelemetryEvent returns the method name and its source lines', () => 
 
   assert.equal(event.name, 'exampleMethod');
   assert.equal(Array.isArray(event.source), true);
-  assert.equal(event.source.join('\n'), exampleMethod.toString());
+  assert.equal(event.source.join('\n'), exampleMethod.toString().replace(/\r\n/g, '\n'));
 });
 
 test('writesTelemetryEvent falls back to (anonymous) for unnamed functions', () => {
