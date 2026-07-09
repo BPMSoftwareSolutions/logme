@@ -10,7 +10,6 @@ function rendersAsciiExecutionFlow(contract) {
     LogMe(sampleMethod);
   }
 
-  const executionNodes = normalizesExecutionNodes(contract);
   const blockerCount = Array.isArray(contract.findings) ? contract.findings.length : 0;
   const promotionDecision = blockerCount === 0 ? 'ALLOWED' : 'BLOCKED';
   const declaredSourceAuthority = formatsProminentPath(contract, contract.provenance && contract.provenance.configPath);
@@ -28,13 +27,13 @@ function rendersAsciiExecutionFlow(contract) {
     promotionDecision,
   });
 
-  const executionTreeBox = rendersExecutionTreeBox(contract, executionNodes);
+  const executionTreeSection = rendersExecutionTreeSection(contract);
   const blockerWorklistBox = blockerCount > 0 ? rendersBlockerWorklistBox(contract) : '';
 
   return [
     truthSketch,
     '',
-    executionTreeBox,
+    executionTreeSection,
     blockerWorklistBox ? ['', blockerWorklistBox].join('\n') : '',
   ].filter(Boolean).join('\n');
 }
@@ -59,7 +58,7 @@ function buildsTruthSketchBox({
     ? 'ok         ok          ok        observed     written'
     : 'ok              has gaps          missing    unknown';
 
-  const bodyLines = [
+  return rendersBox('REPORT TRUTH', [
     formatsKeyValueLine('Verdict', contract.verdict),
     formatsKeyValueLine('Run', contract.provenance && contract.provenance.runId ? contract.provenance.runId : 'unknown'),
     formatsKeyValueLine('Promotion', promotionDecision),
@@ -70,101 +69,106 @@ function buildsTruthSketchBox({
     formatsKeyValueLine('Telemetry observation', telemetryObservation),
     formatsKeyValueLine('Receipt evidence', receiptEvidence),
     formatsKeyValueLine('Blocker count', String(blockerCount)),
-  ];
-
-  return rendersBox('REPORT TRUTH', bodyLines);
+  ]);
 }
 
-function rendersExecutionTreeBox(contract, executionNodes) {
+function rendersExecutionTreeSection(contract) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!Array.isArray(contract.executionNodes) || contract.executionNodes.length === 0) {
+    if (process.env.LOGME_EXECUTION_TREE_DIAGNOSTIC === '1') {
+      return rendersDiagnosticExecutionTree(contract);
+    }
+
+    return 'EXECUTABLE BODY TREE: missing';
+  }
+
+  const headerLines = [];
+  headerLines.push(`Feature : ${contract.featureId || 'ASCII execution flow report'}`);
+  headerLines.push(`Scenario: ${contract.scenarioName || 'Render executive execution flow first'}`);
+
+  const sections = [
+    rendersBox('EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE', headerLines),
+    '',
+  ];
+
+  for (let index = 0; index < contract.executionNodes.length; index += 1) {
+    const node = contract.executionNodes[index];
+    sections.push(rendersExecutionNode(node, index));
+    if (index < contract.executionNodes.length - 1) {
+      sections.push('');
+    }
+  }
+
+  return sections.join('\n');
+}
+
+function rendersDiagnosticExecutionTree(contract) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    'DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE',
+    rendersBox('EXECUTABLE BODY TREE', [
+      `feature : ${contract.featureId || 'unknown'}`,
+      `scenario: ${contract.scenarioName || 'unknown'}`,
+      'status  : missing',
+    ]),
+  ].join('\n');
+}
+
+function rendersExecutionNode(node, index) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [`[${formatsNodeId(node, index)}] ${node.label}`];
+  lines.push(...rendersBranchLines(node.branches || [], '', true));
+  return lines.join('\n');
+}
+
+function rendersBranchLines(branches, indent, showSiblingSeparators) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
   const lines = [];
 
-  if (contract.featureId || contract.scenarioName) {
-    if (contract.featureId) {
-      lines.push(`Feature : ${contract.featureId}`);
-    }
+  for (let index = 0; index < branches.length; index += 1) {
+    const branch = branches[index];
+    const isLast = index === branches.length - 1;
+    lines.push(...rendersBranch(branch, indent, isLast));
 
-    if (contract.scenarioName) {
-      lines.push(`Scenario: ${contract.scenarioName}`);
-    }
-  }
-
-  if (contract.plainLanguageProof) {
-    lines.push(`Proves  : ${contract.plainLanguageProof}`);
-  }
-
-  if (lines.length > 0) {
-    lines.push('');
-  }
-
-  function appendsExecutionNode(node, index) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
-    }
-
-    lines.push(...rendersCompactNodeBlock(node, index, contract));
-    if (index < executionNodes.length - 1) {
-      lines.push('');
+    if (showSiblingSeparators && !isLast) {
+      lines.push(`${indent}|`);
     }
   }
 
-  executionNodes.forEach(appendsExecutionNode);
-
-  return rendersBox('EXECUTABLE BODY TREE', lines.length > 0 ? lines : ['(no executable body nodes declared)']);
+  return lines;
 }
 
-function rendersCompactNodeBlock(node, index, contract) {
+function rendersBranch(branch, indent, isLast) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  const nodeId = formatsNodeId(node, index);
-  const nodeLabel = node.label || node.name || 'UNLABELLED NODE';
-  const contractPath = formatsNodePath(contract, node.contractPath);
-  const runtimePath = formatsNodePath(contract, node.runtimePath);
-  const telemetryPath = formatsNodePath(contract, node.telemetryPath);
-  const receiptPath = formatsNodePath(contract, node.receiptPath);
-  const status = node.status || inferNodeStatus(node, contract);
-  const sourceLineRange = formatsSourceLineRange(node);
-  const durationLine = formatsDuration(node);
-  const blockerLine = node.blocker ? `blocker   : ${node.blocker}` : '';
-  const fixLine = node.fix ? `fix       : ${node.fix}` : '';
-  const runtimeStatus = node.runtimePath === 'not executable' ? 'n/a' : 'ok';
-  const telemetryStatus = formatsTelemetryStatus(node, contract);
-  const receiptStatus = formatsReceiptStatus(node, contract);
+  const connector = isLast ? '`-- ' : '|-- ';
+  const nextIndent = `${indent}${isLast ? '    ' : '|   '}`;
+  const lines = [`${indent}${connector}${branch.label}`];
 
-  const rowLines = [
-    `${nodeId} ${nodeLabel}`,
-    formatsCompactFieldLine('contract', contractPath, 'ok'),
-    formatsCompactFieldLine('runtime', runtimePath, runtimeStatus),
-    formatsCompactFieldLine('telemetry', telemetryPath, telemetryStatus),
-  ];
-
-  if (sourceLineRange) {
-    rowLines.push(`source    : ${sourceLineRange}`);
+  if (Array.isArray(branch.children) && branch.children.length > 0) {
+    lines.push(...rendersBranchLines(branch.children, nextIndent, false));
+    return lines;
   }
 
-  if (durationLine) {
-    rowLines.push(durationLine);
-  } else {
-    rowLines.push('duration  : not observed');
+  if (branch.value !== undefined) {
+    lines.push(`${nextIndent}\`-- ${branch.value}`);
   }
 
-  rowLines.push(formatsCompactFieldLine('receipt', receiptPath, receiptStatus));
-  rowLines.push(`status    : ${status}`);
-
-  if (blockerLine) {
-    rowLines.push(blockerLine);
-  }
-
-  if (fixLine) {
-    rowLines.push(fixLine);
-  }
-
-  return rowLines;
+  return lines;
 }
 
 function rendersBlockerWorklistBox(contract) {
@@ -178,11 +182,8 @@ function rendersBlockerWorklistBox(contract) {
   if (topFindings.length === 0) {
     bodyLines.push('No blockers');
   } else {
-    function appendsTopFindingBlock(finding, index) {
-      if (process.env.LOGME_AUDIT === '1') {
-        LogMe(sampleMethod);
-      }
-
+    for (let index = 0; index < topFindings.length; index += 1) {
+      const finding = topFindings[index];
       const method = findsMethodForFinding(contract, finding);
       const sourcePath = method ? formatsProminentPath(contract, method.filePath) : formatsProminentPath(contract, finding.filePath);
       const lineRange = method ? `${method.lineStart}-${method.lineEnd}` : 'unknown';
@@ -200,8 +201,6 @@ function rendersBlockerWorklistBox(contract) {
         bodyLines.push('');
       }
     }
-
-    topFindings.forEach(appendsTopFindingBlock);
   }
 
   return rendersBox('TOP BLOCKERS', bodyLines);
@@ -216,23 +215,19 @@ function findsMethodForFinding(contract, finding) {
     return null;
   }
 
-  function matchesFindingMethod(method) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
+  for (const method of contract.methods) {
+    if (method.filePath === finding.filePath && method.name === finding.methodName) {
+      return method;
     }
-
-    return method.filePath === finding.filePath && method.name === finding.methodName;
   }
 
-  function matchesFindingPath(method) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
+  for (const method of contract.methods) {
+    if (method.filePath === finding.filePath) {
+      return method;
     }
-
-    return method.filePath === finding.filePath;
   }
 
-  return contract.methods.find(matchesFindingMethod) || contract.methods.find(matchesFindingPath) || null;
+  return null;
 }
 
 function formatsBlockerFixRoute(finding) {
@@ -246,112 +241,29 @@ function formatsBlockerFixRoute(finding) {
     'summary-to-row-mismatch': 'rebuild the summary from the current findings and methods table',
     'unsupported-clean-or-sterile-claim': 'align the verdict with the current findings',
     'executable-body-tree-missing': 'add ordered executable body nodes before the dense tables',
+    'executable-body-contract-missing': 'add explicit executable body nodes to the report contract',
+    'executable-body-tree-shape-mismatch': 'rebuild the node branches so contract, runtime, telemetry, receipt, and status are nested',
   };
 
   return fixRoutes[finding.code] || 'inspect the cited method and rerun the report';
 }
 
-function normalizesExecutionNodes(contract) {
+function formatsProminentPath(contract, filePath) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  if (Array.isArray(contract.executionNodes) && contract.executionNodes.length > 0) {
-    return contract.executionNodes;
+  if (!filePath) {
+    return 'unknown';
   }
 
-  return buildsFallbackExecutionNodes(contract);
-}
-
-function buildsFallbackExecutionNodes(contract) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
+  if (!path.isAbsolute(filePath)) {
+    return filePath;
   }
 
-  const nodes = [];
-  const methodsByPath = new Map();
-
-  if (Array.isArray(contract.methods)) {
-    for (const method of contract.methods) {
-      if (!methodsByPath.has(method.filePath)) {
-        methodsByPath.set(method.filePath, method);
-      }
-    }
-  }
-
-  function findsMethodByPath(filePath) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
-    }
-
-    return methodsByPath.get(filePath) || null;
-  }
-
-  const runId = contract.provenance && contract.provenance.runId ? contract.provenance.runId : 'run-unknown';
-  const receiptFileName = contract.reportPath ? path.basename(contract.reportPath).replace(/\.md$/u, '.receipt.v1.json') : 'report.receipt.v1.json';
-  const telemetryPath = `evidence/runs/${runId}/telemetry.events.v1.jsonl`;
-  const evidenceRunPath = `evidence/runs/${runId}`;
-
-  nodes.push({
-    nodeId: '00',
-    label: 'ACCEPTANCE SOURCE',
-    contractPath: contract.provenance && contract.provenance.configPath ? contract.provenance.configPath : 'unknown',
-    runtimePath: 'not executable',
-    sourceLineRange: 'n/a',
-    telemetryPath: 'not required',
-    observedRuntimeStep: 'not observed',
-    observedDurationMs: 'not observed',
-    receiptPath: 'not required',
-    status: 'ok',
-  });
-
-  const surfaceRuntime = findsMethodByPath('src/runs-logme-domain-audit.js');
-  nodes.push({
-    nodeId: '01',
-    label: 'SURFACE RECEIVES REQUEST',
-    contractPath: contract.configPath || contract.reportPath || 'unknown',
-    runtimePath: surfaceRuntime ? surfaceRuntime.filePath : 'src/runs-logme-domain-audit.js',
-    sourceLineRange: surfaceRuntime ? `${surfaceRuntime.lineStart}-${surfaceRuntime.lineEnd}` : '1-1',
-    telemetryPath,
-    observedRuntimeStep: process.env.LOGME_AUDIT === '1' ? '1' : 'not observed',
-    observedDurationMs: process.env.LOGME_AUDIT === '1' ? 'observed' : 'not observed',
-    receiptPath: `${evidenceRunPath}/${receiptFileName}`,
-    status: process.env.LOGME_AUDIT === '1' ? 'observed' : 'ok',
-  });
-
-  const canonicalRuntime = findsMethodByPath('src/loads-workspace-observability-config/loads-workspace-observability-config.js');
-  const firstFinding = Array.isArray(contract.findings) && contract.findings.length > 0 ? contract.findings[0] : null;
-  const blocked = Boolean(firstFinding) || contract.verdict === 'DOMAIN BODY CONTAMINATED';
-  nodes.push({
-    nodeId: '02',
-    label: 'CANONICAL REQUEST BINDING',
-    contractPath: 'contracts/domains/logme2/workspace-observability-config.schema.v1.json',
-    runtimePath: canonicalRuntime ? canonicalRuntime.filePath : 'src/loads-workspace-observability-config/loads-workspace-observability-config.js',
-    sourceLineRange: canonicalRuntime ? `${canonicalRuntime.lineStart}-${canonicalRuntime.lineEnd}` : '1-1',
-    telemetryPath: blocked ? 'not observed' : telemetryPath,
-    observedRuntimeStep: blocked ? 'not observed' : '2',
-    observedDurationMs: blocked ? 'not observed' : 'observed',
-    receiptPath: blocked ? 'missing' : `${evidenceRunPath}/canonical-request.receipt.v1.json`,
-    status: blocked ? 'blocked' : 'ok',
-    blocker: blocked ? (firstFinding ? firstFinding.code : 'declared-but-silent') : '',
-    fix: blocked ? formatsBlockerFixRoute(firstFinding || { code: 'executable-body-tree-missing' }) : '',
-  });
-
-  const sharedRunnerRuntime = findsMethodByPath('src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js');
-  nodes.push({
-    nodeId: '03',
-    label: 'SHARED RUNNER EXECUTES',
-    contractPath: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json',
-    runtimePath: sharedRunnerRuntime ? sharedRunnerRuntime.filePath : 'src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js',
-    sourceLineRange: sharedRunnerRuntime ? `${sharedRunnerRuntime.lineStart}-${sharedRunnerRuntime.lineEnd}` : '1-1',
-    telemetryPath: telemetryPath,
-    observedRuntimeStep: process.env.LOGME_AUDIT === '1' ? '3' : 'not observed',
-    observedDurationMs: process.env.LOGME_AUDIT === '1' ? 'observed' : 'not observed',
-    receiptPath: `${evidenceRunPath}/runner.receipt.v1.json`,
-    status: blocked ? 'blocked' : 'ok',
-  });
-
-  return nodes;
+  const rootDir = contract.rootDir || process.cwd();
+  const relativePath = path.relative(rootDir, filePath);
+  return relativePath || path.basename(filePath);
 }
 
 function formatsNodeId(node, index) {
@@ -366,126 +278,12 @@ function formatsNodeId(node, index) {
   return String(index).padStart(2, '0');
 }
 
-function formatsNodePath(contract, filePath) {
+function formatsKeyValueLine(label, value) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  if (!filePath || filePath === 'not executable' || filePath === 'not required' || filePath === 'missing' || filePath === 'unknown') {
-    return filePath;
-  }
-
-  if (!path.isAbsolute(filePath)) {
-    return filePath;
-  }
-
-  const rootDir = contract.rootDir || process.cwd();
-  const relativePath = path.relative(rootDir, filePath);
-  return relativePath || path.basename(filePath);
-}
-
-function formatsProminentPath(contract, filePath) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  return formatsNodePath(contract, filePath || 'unknown');
-}
-
-function formatsCompactFieldLine(label, value, status) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  return `${label.padEnd(10)}: ${value}${status ? ` ${status}` : ''}`.trimEnd();
-}
-
-function formatsTelemetryStatus(node, contract) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  if (node.telemetryStatus) {
-    return node.telemetryStatus;
-  }
-
-  if (node.status === 'blocked') {
-    return 'not observed';
-  }
-
-  return contract.verdict === 'STERILE DOMAIN BODY' ? 'observed' : 'not observed';
-}
-
-function formatsReceiptStatus(node, contract) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  if (node.receiptStatus) {
-    return node.receiptStatus;
-  }
-
-  if (node.status === 'blocked') {
-    return 'missing';
-  }
-
-  return contract.verdict === 'STERILE DOMAIN BODY' ? 'written' : 'unknown';
-}
-
-function formatsSourceLineRange(node) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  if (node.sourceLineRange) {
-    return node.sourceLineRange;
-  }
-
-  if (node.lineStart !== undefined && node.lineEnd !== undefined) {
-    return `${node.lineStart}-${node.lineEnd}`;
-  }
-
-  if (node.runtimePath && node.runtimePath !== 'not executable') {
-    return '1-1';
-  }
-
-  return '';
-}
-
-function formatsDuration(node) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  if (node.observedDurationMs !== undefined && node.observedDurationMs !== null && node.observedDurationMs !== '') {
-    if (node.observedDurationMs === 'observed' || node.observedDurationMs === 'not observed') {
-      return 'duration  : not observed';
-    }
-
-    return `duration  : ${node.observedDurationMs}${String(node.observedDurationMs).includes('ms') ? '' : ' ms'}`;
-  }
-
-  if (node.durationMs !== undefined && node.durationMs !== null) {
-    return `duration  : ${node.durationMs} ms`;
-  }
-
-  return '';
-}
-
-function inferNodeStatus(node, contract) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  if (node.status) {
-    return node.status;
-  }
-
-  if (contract.findings && contract.findings.length > 0) {
-    return 'blocked';
-  }
-
-  return 'ok';
+  return `${label.padEnd(27)}: ${value}`;
 }
 
 function rendersBox(title, bodyLines) {
@@ -494,35 +292,24 @@ function rendersBox(title, bodyLines) {
   }
 
   const lines = [title, ...bodyLines];
-  function computesLineWidth(line) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
-    }
+  let width = MIN_BOX_WIDTH;
 
-    return line.length + 4;
+  for (const line of lines) {
+    const lineWidth = line.length + 4;
+    if (lineWidth > width) {
+      width = lineWidth;
+    }
   }
 
-  function formatsContentLine(line) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
-    }
-
-    return `| ${line.padEnd(width - 4)} |`;
-  }
-
-  const width = Math.max(MIN_BOX_WIDTH, ...lines.map(computesLineWidth));
   const border = `+${'-'.repeat(width - 2)}+`;
   const titleLine = `| ${title.padEnd(width - 4)} |`;
-  const contentLines = bodyLines.map(formatsContentLine);
-  return [border, titleLine, border, ...contentLines, border].join('\n');
-}
+  const contentLines = [];
 
-function formatsKeyValueLine(label, value) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
+  for (const line of bodyLines) {
+    contentLines.push(`| ${line.padEnd(width - 4)} |`);
   }
 
-  return `${label.padEnd(27)}: ${value}`;
+  return [border, titleLine, border, ...contentLines, border].join('\n');
 }
 
 module.exports = { rendersAsciiExecutionFlow };

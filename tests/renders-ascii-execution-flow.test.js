@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 
 const { rendersAsciiExecutionFlow } = require('../packages/logme-report-primitives/src/renders-ascii-execution-flow');
 
-test('rendersAsciiExecutionFlow produces a clean ASCII sketch for a sterile report', () => {
+test('rendersAsciiExecutionFlow renders the executable body tree as nested ASCII branches', () => {
   const sketch = rendersAsciiExecutionFlow({
     verdict: 'STERILE DOMAIN BODY',
     rootDir: '/test/root',
@@ -12,71 +12,67 @@ test('rendersAsciiExecutionFlow produces a clean ASCII sketch for a sterile repo
     filesScanned: 2,
     localExecutableMethods: 2,
     findings: [],
-    methods: [
+    executionNodes: [
       {
-        hasLogMeCall: true,
+        nodeId: '00',
+        label: 'ACCEPTANCE SOURCE',
+        branches: [
+          { label: 'gherkin', value: 'docs/report-truth-pi-planning.md' },
+          { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+          { label: 'proves', value: 'report.md opens with the runtime body, evidence, and blockers first' },
+        ],
       },
       {
-        hasLogMeCall: true,
+        nodeId: '01',
+        label: 'SURFACE RECEIVES REQUEST',
+        branches: [
+          { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+          { label: 'runtime', value: 'src/runs-logme-domain-audit.js:7-16' },
+          {
+            label: 'telemetry',
+            children: [
+              { label: 'status        : observed' },
+              { label: 'runtime step  : 1' },
+              { label: 'first seen at : 2026-07-09T12:00:00.000Z' },
+              { label: 'duration ms   : not observed' },
+            ],
+          },
+          { label: 'receipt', value: 'evidence/runs/run-123/report.receipt.v1.json' },
+          {
+            label: 'status',
+            children: [
+              { label: 'ok' },
+            ],
+          },
+        ],
       },
     ],
+    methods: [],
     provenance: {
       runId: 'run-123',
       configPath: '/test/root/logme.config.json',
+      generationTimestamp: '2026-07-09T12:00:00.000Z',
     },
   });
 
   assert.match(sketch, /REPORT TRUTH/);
   assert.match(sketch, /Verdict\s+: STERILE DOMAIN BODY/);
   assert.match(sketch, /Promotion\s+: ALLOWED/);
-  assert.match(sketch, /Gherkin -> Contract -> Source -> Telemetry -> Receipt/);
-  assert.match(sketch, /Telemetry observation\s+: observed/);
-  assert.match(sketch, /Receipt evidence\s+: report\.md/);
-  assert.match(sketch, /EXECUTABLE BODY TREE/);
-  assert.match(sketch, /ACCEPTANCE SOURCE/);
-  assert.match(sketch, /SHARED RUNNER EXECUTES/);
+  assert.match(sketch, /EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE/);
+  assert.match(sketch, /\[00\] ACCEPTANCE SOURCE/);
+  assert.match(sketch, /\|-- gherkin/);
+  assert.match(sketch, /\|   `-- docs\/report-truth-pi-planning\.md/);
+  assert.match(sketch, /\|-- telemetry/);
+  assert.match(sketch, /\|   \|-- status        : observed/);
+  assert.match(sketch, /\|   `-- duration ms   : not observed/);
+  assert.match(sketch, /\|-- receipt/);
+  assert.match(sketch, /\|   `-- evidence\/runs\/run-123\/report\.receipt\.v1\.json/);
+  assert.match(sketch, /\|-- status/);
+  assert.match(sketch, /    `-- ok/);
   assert.doesNotMatch(sketch, /[^\x0A\x0D\x20-\x7E]/);
 });
 
-test('rendersAsciiExecutionFlow highlights a blocked report and blocker count', () => {
-  const sketch = rendersAsciiExecutionFlow({
-    verdict: 'DOMAIN BODY CONTAMINATED',
-    rootDir: '/test/root',
-    reportPath: '/test/root/report.md',
-    configPath: '/test/root/logme.config.json',
-    filesScanned: 2,
-    localExecutableMethods: 2,
-    findings: [
-      {
-        code: 'unimplemented-stub-detected',
-      },
-    ],
-    methods: [
-      {
-        hasLogMeCall: true,
-      },
-      {
-        hasLogMeCall: false,
-      },
-    ],
-    provenance: {
-      runId: 'run-456',
-      configPath: '/test/root/logme.config.json',
-    },
-  });
-
-  assert.match(sketch, /Promotion\s+: BLOCKED/);
-  assert.match(sketch, /Declared Source -> Static Inventory -> Telemetry -> Receipt/);
-  assert.match(sketch, /Telemetry observation\s+: not observed/);
-  assert.match(sketch, /Blocker count\s+: 1/);
-  assert.match(sketch, /TOP BLOCKERS/);
-  assert.match(sketch, /finding code/i);
-  assert.match(sketch, /unimplemented-stub-detected/);
-  assert.match(sketch, /one-line fix/i);
-  assert.doesNotMatch(sketch, /[^\x0A\x0D\x20-\x7E]/);
-});
-
-test('rendersAsciiExecutionFlow prefers explicit execution nodes when provided', () => {
+test('rendersAsciiExecutionFlow fails closed when executable body nodes are missing', () => {
   const sketch = rendersAsciiExecutionFlow({
     verdict: 'DOMAIN BODY CONTAMINATED',
     rootDir: '/test/root',
@@ -86,37 +82,8 @@ test('rendersAsciiExecutionFlow prefers explicit execution nodes when provided',
     localExecutableMethods: 1,
     findings: [
       {
-        code: 'executable-body-tree-missing',
-        filePath: '/test/root/src/example.js',
-        methodName: 'exampleMethod',
-      },
-    ],
-    executionNodes: [
-      {
-        nodeId: '00',
-        label: 'ACCEPTANCE SOURCE',
-        contractPath: 'docs/features/example.feature.md',
-        runtimePath: 'not executable',
-        sourceLineRange: 'n/a',
-        telemetryPath: 'not required',
-        observedRuntimeStep: 'not observed',
-        observedDurationMs: 'not observed',
-        receiptPath: 'not required',
-        status: 'ok',
-      },
-      {
-        nodeId: '01',
-        label: 'CANONICAL REQUEST BINDING',
-        contractPath: 'contracts/example.json',
-        runtimePath: 'src/example.js:1-9',
-        sourceLineRange: '1-9',
-        telemetryPath: 'not observed',
-        observedRuntimeStep: 'not observed',
-        observedDurationMs: 'not observed',
-        receiptPath: 'missing',
-        status: 'blocked',
-        blocker: 'executable-body-tree-missing',
-        fix: 'add ordered executable body nodes before the dense tables',
+        code: 'executable-body-contract-missing',
+        filePath: '/test/root/report.md',
       },
     ],
     methods: [],
@@ -126,10 +93,9 @@ test('rendersAsciiExecutionFlow prefers explicit execution nodes when provided',
     },
   });
 
-  assert.match(sketch, /EXECUTABLE BODY TREE/);
-  assert.match(sketch, /docs\/features\/example\.feature\.md/);
-  assert.match(sketch, /CANONICAL REQUEST BINDING/);
-  assert.match(sketch, /blocked/);
-  assert.match(sketch, /executable-body-tree-missing/);
-  assert.match(sketch, /add ordered executable body nodes before the dense tables/);
+  assert.match(sketch, /EXECUTABLE BODY TREE: missing/);
+  assert.match(sketch, /DOMAIN BODY CONTAMINATED/);
+  assert.match(sketch, /Promotion\s+: BLOCKED/);
+  assert.match(sketch, /executable-body-contract-missing/);
+  assert.doesNotMatch(sketch, /DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE/);
 });

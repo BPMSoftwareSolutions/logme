@@ -4,6 +4,92 @@ const assert = require('node:assert/strict');
 const { rendersDomainBodySterilityReport } = require('../src/renders-domain-body-sterility-report/renders-domain-body-sterility-report');
 const { buildsReportProvenance } = require('../src/report-provenance/report-provenance');
 
+function buildsExecutionNodes() {
+  return [
+    {
+      nodeId: '00',
+      label: 'ACCEPTANCE SOURCE',
+      branches: [
+        { label: 'gherkin', value: 'docs/report-truth-pi-planning.md' },
+        { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+        { label: 'proves', value: 'report.md opens with the runtime body, evidence, and blockers first' },
+      ],
+    },
+    {
+      nodeId: '01',
+      label: 'SURFACE RECEIVES REQUEST',
+      branches: [
+        { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+        { label: 'runtime', value: 'src/runs-logme-domain-audit.js:7-16' },
+        {
+          label: 'telemetry',
+          children: [
+            { label: 'status        : observed' },
+            { label: 'runtime step  : 1' },
+            { label: 'first seen at : 2026-07-09T12:00:00.000Z' },
+            { label: 'duration ms   : not observed' },
+          ],
+        },
+        { label: 'receipt', value: 'evidence/runs/run-123/report.receipt.v1.json' },
+        {
+          label: 'status',
+          children: [
+            { label: 'ok' },
+          ],
+        },
+      ],
+    },
+    {
+      nodeId: '02',
+      label: 'CANONICAL REQUEST BINDING',
+      branches: [
+        { label: 'contract', value: 'contracts/domains/logme2/workspace-observability-config.schema.v1.json' },
+        { label: 'runtime', value: 'src/loads-workspace-observability-config/loads-workspace-observability-config.js:10-32' },
+        {
+          label: 'telemetry',
+          children: [
+            { label: 'status        : observed' },
+            { label: 'runtime step  : 2' },
+            { label: 'first seen at : 2026-07-09T12:00:00.000Z' },
+            { label: 'duration ms   : not observed' },
+          ],
+        },
+        { label: 'receipt', value: 'evidence/runs/run-123/canonical-request.receipt.v1.json' },
+        {
+          label: 'status',
+          children: [
+            { label: 'ok' },
+          ],
+        },
+      ],
+    },
+    {
+      nodeId: '03',
+      label: 'SHARED RUNNER EXECUTES',
+      branches: [
+        { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+        { label: 'runtime', value: 'src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js:15-48' },
+        {
+          label: 'telemetry',
+          children: [
+            { label: 'status        : observed' },
+            { label: 'runtime step  : 3' },
+            { label: 'first seen at : 2026-07-09T12:00:00.000Z' },
+            { label: 'duration ms   : not observed' },
+          ],
+        },
+        { label: 'receipt', value: 'evidence/runs/run-123/runner.receipt.v1.json' },
+        {
+          label: 'status',
+          children: [
+            { label: 'ok' },
+          ],
+        },
+      ],
+    },
+  ];
+}
+
 test('rendersDomainBodySterilityReport builds report with title, config, laws, sterility summary, findings, and methods table', () => {
   const contract = {
     domainContract: {
@@ -113,6 +199,7 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
         lineEnd: 40,
       },
     ],
+    executionNodes: buildsExecutionNodes(),
   };
 
   const report = rendersDomainBodySterilityReport(contract);
@@ -125,7 +212,17 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
   assert.match(report, /```text/);
   assert.match(report, /REPORT TRUTH/);
   assert.match(report, /Promotion\s+: BLOCKED/);
-  assert.match(report, /EXECUTABLE BODY TREE/);
+  assert.match(report, /EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE/);
+  assert.match(report, /\[00\] ACCEPTANCE SOURCE/);
+  assert.match(report, /\|-- gherkin/);
+  assert.match(report, /\|   `-- docs\/report-truth-pi-planning\.md/);
+  assert.match(report, /\|-- telemetry/);
+  assert.match(report, /\|   \|-- status        : observed/);
+  assert.match(report, /\|   `-- duration ms   : not observed/);
+  assert.match(report, /\|-- receipt/);
+  assert.match(report, /\|   `-- evidence\/runs\/run-123\/report\.receipt\.v1\.json/);
+  assert.match(report, /\|-- status/);
+  assert.match(report, /`-- ok/);
   assert.match(report, /TOP BLOCKERS/);
   assert.match(report, /## Blocker Summary/);
   assert.match(report, /finding code: test-finding-1/);
@@ -274,6 +371,7 @@ test('rendersDomainBodySterilityReport shows stub findings in the report body', 
         lineEnd: 3,
       },
     ],
+    executionNodes: buildsExecutionNodes(),
   };
 
   const report = rendersDomainBodySterilityReport(contract);
@@ -284,7 +382,10 @@ test('rendersDomainBodySterilityReport shows stub findings in the report body', 
   assert.match(report, /scaffolded stub not implemented/);
   assert.match(report, /## Execution Flow Sketch/);
   assert.match(report, /Promotion\s+: BLOCKED/);
-  assert.match(report, /Telemetry observation\s+: not observed/);
+  assert.match(report, /EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE/);
+  assert.match(report, /\|-- telemetry/);
+  assert.match(report, /\|   \|-- status        : observed/);
+  assert.match(report, /\|   `-- duration ms   : not observed/);
   assert.match(report, /## Blocker Summary/);
   assert.match(report, /finding code: unimplemented-stub-detected/);
   assert.match(report, /telemetry status: observed/);

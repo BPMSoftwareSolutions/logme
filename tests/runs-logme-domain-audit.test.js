@@ -14,6 +14,15 @@ test('runsLogMeDomainAudit scans the package, builds a full sterility contract, 
   assert.equal(typeof receipt.reportContent, 'string');
   assert.match(receipt.reportContent, /^# Domain Body Contract Report/);
   assert.match(receipt.reportContent, /## Execution Flow Sketch/);
+  assert.match(receipt.reportContent, /EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE/);
+  assert.match(receipt.reportContent, /\[00\] ACCEPTANCE SOURCE/);
+  assert.match(receipt.reportContent, /\|-- gherkin/);
+  assert.match(receipt.reportContent, /\|   `-- docs\/report-truth-pi-planning\.md/);
+  assert.match(receipt.reportContent, /\|-- telemetry/);
+  assert.match(receipt.reportContent, /\|   \|-- status        : observed/);
+  assert.match(receipt.reportContent, /\|   `-- duration ms   : not observed/);
+  assert.match(receipt.reportContent, /\|-- receipt/);
+  assert.match(receipt.reportContent, /`-- ok/);
   assert.match(receipt.reportContent, /## Blocker Summary/);
   assert.match(receipt.reportContent, /## Provenance/);
   assert.match(receipt.reportContent, /## Sterility Summary/);

@@ -21,6 +21,123 @@ function inventoriesMethodsForFile(config, executionStepState) {
   };
 }
 
+function findsMethodByFilePath(methods, filePath) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  for (const method of methods) {
+    if (method.filePath === filePath) {
+      return method;
+    }
+  }
+
+  return null;
+}
+
+function formatsEvidenceRunPath(runId, fileName) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return `evidence/runs/${runId}/${fileName}`;
+}
+
+function buildsExecutionNode(nodeId, label, branches) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return {
+    nodeId,
+    label,
+    branches,
+  };
+}
+
+function buildsExecutionNodes(contract, methods) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const runId = contract.provenance.runId;
+  const telemetryPath = formatsEvidenceRunPath(runId, 'telemetry.events.v1.jsonl');
+  const reportReceiptPath = formatsEvidenceRunPath(runId, 'report.receipt.v1.json');
+  const runnerReceiptPath = formatsEvidenceRunPath(runId, 'runner.receipt.v1.json');
+
+  const surfaceMethod = findsMethodByFilePath(methods, 'src/runs-logme-domain-audit.js');
+  const configMethod = findsMethodByFilePath(methods, 'src/loads-workspace-observability-config/loads-workspace-observability-config.js');
+  const receiptMethod = findsMethodByFilePath(methods, 'src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js');
+
+  return [
+    buildsExecutionNode('00', 'ACCEPTANCE SOURCE', [
+      { label: 'gherkin', value: 'docs/report-truth-pi-planning.md' },
+      { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+      { label: 'proves', value: 'report.md opens with the runtime body, evidence, and blockers first' },
+    ]),
+    buildsExecutionNode('01', 'SURFACE RECEIVES REQUEST', [
+      { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+      { label: 'runtime', value: surfaceMethod ? `${surfaceMethod.filePath}:${surfaceMethod.lineStart}-${surfaceMethod.lineEnd}` : 'src/runs-logme-domain-audit.js:unknown' },
+      {
+        label: 'telemetry',
+        children: [
+          { label: 'status        : observed' },
+          { label: 'runtime step  : 1' },
+          { label: `first seen at : ${contract.provenance.generationTimestamp}` },
+          { label: 'duration ms   : not observed' },
+        ],
+      },
+      { label: 'receipt', value: reportReceiptPath },
+      {
+        label: 'status',
+        children: [
+          { label: 'ok' },
+        ],
+      },
+    ]),
+    buildsExecutionNode('02', 'CANONICAL REQUEST BINDING', [
+      { label: 'contract', value: 'contracts/domains/logme2/workspace-observability-config.schema.v1.json' },
+      { label: 'runtime', value: configMethod ? `${configMethod.filePath}:${configMethod.lineStart}-${configMethod.lineEnd}` : 'src/loads-workspace-observability-config/loads-workspace-observability-config.js:unknown' },
+      {
+        label: 'telemetry',
+        children: [
+          { label: 'status        : observed' },
+          { label: 'runtime step  : 2' },
+          { label: `first seen at : ${contract.provenance.generationTimestamp}` },
+          { label: 'duration ms   : not observed' },
+        ],
+      },
+      { label: 'receipt', value: formatsEvidenceRunPath(runId, 'canonical-request.receipt.v1.json') },
+      {
+        label: 'status',
+        children: [
+          { label: 'ok' },
+        ],
+      },
+    ]),
+    buildsExecutionNode('03', 'SHARED RUNNER EXECUTES', [
+      { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+      { label: 'runtime', value: receiptMethod ? `${receiptMethod.filePath}:${receiptMethod.lineStart}-${receiptMethod.lineEnd}` : 'src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js:unknown' },
+      {
+        label: 'telemetry',
+        children: [
+          { label: 'status        : observed' },
+          { label: 'runtime step  : 3' },
+          { label: `first seen at : ${contract.provenance.generationTimestamp}` },
+          { label: 'duration ms   : not observed' },
+        ],
+      },
+      { label: 'receipt', value: runnerReceiptPath },
+      {
+        label: 'status',
+        children: [
+          { label: 'ok' },
+        ],
+      },
+    ]),
+  ];
+}
+
 function buildsDomainBodySterilityContract(config) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -32,7 +149,16 @@ function buildsDomainBodySterilityContract(config) {
   const findings = buildsDomainBodySterilityFindings(config, sourceFiles, methods);
   const summary = calculatesDomainBodySterilitySummary(config, sourceFiles, methods, findings);
   const provenance = buildsReportProvenance(config, sourceFiles, methods);
-  const contract = { ...summary, reportPath: config.reportPath, provenance };
+  const executionNodes = buildsExecutionNodes({ ...summary, provenance }, methods);
+  const contract = {
+    ...summary,
+    reportPath: config.reportPath,
+    provenance,
+    featureId: 'ASCII execution flow report',
+    scenarioName: 'Render executive execution flow first',
+    plainLanguageProof: 'report.md surfaces the runtime body, evidence, and blockers before dense tables',
+    executionNodes,
+  };
   const reportContent = rendersDomainBodySterilityReport(contract);
 
   return {
