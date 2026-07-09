@@ -29,7 +29,14 @@ test('writesHarnessReceipt writes an evidence packet under evidence/runs/fractal
       buildsPromotionDecision(),
       { leasedPaths: ['/tmp/harness-abc'], writtenFiles: ['body-contract.json', 'index.js'] },
       { exitCode: 0, timedOut: false, startedAt: '2026-01-01T00:00:00.000Z', finishedAt: '2026-01-01T00:00:01.000Z' },
-      { evidenceRoot: tempDir },
+      {
+        evidenceRoot: tempDir,
+        geminiAttestation: {
+          model: 'gemini-2.5-flash',
+          finishReason: 'STOP',
+          usage: { promptTokenCount: 10, candidatesTokenCount: 20 },
+        },
+      },
     );
 
     assert.equal(fs.existsSync(result.receiptPath), true);
@@ -37,6 +44,9 @@ test('writesHarnessReceipt writes an evidence packet under evidence/runs/fractal
     assert.ok(result.bytesWritten > 0);
     assert.equal(result.receiptContent.schemaVersion, 'harness-execution.receipt.v1');
     assert.equal(result.receiptContent.promotionDecision.decision, 'PROMOTED');
+    assert.equal(result.receiptContent.signing.provider, 'gemini');
+    assert.equal(result.receiptContent.signing.model, 'gemini-2.5-flash');
+    assert.equal(result.receiptContent.signing.signatureAlgorithm, 'sha256');
 
     const fileContent = JSON.parse(fs.readFileSync(result.receiptPath, 'utf8'));
     assert.deepEqual(fileContent.promotionDecision, buildsPromotionDecision());
@@ -53,12 +63,20 @@ test('writesHarnessReceipt records the materialization and run summaries', () =>
       buildsPromotionDecision({ decision: 'BLOCKED' }),
       { leasedPaths: ['/tmp/harness-abc'], writtenFiles: ['body-contract.json'] },
       { exitCode: 1, timedOut: false, startedAt: '2026-01-01T00:00:00.000Z', finishedAt: '2026-01-01T00:00:02.000Z' },
-      { evidenceRoot: tempDir },
+      {
+        evidenceRoot: tempDir,
+        geminiAttestation: {
+          model: 'gemini-2.5-flash',
+          finishReason: 'STOP',
+          usage: { promptTokenCount: 10, candidatesTokenCount: 20 },
+        },
+      },
     );
 
     assert.equal(result.receiptContent.runSummary.exitCode, 1);
     assert.deepEqual(result.receiptContent.materializationSummary.writtenFiles, ['body-contract.json']);
     assert.equal(result.receiptContent.promotionDecision.decision, 'BLOCKED');
+    assert.equal(result.receiptContent.signing.provider, 'gemini');
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }

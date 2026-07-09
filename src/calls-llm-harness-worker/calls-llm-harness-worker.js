@@ -1,7 +1,7 @@
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
 
-const GEMINI_MODEL = 'gemini-2.0-flash';
+const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 const HARNESS_OUTPUT_DRAFT_FIELDS = [

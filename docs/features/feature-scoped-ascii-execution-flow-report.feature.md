@@ -62,7 +62,11 @@ Feature: Feature-scoped ASCII execution flow report
       | source line range |
       | telemetry path |
       | observed runtime step |
+      | first seen at |
+      | last seen at |
       | observed duration ms |
+      | elapsed since previous node ms |
+      | call count |
       | receipt path |
       | status |
       | blocker |
@@ -130,7 +134,10 @@ Feature: Feature-scoped ASCII execution flow report
       |   |-- status        : observed
       |   |-- runtime step  : 1
       |   |-- first seen at : <timestamp>
-      |   `-- duration ms   : <duration-ms>
+      |   |-- last seen at  : <timestamp>
+      |   |-- duration ms   : <duration-ms>
+      |   |-- elapsed prev  : <elapsed-ms>
+      |   `-- call count    : <count>
       |
       |-- receipt
       |   `-- evidence/runs/<run-id>/<surface>.receipt.v1.json
@@ -149,7 +156,10 @@ Feature: Feature-scoped ASCII execution flow report
       |   |-- status        : not observed
       |   |-- runtime step  : not observed
       |   |-- first seen at : not observed
-      |   `-- duration ms   : not observed
+      |   |-- last seen at  : not observed
+      |   |-- duration ms   : not observed
+      |   |-- elapsed prev  : not observed
+      |   `-- call count    : not observed
       |
       |-- receipt
       |   `-- missing
@@ -178,6 +188,21 @@ Feature: Feature-scoped ASCII execution flow report
     And the tree should use nested ASCII branches to show body ownership
     And the tree should appear before dense method tables
     And the tree should show blockers inline under the body node where truth broke.
+
+  Scenario: Render timing and call count facts from canonical JSON proof
+    Given `feature-execution.contract.v1.json` exists for a feature scenario
+    And the JSON proof contains observed node timing and call-count facts
+    When the ASCII execution sketch is rendered
+    Then every executable node should show:
+      | telemetry fact |
+      | first seen at |
+      | last seen at |
+      | duration ms |
+      | elapsed since previous node ms |
+      | call count |
+    And the values should match the canonical JSON proof exactly
+    And a node with missing telemetry should render `not observed` for each missing timing fact
+    And the sketch should not calculate or round timing values independently from the JSON proof.
 
   Scenario: Reject boxed node list when hierarchical body tree is required
     Given a feature-scoped executable body report contains an `EXECUTABLE BODY TREE` section
