@@ -10,8 +10,20 @@ function exampleMethod(firstName, lastName) {
 test('LogMe(fn) testifies about a function and returns its telemetry event', () => {
   const event = LogMe(exampleMethod);
 
+  assert.equal(typeof event.executionStep, 'number');
   assert.equal(event.name, 'exampleMethod');
   assert.equal(Array.isArray(event.source), true);
+});
+
+test('LogMe(fn) records executionStep in the order LogMe is called at runtime', () => {
+  function secondExampleMethod() {
+    return 'second';
+  }
+
+  const firstEvent = LogMe(exampleMethod);
+  const secondEvent = LogMe(secondExampleMethod);
+
+  assert.equal(secondEvent.executionStep, firstEvent.executionStep + 1);
 });
 
 test('LogMe(fn) does not recurse infinitely when LOGME_AUDIT is set', () => {

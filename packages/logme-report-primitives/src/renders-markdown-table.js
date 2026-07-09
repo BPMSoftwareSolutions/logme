@@ -11,18 +11,34 @@ function rendersMarkdownTable(methods) {
     return '_No methods found._';
   }
 
+  const includesExecutionStep = methods.some(hasExecutionStep);
+
+  function hasExecutionStep(method) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    return method.executionStep !== undefined;
+  }
+
   function buildsMethodRow(method) {
     if (process.env.LOGME_AUDIT === '1') {
       LogMe(sampleMethod);
     }
 
-    return [
+    const row = [
       String(method.scanOrder),
       method.name,
       method.kind,
       method.hasLogMeCall ? 'yes' : 'no',
       `${method.filePath}:${method.lineStart}-${method.lineEnd}`,
     ];
+
+    if (includesExecutionStep) {
+      row.splice(1, 0, method.executionStep === undefined ? '' : String(method.executionStep));
+    }
+
+    return row;
   }
 
   const methodRows = methods.map(buildsMethodRow);
@@ -36,8 +52,12 @@ function rendersMarkdownTable(methods) {
   }
 
   const tableLines = [
-    '| Scan Order | Method | Kind | LogMe | Location |',
-    '| --- | --- | --- | --- | --- |',
+    includesExecutionStep
+      ? '| Scan Order | Execution Step | Method | Kind | LogMe | Location |'
+      : '| Scan Order | Method | Kind | LogMe | Location |',
+    includesExecutionStep
+      ? '| --- | --- | --- | --- | --- | --- |'
+      : '| --- | --- | --- | --- | --- |',
     ...methodRows.map(formatsRowAsMarkdown),
   ];
 

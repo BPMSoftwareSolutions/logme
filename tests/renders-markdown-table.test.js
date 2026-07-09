@@ -87,3 +87,23 @@ test('rendersMarkdownTable joins all rows with newlines', () => {
   assert(lines[2].includes('methodOne'));
   assert(lines[3].includes('methodTwo'));
 });
+
+test('rendersMarkdownTable shows executionStep separately when runtime step data exists', () => {
+  const methods = [
+    {
+      scanOrder: 1,
+      executionStep: 3,
+      name: 'methodOne',
+      kind: 'function',
+      hasLogMeCall: true,
+      filePath: 'src/foo.js',
+      lineStart: 10,
+      lineEnd: 20,
+    },
+  ];
+
+  const result = rendersMarkdownTable(methods);
+
+  assert.match(result, /\| Scan Order \| Execution Step \| Method \| Kind \| LogMe \| Location \|/);
+  assert.match(result, /\| 1 \| 3 \| methodOne \| function \| yes \| src\/foo\.js:10-20 \|/);
+});
