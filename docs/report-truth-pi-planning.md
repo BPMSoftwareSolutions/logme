@@ -58,6 +58,7 @@ Targeted verification performed:
 | Absolute paths are rendered | The report is machine-local and not portable across reviewers or CI. | Render repo-relative paths and include one normalized root. |
 | `domainBoundMethods` equals all methods by construction | The report claims domain ownership without independent ownership proof. | Require ownership evidence or label the metric as inventory count. |
 | `Execution Step` can read as runtime order | The column is currently derived from audit/inventory sequencing unless tied to telemetry. | Rename or prove the field with telemetry and execution signature evidence. |
+| Runtime timing can be confused with static scan data | Line numbers come from source inventory, but execution step, timestamp, and duration must come from observed runtime telemetry. | Separate static source facts from telemetry-observed runtime facts. |
 | `includeTestFiles` is `no` | The report cannot claim test support or TDD coverage from the current scan. | Add explicit test evidence before any tested/support claim. |
 | External package methods are summarized as ignored | The report says package-governed without linking a package contract or receipt. | Require package governance proof or show as unverified. |
 | Clean report labels are configured text | A label like "No findings" can be rendered if the contract says so, unless guarded by count validation. | Gate clean labels on computed zero findings. |
@@ -242,6 +243,43 @@ Feature: Projection language honesty
     When the method table is rendered
     Then the column may be labeled `Execution Step`
     And the row should show declared step, observed step, telemetry status, and receipt status.
+
+  Scenario: Separate source location from runtime observation
+    Given a method is discovered by static source inventory
+    When the method table is rendered
+    Then the report should show source facts as:
+      | source fact |
+      | declared path |
+      | method name |
+      | method kind |
+      | line start |
+      | line end |
+      | inventory step |
+    And the report should show runtime facts only from telemetry as:
+      | runtime fact |
+      | observed runtime step |
+      | first observed at |
+      | last observed at |
+      | duration ms |
+      | telemetry status |
+    And the report should not derive runtime facts from scan order, file order, or line numbers.
+
+  Scenario: Mark unobserved runtime methods explicitly
+    Given a method is present in source inventory
+    But no telemetry event is observed for that method during the run
+    When the method table is rendered
+    Then runtime step should be `not observed`
+    And first observed at should be `not observed`
+    And duration ms should be `not observed`
+    And telemetry status should be `missing`
+    And the row should not show `0ms`, blank duration, or any value that can be read as successful runtime observation.
+
+  Scenario: Require duration evidence for execution time
+    Given telemetry observes a method during runtime
+    When the report renders execution timing
+    Then duration ms should come from a telemetry event containing start and end time or an explicit duration
+    And the telemetry event should reference the same method name and source path as the method inventory row
+    And the report should block execution timing claims when duration evidence is missing.
 
   Scenario: Block proof language without evidence paths
     Given the report text contains "proof", "supported", "runtime", "execution", or "receipt"

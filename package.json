@@ -4,6 +4,8 @@
   "description": "LogMe audits a configured workspace: it discovers source files, inventories every executable method, checks that each one testifies with a LogMe(...) call, and rejects silent, anonymous, or generically-named code. It renders the result as a domain body sterility report.",
   "main": "src/runs-logme-domain-audit.js",
   "scripts": {
+    "report:truth": "node scripts/report-truth.js",
+    "report:truth:fast": "node scripts/report-truth.js --fast",
     "test": "node --test tests/"
   },
   "dependencies": {

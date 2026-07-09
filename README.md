@@ -35,10 +35,24 @@ vocabulary a method name must stay within, and the full domain contract
 
 ```sh
 node --test tests/
-node -e "console.log(require('./src/runs-logme-domain-audit').runsLogMeDomainAudit().reportContent)"
+npm run report:truth
+npm run report:truth:fast
 ```
 
-The second command regenerates `report.md` and prints its verdict.
+The report-truth commands regenerate the contract from current source, check
+freshness and verdict derivation, and fail when the report is contaminated.
+The fast variant skips evidence publication for watch-mode use.
+
+## Git hooks
+
+To use the bundled hooks, point Git at the repository hook directory:
+
+```sh
+git config core.hooksPath .githooks
+```
+
+The pre-commit and pre-push hooks run `npm run report:truth` and block the
+action when the report truth gate fails.
 
 ## PI planning
 
