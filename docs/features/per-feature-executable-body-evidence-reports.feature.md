@@ -1,3 +1,4 @@
+```gherkin
 Feature: Per-feature executable body evidence reports
 
   As an adversarial product owner
@@ -88,3 +89,4 @@ Feature: Per-feature executable body evidence reports
     And a feature run is executed again
     Then the regenerated feature evidence report should use the updated template
     And no code deployment should be required for layout-only changes.
+```

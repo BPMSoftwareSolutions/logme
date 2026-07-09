@@ -1,3 +1,4 @@
+```gherkin
 Feature: PI readiness gate for report truth
 
   As an enterprise product owner
@@ -24,3 +25,4 @@ Feature: PI readiness gate for report truth
     When the PI readiness gate runs
     Then the PI verdict should be PASS
     And report.md may be promoted as a truthful projection for that run.
+```

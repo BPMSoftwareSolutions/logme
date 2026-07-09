@@ -1,3 +1,4 @@
+```gherkin
 Feature: Development-time report truth guardrails
 
   As an adversarial product owner
@@ -60,3 +61,4 @@ Feature: Development-time report truth guardrails
       | silent local methods |
       | anonymous executable methods |
       | unsupported clean or sterile claim |
+```

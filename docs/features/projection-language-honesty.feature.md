@@ -1,3 +1,4 @@
+```gherkin
 Feature: Projection language honesty
 
   As an adversarial product owner
@@ -64,3 +65,4 @@ Feature: Projection language honesty
     And the finding code should be:
       | finding |
       | projection-language-overclaim |
+```

@@ -1,3 +1,4 @@
+```gherkin
 Feature: Gherkin-driven report development
 
   As a product owner
@@ -19,3 +20,4 @@ Feature: Gherkin-driven report development
     And the finding code should be:
       | finding |
       | report-section-without-acceptance-source |
+```

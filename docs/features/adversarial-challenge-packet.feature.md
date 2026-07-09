@@ -1,3 +1,4 @@
+```gherkin
 Feature: Adversarial challenge packet
 
   As an adversarial product owner
@@ -33,3 +34,4 @@ Feature: Adversarial challenge packet
       | finding |
       | false-pass-claim |
       | report-overclaims-evidence |
+```

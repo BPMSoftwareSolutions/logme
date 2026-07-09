@@ -1,3 +1,4 @@
+```gherkin
 Feature: Data-driven report layout
 
   As an adversarial product owner
@@ -74,3 +75,4 @@ Feature: Data-driven report layout
     When a report presentation change is requested
     Then the expected change should be made in product-owned report contracts or templates
     And renderer source code should change only when a new rendering primitive, validator, or data field is needed.
+```

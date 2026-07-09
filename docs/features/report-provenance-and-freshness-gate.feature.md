@@ -1,3 +1,4 @@
+```gherkin
 Feature: Report provenance and freshness gate
 
   As an adversarial product owner
@@ -31,3 +32,4 @@ Feature: Report provenance and freshness gate
       | stale-report-projection |
       | report-source-hash-mismatch |
     And the report should not claim a clean or sterile state.
+```

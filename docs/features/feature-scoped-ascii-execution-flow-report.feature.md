@@ -1,3 +1,4 @@
+```gherkin
 Feature: Feature-scoped ASCII execution flow report
 
   As an adversarial product owner
@@ -359,3 +360,4 @@ Feature: Feature-scoped ASCII execution flow report
       +------------------------------------------------------------+
       """
     And the report should not bury the blocked state below prose or dense tables.
+```

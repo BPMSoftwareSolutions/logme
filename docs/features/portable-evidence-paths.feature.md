@@ -1,3 +1,4 @@
+```gherkin
 Feature: Portable evidence paths
 
   As a reviewer
@@ -18,3 +19,4 @@ Feature: Portable evidence paths
     And the finding code should be:
       | finding |
       | report-path-not-portable |
+```

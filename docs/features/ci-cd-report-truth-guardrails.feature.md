@@ -1,3 +1,4 @@
+```gherkin
 Feature: CI/CD report truth guardrails
 
   As an adversarial product owner
@@ -54,3 +55,4 @@ Feature: CI/CD report truth guardrails
     And every required receipt should exist
     And every report section should trace to Gherkin acceptance criteria
     And promotion should fail if any proof is missing.
+```

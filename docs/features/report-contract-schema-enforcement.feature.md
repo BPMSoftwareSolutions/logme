@@ -1,3 +1,4 @@
+```gherkin
 Feature: Report contract schema enforcement
 
   As an enterprise product owner
@@ -35,3 +36,4 @@ Feature: Report contract schema enforcement
       | finding |
       | report-schema-empty |
       | report-contract-not-enforced |
+```

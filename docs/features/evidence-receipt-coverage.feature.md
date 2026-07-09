@@ -1,3 +1,4 @@
+```gherkin
 Feature: Evidence receipt coverage
 
   As an enterprise product owner
@@ -28,3 +29,4 @@ Feature: Evidence receipt coverage
     And the finding code should be:
       | finding |
       | report-verdict-without-receipt |
+```

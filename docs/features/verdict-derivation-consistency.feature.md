@@ -1,3 +1,4 @@
+```gherkin
 Feature: Verdict derivation consistency
 
   As an enterprise product owner
@@ -21,3 +22,4 @@ Feature: Verdict derivation consistency
     And the report freshness gate passes
     When the verdict is derived
     Then the verdict may be `STERILE DOMAIN BODY`.
+```

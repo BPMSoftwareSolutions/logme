@@ -1,3 +1,4 @@
+```gherkin
 Feature: Domain ownership boundary proof
 
   As an enterprise architect
@@ -23,3 +24,4 @@ Feature: Domain ownership boundary proof
     And the finding code should be:
       | finding |
       | package-governance-unproven |
+```

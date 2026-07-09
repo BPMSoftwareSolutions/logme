@@ -1,3 +1,4 @@
+```gherkin
 Feature: Summary, findings, and method row tie-out
 
   As an adversarial product owner
@@ -28,3 +29,4 @@ Feature: Summary, findings, and method row tie-out
     And the finding code should be:
       | finding |
       | clean-label-with-findings |
+```
