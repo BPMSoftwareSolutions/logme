@@ -478,6 +478,67 @@ Feature: ASCII execution flow report
     And the tree should appear before dense method tables
     And the tree should show blockers inline under the body node where truth broke.
 
+  Scenario: Reject boxed node list when hierarchical body tree is required
+    Given report.md contains an `EXECUTABLE BODY TREE` section
+    But the section renders body nodes as flat boxed rows
+    And the section does not render nested ASCII branches under each body node
+    When the report presentation gate runs
+    Then the report should fail
+    And the finding code should be:
+      | finding |
+      | executable-body-tree-shape-mismatch |
+    And the failure should explain that each node must contain branch groups for:
+      | required branch |
+      | contract |
+      | runtime |
+      | telemetry |
+      | receipt |
+      | status |
+
+  Scenario: Require branch assertions in report tests
+    Given the report renderer has tests for ASCII execution flow
+    When the test suite validates the executable body tree
+    Then the tests should assert that the rendered report contains branch lines matching:
+      | required line pattern |
+      | `[00] ACCEPTANCE SOURCE` |
+      | `|-- gherkin` |
+      | `` `-- docs/features/` |
+      | `[01] ` |
+      | `|-- contract` |
+      | `|-- runtime` |
+      | `|-- telemetry` |
+      | `|   |-- status` |
+      | `|   |-- runtime step` |
+      | `` |   `-- duration ms `` |
+      | `|-- receipt` |
+      | `` `-- status `` |
+    And the tests should fail when the report only contains a box title, node labels, and flat `contract :`, `runtime :`, `telemetry :`, `receipt :`, or `status :` rows.
+
+  Scenario: Reject invented fallback execution body tree for promotion
+    Given no explicit executable body contract nodes are provided
+    And no product-owned report data contract declares `executionNodes`
+    When report.md is rendered
+    Then the renderer should not invent fallback body nodes
+    And the report should show:
+      """
+      EXECUTABLE BODY TREE: missing
+      """
+    And promotion should be BLOCKED
+    And the finding code should be:
+      | finding |
+      | executable-body-contract-missing |
+
+  Scenario: Use fallback only as a non-promotable development diagnostic
+    Given the renderer is running in an explicitly requested local diagnostic mode
+    And no executable body contract nodes are available
+    When a fallback sketch is rendered
+    Then the fallback sketch should be labeled:
+      """
+      DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE
+      """
+    And the report verdict should not be promoted from the fallback sketch
+    And telemetry, receipt, status, and duration fields should not show successful values unless backed by real evidence.
+
   Scenario: Render blocked ASCII body tree shape
     Given an executable body node is missing telemetry or receipt evidence
     When the ASCII execution sketch is rendered
@@ -509,6 +570,29 @@ Feature: ASCII execution flow report
     And the finding code should be:
       | finding |
       | executable-body-tree-missing |
+
+  Scenario: Reject telemetry inferred from verdict
+    Given a report verdict is `STERILE DOMAIN BODY`
+    But no runtime telemetry event is tied to a body node
+    When the ASCII execution sketch is rendered
+    Then the node telemetry branch should show `not observed`
+    And the report should not show `observed` because the verdict is clean
+    And the report should fail promotion
+    And the finding code should be:
+      | finding |
+      | telemetry-observation-inferred-from-verdict |
+
+  Scenario: Reject duration inferred without timing evidence
+    Given a body node has no telemetry event with start time, end time, or explicit duration
+    When the ASCII execution sketch is rendered
+    Then the duration branch should show:
+      """
+      duration ms   : not observed
+      """
+    And the report should not show `observed`, `0`, `0ms`, or blank duration as a successful timing value
+    And the finding code should be:
+      | finding |
+      | runtime-duration-evidence-missing |
 
   Scenario: Preserve product-readable execution tree shape
     Given the executable body contract contains sections such as acceptance source, surface receipt, canonical binding, shared runner, root contract resolution, gates, routing, provider call, receipt writeback, and surface parity
@@ -794,6 +878,10 @@ Feature: Adversarial challenge packet
       | no findings claim |
       | sterile verdict |
       | execution step labels |
+      | executable body tree shape |
+      | fallback body tree usage |
+      | telemetry observation source |
+      | runtime duration evidence |
       | package-governed exclusions |
     And it should include every source, config, schema, telemetry, and receipt path required for review.
 

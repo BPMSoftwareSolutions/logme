@@ -125,7 +125,8 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
   assert.match(report, /```text/);
   assert.match(report, /REPORT TRUTH/);
   assert.match(report, /Promotion\s+: BLOCKED/);
-  assert.match(report, /Telemetry observation\s+: not observed/);
+  assert.match(report, /EXECUTABLE BODY TREE/);
+  assert.match(report, /TOP BLOCKERS/);
   assert.match(report, /## Blocker Summary/);
   assert.match(report, /finding code: test-finding-1/);
   assert.match(report, /Receipt evidence\s+: report\.md/);
