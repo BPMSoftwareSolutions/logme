@@ -29,3 +29,28 @@ test('runsLogMeDomainAudit finds a nonzero number of methods in the package sour
   assert.match(receipt.reportContent, /- Local executable methods: [1-9]\d*/);
   assert.match(receipt.reportContent, /- Files scanned: [1-9]\d*/);
 });
+
+test('runsLogMeDomainAudit shows execution steps in the report when runtime telemetry is enabled', () => {
+  const previousAudit = process.env.LOGME_AUDIT;
+  process.env.LOGME_AUDIT = '1';
+
+  try {
+    const receipt = runsLogMeDomainAudit();
+    const lines = receipt.reportContent.split('\n');
+    const tableStart = lines.findIndex((line) => line === '| Scan Order | Execution Step | Method | Kind | LogMe | Location |');
+    const tableRows = lines.slice(tableStart + 2).filter((line) => line.startsWith('| ') && !line.startsWith('| ---'));
+    const executionSteps = tableRows
+      .map((line) => line.split(' | ')[1])
+      .filter((value) => value !== '');
+
+    assert.match(receipt.reportContent, /\| Scan Order \| Execution Step \| Method \| Kind \| LogMe \| Location \|/);
+    assert.equal(new Set(executionSteps).size, executionSteps.length);
+    assert.equal(executionSteps[0], '1');
+  } finally {
+    if (previousAudit === undefined) {
+      delete process.env.LOGME_AUDIT;
+    } else {
+      process.env.LOGME_AUDIT = previousAudit;
+    }
+  }
+});

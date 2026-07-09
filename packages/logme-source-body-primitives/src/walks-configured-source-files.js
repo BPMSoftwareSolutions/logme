@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { LogMe } = require('../../logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../logme-testimony-core/src/sample-method');
+const { excludesConfiguredDirectories } = require('./excludes-configured-directories');
 
 function walksConfiguredSourceFiles(rootDir, options) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -18,10 +19,9 @@ function walksConfiguredSourceFiles(rootDir, options) {
 
     for (const entry of fs.readdirSync(currentDir, { withFileTypes: true })) {
       const fullPath = path.join(currentDir, entry.name);
-      const lowerName = entry.name.toLowerCase();
 
       if (entry.isDirectory()) {
-        if (excludeDirectories.includes(lowerName)) {
+        if (excludesConfiguredDirectories(entry.name, excludeDirectories)) {
           continue;
         }
 
@@ -29,6 +29,7 @@ function walksConfiguredSourceFiles(rootDir, options) {
         continue;
       }
 
+      const lowerName = entry.name.toLowerCase();
       if (excludeFiles.includes(lowerName)) {
         continue;
       }

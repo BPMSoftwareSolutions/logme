@@ -35,10 +35,22 @@ function rendersMarkdownTable(methods) {
     ];
 
     if (includesExecutionStep) {
-      row.splice(1, 0, method.executionStep === undefined ? '' : String(method.executionStep));
+      row.splice(1, 0, formatsExecutionStep(method));
     }
 
     return row;
+  }
+
+  function formatsExecutionStep(method) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    if (method.executionStep === undefined) {
+      return '';
+    }
+
+    return String(method.executionStep);
   }
 
   const methodRows = methods.map(buildsMethodRow);

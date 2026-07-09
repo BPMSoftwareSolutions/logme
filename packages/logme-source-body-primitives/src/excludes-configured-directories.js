@@ -6,7 +6,9 @@ function excludesConfiguredDirectories(directoryName, excludeDirectories) {
     LogMe(sampleMethod);
   }
 
-  return excludeDirectories.includes(directoryName.toLowerCase());
+  const normalizedDirectoryName = directoryName.toLowerCase();
+
+  return excludeDirectories.includes(normalizedDirectoryName) || normalizedDirectoryName.startsWith('temp-');
 }
 
 module.exports = { excludesConfiguredDirectories };

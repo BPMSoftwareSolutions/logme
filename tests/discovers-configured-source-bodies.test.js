@@ -24,6 +24,10 @@ test('discoversConfiguredSourceBodies returns sorted absolute paths of files mat
     fs.mkdirSync(nodeModules);
     fs.writeFileSync(path.join(nodeModules, 'pkg.js'), 'content');
 
+    const tempArtifactDir = path.join(tempDir, 'temp-123abc');
+    fs.mkdirSync(tempArtifactDir);
+    fs.writeFileSync(path.join(tempArtifactDir, 'ignored.js'), 'content');
+
     const config = {
       rootDir: tempDir,
       includeExtensions: ['.js', '.ts'],
@@ -47,6 +51,7 @@ test('discoversConfiguredSourceBodies returns sorted absolute paths of files mat
     assert.equal(fileNames.includes('exclude-me.js'), false, 'should exclude file in excludeFiles');
     assert.equal(fileNames.includes('readme.md'), false, 'should exclude files not in includeExtensions');
     assert.equal(result.some(p => p.includes('node_modules')), false, 'should exclude files in node_modules');
+    assert.equal(result.some(p => p.includes('temp-123abc')), false, 'should exclude files in temp-* directories');
 
     // Verify sorting
     for (let i = 0; i < result.length - 1; i++) {

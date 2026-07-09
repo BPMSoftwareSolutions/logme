@@ -7,7 +7,7 @@ const { resolvesMethodName } = require('../../packages/logme-method-inventory-pr
 const { resolvesMethodKind } = require('../../packages/logme-method-inventory-primitives/src/resolves-method-kind');
 const { detectsLogmeCallInNode } = require('../../packages/logme-method-inventory-primitives/src/detects-logme-call-in-node');
 
-function buildsMethodRecord(node, sourceFile, filePath, isUnimplementedStub) {
+function buildsMethodRecord(node, sourceFile, filePath, isUnimplementedStub, executionStep) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
@@ -21,6 +21,7 @@ function buildsMethodRecord(node, sourceFile, filePath, isUnimplementedStub) {
     name,
     isAnonymous,
     isUnimplementedStub,
+    executionStep,
     kind: resolvesMethodKind(node),
     lineStart: start.line + 1,
     lineEnd: end.line + 1,
@@ -28,11 +29,12 @@ function buildsMethodRecord(node, sourceFile, filePath, isUnimplementedStub) {
   };
 }
 
-function inventoriesExecutableDomainMethods(filePath, stubMarker) {
+function inventoriesExecutableDomainMethods(filePath, stubMarker, executionStepState) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
+  let executionStep = 0;
   const content = fs.readFileSync(filePath, 'utf8');
   const isUnimplementedStub = Boolean(stubMarker) && content.trimStart().startsWith(stubMarker);
   const sourceFile = parsesJavascriptTypescriptSource(filePath, content);
@@ -43,7 +45,19 @@ function inventoriesExecutableDomainMethods(filePath, stubMarker) {
       LogMe(sampleMethod);
     }
 
-    return buildsMethodRecord(node, sourceFile, filePath, isUnimplementedStub);
+    const nextExecutionStep = executionStepState
+      ? Array.isArray(executionStepState)
+        ? ++executionStepState[0]
+        : executionStepState.nextExecutionStep()
+      : ++executionStep;
+
+    return buildsMethodRecord(
+      node,
+      sourceFile,
+      filePath,
+      isUnimplementedStub,
+      nextExecutionStep,
+    );
   }
 
   return methodNodes.map(buildsMethodRecordForNode);

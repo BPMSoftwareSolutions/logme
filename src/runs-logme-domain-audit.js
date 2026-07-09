@@ -7,7 +7,7 @@ const { buildsDomainBodySterilityFindings } = require('./builds-domain-body-ster
 const { calculatesDomainBodySterilitySummary } = require('./calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary');
 const { writesDomainBodySterilityReceipt } = require('./writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt');
 
-function inventoriesMethodsForFile(config) {
+function inventoriesMethodsForFile(config, executionStepState) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
@@ -17,7 +17,7 @@ function inventoriesMethodsForFile(config) {
       LogMe(sampleMethod);
     }
 
-    return inventoriesExecutableDomainMethods(filePath, config.stubMarker);
+    return inventoriesExecutableDomainMethods(filePath, config.stubMarker, executionStepState);
   };
 }
 
@@ -28,7 +28,8 @@ function runsLogMeDomainAudit() {
 
   const config = loadsWorkspaceObservabilityConfig();
   const sourceFiles = discoversConfiguredSourceBodies(config);
-  const methods = sourceFiles.flatMap(inventoriesMethodsForFile(config));
+  const executionStepState = [0];
+  const methods = sourceFiles.flatMap(inventoriesMethodsForFile(config, executionStepState));
   const findings = buildsDomainBodySterilityFindings(config, sourceFiles, methods);
   const summary = calculatesDomainBodySterilitySummary(config, sourceFiles, methods, findings);
   const contract = { ...summary, reportPath: config.reportPath };

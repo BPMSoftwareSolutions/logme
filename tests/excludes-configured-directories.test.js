@@ -22,3 +22,8 @@ test('excludesConfiguredDirectories returns false when exclude list is empty', (
   const excludeList = [];
   assert.equal(excludesConfiguredDirectories('node_modules', excludeList), false);
 });
+
+test('excludesConfiguredDirectories returns true for temporary test directories', () => {
+  const excludeList = [];
+  assert.equal(excludesConfiguredDirectories('temp-kJ8v3q', excludeList), true);
+});
