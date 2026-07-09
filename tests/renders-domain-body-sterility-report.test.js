@@ -2,6 +2,7 @@ const test = require('node:test');
 const assert = require('node:assert/strict');
 
 const { rendersDomainBodySterilityReport } = require('../src/renders-domain-body-sterility-report/renders-domain-body-sterility-report');
+const { buildsReportProvenance } = require('../src/report-provenance/report-provenance');
 
 test('rendersDomainBodySterilityReport builds report with title, config, laws, sterility summary, findings, and methods table', () => {
   const contract = {
@@ -27,6 +28,62 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
     unimplementedStubMethods: 0,
     coverage: 100,
     verdict: 'STERILE DOMAIN BODY',
+    provenance: buildsReportProvenance(
+      {
+        configPath: '/test/root/logme.config.json',
+        rootDir: '/test/root',
+        reportPath: '/test/root/report.md',
+        includeExtensions: ['.js', '.ts'],
+        excludeDirectories: ['tests'],
+        excludeFiles: ['report.md'],
+        includeTestFiles: false,
+        stubMarker: '// STUB',
+        forbiddenLocalUtilityNames: ['utils', 'helpers'],
+        forbiddenMethodNames: ['arrow-function'],
+        domainContract: {
+          reportTitle: 'Test Domain Report',
+          domainName: 'LogMe',
+          domainSummary: 'Test summary',
+          domainVocabulary: { nouns: ['report'], verbs: ['render'] },
+          laws: ['Methods must be named clearly', 'All logic must be testable'],
+          cleanFindingsLabel: '_No findings._',
+          verdicts: {
+            sterile: 'STERILE DOMAIN BODY',
+            languageImpure: 'COVERAGE CLEAN, LANGUAGE IMPURE',
+            contaminated: 'DOMAIN BODY CONTAMINATED',
+          },
+          findings: {},
+        },
+      },
+      ['/test/root/src/example.js', '/test/root/src/another.js'],
+      [
+        {
+          scanOrder: 1,
+          name: 'testMethod',
+          kind: 'function-declaration',
+          hasLogMeCall: true,
+          filePath: '/test/root/src/example.js',
+          lineStart: 10,
+          lineEnd: 20,
+        },
+        {
+          scanOrder: 2,
+          name: 'anotherMethod',
+          kind: 'class-method',
+          hasLogMeCall: false,
+          filePath: '/test/root/src/another.js',
+          lineStart: 30,
+          lineEnd: 40,
+        },
+      ],
+      {
+        generationTimestamp: '2026-07-09T12:00:00.000Z',
+        generationCommand: 'node test-runner.js',
+        gitWorkingTreeMarker: 'commit:abc123',
+        evidenceDirectory: '/test/root/evidence',
+        runId: 'run-123',
+      },
+    ),
     findings: [
       {
         code: 'test-finding-1',
@@ -61,6 +118,19 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
 
   // Check title
   assert.match(report, /^# Test Domain Report/);
+
+  // Check Provenance section
+  assert.match(report, /## Provenance/);
+  assert.match(report, /- Report schema version: report-provenance\.v1/);
+  assert.match(report, /- Generator name: LogMe domain audit/);
+  assert.match(report, /- Generation timestamp: 2026-07-09T12:00:00\.000Z/);
+  assert.match(report, /- Generation command: node test-runner\.js/);
+  assert.match(report, /- Git commit or working tree marker: commit:abc123/);
+  assert.match(report, /- Config path: \/test\/root\/logme\.config\.json/);
+  assert.match(report, /- Config hash: [a-f0-9]{64}/);
+  assert.match(report, /- Source inventory hash: [a-f0-9]{64}/);
+  assert.match(report, /- Run id: run-123/);
+  assert.match(report, /- Evidence directory: \/test\/root\/evidence/);
 
   // Check Config section
   assert.match(report, /## Config/);
@@ -126,6 +196,53 @@ test('rendersDomainBodySterilityReport shows stub findings in the report body', 
     unimplementedStubMethods: 1,
     coverage: 100,
     verdict: 'DOMAIN BODY CONTAMINATED',
+    provenance: buildsReportProvenance(
+      {
+        configPath: '/test/root/logme.config.json',
+        rootDir: '/test/root',
+        reportPath: '/test/root/report.md',
+        includeExtensions: ['.js'],
+        excludeDirectories: ['tests'],
+        excludeFiles: ['report.md'],
+        includeTestFiles: false,
+        stubMarker: '// STUB',
+        forbiddenLocalUtilityNames: ['utils'],
+        forbiddenMethodNames: ['arrow-function'],
+        domainContract: {
+          reportTitle: 'Test Domain Report',
+          domainName: 'LogMe',
+          domainSummary: 'Test summary',
+          domainVocabulary: { nouns: ['report'], verbs: ['render'] },
+          laws: ['Methods must be named clearly'],
+          cleanFindingsLabel: '_No findings._',
+          verdicts: {
+            sterile: 'STERILE DOMAIN BODY',
+            languageImpure: 'COVERAGE CLEAN, LANGUAGE IMPURE',
+            contaminated: 'DOMAIN BODY CONTAMINATED',
+          },
+          findings: {},
+        },
+      },
+      ['/test/root/src/stub.js'],
+      [
+        {
+          scanOrder: 1,
+          name: 'stubMethod',
+          kind: 'function',
+          hasLogMeCall: true,
+          filePath: '/test/root/src/stub.js',
+          lineStart: 1,
+          lineEnd: 3,
+        },
+      ],
+      {
+        generationTimestamp: '2026-07-09T12:00:00.000Z',
+        generationCommand: 'node test-runner.js',
+        gitWorkingTreeMarker: 'commit:abc123',
+        evidenceDirectory: '/test/root/evidence',
+        runId: 'run-456',
+      },
+    ),
     findings: [
       {
         code: 'unimplemented-stub-detected',

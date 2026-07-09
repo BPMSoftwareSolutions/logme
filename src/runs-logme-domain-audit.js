@@ -6,6 +6,7 @@ const { inventoriesExecutableDomainMethods } = require('./inventories-executable
 const { buildsDomainBodySterilityFindings } = require('./builds-domain-body-sterility-findings/builds-domain-body-sterility-findings');
 const { calculatesDomainBodySterilitySummary } = require('./calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary');
 const { writesDomainBodySterilityReceipt } = require('./writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt');
+const { buildsReportProvenance } = require('./report-provenance/report-provenance');
 
 function inventoriesMethodsForFile(config, executionStepState) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -32,7 +33,8 @@ function runsLogMeDomainAudit() {
   const methods = sourceFiles.flatMap(inventoriesMethodsForFile(config, executionStepState));
   const findings = buildsDomainBodySterilityFindings(config, sourceFiles, methods);
   const summary = calculatesDomainBodySterilitySummary(config, sourceFiles, methods, findings);
-  const contract = { ...summary, reportPath: config.reportPath };
+  const provenance = buildsReportProvenance(config, sourceFiles, methods);
+  const contract = { ...summary, reportPath: config.reportPath, provenance };
 
   return writesDomainBodySterilityReceipt(contract);
 }

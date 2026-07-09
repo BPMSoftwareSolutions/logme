@@ -72,6 +72,7 @@ Targeted verification performed:
 | Summary-to-row consistency | Counts, coverage, findings, and verdict are recomputed from the same method inventory and cannot disagree. |
 | Evidence-only language | Report text does not use support, proof, execution, runtime, or sterile language without backing evidence. |
 | Gherkin-driven report features | Every report feature has acceptance criteria before implementation and tests map to those scenarios. |
+| Development-time report truth guardrails | Developers can detect report contamination locally with one command before commit. |
 | CI/CD report truth guardrails | Pull requests and promotions are blocked when the generated report contract, evidence packet, or verdict is stale or inconsistent. |
 | Adversarial challenge packet | A reviewer or agent can disprove every major report claim using included evidence paths. |
 
@@ -459,6 +460,73 @@ Feature: CI/CD report truth guardrails
     And promotion should fail if any proof is missing.
 ```
 
+## Feature: Development-Time Report Truth Guardrails
+
+```gherkin
+Feature: Development-time report truth guardrails
+
+  As an adversarial product owner
+  I want developers to see report truth failures before commit
+  So that "tests pass" cannot hide a contaminated architecture report.
+
+  Scenario: Fail local verification when tests pass but report is contaminated
+    Given all unit tests pass
+    And the generated report verdict is `DOMAIN BODY CONTAMINATED`
+    When the developer runs the local verification command
+    Then the command should fail
+    And the status should say:
+      """
+      tests pass, report truth gate fails
+      """
+    And the output should show:
+      | field |
+      | report verdict |
+      | coverage |
+      | silent local methods |
+      | anonymous executable methods |
+      | top finding codes |
+      | top finding paths |
+    And no local command should emit a promotion-ready or clean claim.
+
+  Scenario: Provide one command for local report truth
+    Given the developer is working locally
+    When they run the report truth command
+    Then it should regenerate the report contract from current source
+    And it should validate report freshness
+    And it should validate summary-to-row consistency
+    And it should validate verdict derivation
+    And it should print a bounded, human-readable failure summary
+    And it should exit nonzero when the report is contaminated.
+
+  Scenario: Keep local report truth output quiet enough to use
+    Given report truth validation runs during development
+    When telemetry or audit testimony is produced
+    Then the command should not flood stdout with full telemetry event bodies
+    And detailed telemetry should be written to an evidence artifact
+    And stdout should show only the verdict, counts, and actionable top findings.
+
+  Scenario: Block commit when report truth gate fails
+    Given a pre-commit or pre-push hook is installed
+    And the report truth command exits nonzero
+    When the developer attempts to commit or push
+    Then the hook should block the action
+    And the message should identify the report truth command to run
+    And the message should include the first actionable finding path.
+
+  Scenario: Allow fast development mode without weakening truth
+    Given the full report truth command is too slow for watch mode
+    When the developer runs the fast report truth command
+    Then it may skip long-running receipt artifact publication
+    But it should still fail on:
+      | blocker |
+      | contaminated verdict |
+      | stale report provenance |
+      | summary-to-row mismatch |
+      | silent local methods |
+      | anonymous executable methods |
+      | unsupported clean or sterile claim |
+```
+
 ## PI Readiness Gate
 
 ```gherkin
@@ -498,8 +566,9 @@ Feature: PI readiness gate for report truth
 | 2 | Make counts undeniable | Summary-to-row validator, finding-to-row tie-out, verdict derivation tests, and blocked clean-label cases. |
 | 3 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
 | 4 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
-| 5 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
-| 6 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
+| 5 | Add development-time guardrails | One local command detects contaminated reports before commit without stdout noise. |
+| 6 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
+| 7 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
 
 ## Definition Of Done
 
@@ -509,6 +578,7 @@ Feature: PI readiness gate for report truth
 | Schema | `sterility-report.schema.v1.json` rejects missing required fields. |
 | Tests | Unit and audit tests prove every report section and verdict rule. |
 | Evidence | Generated report links to its evidence packet and receipt. |
+| Development loop | Local verification fails when tests pass but the report is contaminated. |
 | CI/CD | Pull requests and promotions run report truth gates and publish evidence artifacts. |
 | Portability | Report paths are repo-relative and stable across machines. |
 | Honesty | The report never uses stronger language than the evidence supports. |
@@ -523,4 +593,5 @@ Feature: PI readiness gate for report truth
 | Is `Execution Step` a runtime concept? | Yes. If the value is scan order, call it `Inventory Step`. |
 | Can the report claim test coverage when `includeTestFiles` is `no`? | No. It can claim source testimony only until test evidence is added. |
 | Can stdout telemetry be report evidence? | No. Persist bounded telemetry artifacts and reference them from the report. |
+| Is green test output enough for developer readiness? | No. Local readiness requires tests passing and the report truth gate passing. |
 | Should CI trust local `report.md`? | No. CI should regenerate the report contract and publish fresh evidence artifacts. |

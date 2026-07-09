@@ -13,8 +13,11 @@ test('runsLogMeDomainAudit scans the package, builds a full sterility contract, 
   assert.equal(receipt.bytesWritten > 0, true);
   assert.equal(typeof receipt.reportContent, 'string');
   assert.match(receipt.reportContent, /^# Domain Body Contract Report/);
+  assert.match(receipt.reportContent, /## Provenance/);
   assert.match(receipt.reportContent, /## Sterility Summary/);
   assert.match(receipt.reportContent, /- Verdict: /);
+  assert.equal(typeof receipt.provenance, 'object');
+  assert.equal(typeof receipt.provenance.sourceInventoryHash, 'string');
 
   const config = loadsWorkspaceObservabilityConfig();
   assert.equal(receipt.reportPath, config.reportPath);

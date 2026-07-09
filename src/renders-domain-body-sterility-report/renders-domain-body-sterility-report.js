@@ -12,6 +12,14 @@ function rendersDomainBodySterilityReport(contract) {
   const findingRows = rendersMarkdownSummary(contract);
   const table = rendersMarkdownTable(contract.methods);
 
+  function formatsProvenanceLine(label, value) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    return `- ${label}: ${value}`;
+  }
+
   function formatsLawAsMarkdown(law) {
     if (process.env.LOGME_AUDIT === '1') {
       LogMe(sampleMethod);
@@ -22,6 +30,19 @@ function rendersDomainBodySterilityReport(contract) {
 
   return [
     `# ${contract.domainContract.reportTitle}`,
+    '',
+    '## Provenance',
+    '',
+    formatsProvenanceLine('Report schema version', contract.provenance.reportSchemaVersion),
+    formatsProvenanceLine('Generator name', contract.provenance.generatorName),
+    formatsProvenanceLine('Generation timestamp', contract.provenance.generationTimestamp),
+    formatsProvenanceLine('Generation command', contract.provenance.generationCommand),
+    formatsProvenanceLine('Git commit or working tree marker', contract.provenance.gitWorkingTreeMarker),
+    formatsProvenanceLine('Config path', contract.provenance.configPath),
+    formatsProvenanceLine('Config hash', contract.provenance.configHash),
+    formatsProvenanceLine('Source inventory hash', contract.provenance.sourceInventoryHash),
+    formatsProvenanceLine('Run id', contract.provenance.runId),
+    formatsProvenanceLine('Evidence directory', contract.provenance.evidenceDirectory),
     '',
     '## Config',
     '',

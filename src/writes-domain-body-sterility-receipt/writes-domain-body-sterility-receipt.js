@@ -15,6 +15,7 @@ function writesDomainBodySterilityReceipt(contract) {
     reportPath: receiptFromWrite.reportPath,
     bytesWritten: receiptFromWrite.bytesWritten,
     reportContent: reportMarkdown,
+    provenance: contract.provenance,
   };
 }
 

@@ -5,6 +5,7 @@ const path = require('node:path');
 const os = require('node:os');
 
 const { writesDomainBodySterilityReceipt } = require('../src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt');
+const { buildsReportProvenance } = require('../src/report-provenance/report-provenance');
 
 test('writesDomainBodySterilityReceipt orchestrates rendering and writing, returning combined receipt object', () => {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme2-lab-'));
@@ -18,6 +19,53 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
         laws: ['Methods must be named clearly', 'All logic must be testable'],
         cleanFindingsLabel: '_No findings._',
       },
+      provenance: buildsReportProvenance(
+        {
+          configPath: '/test/root/logme.config.json',
+          rootDir: '/test/root',
+          reportPath,
+          includeExtensions: ['.js', '.ts'],
+          excludeDirectories: ['tests'],
+          excludeFiles: ['report.md'],
+          includeTestFiles: false,
+          stubMarker: '// STUB',
+          forbiddenLocalUtilityNames: ['utils', 'helpers'],
+          forbiddenMethodNames: ['arrow-function'],
+          domainContract: {
+            reportTitle: 'Test Sterility Report',
+            domainName: 'LogMe',
+            domainSummary: 'Test summary',
+            domainVocabulary: { nouns: ['report'], verbs: ['render'] },
+            laws: ['Methods must be named clearly', 'All logic must be testable'],
+            cleanFindingsLabel: '_No findings._',
+            verdicts: {
+              sterile: 'STERILE DOMAIN BODY',
+              languageImpure: 'COVERAGE CLEAN, LANGUAGE IMPURE',
+              contaminated: 'DOMAIN BODY CONTAMINATED',
+            },
+            findings: {},
+          },
+        },
+        ['/test/root/src/example.js'],
+        [
+          {
+            scanOrder: 1,
+            name: 'testMethod',
+            kind: 'function-declaration',
+            hasLogMeCall: true,
+            filePath: '/test/root/src/example.js',
+            lineStart: 10,
+            lineEnd: 20,
+          },
+        ],
+        {
+          generationTimestamp: '2026-07-09T12:00:00.000Z',
+          generationCommand: 'node test-runner.js',
+          gitWorkingTreeMarker: 'commit:abc123',
+          evidenceDirectory: '/test/root/evidence',
+          runId: 'run-789',
+        },
+      ),
       rootDir: '/test/root',
       includeExtensions: ['.js', '.ts'],
       configPath: '/test/root/logme.config.json',
@@ -57,6 +105,7 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
     assert.ok(receipt.bytesWritten > 0, 'receipt.bytesWritten should be greater than 0');
     assert.equal(typeof receipt.reportContent, 'string', 'receipt.reportContent should be a string');
     assert.ok(receipt.reportContent.length > 0, 'receipt.reportContent should not be empty');
+    assert.equal(receipt.provenance.runId, 'run-789');
 
     // Assert file exists and has correct content
     assert.equal(fs.existsSync(reportPath), true, 'File should exist at reportPath');
@@ -65,6 +114,7 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
 
     // Assert reportContent contains expected sections from rendered report
     assert.match(receipt.reportContent, /^# Test Sterility Report/);
+    assert.match(receipt.reportContent, /## Provenance/);
     assert.match(receipt.reportContent, /## Config/);
     assert.match(receipt.reportContent, /## Sterility Summary/);
     assert.match(receipt.reportContent, /## Discovered Methods/);
