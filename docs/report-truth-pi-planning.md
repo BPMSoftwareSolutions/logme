@@ -72,6 +72,7 @@ Targeted verification performed:
 | Summary-to-row consistency | Counts, coverage, findings, and verdict are recomputed from the same method inventory and cannot disagree. |
 | Evidence-only language | Report text does not use support, proof, execution, runtime, or sterile language without backing evidence. |
 | Gherkin-driven report features | Every report feature has acceptance criteria before implementation and tests map to those scenarios. |
+| CI/CD report truth guardrails | Pull requests and promotions are blocked when the generated report contract, evidence packet, or verdict is stale or inconsistent. |
 | Adversarial challenge packet | A reviewer or agent can disprove every major report claim using included evidence paths. |
 
 ## Feature: Report Provenance And Freshness Gate
@@ -400,6 +401,64 @@ Feature: Adversarial challenge packet
       | report-overclaims-evidence |
 ```
 
+## Feature: CI/CD Report Truth Guardrails
+
+```gherkin
+Feature: CI/CD report truth guardrails
+
+  As an adversarial product owner
+  I want CI/CD to enforce report truth before merge or promotion
+  So that local generated projections cannot bypass evidence, schema, or verdict rules.
+
+  Scenario: Block pull request when report truth validation fails
+    Given a pull request changes report rendering, report contracts, source inventory, domain audit behavior, or Gherkin acceptance criteria
+    When the CI report truth workflow runs
+    Then it should run:
+      | gate |
+      | unit tests |
+      | Gherkin traceability check |
+      | report contract generation |
+      | report schema validation |
+      | summary-to-row validator |
+      | verdict derivation validator |
+      | path portability validator |
+      | evidence receipt validator |
+    And the pull request should fail if any gate fails.
+
+  Scenario: Publish report evidence packet as CI artifact
+    Given the CI report truth workflow has generated report evidence
+    When the workflow completes
+    Then it should publish an artifact containing:
+      | artifact |
+      | method-inventory.v1.json |
+      | report-contract.v1.json |
+      | report.md |
+      | report-generation.receipt.v1.json |
+      | telemetry.events.v1.jsonl |
+      | report-validation.v1.json |
+      | adversarial-challenge-packet.md |
+    And the pull request summary should link to the artifact.
+
+  Scenario: Block stale local report projection
+    Given `report.md` is ignored by Git
+    And a developer has a locally generated report
+    When CI regenerates the report contract from the pull request source
+    Then CI should ignore the developer's local `report.md`
+    And CI should compare only freshly generated evidence
+    And any stale local projection should have no promotion authority.
+
+  Scenario: Block false pass in promotion workflow
+    Given CI generated report evidence exists
+    And the report claims `STERILE DOMAIN BODY` or any PASS-style verdict
+    When the promotion workflow evaluates the evidence packet
+    Then every hard-law blocker should be zero
+    And the report schema should be valid
+    And the freshness gate should pass
+    And every required receipt should exist
+    And every report section should trace to Gherkin acceptance criteria
+    And promotion should fail if any proof is missing.
+```
+
 ## PI Readiness Gate
 
 ```gherkin
@@ -439,7 +498,8 @@ Feature: PI readiness gate for report truth
 | 2 | Make counts undeniable | Summary-to-row validator, finding-to-row tie-out, verdict derivation tests, and blocked clean-label cases. |
 | 3 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
 | 4 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
-| 5 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
+| 5 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
+| 6 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
 
 ## Definition Of Done
 
@@ -449,6 +509,7 @@ Feature: PI readiness gate for report truth
 | Schema | `sterility-report.schema.v1.json` rejects missing required fields. |
 | Tests | Unit and audit tests prove every report section and verdict rule. |
 | Evidence | Generated report links to its evidence packet and receipt. |
+| CI/CD | Pull requests and promotions run report truth gates and publish evidence artifacts. |
 | Portability | Report paths are repo-relative and stable across machines. |
 | Honesty | The report never uses stronger language than the evidence supports. |
 | Adversarial review | Challenge packet can be run by another reviewer without private local context. |
@@ -462,3 +523,4 @@ Feature: PI readiness gate for report truth
 | Is `Execution Step` a runtime concept? | Yes. If the value is scan order, call it `Inventory Step`. |
 | Can the report claim test coverage when `includeTestFiles` is `no`? | No. It can claim source testimony only until test evidence is added. |
 | Can stdout telemetry be report evidence? | No. Persist bounded telemetry artifacts and reference them from the report. |
+| Should CI trust local `report.md`? | No. CI should regenerate the report contract and publish fresh evidence artifacts. |
