@@ -1,7 +1,13 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
 
 const { rendersAsciiExecutionFlow } = require('../packages/logme-report-primitives/src/renders-ascii-execution-flow');
+const { parsesExecutionSketchTemplate } = require('../packages/logme-report-primitives/src/parses-execution-sketch-template');
+
+const TEMPLATE_PATH = path.join(__dirname, '..', 'contracts', 'templates', 'logme2', 'execution-sketch.template.txt');
+const executionSketchTemplate = parsesExecutionSketchTemplate(fs.readFileSync(TEMPLATE_PATH, 'utf8'));
 
 test('rendersAsciiExecutionFlow renders the executable body tree as nested ASCII branches', () => {
   const sketch = rendersAsciiExecutionFlow({
@@ -53,7 +59,7 @@ test('rendersAsciiExecutionFlow renders the executable body tree as nested ASCII
       configPath: '/test/root/logme.config.json',
       generationTimestamp: '2026-07-09T12:00:00.000Z',
     },
-  });
+  }, executionSketchTemplate);
 
   assert.match(sketch, /REPORT TRUTH/);
   assert.match(sketch, /Verdict\s+: STERILE DOMAIN BODY/);
@@ -91,11 +97,15 @@ test('rendersAsciiExecutionFlow fails closed when executable body nodes are miss
       runId: 'run-999',
       configPath: '/test/root/logme.config.json',
     },
-  });
+  }, executionSketchTemplate);
 
   assert.match(sketch, /EXECUTABLE BODY TREE: missing/);
   assert.match(sketch, /DOMAIN BODY CONTAMINATED/);
   assert.match(sketch, /Promotion\s+: BLOCKED/);
   assert.match(sketch, /executable-body-contract-missing/);
   assert.doesNotMatch(sketch, /DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE/);
+});
+
+test('rendersAsciiExecutionFlow throws when no template is supplied', () => {
+  assert.throws(() => rendersAsciiExecutionFlow({ verdict: 'STERILE DOMAIN BODY' }));
 });

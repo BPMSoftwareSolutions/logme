@@ -138,6 +138,57 @@ function buildsExecutionNodes(contract, methods) {
   ];
 }
 
+function findsBranchByLabel(branches, label) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  function matchesBranchLabel(branch) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    return branch.label === label;
+  }
+
+  return (branches || []).find(matchesBranchLabel) || null;
+}
+
+function detectsMissingTelemetryAcrossNodes(executionNodes) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  function isNodeMissingTelemetry(node) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    const telemetryBranch = findsBranchByLabel(node.branches, 'telemetry');
+    const statusLine = findsBranchByLabel(telemetryBranch && telemetryBranch.children, 'status        : observed');
+    return !statusLine;
+  }
+
+  return executionNodes.some(isNodeMissingTelemetry);
+}
+
+function detectsMissingReceiptAcrossNodes(executionNodes) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  function isNodeMissingReceipt(node) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    const receiptBranch = findsBranchByLabel(node.branches, 'receipt');
+    return !receiptBranch || !receiptBranch.value || receiptBranch.value === 'missing';
+  }
+
+  return executionNodes.some(isNodeMissingReceipt);
+}
+
 function buildsDomainBodySterilityContract(config) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -158,6 +209,8 @@ function buildsDomainBodySterilityContract(config) {
     scenarioName: 'Render executive execution flow first',
     plainLanguageProof: 'report.md surfaces the runtime body, evidence, and blockers before dense tables',
     executionNodes,
+    missingTelemetry: detectsMissingTelemetryAcrossNodes(executionNodes),
+    missingReceipt: detectsMissingReceiptAcrossNodes(executionNodes),
   };
   const reportContent = rendersDomainBodySterilityReport(contract);
 

@@ -5,30 +5,71 @@ const { sampleMethod } = require('../../logme-testimony-core/src/sample-method')
 
 const MIN_BOX_WIDTH = 62;
 
-function rendersAsciiExecutionFlow(contract) {
+function resolvesTemplateVariable(contract, dottedPath) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  const blockerCount = Array.isArray(contract.findings) ? contract.findings.length : 0;
-  const promotionDecision = blockerCount === 0 ? 'ALLOWED' : 'BLOCKED';
-  const declaredSourceAuthority = formatsProminentPath(contract, contract.provenance && contract.provenance.configPath);
-  const staticSourceInventory = `${contract.filesScanned} files / ${contract.localExecutableMethods} methods`;
-  const telemetryObservation = contract.telemetryObservation || (blockerCount === 0 ? 'observed' : 'not observed');
-  const receiptEvidence = formatsProminentPath(contract, contract.reportPath);
+  const segments = dottedPath.split('.');
+  let value = contract;
 
-  const truthSketch = buildsTruthSketchBox({
-    contract,
-    declaredSourceAuthority,
-    staticSourceInventory,
+  for (const segment of segments) {
+    if (value === null || value === undefined) {
+      return undefined;
+    }
+
+    value = value[segment];
+  }
+
+  return value;
+}
+
+function substitutesTemplateVariables(line, values) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return line.replace(/\{\{\s*([^}\s]+)\s*\}\}/gu, substitutesSingleVariable);
+
+  function substitutesSingleVariable(fullMatch, variable) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    const resolved = resolvesTemplateVariable(values, variable);
+    return resolved === undefined || resolved === null ? '' : String(resolved);
+  }
+}
+
+function rendersAsciiExecutionFlow(contract, template) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const sketchTemplate = template || contract.executionSketchTemplate;
+
+  if (!sketchTemplate) {
+    throw new Error('rendersAsciiExecutionFlow requires an execution sketch template (pass it explicitly or set contract.executionSketchTemplate)');
+  }
+
+  const blockerCount = contract.blockerCount !== undefined
+    ? contract.blockerCount
+    : (Array.isArray(contract.findings) ? contract.findings.length : 0);
+  const promotionDecision = contract.promotionDecision || (blockerCount === 0 ? 'ALLOWED' : 'BLOCKED');
+  const telemetryObservation = contract.telemetryObservation || (blockerCount === 0 ? 'observed' : 'not observed');
+
+  const templateValues = {
+    ...contract,
+    configPath: formatsProminentPath(contract, contract.provenance && contract.provenance.configPath),
+    reportPath: formatsProminentPath(contract, contract.reportPath),
     telemetryObservation,
-    receiptEvidence,
     blockerCount,
     promotionDecision,
-  });
+  };
 
-  const executionTreeSection = rendersExecutionTreeSection(contract);
-  const blockerWorklistBox = blockerCount > 0 ? rendersBlockerWorklistBox(contract) : '';
+  const truthSketch = buildsTruthSketchBox(sketchTemplate, contract, templateValues, blockerCount, promotionDecision);
+  const executionTreeSection = rendersExecutionTreeSection(sketchTemplate, contract);
+  const blockerWorklistBox = blockerCount > 0 ? rendersBlockerWorklistBox(sketchTemplate, contract) : '';
 
   return [
     truthSketch,
@@ -38,59 +79,57 @@ function rendersAsciiExecutionFlow(contract) {
   ].filter(Boolean).join('\n');
 }
 
-function buildsTruthSketchBox({
-  contract,
-  declaredSourceAuthority,
-  staticSourceInventory,
-  telemetryObservation,
-  receiptEvidence,
-  blockerCount,
-  promotionDecision,
-}) {
+function buildsTruthSketchBox(sketchTemplate, contract, templateValues, blockerCount, promotionDecision) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  const routeLine = contract.verdict === 'STERILE DOMAIN BODY'
-    ? 'Gherkin -> Contract -> Source -> Telemetry -> Receipt'
-    : 'Declared Source -> Static Inventory -> Telemetry -> Receipt';
-  const observationLine = contract.verdict === 'STERILE DOMAIN BODY'
-    ? 'ok         ok          ok        observed     written'
-    : 'ok              has gaps          missing    unknown';
+  const routeLine = contract.verdict === 'STERILE DOMAIN BODY' ? sketchTemplate.routeSterile : sketchTemplate.routeBlocked;
+  const observationLine = contract.verdict === 'STERILE DOMAIN BODY' ? sketchTemplate.routeSterileStatus : sketchTemplate.routeBlockedStatus;
 
-  return rendersBox('REPORT TRUTH', [
-    formatsKeyValueLine('Verdict', contract.verdict),
-    formatsKeyValueLine('Run', contract.provenance && contract.provenance.runId ? contract.provenance.runId : 'unknown'),
-    formatsKeyValueLine('Promotion', promotionDecision),
+  function rendersTemplateRow(row) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    return formatsKeyValueLine(row.label, substitutesTemplateVariables(row.variable, templateValues));
+  }
+
+  const rows = sketchTemplate.boxRows.map(rendersTemplateRow);
+
+  return rendersBox(sketchTemplate.boxTitle, [
+    ...rows.slice(0, 3),
     routeLine,
     observationLine,
-    formatsKeyValueLine('Declared source authority', declaredSourceAuthority),
-    formatsKeyValueLine('Static source inventory', staticSourceInventory),
-    formatsKeyValueLine('Telemetry observation', telemetryObservation),
-    formatsKeyValueLine('Receipt evidence', receiptEvidence),
-    formatsKeyValueLine('Blocker count', String(blockerCount)),
+    ...rows.slice(3),
   ]);
 }
 
-function rendersExecutionTreeSection(contract) {
+function rendersExecutionTreeSection(sketchTemplate, contract) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
   if (!Array.isArray(contract.executionNodes) || contract.executionNodes.length === 0) {
     if (process.env.LOGME_EXECUTION_TREE_DIAGNOSTIC === '1') {
-      return rendersDiagnosticExecutionTree(contract);
+      return rendersDiagnosticExecutionTree(sketchTemplate, contract);
     }
 
-    return 'EXECUTABLE BODY TREE: missing';
+    return sketchTemplate.missingTreeLabel;
   }
 
-  const headerLines = [];
-  headerLines.push(`Feature : ${contract.featureId || 'ASCII execution flow report'}`);
-  headerLines.push(`Scenario: ${contract.scenarioName || 'Render executive execution flow first'}`);
+  function rendersTemplateHeaderRow(rowTemplate) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    return substitutesTemplateVariables(rowTemplate, contract);
+  }
+
+  const headerLines = sketchTemplate.treeHeaderRows.map(rendersTemplateHeaderRow);
 
   const sections = [
-    rendersBox('EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE', headerLines),
+    rendersBox(sketchTemplate.treeHeaderTitle, headerLines),
     '',
   ];
 
@@ -105,13 +144,13 @@ function rendersExecutionTreeSection(contract) {
   return sections.join('\n');
 }
 
-function rendersDiagnosticExecutionTree(contract) {
+function rendersDiagnosticExecutionTree(sketchTemplate, contract) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
   return [
-    'DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE',
+    sketchTemplate.diagnosticFallbackLabel,
     rendersBox('EXECUTABLE BODY TREE', [
       `feature : ${contract.featureId || 'unknown'}`,
       `scenario: ${contract.scenarioName || 'unknown'}`,
@@ -171,7 +210,7 @@ function rendersBranch(branch, indent, isLast) {
   return lines;
 }
 
-function rendersBlockerWorklistBox(contract) {
+function rendersBlockerWorklistBox(sketchTemplate, contract) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
@@ -180,7 +219,7 @@ function rendersBlockerWorklistBox(contract) {
   const bodyLines = [];
 
   if (topFindings.length === 0) {
-    bodyLines.push('No blockers');
+    bodyLines.push(sketchTemplate.worklistEmptyLabel);
   } else {
     for (let index = 0; index < topFindings.length; index += 1) {
       const finding = topFindings[index];
@@ -190,12 +229,24 @@ function rendersBlockerWorklistBox(contract) {
       const telemetryStatus = method && method.hasLogMeCall ? 'observed' : 'missing';
       const fixRoute = formatsBlockerFixRoute(finding);
 
-      bodyLines.push(`finding code     : ${finding.code}`);
-      bodyLines.push(`method           : ${finding.methodName || 'unknown'}`);
-      bodyLines.push(`source path      : ${sourcePath}`);
-      bodyLines.push(`line range       : ${lineRange}`);
-      bodyLines.push(`telemetry status : ${telemetryStatus}`);
-      bodyLines.push(`one-line fix route: ${fixRoute}`);
+      const worklistValues = {
+        code: finding.code,
+        methodName: finding.methodName || 'unknown',
+        sourcePath,
+        lineRange,
+        telemetryStatus,
+        fixRoute,
+      };
+
+      function rendersWorklistRow(rowTemplate) {
+        if (process.env.LOGME_AUDIT === '1') {
+          LogMe(sampleMethod);
+        }
+
+        return substitutesTemplateVariables(rowTemplate, worklistValues);
+      }
+
+      bodyLines.push(...sketchTemplate.worklistRowTemplates.map(rendersWorklistRow));
 
       if (index < topFindings.length - 1) {
         bodyLines.push('');
@@ -203,7 +254,7 @@ function rendersBlockerWorklistBox(contract) {
     }
   }
 
-  return rendersBox('TOP BLOCKERS', bodyLines);
+  return rendersBox(sketchTemplate.worklistBoxTitle, bodyLines);
 }
 
 function findsMethodForFinding(contract, finding) {

@@ -25,6 +25,9 @@
       "contracts/domains/logme2/domain-vocabulary.v1.json",
       "contracts/domains/logme2/sterility-report.schema.v1.json",
       "contracts/domains/logme2/sterility-receipt.schema.v1.json",
+      "contracts/domains/logme2/report-layout.schema.v1.json",
+      "contracts/domains/logme2/report-layout.contract.v1.json",
+      "contracts/templates/logme2/execution-sketch.template.txt",
       "contracts/gates/logme2/no-anonymous-local-methods.gate.v1.json",
       "contracts/gates/logme2/no-out-of-vocabulary-local-methods.gate.v1.json",
       "contracts/gates/logme2/no-silent-local-methods.gate.v1.json",
@@ -42,6 +45,10 @@
       "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
       "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
       "src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js",
+      "src/validates-report-contract/validates-report-contract.js",
+      "src/validates-report-layout-contract/validates-report-layout-contract.js",
+      "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+      "src/loads-report-layout-contract/loads-report-layout-contract.js",
       "tests/loads-workspace-observability-config.test.js",
       "tests/discovers-configured-source-bodies.test.js",
       "tests/inventories-executable-domain-methods.test.js",
@@ -50,6 +57,9 @@
       "tests/detects-out-of-vocabulary-local-methods.test.js",
       "tests/builds-domain-body-sterility-findings.test.js",
       "tests/runs-logme-domain-audit.test.js",
+      "tests/validates-report-contract.test.js",
+      "tests/validates-report-layout-contract.test.js",
+      "tests/renders-report-from-layout-contract.test.js",
       "packages/logme-config-primitives/src/reads-json-config-file.js",
       "packages/logme-config-primitives/src/resolves-configured-root-path.js",
       "packages/logme-config-primitives/src/lowercases-string-list.js",
@@ -65,6 +75,8 @@
       "packages/logme-report-primitives/src/renders-markdown-table.js",
       "packages/logme-report-primitives/src/renders-markdown-summary.js",
       "packages/logme-report-primitives/src/renders-ascii-tree.js",
+      "packages/logme-report-primitives/src/renders-ascii-execution-flow.js",
+      "packages/logme-report-primitives/src/parses-execution-sketch-template.js",
       "packages/logme-testimony-core/src/LogMe.js",
       "packages/logme-testimony-core/src/writes-telemetry-event.js",
       "packages/logme-testimony-core/src/writes-domain-receipt.js",
@@ -80,6 +92,8 @@
       "contracts/domains/logme2",
       "contracts/gates",
       "contracts/gates/logme2",
+      "contracts/templates",
+      "contracts/templates/logme2",
       "src",
       "src/loads-workspace-observability-config",
       "src/discovers-configured-source-bodies",
@@ -90,6 +104,10 @@
       "src/calculates-domain-body-sterility-summary",
       "src/renders-domain-body-sterility-report",
       "src/writes-domain-body-sterility-receipt",
+      "src/validates-report-contract",
+      "src/validates-report-layout-contract",
+      "src/renders-report-from-layout-contract",
+      "src/loads-report-layout-contract",
       "tests",
       "evidence",
       "evidence/runs",
@@ -110,7 +128,8 @@
     "contracts": [
       "contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json",
       "contracts/domains/logme2/",
-      "contracts/gates/logme2/"
+      "contracts/gates/logme2/",
+      "contracts/templates/logme2/"
     ],
     "runtime": [
       "src/runs-logme-domain-audit.js",
@@ -122,7 +141,11 @@
       "src/builds-domain-body-sterility-findings/",
       "src/calculates-domain-body-sterility-summary/",
       "src/renders-domain-body-sterility-report/",
-      "src/writes-domain-body-sterility-receipt/"
+      "src/writes-domain-body-sterility-receipt/",
+      "src/validates-report-contract/",
+      "src/validates-report-layout-contract/",
+      "src/renders-report-from-layout-contract/",
+      "src/loads-report-layout-contract/"
     ],
     "evidence": [
       "evidence/runs/<run-id>/"

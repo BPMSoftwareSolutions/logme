@@ -115,6 +115,10 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
     unimplementedStubMethods: 0,
     coverage: 100,
     verdict: 'STERILE DOMAIN BODY',
+    blockerCount: 1,
+    promotionDecision: 'BLOCKED',
+    missingTelemetry: false,
+    missingReceipt: false,
     provenance: buildsReportProvenance(
       {
         configPath: '/test/root/logme.config.json',
@@ -204,8 +208,8 @@ test('rendersDomainBodySterilityReport builds report with title, config, laws, s
 
   const report = rendersDomainBodySterilityReport(contract);
 
-  // Check title
-  assert.match(report, /^# Test Domain Report/);
+  // Check title (product-owned by the report layout contract, not the caller's contract)
+  assert.match(report, /^# Domain Body Contract Report/);
 
   // Check execution sketch and blocker summary are front-loaded
   assert.match(report, /## Execution Flow Sketch/);
@@ -305,6 +309,10 @@ test('rendersDomainBodySterilityReport shows stub findings in the report body', 
     unimplementedStubMethods: 1,
     coverage: 100,
     verdict: 'DOMAIN BODY CONTAMINATED',
+    blockerCount: 1,
+    promotionDecision: 'BLOCKED',
+    missingTelemetry: false,
+    missingReceipt: false,
     provenance: buildsReportProvenance(
       {
         configPath: '/test/root/logme.config.json',

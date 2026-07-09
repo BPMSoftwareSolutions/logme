@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "report-layout.schema.v1",
+  "requiredFields": [
+    "schemaVersion",
+    "reportTitle",
+    "sectionOrder",
+    "sections"
+  ],
+  "requiredSectionFields": [
+    "id",
+    "title",
+    "template"
+  ]
+}

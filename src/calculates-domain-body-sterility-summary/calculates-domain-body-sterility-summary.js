@@ -195,6 +195,9 @@ function calculatesDomainBodySterilitySummary(config, sourceFiles, methods, find
     verdict = config.domainContract.verdicts.languageImpure;
   }
 
+  const blockerCount = findings.length;
+  const promotionDecision = blockerCount === 0 ? 'ALLOWED' : 'BLOCKED';
+
   return {
     generatedBy: 'LogMe()',
     configPath: config.configPath,
@@ -217,6 +220,8 @@ function calculatesDomainBodySterilitySummary(config, sourceFiles, methods, find
     coverage: orderedMethods.length === 0 ? 100 : Math.round((methodsWithLogMeCall / orderedMethods.length) * 1000) / 10,
     isSterileDomainBody,
     verdict,
+    blockerCount,
+    promotionDecision,
     findings,
     methods: orderedMethods,
     domainContract: config.domainContract,

@@ -1,0 +1,96 @@
+{
+  "schemaVersion": "report-layout.contract.v1",
+  "reportTitle": "Domain Body Contract Report",
+  "sectionOrder": [
+    "executionFlowSketch",
+    "blockerSummary",
+    "provenance",
+    "config",
+    "hardLaws",
+    "sterilitySummary",
+    "findings",
+    "discoveredMethods"
+  ],
+  "sections": {
+    "executionFlowSketch": {
+      "title": "Execution Flow Sketch",
+      "template": "kind:ascii-execution-sketch"
+    },
+    "blockerSummary": {
+      "title": "Blocker Summary",
+      "template": "kind:blocker-summary"
+    },
+    "provenance": {
+      "title": "Provenance",
+      "template": [
+        "- Report schema version: {{provenance.reportSchemaVersion}}",
+        "- Generator name: {{provenance.generatorName}}",
+        "- Generation timestamp: {{provenance.generationTimestamp}}",
+        "- Generation command: {{provenance.generationCommand}}",
+        "- Git commit or working tree marker: {{provenance.gitWorkingTreeMarker}}",
+        "- Config path: {{provenance.configPath}}",
+        "- Config hash: {{provenance.configHash}}",
+        "- Source inventory hash: {{provenance.sourceInventoryHash}}",
+        "- Run id: {{provenance.runId}}",
+        "- Evidence directory: {{provenance.evidenceDirectory}}"
+      ]
+    },
+    "config": {
+      "title": "Config",
+      "template": "kind:config-summary"
+    },
+    "hardLaws": {
+      "title": "Hard Laws",
+      "template": "kind:hard-laws"
+    },
+    "sterilitySummary": {
+      "title": "Sterility Summary",
+      "template": [
+        "- Files scanned: {{filesScanned}}",
+        "- Local executable methods: {{localExecutableMethods}}",
+        "- Domain-bound methods: {{domainBoundMethods}}",
+        "- Methods with LogMe call: {{methodsWithLogMeCall}}",
+        "- Silent local methods: {{silentLocalMethods}}",
+        "- Generic utility methods in repo: {{genericUtilityMethods}}",
+        "- Anonymous executable methods: {{anonymousExecutableMethods}}",
+        "- Methods outside domain vocabulary: {{methodsOutsideDomainVocabulary}}",
+        "- Unimplemented stub methods: {{unimplementedStubMethods}}",
+        "- External package methods: ignored / package-governed",
+        "- Coverage: {{coverage}}%",
+        "- Verdict: {{verdict}}"
+      ]
+    },
+    "findings": {
+      "title": "Findings",
+      "template": "kind:findings-summary"
+    },
+    "discoveredMethods": {
+      "title": "Discovered Methods",
+      "template": "kind:discovered-methods-table"
+    }
+  },
+  "requiredDataFields": [
+    "verdict",
+    "blockerCount",
+    "promotionDecision",
+    "silentLocalMethods",
+    "anonymousExecutableMethods",
+    "missingTelemetry",
+    "missingReceipt",
+    "provenance.sourceInventoryHash",
+    "provenance.runId"
+  ],
+  "optionalDataFields": [
+    "provenance.generationCommand",
+    "provenance.gitWorkingTreeMarker",
+    "executionNodes"
+  ],
+  "blockerDisplayRules": {
+    "maxBlockersShown": 3,
+    "cleanLabel": "_No blockers. Promotion allowed._"
+  },
+  "promotionDisplayRules": {
+    "allowedLabel": "ALLOWED",
+    "blockedLabel": "BLOCKED"
+  }
+}

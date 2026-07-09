@@ -342,13 +342,30 @@ function validatesSummaryToRowConsistency(expectedSummary, reportContent) {
   };
 }
 
+function buildsDomainBodySterilityContractSafely(config) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  try {
+    return { built: buildsDomainBodySterilityContract(config), layoutFailureReason: null };
+  } catch (renderError) {
+    return { built: null, layoutFailureReason: renderError.message };
+  }
+}
+
 function buildsReportTruthSnapshotCore() {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
   const config = loadsWorkspaceObservabilityConfig();
-  const built = buildsDomainBodySterilityContract(config);
+  const { built, layoutFailureReason } = buildsDomainBodySterilityContractSafely(config);
+
+  if (layoutFailureReason) {
+    return { config, layoutFailureReason };
+  }
+
   const receipt = writesDomainBodySterilityReceipt(built.contract);
   const currentReportContent = receipt.reportContent;
   const currentReportHash = sha256Hex(currentReportContent);
@@ -441,6 +458,16 @@ function buildsFailureBlockers(snapshot) {
     blockers.push(blocker);
   }
 
+  if (snapshot.layoutFailureReason) {
+    addsBlocker({
+      code: 'report-layout-validation-failed',
+      reason: snapshot.layoutFailureReason,
+      path: snapshot.config.reportPath,
+    });
+
+    return blockers;
+  }
+
   if (!validatesReportFreshness(snapshot.expectedReportContent, snapshot.currentReportContent)) {
     addsBlocker({
       code: 'stale-report-projection',
@@ -504,7 +531,11 @@ function writesReportTruthEvidence(snapshot, result) {
     LogMe(sampleMethod);
   }
 
-  const evidenceDirectory = path.join(snapshot.provenance.evidenceDirectory, 'runs', snapshot.provenance.runId);
+  const evidenceRootDirectory = snapshot.provenance
+    ? snapshot.provenance.evidenceDirectory
+    : path.join(snapshot.config.rootDir, 'evidence');
+  const runId = snapshot.provenance ? snapshot.provenance.runId : 'layout-validation-failure';
+  const evidenceDirectory = path.join(evidenceRootDirectory, 'runs', runId);
   const evidencePath = path.join(evidenceDirectory, 'report-truth.v1.json');
   fs.mkdirSync(evidenceDirectory, { recursive: true });
 
@@ -512,8 +543,8 @@ function writesReportTruthEvidence(snapshot, result) {
     schemaVersion: 'report-truth.v1',
     generatedAt: new Date().toISOString(),
     reportPath: snapshot.config.reportPath,
-    currentReportHash: snapshot.currentReportHash,
-    expectedReportHash: snapshot.expectedReportHash,
+    currentReportHash: snapshot.currentReportHash || null,
+    expectedReportHash: snapshot.expectedReportHash || null,
     reportVerdict: result.reportVerdict,
     coverage: result.coverage,
     silentLocalMethods: result.silentLocalMethods,
@@ -537,12 +568,12 @@ function runsReportTruthCommand(options = {}) {
 
   const snapshot = buildsReportTruthSnapshot();
   const blockers = buildsFailureBlockers(snapshot);
-  const topFindingCodes = collectsTopFindingCodes(snapshot.findings);
-  const topFindingPaths = collectsTopFindingPaths(snapshot.findings);
-  const reportVerdict = snapshot.summary.verdict;
-  const coverage = snapshot.summary.coverage;
-  const silentLocalMethods = snapshot.summary.silentLocalMethods;
-  const anonymousExecutableMethods = snapshot.summary.anonymousExecutableMethods;
+  const topFindingCodes = snapshot.layoutFailureReason ? [] : collectsTopFindingCodes(snapshot.findings);
+  const topFindingPaths = snapshot.layoutFailureReason ? [] : collectsTopFindingPaths(snapshot.findings);
+  const reportVerdict = snapshot.layoutFailureReason ? 'BLOCKED' : snapshot.summary.verdict;
+  const coverage = snapshot.layoutFailureReason ? 0 : snapshot.summary.coverage;
+  const silentLocalMethods = snapshot.layoutFailureReason ? 0 : snapshot.summary.silentLocalMethods;
+  const anonymousExecutableMethods = snapshot.layoutFailureReason ? 0 : snapshot.summary.anonymousExecutableMethods;
   const status = blockers.length > 0
     ? 'tests pass, report truth gate fails'
     : 'tests pass, report truth gate passes';
@@ -582,6 +613,7 @@ function buildsReportTruthHookMessage(result, commandToRun = 'npm run report:tru
 }
 
 module.exports = {
+  buildsFailureBlockers,
   buildsReportTruthHookMessage,
   buildsReportTruthSnapshot,
   collectsTopFindingCodes,

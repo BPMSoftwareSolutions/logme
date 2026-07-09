@@ -1,0 +1,29 @@
+box: REPORT TRUTH
+row: Verdict|{{verdict}}
+row: Run|{{provenance.runId}}
+row: Promotion|{{promotionDecision}}
+route-sterile: Gherkin -> Contract -> Source -> Telemetry -> Receipt
+route-sterile-status: ok         ok          ok        observed     written
+route-blocked: Declared Source -> Static Inventory -> Telemetry -> Receipt
+route-blocked-status: ok              has gaps          missing    unknown
+row: Declared source authority|{{configPath}}
+row: Static source inventory|{{filesScanned}} files / {{localExecutableMethods}} methods
+row: Telemetry observation|{{telemetryObservation}}
+row: Receipt evidence|{{reportPath}}
+row: Blocker count|{{blockerCount}}
+endbox
+
+tree-header: EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE
+tree-header-row: Feature : {{featureId}}
+tree-header-row: Scenario: {{scenarioName}}
+missing-tree-label: EXECUTABLE BODY TREE: missing
+diagnostic-fallback-label: DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE
+
+worklist-box: TOP BLOCKERS
+worklist-empty: No blockers
+worklist-row: finding code     : {{code}}
+worklist-row: method           : {{methodName}}
+worklist-row: source path      : {{sourcePath}}
+worklist-row: line range       : {{lineRange}}
+worklist-row: telemetry status : {{telemetryStatus}}
+worklist-row: one-line fix route: {{fixRoute}}

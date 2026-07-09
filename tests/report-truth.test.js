@@ -4,6 +4,7 @@ const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 
 const {
+  buildsFailureBlockers,
   buildsReportTruthHookMessage,
   formatsReportTruthSummary,
   runsReportTruthCommand,
@@ -48,6 +49,19 @@ test('buildsReportTruthHookMessage points developers to the command and first fi
 
   assert.match(message, /Run npm run report:truth/);
   assert.match(message, /First actionable finding path:/);
+});
+
+test('buildsFailureBlockers surfaces a single blocker and stops early when report layout validation fails', () => {
+  const failureSnapshot = {
+    config: { reportPath: '/test/root/report.md' },
+    layoutFailureReason: 'report layout validation failed, report.md was not rendered: report-layout-truth-field-omitted (...)',
+  };
+
+  const blockers = buildsFailureBlockers(failureSnapshot);
+
+  assert.equal(blockers.length, 1);
+  assert.equal(blockers[0].code, 'report-layout-validation-failed');
+  assert.match(blockers[0].reason, /report-layout-truth-field-omitted/);
 });
 
 test('report truth CLI is quiet enough to use in fast mode', () => {

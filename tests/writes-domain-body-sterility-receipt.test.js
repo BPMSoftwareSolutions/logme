@@ -83,6 +83,10 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
       unimplementedStubMethods: 0,
       coverage: 100,
       verdict: 'STERILE DOMAIN BODY',
+      blockerCount: 0,
+      promotionDecision: 'ALLOWED',
+      missingTelemetry: false,
+      missingReceipt: false,
       findings: [],
       methods: [
         {
@@ -113,7 +117,8 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
     assert.equal(fileContent, receipt.reportContent, 'File content should match receipt.reportContent');
 
     // Assert reportContent contains expected sections from rendered report
-    assert.match(receipt.reportContent, /^# Test Sterility Report/);
+    // Title is product-owned by the report layout contract, not the caller's contract.
+    assert.match(receipt.reportContent, /^# Domain Body Contract Report/);
     assert.match(receipt.reportContent, /## Execution Flow Sketch/);
     assert.match(receipt.reportContent, /## Blocker Summary/);
     assert.match(receipt.reportContent, /## Provenance/);
