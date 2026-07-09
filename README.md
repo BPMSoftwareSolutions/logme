@@ -39,3 +39,7 @@ node -e "console.log(require('./src/runs-logme-domain-audit').runsLogMeDomainAud
 ```
 
 The second command regenerates `report.md` and prints its verdict.
+
+## PI planning
+
+See [`docs/report-truth-pi-planning.md`](docs/report-truth-pi-planning.md) for the report truth projection PI kickoff, product owner (PO) review, and Gherkin acceptance criteria that should drive future `report.md` features.
