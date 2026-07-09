@@ -1,0 +1,91 @@
+{
+  "rootDir": ".",
+  "includeExtensions": [".js", ".ts"],
+  "excludeDirectories": [".git", "node_modules", "evidence", "tests"],
+  "forbiddenLocalUtilityNames": ["utils", "helpers", "common", "shared", "lib", "misc"],
+  "excludeFiles": ["report.md"],
+  "includeTestFiles": false,
+  "stubMarker": "// STUB: not yet implemented. Scaffolded from the declared file-system body contract.",
+  "reportPath": "report.md",
+  "domainContract": {
+    "reportTitle": "Domain Body Contract Report",
+    "domainName": "LogMe",
+    "domainSummary": "LogMe observes a configured workspace, inventories local executable domain methods, detects method testimony, rejects silent or generic in-repo code, and renders a sterility report with proof.",
+    "domainVocabulary": {
+      "nouns": [
+        "workspace",
+        "config",
+        "source body",
+        "executable method",
+        "testimony",
+        "coverage",
+        "finding",
+        "receipt",
+        "report",
+        "verdict"
+      ],
+      "verbs": [
+        "load",
+        "discover",
+        "inventory",
+        "detect",
+        "calculate",
+        "render",
+        "write",
+        "scan",
+        "collect",
+        "build"
+      ],
+      "forbiddenMethodNames": [
+        "arrow-function",
+        "function-expression",
+        "walk",
+        "visit",
+        "handler",
+        "callback",
+        "temp",
+        "data",
+        "misc",
+        "process",
+        "doStuff",
+        "helper"
+      ]
+    },
+    "laws": [
+      "No dark executable code in the repo.",
+      "No generic utility code in the domain body.",
+      "No helper methods hiding local meaning.",
+      "No local executable method without LogMe.",
+      "No local executable method outside the declared domain vocabulary.",
+      "No unimplemented stub reported as domain-bound code."
+    ],
+    "cleanFindingsLabel": "_No findings. The domain body is sterile._",
+    "verdicts": {
+      "sterile": "STERILE DOMAIN BODY",
+      "languageImpure": "COVERAGE CLEAN, LANGUAGE IMPURE",
+      "contaminated": "DOMAIN BODY CONTAMINATED"
+    },
+    "findings": {
+      "genericUtilityDetected": {
+        "code": "local-generic-utility-detected",
+        "reason": "generic mechanics belong in a package, not the domain body"
+      },
+      "methodWithoutTestimony": {
+        "code": "local-method-without-testimony",
+        "reason": "local domain executable code must testify with LogMe"
+      },
+      "anonymousExecutableMethodDetected": {
+        "code": "anonymous-executable-method-detected",
+        "reason": "a local executable method was discovered without a domain-bearing name"
+      },
+      "methodNameOutsideDomainVocabulary": {
+        "code": "local-method-name-outside-domain-vocabulary",
+        "reason": "a local executable method is named with generic or mechanical language instead of the declared domain vocabulary"
+      },
+      "unimplementedStubDetected": {
+        "code": "unimplemented-stub-detected",
+        "reason": "the file is a scaffolded stub and has not been implemented yet"
+      }
+    }
+  }
+}

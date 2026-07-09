@@ -1,0 +1,160 @@
+{
+  "schemaVersion": "file-system-body.contract.v1",
+  "featureId": "logme2",
+  "bodyId": "logme2.workspace-observability-domain",
+  "status": "declared",
+  "intentNarrative": {
+    "plainLanguage": "LogMe2 audits a configured workspace for executable method testimony and domain-body sterility.",
+    "executionSentence": "LogMe2 loads workspace observability configuration, discovers configured source bodies, inventories executable domain methods, detects testimony and impurity, renders a sterility report, and writes a receipt."
+  },
+  "hardLaws": [
+    "No dark executable code in the repo.",
+    "No generic utility code in the domain body.",
+    "No helper methods hiding local meaning.",
+    "No local executable method without LogMe.",
+    "No anonymous local executable method.",
+    "No local executable method outside domain vocabulary."
+  ],
+  "requiredPaths": {
+    "files": [
+      "README.md",
+      "package.json",
+      "logme.config.json",
+      "contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json",
+      "contracts/domains/logme2/workspace-observability-config.schema.v1.json",
+      "contracts/domains/logme2/domain-vocabulary.v1.json",
+      "contracts/domains/logme2/sterility-report.schema.v1.json",
+      "contracts/domains/logme2/sterility-receipt.schema.v1.json",
+      "contracts/gates/logme2/no-anonymous-local-methods.gate.v1.json",
+      "contracts/gates/logme2/no-out-of-vocabulary-local-methods.gate.v1.json",
+      "contracts/gates/logme2/no-silent-local-methods.gate.v1.json",
+      "contracts/gates/logme2/no-generic-utility-paths.gate.v1.json",
+      "contracts/gates/logme2/no-false-sterile-verdict.gate.v1.json",
+      "src/runs-logme-domain-audit.js",
+      "src/loads-workspace-observability-config/loads-workspace-observability-config.js",
+      "src/discovers-configured-source-bodies/discovers-configured-source-bodies.js",
+      "src/inventories-executable-domain-methods/inventories-executable-domain-methods.js",
+      "src/detects-method-testimony/detects-method-testimony.js",
+      "src/detects-domain-language-impurity/detects-anonymous-local-methods.js",
+      "src/detects-domain-language-impurity/detects-out-of-vocabulary-local-methods.js",
+      "src/detects-domain-language-impurity/detects-forbidden-local-utility-paths.js",
+      "src/builds-domain-body-sterility-findings/builds-domain-body-sterility-findings.js",
+      "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+      "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
+      "src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js",
+      "tests/loads-workspace-observability-config.test.js",
+      "tests/discovers-configured-source-bodies.test.js",
+      "tests/inventories-executable-domain-methods.test.js",
+      "tests/detects-method-testimony.test.js",
+      "tests/detects-anonymous-local-methods.test.js",
+      "tests/detects-out-of-vocabulary-local-methods.test.js",
+      "tests/builds-domain-body-sterility-findings.test.js",
+      "tests/runs-logme-domain-audit.test.js",
+      "packages/logme-config-primitives/src/reads-json-config-file.js",
+      "packages/logme-config-primitives/src/resolves-configured-root-path.js",
+      "packages/logme-config-primitives/src/lowercases-string-list.js",
+      "packages/logme-config-primitives/src/normalizes-config-string-array.js",
+      "packages/logme-source-body-primitives/src/walks-configured-source-files.js",
+      "packages/logme-source-body-primitives/src/filters-source-files-by-extension.js",
+      "packages/logme-source-body-primitives/src/excludes-configured-directories.js",
+      "packages/logme-method-inventory-primitives/src/parses-javascript-typescript-source.js",
+      "packages/logme-method-inventory-primitives/src/extracts-executable-method-nodes.js",
+      "packages/logme-method-inventory-primitives/src/resolves-method-name.js",
+      "packages/logme-method-inventory-primitives/src/resolves-method-kind.js",
+      "packages/logme-method-inventory-primitives/src/detects-logme-call-in-node.js",
+      "packages/logme-report-primitives/src/renders-markdown-table.js",
+      "packages/logme-report-primitives/src/renders-markdown-summary.js",
+      "packages/logme-report-primitives/src/renders-ascii-tree.js",
+      "packages/logme-testimony-core/src/LogMe.js",
+      "packages/logme-testimony-core/src/writes-telemetry-event.js",
+      "packages/logme-testimony-core/src/writes-domain-receipt.js",
+      "packages/logme-testimony-core/src/sample-method.js",
+      "tests/writes-telemetry-event.test.js",
+      "tests/LogMe.test.js"
+    ],
+    "directories": [
+      "contracts",
+      "contracts/file-system-bodies",
+      "contracts/file-system-bodies/02_declared",
+      "contracts/domains",
+      "contracts/domains/logme2",
+      "contracts/gates",
+      "contracts/gates/logme2",
+      "src",
+      "src/loads-workspace-observability-config",
+      "src/discovers-configured-source-bodies",
+      "src/inventories-executable-domain-methods",
+      "src/detects-method-testimony",
+      "src/detects-domain-language-impurity",
+      "src/builds-domain-body-sterility-findings",
+      "src/calculates-domain-body-sterility-summary",
+      "src/renders-domain-body-sterility-report",
+      "src/writes-domain-body-sterility-receipt",
+      "tests",
+      "evidence",
+      "evidence/runs",
+      "packages",
+      "packages/logme-config-primitives",
+      "packages/logme-config-primitives/src",
+      "packages/logme-source-body-primitives",
+      "packages/logme-source-body-primitives/src",
+      "packages/logme-method-inventory-primitives",
+      "packages/logme-method-inventory-primitives/src",
+      "packages/logme-report-primitives",
+      "packages/logme-report-primitives/src",
+      "packages/logme-testimony-core",
+      "packages/logme-testimony-core/src"
+    ]
+  },
+  "owns": {
+    "contracts": [
+      "contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json",
+      "contracts/domains/logme2/",
+      "contracts/gates/logme2/"
+    ],
+    "runtime": [
+      "src/runs-logme-domain-audit.js",
+      "src/loads-workspace-observability-config/",
+      "src/discovers-configured-source-bodies/",
+      "src/inventories-executable-domain-methods/",
+      "src/detects-method-testimony/",
+      "src/detects-domain-language-impurity/",
+      "src/builds-domain-body-sterility-findings/",
+      "src/calculates-domain-body-sterility-summary/",
+      "src/renders-domain-body-sterility-report/",
+      "src/writes-domain-body-sterility-receipt/"
+    ],
+    "evidence": [
+      "evidence/runs/<run-id>/"
+    ]
+  },
+  "doesNotOwn": [
+    "generic config normalization",
+    "generic source-file walking",
+    "generic JavaScript/TypeScript parsing",
+    "generic Markdown rendering",
+    "generic ASCII rendering"
+  ],
+  "packageDependencies": [
+    "packages/logme-config-primitives/",
+    "packages/logme-source-body-primitives/",
+    "packages/logme-method-inventory-primitives/",
+    "packages/logme-report-primitives/",
+    "packages/logme-testimony-core/"
+  ],
+  "verification": {
+    "requiredFindingsMustBeZero": [
+      "silent-local-method-detected",
+      "generic-utility-path-detected",
+      "anonymous-executable-method-detected",
+      "local-method-name-outside-domain-vocabulary"
+    ],
+    "requiredArtifacts": [
+      "method-inventory.v1.json",
+      "sterility-findings.v1.json",
+      "sterility-summary.v1.json",
+      "domain-body-sterility.report.md",
+      "domain-body-sterility.receipt.v1.json"
+    ]
+  }
+}
