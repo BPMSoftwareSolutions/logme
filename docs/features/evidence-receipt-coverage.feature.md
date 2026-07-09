@@ -20,6 +20,8 @@ Feature: Evidence receipt coverage
       | features/<feature-id>/scenarios/<scenario-id>/executable-body-contract.report.md |
       | features/<feature-id>/scenarios/<scenario-id>/executable-body-tree.ascii.md |
       | features/<feature-id>/scenarios/<scenario-id>/execution-timeline.table.md |
+      | features/<feature-id>/scenarios/<scenario-id>/method-execution-timeline.table.md |
+      | features/<feature-id>/scenarios/<scenario-id>/method-call-evidence.report.md |
       | features/<feature-id>/scenarios/<scenario-id>/feature-execution.contract.v1.json |
       | features/<feature-id>/scenarios/<scenario-id>/feature-execution.receipt.v1.json |
       | sprawl/domain-body-sprawl.contract.v1.json |

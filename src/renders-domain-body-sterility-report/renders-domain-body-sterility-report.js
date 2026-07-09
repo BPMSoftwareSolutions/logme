@@ -3,6 +3,7 @@ const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
 const { loadsReportLayoutContract } = require('../loads-report-layout-contract/loads-report-layout-contract');
 const { rendersReportFromLayoutContract } = require('../renders-report-from-layout-contract/renders-report-from-layout-contract');
+const { rendersGlobalReportWithQaReadiness } = require('../end-user-quality-evidence-bundle/end-user-quality-evidence-bundle');
 
 function rendersDomainBodySterilityReport(contract) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -19,7 +20,7 @@ function rendersDomainBodySterilityReport(contract) {
     throw new Error(`report layout validation failed, report.md was not rendered: ${reasons}`);
   }
 
-  return result.reportContent;
+  return rendersGlobalReportWithQaReadiness(result.reportContent, contract.rootDir || process.cwd());
 }
 
 function formatsLayoutFindingAsText(finding) {

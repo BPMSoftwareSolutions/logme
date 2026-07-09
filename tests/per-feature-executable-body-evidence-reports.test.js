@@ -48,6 +48,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'runtime-step-1',
         nodeId: '01',
+        methodName: 'receivesPerFeatureReportRequest',
+        methodKind: 'function',
         runtimePath: 'src/per-feature-report/entrypoint.js',
         timestamp: '2026-07-09T12:00:01.000Z',
         durationMs: 100,
@@ -56,6 +58,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'runtime-step-2',
         nodeId: '02',
+        methodName: 'writesFeatureScenarioEvidencePacket',
+        methodKind: 'function',
         runtimePath: 'src/per-feature-report/writes-packet.js',
         timestamp: '2026-07-09T12:00:02.000Z',
         durationMs: 250,
@@ -93,6 +97,8 @@ test('writes one feature scenario evidence packet with all required artifacts', 
       'executable-body-contract.report.md',
       'executable-body-tree.ascii.md',
       'execution-timeline.table.md',
+      'method-execution-timeline.table.md',
+      'method-call-evidence.report.md',
       'feature-execution.contract.v1.json',
       'telemetry.tieout.v1.json',
       'receipt-coverage.v1.json',
@@ -114,7 +120,9 @@ test('writes one feature scenario evidence packet with all required artifacts', 
     const proof = JSON.parse(readsText(path.join(packetPath, 'feature-execution.contract.v1.json')));
     assert.equal(proof.schemaVersion, 'feature-execution.contract.v1');
     assert.equal(proof.timingMetrics.totalObservedCalls, 2);
+    assert.equal(proof.methodTimingMetrics.totalObservedMethodCalls, 2);
     assert.equal(proof.observedExecutionTimeline[1].durationMs, 250);
+    assert.equal(proof.observedExecutionTimeline[1].methodCalls[0].methodName, 'writesFeatureScenarioEvidencePacket');
 
     const report = readsText(path.join(packetPath, 'executable-body-contract.report.md'));
     assert.ok(report.indexOf('## Executable Body Tree') < report.indexOf('## Evidence Packet'));
@@ -131,6 +139,14 @@ test('writes one feature scenario evidence packet with all required artifacts', 
 
     const timeline = readsText(path.join(packetPath, 'execution-timeline.table.md'));
     assert.match(timeline, /\| runtime-step-2 \| 02 \| WRITE EVIDENCE PACKET \| src\/per-feature-report\/writes-packet\.js \| 2026-07-09T12:00:02\.000Z \| 2026-07-09T12:00:02\.000Z \| 250 \| 1000 \| 1 \| observed \| not observed \|/);
+
+    const methodTimeline = readsText(path.join(packetPath, 'method-execution-timeline.table.md'));
+    assert.match(methodTimeline, /writesFeatureScenarioEvidencePacket/);
+    assert.match(methodTimeline, /runtime-step-2/);
+
+    const methodAppendix = readsText(path.join(packetPath, 'method-call-evidence.report.md'));
+    assert.match(methodAppendix, /# Method Call Evidence/);
+    assert.match(methodAppendix, /writesFeatureScenarioEvidencePacket call 001/);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }
@@ -169,10 +185,11 @@ test('renders global feature evidence index as links without embedding full tree
     ];
     const index = rendersFeatureEvidenceIndex(rows);
 
-    assert.match(index, /feature id \| scenario id \| feature verdict \| blocker count \| evidence packet path \| executable body report path \| execution timeline table path/);
+    assert.match(index, /feature id \| scenario id \| feature verdict \| blocker count \| evidence packet path \| executable body report path \| execution timeline table path \| method execution timeline table path/);
     assert.match(index, /per-feature-executable-body-evidence-reports/);
     assert.match(index, /executable-body-contract\.report\.md/);
     assert.match(index, /execution-timeline\.table\.md/);
+    assert.match(index, /method-execution-timeline\.table\.md/);
     assert.match(index, /future-feature \| future-scenario \| not executed/);
     assert.doesNotMatch(index, /EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE/);
     assert.doesNotMatch(index, /STERILE/);

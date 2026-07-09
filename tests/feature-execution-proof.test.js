@@ -8,17 +8,23 @@ const {
   buildsFeatureExecutionProof,
   buildsFeatureProofInventory,
   buildsFeatureProofPath,
+  buildsScenarioMethodEvidenceReportPath,
+  buildsScenarioMethodTimelineTablePath,
   buildsScenarioProofReportPath,
   buildsScenarioTimingTablePath,
   checksFeatureReportTruthGate,
   checksUnsupportedSlaClaims,
   discoversFeatureScenarios,
   projectsFeatureExecutionProofToCsv,
+  rendersMethodCallEvidenceReport,
   rendersFeatureExecutionReport,
+  rendersScenarioMethodTimelineTable,
   rendersScenarioProofReport,
   rendersScenarioTimingTable,
   writesFeatureExecutionProof,
   writesFeatureProofInventory,
+  writesMethodCallEvidenceReport,
+  writesScenarioMethodTimelineTable,
   writesScenarioProofReport,
   writesScenarioTimingTable,
 } = require('../src/feature-execution-proof/feature-execution-proof');
@@ -85,6 +91,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'event-01-a',
         nodeId: '01',
+        methodName: 'receivesFeatureExecutionRequest',
+        methodKind: 'function',
         runtimePath: 'src/runs-feature-truth-command.js:1-8',
         timestamp: '2026-07-09T12:00:01.000Z',
         durationMs: 100,
@@ -93,6 +101,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'event-02-a',
         nodeId: '02',
+        methodName: 'writesFeatureExecutionProof',
+        methodKind: 'function',
         runtimePath: 'src/writes-feature-execution-proof.js:10-40',
         timestamp: '2026-07-09T12:00:02.000Z',
         durationMs: 150,
@@ -101,6 +111,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'event-02-b',
         nodeId: '02',
+        methodName: 'writesFeatureExecutionProof',
+        methodKind: 'function',
         runtimePath: 'src/writes-feature-execution-proof.js:10-40',
         timestamp: '2026-07-09T12:00:03.000Z',
         durationMs: 250,
@@ -197,7 +209,14 @@ test('writes canonical JSON proof with repeated calls, observed metrics, and mis
     assert.equal(written.generatorName, 'LogMe feature execution proof');
     assert.equal(written.observedExecutionTimeline[1].callCount, 2);
     assert.deepEqual(written.observedExecutionTimeline[1].calls.map((call) => call.telemetryEventId), ['event-02-a', 'event-02-b']);
+    assert.deepEqual(written.observedExecutionTimeline[1].methodCalls.map((call) => call.methodName), ['writesFeatureExecutionProof', 'writesFeatureExecutionProof']);
+    assert.equal(written.observedExecutionTimeline[1].methodCalls[0].owningFeatureId, 'feature-execution-proof-source-of-truth');
+    assert.equal(written.observedExecutionTimeline[1].methodCalls[0].owningScenarioId, 'write-canonical-json-execution-proof-for-a-scenario');
+    assert.deepEqual(written.observedExecutionTimeline[1].methodCalls[0].telemetryEventIds, ['event-02-a']);
+    assert.deepEqual(written.observedExecutionTimeline[1].methodCalls[0].receiptPaths, ['evidence/runs/run-123/proof.receipt.v1.json']);
     assert.equal(written.observedExecutionTimeline[1].callSummary.totalDurationMs, 400);
+    assert.equal(written.methodTimingMetrics.totalObservedMethodCalls, 3);
+    assert.equal(written.methodTimingMetrics.totalMethodExecutionTimeMs, 500);
     assert.equal(written.observedExecutionTimeline[2].status, 'not observed');
     assert.equal(written.observedExecutionTimeline[2].receiptStatus, 'missing');
     assert.equal(written.timingMetrics.scenarioLeadTimeMs, 4000);
@@ -301,6 +320,40 @@ test('writes shareable timing table projection from canonical proof', () => {
     assert.match(writtenTable, /# Execution Timeline: Write canonical JSON execution proof for a scenario/);
     assert.match(writtenTable, /\| event-01-a \| 01 \| SURFACE RECEIVES REQUEST \| src\/runs-feature-truth-command\.js:1-8 \| 2026-07-09T12:00:01\.000Z \| 2026-07-09T12:00:01\.000Z \| 100 \| 1000 \| 1 \| observed \| not observed \|/);
     assert.match(writtenTable, /\| event-02-a \| 02 \| PROOF WRITER CLOSES EVIDENCE \| src\/writes-feature-execution-proof\.js:10-40 \| 2026-07-09T12:00:02\.000Z \| 2026-07-09T12:00:03\.000Z \| 400 \| 1000 \| 2 \| observed \| not observed \|/);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('writes method timeline and evidence appendix from canonical proof', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-feature-proof-'));
+
+  try {
+    const evidenceRoot = path.join(tempDir, 'evidence');
+    const proof = {
+      ...buildsFeatureExecutionProof(buildsProofInput()),
+      proofPath: 'evidence/runs/run-123/features/feature-execution-proof-source-of-truth/scenarios/write-canonical-json-execution-proof-for-a-scenario/feature-execution.contract.v1.json',
+    };
+    const tableMarkdown = rendersScenarioMethodTimelineTable(proof, tempDir);
+    const evidenceMarkdown = rendersMethodCallEvidenceReport(proof, tempDir);
+    const tableWrite = writesScenarioMethodTimelineTable(proof, {
+      evidenceRoot,
+      rootDir: tempDir,
+    });
+    const reportWrite = writesMethodCallEvidenceReport(proof, {
+      evidenceRoot,
+      rootDir: tempDir,
+    });
+
+    assert.equal(tableWrite.tablePath, buildsScenarioMethodTimelineTablePath(evidenceRoot, 'run-123', 'feature-execution-proof-source-of-truth', 'write-canonical-json-execution-proof-for-a-scenario'));
+    assert.equal(reportWrite.reportPath, buildsScenarioMethodEvidenceReportPath(evidenceRoot, 'run-123', 'feature-execution-proof-source-of-truth', 'write-canonical-json-execution-proof-for-a-scenario'));
+    assert.match(tableMarkdown, /^\| runtime order \| body node id \| body node label \| runtime file \| method name \| call index \| started at \| completed at \| duration ms \| elapsed since previous call ms \| telemetry event ids \| receipt paths \| status \| blocker code \|/);
+    assert.match(tableMarkdown, /\| 2 \| 02 \| PROOF WRITER CLOSES EVIDENCE \| src\/writes-feature-execution-proof\.js:10-40 \| writesFeatureExecutionProof \| 1 \| 2026-07-09T12:00:02\.000Z \| 2026-07-09T12:00:02\.000Z \| 150 \| 0 \| event-02-a \| evidence\/runs\/run-123\/proof\.receipt\.v1\.json \| ok \| not observed \|/);
+    assert.match(evidenceMarkdown, /# Method Call Evidence: Write canonical JSON execution proof for a scenario/);
+    assert.match(evidenceMarkdown, /### writesFeatureExecutionProof call 001/);
+    assert.match(evidenceMarkdown, /- Telemetry event ids: event-02-a/);
+    assert.match(fs.readFileSync(tableWrite.tablePath, 'utf8'), /# Method Execution Timeline/);
+    assert.match(fs.readFileSync(reportWrite.reportPath, 'utf8'), /Executable body report: executable-body-contract\.report\.md/);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }

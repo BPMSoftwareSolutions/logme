@@ -56,6 +56,7 @@ Feature: Feature execution proof source of truth
       | receipt source paths |
       | timing metrics |
       | call count metrics |
+      | method call drill-down |
       | blocker findings |
       | promotion decision |
     And every report field about execution should be derived from this JSON proof or explicitly marked `not observed`.
@@ -84,6 +85,7 @@ Feature: Feature execution proof source of truth
       | blocker worklist |
       | source evidence links |
       | dense telemetry appendix |
+      | method-by-method execution drill-down |
     And the report should link back to the canonical JSON proof using a repo-relative path.
 
   Scenario: Write shareable timing table projection
@@ -133,6 +135,30 @@ Feature: Feature execution proof source of truth
     And a node with no telemetry event should show `not observed`
     And a node with no required receipt should show `missing`
     And the JSON proof should not infer timing, call counts, or status from static source inventory.
+
+  Scenario: Preserve method call drill-down inside observed body nodes
+    Given raw telemetry identifies method-level execution during a scenario
+    When `feature-execution.contract.v1.json` is built
+    Then each observed executable body node should include ordered `methodCalls`
+    And each method call should include:
+      | field |
+      | call index |
+      | method name |
+      | method kind |
+      | runtime path |
+      | source line range |
+      | started at |
+      | completed at |
+      | duration ms |
+      | elapsed since previous call ms |
+      | telemetry event ids |
+      | telemetry event path |
+      | receipt paths |
+      | status |
+      | blocker code |
+    And method call timing should come only from telemetry evidence
+    And method receipt status should come only from receipt evidence
+    And a body node marked `observed` without method calls should be marked `method detail missing`.
 
   Scenario: Preserve repeated calls in the execution proof
     Given the same runtime method or body node is observed more than once during a scenario
@@ -247,6 +273,7 @@ Feature: Feature execution proof source of truth
       | receipt status |
       | blocker status |
     And the report should include a supporting table or linked projection for dense timing and call-count details
+    And the report should include or link the method-level drill-down projection
     And the report should include the generated report path and generated-at timestamp
     And the product owner should not need to open JSON to understand what happened.
 

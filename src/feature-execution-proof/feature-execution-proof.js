@@ -147,6 +147,40 @@ function buildsScenarioTimingTablePath(evidenceRoot, runId, featureId, scenarioI
   );
 }
 
+function buildsScenarioMethodTimelineTablePath(evidenceRoot, runId, featureId, scenarioId) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return path.join(
+    evidenceRoot,
+    'runs',
+    runId,
+    'features',
+    featureId,
+    'scenarios',
+    scenarioId,
+    'method-execution-timeline.table.md',
+  );
+}
+
+function buildsScenarioMethodEvidenceReportPath(evidenceRoot, runId, featureId, scenarioId) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return path.join(
+    evidenceRoot,
+    'runs',
+    runId,
+    'features',
+    featureId,
+    'scenarios',
+    scenarioId,
+    'method-call-evidence.report.md',
+  );
+}
+
 function selectsScenarioProofStatus({ implementationStatus, proofPath, blockers }) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -306,12 +340,20 @@ function calculatesDurationMs(event) {
   return Math.max(0, end - start);
 }
 
+function readsEventTimestamp(event) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return event.timestamp || event.startedAt || event.firstSeenAt || NOT_OBSERVED;
+}
+
 function buildsObservedCall(event, index, previousTimestampMs, runStartMs) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  const timestamp = event.timestamp || event.startedAt || event.firstSeenAt || NOT_OBSERVED;
+  const timestamp = readsEventTimestamp(event);
   const timestampMs = readsMilliseconds(timestamp);
 
   return {
@@ -326,6 +368,122 @@ function buildsObservedCall(event, index, previousTimestampMs, runStartMs) {
     elapsedSincePreviousNodeMs: timestampMs !== null && previousTimestampMs !== null ? timestampMs - previousTimestampMs : NOT_OBSERVED,
     status: event.status || 'observed',
   };
+}
+
+function formatsSourceLineRange(lineRange) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!lineRange || lineRange.start === NOT_OBSERVED || lineRange.end === NOT_OBSERVED) {
+    return {
+      start: NOT_OBSERVED,
+      end: NOT_OBSERVED,
+    };
+  }
+
+  return lineRange;
+}
+
+function readsTelemetryEventIdsForMethod(event, fallbackId) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (Array.isArray(event.telemetryEventIds) && event.telemetryEventIds.length > 0) {
+    return event.telemetryEventIds;
+  }
+
+  return [event.telemetryEventId || event.eventId || event.id || fallbackId];
+}
+
+function readsReceiptPathsForMethod(event, nodeReceiptPaths) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (Array.isArray(event.receiptPaths)) {
+    return event.receiptPaths;
+  }
+
+  if (event.receiptPath) {
+    return [event.receiptPath];
+  }
+
+  return nodeReceiptPaths;
+}
+
+function buildsMethodCall(event, node, index, previousMethodTimestampMs, nodeStartMs, nodeReceiptPaths, receiptStatus) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const fallbackId = `method-event-${node.nodeId}-${index}`;
+  const startedAt = event.methodStartedAt || event.startedAt || event.firstSeenAt || readsEventTimestamp(event);
+  const completedAt = event.methodCompletedAt || event.completedAt || event.finishedAt || event.lastSeenAt || readsEventTimestamp(event);
+  const startedAtMs = readsMilliseconds(startedAt);
+  const sourceLineRange = formatsSourceLineRange(event.methodSourceLineRange || event.sourceLineRange || node.sourceLineRange);
+  const receiptPaths = readsReceiptPathsForMethod(event, nodeReceiptPaths);
+  const methodReceiptStatus = receiptStatus === MISSING ? MISSING : (receiptPaths.length > 0 ? 'observed' : MISSING);
+  const blockerCode = methodReceiptStatus === MISSING ? 'method-call-receipt-missing' : (event.blockerCode || NOT_OBSERVED);
+
+  return {
+    callIndex: index,
+    methodName: event.methodName || event.name || NOT_OBSERVED,
+    methodKind: event.methodKind || event.kind || NOT_OBSERVED,
+    runtimeFilePath: event.methodRuntimePath || event.runtimeFilePath || event.runtimePath || node.runtimePath,
+    runtimePath: event.methodRuntimePath || event.runtimeFilePath || event.runtimePath || node.runtimePath,
+    sourceLineRange,
+    owningFeatureId: event.featureId || NOT_OBSERVED,
+    owningScenarioId: event.scenarioId || NOT_OBSERVED,
+    owningNodeId: node.nodeId,
+    owningNodeLabel: node.nodeLabel,
+    contractPath: node.contractPath,
+    startedAt,
+    completedAt,
+    durationMs: calculatesDurationMs({
+      ...event,
+      startedAt,
+      finishedAt: completedAt,
+    }),
+    elapsedSincePreviousCallMs: startedAtMs !== null && previousMethodTimestampMs !== null ? startedAtMs - previousMethodTimestampMs : NOT_OBSERVED,
+    elapsedSinceNodeStartMs: startedAtMs !== null && nodeStartMs !== null ? startedAtMs - nodeStartMs : NOT_OBSERVED,
+    telemetryEventIds: readsTelemetryEventIdsForMethod(event, fallbackId),
+    telemetryEventPath: event.telemetryEventPath || event.eventPath || NOT_OBSERVED,
+    receiptPaths,
+    receiptStatus: methodReceiptStatus,
+    status: event.status === 'blocked' || methodReceiptStatus === MISSING ? 'blocked' : 'ok',
+    blockerCode,
+    fixRoute: blockerCode === 'method-call-receipt-missing'
+      ? 'write method-level receipt proof and link it to this method call'
+      : (event.fixRoute || 'none'),
+  };
+}
+
+function buildsMethodCalls(sortedEvents, node, nodeReceiptPaths, receiptStatus) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const methodCalls = [];
+  const nodeStartMs = sortedEvents.length > 0 ? readsMilliseconds(readsEventTimestamp(sortedEvents[0])) : null;
+  let previousMethodTimestampMs = nodeStartMs;
+
+  for (let index = 0; index < sortedEvents.length; index += 1) {
+    const methodCall = buildsMethodCall(
+      sortedEvents[index],
+      node,
+      index + 1,
+      previousMethodTimestampMs,
+      nodeStartMs,
+      nodeReceiptPaths,
+      receiptStatus,
+    );
+    previousMethodTimestampMs = readsMilliseconds(methodCall.startedAt);
+    methodCalls.push(methodCall);
+  }
+
+  return methodCalls;
 }
 
 function summarizesCalls(calls) {
@@ -466,6 +624,7 @@ function buildsObservedNode(node, matchingEvents, receiptPaths, previousTimestam
   const receiptStatus = node.requiredReceiptPaths.length === 0 || nodeReceiptPaths.length === node.requiredReceiptPaths.length
     ? 'observed'
     : MISSING;
+  const methodCalls = buildsMethodCalls(sortedEvents, node, nodeReceiptPaths, receiptStatus);
   const telemetryEventIds = readsTelemetryEventIds(calls);
   const telemetryEventPaths = readsTelemetryEventPaths(calls);
   const lastCall = calls[calls.length - 1] || null;
@@ -477,6 +636,16 @@ function buildsObservedNode(node, matchingEvents, receiptPaths, previousTimestam
 
   if (receiptStatus === MISSING) {
     blockerCodes.push('required-receipt-missing');
+  }
+
+  if (calls.length > 0 && methodCalls.length === 0) {
+    blockerCodes.push('observed-body-node-without-method-drilldown');
+  }
+
+  for (const methodCall of methodCalls) {
+    if (methodCall.blockerCode !== NOT_OBSERVED && !blockerCodes.includes(methodCall.blockerCode)) {
+      blockerCodes.push(methodCall.blockerCode);
+    }
   }
 
   return {
@@ -495,6 +664,7 @@ function buildsObservedNode(node, matchingEvents, receiptPaths, previousTimestam
     elapsedSincePreviousNodeMs: calls[0] ? calls[0].elapsedSincePreviousNodeMs : NOT_OBSERVED,
     callCount: callSummary.callCount,
     calls,
+    methodCalls,
     callSummary,
     receiptPaths: nodeReceiptPaths,
     receiptStatus,
@@ -595,6 +765,73 @@ function findsSlowestNode(nodes) {
   }
 
   return slowestNode;
+}
+
+function readsMethodCalls(nodes) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const methodCalls = [];
+
+  for (const node of nodes) {
+    for (const methodCall of node.methodCalls || []) {
+      methodCalls.push(methodCall);
+    }
+  }
+
+  return methodCalls;
+}
+
+function findsSlowestMethodCall(methodCalls) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  let slowestMethodCall = null;
+
+  for (const methodCall of methodCalls) {
+    if (typeof methodCall.durationMs === 'number' && (!slowestMethodCall || methodCall.durationMs > slowestMethodCall.durationMs)) {
+      slowestMethodCall = methodCall;
+    }
+  }
+
+  return slowestMethodCall;
+}
+
+function calculatesTotalObservedWaitTimeMs(methodCalls) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const waits = [];
+
+  for (const methodCall of methodCalls) {
+    if (typeof methodCall.elapsedSincePreviousCallMs === 'number') {
+      waits.push(methodCall.elapsedSincePreviousCallMs);
+    }
+  }
+
+  return waits.length > 0 ? sumsNumbers(waits) : NOT_OBSERVED;
+}
+
+function calculatesMethodTimingMetrics(nodes) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const methodCalls = readsMethodCalls(nodes);
+  const methodDurations = readsCallDurations(methodCalls);
+  const slowestMethodCall = findsSlowestMethodCall(methodCalls);
+  const totalMethodExecutionTimeMs = methodDurations.length > 0 ? sumsNumbers(methodDurations) : NOT_OBSERVED;
+  const totalObservedWaitTimeMs = calculatesTotalObservedWaitTimeMs(methodCalls);
+
+  return {
+    totalObservedMethodCalls: methodCalls.length,
+    slowestMethodCall: slowestMethodCall || NOT_OBSERVED,
+    totalMethodExecutionTimeMs,
+    totalObservedWaitTimeMs,
+  };
 }
 
 function buildsNodeDurationMetric(node) {
@@ -928,6 +1165,24 @@ function readsTelemetrySourcePaths(telemetryEvents) {
   return telemetrySourcePaths;
 }
 
+function stampsMethodCallOwnership(nodes, featureId, scenarioId) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  for (const node of nodes) {
+    for (const methodCall of node.methodCalls || []) {
+      if (methodCall.owningFeatureId === NOT_OBSERVED) {
+        methodCall.owningFeatureId = featureId;
+      }
+
+      if (methodCall.owningScenarioId === NOT_OBSERVED) {
+        methodCall.owningScenarioId = scenarioId;
+      }
+    }
+  }
+}
+
 function buildsFeatureExecutionProof(input) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -942,6 +1197,7 @@ function buildsFeatureExecutionProof(input) {
     receiptSourcePaths,
     input.runStartedAt,
   );
+  stampsMethodCallOwnership(observedExecutionTimeline, input.featureId, input.scenarioId);
   const blockerFindings = input.blockerFindings || [];
   const promotionDecision = buildsPromotionDecision(observedExecutionTimeline, blockerFindings);
   const proof = {
@@ -960,11 +1216,13 @@ function buildsFeatureExecutionProof(input) {
     telemetrySourcePaths: readsTelemetrySourcePaths(telemetryEvents),
     receiptSourcePaths,
     timingMetrics: null,
+    methodTimingMetrics: null,
     callCountMetrics: null,
     blockerFindings,
     promotionDecision,
   };
   proof.timingMetrics = calculatesTimingMetrics(observedExecutionTimeline, proof.runStartedAt, proof.receiptWrittenAt);
+  proof.methodTimingMetrics = calculatesMethodTimingMetrics(observedExecutionTimeline);
   proof.callCountMetrics = calculatesCallCountMetrics(observedExecutionTimeline);
   proof.serviceLevelIndicators = calculatesServiceLevelIndicators(proof);
   proof.sloEvaluations = evaluatesServiceLevelObjectives(proof, input.sloTargets || []);
@@ -1395,6 +1653,92 @@ function rendersScenarioTimingTable(proof, rootDir) {
   return lines.join('\n');
 }
 
+function formatsSourcePathWithLineRange(rootDir, filePath, lineRange) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const formattedPath = formatsRepoRelativePath(rootDir, filePath);
+
+  if (!lineRange || lineRange.start === NOT_OBSERVED || lineRange.end === NOT_OBSERVED || String(formattedPath).match(/:\d+-\d+$/u)) {
+    return formattedPath;
+  }
+
+  return `${formattedPath}:${lineRange.start}-${lineRange.end}`;
+}
+
+function rendersScenarioMethodTimelineTable(proof, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '| runtime order | body node id | body node label | runtime file | method name | call index | started at | completed at | duration ms | elapsed since previous call ms | telemetry event ids | receipt paths | status | blocker code |',
+    '| ---: | --- | --- | --- | --- | ---: | --- | --- | ---: | ---: | --- | --- | --- | --- |',
+  ];
+  let runtimeOrder = 1;
+
+  for (const node of proof.observedExecutionTimeline || []) {
+    if (!node.methodCalls || node.methodCalls.length === 0) {
+      lines.push(`| ${runtimeOrder} | ${node.nodeId} | ${node.nodeLabel} | ${formatsRepoRelativePath(rootDir, node.runtimePath)} | ${NOT_OBSERVED} | 0 | ${NOT_OBSERVED} | ${NOT_OBSERVED} | ${NOT_OBSERVED} | ${NOT_OBSERVED} | ${formatsValue(node.telemetryEventIds)} | ${formatsValue(node.receiptPaths)} | method detail missing | observed-body-node-without-method-drilldown |`);
+      runtimeOrder += 1;
+    }
+
+    for (const methodCall of node.methodCalls || []) {
+      lines.push(`| ${runtimeOrder} | ${node.nodeId} | ${node.nodeLabel} | ${formatsRepoRelativePath(rootDir, methodCall.runtimeFilePath || methodCall.runtimePath)} | ${methodCall.methodName} | ${methodCall.callIndex} | ${methodCall.startedAt} | ${methodCall.completedAt} | ${methodCall.durationMs} | ${methodCall.elapsedSincePreviousCallMs} | ${formatsValue(methodCall.telemetryEventIds)} | ${formatsValue(methodCall.receiptPaths)} | ${methodCall.status} | ${methodCall.blockerCode} |`);
+      runtimeOrder += 1;
+    }
+  }
+
+  return lines.join('\n');
+}
+
+function rendersMethodCallEvidenceReport(proof, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    `# Method Call Evidence: ${proof.scenarioName}`,
+    '',
+    `- Run id: ${proof.runId}`,
+    `- Feature id: ${proof.featureId}`,
+    `- Scenario id: ${proof.scenarioId}`,
+    `- Canonical JSON proof: ${formatsProofPathForReport(proof, rootDir)}`,
+    `- Executable body report: executable-body-contract.report.md`,
+    '',
+  ];
+
+  for (const node of proof.observedExecutionTimeline || []) {
+    lines.push(`## ${node.nodeId} ${node.nodeLabel}`);
+    lines.push('');
+
+    if (!node.methodCalls || node.methodCalls.length === 0) {
+      lines.push('- Method detail: missing');
+      lines.push('- Blocker: observed-body-node-without-method-drilldown');
+      lines.push('');
+      continue;
+    }
+
+    for (const methodCall of node.methodCalls) {
+      lines.push(`### ${methodCall.methodName} call ${String(methodCall.callIndex).padStart(3, '0')}`);
+      lines.push('');
+      lines.push(`- Runtime file: ${formatsSourcePathWithLineRange(rootDir, methodCall.runtimeFilePath || methodCall.runtimePath, methodCall.sourceLineRange)}`);
+      lines.push(`- Method kind: ${methodCall.methodKind}`);
+      lines.push(`- Telemetry event ids: ${formatsValue(methodCall.telemetryEventIds)}`);
+      lines.push(`- Telemetry event path: ${formatsRepoRelativePath(rootDir, methodCall.telemetryEventPath)}`);
+      lines.push(`- Receipt paths: ${formatsValue(methodCall.receiptPaths)}`);
+      lines.push(`- Duration ms: ${methodCall.durationMs}`);
+      lines.push(`- Status: ${methodCall.status}`);
+      lines.push(`- Blocker code: ${methodCall.blockerCode}`);
+      lines.push(`- Fix route: ${methodCall.fixRoute}`);
+      lines.push('');
+    }
+  }
+
+  return lines.join('\n');
+}
+
 function writesScenarioProofReport(proof, options = {}) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -1442,6 +1786,51 @@ function writesScenarioTimingTable(proof, options = {}) {
     tablePath,
     tableContent,
     bytesWritten: Buffer.byteLength(tableContent, 'utf8'),
+  };
+}
+
+function writesScenarioMethodTimelineTable(proof, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const rootDir = options.rootDir || process.cwd();
+  const evidenceRoot = options.evidenceRoot || path.join(rootDir, 'evidence');
+  const tablePath = options.tablePath || buildsScenarioMethodTimelineTablePath(evidenceRoot, proof.runId, proof.featureId, proof.scenarioId);
+  const tableContent = [
+    `# Method Execution Timeline: ${proof.scenarioName}`,
+    '',
+    rendersScenarioMethodTimelineTable(proof, rootDir),
+    '',
+  ].join('\n');
+
+  fs.mkdirSync(path.dirname(tablePath), { recursive: true });
+  fs.writeFileSync(tablePath, tableContent, 'utf8');
+
+  return {
+    tablePath,
+    tableContent,
+    bytesWritten: Buffer.byteLength(tableContent, 'utf8'),
+  };
+}
+
+function writesMethodCallEvidenceReport(proof, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const rootDir = options.rootDir || process.cwd();
+  const evidenceRoot = options.evidenceRoot || path.join(rootDir, 'evidence');
+  const reportPath = options.reportPath || buildsScenarioMethodEvidenceReportPath(evidenceRoot, proof.runId, proof.featureId, proof.scenarioId);
+  const reportContent = rendersMethodCallEvidenceReport(proof, rootDir);
+
+  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+  fs.writeFileSync(reportPath, reportContent.endsWith('\n') ? reportContent : `${reportContent}\n`, 'utf8');
+
+  return {
+    reportPath,
+    reportContent: reportContent.endsWith('\n') ? reportContent : `${reportContent}\n`,
+    bytesWritten: Buffer.byteLength(reportContent, 'utf8'),
   };
 }
 
@@ -1580,6 +1969,28 @@ function checksFeatureReportTruthGate(reportContent, proof) {
     }
   }
 
+  if (/method drill-down|method execution timeline|method call evidence/iu.test(reportContent)) {
+    for (const methodMatch of reportContent.matchAll(/\b(method name|method|runtime file|started at|completed at|telemetry event ids|receipt paths|blocker code):\s*([^\n|]+)/giu)) {
+      const claimedValue = methodMatch[2].trim();
+
+      if (claimedValue !== NOT_OBSERVED && claimedValue !== MISSING && claimedValue !== 'none' && !JSON.stringify(proof).includes(claimedValue)) {
+        findings.push({
+          code: 'method-drilldown-fact-without-json-proof',
+          reason: `method report claim "${methodMatch[0].trim()}" is absent from feature-execution.contract.v1.json`,
+        });
+      }
+    }
+  }
+
+  for (const node of proof.observedExecutionTimeline || []) {
+    if (node.status === 'observed' && (!Array.isArray(node.methodCalls) || node.methodCalls.length === 0)) {
+      findings.push({
+        code: 'observed-body-node-without-method-drilldown',
+        reason: `observed body node "${node.nodeId}" has no methodCalls in feature-execution.contract.v1.json`,
+      });
+    }
+  }
+
   return {
     verdict: findings.length === 0 ? 'PASS' : 'BLOCKED',
     findings,
@@ -1617,6 +2028,8 @@ module.exports = {
   buildsFeatureExecutionProof,
   buildsFeatureProofInventory,
   buildsFeatureProofPath,
+  buildsScenarioMethodEvidenceReportPath,
+  buildsScenarioMethodTimelineTablePath,
   buildsScenarioProofReportPath,
   buildsScenarioTimingTablePath,
   calculatesServiceLevelIndicators,
@@ -1625,12 +2038,16 @@ module.exports = {
   discoversFeatureScenarios,
   evaluatesServiceLevelObjectives,
   projectsFeatureExecutionProofToCsv,
+  rendersMethodCallEvidenceReport,
   rendersFeatureExecutionReport,
+  rendersScenarioMethodTimelineTable,
   rendersScenarioProofReport,
   rendersScenarioTimingTable,
   slugifies,
   writesFeatureExecutionProof,
   writesFeatureProofInventory,
+  writesMethodCallEvidenceReport,
+  writesScenarioMethodTimelineTable,
   writesScenarioProofReport,
   writesScenarioTimingTable,
 };

@@ -5,6 +5,8 @@ const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample
 const {
   buildsFeatureExecutionProof,
   buildsFeatureProofPath,
+  rendersMethodCallEvidenceReport,
+  rendersScenarioMethodTimelineTable,
   rendersScenarioTimingTable,
 } = require('../feature-execution-proof/feature-execution-proof');
 const {
@@ -306,6 +308,8 @@ function buildsFeatureExecutionReceipt(proof, paths) {
       executableBodyContractReport: paths.reportPath,
       executableBodyTree: paths.treePath,
       executionTimelineTable: paths.timelineTablePath,
+      methodExecutionTimelineTable: paths.methodTimelineTablePath,
+      methodCallEvidenceReport: paths.methodEvidenceReportPath,
       featureExecutionContract: paths.proofPath,
       telemetryTieout: paths.telemetryTieoutPath,
       receiptCoverage: paths.receiptCoveragePath,
@@ -325,6 +329,8 @@ function buildsPacketPaths(packetPath) {
     reportPath: buildsPacketArtifactPath(packetPath, 'executable-body-contract.report.md'),
     treePath: buildsPacketArtifactPath(packetPath, 'executable-body-tree.ascii.md'),
     timelineTablePath: buildsPacketArtifactPath(packetPath, 'execution-timeline.table.md'),
+    methodTimelineTablePath: buildsPacketArtifactPath(packetPath, 'method-execution-timeline.table.md'),
+    methodEvidenceReportPath: buildsPacketArtifactPath(packetPath, 'method-call-evidence.report.md'),
     proofPath: buildsPacketArtifactPath(packetPath, 'feature-execution.contract.v1.json'),
     telemetryTieoutPath: buildsPacketArtifactPath(packetPath, 'telemetry.tieout.v1.json'),
     receiptCoveragePath: buildsPacketArtifactPath(packetPath, 'receipt-coverage.v1.json'),
@@ -362,6 +368,17 @@ function writesFeatureScenarioEvidencePacket(proofInput, options = {}) {
     rendersScenarioTimingTable(proofWithPath, rootDir),
     '',
   ].join('\n'));
+  writesMarkdownArtifact(paths.methodTimelineTablePath, [
+    `# Method Execution Timeline: ${proof.scenarioName}`,
+    '',
+    `- Run id: ${proof.runId}`,
+    `- Feature id: ${proof.featureId}`,
+    `- Scenario id: ${proof.scenarioId}`,
+    '',
+    rendersScenarioMethodTimelineTable(proofWithPath, rootDir),
+    '',
+  ].join('\n'));
+  writesMarkdownArtifact(paths.methodEvidenceReportPath, rendersMethodCallEvidenceReport(proofWithPath, rootDir));
   writesJsonArtifact(paths.telemetryTieoutPath, buildsTelemetryTieout(proofWithPath));
   writesJsonArtifact(paths.receiptCoveragePath, buildsReceiptCoverage(proofWithPath));
   writesJsonArtifact(paths.promotionDecisionPath, buildsPromotionDecisionArtifact(proofWithPath));
@@ -423,6 +440,7 @@ function buildsFeatureEvidenceIndexRow(proof, packetPath, rootDir) {
     evidencePacketPath: formatsRepoRelativePath(rootDir, packetPath),
     executableBodyReportPath: formatsRepoRelativePath(rootDir, paths.reportPath),
     executionTimelineTablePath: formatsRepoRelativePath(rootDir, paths.timelineTablePath),
+    methodExecutionTimelineTablePath: formatsRepoRelativePath(rootDir, paths.methodTimelineTablePath),
   };
 }
 
@@ -439,6 +457,7 @@ function buildsNotExecutedFeatureEvidenceIndexRow(featureId, scenarioId) {
     evidencePacketPath: NOT_EXECUTED,
     executableBodyReportPath: NOT_EXECUTED,
     executionTimelineTablePath: NOT_EXECUTED,
+    methodExecutionTimelineTablePath: NOT_EXECUTED,
   };
 }
 
@@ -448,12 +467,12 @@ function rendersFeatureEvidenceIndex(rows) {
   }
 
   const lines = [
-    '| feature id | scenario id | feature verdict | blocker count | evidence packet path | executable body report path | execution timeline table path |',
-    '| --- | --- | --- | ---: | --- | --- | --- |',
+    '| feature id | scenario id | feature verdict | blocker count | evidence packet path | executable body report path | execution timeline table path | method execution timeline table path |',
+    '| --- | --- | --- | ---: | --- | --- | --- | --- |',
   ];
 
   for (const row of rows) {
-    lines.push(`| ${row.featureId} | ${row.scenarioId} | ${row.featureVerdict} | ${row.blockerCount} | ${row.evidencePacketPath} | ${row.executableBodyReportPath} | ${row.executionTimelineTablePath} |`);
+    lines.push(`| ${row.featureId} | ${row.scenarioId} | ${row.featureVerdict} | ${row.blockerCount} | ${row.evidencePacketPath} | ${row.executableBodyReportPath} | ${row.executionTimelineTablePath} | ${row.methodExecutionTimelineTablePath} |`);
   }
 
   return `${lines.join('\n')}\n`;

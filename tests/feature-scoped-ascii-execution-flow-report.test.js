@@ -47,6 +47,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'runtime-step-1',
         nodeId: '01',
+        methodName: 'receivesFeatureReportRequest',
+        methodKind: 'function',
         runtimePath: 'src/feature-report/entrypoint.js',
         timestamp: '2026-07-09T12:00:01.000Z',
         durationMs: 125,
@@ -55,6 +57,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'runtime-step-2a',
         nodeId: '02',
+        methodName: 'bindsCanonicalFeatureRequest',
+        methodKind: 'function',
         runtimePath: 'src/feature-report/canonical-request.js',
         timestamp: '2026-07-09T12:00:02.000Z',
         durationMs: 200,
@@ -63,6 +67,8 @@ function buildsProofInput(overrides = {}) {
       {
         id: 'runtime-step-2b',
         nodeId: '02',
+        methodName: 'validatesCanonicalRequestShape',
+        methodKind: 'function',
         runtimePath: 'src/feature-report/canonical-request.js',
         timestamp: '2026-07-09T12:00:03.500Z',
         durationMs: 275,
@@ -105,6 +111,11 @@ test('renders feature-scoped ASCII execution flow before dense timing details', 
   assert.match(report, /\|   \|-- elapsed prev  : 1000/);
   assert.match(report, /\|   \|-- call count    : 1/);
   assert.match(report, /\|   `-- path          : evidence\/runs\/run-ascii-123\/telemetry\.events\.v1\.jsonl/);
+  assert.match(report, /\|-- method drill-down/);
+  assert.match(report, /\|   `-- src\/feature-report\/entrypoint\.js/);
+  assert.match(report, /source       : src\/feature-report\/entrypoint\.js:10-18/);
+  assert.match(report, /method       : receivesFeatureReportRequest/);
+  assert.match(report, /telemetry    : runtime-step-1/);
   assert.match(report, /\|-- receipt/);
   assert.match(report, /\|   `-- evidence\/runs\/run-ascii-123\/surface\.receipt\.v1\.json/);
   assert.match(report, /`-- status/);
@@ -113,6 +124,8 @@ test('renders feature-scoped ASCII execution flow before dense timing details', 
   assert.match(report, /\|   \|-- duration ms   : 475/);
   assert.match(report, /\|   \|-- elapsed prev  : 1000/);
   assert.match(report, /\|   \|-- call count    : 2/);
+  assert.match(report, /method       : bindsCanonicalFeatureRequest/);
+  assert.match(report, /method       : validatesCanonicalRequestShape/);
   assert.doesNotMatch(report, /[^\x09\x0A\x0D\x20-\x7E]/);
 });
 

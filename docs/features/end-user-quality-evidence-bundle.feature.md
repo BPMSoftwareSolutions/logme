@@ -65,6 +65,8 @@ Feature: End-user quality evidence bundle
       | qa-execution-timeline.table.md |
       | machine-environment.v1.json |
       | end-user-test-session.md |
+      | llm-user-experience.report.md |
+      | acceptance-criteria-review.report.md |
       | feature-proof-links.v1.json |
       | report-artifact-index.v1.json |
       | blocker-worklist.md |
@@ -117,6 +119,8 @@ Feature: End-user quality evidence bundle
       | end-user surface inspected |
       | generated Markdown reports reviewed |
       | generated HTML previews reviewed |
+      | LLM user experience report |
+      | acceptance criteria review |
       | linked executable body proof reports |
       | linked sprawl reports |
       | screenshots or visual evidence index |
@@ -132,9 +136,13 @@ Feature: End-user quality evidence bundle
       | report |
       | executable-body-contract.report.md |
       | execution-timeline.table.md |
+      | method-execution-timeline.table.md |
+      | method-call-evidence.report.md |
       | domain-body-sprawl.report.md |
       | domain-body-sprawl-hotspots.table.md |
       | report.md |
+      | llm-user-experience.report.md |
+      | acceptance-criteria-review.report.md |
     And the bundle manifest should include the source path and content hash for each linked report
     And missing required human reports should block QA pass
     And the finding code should be:

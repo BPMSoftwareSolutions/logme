@@ -67,6 +67,7 @@ Feature: Feature-scoped ASCII execution flow report
       | observed duration ms |
       | elapsed since previous node ms |
       | call count |
+      | method drill-down |
       | receipt path |
       | status |
       | blocker |
@@ -203,6 +204,25 @@ Feature: Feature-scoped ASCII execution flow report
     And the values should match the canonical JSON proof exactly
     And a node with missing telemetry should render `not observed` for each missing timing fact
     And the sketch should not calculate or round timing values independently from the JSON proof.
+
+  Scenario: Render method drill-down under each observed body node
+    Given an executable body node has ordered method calls in canonical JSON proof
+    When the ASCII execution sketch is rendered
+    Then the node should include a `method drill-down` branch
+    And each method call should show:
+      | method fact |
+      | call index |
+      | method name |
+      | source path and line range |
+      | started at |
+      | completed at |
+      | duration ms |
+      | elapsed since previous call ms |
+      | telemetry event ids |
+      | receipt path |
+      | status |
+    And a body node with no method calls should show `method detail missing`
+    And method drill-down facts should match `feature-execution.contract.v1.json` exactly.
 
   Scenario: Reject boxed node list when hierarchical body tree is required
     Given a feature-scoped executable body report contains an `EXECUTABLE BODY TREE` section

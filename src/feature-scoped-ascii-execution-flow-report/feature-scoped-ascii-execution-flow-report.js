@@ -180,6 +180,122 @@ function buildsStatusChildren(node) {
   return children;
 }
 
+function groupsMethodCallsByRuntimeFile(node, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const groups = new Map();
+
+  for (const methodCall of node.methodCalls || []) {
+    const runtimeFile = formatsRepoRelativePath(rootDir, methodCall.runtimeFilePath || methodCall.runtimePath || node.runtimePath);
+
+    if (!groups.has(runtimeFile)) {
+      groups.set(runtimeFile, []);
+    }
+
+    groups.get(runtimeFile).push(methodCall);
+  }
+
+  return groups;
+}
+
+function formatsMethodSource(rootDir, methodCall) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const runtimePath = formatsRepoRelativePath(rootDir, methodCall.runtimeFilePath || methodCall.runtimePath);
+  const lineRange = methodCall.sourceLineRange;
+
+  if (!lineRange || lineRange.start === NOT_OBSERVED || String(runtimePath).match(/:\d+-\d+$/u)) {
+    return runtimePath;
+  }
+
+  return `${runtimePath}:${lineRange.start}-${lineRange.end}`;
+}
+
+function buildsMethodCallChildren(methodCall, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    { label: `method       : ${methodCall.methodName || NOT_OBSERVED}` },
+    { label: `kind         : ${methodCall.methodKind || NOT_OBSERVED}` },
+    { label: `source       : ${formatsMethodSource(rootDir, methodCall)}` },
+    { label: `started at   : ${methodCall.startedAt || NOT_OBSERVED}` },
+    { label: `completed at : ${methodCall.completedAt || NOT_OBSERVED}` },
+    { label: `duration ms  : ${methodCall.durationMs === undefined ? NOT_OBSERVED : methodCall.durationMs}` },
+    { label: `elapsed prev : ${methodCall.elapsedSincePreviousCallMs === undefined ? NOT_OBSERVED : methodCall.elapsedSincePreviousCallMs}` },
+    { label: `telemetry    : ${formatsFirstValue(methodCall.telemetryEventIds, NOT_OBSERVED)}` },
+    { label: `receipt      : ${formatsRepoRelativePath(rootDir, formatsFirstValue(methodCall.receiptPaths, MISSING))}` },
+    { label: `status       : ${methodCall.status || NOT_OBSERVED}` },
+  ];
+}
+
+function selectsMethodCallName(methodCall) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return methodCall.methodName;
+}
+
+function buildsRuntimeFileChildren(runtimeFile, methodCalls, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const children = [
+    { label: `participating method count : ${new Set(methodCalls.map(selectsMethodCallName)).size}` },
+    { label: `observed call count        : ${methodCalls.length}` },
+  ];
+
+  for (const methodCall of methodCalls) {
+    children.push({
+      label: `call ${String(methodCall.callIndex).padStart(3, '0')}`,
+      children: buildsMethodCallChildren(methodCall, rootDir),
+    });
+  }
+
+  return [
+    {
+      label: runtimeFile,
+      children,
+    },
+  ];
+}
+
+function buildsMethodDrillDownBranch(node, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!Array.isArray(node.methodCalls) || node.methodCalls.length === 0) {
+    return {
+      label: 'method drill-down',
+      children: [
+        { label: 'method detail : missing' },
+        { label: 'blocker       : observed-body-node-without-method-drilldown' },
+        { label: 'fix           : add method-level telemetry and receipt tie-out' },
+      ],
+    };
+  }
+
+  const children = [];
+  const groups = groupsMethodCallsByRuntimeFile(node, rootDir);
+
+  for (const [runtimeFile, methodCalls] of groups.entries()) {
+    children.push(...buildsRuntimeFileChildren(runtimeFile, methodCalls, rootDir));
+  }
+
+  return {
+    label: 'method drill-down',
+    children,
+  };
+}
+
 function buildsExecutionNodeFromProofNode(node, rootDir) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -195,6 +311,7 @@ function buildsExecutionNodeFromProofNode(node, rootDir) {
         label: 'telemetry',
         children: buildsTelemetryChildren(node, rootDir),
       },
+      buildsMethodDrillDownBranch(node, rootDir),
       { label: 'receipt', value: formatsReceiptValue(rootDir, node) },
       {
         label: 'status',
