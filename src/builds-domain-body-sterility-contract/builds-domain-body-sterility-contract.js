@@ -72,11 +72,11 @@ function buildsExecutionNodes(contract, methods) {
   return [
     buildsExecutionNode('00', 'ACCEPTANCE SOURCE', [
       { label: 'gherkin', value: 'docs/report-truth-pi-planning.md' },
-      { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+      { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
       { label: 'proves', value: 'report.md opens with the runtime body, evidence, and blockers first' },
     ]),
     buildsExecutionNode('01', 'SURFACE RECEIVES REQUEST', [
-      { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+      { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
       { label: 'runtime', value: surfaceMethod ? `${surfaceMethod.filePath}:${surfaceMethod.lineStart}-${surfaceMethod.lineEnd}` : 'src/runs-logme-domain-audit.js:unknown' },
       {
         label: 'telemetry',
@@ -96,7 +96,7 @@ function buildsExecutionNodes(contract, methods) {
       },
     ]),
     buildsExecutionNode('02', 'CANONICAL REQUEST BINDING', [
-      { label: 'contract', value: 'contracts/domains/logme2/workspace-observability-config.schema.v1.json' },
+      { label: 'contract', value: 'contracts/domains/logme/workspace-observability-config.schema.v1.json' },
       { label: 'runtime', value: configMethod ? `${configMethod.filePath}:${configMethod.lineStart}-${configMethod.lineEnd}` : 'src/loads-workspace-observability-config/loads-workspace-observability-config.js:unknown' },
       {
         label: 'telemetry',
@@ -116,7 +116,7 @@ function buildsExecutionNodes(contract, methods) {
       },
     ]),
     buildsExecutionNode('03', 'SHARED RUNNER EXECUTES', [
-      { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+      { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
       { label: 'runtime', value: receiptMethod ? `${receiptMethod.filePath}:${receiptMethod.lineStart}-${receiptMethod.lineEnd}` : 'src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js:unknown' },
       {
         label: 'telemetry',

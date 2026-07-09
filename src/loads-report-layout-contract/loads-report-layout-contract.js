@@ -12,10 +12,10 @@ function loadsReportLayoutContract() {
     LogMe(sampleMethod);
   }
 
-  const layoutSchemaPath = path.join(PACKAGE_ROOT, 'contracts', 'domains', 'logme2', 'report-layout.schema.v1.json');
-  const layoutContractPath = path.join(PACKAGE_ROOT, 'contracts', 'domains', 'logme2', 'report-layout.contract.v1.json');
-  const reportSchemaPath = path.join(PACKAGE_ROOT, 'contracts', 'domains', 'logme2', 'sterility-report.schema.v1.json');
-  const templatePath = path.join(PACKAGE_ROOT, 'contracts', 'templates', 'logme2', 'execution-sketch.template.txt');
+  const layoutSchemaPath = path.join(PACKAGE_ROOT, 'contracts', 'domains', 'logme', 'report-layout.schema.v1.json');
+  const layoutContractPath = path.join(PACKAGE_ROOT, 'contracts', 'domains', 'logme', 'report-layout.contract.v1.json');
+  const reportSchemaPath = path.join(PACKAGE_ROOT, 'contracts', 'domains', 'logme', 'sterility-report.schema.v1.json');
+  const templatePath = path.join(PACKAGE_ROOT, 'contracts', 'templates', 'logme', 'execution-sketch.template.txt');
 
   return {
     layoutSchema: readsJsonConfigFile(layoutSchemaPath),

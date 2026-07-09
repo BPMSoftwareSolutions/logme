@@ -1,0 +1,117 @@
+{
+  "schemaVersion": "file-system-body.contract.v1",
+  "featureId": "fractal-llm-harness",
+  "bodyId": "fractal-llm-harness.recursive-self-testifying-harness-domain",
+  "status": "declared",
+  "intentNarrative": {
+    "plainLanguage": "Fractal LLM Harness lets an LLM propose bounded execution harnesses for its own future work, but only the deterministic substrate can prove a proposal real and promote it.",
+    "executionSentence": "Fractal LLM Harness builds an LLM harness-generation assignment, calls the LLM worker, parses and validates the proposed harness, materializes an approved harness into an allowed path, runs and verifies the generated harness against its own body contract, writes a harness receipt, and lets the generated harness propose the next harness without promoting itself."
+  },
+  "hardLaws": [
+    "The LLM may propose a harness; it may never promote one.",
+    "No generated harness is real until it testifies with LogMe.",
+    "No generated harness may mutate a path outside its declared lease.",
+    "No generated harness may claim verification without telemetry.",
+    "No generated harness may claim a receipt that was not actually written.",
+    "No next-harness proposal may promote without parent-proof."
+  ],
+  "requiredPaths": {
+    "files": [
+      "docs/features/fractal-llm-harness.feature.md",
+      "contracts/file-system-bodies/02_declared/fractal-llm-harness.file-system-body.contract.v1.json",
+      "contracts/llm-harness/llm-harness-request.schema.v1.json",
+      "contracts/llm-harness/llm-harness-output.schema.v1.json",
+      "contracts/llm-harness/llm-generated-harness.schema.v1.json",
+      "contracts/llm-harness/harness-promotion-decision.schema.v1.json",
+      "contracts/llm-harness/harness-repair-suggestion.schema.v1.json",
+      "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+      "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+      "src/parses-llm-harness-output/parses-llm-harness-output.js",
+      "src/validates-generated-harness/validates-generated-harness.js",
+      "src/materializes-approved-harness/materializes-approved-harness.js",
+      "src/runs-generated-harness/runs-generated-harness.js",
+      "src/verifies-generated-harness/verifies-generated-harness.js",
+      "src/writes-harness-receipt/writes-harness-receipt.js",
+      "src/proposes-next-harness/proposes-next-harness.js",
+      "tests/builds-llm-harness-assignment.test.js",
+      "tests/calls-llm-harness-worker.test.js",
+      "tests/parses-llm-harness-output.test.js",
+      "tests/validates-generated-harness.test.js",
+      "tests/materializes-approved-harness.test.js",
+      "tests/runs-generated-harness.test.js",
+      "tests/verifies-generated-harness.test.js",
+      "tests/writes-harness-receipt.test.js",
+      "tests/proposes-next-harness.test.js",
+      "tests/fractal-harness-generation.test.js",
+      "tests/generated-harness-conformance.test.js",
+      "tests/recursive-harness-boundary.test.js",
+      "tests/llm-unsafe-output-blocked.test.js"
+    ],
+    "directories": [
+      "docs/features",
+      "contracts/llm-harness",
+      "src/builds-llm-harness-assignment",
+      "src/calls-llm-harness-worker",
+      "src/parses-llm-harness-output",
+      "src/validates-generated-harness",
+      "src/materializes-approved-harness",
+      "src/runs-generated-harness",
+      "src/verifies-generated-harness",
+      "src/writes-harness-receipt",
+      "src/proposes-next-harness",
+      "src/generated-harnesses",
+      "tests",
+      "evidence/runs"
+    ]
+  },
+  "owns": {
+    "contracts": [
+      "contracts/file-system-bodies/02_declared/fractal-llm-harness.file-system-body.contract.v1.json",
+      "contracts/llm-harness/"
+    ],
+    "runtime": [
+      "src/builds-llm-harness-assignment/",
+      "src/calls-llm-harness-worker/",
+      "src/parses-llm-harness-output/",
+      "src/validates-generated-harness/",
+      "src/materializes-approved-harness/",
+      "src/runs-generated-harness/",
+      "src/verifies-generated-harness/",
+      "src/writes-harness-receipt/",
+      "src/proposes-next-harness/"
+    ],
+    "evidence": [
+      "evidence/runs/fractal-llm-harness/<run-id>/",
+      "src/generated-harnesses/<harness-id>/"
+    ]
+  },
+  "doesNotOwn": [
+    "generic LLM provider client mechanics",
+    "generic retry/backoff mechanics",
+    "the LogMe sterility audit itself (logme owns that body)"
+  ],
+  "packageDependencies": [
+    "packages/logme-testimony-core/"
+  ],
+  "verification": {
+    "requiredFindingsMustBeZero": [
+      "llm-proposed-forbidden-mutation",
+      "llm-claimed-verification-without-telemetry",
+      "llm-invented-receipt",
+      "llm-promoted-itself",
+      "generated-harness-missing-body-contract",
+      "generated-harness-missing-testimony",
+      "generated-harness-missing-receipt-coverage",
+      "generated-harness-executed-outside-lease",
+      "next-harness-proposal-without-parent-proof"
+    ],
+    "requiredArtifacts": [
+      "llm-harness-assignment.v1.json",
+      "llm-harness-output.v1.json",
+      "generated-harness-validation.v1.json",
+      "harness-execution.receipt.v1.json",
+      "harness-conformance.report.md",
+      "next-harness-proposal.v1.json"
+    ]
+  }
+}

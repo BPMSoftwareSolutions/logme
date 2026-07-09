@@ -7,7 +7,7 @@ const os = require('node:os');
 const { discoversConfiguredSourceBodies } = require('../src/discovers-configured-source-bodies/discovers-configured-source-bodies');
 
 test('discoversConfiguredSourceBodies returns sorted absolute paths of files matching includeExtensions, excluding configured directories and files', () => {
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme2-lab-'));
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-lab-'));
 
   try {
     // Create a test file structure

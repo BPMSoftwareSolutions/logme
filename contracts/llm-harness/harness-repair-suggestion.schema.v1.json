@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "harness-repair-suggestion.schema.v1",
+  "requiredFields": [
+    "harnessId",
+    "runId",
+    "blockingFindingCodes",
+    "suggestedRepair",
+    "requiresHumanReview"
+  ]
+}

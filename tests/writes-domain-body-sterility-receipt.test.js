@@ -8,7 +8,7 @@ const { writesDomainBodySterilityReceipt } = require('../src/writes-domain-body-
 const { buildsReportProvenance } = require('../src/report-provenance/report-provenance');
 
 test('writesDomainBodySterilityReceipt orchestrates rendering and writing, returning combined receipt object', () => {
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme2-lab-'));
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-lab-'));
 
   try {
     const reportPath = path.join(tempDir, 'sterility-report.md');

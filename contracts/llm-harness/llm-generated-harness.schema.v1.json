@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "llm-generated-harness.schema.v1",
+  "requiredFields": [
+    "harnessId",
+    "parentHarnessId",
+    "bodyContract",
+    "executionPath",
+    "testPlan",
+    "telemetryRequirements",
+    "receiptCoverage",
+    "leasedPaths",
+    "materializationStatus"
+  ],
+  "materializationStatusValues": [
+    "proposed",
+    "validated",
+    "materialized",
+    "blocked"
+  ]
+}

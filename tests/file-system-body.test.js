@@ -9,7 +9,7 @@ const CONTRACT_PATH = path.join(
   'contracts',
   'file-system-bodies',
   '02_declared',
-  'logme2.file-system-body.contract.v1.json',
+  'logme.file-system-body.contract.v1.json',
 );
 
 function loadContract() {

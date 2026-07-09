@@ -4,6 +4,7 @@ const { detectsForbiddenLocalUtilityPaths } = require('../detects-domain-languag
 const { detectsMethodTestimony } = require('../detects-method-testimony/detects-method-testimony');
 const { detectsAnonymousLocalMethods } = require('../detects-domain-language-impurity/detects-anonymous-local-methods');
 const { detectsOutOfVocabularyLocalMethods } = require('../detects-domain-language-impurity/detects-out-of-vocabulary-local-methods');
+const { detectsRetiredDomainNameReintroduction } = require('../detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction');
 
 function buildsUnimplementedStubFindings(methods, domainContract) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -46,6 +47,7 @@ function buildsDomainBodySterilityFindings(config, sourceFiles, methods) {
   const anonymousMethodFindings = detectsAnonymousLocalMethods(methods, config.domainContract);
   const vocabularyFindings = detectsOutOfVocabularyLocalMethods(methods, config);
   const unimplementedStubFindings = buildsUnimplementedStubFindings(methods, config.domainContract);
+  const retiredDomainNameFindings = detectsRetiredDomainNameReintroduction(config);
 
   return [
     ...genericUtilityFindings,
@@ -53,6 +55,7 @@ function buildsDomainBodySterilityFindings(config, sourceFiles, methods) {
     ...anonymousMethodFindings,
     ...vocabularyFindings,
     ...unimplementedStubFindings,
+    ...retiredDomainNameFindings,
   ];
 }
 

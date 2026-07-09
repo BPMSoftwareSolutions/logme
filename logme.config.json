@@ -1,7 +1,7 @@
 {
   "rootDir": ".",
   "includeExtensions": [".js", ".ts"],
-  "excludeDirectories": [".git", "node_modules", "evidence", "tests"],
+  "excludeDirectories": [".git", "node_modules", "evidence", "tests", "generated-harnesses"],
   "forbiddenLocalUtilityNames": ["utils", "helpers", "common", "shared", "lib", "misc"],
   "excludeFiles": ["report.md"],
   "includeTestFiles": false,
@@ -22,7 +22,13 @@
         "finding",
         "receipt",
         "report",
-        "verdict"
+        "verdict",
+        "harness",
+        "assignment",
+        "proposal",
+        "lease",
+        "capability",
+        "contract"
       ],
       "verbs": [
         "load",
@@ -34,7 +40,15 @@
         "write",
         "scan",
         "collect",
-        "build"
+        "build",
+        "assign",
+        "call",
+        "parse",
+        "validate",
+        "materialize",
+        "run",
+        "verify",
+        "propose"
       ],
       "forbiddenMethodNames": [
         "arrow-function",
@@ -85,6 +99,10 @@
       "unimplementedStubDetected": {
         "code": "unimplemented-stub-detected",
         "reason": "the file is a scaffolded stub and has not been implemented yet"
+      },
+      "retiredDomainNameReintroduced": {
+        "code": "retired-domain-name-reintroduced",
+        "reason": "the retired experimental domain name logme2 was reintroduced; the correct domain name is logme"
       }
     }
   }

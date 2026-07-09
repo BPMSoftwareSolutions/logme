@@ -6,7 +6,7 @@ const path = require('node:path');
 const { rendersAsciiExecutionFlow } = require('../packages/logme-report-primitives/src/renders-ascii-execution-flow');
 const { parsesExecutionSketchTemplate } = require('../packages/logme-report-primitives/src/parses-execution-sketch-template');
 
-const TEMPLATE_PATH = path.join(__dirname, '..', 'contracts', 'templates', 'logme2', 'execution-sketch.template.txt');
+const TEMPLATE_PATH = path.join(__dirname, '..', 'contracts', 'templates', 'logme', 'execution-sketch.template.txt');
 const executionSketchTemplate = parsesExecutionSketchTemplate(fs.readFileSync(TEMPLATE_PATH, 'utf8'));
 
 test('rendersAsciiExecutionFlow renders the executable body tree as nested ASCII branches', () => {
@@ -24,7 +24,7 @@ test('rendersAsciiExecutionFlow renders the executable body tree as nested ASCII
         label: 'ACCEPTANCE SOURCE',
         branches: [
           { label: 'gherkin', value: 'docs/report-truth-pi-planning.md' },
-          { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+          { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
           { label: 'proves', value: 'report.md opens with the runtime body, evidence, and blockers first' },
         ],
       },
@@ -32,7 +32,7 @@ test('rendersAsciiExecutionFlow renders the executable body tree as nested ASCII
         nodeId: '01',
         label: 'SURFACE RECEIVES REQUEST',
         branches: [
-          { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+          { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
           { label: 'runtime', value: 'src/runs-logme-domain-audit.js:7-16' },
           {
             label: 'telemetry',

@@ -11,7 +11,7 @@ function buildsExecutionNodes() {
       label: 'ACCEPTANCE SOURCE',
       branches: [
         { label: 'gherkin', value: 'docs/report-truth-pi-planning.md' },
-        { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+        { label: 'acceptance criteria', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
         { label: 'proves', value: 'report.md opens with the runtime body, evidence, and blockers first' },
       ],
     },
@@ -19,7 +19,7 @@ function buildsExecutionNodes() {
       nodeId: '01',
       label: 'SURFACE RECEIVES REQUEST',
       branches: [
-        { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+        { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
         { label: 'runtime', value: 'src/runs-logme-domain-audit.js:7-16' },
         {
           label: 'telemetry',
@@ -43,7 +43,7 @@ function buildsExecutionNodes() {
       nodeId: '02',
       label: 'CANONICAL REQUEST BINDING',
       branches: [
-        { label: 'contract', value: 'contracts/domains/logme2/workspace-observability-config.schema.v1.json' },
+        { label: 'contract', value: 'contracts/domains/logme/workspace-observability-config.schema.v1.json' },
         { label: 'runtime', value: 'src/loads-workspace-observability-config/loads-workspace-observability-config.js:10-32' },
         {
           label: 'telemetry',
@@ -67,7 +67,7 @@ function buildsExecutionNodes() {
       nodeId: '03',
       label: 'SHARED RUNNER EXECUTES',
       branches: [
-        { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json' },
+        { label: 'contract', value: 'contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json' },
         { label: 'runtime', value: 'src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js:15-48' },
         {
           label: 'telemetry',

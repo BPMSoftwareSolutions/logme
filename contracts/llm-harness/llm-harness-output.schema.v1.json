@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "llm-harness-output.schema.v1",
+  "requiredFields": [
+    "runId",
+    "harnessId",
+    "proposalStatus",
+    "bodyContractDraft",
+    "executionPathDraft",
+    "testPlanDraft",
+    "telemetryRequirementsDraft",
+    "receiptCoverageDraft"
+  ],
+  "proposalStatusValues": [
+    "proposed",
+    "rejected-unparseable"
+  ]
+}

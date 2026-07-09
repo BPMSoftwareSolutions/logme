@@ -7,7 +7,7 @@ const os = require('node:os');
 const { writesDomainReceipt } = require('../packages/logme-testimony-core/src/writes-domain-receipt');
 
 test('writesDomainReceipt writes reportContent to reportPath and returns receipt object', () => {
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme2-lab-'));
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-lab-'));
 
   try {
     const reportPath = path.join(tempDir, 'report.md');
@@ -30,7 +30,7 @@ test('writesDomainReceipt writes reportContent to reportPath and returns receipt
 });
 
 test('writesDomainReceipt calculates bytesWritten correctly for multi-byte characters', () => {
-  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme2-lab-'));
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-lab-'));
 
   try {
     const reportPath = path.join(tempDir, 'report-unicode.md');

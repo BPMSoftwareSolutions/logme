@@ -6,7 +6,7 @@ Feature: Report contract schema enforcement
   So that report.md cannot omit proof fields or invent unsupported sections.
 
   Scenario: Validate non-empty sterility report schema
-    Given `contracts/domains/logme2/sterility-report.schema.v1.json` defines required fields
+    Given `contracts/domains/logme/sterility-report.schema.v1.json` defines required fields
     And the report generator has built an in-memory report contract
     When schema validation runs
     Then the contract should include:

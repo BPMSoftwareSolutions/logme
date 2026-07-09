@@ -22,7 +22,7 @@ const REPORT_SCHEMA = {
   ],
 };
 
-const TEMPLATE_PATH = path.join(__dirname, '..', 'contracts', 'templates', 'logme2', 'execution-sketch.template.txt');
+const TEMPLATE_PATH = path.join(__dirname, '..', 'contracts', 'templates', 'logme', 'execution-sketch.template.txt');
 const executionSketchTemplate = parsesExecutionSketchTemplate(fs.readFileSync(TEMPLATE_PATH, 'utf8'));
 
 function buildsContract() {

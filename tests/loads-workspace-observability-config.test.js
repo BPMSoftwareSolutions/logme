@@ -16,7 +16,7 @@ test('loadsWorkspaceObservabilityConfig lowercases every normalized string list'
   const config = loadsWorkspaceObservabilityConfig();
 
   assert.deepEqual(config.includeExtensions, ['.js', '.ts']);
-  assert.deepEqual(config.excludeDirectories, ['.git', 'node_modules', 'evidence', 'tests']);
+  assert.deepEqual(config.excludeDirectories, ['.git', 'node_modules', 'evidence', 'tests', 'generated-harnesses']);
   assert.deepEqual(config.forbiddenLocalUtilityNames, ['utils', 'helpers', 'common', 'shared', 'lib', 'misc']);
   assert.deepEqual(config.excludeFiles, ['report.md']);
   assert.equal(config.includeTestFiles, false);

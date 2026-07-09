@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "harness-promotion-decision.schema.v1",
+  "requiredFields": [
+    "harnessId",
+    "runId",
+    "decision",
+    "reason",
+    "requiredFindingsMustBeZero",
+    "telemetryTieOut",
+    "receiptTieOut",
+    "selfPromotionAttempted"
+  ],
+  "decisionValues": [
+    "PROMOTED",
+    "BLOCKED"
+  ]
+}

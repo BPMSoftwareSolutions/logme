@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "llm-harness-request.schema.v1",
+  "requiredFields": [
+    "runId",
+    "parentHarnessId",
+    "parentBodyContractRef",
+    "parentSelfConformanceReceiptRef",
+    "allowedMutationPaths",
+    "requestedCapability"
+  ]
+}
