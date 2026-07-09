@@ -8,13 +8,19 @@ const {
   buildsFeatureExecutionProof,
   buildsFeatureProofInventory,
   buildsFeatureProofPath,
+  buildsScenarioProofReportPath,
+  buildsScenarioTimingTablePath,
   checksFeatureReportTruthGate,
   checksUnsupportedSlaClaims,
   discoversFeatureScenarios,
   projectsFeatureExecutionProofToCsv,
   rendersFeatureExecutionReport,
+  rendersScenarioProofReport,
+  rendersScenarioTimingTable,
   writesFeatureExecutionProof,
   writesFeatureProofInventory,
+  writesScenarioProofReport,
+  writesScenarioTimingTable,
 } = require('../src/feature-execution-proof/feature-execution-proof');
 
 function writesFeatureFile(rootDir) {
@@ -235,6 +241,69 @@ test('renders report and CSV as projections of canonical JSON proof', () => {
   assert.match(csv, /^run id,feature id,scenario id,node id,node label,runtime path,call index,timestamp,duration ms,elapsed since previous node ms,status,blocker code/m);
   assert.match(csv, /run-123,feature-execution-proof-source-of-truth,write-canonical-json-execution-proof-for-a-scenario,02,PROOF WRITER CLOSES EVIDENCE/);
   assert.match(csv, /,2,2026-07-09T12:00:03\.000Z,250,2000,observed,not observed/);
+});
+
+test('writes human-readable scenario proof report beside JSON proof', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-feature-proof-'));
+
+  try {
+    const evidenceRoot = path.join(tempDir, 'evidence');
+    const proofWrite = writesFeatureExecutionProof(buildsFeatureExecutionProof(buildsProofInput()), {
+      evidenceRoot,
+    });
+    const reportWrite = writesScenarioProofReport(proofWrite.proof, {
+      evidenceRoot,
+      rootDir: tempDir,
+    });
+    const expectedPath = buildsScenarioProofReportPath(evidenceRoot, 'run-123', 'feature-execution-proof-source-of-truth', 'write-canonical-json-execution-proof-for-a-scenario');
+    const report = fs.readFileSync(reportWrite.reportPath, 'utf8');
+
+    assert.equal(reportWrite.reportPath, expectedPath);
+    assert.equal(fs.existsSync(reportWrite.reportPath), true);
+    assert.match(report, /## Executive Proof Summary/);
+    assert.match(report, /Generated report path: evidence\/runs\/run-123\/features\/feature-execution-proof-source-of-truth\/scenarios\/write-canonical-json-execution-proof-for-a-scenario\/executable-body-contract\.report\.md/);
+    assert.match(report, /Generated at: 2026-07-09T12:00:05\.000Z/);
+    assert.match(report, /Canonical JSON proof: evidence\/runs\/run-123\/features\/feature-execution-proof-source-of-truth\/scenarios\/write-canonical-json-execution-proof-for-a-scenario\/feature-execution\.contract\.v1\.json/);
+    assert.match(report, /## Feature And Scenario Identity/);
+    assert.match(report, /## Promotion Decision/);
+    assert.match(report, /## ASCII Executable Body Sketch/);
+    assert.match(report, /## Ordered Execution Timeline/);
+    assert.match(report, /## Timing And Call-Count Metrics/);
+    assert.match(report, /## SLI Summary/);
+    assert.match(report, /## SLO Evaluation/);
+    assert.match(report, /## SLA Support Evidence/);
+    assert.match(report, /## Blocker Worklist/);
+    assert.match(report, /## Source Evidence Links/);
+    assert.match(report, /## Dense Telemetry Appendix/);
+    assert.match(report, /\[02\] PROOF WRITER CLOSES EVIDENCE/);
+    assert.match(report, /\| runtime-step-2a | 02 | PROOF WRITER CLOSES EVIDENCE/);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('writes shareable timing table projection from canonical proof', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-feature-proof-'));
+
+  try {
+    const evidenceRoot = path.join(tempDir, 'evidence');
+    const proof = buildsFeatureExecutionProof(buildsProofInput());
+    const tableMarkdown = rendersScenarioTimingTable(proof, tempDir);
+    const tableWrite = writesScenarioTimingTable(proof, {
+      evidenceRoot,
+      rootDir: tempDir,
+    });
+    const expectedPath = buildsScenarioTimingTablePath(evidenceRoot, 'run-123', 'feature-execution-proof-source-of-truth', 'write-canonical-json-execution-proof-for-a-scenario');
+    const writtenTable = fs.readFileSync(tableWrite.tablePath, 'utf8');
+
+    assert.equal(tableWrite.tablePath, expectedPath);
+    assert.match(tableMarkdown, /^\| runtime step \| node id \| node label \| runtime path \| first seen at \| last seen at \| duration ms \| elapsed since previous node ms \| call count \| status \| blocker code \|/);
+    assert.match(writtenTable, /# Execution Timeline: Write canonical JSON execution proof for a scenario/);
+    assert.match(writtenTable, /\| event-01-a \| 01 \| SURFACE RECEIVES REQUEST \| src\/runs-feature-truth-command\.js:1-8 \| 2026-07-09T12:00:01\.000Z \| 2026-07-09T12:00:01\.000Z \| 100 \| 1000 \| 1 \| observed \| not observed \|/);
+    assert.match(writtenTable, /\| event-02-a \| 02 \| PROOF WRITER CLOSES EVIDENCE \| src\/writes-feature-execution-proof\.js:10-40 \| 2026-07-09T12:00:02\.000Z \| 2026-07-09T12:00:03\.000Z \| 400 \| 1000 \| 2 \| observed \| not observed \|/);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
 });
 
 test('feature report truth gate rejects execution facts absent from JSON proof', () => {

@@ -33,6 +33,7 @@
     "methodsOutsideDomainVocabulary",
     "unimplementedStubMethods",
     "coverage",
+    "sprawl.summary.totalSourceFilesScanned",
     "findings",
     "methods",
     "domainContract.reportTitle",

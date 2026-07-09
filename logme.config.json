@@ -7,6 +7,16 @@
   "includeTestFiles": false,
   "stubMarker": "// STUB: not yet implemented. Scaffolded from the declared file-system body contract.",
   "reportPath": "report.md",
+  "sprawlThresholds": {
+    "maxLinesBeforeWatchlist": 220,
+    "maxExecutableMethodsBeforeWatchlist": 16,
+    "maxResponsibilityClustersBeforeGodFileCandidate": 4,
+    "maxGenericMechanicsBeforePackageExtractionCandidate": 0,
+    "maxSideEffectLanesBeforeOrchestratorReview": 3,
+    "authorizedDenseOrchestratorPaths": [
+      "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js"
+    ]
+  },
   "domainContract": {
     "reportTitle": "Domain Body Contract Report",
     "domainName": "LogMe",

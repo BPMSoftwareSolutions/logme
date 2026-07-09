@@ -6,6 +6,8 @@ const { buildsDomainBodySterilityFindings } = require('../builds-domain-body-ste
 const { calculatesDomainBodySterilitySummary } = require('../calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary');
 const { buildsReportProvenance } = require('../report-provenance/report-provenance');
 const { rendersDomainBodySterilityReport } = require('../renders-domain-body-sterility-report/renders-domain-body-sterility-report');
+const { buildsDomainBodySprawlContract } = require('../builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract');
+const { writesDomainBodySprawlEvidence } = require('../writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence');
 
 function inventoriesMethodsForFile(config, executionStepState) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -200,11 +202,15 @@ function buildsDomainBodySterilityContract(config) {
   const findings = buildsDomainBodySterilityFindings(config, sourceFiles, methods);
   const summary = calculatesDomainBodySterilitySummary(config, sourceFiles, methods, findings);
   const provenance = buildsReportProvenance(config, sourceFiles, methods);
+  const sprawl = buildsDomainBodySprawlContract(config, sourceFiles, methods, findings, provenance);
+  const sprawlEvidenceReceipt = writesDomainBodySprawlEvidence(config, sprawl);
   const executionNodes = buildsExecutionNodes({ ...summary, provenance }, methods);
   const contract = {
     ...summary,
     reportPath: config.reportPath,
     provenance,
+    sprawl,
+    sprawlEvidenceReceipt,
     featureId: 'ASCII execution flow report',
     scenarioName: 'Render executive execution flow first',
     plainLanguageProof: 'report.md surfaces the runtime body, evidence, and blockers before dense tables',
@@ -221,6 +227,8 @@ function buildsDomainBodySterilityContract(config) {
     findings,
     summary,
     provenance,
+    sprawl,
+    sprawlEvidenceReceipt,
     contract,
     reportContent,
   };

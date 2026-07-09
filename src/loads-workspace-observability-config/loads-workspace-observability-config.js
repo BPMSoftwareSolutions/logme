@@ -4,6 +4,7 @@ const { resolvesConfiguredRootPath } = require('../../packages/logme-config-prim
 const { normalizesConfigStringArray } = require('../../packages/logme-config-primitives/src/normalizes-config-string-array');
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
+const { DEFAULT_SPRAWL_THRESHOLDS } = require('../builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract');
 
 const PACKAGE_ROOT = path.resolve(__dirname, '..', '..');
 
@@ -26,6 +27,13 @@ function loadsWorkspaceObservabilityConfig() {
     stubMarker: config.stubMarker,
     forbiddenMethodNames: normalizesConfigStringArray(config.domainContract.domainVocabulary.forbiddenMethodNames),
     reportPath: resolvesConfiguredRootPath(PACKAGE_ROOT, config.reportPath),
+    sprawlThresholds: {
+      ...DEFAULT_SPRAWL_THRESHOLDS,
+      ...(config.sprawlThresholds || {}),
+      authorizedDenseOrchestratorPaths: normalizesConfigStringArray(
+        (config.sprawlThresholds && config.sprawlThresholds.authorizedDenseOrchestratorPaths) || [],
+      ),
+    },
     domainContract: config.domainContract,
   };
 }

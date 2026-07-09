@@ -28,6 +28,12 @@ test('loadsWorkspaceObservabilityConfig lowercases every normalized string list'
     config.forbiddenMethodNames,
     ['arrow-function', 'function-expression', 'walk', 'visit', 'handler', 'callback', 'temp', 'data', 'misc', 'process', 'dostuff', 'helper'],
   );
+  assert.equal(config.sprawlThresholds.maxLinesBeforeWatchlist, 220);
+  assert.equal(config.sprawlThresholds.maxExecutableMethodsBeforeWatchlist, 16);
+  assert.deepEqual(
+    config.sprawlThresholds.authorizedDenseOrchestratorPaths,
+    ['src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js'],
+  );
 });
 
 test('loadsWorkspaceObservabilityConfig passes through the domain contract untouched', () => {

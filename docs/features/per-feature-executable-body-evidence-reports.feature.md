@@ -18,6 +18,7 @@ Feature: Per-feature executable body evidence reports
       | artifact |
       | executable-body-contract.report.md |
       | executable-body-tree.ascii.md |
+      | execution-timeline.table.md |
       | feature-execution.contract.v1.json |
       | telemetry.tieout.v1.json |
       | receipt-coverage.v1.json |
@@ -56,6 +57,7 @@ Feature: Per-feature executable body evidence reports
       | blocker count |
       | evidence packet path |
       | executable body report path |
+      | execution timeline table path |
     And the global report should not embed every feature's full executable body tree
     And the global report should link to each feature-scoped report using repo-relative evidence paths.
 

@@ -31,6 +31,53 @@ Feature: Domain body sprawl visibility
       | finding codes |
     And the human report should be rendered from this JSON artifact, not hand-authored prose.
 
+  Scenario: Write human-readable sprawl report beside JSON evidence
+    Given `domain-body-sprawl.contract.v1.json` has been written for a run
+    When sprawl reporting completes
+    Then it should write a Markdown sprawl report at:
+      """
+      evidence/runs/<run-id>/sprawl/domain-body-sprawl.report.md
+      """
+    And the report should be generated from `domain-body-sprawl.contract.v1.json`
+    And the report should be suitable for product owners, architects, engineering leads, and PI planning review
+    And the first product-facing section should be a compact sprawl risk summary
+    And the report should include:
+      | section |
+      | executive sprawl summary |
+      | top hotspots |
+      | god-file candidates |
+      | package extraction candidates |
+      | mixed responsibility files |
+      | orphan and scattered artifacts |
+      | severe promotion blockers |
+      | watchlist files |
+      | one-line fix routes |
+      | source evidence links |
+      | dense file inventory appendix |
+    And the report should link back to the canonical JSON evidence using a repo-relative path.
+
+  Scenario: Write shareable sprawl hotspot table
+    Given `domain-body-sprawl.contract.v1.json` exists for a run
+    When sprawl reporting completes
+    Then it may write a Markdown hotspot table at:
+      """
+      evidence/runs/<run-id>/sprawl/domain-body-sprawl-hotspots.table.md
+      """
+    And every row should be generated from the JSON evidence
+    And each row should include:
+      | field |
+      | rank |
+      | file path |
+      | classification |
+      | line count |
+      | executable method count |
+      | responsibility cluster count |
+      | generic mechanic count |
+      | sterility finding count |
+      | blocker count |
+      | recommended owner action |
+    And the table should be safe to paste into architecture review notes, PI planning notes, dashboards, decks, or publications.
+
   Scenario: Detect god-file candidates without automatically condemning them
     Given a source file has many executable methods, many lines, or many responsibility clusters
     When the sprawl classifier runs
@@ -152,6 +199,7 @@ Feature: Domain body sprawl visibility
       | finding codes |
       | one-line fix route |
     And dense per-method detail should live in the sprawl evidence artifact or a linked sprawl report.
+    And `report.md` should link to `evidence/runs/<run-id>/sprawl/domain-body-sprawl.report.md`.
 
   Scenario: Block promotion only for severe unowned sprawl
     Given the sprawl report contains watchlist files

@@ -53,6 +53,30 @@ function buildsContract() {
     methods: [],
     executionNodes: [],
     executionSketchTemplate,
+    sprawl: {
+      evidencePath: 'evidence/runs/run-123/sprawl/domain-body-sprawl.contract.v1.json',
+      summary: {
+        totalSourceFilesScanned: 3,
+        focusedFiles: 1,
+        watchlistFiles: 1,
+        godFileCandidates: 0,
+        packageExtractionCandidates: 1,
+        mixedResponsibilityFiles: 1,
+        orphanArtifacts: 0,
+        topSprawlHotspots: [
+          {
+            filePath: 'src/example.js',
+            classification: 'package extraction candidate',
+            lineCount: 42,
+            executableMethodCount: 5,
+            responsibilityClusterCount: 2,
+            genericMechanicCount: 1,
+            findingCodes: ['package-worthy-mechanic-inside-domain-body'],
+            fixRoute: 'move generic mechanics to a package primitive',
+          },
+        ],
+      },
+    },
     domainContract: { laws: ['Law one', 'Law two'] },
     provenance: {
       runId: 'run-123',
@@ -169,4 +193,21 @@ test('rendersReportFromLayoutContract renders the ASCII execution sketch section
   assert.equal(result.isValid, true);
   assert.match(result.reportContent, /REPORT TRUTH/);
   assert.match(result.reportContent, /Verdict\s+: STERILE DOMAIN BODY/);
+});
+
+test('rendersReportFromLayoutContract renders compact sprawl summary from the sprawl contract', () => {
+  const layoutContract = buildsLayoutContract({
+    sectionOrder: ['sprawlSummary'],
+    sections: {
+      sprawlSummary: { title: 'Domain Body Sprawl Summary', template: 'kind:sprawl-summary' },
+    },
+  });
+  const result = rendersReportFromLayoutContract(LAYOUT_SCHEMA, layoutContract, REPORT_SCHEMA, buildsContract());
+
+  assert.equal(result.isValid, true);
+  assert.match(result.reportContent, /## Domain Body Sprawl Summary/);
+  assert.match(result.reportContent, /Evidence artifact: evidence\/runs\/run-123\/sprawl\/domain-body-sprawl\.contract\.v1\.json/);
+  assert.match(result.reportContent, /Package extraction candidates: 1/);
+  assert.match(result.reportContent, /package-worthy-mechanic-inside-domain-body/);
+  assert.match(result.reportContent, /move generic mechanics to a package primitive/);
 });

@@ -127,6 +127,63 @@ function rendersHardLawsSection(contract) {
   return contract.domainContract.laws.map(formatsLawAsMarkdown).join('\n');
 }
 
+function rendersSprawlSummarySection(contract) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!contract.sprawl || !contract.sprawl.summary) {
+    return '_No sprawl evidence artifact was attached to this report contract._';
+  }
+
+  const summary = contract.sprawl.summary;
+  const summaryLines = [
+    `- Evidence artifact: ${contract.sprawl.evidencePath}`,
+    `- Total source files scanned: ${summary.totalSourceFilesScanned}`,
+    `- Focused files: ${summary.focusedFiles}`,
+    `- Watchlist files: ${summary.watchlistFiles}`,
+    `- God-file candidates: ${summary.godFileCandidates}`,
+    `- Package extraction candidates: ${summary.packageExtractionCandidates}`,
+    `- Mixed-responsibility files: ${summary.mixedResponsibilityFiles}`,
+    `- Orphan artifacts: ${summary.orphanArtifacts}`,
+  ];
+
+  if (summary.topSprawlHotspots.length === 0) {
+    return [...summaryLines, '', '_No sprawl hotspots detected._'].join('\n');
+  }
+
+  const hotspotRows = summary.topSprawlHotspots.map(formatsSprawlHotspotRow);
+
+  return [
+    ...summaryLines,
+    '',
+    'Top sprawl hotspots:',
+    '',
+    '| File | Classification | Lines | Methods | Clusters | Generic Mechanics | Findings | Fix Route |',
+    '| --- | --- | --- | --- | --- | --- | --- | --- |',
+    ...hotspotRows,
+  ].join('\n');
+}
+
+function formatsSprawlHotspotRow(hotspot) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '|',
+    hotspot.filePath,
+    hotspot.classification,
+    hotspot.lineCount,
+    hotspot.executableMethodCount,
+    hotspot.responsibilityClusterCount,
+    hotspot.genericMechanicCount,
+    hotspot.findingCodes.join(', ') || 'none',
+    hotspot.fixRoute,
+    '|',
+  ].join(' ');
+}
+
 function rendersSectionBody(sectionId, section, contract) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -158,6 +215,10 @@ function rendersSectionBody(sectionId, section, contract) {
 
   if (section.template === 'kind:hard-laws') {
     return rendersHardLawsSection(contract);
+  }
+
+  if (section.template === 'kind:sprawl-summary') {
+    return rendersSprawlSummarySection(contract);
   }
 
   if (section.template === 'kind:findings-summary') {

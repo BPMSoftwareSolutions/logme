@@ -60,6 +60,55 @@ Feature: Feature execution proof source of truth
       | promotion decision |
     And every report field about execution should be derived from this JSON proof or explicitly marked `not observed`.
 
+  Scenario: Write human-readable scenario proof report beside JSON proof
+    Given `feature-execution.contract.v1.json` has been written for a scenario
+    When scenario proof reporting completes
+    Then it should write a Markdown proof report at:
+      """
+      evidence/runs/<run-id>/features/<feature-id>/scenarios/<scenario-id>/executable-body-contract.report.md
+      """
+    And the report should be generated from `feature-execution.contract.v1.json`
+    And the report should be suitable for product owners, architects, business owners, and PI planning review
+    And the first product-facing section should be an ASCII execution sketch
+    And the report should include:
+      | section |
+      | executive proof summary |
+      | feature and scenario identity |
+      | promotion decision |
+      | ASCII executable body sketch |
+      | ordered execution timeline |
+      | timing and call-count metrics |
+      | SLI summary |
+      | SLO evaluation |
+      | SLA support evidence |
+      | blocker worklist |
+      | source evidence links |
+      | dense telemetry appendix |
+    And the report should link back to the canonical JSON proof using a repo-relative path.
+
+  Scenario: Write shareable timing table projection
+    Given canonical JSON proof exists for a feature scenario
+    When scenario proof reporting completes
+    Then it may write a Markdown timing table at:
+      """
+      evidence/runs/<run-id>/features/<feature-id>/scenarios/<scenario-id>/execution-timeline.table.md
+      """
+    And every timing table row should be generated from the JSON proof
+    And each row should include:
+      | field |
+      | runtime step |
+      | node id |
+      | node label |
+      | runtime path |
+      | first seen at |
+      | last seen at |
+      | duration ms |
+      | elapsed since previous node ms |
+      | call count |
+      | status |
+      | blocker code |
+    And the table should be safe to paste into PI planning notes, architecture review notes, decks, dashboards, or publications.
+
   Scenario: Tie JSON proof to raw telemetry and receipts
     Given raw telemetry events were emitted by `LogMe(...)` during scenario execution
     And receipt files were written during scenario execution
@@ -198,6 +247,7 @@ Feature: Feature execution proof source of truth
       | receipt status |
       | blocker status |
     And the report should include a supporting table or linked projection for dense timing and call-count details
+    And the report should include the generated report path and generated-at timestamp
     And the product owner should not need to open JSON to understand what happened.
 
   Scenario: Reject report facts not backed by JSON proof

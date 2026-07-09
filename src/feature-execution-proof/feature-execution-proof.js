@@ -113,6 +113,40 @@ function buildsFeatureProofPath(evidenceRoot, runId, featureId, scenarioId) {
   );
 }
 
+function buildsScenarioProofReportPath(evidenceRoot, runId, featureId, scenarioId) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return path.join(
+    evidenceRoot,
+    'runs',
+    runId,
+    'features',
+    featureId,
+    'scenarios',
+    scenarioId,
+    'executable-body-contract.report.md',
+  );
+}
+
+function buildsScenarioTimingTablePath(evidenceRoot, runId, featureId, scenarioId) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return path.join(
+    evidenceRoot,
+    'runs',
+    runId,
+    'features',
+    featureId,
+    'scenarios',
+    scenarioId,
+    'execution-timeline.table.md',
+  );
+}
+
 function selectsScenarioProofStatus({ implementationStatus, proofPath, blockers }) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -1027,6 +1061,390 @@ function rendersFeatureExecutionReport(proof) {
   return `${lines.join('\n')}\n`;
 }
 
+function formatsRepoRelativePath(rootDir, filePath) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!filePath) {
+    return NOT_OBSERVED;
+  }
+
+  if (!path.isAbsolute(filePath)) {
+    return String(filePath).replace(/\\/gu, '/');
+  }
+
+  return path.relative(rootDir || process.cwd(), filePath).replace(/\\/gu, '/');
+}
+
+function formatsProofPathForReport(proof, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return formatsRepoRelativePath(rootDir, proof.proofPath || buildsFeatureProofPath('evidence', proof.runId, proof.featureId, proof.scenarioId));
+}
+
+function rendersScenarioProofExecutiveSummary(proof, reportPath, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '## Executive Proof Summary',
+    '',
+    `- Generated report path: ${formatsRepoRelativePath(rootDir, reportPath)}`,
+    `- Generated at: ${proof.generatedAt}`,
+    `- Canonical JSON proof: ${formatsProofPathForReport(proof, rootDir)}`,
+    `- Promotion decision: ${proof.promotionDecision.status}`,
+    `- Blockers: ${formatsValue(proof.promotionDecision.blockerCodes)}`,
+    '',
+  ].join('\n');
+}
+
+function rendersScenarioProofIdentity(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '## Feature And Scenario Identity',
+    '',
+    `- Run id: ${proof.runId}`,
+    `- Feature id: ${proof.featureId}`,
+    `- Scenario id: ${proof.scenarioId}`,
+    `- Scenario name: ${proof.scenarioName}`,
+    `- Acceptance source: ${proof.acceptanceSource ? proof.acceptanceSource.path : NOT_OBSERVED}`,
+    '',
+  ].join('\n');
+}
+
+function rendersScenarioProofPromotionDecision(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '## Promotion Decision',
+    '',
+    `- Status: ${proof.promotionDecision.status}`,
+    `- Reason: ${proof.promotionDecision.reason}`,
+    `- Blocker codes: ${formatsValue(proof.promotionDecision.blockerCodes)}`,
+    '',
+  ].join('\n');
+}
+
+function rendersScenarioProofAsciiSketch(proof, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '## ASCII Executable Body Sketch',
+    '',
+    '```text',
+  ];
+
+  for (const node of proof.observedExecutionTimeline || []) {
+    lines.push(`[${node.nodeId}] ${node.nodeLabel}`);
+    lines.push(`|-- runtime path              : ${formatsRepoRelativePath(rootDir, node.runtimePath)}`);
+    lines.push(`|-- observed runtime step     : ${formatsValue(node.telemetryEventIds)}`);
+    lines.push(`|-- first seen at             : ${node.firstSeenAt}`);
+    lines.push(`|-- last seen at              : ${node.lastSeenAt}`);
+    lines.push(`|-- duration ms               : ${node.durationMs}`);
+    lines.push(`|-- elapsed since previous ms : ${node.elapsedSincePreviousNodeMs}`);
+    lines.push(`|-- call count                : ${node.callCount}`);
+    lines.push(`|-- receipt status            : ${node.receiptStatus}`);
+    lines.push(`\`-- blocker status           : ${formatsValue(node.blockerCodes)}`);
+  }
+
+  lines.push('```');
+  lines.push('');
+
+  return lines.join('\n');
+}
+
+function rendersScenarioProofOrderedTimeline(proof, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '## Ordered Execution Timeline',
+    '',
+    rendersScenarioTimingTable(proof, rootDir),
+    '',
+  ].join('\n');
+}
+
+function rendersScenarioTimingMetrics(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '## Timing And Call-Count Metrics',
+    '',
+    `- Scenario lead time ms: ${proof.timingMetrics.scenarioLeadTimeMs}`,
+    `- Scenario cycle time ms: ${proof.timingMetrics.scenarioCycleTimeMs}`,
+    `- Active execution time ms: ${proof.timingMetrics.activeExecutionTimeMs}`,
+    `- Waiting time ms: ${proof.timingMetrics.waitingTimeMs}`,
+    `- Slowest node id: ${proof.timingMetrics.slowestNodeId}`,
+    `- Total observed calls: ${proof.callCountMetrics.totalObservedCalls}`,
+    '',
+  ].join('\n');
+}
+
+function rendersServiceLevelIndicatorSummary(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '## SLI Summary',
+    '',
+    '| name | value | unit | evidence source paths |',
+    '| --- | ---: | --- | --- |',
+  ];
+
+  for (const sli of proof.serviceLevelIndicators || []) {
+    lines.push(`| ${sli.name} | ${formatsValue(sli.value)} | ${sli.unit} | ${formatsValue(sli.evidenceSourcePaths)} |`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function rendersServiceLevelObjectiveEvaluation(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '## SLO Evaluation',
+    '',
+    '| SLO id | SLI name | target | observed value | unit | status |',
+    '| --- | --- | ---: | ---: | --- | --- |',
+  ];
+
+  for (const evaluation of proof.sloEvaluations || []) {
+    lines.push(`| ${evaluation.sloId} | ${evaluation.sliName} | ${evaluation.target} | ${formatsValue(evaluation.observedValue)} | ${evaluation.unit} | ${evaluation.status} |`);
+  }
+
+  if (!proof.sloEvaluations || proof.sloEvaluations.length === 0) {
+    lines.push('| not observed | not observed | not observed | not observed | not observed | not enough evidence |');
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function rendersSlaSupportEvidence(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '## SLA Support Evidence',
+    '',
+    `- Supporting SLO evaluations: ${(proof.sloEvaluations || []).length}`,
+    `- Unsupported SLA blocker code: sla-claim-without-slo-evidence`,
+    '',
+  ].join('\n');
+}
+
+function rendersBlockerWorklist(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '## Blocker Worklist',
+    '',
+  ];
+
+  if (!proof.promotionDecision.blockerCodes || proof.promotionDecision.blockerCodes.length === 0) {
+    lines.push('_No blockers._');
+    lines.push('');
+    return lines.join('\n');
+  }
+
+  for (const blockerCode of proof.promotionDecision.blockerCodes) {
+    lines.push(`- finding code: ${blockerCode}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function rendersSourceEvidenceLinks(proof, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '## Source Evidence Links',
+    '',
+    `- Canonical JSON proof: ${formatsProofPathForReport(proof, rootDir)}`,
+    `- Acceptance source: ${proof.acceptanceSource ? formatsRepoRelativePath(rootDir, proof.acceptanceSource.path) : NOT_OBSERVED}`,
+  ];
+
+  for (const telemetryPath of proof.telemetrySourcePaths || []) {
+    lines.push(`- Telemetry source: ${formatsRepoRelativePath(rootDir, telemetryPath)}`);
+  }
+
+  for (const receiptPath of proof.receiptSourcePaths || []) {
+    lines.push(`- Receipt source: ${formatsRepoRelativePath(rootDir, receiptPath)}`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function rendersDenseTelemetryAppendix(proof) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '## Dense Telemetry Appendix',
+    '',
+    '| node id | call index | telemetry event id | timestamp | duration ms | status |',
+    '| --- | ---: | --- | --- | ---: | --- |',
+  ];
+
+  for (const node of proof.observedExecutionTimeline || []) {
+    if (node.calls.length === 0) {
+      lines.push(`| ${node.nodeId} | 0 | ${NOT_OBSERVED} | ${NOT_OBSERVED} | ${NOT_OBSERVED} | ${node.status} |`);
+    }
+
+    for (const call of node.calls) {
+      lines.push(`| ${node.nodeId} | ${call.callIndex} | ${call.telemetryEventId} | ${call.timestamp} | ${call.durationMs} | ${call.status} |`);
+    }
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function rendersScenarioProofReport(proof, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const rootDir = options.rootDir || process.cwd();
+  const evidenceRoot = options.evidenceRoot || path.join(rootDir, 'evidence');
+  const reportPath = options.reportPath || buildsScenarioProofReportPath(evidenceRoot, proof.runId, proof.featureId, proof.scenarioId);
+
+  return [
+    `# ${proof.scenarioName}`,
+    '',
+    rendersScenarioProofExecutiveSummary(proof, reportPath, rootDir),
+    rendersScenarioProofIdentity(proof),
+    rendersScenarioProofPromotionDecision(proof),
+    rendersScenarioProofAsciiSketch(proof, rootDir),
+    rendersScenarioProofOrderedTimeline(proof, rootDir),
+    rendersScenarioTimingMetrics(proof),
+    rendersServiceLevelIndicatorSummary(proof),
+    rendersServiceLevelObjectiveEvaluation(proof),
+    rendersSlaSupportEvidence(proof),
+    rendersBlockerWorklist(proof),
+    rendersSourceEvidenceLinks(proof, rootDir),
+    rendersDenseTelemetryAppendix(proof),
+  ].join('\n');
+}
+
+function readsFirstBlockerCode(node) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!Array.isArray(node.blockerCodes) || node.blockerCodes.length === 0) {
+    return NOT_OBSERVED;
+  }
+
+  return node.blockerCodes[0];
+}
+
+function readsRuntimeStep(node) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!Array.isArray(node.telemetryEventIds) || node.telemetryEventIds.length === 0) {
+    return NOT_OBSERVED;
+  }
+
+  return node.telemetryEventIds[0];
+}
+
+function rendersScenarioTimingTable(proof, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    '| runtime step | node id | node label | runtime path | first seen at | last seen at | duration ms | elapsed since previous node ms | call count | status | blocker code |',
+    '| --- | --- | --- | --- | --- | --- | ---: | ---: | ---: | --- | --- |',
+  ];
+
+  for (const node of proof.observedExecutionTimeline || []) {
+    lines.push(`| ${readsRuntimeStep(node)} | ${node.nodeId} | ${node.nodeLabel} | ${formatsRepoRelativePath(rootDir, node.runtimePath)} | ${node.firstSeenAt} | ${node.lastSeenAt} | ${node.durationMs} | ${node.elapsedSincePreviousNodeMs} | ${node.callCount} | ${node.status} | ${readsFirstBlockerCode(node)} |`);
+  }
+
+  return lines.join('\n');
+}
+
+function writesScenarioProofReport(proof, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const rootDir = options.rootDir || process.cwd();
+  const evidenceRoot = options.evidenceRoot || path.join(rootDir, 'evidence');
+  const reportPath = options.reportPath || buildsScenarioProofReportPath(evidenceRoot, proof.runId, proof.featureId, proof.scenarioId);
+  const reportContent = rendersScenarioProofReport(proof, {
+    ...options,
+    reportPath,
+    evidenceRoot,
+    rootDir,
+  });
+
+  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+  fs.writeFileSync(reportPath, `${reportContent}\n`, 'utf8');
+
+  return {
+    reportPath,
+    reportContent: `${reportContent}\n`,
+    bytesWritten: Buffer.byteLength(`${reportContent}\n`, 'utf8'),
+  };
+}
+
+function writesScenarioTimingTable(proof, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const rootDir = options.rootDir || process.cwd();
+  const evidenceRoot = options.evidenceRoot || path.join(rootDir, 'evidence');
+  const tablePath = options.tablePath || buildsScenarioTimingTablePath(evidenceRoot, proof.runId, proof.featureId, proof.scenarioId);
+  const tableContent = [
+    `# Execution Timeline: ${proof.scenarioName}`,
+    '',
+    rendersScenarioTimingTable(proof, rootDir),
+    '',
+  ].join('\n');
+
+  fs.mkdirSync(path.dirname(tablePath), { recursive: true });
+  fs.writeFileSync(tablePath, tableContent, 'utf8');
+
+  return {
+    tablePath,
+    tableContent,
+    bytesWritten: Buffer.byteLength(tableContent, 'utf8'),
+  };
+}
+
 function escapesCsv(value) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -1199,6 +1617,8 @@ module.exports = {
   buildsFeatureExecutionProof,
   buildsFeatureProofInventory,
   buildsFeatureProofPath,
+  buildsScenarioProofReportPath,
+  buildsScenarioTimingTablePath,
   calculatesServiceLevelIndicators,
   checksFeatureReportTruthGate,
   checksUnsupportedSlaClaims,
@@ -1206,7 +1626,11 @@ module.exports = {
   evaluatesServiceLevelObjectives,
   projectsFeatureExecutionProofToCsv,
   rendersFeatureExecutionReport,
+  rendersScenarioProofReport,
+  rendersScenarioTimingTable,
   slugifies,
   writesFeatureExecutionProof,
   writesFeatureProofInventory,
+  writesScenarioProofReport,
+  writesScenarioTimingTable,
 };

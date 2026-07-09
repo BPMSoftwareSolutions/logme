@@ -8,6 +8,7 @@
     "config",
     "hardLaws",
     "sterilitySummary",
+    "sprawlSummary",
     "findings",
     "discoveredMethods"
   ],
@@ -60,6 +61,10 @@
         "- Verdict: {{verdict}}"
       ]
     },
+    "sprawlSummary": {
+      "title": "Domain Body Sprawl Summary",
+      "template": "kind:sprawl-summary"
+    },
     "findings": {
       "title": "Findings",
       "template": "kind:findings-summary"
@@ -77,6 +82,7 @@
     "anonymousExecutableMethods",
     "missingTelemetry",
     "missingReceipt",
+    "sprawl.summary.totalSourceFilesScanned",
     "provenance.sourceInventoryHash",
     "provenance.runId"
   ],
