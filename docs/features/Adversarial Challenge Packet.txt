@@ -1,0 +1,35 @@
+Feature: Adversarial challenge packet
+
+  As an adversarial product owner
+  I want a challenge packet generated with the report
+  So that another reviewer can attempt to disprove every promoted claim.
+
+  Scenario: Generate report challenge packet
+    Given report.md has been generated
+    When the challenge packet is produced
+    Then it should ask a reviewer to disprove:
+      | claim |
+      | files scanned |
+      | local executable method count |
+      | domain-bound method count |
+      | methods with LogMe call |
+      | silent local method count |
+      | coverage percentage |
+      | no findings claim |
+      | sterile verdict |
+      | execution step labels |
+      | executable body tree shape |
+      | fallback body tree usage |
+      | telemetry observation source |
+      | runtime duration evidence |
+      | package-governed exclusions |
+    And it should include every source, config, schema, telemetry, and receipt path required for review.
+
+  Scenario: Block false pass claim
+    Given report.md claims a passing or sterile verdict
+    When the challenge packet reveals any missing schema, stale hash, missing method testimony, path drift, missing receipt, or unsupported language
+    Then the report verdict should be changed to BLOCKED
+    And the finding code should be:
+      | finding |
+      | false-pass-claim |
+      | report-overclaims-evidence |

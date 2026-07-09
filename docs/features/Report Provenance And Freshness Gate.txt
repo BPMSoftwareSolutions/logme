@@ -1,0 +1,33 @@
+Feature: Report provenance and freshness gate
+
+  As an adversarial product owner
+  I want report.md to prove when and how it was generated
+  So that stale or hand-edited projections cannot be promoted as truth.
+
+  Scenario: Render report provenance
+    Given the report generator has completed a domain audit
+    When report.md is rendered
+    Then the report should show:
+      | field |
+      | report schema version |
+      | generator name |
+      | generation timestamp |
+      | generation command |
+      | git commit or working tree marker |
+      | config path |
+      | config hash |
+      | source inventory hash |
+      | run id |
+      | evidence directory |
+    And every hash should be derived from the inputs used for the rendered report.
+
+  Scenario: Block stale report projection
+    Given report.md exists
+    And the current source inventory hash differs from the hash rendered in report.md
+    When the report truth gate runs
+    Then the report verdict should be BLOCKED
+    And the finding code should be:
+      | finding |
+      | stale-report-projection |
+      | report-source-hash-mismatch |
+    And the report should not claim a clean or sterile state.

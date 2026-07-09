@@ -1,0 +1,20 @@
+Feature: Portable evidence paths
+
+  As a reviewer
+  I want report paths to be repo-relative
+  So that CI, another developer, and leadership review the same projection.
+
+  Scenario: Render repo-relative paths
+    Given a method row references a file under the configured root
+    When report.md is rendered
+    Then the Location value should be repo-relative
+    And the report should show line start and line end
+    And the report should render the configured root once in the provenance section.
+
+  Scenario: Block machine-local path leakage
+    Given report.md contains an absolute local workspace path in a method row or finding
+    When the report portability gate runs
+    Then the report should be BLOCKED
+    And the finding code should be:
+      | finding |
+      | report-path-not-portable |

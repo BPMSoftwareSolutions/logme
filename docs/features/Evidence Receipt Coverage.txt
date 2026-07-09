@@ -1,0 +1,30 @@
+Feature: Evidence receipt coverage
+
+  As an enterprise product owner
+  I want every report run to write durable evidence
+  So that report.md can be independently challenged.
+
+  Scenario: Write report evidence packet
+    Given a report run has completed
+    When the receipt writer runs
+    Then it should write an evidence packet containing:
+      | artifact |
+      | method-inventory.v1.json |
+      | report-contract.v1.json |
+      | report.md |
+      | report-generation.receipt.v1.json |
+      | telemetry.events.v1.jsonl |
+      | report-validation.v1.json |
+      | features/<feature-id>/executable-body-contract.report.md |
+      | features/<feature-id>/executable-body-tree.ascii.md |
+      | features/<feature-id>/feature-execution.receipt.v1.json |
+    And report.md should link to each artifact using repo-relative paths.
+
+  Scenario: Block verdict promotion without receipt
+    Given report.md claims a passing or sterile verdict
+    But the report-generation receipt does not exist
+    When the PI readiness gate runs
+    Then the PI verdict should be BLOCKED
+    And the finding code should be:
+      | finding |
+      | report-verdict-without-receipt |

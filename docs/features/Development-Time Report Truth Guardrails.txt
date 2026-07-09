@@ -1,0 +1,62 @@
+Feature: Development-time report truth guardrails
+
+  As an adversarial product owner
+  I want developers to see report truth failures before commit
+  So that "tests pass" cannot hide a contaminated architecture report.
+
+  Scenario: Fail local verification when tests pass but report is contaminated
+    Given all unit tests pass
+    And the generated report verdict is `DOMAIN BODY CONTAMINATED`
+    When the developer runs the local verification command
+    Then the command should fail
+    And the status should say:
+      """
+      tests pass, report truth gate fails
+      """
+    And the output should show:
+      | field |
+      | report verdict |
+      | coverage |
+      | silent local methods |
+      | anonymous executable methods |
+      | top finding codes |
+      | top finding paths |
+    And no local command should emit a promotion-ready or clean claim.
+
+  Scenario: Provide one command for local report truth
+    Given the developer is working locally
+    When they run the report truth command
+    Then it should regenerate the report contract from current source
+    And it should validate report freshness
+    And it should validate summary-to-row consistency
+    And it should validate verdict derivation
+    And it should print a bounded, human-readable failure summary
+    And it should exit nonzero when the report is contaminated.
+
+  Scenario: Keep local report truth output quiet enough to use
+    Given report truth validation runs during development
+    When telemetry or audit testimony is produced
+    Then the command should not flood stdout with full telemetry event bodies
+    And detailed telemetry should be written to an evidence artifact
+    And stdout should show only the verdict, counts, and actionable top findings.
+
+  Scenario: Block commit when report truth gate fails
+    Given a pre-commit or pre-push hook is installed
+    And the report truth command exits nonzero
+    When the developer attempts to commit or push
+    Then the hook should block the action
+    And the message should identify the report truth command to run
+    And the message should include the first actionable finding path.
+
+  Scenario: Allow fast development mode without weakening truth
+    Given the full report truth command is too slow for watch mode
+    When the developer runs the fast report truth command
+    Then it may skip long-running receipt artifact publication
+    But it should still fail on:
+      | blocker |
+      | contaminated verdict |
+      | stale report provenance |
+      | summary-to-row mismatch |
+      | silent local methods |
+      | anonymous executable methods |
+      | unsupported clean or sterile claim |

@@ -1,0 +1,21 @@
+Feature: Gherkin-driven report development
+
+  As a product owner
+  I want every report capability to start with Gherkin acceptance criteria
+  So that report features are implemented only after their truth rules are explicit.
+
+  Scenario: Require Gherkin before report feature implementation
+    Given a report feature changes the rendered projection surface
+    When a pull request is opened
+    Then the pull request should include or reference a scenario under `docs/features/**/*.feature.md`
+    And the implementation tests should reference the scenario id
+    And the report should not add a new section or claim without acceptance criteria.
+
+  Scenario: Trace report sections to scenarios
+    Given report.md contains a section
+    When the report section index is rendered
+    Then each section should show its owning feature id or scenario id
+    And unowned report sections should be BLOCKED
+    And the finding code should be:
+      | finding |
+      | report-section-without-acceptance-source |

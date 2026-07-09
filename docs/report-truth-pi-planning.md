@@ -4,7 +4,7 @@ Date: 2026-07-09
 
 ## Purpose
 
-Make `report.md` a truthful, consistent projection surface. The report must be generated from declared contracts and observed evidence; it must never become the evidence itself.
+Make `report.md` and the generated per-feature executable body reports truthful, consistent projection surfaces. The global report must summarize and index run evidence; each executed feature must generate its own evidence packet and executable body contract report. These reports must be generated from declared contracts and observed evidence; they must never become the evidence itself.
 
 This PI uses Gherkin acceptance criteria to drive report features. A report claim is acceptable only when it can be tied back to source inventory, configuration, tests, telemetry, receipts, and explicit acceptance criteria.
 
@@ -61,6 +61,7 @@ Targeted verification performed:
 | Runtime timing can be confused with static scan data | Line numbers come from source inventory, but execution step, timestamp, and duration must come from observed runtime telemetry. | Separate static source facts from telemetry-observed runtime facts. |
 | Dense report text hides the execution story | A product owner should see the runtime body, blockers, and evidence flow before reading tables. | Lead with clean ASCII execution sketches and keep dense details secondary. |
 | Report layout is hardcoded in renderer code | Product owners cannot safely change section order, labels, ASCII templates, or visible fields without a code deployment. | Move report structure into validated contracts and templates. |
+| Feature execution evidence is collapsed into one global report | A single `report.md` cannot prove every feature's executable body without becoming unreadable and misleading. | Generate one feature-scoped evidence packet per executed feature and let the global report index it. |
 | `includeTestFiles` is `no` | The report cannot claim test support or TDD coverage from the current scan. | Add explicit test evidence before any tested/support claim. |
 | External package methods are summarized as ignored | The report says package-governed without linking a package contract or receipt. | Require package governance proof or show as unverified. |
 | Clean report labels are configured text | A label like "No findings" can be rendered if the contract says so, unless guarded by count validation. | Gate clean labels on computed zero findings. |
@@ -75,6 +76,7 @@ Targeted verification performed:
 | Summary-to-row consistency | Counts, coverage, findings, and verdict are recomputed from the same method inventory and cannot disagree. |
 | ASCII execution-flow report | The first report view is a clean ASCII sketch of declared path, observed telemetry, receipts, and blockers. |
 | Data-driven report layout | Product-owned contracts and templates control report structure, section order, labels, and sketch fields without code changes. |
+| Per-feature executable body evidence | Every feature executed under test, demo, or PI validation writes its own executable body contract report under `evidence/runs/<run-id>/features/<feature-id>/`. |
 | Evidence-only language | Report text does not use support, proof, execution, runtime, or sterile language without backing evidence. |
 | Gherkin-driven report features | Every report feature has acceptance criteria before implementation and tests map to those scenarios. |
 | Development-time report truth guardrails | Developers can detect report contamination locally with one command before commit. |
@@ -295,18 +297,18 @@ Feature: Projection language honesty
       | projection-language-overclaim |
 ```
 
-## Feature: ASCII Execution Flow Report
+## Feature: Feature-Scoped ASCII Execution Flow Report
 
 ```gherkin
-Feature: ASCII execution flow report
+Feature: Feature-scoped ASCII execution flow report
 
   As an adversarial product owner
-  I want report.md to open with a clean ASCII execution sketch
-  So that I can see the runtime body, evidence, and blockers without decoding dense report prose.
+  I want each executed feature report to open with a clean ASCII execution sketch
+  So that I can see that feature's runtime body, evidence, and blockers without decoding dense report prose.
 
   Scenario: Render executive execution flow first
-    Given report.md has been generated from the current report contract
-    When the report is rendered
+    Given a feature-scoped executable body report has been generated from the current feature run contract
+    When `evidence/runs/<run-id>/features/<feature-id>/executable-body-contract.report.md` is rendered
     Then the first product-facing section should be an ASCII execution flow sketch
     And the sketch should show:
       | element |
@@ -335,8 +337,8 @@ Feature: ASCII execution flow report
     And the sketch should not depend on Unicode box drawing, emoji, color, or terminal-specific rendering.
 
   Scenario: Show declared versus observed flow
-    Given the report has static source inventory
-    And runtime telemetry exists for the run
+    Given the feature report has static source inventory for that feature
+    And runtime telemetry exists for that feature run
     When the ASCII execution sketch is rendered
     Then it should separate:
       | lane |
@@ -479,7 +481,7 @@ Feature: ASCII execution flow report
     And the tree should show blockers inline under the body node where truth broke.
 
   Scenario: Reject boxed node list when hierarchical body tree is required
-    Given report.md contains an `EXECUTABLE BODY TREE` section
+    Given a feature-scoped executable body report contains an `EXECUTABLE BODY TREE` section
     But the section renders body nodes as flat boxed rows
     And the section does not render nested ASCII branches under each body node
     When the report presentation gate runs
@@ -517,7 +519,7 @@ Feature: ASCII execution flow report
   Scenario: Reject invented fallback execution body tree for promotion
     Given no explicit executable body contract nodes are provided
     And no product-owned report data contract declares `executionNodes`
-    When report.md is rendered
+    When the feature-scoped executable body report is rendered
     Then the renderer should not invent fallback body nodes
     And the report should show:
       """
@@ -562,7 +564,7 @@ Feature: ASCII execution flow report
     And the product owner should not need to infer the broken node from findings prose.
 
   Scenario: Reject header-only execution sketch
-    Given report.md renders an ASCII execution sketch
+    Given a feature-scoped executable body report renders an ASCII execution sketch
     But it does not render ordered executable body nodes
     And it does not show contract, runtime, telemetry, receipt, status, and blocker per node
     When the report presentation gate runs
@@ -596,7 +598,7 @@ Feature: ASCII execution flow report
 
   Scenario: Preserve product-readable execution tree shape
     Given the executable body contract contains sections such as acceptance source, surface receipt, canonical binding, shared runner, root contract resolution, gates, routing, provider call, receipt writeback, and surface parity
-    When report.md renders the body tree
+    When the feature-scoped executable body report renders the body tree
     Then the report should keep the tree grouped by those body sections
     And each section should fit on screen without requiring the product owner to read a dense paragraph
     And every section should make the evidence route visible as:
@@ -742,6 +744,101 @@ Feature: Data-driven report layout
     And renderer source code should change only when a new rendering primitive, validator, or data field is needed.
 ```
 
+## Feature: Per-Feature Executable Body Evidence Reports
+
+```gherkin
+Feature: Per-feature executable body evidence reports
+
+  As an adversarial product owner
+  I want every executed feature to write its own executable body contract report
+  So that each feature can prove its runtime body without stuffing every sketch into one global report.
+
+  Scenario: Write one feature evidence packet for an executed feature
+    Given a feature with feature id `<feature-id>` is executed by an end-to-end test, demo run, PI validation run, or local feature truth command
+    And the run id is `<run-id>`
+    When the feature execution completes
+    Then the run should write a feature evidence packet under:
+      """
+      evidence/runs/<run-id>/features/<feature-id>/
+      """
+    And the packet should contain:
+      | artifact |
+      | executable-body-contract.report.md |
+      | executable-body-tree.ascii.md |
+      | feature-execution.contract.v1.json |
+      | telemetry.tieout.v1.json |
+      | receipt-coverage.v1.json |
+      | promotion-decision.v1.json |
+      | feature-execution.receipt.v1.json |
+    And every artifact should include the same run id and feature id.
+
+  Scenario: Render the executable body tree in the feature report
+    Given a feature evidence packet exists
+    When `executable-body-contract.report.md` is rendered
+    Then the first product-facing section should be the hierarchical ASCII executable body tree
+    And the tree should be generated from the feature's executable body contract and runtime evidence
+    And the tree should show:
+      | proof lane |
+      | acceptance source |
+      | contract path |
+      | runtime path and line range |
+      | telemetry event path |
+      | observed runtime step |
+      | observed timestamp |
+      | observed duration ms |
+      | receipt path |
+      | status |
+      | blocker and fix route when blocked |
+    And dense method tables should be optional supporting detail below the tree.
+
+  Scenario: Keep the global report as an index, not a sketch warehouse
+    Given one or more feature evidence packets were written for a run
+    When the global `report.md` is rendered
+    Then it should show a compact feature evidence index with:
+      | field |
+      | feature id |
+      | scenario id |
+      | feature verdict |
+      | blocker count |
+      | evidence packet path |
+      | executable body report path |
+    And the global report should not embed every feature's full executable body tree
+    And the global report should link to each feature-scoped report using repo-relative evidence paths.
+
+  Scenario: Block feature promotion when feature evidence report is missing
+    Given a feature was executed during an end-to-end test, demo run, or PI validation run
+    But no feature evidence packet exists under `evidence/runs/<run-id>/features/<feature-id>/`
+    When the feature promotion gate runs
+    Then the feature verdict should be BLOCKED
+    And the finding code should be:
+      | finding |
+      | feature-executable-body-report-missing |
+    And no global report should mark the feature promotion-ready.
+
+  Scenario: Do not promote unexecuted features
+    Given a committed feature exists in Gherkin or planning scope
+    But the feature was not executed in the current run
+    When the global report renders the feature evidence index
+    Then the feature should show `not executed`
+    And it should not show PASS, STERILE, observed telemetry, or written receipts for that run
+    And the feature should not have a generated evidence packet unless execution actually occurred.
+
+  Scenario: Keep generated run evidence out of source control
+    Given feature evidence packets are generated under `evidence/runs/`
+    When the developer checks source-control status
+    Then generated run evidence should not be staged or committed by default
+    And source control should keep only contracts, templates, schemas, and tests
+    And CI may publish run evidence as build artifacts outside the committed source tree.
+
+  Scenario: Preserve feature evidence from source-controlled templates
+    Given product-owned report templates and layout contracts are source controlled
+    And generated feature evidence is not source controlled
+    When a product owner changes the feature report template
+    And a feature run is executed again
+    Then the regenerated feature evidence report should use the updated template
+    And no code deployment should be required for layout-only changes.
+```
+
 ## Feature: Domain Ownership Boundary Proof
 
 ```gherkin
@@ -817,6 +914,9 @@ Feature: Evidence receipt coverage
       | report-generation.receipt.v1.json |
       | telemetry.events.v1.jsonl |
       | report-validation.v1.json |
+      | features/<feature-id>/executable-body-contract.report.md |
+      | features/<feature-id>/executable-body-tree.ascii.md |
+      | features/<feature-id>/feature-execution.receipt.v1.json |
     And report.md should link to each artifact using repo-relative paths.
 
   Scenario: Block verdict promotion without receipt
@@ -931,6 +1031,9 @@ Feature: CI/CD report truth guardrails
       | telemetry.events.v1.jsonl |
       | report-validation.v1.json |
       | adversarial-challenge-packet.md |
+      | features/<feature-id>/executable-body-contract.report.md |
+      | features/<feature-id>/executable-body-tree.ascii.md |
+      | features/<feature-id>/feature-execution.receipt.v1.json |
     And the pull request summary should link to the artifact.
 
   Scenario: Block stale local report projection
@@ -1059,11 +1162,13 @@ Feature: PI readiness gate for report truth
 | 2 | Make counts undeniable | Summary-to-row validator, finding-to-row tie-out, verdict derivation tests, and blocked clean-label cases. |
 | 3 | Make the report skimmable | ASCII execution-flow sketch appears first, with blockers and promotion state visible before dense details. |
 | 4 | Make layout data-driven | Product-owned report contracts and templates control section order, labels, and ASCII sketch fields. |
-| 5 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
-| 6 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
-| 7 | Add development-time guardrails | One local command detects contaminated reports before commit without stdout noise. |
-| 8 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
-| 9 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
+| 5 | Add per-feature evidence packets | Every executed feature writes `evidence/runs/<run-id>/features/<feature-id>/executable-body-contract.report.md` and supporting proof artifacts. |
+| 6 | Keep global report as an index | `report.md` summarizes feature verdicts and links to feature evidence packets instead of embedding every tree. |
+| 7 | Remove projection overclaims | Rename or prove execution fields, make paths portable, and add language honesty checks. |
+| 8 | Add evidence receipts | Evidence packet written per run with inventory, report contract, telemetry, validation, and receipt artifacts. |
+| 9 | Add development-time guardrails | One local command detects contaminated reports before commit without stdout noise. |
+| 10 | Add CI/CD guardrails | Pull request workflow validates report truth, publishes evidence artifacts, and blocks stale or false-pass projections. |
+| 11 | Operationalize adversarial review | Challenge packet and PI readiness gate can block false pass, stale report, and unsupported proof claims. |
 
 ## Definition Of Done
 
@@ -1074,6 +1179,8 @@ Feature: PI readiness gate for report truth
 | Tests | Unit and audit tests prove every report section and verdict rule. |
 | Presentation | Product-facing report begins with a clean ASCII execution-flow sketch and blocker summary. |
 | Data-driven layout | Section order, labels, and ASCII templates can change through validated contracts without renderer code changes. |
+| Feature evidence | Every executed feature has a feature-scoped evidence packet under `evidence/runs/<run-id>/features/<feature-id>/`. |
+| Global report boundary | `report.md` indexes feature evidence packets and does not warehouse every full executable body tree. |
 | Evidence | Generated report links to its evidence packet and receipt. |
 | Development loop | Local verification fails when tests pass but the report is contaminated. |
 | CI/CD | Pull requests and promotions run report truth gates and publish evidence artifacts. |
@@ -1090,6 +1197,9 @@ Feature: PI readiness gate for report truth
 | Is `Execution Step` a runtime concept? | Yes. If the value is scan order, call it `Inventory Step`. |
 | Should product owners read dense method tables first? | No. The report should open with an ASCII execution sketch, verdict, blockers, and promotion state. |
 | Should report format changes require code deployment? | No. Structure, section order, labels, and templates should be product-owned data validated by renderer gates. |
+| Where should feature executable body sketches live? | In generated feature evidence packets under `evidence/runs/<run-id>/features/<feature-id>/`, not inside the global report. |
+| Should generated feature evidence be source controlled? | No. Keep generated run evidence out of Git by default; publish CI artifacts separately when needed. |
+| What is `report.md` responsible for? | A global run summary and feature evidence index, not the full proof body for every feature. |
 | Can the report claim test coverage when `includeTestFiles` is `no`? | No. It can claim source testimony only until test evidence is added. |
 | Can stdout telemetry be report evidence? | No. Persist bounded telemetry artifacts and reference them from the report. |
 | Is green test output enough for developer readiness? | No. Local readiness requires tests passing and the report truth gate passing. |
