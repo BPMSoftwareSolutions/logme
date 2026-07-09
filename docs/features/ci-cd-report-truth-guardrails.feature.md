@@ -18,6 +18,7 @@ Feature: CI/CD report truth guardrails
       | verdict derivation validator |
       | path portability validator |
       | evidence receipt validator |
+      | end-user QA bundle validator |
     And the pull request should fail if any gate fails.
 
   Scenario: Publish report evidence packet as CI artifact
@@ -35,6 +36,8 @@ Feature: CI/CD report truth guardrails
       | features/<feature-id>/executable-body-contract.report.md |
       | features/<feature-id>/executable-body-tree.ascii.md |
       | features/<feature-id>/feature-execution.receipt.v1.json |
+      | quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/qa-evidence-bundle.report.md |
+      | quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/qa-gate-decision.v1.json |
     And the pull request summary should link to the artifact.
 
   Scenario: Block stale local report projection
@@ -54,5 +57,21 @@ Feature: CI/CD report truth guardrails
     And the freshness gate should pass
     And every required receipt should exist
     And every report section should trace to Gherkin acceptance criteria
+    And every release-candidate promotion should have a QA evidence bundle
     And promotion should fail if any proof is missing.
+
+  Scenario: Block release promotion without end-user QA evidence
+    Given a release candidate is proposed for deployment or stakeholder promotion
+    When the promotion workflow evaluates release evidence
+    Then it should require a source-controlled QA evidence bundle under:
+      """
+      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/
+      """
+    And the bundle should include `qa-evidence-bundle.report.md`
+    And the bundle should include `machine-environment.v1.json`
+    And the bundle should include `qa-gate-decision.v1.json`
+    And the quality gate decision should be `QA passed`
+    And promotion should fail with:
+      | finding |
+      | release-candidate-without-end-user-qa-bundle |
 ```

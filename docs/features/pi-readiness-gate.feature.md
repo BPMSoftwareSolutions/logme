@@ -22,7 +22,20 @@ Feature: PI readiness gate for report truth
       | telemetry or explicit no-telemetry label |
       | receipt coverage |
       | adversarial challenge packet |
+      | end-user QA evidence bundle |
+      | human-readable QA report |
+      | machine provenance |
     When the PI readiness gate runs
     Then the PI verdict should be PASS
     And report.md may be promoted as a truthful projection for that run.
+
+  Scenario: Block PI readiness without end-user QA proof
+    Given one or more PI-scoped scenarios are implemented or proposed as releasable
+    But no QA evidence bundle exists for the release candidate
+    When the PI readiness gate runs
+    Then the PI verdict should be BLOCKED
+    And the control report should link to the missing QA proof requirement
+    And the finding code should be:
+      | finding |
+      | pi-scope-without-end-user-qa-proof |
 ```
