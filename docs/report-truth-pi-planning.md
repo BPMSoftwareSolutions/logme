@@ -397,6 +397,87 @@ Feature: ASCII execution flow report
     And every path should be repo-relative
     And runtime rows should include source line range.
 
+  Scenario: Render hierarchical ASCII executable body tree
+    Given an executable body contract declares a product-readable execution spine
+    When the ASCII execution sketch is rendered
+    Then the report should include a hierarchical tree shaped like:
+      """
+      +----------------------------------------------------------------------+
+      | EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE                |
+      | Feature : <feature-id>                                               |
+      | Scenario: <scenario-name>                                            |
+      +----------------------------------------------------------------------+
+
+      [00] ACCEPTANCE SOURCE
+      |-- gherkin
+      |   `-- docs/features/<feature>.feature.md
+      |
+      |-- acceptance criteria
+      |   `-- contracts/file-system-bodies/<body>.contract.v1.json
+      |
+      `-- proves
+          `-- <plain-language-proof>
+
+      [01] SURFACE RECEIVES REQUEST
+      |-- contract
+      |   `-- contracts/commands/<surface-command>.command.v1.json
+      |
+      |-- runtime
+      |   `-- src/<surface>/<entrypoint>.js:<line-start>-<line-end>
+      |
+      |-- telemetry
+      |   |-- status        : observed
+      |   |-- runtime step  : 1
+      |   |-- first seen at : <timestamp>
+      |   `-- duration ms   : <duration-ms>
+      |
+      |-- receipt
+      |   `-- evidence/runs/<run-id>/<surface>.receipt.v1.json
+      |
+      `-- status
+          `-- ok
+
+      [02] CANONICAL REQUEST BINDING
+      |-- contract
+      |   `-- contracts/<feature>/canonical-request.schema.v1.json
+      |
+      |-- runtime
+      |   `-- src/<feature>/canonical-request.js:<line-start>-<line-end>
+      |
+      |-- telemetry
+      |   |-- status        : not observed
+      |   |-- runtime step  : not observed
+      |   |-- first seen at : not observed
+      |   `-- duration ms   : not observed
+      |
+      |-- receipt
+      |   `-- missing
+      |
+      `-- status
+          |-- blocked
+          |-- blocker : declared-but-silent
+          `-- fix     : add runtime testimony and receipt proof
+
+      [03] SHARED RUNNER EXECUTES
+      |-- contract
+      |   `-- contracts/file-system-bodies/<body>.contract.v1.json
+      |
+      |-- runtime
+      |   `-- src/<feature>/runner.js:<line-start>-<line-end>
+      |
+      |-- telemetry
+      |   `-- evidence/runs/<run-id>/telemetry.events.v1.jsonl
+      |
+      |-- receipt
+      |   `-- evidence/runs/<run-id>/runner.receipt.v1.json
+      |
+      `-- status
+          `-- ok
+      """
+    And the tree should use nested ASCII branches to show body ownership
+    And the tree should appear before dense method tables
+    And the tree should show blockers inline under the body node where truth broke.
+
   Scenario: Render blocked ASCII body tree shape
     Given an executable body node is missing telemetry or receipt evidence
     When the ASCII execution sketch is rendered

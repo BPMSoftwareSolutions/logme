@@ -56,19 +56,10 @@ function rendersAsciiExecutionFlow(contract) {
     return relativePath || path.basename(filePath);
   }
 
-  function countsObservedTelemetry(method) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
-    }
-
-    return method.hasLogMeCall;
-  }
-
-  const observedTelemetryCount = contract.methods.filter(countsObservedTelemetry).length;
   const receiptPath = formatsProminentPath(contract.reportPath);
   const declaredSourceAuthority = formatsProminentPath(contract.provenance.configPath);
   const staticSourceInventory = `${contract.filesScanned} files / ${contract.localExecutableMethods} methods`;
-  const telemetryObservation = `${observedTelemetryCount} observed / ${contract.methods.length} methods`;
+  const telemetryObservation = 'not observed';
   const blockerCount = contract.findings.length;
   const promotionDecision = blockerCount === 0 ? 'ALLOWED' : 'BLOCKED';
 

@@ -29,7 +29,8 @@ test('rendersAsciiExecutionFlow produces a clean ASCII sketch for a sterile repo
   assert.match(sketch, /Verdict\s+: STERILE DOMAIN BODY/);
   assert.match(sketch, /Promotion\s+: ALLOWED/);
   assert.match(sketch, /Gherkin -> Contract -> Source -> Telemetry -> Receipt/);
-  assert.match(sketch, /ok\s+ok\s+ok\s+observed\s+written/);
+  assert.match(sketch, /Telemetry observation\s+: not observed/);
+  assert.match(sketch, /Receipt evidence\s+: report\.md/);
   assert.doesNotMatch(sketch, /[^\x0A\x0D\x20-\x7E]/);
 });
 
@@ -61,7 +62,7 @@ test('rendersAsciiExecutionFlow highlights a blocked report and blocker count', 
 
   assert.match(sketch, /Promotion\s+: BLOCKED/);
   assert.match(sketch, /Declared Source -> Static Inventory -> Telemetry -> Receipt/);
-  assert.match(sketch, /ok\s+has gaps\s+missing\s+unknown/);
+  assert.match(sketch, /Telemetry observation\s+: not observed/);
   assert.match(sketch, /Blockers\s+: 1/);
   assert.doesNotMatch(sketch, /[^\x0A\x0D\x20-\x7E]/);
 });
