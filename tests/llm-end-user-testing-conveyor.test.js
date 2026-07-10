@@ -62,10 +62,28 @@ function writesDomainAnalysisReport(rootDir) {
   return path.join(analysisRoot, 'domain-body-analysis.report.md');
 }
 
+function writesUserFacingReport(rootDir) {
+  const reportPath = path.join(rootDir, 'report.md');
+  fs.writeFileSync(reportPath, [
+    '# LogMe Report',
+    '',
+    '## Executive Summary',
+    '',
+    'Blocker states appear before dense details.',
+    '',
+    '```text',
+    'EXECUTION FLOW',
+    '```',
+    '',
+  ].join('\n'), 'utf8');
+  return reportPath;
+}
+
 function buildsRunOptions(rootDir, overrides = {}) {
   const featurePath = writesFeatureFile(rootDir);
   const proofReports = writesProofReports(rootDir);
   const domainAnalysisReport = writesDomainAnalysisReport(rootDir);
+  writesUserFacingReport(rootDir);
 
   return {
     rootDir,
@@ -81,6 +99,12 @@ function buildsRunOptions(rootDir, overrides = {}) {
     ],
     currentProofReportPaths: proofReports,
     currentDomainAnalysisReportPaths: [domainAnalysisReport],
+    reviewedHtmlPreviews: [{
+      path: 'quality/previews/report.html',
+      screenshotPath: 'quality/previews/report.png',
+      viewport: 'desktop',
+      status: 'reviewed',
+    }],
     requiredHumanReportPaths: proofReports,
     steps: [{
       action: 'open generated assignment',
@@ -170,12 +194,43 @@ test('writes an LLM QA bundle with redacted handoff context, deterministic decis
     assert.match(handoffReport, /## Current Domain Body Analysis/);
     assert.match(handoffReport, /Domain Body Analysis Report/);
     assert.match(handoffReport, /Executable file names missing action verb: 0/);
+    assert.match(handoffReport, /## Reviewed Markdown Report Surfaces/);
+    assert.match(handoffReport, /### report\.md/);
+    assert.match(handoffReport, /Blocker states appear before dense details/);
+    assert.match(handoffReport, /## Reviewed HTML Preview Surfaces/);
     assert.equal(gateDecision.qualityGateDecision, 'QA passed');
     assert.equal(gateDecision.promotable, false);
     assert.equal(gateDecision.llmPromotionAllowed, false);
     assert.deepEqual(Object.keys(manifest.contentHashes).sort(), REQUIRED_LLM_QA_ARTIFACTS.sort());
     assert.ok(Object.values(manifest.contentHashes).every((hash) => hash.length === 64));
+    assert.match(readsText(path.join(result.bundlePath, 'qa-evidence-bundle.report.md')), /LLM Observations Versus Deterministic Gate/);
+    assert.match(readsText(path.join(result.bundlePath, 'qa-evidence-bundle.report.md')), /report-artifact-index\.v1\.json/);
+    assert.match(readsText(path.join(result.bundlePath, 'screenshots.index.md')), /quality\/previews\/report\.png/);
+    assert.deepEqual(readsJson(path.join(result.bundlePath, 'report-artifact-index.v1.json')).reviewedMarkdownReports.includes('report.md'), true);
     assert.equal(fs.existsSync(path.join(result.bundlePath, 'stakeholder-notification-draft.report.md')), true);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('writes stakeholder notification draft automatically for the notification scenario without sending externally', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-llm-conveyor-'));
+
+  try {
+    const result = writesLlmEndUserTestingConveyorRun(buildsRunOptions(tempDir, {
+      qaRunId: 'qa-notification',
+      scenarioId: 'prepare-future-notification-without-sending-it',
+      scenarioName: 'Prepare future notification without sending it',
+    }));
+    const draftPath = path.join(result.bundlePath, 'stakeholder-notification-draft.report.md');
+    const bundleReport = readsText(path.join(result.bundlePath, 'qa-evidence-bundle.report.md'));
+    const artifactIndex = readsJson(path.join(result.bundlePath, 'report-artifact-index.v1.json'));
+
+    assert.equal(fs.existsSync(draftPath), true);
+    assert.match(readsText(draftPath), /No external notification has been sent/);
+    assert.match(bundleReport, /External send status: no email or external notification was sent/);
+    assert.equal(artifactIndex.externalNotificationSent, false);
+    assert.match(artifactIndex.stakeholderNotificationDraftPath, /stakeholder-notification-draft\.report\.md/);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }

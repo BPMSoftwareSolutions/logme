@@ -18,6 +18,8 @@
   "requiredPaths": {
     "files": [
       "README.md",
+      "docs/llm-worker-domain-remediation-strategy.md",
+      "docs/features/llm-domain-remediation.feature.md",
       "docs/features/llm-domain-body-analysis-and-tie-out.feature.md",
       "package.json",
       "logme.config.json",

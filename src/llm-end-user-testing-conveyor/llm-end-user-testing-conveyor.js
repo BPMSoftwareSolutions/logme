@@ -36,6 +36,7 @@ const REQUIRED_LLM_QA_ARTIFACTS = [
   'feature-proof-links.v1.json',
   'report-artifact-index.v1.json',
   'blocker-worklist.md',
+  'screenshots.index.md',
 ];
 
 const REQUIRED_HUMAN_REPORT_ARTIFACTS = [
@@ -198,6 +199,54 @@ function readsBoundedReportContent(rootDir, reportPath) {
   };
 }
 
+function readsUserFacingMarkdownReportPaths(rootDir, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (options.reviewedMarkdownReportPaths) {
+    return options.reviewedMarkdownReportPaths;
+  }
+
+  const reportPath = path.join(rootDir, 'report.md');
+  return fs.existsSync(reportPath) ? [reportPath] : [];
+}
+
+function readsReviewedMarkdownReports(rootDir, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const reports = [];
+
+  for (const reportPath of readsUserFacingMarkdownReportPaths(rootDir, options)) {
+    reports.push(readsBoundedReportContent(rootDir, reportPath));
+  }
+
+  return reports;
+}
+
+function readsReviewedHtmlPreviewRecords(rootDir, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const previews = [];
+
+  for (const preview of options.reviewedHtmlPreviews || []) {
+    const previewPath = preview.path || preview.generatedHtmlPathOrArtifactUrl || preview;
+    previews.push({
+      path: formatsRepoRelativePath(rootDir, previewPath),
+      screenshotPath: preview.screenshotPath || NOT_OBSERVED,
+      viewport: preview.viewport || NOT_OBSERVED,
+      status: preview.status || preview.visualQaStatus || 'reviewed',
+      blockerCode: preview.blockerCode || NOT_OBSERVED,
+    });
+  }
+
+  return previews;
+}
+
 function buildsLlmHandoffPacket(assignment, options = {}) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -229,6 +278,8 @@ function buildsLlmHandoffPacket(assignment, options = {}) {
       acceptanceCriteria: options.acceptanceCriteria || [],
       currentProofReports: proofReports,
       currentDomainAnalysisReports: domainAnalysisReports,
+      reviewedMarkdownReports: readsReviewedMarkdownReports(rootDir, options),
+      reviewedHtmlPreviews: readsReviewedHtmlPreviewRecords(rootDir, options),
       targetUserSurfaceInstructions: options.targetUserSurfaceInstructions || assignment.allowedTestSurfaces,
       seedDataRules: [
         'seed data must be synthetic unless fixture data is explicitly allowed',
@@ -298,6 +349,26 @@ function rendersLlmHandoffPacketReport(packet) {
 
   for (const report of packet.boundedContext.currentDomainAnalysisReports) {
     lines.push(`### ${report.path}`, '', report.content, '');
+  }
+
+  lines.push('', '## Reviewed Markdown Report Surfaces', '');
+
+  if (packet.boundedContext.reviewedMarkdownReports.length === 0) {
+    lines.push('- not attached');
+  }
+
+  for (const report of packet.boundedContext.reviewedMarkdownReports) {
+    lines.push(`### ${report.path}`, '', report.content, '');
+  }
+
+  lines.push('', '## Reviewed HTML Preview Surfaces', '');
+
+  if (packet.boundedContext.reviewedHtmlPreviews.length === 0) {
+    lines.push('- no HTML preview attached');
+  }
+
+  for (const preview of packet.boundedContext.reviewedHtmlPreviews) {
+    lines.push(`- ${preview.path} (${preview.status}; screenshot: ${preview.screenshotPath}; viewport: ${preview.viewport})`);
   }
 
   lines.push('## Target User Surface Instructions', '');
@@ -976,6 +1047,10 @@ function writesLlmQaSupportArtifacts(assignment, gateDecision, options = {}) {
   const rootDir = options.rootDir || process.cwd();
   const bundlePath = options.bundlePath || buildsLlmQaBundlePath(rootDir, assignment.releaseCandidateId, assignment.qaRunId);
   const humanReportPaths = readsFormattedRequiredReportPaths(rootDir, assignment, options);
+  const reviewedMarkdownReports = readsReportArtifactIndexMarkdownPaths(rootDir, humanReportPaths, options);
+  const reviewedHtmlPreviews = readsReviewedHtmlPreviewRecords(rootDir, options);
+  const screenshotRecords = readsScreenshotIndexRecords(options.session || options.steps || [], reviewedHtmlPreviews);
+  const stakeholderNotificationDraftPath = readsStakeholderNotificationDraftPath(rootDir, bundlePath, assignment, gateDecision, options);
 
   writesJsonArtifact(path.join(bundlePath, 'qa-gate-decision.v1.json'), gateDecision);
   writesJsonArtifact(path.join(bundlePath, 'feature-proof-links.v1.json'), {
@@ -985,6 +1060,8 @@ function writesLlmQaSupportArtifacts(assignment, gateDecision, options = {}) {
     featureId: assignment.featureId,
     scenarioId: assignment.scenarioId,
     proofReportPaths: humanReportPaths,
+    reviewedMarkdownReports,
+    reviewedHtmlPreviews: readsReviewedHtmlPreviewPaths(reviewedHtmlPreviews),
     missingReports: gateDecision.missingHumanReports,
   });
   writesJsonArtifact(path.join(bundlePath, 'report-artifact-index.v1.json'), {
@@ -993,11 +1070,21 @@ function writesLlmQaSupportArtifacts(assignment, gateDecision, options = {}) {
     qaRunId: assignment.qaRunId,
     featureId: assignment.featureId,
     scenarioId: assignment.scenarioId,
-    reviewedMarkdownReports: humanReportPaths,
-    reviewedHtmlPreviews: options.reviewedHtmlPreviews || [],
+    reviewedMarkdownReports,
+    reviewedHtmlPreviews,
+    screenshotIndexPath: 'screenshots.index.md',
+    stakeholderNotificationDraftPath,
+    externalNotificationSent: false,
   });
   writesMarkdownArtifact(path.join(bundlePath, 'blocker-worklist.md'), rendersLlmBlockerWorklist(assignment, gateDecision));
-  writesMarkdownArtifact(path.join(bundlePath, 'qa-evidence-bundle.report.md'), rendersLlmQaEvidenceBundleReport(assignment, gateDecision));
+  writesMarkdownArtifact(path.join(bundlePath, 'screenshots.index.md'), rendersScreenshotsIndex(assignment, screenshotRecords));
+  writesMarkdownArtifact(path.join(bundlePath, 'qa-evidence-bundle.report.md'), rendersLlmQaEvidenceBundleReport(assignment, gateDecision, {
+    reviewedMarkdownReports,
+    reviewedHtmlPreviews,
+    screenshotRecords,
+    stakeholderNotificationDraftPath,
+    commandOrSurface: options.commandExecuted || readsSessionSurfaceSummary(options.session || options.steps || []),
+  }));
 }
 
 function readsFormattedRequiredReportPaths(rootDir, assignment, options) {
@@ -1012,6 +1099,134 @@ function readsFormattedRequiredReportPaths(rootDir, assignment, options) {
   }
 
   return formattedPaths;
+}
+
+function readsReportArtifactIndexMarkdownPaths(rootDir, humanReportPaths, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const markdownPaths = [...humanReportPaths];
+
+  for (const report of readsReviewedMarkdownReports(rootDir, options)) {
+    markdownPaths.push(report.path);
+  }
+
+  return [...new Set(markdownPaths)];
+}
+
+function readsReviewedHtmlPreviewPaths(reviewedHtmlPreviews) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const previewPaths = [];
+
+  for (const preview of reviewedHtmlPreviews || []) {
+    previewPaths.push(preview.path);
+  }
+
+  return previewPaths;
+}
+
+function readsScreenshotIndexRecords(sessionOrSteps, reviewedHtmlPreviews = []) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const steps = Array.isArray(sessionOrSteps) ? sessionOrSteps : (sessionOrSteps.steps || []);
+  const screenshots = [];
+
+  for (const step of steps) {
+    if (step.screenshotOrOutputPath && step.screenshotOrOutputPath !== NOT_OBSERVED) {
+      screenshots.push({
+        path: step.screenshotOrOutputPath,
+        viewport: NOT_OBSERVED,
+        status: step.status || 'reviewed',
+        blockerCode: step.blockerCode || NOT_OBSERVED,
+      });
+    }
+  }
+
+  for (const preview of reviewedHtmlPreviews) {
+    if (preview.screenshotPath && preview.screenshotPath !== NOT_OBSERVED) {
+      screenshots.push({
+        path: preview.screenshotPath,
+        viewport: preview.viewport,
+        status: preview.status,
+        blockerCode: preview.blockerCode,
+      });
+    }
+  }
+
+  return screenshots;
+}
+
+function rendersScreenshotsIndex(assignment, screenshots) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = [
+    `# Screenshots And Output Index: ${assignment.releaseCandidateId}`,
+    '',
+    `- Release candidate id: ${assignment.releaseCandidateId}`,
+    `- QA run id: ${assignment.qaRunId}`,
+    `- Feature id: ${assignment.featureId}`,
+    `- Scenario id: ${assignment.scenarioId}`,
+    '',
+    '| screenshot or output path | viewport | status | blocker code |',
+    '| --- | --- | --- | --- |',
+  ];
+
+  if (screenshots.length === 0) {
+    lines.push(`| ${NOT_OBSERVED} | ${NOT_OBSERVED} | not inspected | ${NOT_OBSERVED} |`);
+  }
+
+  for (const screenshot of screenshots) {
+    lines.push(`| ${screenshot.path} | ${screenshot.viewport || NOT_OBSERVED} | ${screenshot.status || 'reviewed'} | ${screenshot.blockerCode || NOT_OBSERVED} |`);
+  }
+
+  lines.push('');
+  return lines.join('\n');
+}
+
+function readsStakeholderNotificationDraftPath(rootDir, bundlePath, assignment, gateDecision, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (shouldWriteStakeholderNotificationDraft(assignment, options)) {
+    return formatsRepoRelativePath(rootDir, path.join(bundlePath, 'stakeholder-notification-draft.report.md'));
+  }
+
+  return NOT_OBSERVED;
+}
+
+function shouldWriteStakeholderNotificationDraft(assignment, options = {}) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return options.prepareStakeholderNotificationDraft === true
+    || assignment.scenarioId === 'prepare-future-notification-without-sending-it';
+}
+
+function readsSessionSurfaceSummary(sessionOrSteps) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const steps = Array.isArray(sessionOrSteps) ? sessionOrSteps : (sessionOrSteps.steps || []);
+  const surfaces = [];
+
+  for (const step of steps) {
+    if (step.targetSurface && !surfaces.includes(step.targetSurface)) {
+      surfaces.push(step.targetSurface);
+    }
+  }
+
+  return surfaces.length === 0 ? NOT_OBSERVED : surfaces.join(', ');
 }
 
 function rendersLlmBlockerWorklist(assignment, gateDecision) {
@@ -1042,12 +1257,12 @@ function rendersLlmBlockerWorklist(assignment, gateDecision) {
   return lines.join('\n');
 }
 
-function rendersLlmQaEvidenceBundleReport(assignment, gateDecision) {
+function rendersLlmQaEvidenceBundleReport(assignment, gateDecision, options = {}) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  return [
+  const lines = [
     `# LLM QA Evidence Bundle: ${assignment.releaseCandidateId}`,
     '',
     `- Release candidate id: ${assignment.releaseCandidateId}`,
@@ -1057,6 +1272,8 @@ function rendersLlmQaEvidenceBundleReport(assignment, gateDecision) {
     `- Quality gate decision: ${gateDecision.qualityGateDecision}`,
     `- LLM promotion allowed: ${gateDecision.llmPromotionAllowed}`,
     `- Blocker count: ${gateDecision.blockerCount}`,
+    `- Command or surface used: ${options.commandOrSurface || NOT_OBSERVED}`,
+    `- External notification sent: false`,
     '',
     '## Deterministic Gate Result',
     '',
@@ -1074,8 +1291,54 @@ function rendersLlmQaEvidenceBundleReport(assignment, gateDecision) {
     '- llm-user-experience.report.md',
     '- acceptance-criteria-review.report.md',
     '- qa-gate-decision.v1.json',
+    '- report-artifact-index.v1.json',
+    '- screenshots.index.md',
     '',
-  ].join('\n');
+    '## LLM Observations Versus Deterministic Gate',
+    '',
+    '- LLM observations live in llm-user-experience.report.md, llm-end-user-session.v1.json, and acceptance-criteria-review.v1.json.',
+    '- Deterministic gate results live in qa-gate-decision.v1.json and are summarized above.',
+    '- The LLM is not allowed to promote its own run.',
+    '',
+    '## Reviewed Markdown Reports',
+    '',
+  ];
+
+  rendersBulletLinesInto(lines, options.reviewedMarkdownReports && options.reviewedMarkdownReports.length > 0
+    ? options.reviewedMarkdownReports
+    : [NOT_OBSERVED]);
+
+  lines.push('', '## Reviewed HTML Previews', '');
+
+  if (!options.reviewedHtmlPreviews || options.reviewedHtmlPreviews.length === 0) {
+    lines.push('- no HTML preview attached');
+  } else {
+    for (const preview of options.reviewedHtmlPreviews) {
+      lines.push(`- ${preview.path} (${preview.status}; screenshot: ${preview.screenshotPath}; viewport: ${preview.viewport})`);
+    }
+  }
+
+  lines.push('', '## Screenshot Or Output Index', '');
+  lines.push('- screenshots.index.md');
+
+  if (options.screenshotRecords && options.screenshotRecords.length > 0) {
+    for (const screenshot of options.screenshotRecords) {
+      lines.push(`- ${screenshot.path}`);
+    }
+  }
+
+  lines.push('', '## Stakeholder Notification Draft', '');
+
+  if (options.stakeholderNotificationDraftPath && options.stakeholderNotificationDraftPath !== NOT_OBSERVED) {
+    lines.push(`- Draft path: ${options.stakeholderNotificationDraftPath}`);
+    lines.push('- Draft status: written for review only');
+    lines.push('- External send status: no email or external notification was sent');
+  } else {
+    lines.push('- not requested for this scenario');
+  }
+
+  lines.push('');
+  return lines.join('\n');
 }
 
 function buildsArtifactHashes(bundlePath, artifacts) {
@@ -1194,10 +1457,11 @@ function writesLlmEndUserTestingConveyorRun(options = {}) {
   writesAcceptanceCriteriaReview(acceptanceReview, { rootDir, bundlePath });
   writesLlmUserExperienceReport(assignment, session, acceptanceReview, seedReceipt, { ...options, rootDir, bundlePath });
   writesMachineEnvironment(assignment, { ...options, rootDir, bundlePath });
-  writesLlmQaSupportArtifacts(assignment, gateDecision, { ...options, rootDir, bundlePath });
+  writesLlmQaSupportArtifacts(assignment, gateDecision, { ...options, rootDir, bundlePath, session });
 
-  if (options.prepareStakeholderNotificationDraft === true) {
+  if (shouldWriteStakeholderNotificationDraft(assignment, options)) {
     writesStakeholderNotificationDraft(assignment, gateDecision, { rootDir, bundlePath });
+    writesLlmQaSupportArtifacts(assignment, gateDecision, { ...options, rootDir, bundlePath, session });
   }
 
   const manifest = writesLlmQaBundleManifest(assignment, gateDecision, { ...options, rootDir, bundlePath });
