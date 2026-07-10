@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const ts = require('typescript');
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
 const { extractsSelfContainedMethodSource } = require('../../packages/logme-method-inventory-primitives/src/extracts-self-contained-method-source');
@@ -241,6 +242,453 @@ function appendsToExports(content, entryMethodName) {
   return content.replace(/module\.exports\s*=\s*\{/u, `module.exports = {\n  ${entryMethodName},`);
 }
 
+function promotesFullFileDecomposition(config, filePath, groups) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const resolvedGroups = selectsResolvedGroups(groups);
+  if (resolvedGroups.length === 0) {
+    return { promotable: false, reason: 'no group in the decomposition plan has a proposedFileStem to promote', fileEdits: [] };
+  }
+
+  const absoluteFilePath = path.join(config.rootDir, filePath);
+  const content = fs.readFileSync(absoluteFilePath, 'utf8');
+  const sourceFile = parsesFullSourceFile(content, filePath);
+  const functionSources = extractsAllFunctionSources(sourceFile, content);
+  const moduleConstants = extractsModuleLevelConstants(sourceFile, content);
+  const publicExportNames = extractsPublicExportNames(sourceFile);
+
+  const missingFunctions = findsMissingFunctionSources(resolvedGroups, functionSources);
+  if (missingFunctions.length > 0) {
+    return { promotable: false, reason: `could not locate source for: ${missingFunctions.join(', ')}`, fileEdits: [] };
+  }
+
+  const requiredConstants = findsRequiredConstants(resolvedGroups, moduleConstants);
+  const featureDirectory = path.dirname(filePath).replace(/\\/gu, '/');
+  const fileEdits = [];
+
+  const constantsFileEdit = buildsSharedConstantsFileEdit(config, featureDirectory, requiredConstants, moduleConstants);
+  if (constantsFileEdit) {
+    fileEdits.push(constantsFileEdit);
+  }
+
+  const memberToStem = buildsMemberToStemIndex(resolvedGroups);
+
+  for (const group of resolvedGroups) {
+    fileEdits.push(buildsGroupFileEdit(config, featureDirectory, group, functionSources, memberToStem, requiredConstants, constantsFileEdit));
+  }
+
+  fileEdits.push(buildsOriginalFileBarrelEdit(config, filePath, content, sourceFile, resolvedGroups, publicExportNames, memberToStem, requiredConstants, constantsFileEdit));
+
+  return { promotable: true, fileEdits };
+}
+
+function selectsResolvedGroups(groups) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const resolved = [];
+  for (const group of groups) {
+    if (group.proposedFileStem) {
+      resolved.push(group);
+    }
+  }
+
+  return resolved;
+}
+
+function parsesFullSourceFile(content, filePath) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const scriptKind = filePath.endsWith('.ts') ? ts.ScriptKind.TS : ts.ScriptKind.JS;
+  return ts.createSourceFile(filePath, content, ts.ScriptTarget.Latest, true, scriptKind);
+}
+
+function extractsAllFunctionSources(sourceFile, content) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const functionSources = new Map();
+
+  function visitsNode(node) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    if (ts.isFunctionDeclaration(node) && node.name) {
+      functionSources.set(node.name.text, content.slice(node.getStart(sourceFile), node.getEnd()).trim());
+    }
+
+    ts.forEachChild(node, visitsNode);
+  }
+
+  visitsNode(sourceFile);
+  return functionSources;
+}
+
+function extractsModuleLevelConstants(sourceFile, content) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const moduleConstants = new Map();
+
+  for (const statement of sourceFile.statements) {
+    if (!ts.isVariableStatement(statement)) {
+      continue;
+    }
+
+    for (const declaration of statement.declarationList.declarations) {
+      if (ts.isIdentifier(declaration.name) && declaration.initializer && !isRequireCall(declaration.initializer)) {
+        moduleConstants.set(declaration.name.text, content.slice(statement.getStart(sourceFile), statement.getEnd()).trim());
+      }
+    }
+  }
+
+  return moduleConstants;
+}
+
+function isRequireCall(expressionNode) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return ts.isCallExpression(expressionNode) && ts.isIdentifier(expressionNode.expression) && expressionNode.expression.text === 'require';
+}
+
+function extractsPublicExportNames(sourceFile) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const exportNames = [];
+
+  for (const statement of sourceFile.statements) {
+    if (!ts.isExpressionStatement(statement) || !ts.isBinaryExpression(statement.expression)) {
+      continue;
+    }
+
+    const assignment = statement.expression;
+    const isModuleExportsAssignment = ts.isPropertyAccessExpression(assignment.left)
+      && ts.isIdentifier(assignment.left.expression)
+      && assignment.left.expression.text === 'module'
+      && assignment.left.name.text === 'exports';
+
+    if (isModuleExportsAssignment && ts.isObjectLiteralExpression(assignment.right)) {
+      for (const property of assignment.right.properties) {
+        if (ts.isShorthandPropertyAssignment(property)) {
+          exportNames.push(property.name.text);
+        } else if (ts.isPropertyAssignment(property) && ts.isIdentifier(property.name)) {
+          exportNames.push(property.name.text);
+        }
+      }
+    }
+  }
+
+  return exportNames;
+}
+
+function findsMissingFunctionSources(resolvedGroups, functionSources) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const missing = [];
+  for (const group of resolvedGroups) {
+    for (const memberName of group.memberNames) {
+      if (!functionSources.has(memberName)) {
+        missing.push(memberName);
+      }
+    }
+  }
+
+  return missing;
+}
+
+function findsRequiredConstants(resolvedGroups, moduleConstants) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const requiredConstants = new Set();
+  for (const group of resolvedGroups) {
+    for (const freeIdentifier of group.freeIdentifiers) {
+      if (moduleConstants.has(freeIdentifier)) {
+        requiredConstants.add(freeIdentifier);
+      }
+    }
+  }
+
+  return requiredConstants;
+}
+
+function buildsSharedConstantsFileEdit(config, featureDirectory, requiredConstants, moduleConstants) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (requiredConstants.size === 0) {
+    return null;
+  }
+
+  const constantNames = Array.from(requiredConstants).sort();
+  const constantsStem = `${path.basename(featureDirectory)}-shared-constants`;
+  const relativePath = path.posix.join(featureDirectory, constantsStem, `${constantsStem}.js`);
+
+  const declarationLines = [];
+  for (const constantName of constantNames) {
+    declarationLines.push(moduleConstants.get(constantName));
+  }
+
+  const fileContent = [
+    ...declarationLines,
+    '',
+    `module.exports = { ${constantNames.join(', ')} };`,
+    '',
+  ].join('\n');
+
+  return {
+    kind: 'create-decomposed-file',
+    filePath: relativePath,
+    absolutePath: path.join(config.rootDir, relativePath),
+    newContent: fileContent,
+    exportedNames: constantNames,
+    stem: constantsStem,
+  };
+}
+
+function buildsMemberToStemIndex(resolvedGroups) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const memberToStem = new Map();
+  for (const group of resolvedGroups) {
+    for (const memberName of group.memberNames) {
+      memberToStem.set(memberName, group.proposedFileStem);
+    }
+  }
+
+  return memberToStem;
+}
+
+function buildsGroupFileEdit(config, featureDirectory, group, functionSources, memberToStem, requiredConstants, constantsFileEdit) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const relativePath = path.posix.join(featureDirectory, group.proposedFileStem, `${group.proposedFileStem}.js`);
+  const requireLines = buildsGroupRequireLines(group, memberToStem, requiredConstants, constantsFileEdit);
+  const functionBlocks = [];
+
+  for (const memberName of group.memberNames) {
+    functionBlocks.push(functionSources.get(memberName));
+  }
+
+  const fileContent = [
+    ...requireLines,
+    '',
+    functionBlocks.join('\n\n'),
+    '',
+    `module.exports = { ${group.memberNames.join(', ')} };`,
+    '',
+  ].join('\n');
+
+  return {
+    kind: 'create-decomposed-file',
+    filePath: relativePath,
+    absolutePath: path.join(config.rootDir, relativePath),
+    newContent: fileContent,
+    exportedNames: group.memberNames,
+    stem: group.proposedFileStem,
+  };
+}
+
+function buildsGroupRequireLines(group, memberToStem, requiredConstants, constantsFileEdit) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const requireLines = [
+    "const { LogMe } = require('../../../packages/logme-testimony-core/src/LogMe');",
+    "const { sampleMethod } = require('../../../packages/logme-testimony-core/src/sample-method');",
+  ];
+
+  for (const nodeBuiltin of NODE_BUILTIN_FREE_IDENTIFIERS) {
+    if (group.freeIdentifiers.includes(nodeBuiltin)) {
+      requireLines.push(`const ${nodeBuiltin} = require('node:${nodeBuiltin}');`);
+    }
+  }
+
+  const neededConstants = [];
+  for (const freeIdentifier of group.freeIdentifiers) {
+    if (requiredConstants.has(freeIdentifier)) {
+      neededConstants.push(freeIdentifier);
+    }
+  }
+
+  if (neededConstants.length > 0 && constantsFileEdit) {
+    requireLines.push(`const { ${neededConstants.sort().join(', ')} } = require('../${constantsFileEdit.stem}/${constantsFileEdit.stem}');`);
+  }
+
+  const crossGroupCalledNames = findsCrossGroupCalledNames(group, memberToStem);
+  const byStem = new Map();
+  for (const calledName of crossGroupCalledNames) {
+    const stem = memberToStem.get(calledName);
+    if (!byStem.has(stem)) {
+      byStem.set(stem, []);
+    }
+
+    byStem.get(stem).push(calledName);
+  }
+
+  const sortedStems = Array.from(byStem.keys()).sort();
+  for (const stem of sortedStems) {
+    const names = byStem.get(stem).sort();
+    requireLines.push(`const { ${names.join(', ')} } = require('../${stem}/${stem}');`);
+  }
+
+  return requireLines;
+}
+
+function findsCrossGroupCalledNames(group, memberToStem) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const crossGroupCalledNames = new Set();
+  for (const freeIdentifier of group.freeIdentifiers) {
+    if (memberToStem.has(freeIdentifier) && memberToStem.get(freeIdentifier) !== group.proposedFileStem) {
+      crossGroupCalledNames.add(freeIdentifier);
+    }
+  }
+
+  return crossGroupCalledNames;
+}
+
+function buildsOriginalFileBarrelEdit(config, filePath, content, sourceFile, resolvedGroups, publicExportNames, memberToStem, requiredConstants, constantsFileEdit) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const movedNames = new Set();
+  for (const group of resolvedGroups) {
+    for (const memberName of group.memberNames) {
+      movedNames.add(memberName);
+    }
+  }
+
+  const stems = new Set();
+  for (const group of resolvedGroups) {
+    stems.add(group.proposedFileStem);
+  }
+
+  const sortedStems = Array.from(stems).sort();
+  const requireLines = [];
+
+  for (const stem of sortedStems) {
+    const namesForStem = [];
+    for (const [memberName, memberStem] of memberToStem) {
+      if (memberStem === stem && movedNames.has(memberName)) {
+        namesForStem.push(memberName);
+      }
+    }
+
+    requireLines.push(`const { ${namesForStem.sort().join(', ')} } = require('./${stem}/${stem}');`);
+  }
+
+  if (constantsFileEdit) {
+    const constantNames = Array.from(requiredConstants).sort();
+    requireLines.push(`const { ${constantNames.join(', ')} } = require('./${constantsFileEdit.stem}/${constantsFileEdit.stem}');`);
+  }
+
+  const movedConstantNames = constantsFileEdit ? new Set(requiredConstants) : new Set();
+  const remainingContent = removesMovedDeclarationsFromSource(sourceFile, content, movedNames, movedConstantNames);
+  const insertionPoint = findsLastRequireLineIndex(remainingContent);
+  const lines = remainingContent.split('\n');
+  lines.splice(insertionPoint + 1, 0, ...requireLines);
+
+  return {
+    kind: 'update-decomposed-domain-file',
+    filePath,
+    absolutePath: path.join(config.rootDir, filePath),
+    newContent: lines.join('\n'),
+    preservedExportCount: publicExportNames.length,
+  };
+}
+
+function removesMovedDeclarationsFromSource(sourceFile, content, movedNames, movedConstantNames) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const removalRanges = [];
+
+  function visitsNode(node) {
+    if (process.env.LOGME_AUDIT === '1') {
+      LogMe(sampleMethod);
+    }
+
+    if (ts.isFunctionDeclaration(node) && node.name && movedNames.has(node.name.text)) {
+      removalRanges.push([node.getFullStart(), node.getEnd()]);
+      return;
+    }
+
+    if (ts.isVariableStatement(node)) {
+      const declaration = node.declarationList.declarations[0];
+      if (declaration && ts.isIdentifier(declaration.name) && movedConstantNames.has(declaration.name.text)) {
+        removalRanges.push([node.getFullStart(), node.getEnd()]);
+        return;
+      }
+    }
+
+    ts.forEachChild(node, visitsNode);
+  }
+
+  visitsNode(sourceFile);
+  removalRanges.sort(comparesRangesDescending);
+
+  let remainingContent = content;
+  for (const [start, end] of removalRanges) {
+    remainingContent = remainingContent.slice(0, start) + remainingContent.slice(end);
+  }
+
+  return remainingContent;
+}
+
+function comparesRangesDescending(firstRange, secondRange) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return secondRange[0] - firstRange[0];
+}
+
+function findsLastRequireLineIndex(content) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const lines = content.split('\n');
+  let lastRequireLineIndex = -1;
+
+  for (let index = 0; index < lines.length; index += 1) {
+    if (/^const .+= require\(/u.test(lines[index])) {
+      lastRequireLineIndex = index;
+    }
+  }
+
+  return lastRequireLineIndex;
+}
+
+const NODE_BUILTIN_FREE_IDENTIFIERS = new Set(['fs', 'path']);
+
 module.exports = {
   promotesDecompositionPlan,
+  promotesFullFileDecomposition,
 };
