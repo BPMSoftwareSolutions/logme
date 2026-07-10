@@ -3,6 +3,7 @@ docs/features/
 |-- _FEATURE-QUALITY-BOARD.v1.json
 |-- _FEATURE-QUALITY-TREE.txt
 |-- _STATUS.not-implemented.llm-domain-remediation.md
+|-- _STATUS.not-implemented.llm-evidence-curation-and-cleanup.md
 |-- _STATUS.qa-blocked.adversarial-challenge-packet.md
 |-- _STATUS.qa-blocked.ci-cd-report-truth-guardrails.md
 |-- _STATUS.qa-blocked.data-driven-report-layout.md
@@ -48,6 +49,7 @@ docs/features/
 |   |-- llm-domain-body-analysis-and-tie-out.status.v1.json
 |   |-- llm-domain-remediation.status.v1.json
 |   |-- llm-end-user-testing-conveyor.status.v1.json
+|   |-- llm-evidence-curation-and-cleanup.status.v1.json
 |   |-- method-level-execution-drill-down.status.v1.json
 |   |-- per-feature-executable-body-evidence-reports.status.v1.json
 |   |-- pi-readiness-gate-for-report-truth.status.v1.json
@@ -75,6 +77,7 @@ docs/features/
 |-- llm-domain-body-analysis-and-tie-out.feature.md
 |-- llm-domain-remediation.feature.md
 |-- llm-end-user-testing-conveyor.feature.md
+|-- llm-evidence-curation-and-cleanup.feature.md
 |-- method-level-execution-drill-down.feature.md
 |-- per-feature-executable-body-evidence-reports.feature.md
 |-- pi-readiness-gate.feature.md

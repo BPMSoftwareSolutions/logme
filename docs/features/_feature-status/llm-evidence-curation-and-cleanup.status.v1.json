@@ -1,9 +1,9 @@
 {
   "schemaVersion": "feature-status.v1",
-  "featureId": "llm-domain-remediation",
-  "featureName": "LLM domain remediation",
-  "sourceFeaturePath": "docs/features/llm-domain-remediation.feature.md",
-  "sourceFeatureContentHash": "788b59d695e7a51540943f358827fba3b5e1479718f788d0a62be0207f8987c7",
+  "featureId": "llm-evidence-curation-and-cleanup",
+  "featureName": "LLM evidence curation and cleanup",
+  "sourceFeaturePath": "docs/features/llm-evidence-curation-and-cleanup.feature.md",
+  "sourceFeatureContentHash": "b4f893cc5ad3f736c3e26fb0202d2e66cf07cd13542ccab6d8dfdff98cacba48",
   "displayStatus": "not-implemented",
   "implementationStatus": "not implemented",
   "executionProofStatus": "not proven",
@@ -23,5 +23,5 @@
   "generatedAt": "2026-07-10T12:26:14.149Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "implement the feature and generate execution proof",
-  "productOwnerSummary": "LLM domain remediation is currently not-implemented."
+  "productOwnerSummary": "LLM evidence curation and cleanup is currently not-implemented."
 }
