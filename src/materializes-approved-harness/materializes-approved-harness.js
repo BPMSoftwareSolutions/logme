@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
+const { isStringStep } = require('../../packages/logme-method-inventory-primitives/src/is-string-step');
 
 const JSON_ARTIFACT_FILE_NAMES = {
   bodyContractDraft: 'body-contract.json',
@@ -19,14 +20,6 @@ function writesJsonArtifact(harnessDir, fileName, content) {
   const filePath = path.join(harnessDir, fileName);
   fs.writeFileSync(filePath, `${JSON.stringify(content, null, 2)}\n`, 'utf8');
   return fileName;
-}
-
-function isStringStep(step) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  return typeof step === 'string';
 }
 
 function extractsDeclaredSteps(executionPathDraft) {

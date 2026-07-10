@@ -1,10 +1,10 @@
 {
   "schemaVersion": "feature-quality-board.v1",
-  "generatedAt": "2026-07-10T13:08:53.916Z",
+  "generatedAt": "2026-07-10T13:20:08.438Z",
   "generatorName": "LogMe feature quality board filesystem body",
   "repositoryRoot": "C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme",
   "gitBranch": "main",
-  "gitCommitOrWorkingTreeMarker": "0954fdc9e03024ff9514db4e0580a74d78118e34+working-tree-changes",
+  "gitCommitOrWorkingTreeMarker": "5831a9f09993f5741329957face55f5cc9b6dcc7+working-tree-changes",
   "totalFeatures": 28,
   "featuresNotImplemented": 2,
   "featuresImplementedNotTested": 0,
@@ -38,7 +38,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-required-artifact-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "ci-cd-report-truth-guardrails",
@@ -63,7 +63,7 @@
         "qa-cleanup-required-artifact-evidence-missing",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "data-driven-report-layout",
@@ -88,7 +88,7 @@
         "qa-cleanup-human-report-evidence-missing",
         "qa-cleanup-precondition-or-negative-case-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "development-time-report-truth-guardrails",
@@ -112,7 +112,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "domain-body-sprawl-visibility",
@@ -136,7 +136,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "domain-naming-convention-correction",
@@ -160,7 +160,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "domain-ownership-boundary-proof",
@@ -184,7 +184,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "end-user-quality-evidence-bundle",
@@ -208,7 +208,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "evidence-receipt-coverage",
@@ -232,7 +232,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-assigned-surface-insufficient"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "feature-execution-proof-source-of-truth",
@@ -256,7 +256,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "feature-filesystem-quality-status-projection",
@@ -280,7 +280,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "feature-quality-board-filesystem-body",
@@ -304,7 +304,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "feature-scoped-ascii-execution-flow-report",
@@ -328,7 +328,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-external-surface-not-testable-locally"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "fractal-llm-harness",
@@ -352,7 +352,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "gherkin-driven-report-development",
@@ -376,7 +376,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "llm-domain-body-analysis-and-tie-out",
@@ -400,7 +400,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "llm-end-user-testing-conveyor",
@@ -425,7 +425,7 @@
         "qa-cleanup-assigned-surface-insufficient",
         "qa-cleanup-precondition-or-negative-case-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "method-level-execution-drill-down",
@@ -449,7 +449,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "pi-readiness-gate-for-report-truth",
@@ -473,7 +473,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "portable-evidence-paths",
@@ -497,7 +497,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "projection-language-honesty",
@@ -521,7 +521,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-human-report-evidence-missing"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "report-contract-schema-enforcement",
@@ -545,7 +545,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-external-surface-not-testable-locally"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "report-provenance-and-freshness-gate",
@@ -569,7 +569,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-external-surface-not-testable-locally"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "summary-findings-and-method-row-tie-out",
@@ -593,7 +593,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-external-surface-not-testable-locally"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "verdict-derivation-consistency",
@@ -617,7 +617,7 @@
         "llm-acceptance-criterion-not-evidence-backed",
         "qa-cleanup-external-surface-not-testable-locally"
       ],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "llm-domain-remediation",
@@ -638,7 +638,7 @@
       "sourceFeaturePath": "docs/features/llm-domain-remediation.feature.md",
       "statusContractPath": "docs/features/_feature-status/llm-domain-remediation.status.v1.json",
       "blockerCodes": [],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "llm-evidence-curation-and-cleanup",
@@ -659,7 +659,7 @@
       "sourceFeaturePath": "docs/features/llm-evidence-curation-and-cleanup.feature.md",
       "statusContractPath": "docs/features/_feature-status/llm-evidence-curation-and-cleanup.status.v1.json",
       "blockerCodes": [],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     },
     {
       "featureId": "per-feature-executable-body-evidence-reports",
@@ -680,121 +680,121 @@
       "sourceFeaturePath": "docs/features/per-feature-executable-body-evidence-reports.feature.md",
       "statusContractPath": "docs/features/_feature-status/per-feature-executable-body-evidence-reports.status.v1.json",
       "blockerCodes": [],
-      "generatedAt": "2026-07-10T13:08:53.916Z"
+      "generatedAt": "2026-07-10T13:20:08.438Z"
     }
   ],
   "sourceStatusContractHashes": [
     {
       "path": "docs/features/_feature-status/adversarial-challenge-packet.status.v1.json",
-      "sha256": "11f1516fb5d6bdd9fa4b0f58c8df37a58b3db9157b9ced5485f6c1b7bef503ba"
+      "sha256": "37046a2c9013d07314868b3fb44c41eeb6533b4d0aa1175b811ad56a75be8a35"
     },
     {
       "path": "docs/features/_feature-status/ci-cd-report-truth-guardrails.status.v1.json",
-      "sha256": "e0eb4295adf07e02df84cf999cd105376524e22c9d7da62721a4a8a20d2b4c8b"
+      "sha256": "d092fc1a9c205a7a9cac3f188cd36a7acf34bdfe98f8f5d83859e7c5cfcaa545"
     },
     {
       "path": "docs/features/_feature-status/data-driven-report-layout.status.v1.json",
-      "sha256": "79fd4cf2bd1fef0006f25e58f0a36ed2decf726308d37291e9a18332199037b7"
+      "sha256": "38eaa47c3dd097e91fa8d4ce51eac7c6e9ea9ca66cf149a869b93521a59203d4"
     },
     {
       "path": "docs/features/_feature-status/development-time-report-truth-guardrails.status.v1.json",
-      "sha256": "badba6356018a362871d6a3fbce3891cd962b1d1d6180c0fa45a3f05c6756b51"
+      "sha256": "04c0e3f3882e37ad3043e0fd994242328aea8f1e83e71cabf272fafb7efaa0f8"
     },
     {
       "path": "docs/features/_feature-status/domain-body-sprawl-visibility.status.v1.json",
-      "sha256": "b2e4190efa45e186fa199eec406795d3812c9743d0c7d96ba1971dd65c205999"
+      "sha256": "03c0ed2724f7bc895c314f1615eb0e3cfaa7d7545e9de7ff67a61566659c105b"
     },
     {
       "path": "docs/features/_feature-status/domain-naming-convention-correction.status.v1.json",
-      "sha256": "269439020e5f84fcfacb1dc9ea505e876c5f009fb1ae187e18ec5b9d7da753f3"
+      "sha256": "0918d52a2a383c80dfa44d1cba19592653ff9b3d6fdd684ba1d29700ac31bb98"
     },
     {
       "path": "docs/features/_feature-status/domain-ownership-boundary-proof.status.v1.json",
-      "sha256": "42bef31084f2e257a2efe5646db53427b0636d24a1b958fdaccd9cd08ed5e149"
+      "sha256": "cba1a99dabd94af55b9f631a4921c381c2885594a2e5cf10fad8bdbc890d26aa"
     },
     {
       "path": "docs/features/_feature-status/end-user-quality-evidence-bundle.status.v1.json",
-      "sha256": "3e852166e43ab50f2276e9cfc8a218a61cc35cb2e56f5f5f33f09f108fc2dd9f"
+      "sha256": "26c624c0b3c5dc484bc4b3ab72661c9aa9f29c0b213cf380a54745d2688ab8e7"
     },
     {
       "path": "docs/features/_feature-status/evidence-receipt-coverage.status.v1.json",
-      "sha256": "0f9790fb4d9225fc031914f09f93ac8aa1b1e9fb61257dfbec2a6012f63b0f25"
+      "sha256": "3cc4b3ac9ef2e41f99eaeff3994213a89cf32799917c0d7546331489c5a5f3f8"
     },
     {
       "path": "docs/features/_feature-status/feature-execution-proof-source-of-truth.status.v1.json",
-      "sha256": "b9dad9b2f3b5d99c0d6df3df22e7a3e42ec419fdc736c3b0d35f6adb0a0e791f"
+      "sha256": "6661b82e428cf6b10dda6f35d36250b70d0f1b14dc7585c2d2d504e3e02ea153"
     },
     {
       "path": "docs/features/_feature-status/feature-filesystem-quality-status-projection.status.v1.json",
-      "sha256": "da68c0be4b58df425f20f5bdff4c8e0b647fda61e7b909dcbe80c87696d16256"
+      "sha256": "2f0b9f1b06084281f7f6ee1990d0d666245b4bd3a6fb3fd901fb94d813bf5e46"
     },
     {
       "path": "docs/features/_feature-status/feature-quality-board-filesystem-body.status.v1.json",
-      "sha256": "7df6c6d0b90d09fdd2365c7fe0080c161a16d2fb004e12d3e17e697dc6c23b4c"
+      "sha256": "664f437a1ee9afca7a048cfcdf6b1ccf60402fd3ed5f715b645003bc69a1c6d8"
     },
     {
       "path": "docs/features/_feature-status/feature-scoped-ascii-execution-flow-report.status.v1.json",
-      "sha256": "85d84ec8b97c4e17b6c3472711159682efb6f88befd9aeca5bf816e3d32d80fd"
+      "sha256": "ee34c7d007914fc9c1d4abadb110acc476392e973995071b620a9a363411e78d"
     },
     {
       "path": "docs/features/_feature-status/fractal-llm-harness.status.v1.json",
-      "sha256": "cd4ba08445d752da0099678cb8ae785d813dc79305fad889359174e022bce418"
+      "sha256": "65c3f3291ba3c13458699badeb3dbf79999b1ec185f8b88443291d66d083b892"
     },
     {
       "path": "docs/features/_feature-status/gherkin-driven-report-development.status.v1.json",
-      "sha256": "2f379f94ca293ad701560d3e6a5dd9285712e7087f902228f24ad6d5d006b2c0"
+      "sha256": "acf2337bfe028bd6eb18a6b6b772c1aeccb9431febec14f8a13d911b797028ab"
     },
     {
       "path": "docs/features/_feature-status/llm-domain-body-analysis-and-tie-out.status.v1.json",
-      "sha256": "eeb13fe1b742def84ea7ba3791340386a9099a7d39c6c117ac9ed891fccdb6d6"
+      "sha256": "c6597fb6fa76e73279308175553ce636524518446e1b282bf8423dcb65385954"
     },
     {
       "path": "docs/features/_feature-status/llm-end-user-testing-conveyor.status.v1.json",
-      "sha256": "aa6264b7bf698809c9ecbd1c307b63b14bf2756dd649e0c8957da3f5ffc21793"
+      "sha256": "13cf9039151e5477cefddf39f9af8233ba342423f81edaf92255f7d45611771b"
     },
     {
       "path": "docs/features/_feature-status/method-level-execution-drill-down.status.v1.json",
-      "sha256": "5c09ec07507c068a39b6e20049f451901b96dd7230a11bfc5658b90e81952de1"
+      "sha256": "4b05f2467e2d79675095138b97f63ad20b75eb9959dbe60cb76131eb95948bd3"
     },
     {
       "path": "docs/features/_feature-status/pi-readiness-gate-for-report-truth.status.v1.json",
-      "sha256": "3cef28b5756249fa9fa835e7ed2878f655df0c4c8958df85fc0b4e55a78aed6f"
+      "sha256": "a29de38c89b8d3fba8ef52b4f9e76e0d185461d1a9bbdcc2ff56512200ad3324"
     },
     {
       "path": "docs/features/_feature-status/portable-evidence-paths.status.v1.json",
-      "sha256": "4871576cd7784e324b17de583dafda247c339554dead6b8a2f235a593c0c2da0"
+      "sha256": "fba9ab38d0fd2863fd7b021bee333d510ed473726ba516b6f6c277bb49047b15"
     },
     {
       "path": "docs/features/_feature-status/projection-language-honesty.status.v1.json",
-      "sha256": "7402d43d80fcf7e3c083ab9922357636fee80fef279b1243759c9aefe48777bb"
+      "sha256": "eedbee84eb0c7e9f61eea5bdb135c1f18a27c69354c58a6b97ca44d355f943a4"
     },
     {
       "path": "docs/features/_feature-status/report-contract-schema-enforcement.status.v1.json",
-      "sha256": "c76b425b49478cee7b11298f250ee5500ad87c704638634d0ad7d1eb02ed35df"
+      "sha256": "0967bba791eded32239a50ebc9b3628a0d007b0f6fe1af74d45a5d5ee020cae8"
     },
     {
       "path": "docs/features/_feature-status/report-provenance-and-freshness-gate.status.v1.json",
-      "sha256": "7e09fd9107120a3de9d79eba8fd2c32ad24a10d5bd1ec8e770fc3b5b98affe5a"
+      "sha256": "97d692b5a3f36a2b82ed581603e00cf978f7c4316c5ca8b7f2ced0e65562e688"
     },
     {
       "path": "docs/features/_feature-status/summary-findings-and-method-row-tie-out.status.v1.json",
-      "sha256": "bfc42d0cb470217d1c196ea8f6da7f3342ee5fb2e4994f285b4f46b231d3d5d4"
+      "sha256": "a6fcfc11f17cb9142e1e9f1b56de444ef532775b54441bbf50e82f99d45fc60d"
     },
     {
       "path": "docs/features/_feature-status/verdict-derivation-consistency.status.v1.json",
-      "sha256": "f87c80b7aaf181bb8fa61c86648ea401d9dbd71b6d8cb60087b2136f632b6f22"
+      "sha256": "388900a07ee79260d616f525e75f3961d838ed9eafdb7b30249256a1aa528ffe"
     },
     {
       "path": "docs/features/_feature-status/llm-domain-remediation.status.v1.json",
-      "sha256": "ba26aaccd7f9aae55d3f7922236ca6c758577c3e0dd08f0bb6989ab0faee7c40"
+      "sha256": "6526f97993d1eabd2a7c276e60ee8dea5cef67f7dafae3f009a23050f3dd47f6"
     },
     {
       "path": "docs/features/_feature-status/llm-evidence-curation-and-cleanup.status.v1.json",
-      "sha256": "0154951de2aa40ca549b557730c730a8211ef336c42c722ade104a0ebfa96829"
+      "sha256": "0849714bb2a783879d0db73f153bee71dee713e1d8afe2a08076573f4389fd54"
     },
     {
       "path": "docs/features/_feature-status/per-feature-executable-body-evidence-reports.status.v1.json",
-      "sha256": "30a67d0c02243887870d076913c0419c5b40d5e1d8bc7684d878b78d15188edd"
+      "sha256": "8a6e5efb72db30217f8de0b18e639474757e349d13d13fe6e00e713020664e89"
     }
   ],
   "blockerSummary": [

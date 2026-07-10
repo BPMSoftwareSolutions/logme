@@ -46,6 +46,7 @@
       "packages/logme-method-inventory-primitives/src/detects-logme-call-in-node.js",
       "packages/logme-method-inventory-primitives/src/extracts-executable-method-nodes.js",
       "packages/logme-method-inventory-primitives/src/extracts-self-contained-method-source.js",
+      "packages/logme-method-inventory-primitives/src/is-string-step.js",
       "packages/logme-method-inventory-primitives/src/parses-javascript-typescript-source.js",
       "packages/logme-method-inventory-primitives/src/resolves-method-kind.js",
       "packages/logme-method-inventory-primitives/src/resolves-method-name.js",
