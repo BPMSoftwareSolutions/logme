@@ -57,6 +57,10 @@
       "src/validates-report-layout-contract/validates-report-layout-contract.js",
       "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
       "src/loads-report-layout-contract/loads-report-layout-contract.js",
+      "src/plans-remediation-backlog/plans-remediation-backlog.js",
+      "src/writes-remediation-backlog-evidence/writes-remediation-backlog-evidence.js",
+      "src/runs-remediation-planner/runs-remediation-planner.js",
+      "scripts/remediation-plan.js",
       "tests/loads-workspace-observability-config.test.js",
       "tests/discovers-configured-source-bodies.test.js",
       "tests/inventories-executable-domain-methods.test.js",
@@ -72,6 +76,9 @@
       "tests/validates-report-contract.test.js",
       "tests/validates-report-layout-contract.test.js",
       "tests/renders-report-from-layout-contract.test.js",
+      "tests/plans-remediation-backlog.test.js",
+      "tests/writes-remediation-backlog-evidence.test.js",
+      "tests/runs-remediation-planner.test.js",
       "packages/logme-config-primitives/src/reads-json-config-file.js",
       "packages/logme-config-primitives/src/resolves-configured-root-path.js",
       "packages/logme-config-primitives/src/lowercases-string-list.js",
@@ -126,6 +133,10 @@
       "src/validates-report-layout-contract",
       "src/renders-report-from-layout-contract",
       "src/loads-report-layout-contract",
+      "src/plans-remediation-backlog",
+      "src/writes-remediation-backlog-evidence",
+      "src/runs-remediation-planner",
+      "scripts",
       "tests",
       "evidence",
       "evidence/runs",
@@ -167,10 +178,17 @@
       "src/validates-report-contract/",
       "src/validates-report-layout-contract/",
       "src/renders-report-from-layout-contract/",
-      "src/loads-report-layout-contract/"
+      "src/loads-report-layout-contract/",
+      "src/plans-remediation-backlog/",
+      "src/writes-remediation-backlog-evidence/",
+      "src/runs-remediation-planner/",
+      "scripts/remediation-plan.js"
     ],
     "evidence": [
       "evidence/runs/<run-id>/"
+    ],
+    "quality": [
+      "quality/domain-remediation/<run-id>/"
     ]
   },
   "doesNotOwn": [

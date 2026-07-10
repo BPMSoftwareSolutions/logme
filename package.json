@@ -6,6 +6,7 @@
   "scripts": {
     "report:truth": "node scripts/report-truth.js",
     "report:truth:fast": "node scripts/report-truth.js --fast",
+    "remediation:plan": "node scripts/remediation-plan.js",
     "test": "node --test tests/"
   },
   "dependencies": {

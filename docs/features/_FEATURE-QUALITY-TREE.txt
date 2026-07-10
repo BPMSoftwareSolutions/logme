@@ -2,6 +2,7 @@ docs/features/
 |-- _FEATURE-QUALITY-BOARD.md
 |-- _FEATURE-QUALITY-BOARD.v1.json
 |-- _FEATURE-QUALITY-TREE.txt
+|-- _STATUS.not-implemented.llm-domain-remediation.md
 |-- _STATUS.qa-blocked.adversarial-challenge-packet.md
 |-- _STATUS.qa-blocked.ci-cd-report-truth-guardrails.md
 |-- _STATUS.qa-blocked.data-driven-report-layout.md
@@ -45,6 +46,7 @@ docs/features/
 |   |-- fractal-llm-harness.status.v1.json
 |   |-- gherkin-driven-report-development.status.v1.json
 |   |-- llm-domain-body-analysis-and-tie-out.status.v1.json
+|   |-- llm-domain-remediation.status.v1.json
 |   |-- llm-end-user-testing-conveyor.status.v1.json
 |   |-- method-level-execution-drill-down.status.v1.json
 |   |-- per-feature-executable-body-evidence-reports.status.v1.json
@@ -71,6 +73,7 @@ docs/features/
 |-- fractal-llm-harness.feature.md
 |-- gherkin-driven-report-development.feature.md
 |-- llm-domain-body-analysis-and-tie-out.feature.md
+|-- llm-domain-remediation.feature.md
 |-- llm-end-user-testing-conveyor.feature.md
 |-- method-level-execution-drill-down.feature.md
 |-- per-feature-executable-body-evidence-reports.feature.md

@@ -1,0 +1,459 @@
+{
+  "schemaVersion": "remediation-backlog.v1",
+  "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+  "workspacePath": "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/",
+  "evidencePath": "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/remediation-backlog.v1.json",
+  "sourceArtifacts": {
+    "domainAnalysisContractPath": "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/domain-analysis/domain-body-analysis.contract.v1.json",
+    "domainSprawlContractPath": "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/sprawl/domain-body-sprawl.contract.v1.json"
+  },
+  "backlogItems": [
+    {
+      "packetId": "domain-remediation-scenario-tieout",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ],
+      "affectedPaths": [
+        "packages/logme-config-primitives/src/lowercases-string-list.js",
+        "packages/logme-config-primitives/src/normalizes-config-string-array.js",
+        "packages/logme-config-primitives/src/reads-json-config-file.js",
+        "packages/logme-config-primitives/src/resolves-configured-root-path.js",
+        "packages/logme-method-inventory-primitives/src/detects-logme-call-in-node.js",
+        "packages/logme-method-inventory-primitives/src/extracts-executable-method-nodes.js",
+        "packages/logme-method-inventory-primitives/src/parses-javascript-typescript-source.js",
+        "packages/logme-method-inventory-primitives/src/resolves-method-kind.js",
+        "packages/logme-method-inventory-primitives/src/resolves-method-name.js",
+        "packages/logme-report-primitives/src/parses-execution-sketch-template.js",
+        "packages/logme-report-primitives/src/renders-ascii-execution-flow.js",
+        "packages/logme-report-primitives/src/renders-ascii-tree.js",
+        "packages/logme-report-primitives/src/renders-markdown-summary.js",
+        "packages/logme-report-primitives/src/renders-markdown-table.js",
+        "packages/logme-source-body-primitives/src/excludes-configured-directories.js",
+        "packages/logme-source-body-primitives/src/filters-source-files-by-extension.js",
+        "packages/logme-source-body-primitives/src/walks-configured-source-files.js",
+        "packages/logme-testimony-core/src/LogMe.js",
+        "packages/logme-testimony-core/src/sample-method.js",
+        "packages/logme-testimony-core/src/writes-domain-receipt.js",
+        "packages/logme-testimony-core/src/writes-telemetry-event.js",
+        "scaffold.js",
+        "src/builds-domain-body-analysis-contract/builds-domain-body-analysis-contract.js",
+        "src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract.js",
+        "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+        "src/builds-domain-body-sterility-findings/builds-domain-body-sterility-findings.js",
+        "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+        "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+        "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+        "src/detects-domain-language-impurity/detects-anonymous-local-methods.js",
+        "src/detects-domain-language-impurity/detects-forbidden-local-utility-paths.js",
+        "src/detects-domain-language-impurity/detects-out-of-vocabulary-local-methods.js",
+        "src/detects-method-testimony/detects-method-testimony.js",
+        "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+        "src/discovers-configured-source-bodies/discovers-configured-source-bodies.js",
+        "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+        "src/feature-execution-proof/feature-execution-proof.js",
+        "src/feature-quality-board/feature-quality-board.js",
+        "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+        "src/inventories-executable-domain-methods/inventories-executable-domain-methods.js",
+        "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+        "src/loads-report-layout-contract/loads-report-layout-contract.js",
+        "src/loads-workspace-observability-config/loads-workspace-observability-config.js",
+        "src/materializes-approved-harness/materializes-approved-harness.js",
+        "src/parses-llm-harness-output/parses-llm-harness-output.js",
+        "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+        "src/proposes-next-harness/proposes-next-harness.js",
+        "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
+        "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+        "src/report-provenance/report-provenance.js",
+        "src/report-truth/report-truth.js",
+        "src/runs-generated-harness/runs-generated-harness.js",
+        "src/runs-logme-domain-audit.js",
+        "src/runs-report-truth-gate/runs-report-truth-gate.js",
+        "src/validates-generated-harness/validates-generated-harness.js",
+        "src/validates-report-contract/validates-report-contract.js",
+        "src/validates-report-layout-contract/validates-report-layout-contract.js",
+        "src/verifies-generated-harness/verifies-generated-harness.js",
+        "src/writes-domain-body-analysis-evidence/writes-domain-body-analysis-evidence.js",
+        "src/writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence.js",
+        "src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js",
+        "src/writes-harness-receipt/writes-harness-receipt.js"
+      ],
+      "recommendedWorker": "scenario-tieout-worker",
+      "allowedMutationPaths": [
+        "docs/features/",
+        "contracts/domains/logme/domain-body-analysis.schema.v1.json",
+        "contracts/domains/logme/report-layout.schema.v1.json"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/scenario-tieout.proposal.v1.json"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "Every proposed scenario tie-out cites a feature doc, test, executable method, report section, or receipt artifact.",
+        "No unrelated code motion."
+      ],
+      "affectedFileCount": 62
+    },
+    {
+      "packetId": "domain-remediation-body-contract",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "file-body-contract-missing"
+      ],
+      "affectedPaths": [
+        "scaffold.js",
+        "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+        "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+        "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+        "src/feature-execution-proof/feature-execution-proof.js",
+        "src/feature-quality-board/feature-quality-board.js",
+        "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+        "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+        "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+        "src/report-provenance/report-provenance.js",
+        "src/report-truth/report-truth.js",
+        "src/runs-report-truth-gate/runs-report-truth-gate.js"
+      ],
+      "recommendedWorker": "contract-steward-worker",
+      "allowedMutationPaths": [
+        "contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json",
+        "docs/features/"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/body-contract-patch.proposal.v1.json"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "Missing body contract count reaches 0, or each remaining file has an explicit waiver.",
+        "New contract entries declare ownership and intent, not only a path."
+      ],
+      "affectedFileCount": 12
+    },
+    {
+      "packetId": "domain-remediation-actionless-naming",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb"
+      ],
+      "affectedPaths": [
+        "packages/logme-config-primitives/src/lowercases-string-list.js",
+        "packages/logme-config-primitives/src/normalizes-config-string-array.js",
+        "packages/logme-config-primitives/src/reads-json-config-file.js",
+        "packages/logme-method-inventory-primitives/src/extracts-executable-method-nodes.js",
+        "packages/logme-source-body-primitives/src/excludes-configured-directories.js",
+        "packages/logme-source-body-primitives/src/filters-source-files-by-extension.js",
+        "packages/logme-source-body-primitives/src/walks-configured-source-files.js",
+        "packages/logme-testimony-core/src/LogMe.js",
+        "packages/logme-testimony-core/src/sample-method.js",
+        "scaffold.js",
+        "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+        "src/feature-execution-proof/feature-execution-proof.js",
+        "src/feature-quality-board/feature-quality-board.js",
+        "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+        "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+        "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+        "src/report-provenance/report-provenance.js",
+        "src/report-truth/report-truth.js"
+      ],
+      "recommendedWorker": "naming-and-decomposition-worker",
+      "allowedMutationPaths": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/rename-plan.v1.json"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "No accepted executable file has a noun-only body name unless explicitly waived.",
+        "Existing commands and tests continue to pass."
+      ],
+      "affectedFileCount": 18
+    },
+    {
+      "packetId": "domain-remediation-decomposition",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "decomposition-recommended"
+      ],
+      "affectedPaths": [
+        "packages/logme-config-primitives/src/lowercases-string-list.js",
+        "packages/logme-config-primitives/src/normalizes-config-string-array.js",
+        "packages/logme-config-primitives/src/reads-json-config-file.js",
+        "packages/logme-method-inventory-primitives/src/detects-logme-call-in-node.js",
+        "packages/logme-method-inventory-primitives/src/extracts-executable-method-nodes.js",
+        "packages/logme-method-inventory-primitives/src/parses-javascript-typescript-source.js",
+        "packages/logme-report-primitives/src/parses-execution-sketch-template.js",
+        "packages/logme-report-primitives/src/renders-ascii-execution-flow.js",
+        "packages/logme-report-primitives/src/renders-ascii-tree.js",
+        "packages/logme-report-primitives/src/renders-markdown-summary.js",
+        "packages/logme-report-primitives/src/renders-markdown-table.js",
+        "packages/logme-source-body-primitives/src/excludes-configured-directories.js",
+        "packages/logme-source-body-primitives/src/filters-source-files-by-extension.js",
+        "packages/logme-source-body-primitives/src/walks-configured-source-files.js",
+        "packages/logme-testimony-core/src/LogMe.js",
+        "packages/logme-testimony-core/src/sample-method.js",
+        "scaffold.js",
+        "src/builds-domain-body-analysis-contract/builds-domain-body-analysis-contract.js",
+        "src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract.js",
+        "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+        "src/builds-domain-body-sterility-findings/builds-domain-body-sterility-findings.js",
+        "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+        "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+        "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+        "src/detects-domain-language-impurity/detects-anonymous-local-methods.js",
+        "src/detects-domain-language-impurity/detects-forbidden-local-utility-paths.js",
+        "src/detects-domain-language-impurity/detects-out-of-vocabulary-local-methods.js",
+        "src/detects-method-testimony/detects-method-testimony.js",
+        "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+        "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+        "src/feature-execution-proof/feature-execution-proof.js",
+        "src/feature-quality-board/feature-quality-board.js",
+        "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+        "src/inventories-executable-domain-methods/inventories-executable-domain-methods.js",
+        "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+        "src/materializes-approved-harness/materializes-approved-harness.js",
+        "src/parses-llm-harness-output/parses-llm-harness-output.js",
+        "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+        "src/proposes-next-harness/proposes-next-harness.js",
+        "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
+        "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+        "src/report-provenance/report-provenance.js",
+        "src/report-truth/report-truth.js",
+        "src/runs-generated-harness/runs-generated-harness.js",
+        "src/runs-report-truth-gate/runs-report-truth-gate.js",
+        "src/validates-generated-harness/validates-generated-harness.js",
+        "src/validates-report-contract/validates-report-contract.js",
+        "src/validates-report-layout-contract/validates-report-layout-contract.js",
+        "src/verifies-generated-harness/verifies-generated-harness.js",
+        "src/writes-domain-body-analysis-evidence/writes-domain-body-analysis-evidence.js",
+        "src/writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence.js",
+        "src/writes-harness-receipt/writes-harness-receipt.js"
+      ],
+      "recommendedWorker": "naming-and-decomposition-worker",
+      "allowedMutationPaths": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/decomposition-plan.report.md"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "Each decomposed body has one primary action.",
+        "No new noun-named executable body is introduced."
+      ],
+      "affectedFileCount": 52
+    },
+    {
+      "packetId": "domain-remediation-package-extraction",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "package-worthy-mechanic-inside-domain-body"
+      ],
+      "affectedPaths": [
+        "src/builds-domain-body-analysis-contract/builds-domain-body-analysis-contract.js",
+        "src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract.js",
+        "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+        "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+        "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+        "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+        "src/detects-domain-language-impurity/detects-anonymous-local-methods.js",
+        "src/detects-domain-language-impurity/detects-forbidden-local-utility-paths.js",
+        "src/detects-domain-language-impurity/detects-out-of-vocabulary-local-methods.js",
+        "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+        "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+        "src/feature-execution-proof/feature-execution-proof.js",
+        "src/feature-quality-board/feature-quality-board.js",
+        "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+        "src/inventories-executable-domain-methods/inventories-executable-domain-methods.js",
+        "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+        "src/loads-report-layout-contract/loads-report-layout-contract.js",
+        "src/loads-workspace-observability-config/loads-workspace-observability-config.js",
+        "src/materializes-approved-harness/materializes-approved-harness.js",
+        "src/parses-llm-harness-output/parses-llm-harness-output.js",
+        "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+        "src/proposes-next-harness/proposes-next-harness.js",
+        "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
+        "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+        "src/report-provenance/report-provenance.js",
+        "src/report-truth/report-truth.js",
+        "src/runs-generated-harness/runs-generated-harness.js",
+        "src/runs-report-truth-gate/runs-report-truth-gate.js",
+        "src/validates-generated-harness/validates-generated-harness.js",
+        "src/validates-report-contract/validates-report-contract.js",
+        "src/validates-report-layout-contract/validates-report-layout-contract.js",
+        "src/verifies-generated-harness/verifies-generated-harness.js",
+        "src/writes-domain-body-analysis-evidence/writes-domain-body-analysis-evidence.js",
+        "src/writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence.js",
+        "src/writes-harness-receipt/writes-harness-receipt.js"
+      ],
+      "recommendedWorker": "package-extraction-worker",
+      "allowedMutationPaths": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/package-extraction-plan.report.md"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "Extracted packages have declared ownership, allowed responsibilities, tests, and vocabulary boundaries.",
+        "Domain call sites still read in domain language after extraction."
+      ],
+      "affectedFileCount": 35
+    },
+    {
+      "packetId": "domain-remediation-god-file",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "god-file-candidate"
+      ],
+      "affectedPaths": [
+        "packages/logme-report-primitives/src/renders-ascii-execution-flow.js",
+        "src/builds-domain-body-analysis-contract/builds-domain-body-analysis-contract.js",
+        "src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract.js",
+        "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+        "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+        "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+        "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+        "src/feature-execution-proof/feature-execution-proof.js",
+        "src/feature-quality-board/feature-quality-board.js",
+        "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+        "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+        "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+        "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+        "src/report-provenance/report-provenance.js",
+        "src/report-truth/report-truth.js",
+        "src/validates-generated-harness/validates-generated-harness.js",
+        "src/verifies-generated-harness/verifies-generated-harness.js",
+        "src/writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence.js"
+      ],
+      "recommendedWorker": "naming-and-decomposition-worker",
+      "allowedMutationPaths": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/decomposition-plan.report.md"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "Domain analysis and sprawl reports show measurable reduction or a documented reason for no change."
+      ],
+      "affectedFileCount": 18
+    },
+    {
+      "packetId": "domain-remediation-mixed-responsibility",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "mixed-responsibility-file"
+      ],
+      "affectedPaths": [
+        "src/materializes-approved-harness/materializes-approved-harness.js"
+      ],
+      "recommendedWorker": "naming-and-decomposition-worker",
+      "allowedMutationPaths": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/decomposition-plan.report.md"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "Each decomposed body has one primary action."
+      ],
+      "affectedFileCount": 1
+    },
+    {
+      "packetId": "domain-remediation-orphan-artifacts",
+      "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+      "findingCodes": [
+        "orphan-source-file"
+      ],
+      "affectedPaths": [
+        "packages/logme-testimony-core/src/testimony-reentrancy-guard.js",
+        "scaffold.js",
+        "scripts/report-truth-hook.js",
+        "scripts/report-truth.js",
+        "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+        "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+        "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+        "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+        "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+        "src/feature-execution-proof/feature-execution-proof.js",
+        "src/feature-quality-board/feature-quality-board.js",
+        "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+        "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+        "src/materializes-approved-harness/materializes-approved-harness.js",
+        "src/parses-llm-harness-output/parses-llm-harness-output.js",
+        "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+        "src/proposes-next-harness/proposes-next-harness.js",
+        "src/report-provenance/report-provenance.js",
+        "src/report-truth/report-truth.js",
+        "src/runs-generated-harness/runs-generated-harness.js",
+        "src/runs-report-truth-gate/runs-report-truth-gate.js",
+        "src/validates-generated-harness/validates-generated-harness.js",
+        "src/verifies-generated-harness/verifies-generated-harness.js",
+        "src/writes-harness-receipt/writes-harness-receipt.js"
+      ],
+      "recommendedWorker": "domain-cartographer-worker",
+      "allowedMutationPaths": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "blockedPaths": [
+        "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/"
+      ],
+      "requiredEvidenceOutputs": [
+        "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/domain-map.proposal.v1.json"
+      ],
+      "verificationCommands": [
+        "npm test",
+        "npm run report:truth:fast"
+      ],
+      "promotionCriteria": [
+        "Every executable file receives one proposed primary body responsibility.",
+        "Ambiguous files remain visible for product-owner review instead of receiving forced weak mappings."
+      ],
+      "affectedFileCount": 24
+    }
+  ]
+}
