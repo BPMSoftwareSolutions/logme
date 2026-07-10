@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "llm-qa-assignment.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "prepare-future-notification-without-sending-it",
+  "scenarioName": "Prepare future notification without sending it",
+  "acceptanceSourcePath": "docs/features/llm-end-user-testing-conveyor.feature.md",
+  "acceptanceSourceLineRange": {
+    "start": 311,
+    "end": 321
+  },
+  "requestedEndUserPersona": "live Gemini adversarial product owner",
+  "allowedTestSurfaces": [
+    "Markdown report review",
+    "CLI evidence review"
+  ],
+  "allowedSeedDataPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini/seed-data"
+  ],
+  "allowedEvidencePaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini"
+  ],
+  "forbiddenMutationPaths": [
+    "src/",
+    "packages/",
+    "contracts/",
+    "docs/features/"
+  ],
+  "requiredHumanReportArtifacts": [
+    "executable-body-contract.report.md",
+    "feature-execution.contract.v1.json",
+    "method-execution-timeline.table.md",
+    "method-call-evidence.report.md"
+  ],
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "allowsFixtureSeedData": false,
+  "assembledAt": "2026-07-10T01:17:42.273Z"
+}

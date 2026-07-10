@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--inventory-file-responsibility-signals--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "inventory-file-responsibility-signals",
+  "scenarioName": "Inventory file responsibility signals",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Inventory file responsibility signals",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-body-sprawl-visibility.feature.md:8-33; report.md; live Gemini prompt",
+      "expectedResult": "The system should generate a sprawl evidence JSON artifact with specific fields and a human report rendered from this artifact.",
+      "observedResult": "I could not observe the generation or content of the sprawl evidence JSON artifact or the human report, as they were not provided in the evidence surfaces.",
+      "timestamp": "2026-07-10T00:52:55.636Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--inventory-file-responsibility-signals--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-body-sprawl-visibility.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--inventory-file-responsibility-signals--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

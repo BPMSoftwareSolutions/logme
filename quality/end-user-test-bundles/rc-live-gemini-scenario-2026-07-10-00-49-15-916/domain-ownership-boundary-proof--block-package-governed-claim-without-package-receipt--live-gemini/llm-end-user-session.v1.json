@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "block-package-governed-claim-without-package-receipt",
+  "scenarioName": "Block package-governed claim without package receipt",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block package-governed claim without package receipt",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-ownership-boundary-proof.feature.md:19-28; report.md; live Gemini prompt",
+      "expectedResult": "The report should explicitly state that no package governance contract or receipt path is rendered, show the package scope as UNVERIFIED, and include the finding code 'package-governance-unproven'.",
+      "observedResult": "No 'report.md' or Gemini live-call receipt was provided, therefore, none of the expected results could be observed or verified.",
+      "timestamp": "2026-07-10T00:55:30.456Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/domain-ownership-boundary-proof.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

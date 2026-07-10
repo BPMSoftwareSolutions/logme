@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--keep-generated-run-evidence-out-of-source-control--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "keep-generated-run-evidence-out-of-source-control",
+  "scenarioName": "Keep generated run evidence out of source control",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Keep generated run evidence out of source control",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/per-feature-executable-body-evidence-reports.feature.md:86-92; report.md; live Gemini prompt",
+      "expectedResult": "Generated run evidence should not be staged or committed by default. Source control should exclusively manage contracts, templates, schemas, and tests. CI should have the capability to publish run evidence as build artifacts outside the committed source tree.",
+      "observedResult": "Unable to observe the expected behavior as the `report.md` content, which would contain the verification details, was not supplied. The Gherkin outlines the desired state, but no evidence confirms its implementation.",
+      "timestamp": "2026-07-10T01:21:09.365Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--keep-generated-run-evidence-out-of-source-control--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--keep-generated-run-evidence-out-of-source-control--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-2026-07-10-00-47-01-674",
+  "qaRunId": "adversarial-challenge-packet--block-false-pass-claim--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "block-false-pass-claim",
+  "seedDataId": "adversarial-challenge-packet--block-false-pass-claim--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-2026-07-10-00-47-01-674/adversarial-challenge-packet--block-false-pass-claim--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T00:47:15.967Z"
+}

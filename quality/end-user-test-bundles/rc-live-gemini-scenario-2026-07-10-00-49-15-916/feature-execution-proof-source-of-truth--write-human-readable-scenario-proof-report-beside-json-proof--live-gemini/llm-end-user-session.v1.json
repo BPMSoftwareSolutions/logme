@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--write-human-readable-scenario-proof-report-beside-json-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "write-human-readable-scenario-proof-report-beside-json-proof",
+  "scenarioName": "Write human-readable scenario proof report beside JSON proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Write human-readable scenario proof report beside JSON proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:64-90; report.md; live Gemini prompt",
+      "expectedResult": "A Markdown proof report should be generated at the specified path, derived from `feature-execution.contract.v1.json`, suitable for various stakeholders, starting with an ASCII execution sketch, including all specified sections, and linking back to the JSON proof with a repo-relative path.",
+      "observedResult": "The `report.md` file was not provided for review, preventing any observation of the actual generated report.",
+      "timestamp": "2026-07-10T00:58:28.601Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-human-readable-scenario-proof-report-beside-json-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-human-readable-scenario-proof-report-beside-json-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

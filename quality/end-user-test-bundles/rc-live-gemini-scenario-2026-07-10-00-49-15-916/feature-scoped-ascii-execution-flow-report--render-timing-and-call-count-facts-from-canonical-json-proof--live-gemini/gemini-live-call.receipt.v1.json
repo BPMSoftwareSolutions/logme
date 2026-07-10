@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-timing-and-call-count-facts-from-canonical-json-proof--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-timing-and-call-count-facts-from-canonical-json-proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 621,
+    "candidatesTokenCount": 973,
+    "totalTokenCount": 3396,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 621
+      }
+    ],
+    "thoughtsTokenCount": 1802,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "3286393a3e67e397386f57b19f632046a97dc4fe5f9aec45cd4a9172087421cb",
+  "responseSha256": "1ac292e35851fc9cbd7aa79533c7e8db8bc962027db5fdc31550b838cf87f512",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-timing-and-call-count-facts-from-canonical-json-proof.response.v1.json",
+  "calledAt": "2026-07-10T01:08:57.815Z"
+}

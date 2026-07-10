@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--block-promotion-only-for-severe-unowned-sprawl--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "block-promotion-only-for-severe-unowned-sprawl",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T00:54:35.836Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.909Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EVIDENCE_REPORT_OR_LIVE_CALL"
+  ]
+}

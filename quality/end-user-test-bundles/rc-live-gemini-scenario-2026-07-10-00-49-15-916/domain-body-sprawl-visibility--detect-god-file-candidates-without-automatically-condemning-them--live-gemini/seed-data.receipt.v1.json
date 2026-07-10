@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--detect-god-file-candidates-without-automatically-condemning-them--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-god-file-candidates-without-automatically-condemning-them",
+  "seedDataId": "domain-body-sprawl-visibility--detect-god-file-candidates-without-automatically-condemning-them--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--detect-god-file-candidates-without-automatically-condemning-them--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T00:53:33.725Z"
+}

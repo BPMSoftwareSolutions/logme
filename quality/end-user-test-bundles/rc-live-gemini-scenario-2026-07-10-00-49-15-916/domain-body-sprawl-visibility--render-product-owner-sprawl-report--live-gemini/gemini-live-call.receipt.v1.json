@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--render-product-owner-sprawl-report--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "render-product-owner-sprawl-report",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 697,
+    "candidatesTokenCount": 710,
+    "totalTokenCount": 2793,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 697
+      }
+    ],
+    "thoughtsTokenCount": 1386,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0be5f2ddc962033e256974d6609cc1a5ea1c86ee70f076bb8959865f59cc3a34",
+  "responseSha256": "146a2aa64e99921cd16a46fcb23e0ab0be8bd2a244153e985bfafa573fdbe854",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/render-product-owner-sprawl-report.response.v1.json",
+  "calledAt": "2026-07-10T00:54:15.100Z"
+}

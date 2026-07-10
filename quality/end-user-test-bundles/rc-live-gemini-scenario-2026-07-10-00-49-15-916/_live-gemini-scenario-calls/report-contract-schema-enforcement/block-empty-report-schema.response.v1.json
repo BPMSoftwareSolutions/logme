@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "block-empty-report-schema",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 236,
+    "candidatesTokenCount": 203,
+    "totalTokenCount": 1109,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 236
+      }
+    ],
+    "thoughtsTokenCount": 670,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "FAIL",
+    "observationSummary": "The scenario 'Block empty report schema' could not be verified due to the absence of CLI evidence. The test requires execution of the report generator in a CI environment with an empty or no-required-fields report schema to confirm the expected verdict and finding codes.",
+    "expectedResult": "The report verdict should be BLOCKED and the finding codes should include 'report-schema-empty' and 'report-contract-not-enforced'.",
+    "observedResult": "No CLI evidence was provided to confirm the report generator's behavior when an empty report schema is used. Therefore, the expected outcome could not be observed or verified.",
+    "recommendedFollowUps": "Provide CLI evidence showing the execution of the report generator with an empty report schema, demonstrating the 'BLOCKED' verdict and the specified finding codes ('report-schema-empty', 'report-contract-not-enforced')."
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--tie-llm-observations-to-executable-proof--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "tie-llm-observations-to-executable-proof",
+  "scenarioName": "Tie LLM observations to executable proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Tie LLM observations to executable proof\n    Given the LLM records end-user observations\n    And feature execution proof exists for the same scenario\n    When the QA evidence collector closes the run\n    Then each LLM observation should tie to one or more evidence sources:\n      | evidence source |\n      | executable-body-contract.report.md |\n      | feature-execution.contract.v1.json |\n      | method-execution-timeline.table.md |\n      | method-call-evidence.report.md |\n      | telemetry.events.v1.jsonl |\n      | receipt files |\n      | screenshot or terminal output |\n      | HTML preview artifact |\n    And an LLM observation without evidence should be marked `unproven observation`\n    And unproven observations should not be used to pass the quality gate.\n",
+    "acceptanceCriteria": [
+      "And feature execution proof exists for the same scenario",
+      "Then each LLM observation should tie to one or more evidence sources:",
+      "And an LLM observation without evidence should be marked `unproven observation`",
+      "And unproven observations should not be used to pass the quality gate."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:16:09.462Z"
+}

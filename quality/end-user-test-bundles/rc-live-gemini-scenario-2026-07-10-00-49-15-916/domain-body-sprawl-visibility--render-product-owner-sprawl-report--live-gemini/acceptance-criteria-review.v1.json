@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--render-product-owner-sprawl-report--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "render-product-owner-sprawl-report",
+  "criteria": [
+    {
+      "criterionText": "Then it should include a compact sprawl summary with:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so I cannot verify if the compact sprawl summary is included or if it contains the specified fields.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the actual `report.md` content for review."
+    },
+    {
+      "criterionText": "And each hotspot should show:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so I cannot verify if each hotspot shows the specified fields.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the actual `report.md` content for review."
+    },
+    {
+      "criterionText": "And dense per-method detail should live in the sprawl evidence artifact or a linked sprawl report.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so I cannot verify the presence or location of dense per-method detail.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the actual `report.md` content for review."
+    },
+    {
+      "criterionText": "And `report.md` should link to `evidence/runs/<run-id>/sprawl/domain-body-sprawl.report.md`.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so I cannot verify if it links to the specified sprawl report.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the actual `report.md` content for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:54:27.548Z"
+}

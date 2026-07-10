@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "llm-end-user-testing-conveyor",
+  "featureName": "LLM end-user testing conveyor",
+  "sourceFeaturePath": "docs/features/llm-end-user-testing-conveyor.feature.md",
+  "sourceFeatureContentHash": "7fdbf15cf4bba908f3fd35dd6aaf927b8bc2ad0641d9331339d49a7a2d0357a9",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "edd4d9b1c287a8c9a9564ff7793a8f144dd9caba015c80bd95fe9a34303d68b8"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-assigned-surface-insufficient",
+    "qa-cleanup-precondition-or-negative-case-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 3,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "LLM end-user testing conveyor is currently qa-blocked."
+}

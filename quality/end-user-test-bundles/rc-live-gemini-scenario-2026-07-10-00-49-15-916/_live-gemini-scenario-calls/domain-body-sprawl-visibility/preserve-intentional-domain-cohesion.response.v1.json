@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "preserve-intentional-domain-cohesion",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 560,
+    "candidatesTokenCount": 821,
+    "totalTokenCount": 2562,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 560
+      }
+    ],
+    "thoughtsTokenCount": 1181,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (report.md and Gemini live-call receipt) were not accessible, preventing verification of any acceptance criteria related to classification or report content. The scenario's preconditions also cannot be verified from the output surfaces.",
+    "expectedResult": "The file should be classified as `authorized dense orchestrator`, the report should show the authorizing contract path, line count, method count, and responsibility clusters, and the file should not be hidden from the sprawl report.",
+    "observedResult": "No observable results could be confirmed as the necessary evidence surfaces (report.md, Gemini live-call receipt) were not provided or accessible.",
+    "confusingOrRiskyExperiencePoints": "The inability to access the primary evidence surfaces makes it impossible to assess the feature's functionality or potential risks from an end-user perspective.",
+    "accessibilityOrReadabilityObservations": "N/A - no report content to review for accessibility/readability.",
+    "recommendedFollowUps": "Provide access to the `report.md` and the Gemini live-call receipt for proper evaluation of the scenario's acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And the file's declared body contract or module contract authorizes that responsibility",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a precondition (Given clause) that cannot be verified from the provided output surfaces (report.md or live-call receipt).",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Ensure that preconditions are either verifiable from available surfaces or explicitly noted as setup steps not requiring verification in the output."
+      },
+      {
+        "criterionText": "Then the file may be classified as `authorized dense orchestrator`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the file's classification without access to the generated report.md or the Gemini live-call receipt.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the `report.md` and the Gemini live-call receipt to observe the classification outcome."
+      },
+      {
+        "criterionText": "And the report should show the authorizing contract path",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if the report shows the authorizing contract path without access to the generated report.md.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the `report.md` to observe its content."
+      },
+      {
+        "criterionText": "And the report should still show line count, method count, and responsibility clusters",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if the report shows line count, method count, and responsibility clusters without access to the generated report.md.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the `report.md` to observe its content."
+      },
+      {
+        "criterionText": "And authorization should not hide the file from the sprawl report.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if the file is present in the sprawl report without access to the generated report.md.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the `report.md` to observe its content and confirm file visibility."
+      }
+    ]
+  }
+}

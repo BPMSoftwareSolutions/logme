@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "decide-qa-pass-or-fail-outside-the-llm",
+  "scenarioName": "Decide QA pass or fail outside the LLM",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Decide QA pass or fail outside the LLM\n    Given the LLM has produced a user experience report\n    And the QA bundle has been assembled\n    When the LLM QA gate runs\n    Then the gate should calculate the quality decision from evidence\n    And the LLM should not be allowed to promote its own run\n    And QA pass should require:\n      | requirement |\n      | all required acceptance criteria are evidence-backed met or explicitly waived |\n      | required feature execution proof exists |\n      | required human reports exist |\n      | seed data was approved or not required |\n      | machine provenance exists |\n      | no unresolved blocker findings exist |\n      | bundle manifest hashes match |\n    And the decision should be written to:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/qa-gate-decision.v1.json\n      \"\"\"\n",
+    "acceptanceCriteria": [
+      "And the QA bundle has been assembled",
+      "Then the gate should calculate the quality decision from evidence",
+      "And the LLM should not be allowed to promote its own run",
+      "And QA pass should require:",
+      "And the decision should be written to:"
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:16:52.845Z"
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-timing-and-call-count-facts-from-canonical-json-proof",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 621,
+    "candidatesTokenCount": 973,
+    "totalTokenCount": 3396,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 621
+      }
+    ],
+    "thoughtsTokenCount": 1802,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The primary evidence surface, `report.md`, was not provided, preventing verification of the scenario's outcomes related to the rendered ASCII execution sketch and its adherence to the canonical JSON proof. All acceptance criteria require inspection of this report.",
+    "expectedResult": "The ASCII execution sketch should be rendered with precise timing and call count facts from the canonical JSON proof, including specific rendering for missing telemetry, and without independent calculation or rounding.",
+    "observedResult": "No ASCII execution sketch or report was observed, making it impossible to verify the rendering behavior or any of the acceptance criteria.",
+    "confusingOrRiskyExperiencePoints": "Without the generated report, there is no way to confirm that the feature correctly renders timing and call count facts, which could lead to users receiving inaccurate or incomplete execution flow reports. This poses a significant risk to the reliability of the feature.",
+    "accessibilityOrReadabilityObservations": "N/A - The lack of evidence prevents any observations regarding accessibility or readability of the rendered report.",
+    "recommendedFollowUps": "Provide the `report.md` file for review to enable verification of the scenario's acceptance criteria. Ensure all required evidence surfaces are present for future QA tasks.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And the JSON proof contains observed node timing and call-count facts",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a precondition for the scenario. While the scenario's execution implies this condition was met, the content of the JSON proof itself cannot be observed or verified from the provided Gherkin or the lack of a generated report.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` file, which should contain the rendered ASCII sketch, and ideally, a reference or excerpt of the canonical JSON proof used for comparison, to allow verification of this precondition's impact on the output."
+      },
+      {
+        "criterionText": "Then every executable node should show: | telemetry fact | | first seen at | | last seen at | | duration ms | | elapsed since previous node ms | | call count |",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of the displayed telemetry facts requires inspecting the rendered ASCII execution sketch, which was not provided in the `report.md`.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` file containing the rendered ASCII execution sketch for review."
+      },
+      {
+        "criterionText": "And the values should match the canonical JSON proof exactly",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of exact value matching requires comparing the rendered sketch (not provided) with the canonical JSON proof (not provided).",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` file containing the rendered ASCII execution sketch and, if possible, the canonical JSON proof used for comparison."
+      },
+      {
+        "criterionText": "And a node with missing telemetry should render `not observed` for each missing timing fact",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of how missing telemetry is rendered requires inspecting the ASCII execution sketch, which was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` file containing the rendered ASCII execution sketch, ideally including an example of a node with missing telemetry."
+      },
+      {
+        "criterionText": "And the sketch should not calculate or round timing values independently from the JSON proof.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of independent calculation or rounding requires comparing the rendered sketch (not provided) with the canonical JSON proof (not provided) and understanding the rendering logic, none of which is possible with the current evidence.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` file containing the rendered ASCII execution sketch and the canonical JSON proof for comparison, along with any relevant documentation on rendering logic if necessary."
+      }
+    ]
+  }
+}

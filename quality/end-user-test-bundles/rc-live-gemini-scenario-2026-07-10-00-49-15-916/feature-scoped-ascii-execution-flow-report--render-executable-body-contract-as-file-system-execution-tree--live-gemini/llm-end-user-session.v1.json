@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-executable-body-contract-as-file-system-execution-tree--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-executable-body-contract-as-file-system-execution-tree",
+  "scenarioName": "Render executable body contract as file-system execution tree",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render executable body contract as file-system execution tree",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:51-77; report.md; live Gemini prompt",
+      "expectedResult": "The ASCII execution sketch should be rendered according to the specified structure, showing all required node fields in execution order, with correct rendering for missing telemetry and receipts, and no runtime fields populated from static contract data alone.",
+      "observedResult": "Cannot be determined as the `report.md` containing the rendered ASCII execution sketch was not provided.",
+      "timestamp": "2026-07-10T01:08:27.922Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-executable-body-contract-as-file-system-execution-tree--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-executable-body-contract-as-file-system-execution-tree--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

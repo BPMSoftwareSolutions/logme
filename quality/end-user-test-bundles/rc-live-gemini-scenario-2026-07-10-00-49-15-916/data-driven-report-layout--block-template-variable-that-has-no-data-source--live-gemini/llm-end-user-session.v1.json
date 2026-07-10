@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "block-template-variable-that-has-no-data-source",
+  "scenarioName": "Block template variable that has no data source",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block template variable that has no data source",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/data-driven-report-layout.feature.md:48-57; report.md; live Gemini prompt",
+      "expectedResult": "Report generation should fail, producing the 'report-template-variable-unbound' finding code, and `report.md` should not be written with incorrect values.",
+      "observedResult": "Not observable due to missing evidence.",
+      "timestamp": "2026-07-10T00:51:13.909Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/data-driven-report-layout.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

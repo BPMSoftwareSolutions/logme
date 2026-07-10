@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "provide-pi-ready-summary-counts",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 578,
+    "candidatesTokenCount": 682,
+    "totalTokenCount": 2493,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 578
+      }
+    ],
+    "thoughtsTokenCount": 1233,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (report.md and Gemini live-call receipt) were not available for review. Therefore, it is impossible to verify if the feature correctly provides PI-ready summary counts as described in the scenario.",
+    "expectedResult": "The feature quality board should display summary counts for various feature statuses, top blocker codes by frequency, the oldest untested implemented feature, and the newest promoted feature, as detailed in the scenario Gherkin.",
+    "observedResult": "No observable result could be determined as the necessary evidence surfaces (report.md and Gemini live-call receipt) were not provided.",
+    "confusingOrRiskyExperiencePoints": "N/A - Cannot assess without evidence.",
+    "accessibilityOrReadabilityObservations": "N/A - Cannot assess without evidence.",
+    "recommendedFollowUps": "Provide the `report.md` and the Gemini live-call receipt for this scenario to enable proper testing and verification of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the board should show summary counts for:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of whether the board displays the specified summary counts.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the board should show the top blocker codes by frequency",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of whether the board displays the top blocker codes by frequency.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the board should show the oldest untested implemented feature when dates are available",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of whether the board displays the oldest untested implemented feature.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the board should show the newest promoted feature when dates are available.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of whether the board displays the newest promoted feature.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--change-ascii-execution-sketch-without-code-changes--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "change-ascii-execution-sketch-without-code-changes",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 539,
+    "candidatesTokenCount": 992,
+    "totalTokenCount": 2885,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 539
+      }
+    ],
+    "thoughtsTokenCount": 1354,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a600cc9a4f32011cb46b213179c335c8effc6a340ea5f0d3bc1a7d1606247cf1",
+  "responseSha256": "dd737216437776a55b3800ea72d55dc869b68de0273d11863707e4d991f8ae04",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/change-ascii-execution-sketch-without-code-changes.response.v1.json",
+  "calledAt": "2026-07-10T00:50:49.837Z"
+}

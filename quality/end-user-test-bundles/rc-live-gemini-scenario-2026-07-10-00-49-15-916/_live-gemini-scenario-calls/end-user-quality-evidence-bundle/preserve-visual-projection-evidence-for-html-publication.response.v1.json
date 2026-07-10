@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "preserve-visual-projection-evidence-for-html-publication",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 586,
+    "candidatesTokenCount": 698,
+    "totalTokenCount": 2167,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 586
+      }
+    ],
+    "thoughtsTokenCount": 883,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (Gherkin, mention of report.md, mention of Gemini live-call receipt) do not include the actual artifacts (HTML preview index, rendered HTML, QA bundle contents) necessary to verify the acceptance criteria. Direct inspection of the generated QA bundle and its contents is required.",
+    "expectedResult": "The QA bundle should include an HTML preview index with specific fields, ASCII sketches should be checked for readable HTML rendering, and visual render blockers should prevent QA pass.",
+    "observedResult": "No HTML preview index, rendered HTML, or QA bundle contents were provided for observation, making direct verification impossible.",
+    "confusingOrRiskyExperiencePoints": "The inability to access the generated artifacts directly prevents comprehensive adversarial QA testing for this scenario. This creates a blind spot regarding the actual end-user experience of the HTML publication.",
+    "accessibilityOrReadabilityObservations": "N/A, as no visual or rendered artifacts were provided for review.",
+    "recommendedFollowUps": "To enable proper QA, the actual QA bundle, including the HTML preview index, rendered HTML output, and any associated screenshots, must be provided for direct inspection.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the QA bundle should include an HTML preview index when HTML rendering is available",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The QA bundle and its contents were not provided, preventing verification of the HTML preview index's inclusion.",
+        "blockerCode": "MISSING_ARTIFACT",
+        "recommendedFixRoute": "Provide the complete QA bundle for direct inspection."
+      },
+      {
+        "criterionText": "And the preview index should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The HTML preview index was not provided, making it impossible to verify if it contains the specified fields.",
+        "blockerCode": "MISSING_ARTIFACT",
+        "recommendedFixRoute": "Provide the HTML preview index for direct inspection."
+      },
+      {
+        "criterionText": "And ASCII sketches should be checked for readable HTML rendering",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No rendered HTML output or visual evidence of ASCII sketches was provided, preventing a check for readable rendering.",
+        "blockerCode": "MISSING_VISUAL_EVIDENCE",
+        "recommendedFixRoute": "Provide the rendered HTML output or screenshots showing ASCII sketches for review."
+      },
+      {
+        "criterionText": "And visual render blockers should prevent QA pass.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Without access to the rendered HTML or a mechanism to observe visual render blockers and their impact on QA pass/fail status, this criterion cannot be verified.",
+        "blockerCode": "MISSING_VISUAL_EVIDENCE_AND_STATUS",
+        "recommendedFixRoute": "Provide rendered HTML and the final QA pass/fail status, along with any identified render blockers, for review."
+      }
+    ]
+  }
+}

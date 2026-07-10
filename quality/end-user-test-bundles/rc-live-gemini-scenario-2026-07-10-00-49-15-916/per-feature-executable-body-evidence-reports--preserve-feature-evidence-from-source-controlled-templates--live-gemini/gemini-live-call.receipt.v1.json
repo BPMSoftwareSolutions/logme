@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "preserve-feature-evidence-from-source-controlled-templates",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 514,
+    "candidatesTokenCount": 918,
+    "totalTokenCount": 3551,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 514
+      }
+    ],
+    "thoughtsTokenCount": 2119,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a2291e74338aae98d3851a01fe1a392b837f2f1c3a065c97f64b0e1105410605",
+  "responseSha256": "16fab13fff6822c5d90038f6311c44f5ca3c4551aa7ff20a8767bb64428db0af",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/preserve-feature-evidence-from-source-controlled-templates.response.v1.json",
+  "calledAt": "2026-07-10T01:21:22.117Z"
+}

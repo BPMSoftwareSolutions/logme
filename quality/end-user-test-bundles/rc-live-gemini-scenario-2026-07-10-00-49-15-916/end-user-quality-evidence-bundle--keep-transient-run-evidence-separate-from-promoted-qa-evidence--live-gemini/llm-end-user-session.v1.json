@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--keep-transient-run-evidence-separate-from-promoted-qa-evidence--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "keep-transient-run-evidence-separate-from-promoted-qa-evidence",
+  "scenarioName": "Keep transient run evidence separate from promoted QA evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Keep transient run evidence separate from promoted QA evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/end-user-quality-evidence-bundle.feature.md:215-224; report.md; live Gemini prompt",
+      "expectedResult": "A QA bundle is promoted, stored under `quality/end-user-test-bundles/`, contains hashes or copied snapshots of the evidence needed for human review, and serves as the durable, source-controlled promotion record, with transient evidence paths alone not being the release authority.",
+      "observedResult": "The `report.md` is stated to have passed locally, and a Gemini live-call receipt is promised to be included in the QA bundle. However, the actual promoted bundle, its location, its full contents, its source control status, and its durability are not directly observable or verifiable from the provided end-user surfaces.",
+      "timestamp": "2026-07-10T00:57:13.654Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--keep-transient-run-evidence-separate-from-promoted-qa-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/end-user-quality-evidence-bundle.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--keep-transient-run-evidence-separate-from-promoted-qa-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

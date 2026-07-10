@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "write-shareable-timing-table-projection",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 650,
+    "candidatesTokenCount": 759,
+    "totalTokenCount": 2183,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 650
+      }
+    ],
+    "thoughtsTokenCount": 774,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "6dfdf0d9574537689688e04792c9c0509dad291d6f9a049d79c30719a765e4ec",
+  "responseSha256": "93fbaadc0fa0e454b125f3770fa09d950c3f544aa28fa10b6e47867e9e3ceac0",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/write-shareable-timing-table-projection.response.v1.json",
+  "calledAt": "2026-07-10T00:58:42.721Z"
+}

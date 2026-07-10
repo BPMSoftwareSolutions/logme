@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "tie-method-calls-to-telemetry-event-pairs",
+  "scenarioName": "Tie method calls to telemetry event pairs",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Tie method calls to telemetry event pairs\n    Given raw telemetry events exist for a run\n    When method-level execution proof is built\n    Then each observed method call should tie to one or more telemetry event ids\n    And the proof should support:\n      | telemetry shape |\n      | single call event with explicit duration |\n      | start event and end event pair |\n      | nested LogMe testimony events |\n      | repeated calls to the same method |\n    And `started at` should come from the earliest event for that call\n    And `completed at` should come from the latest event for that call when available\n    And `duration ms` should come from explicit telemetry duration or from observed start/end timestamps\n    And if timing cannot be proven, duration should be `not observed`, not `0`.\n",
+    "acceptanceCriteria": [
+      "Then each observed method call should tie to one or more telemetry event ids",
+      "And the proof should support:",
+      "And `started at` should come from the earliest event for that call",
+      "And `completed at` should come from the latest event for that call when available",
+      "And `duration ms` should come from explicit telemetry duration or from observed start/end timestamps",
+      "And if timing cannot be proven, duration should be `not observed`, not `0`."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:18:26.767Z"
+}

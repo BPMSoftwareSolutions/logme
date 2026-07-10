@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-pull-request-when-report-truth-validation-fails",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 554,
+    "candidatesTokenCount": 516,
+    "totalTokenCount": 2677,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 554
+      }
+    ],
+    "thoughtsTokenCount": 1607,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "partially met",
+    "observationSummary": "The provided report.md from a passing local test suite confirms that the specified report truth gates can execute successfully. However, the critical aspect of the scenario, that a pull request is blocked when any of these gates fail, cannot be verified with the current evidence.",
+    "expectedResult": "The CI report truth workflow should execute all specified gates, and if any gate fails, the pull request should be blocked.",
+    "observedResult": "The report.md from a passing local test suite indicates that the gates can run successfully. There is no evidence to confirm that a pull request would be blocked if any of these gates were to fail.",
+    "confusingOrRiskyExperiencePoints": "The core functionality of the scenario (blocking a PR on failure) is not demonstrated by the provided evidence, leading to uncertainty about its implementation.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and understandable. The limitation lies in the scope of the provided evidence.",
+    "recommendedFollowUps": "Provide specific evidence demonstrating a CI run where a report truth gate fails, and the pull request is explicitly shown to be blocked as a result. This could involve a screenshot of a failed PR check or a log snippet indicating the blocking action.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should run:",
+        "status": "met",
+        "llmObservationSummary": "The report.md generated after a passing local test suite implicitly confirms that the listed gates successfully executed as part of the report truth workflow.",
+        "blockerCode": "none",
+        "recommendedFixRoute": "none"
+      },
+      {
+        "criterionText": "And the pull request should fail if any gate fails.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The provided report.md is from a passing local test suite. It does not contain evidence of a gate failing or a pull request being blocked due to a gate failure. To verify this, evidence of a failing gate and the subsequent PR status would be required.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE_FOR_FAILURE_CONDITION",
+        "recommendedFixRoute": "Provide evidence of a CI run where a report truth gate fails and the pull request is subsequently blocked."
+      }
+    ]
+  }
+}

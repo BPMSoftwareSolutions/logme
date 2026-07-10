@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "llm-qa-assignment.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "require-ownership-evidence-for-domain-bound-methods",
+  "scenarioName": "Require ownership evidence for domain-bound methods",
+  "acceptanceSourcePath": "docs/features/domain-ownership-boundary-proof.feature.md",
+  "acceptanceSourceLineRange": {
+    "start": 8,
+    "end": 18
+  },
+  "requestedEndUserPersona": "live Gemini adversarial product owner",
+  "allowedTestSurfaces": [
+    "Markdown report review",
+    "CLI evidence review"
+  ],
+  "allowedSeedDataPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini/seed-data"
+  ],
+  "allowedEvidencePaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini"
+  ],
+  "forbiddenMutationPaths": [
+    "src/",
+    "packages/",
+    "contracts/",
+    "docs/features/"
+  ],
+  "requiredHumanReportArtifacts": [
+    "executable-body-contract.report.md",
+    "feature-execution.contract.v1.json",
+    "method-execution-timeline.table.md",
+    "method-call-evidence.report.md"
+  ],
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "allowsFixtureSeedData": false,
+  "assembledAt": "2026-07-10T00:55:30.448Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "tie-json-proof-to-raw-telemetry-and-receipts",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 697,
+    "candidatesTokenCount": 1145,
+    "totalTokenCount": 3177,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 697
+      }
+    ],
+    "thoughtsTokenCount": 1335,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "c226d8ed22ac2db0b236ea588331b81b2852f2924f299cd85d67c586e75f2456",
+  "responseSha256": "289e1f7e0a9d547d1a0f12ccfdd9597d12277435654d96dd23fe2615f818d402",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/tie-json-proof-to-raw-telemetry-and-receipts.response.v1.json",
+  "calledAt": "2026-07-10T00:58:50.041Z"
+}

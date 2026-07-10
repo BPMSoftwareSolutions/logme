@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-blocked-method-call-inline",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 803,
+    "candidatesTokenCount": 695,
+    "totalTokenCount": 2353,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 803
+      }
+    ],
+    "thoughtsTokenCount": 855,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (report.md and Gemini live-call receipt) were not supplied, preventing verification of the actual rendering of the blocked method call inline. The scenario Gherkin describes the expected behavior, but no output was available to confirm implementation.",
+    "expectedResult": "A blocked method call, missing telemetry or receipt evidence, should appear inline under its body node, shaped precisely as described in the Gherkin, with details appearing before the dense static method inventory, eliminating the need for inference from a global findings table.",
+    "observedResult": "No rendered output (report.md or CLI evidence) was provided to observe the actual behavior. Therefore, the expected rendering could not be confirmed.",
+    "confusingOrRiskyExperiencePoints": "Without the actual rendered report, it's impossible to assess potential confusing or risky experience points related to the inline display of blocked methods.",
+    "accessibilityOrReadabilityObservations": "Without the actual rendered report, it's impossible to make observations regarding accessibility or readability of the inline blocked method display.",
+    "recommendedFollowUps": "Provide the `report.md` and any relevant CLI evidence or Gemini live-call receipt to enable verification of the scenario's implementation against the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the blocked method should appear inline under its body node",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No rendered output was provided to verify this criterion.",
+        "blockerCode": "missing_evidence_surface",
+        "recommendedFixRoute": "Supply the `report.md` and other relevant evidence surfaces for review."
+      },
+      {
+        "criterionText": "And the blocked method should be shaped like:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No rendered output was provided to verify the exact shape of the blocked method.",
+        "blockerCode": "missing_evidence_surface",
+        "recommendedFixRoute": "Supply the `report.md` and other relevant evidence surfaces for review."
+      },
+      {
+        "criterionText": "And blocked method details should appear before the dense static method inventory",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No rendered output was provided to verify the ordering of blocked method details relative to the static method inventory.",
+        "blockerCode": "missing_evidence_surface",
+        "recommendedFixRoute": "Supply the `report.md` and other relevant evidence surfaces for review."
+      },
+      {
+        "criterionText": "And the product owner should not have to infer the broken method from a global findings table.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No rendered output was provided to verify if the inline display effectively prevents inference from a global findings table.",
+        "blockerCode": "missing_evidence_surface",
+        "recommendedFixRoute": "Supply the `report.md` and other relevant evidence surfaces for review."
+      }
+    ]
+  }
+}

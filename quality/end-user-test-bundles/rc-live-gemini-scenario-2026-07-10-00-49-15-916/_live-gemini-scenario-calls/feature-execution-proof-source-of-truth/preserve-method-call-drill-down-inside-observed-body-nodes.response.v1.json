@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-method-call-drill-down-inside-observed-body-nodes",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 683,
+    "candidatesTokenCount": 1223,
+    "totalTokenCount": 4760,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 683
+      }
+    ],
+    "thoughtsTokenCount": 2854,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces, specifically the absence of the `report.md` content, make it impossible to verify the detailed structural and source-of-truth claims made by the acceptance criteria. While a `report.md` is stated to be generated, its content is not available for review, preventing validation of the `feature-execution.contract.v1.json` structure, field presence, data sourcing, and specific edge case handling.",
+    "expectedResult": "Each observed executable body node should include ordered `methodCalls` with specific fields, timing from telemetry, status from receipts, and proper marking for nodes without method details.",
+    "observedResult": "Without the content of `report.md`, no specific observed result regarding the structure or content of `feature-execution.contract.v1.json` can be confirmed. The scenario Gherkin outlines the expected behavior, but the end-user surface for verification is missing.",
+    "confusingOrRiskyExperiencePoints": "The primary confusing point is the lack of access to the `report.md` content, which is crucial for verifying the detailed structure and data sourcing claims. As an adversarial end-user QA tester, I cannot confirm implementation without seeing the actual output.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is clear and well-structured. However, the absence of the `report.md` content means the primary end-user surface for verification is inaccessible, making the entire testing process unreadable/unverifiable from an end-user perspective.",
+    "recommendedFollowUps": "Provide the actual `report.md` content for review. The `report.md` should include detailed, structured representations of the `feature-execution.contract.v1.json` output, or direct links to it, to allow for verification of field presence, ordering, and data sourcing. Consider adding explicit statements within the report about the source of timing and status data.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then each observed executable body node should include ordered `methodCalls`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the presence and ordering of `methodCalls` within observed body nodes without direct access to `feature-execution.contract.v1.json` or a detailed representation in `report.md`.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT",
+        "recommendedFixRoute": "Provide the full `feature-execution.contract.v1.json` or a detailed, structured representation within `report.md`."
+      },
+      {
+        "criterionText": "And each method call should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify that each `methodCall` includes all specified fields (call index, method name, method kind, runtime path, source line range, started at, completed at, duration ms, elapsed since previous call ms, telemetry event ids, telemetry event path, receipt paths, status, blocker code) without direct access to `feature-execution.contract.v1.json` or a detailed representation in `report.md`.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT",
+        "recommendedFixRoute": "Provide the full `feature-execution.contract.v1.json` or a detailed, structured representation within `report.md`."
+      },
+      {
+        "criterionText": "And method call timing should come only from telemetry evidence",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` does not provide information about the source of method call timing data. It's impossible to verify that timing comes *only* from telemetry evidence without comparing against raw telemetry or an explicit statement in the report.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT",
+        "recommendedFixRoute": "The `report.md` or an additional evidence surface should explicitly state the source of timing data for method calls, or provide a mechanism to compare against raw telemetry."
+      },
+      {
+        "criterionText": "And method receipt status should come only from receipt evidence",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` does not provide information about the source of method receipt status. It's impossible to verify that status comes *only* from receipt evidence without access to the Gemini live-call receipt or an explicit statement in the report.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT",
+        "recommendedFixRoute": "The `report.md` or an additional evidence surface should explicitly state the source of status data for method calls, or provide access to the Gemini live-call receipt for comparison."
+      },
+      {
+        "criterionText": "And a body node marked `observed` without method calls should be marked `method detail missing`.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` does not provide an example of an `observed` body node without method calls, nor does it confirm how such a node would be marked. Therefore, this edge case cannot be verified.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT",
+        "recommendedFixRoute": "The test suite should include a scenario that produces an `observed` body node without method calls, and `report.md` should demonstrate its correct marking as `method detail missing`."
+      }
+    ]
+  }
+}

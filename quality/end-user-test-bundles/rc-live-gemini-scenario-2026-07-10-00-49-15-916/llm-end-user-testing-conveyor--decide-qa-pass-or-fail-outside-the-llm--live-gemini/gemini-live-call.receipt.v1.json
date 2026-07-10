@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "decide-qa-pass-or-fail-outside-the-llm",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 643,
+    "candidatesTokenCount": 871,
+    "totalTokenCount": 4143,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 643
+      }
+    ],
+    "thoughtsTokenCount": 2629,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "80d432e12d20e036417df1eeab5a510b61aab03d27b526c2e6f2fe85a8cc217e",
+  "responseSha256": "d30a1e22162f083fabf52f07186c83b08d6bb5b88e26f2732bb95ef57345ba53",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/decide-qa-pass-or-fail-outside-the-llm.response.v1.json",
+  "calledAt": "2026-07-10T01:16:37.608Z"
+}

@@ -26,6 +26,8 @@ test('runsLogMeDomainAudit scans the package, builds a full sterility contract, 
   assert.match(receipt.reportContent, /## Blocker Summary/);
   assert.match(receipt.reportContent, /## Provenance/);
   assert.match(receipt.reportContent, /## Sterility Summary/);
+  assert.match(receipt.reportContent, /## Domain Body Analysis Summary/);
+  assert.match(receipt.reportContent, /Analysis report: evidence\/runs\/[a-f0-9]+\/domain-analysis\/domain-body-analysis\.report\.md/);
   assert.match(receipt.reportContent, /- Verdict: /);
   assert.equal(typeof receipt.provenance, 'object');
   assert.equal(typeof receipt.provenance.sourceInventoryHash, 'string');

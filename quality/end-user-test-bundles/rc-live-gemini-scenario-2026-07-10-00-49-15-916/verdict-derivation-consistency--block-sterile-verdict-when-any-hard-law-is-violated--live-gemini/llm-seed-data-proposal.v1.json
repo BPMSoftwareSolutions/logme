@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "llm-seed-data-proposal.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+  "featureId": "verdict-derivation-consistency",
+  "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+  "seedDataId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini-seed-data",
+  "purpose": "No seed records required for Markdown and CLI evidence review.",
+  "scenarioCoverage": [
+    "block-sterile-verdict-when-any-hard-law-is-violated"
+  ],
+  "recordsToCreate": [],
+  "filesToCreate": [],
+  "expectedUserVisibleState": "No additional user-visible seed state required.",
+  "cleanupInstructions": "Remove the QA bundle seed-data directory after review if cleanup is requested.",
+  "allowedPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini/seed-data"
+  ],
+  "privacyClassification": "synthetic",
+  "syntheticDataDeclaration": "All proposed seed data is synthetic."
+}

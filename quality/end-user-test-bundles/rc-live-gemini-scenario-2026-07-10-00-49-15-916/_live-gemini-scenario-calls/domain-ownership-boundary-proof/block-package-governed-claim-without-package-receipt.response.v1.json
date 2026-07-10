@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "block-package-governed-claim-without-package-receipt",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 511,
+    "candidatesTokenCount": 709,
+    "totalTokenCount": 2358,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 511
+      }
+    ],
+    "thoughtsTokenCount": 1138,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The scenario aims to verify that a package-governed claim without a package receipt results in an 'UNVERIFIED' package scope and a 'package-governance-unproven' finding code. However, the crucial evidence surfaces, 'report.md' and the Gemini live-call receipt, were not provided, making it impossible to verify any of the acceptance criteria.",
+    "expectedResult": "The report should explicitly state that no package governance contract or receipt path is rendered, show the package scope as UNVERIFIED, and include the finding code 'package-governance-unproven'.",
+    "observedResult": "No 'report.md' or Gemini live-call receipt was provided, therefore, none of the expected results could be observed or verified.",
+    "confusingOrRiskyExperiencePoints": "Without the actual report, it's impossible to assess if the user experience of identifying an unproven package governance claim is clear or confusing. The lack of evidence prevents any evaluation of potential risks.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and readable. However, the absence of the generated report means the accessibility and readability of the actual output (which an end-user would consume) cannot be evaluated.",
+    "recommendedFollowUps": "To properly test this scenario, the 'report.md' and the Gemini live-call receipt must be provided as evidence surfaces. Without these, the scenario remains untestable from the assigned surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But no package governance contract or receipt path is rendered",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of the absence of a package governance contract or receipt path requires inspecting the 'report.md' or Gemini live-call receipt, neither of which were provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD_OR_GEMINI_RECEIPT",
+        "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "Then the report should show the package scope as UNVERIFIED",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of the 'UNVERIFIED' package scope requires inspecting the 'report.md' or Gemini live-call receipt, neither of which were provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD_OR_GEMINI_RECEIPT",
+        "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of the 'package-governance-unproven' finding code requires inspecting the 'report.md' or Gemini live-call receipt, neither of which were provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD_OR_GEMINI_RECEIPT",
+        "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt."
+      }
+    ]
+  }
+}

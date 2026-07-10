@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-method-evidence-appendix-for-deep-review--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-method-evidence-appendix-for-deep-review",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 604,
+    "candidatesTokenCount": 964,
+    "totalTokenCount": 3931,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 604
+      }
+    ],
+    "thoughtsTokenCount": 2363,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "282288305bba4478cf002551c219ab4f1c34da54cf78825a9e2af0c56e6ed57c",
+  "responseSha256": "cbb830d7668bc459e04d6dedbff9fe2060731507d9608d155daacd2883e36808",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-method-evidence-appendix-for-deep-review.response.v1.json",
+  "calledAt": "2026-07-10T01:19:03.982Z"
+}

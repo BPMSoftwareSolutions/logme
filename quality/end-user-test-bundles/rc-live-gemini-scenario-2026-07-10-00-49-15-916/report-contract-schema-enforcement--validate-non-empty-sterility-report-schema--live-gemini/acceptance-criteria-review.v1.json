@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "validate-non-empty-sterility-report-schema",
+  "criteria": [
+    {
+      "criterionText": "And the report generator has built an in-memory report contract",
+      "status": "INCONCLUSIVE",
+      "llmObservationSummary": "As an AI, I lack the ability to execute the report generator, inspect in-memory data structures, or verify the contents of generated files like 'report.md' or CLI output. Therefore, I cannot provide direct evidence for the criteria 'the report generator has built an in-memory report contract', 'the contract should include' specific fields, or 'markdown should be written only after schema validation passes'.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "This test requires execution within a live environment where the report generator can be run, and its output (both in-memory contract details and the generated 'report.md' file) can be inspected. A human tester or an automated test harness with file system and process execution access should perform this validation, providing 'report.md' content and relevant CLI logs as evidence."
+    },
+    {
+      "criterionText": "Then the contract should include:",
+      "status": "INCONCLUSIVE",
+      "llmObservationSummary": "As an AI, I lack the ability to execute the report generator, inspect in-memory data structures, or verify the contents of generated files like 'report.md' or CLI output. Therefore, I cannot provide direct evidence for the criteria 'the report generator has built an in-memory report contract', 'the contract should include' specific fields, or 'markdown should be written only after schema validation passes'.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "This test requires execution within a live environment where the report generator can be run, and its output (both in-memory contract details and the generated 'report.md' file) can be inspected. A human tester or an automated test harness with file system and process execution access should perform this validation, providing 'report.md' content and relevant CLI logs as evidence."
+    },
+    {
+      "criterionText": "And markdown should be written only after schema validation passes.",
+      "status": "INCONCLUSIVE",
+      "llmObservationSummary": "As an AI, I lack the ability to execute the report generator, inspect in-memory data structures, or verify the contents of generated files like 'report.md' or CLI output. Therefore, I cannot provide direct evidence for the criteria 'the report generator has built an in-memory report contract', 'the contract should include' specific fields, or 'markdown should be written only after schema validation passes'.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "This test requires execution within a live environment where the report generator can be run, and its output (both in-memory contract details and the generated 'report.md' file) can be inspected. A human tester or an automated test harness with file system and process execution access should perform this validation, providing 'report.md' content and relevant CLI logs as evidence."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:33:42.142Z"
+}

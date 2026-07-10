@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--recommend-decomposition-without-promoting-the-llm-recommendation--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "recommend-decomposition-without-promoting-the-llm-recommendation",
+  "proofReportPaths": [],
+  "missingReports": []
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--llm-generates-a-child-harness-from-a-parent-harness-contract--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-generates-a-child-harness-from-a-parent-harness-contract",
+  "criteria": [
+    {
+      "criterionText": "And the parent harness has passed self-conformance",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to confirm that the parent harness passed self-conformance.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    },
+    {
+      "criterionText": "And the LLM receives an allowed harness-generation assignment",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to confirm that the LLM received an allowed harness-generation assignment.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    },
+    {
+      "criterionText": "Then the child harness should include a body contract",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of a body contract.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    },
+    {
+      "criterionText": "And the child harness should include an execution path",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of an execution path.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    },
+    {
+      "criterionText": "And the child harness should include tests",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of tests.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    },
+    {
+      "criterionText": "And the child harness should include telemetry testimony requirements",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of telemetry testimony requirements.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    },
+    {
+      "criterionText": "And the child harness should include receipt coverage",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of receipt coverage.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    },
+    {
+      "criterionText": "And the proposal should not be promoted automatically.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to confirm that the proposal was not promoted automatically.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:12:23.754Z"
+}

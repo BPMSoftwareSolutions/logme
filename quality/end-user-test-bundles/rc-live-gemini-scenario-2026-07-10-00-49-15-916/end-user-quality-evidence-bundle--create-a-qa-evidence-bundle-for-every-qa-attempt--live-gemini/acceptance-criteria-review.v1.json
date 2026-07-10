@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "create-a-qa-evidence-bundle-for-every-qa-attempt",
+  "criteria": [
+    {
+      "criterionText": "And the release candidate id is `<release-candidate-id>`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes a setup step. No evidence of actual ID usage within generated artifacts or reports is provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide generated artifacts or reports that include the release candidate ID for verification."
+    },
+    {
+      "criterionText": "And the QA run id is `<qa-run-id>`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes a setup step. No evidence of actual ID usage within generated artifacts or reports is provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide generated artifacts or reports that include the QA run ID for verification."
+    },
+    {
+      "criterionText": "Then it should write a source-controlled QA bundle under:",
+      "status": "blocked",
+      "llmObservationSummary": "No file system evidence or report content is provided to confirm the bundle's creation or location.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide file system output, 'report.md' content, or other evidence confirming the bundle's creation at the specified path."
+    },
+    {
+      "criterionText": "And the bundle should be written for both passing and failing QA attempts",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence of multiple QA attempts (passing/failing) or their corresponding bundles is provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide evidence from both passing and failing QA attempts, showing bundle creation in each case."
+    },
+    {
+      "criterionText": "And the bundle should contain:",
+      "status": "blocked",
+      "llmObservationSummary": "No evidence of the actual contents of the QA bundle (e.g., manifest, file list) is provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the contents of the QA bundle (e.g., 'qa-evidence-bundle.manifest.v1.json' or a directory listing) for verification."
+    },
+    {
+      "criterionText": "And every artifact should include the same release candidate id and QA run id.",
+      "status": "blocked",
+      "llmObservationSummary": "No evidence of artifact contents or their embedded IDs is provided to verify consistency.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the contents of multiple artifacts within a bundle, demonstrating consistent release candidate and QA run IDs."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:56:09.652Z"
+}

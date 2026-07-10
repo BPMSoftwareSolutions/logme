@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "child-harness-proposes-the-next-harness",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 465,
+    "candidatesTokenCount": 634,
+    "totalTokenCount": 2392,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 465
+      }
+    ],
+    "thoughtsTokenCount": 1293,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` and Gemini live-call receipt, which are critical end-user surfaces for verifying scenario execution, were not provided. Without these, it is impossible to confirm if the acceptance criteria were met.",
+    "expectedResult": "The `report.md` and Gemini live-call receipt should clearly demonstrate that the child harness proposed a grandchild harness, that the proposal was stored as 'proposed only', that the parent verifier validated it, and that promotion requires receipt-backed evidence.",
+    "observedResult": "Only the Gherkin scenario definition was provided. No actual test execution results or live-call receipts were available for review.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete evidence (report.md, live-call receipt) makes it impossible to assess the feature's behavior from an end-user perspective. This is a significant blocker for QA.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear and readable, but without the corresponding test report, its implications for the actual system behavior cannot be understood.",
+    "recommendedFollowUps": "Provide the `report.md` file and the Gemini live-call receipt for this scenario. Without these, the scenario cannot be properly tested from the assigned end-user surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the proposal should be stored as proposed only",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or live-call receipt was provided to confirm the storage status of the proposal.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_AND_RECEIPT",
+        "recommendedFixRoute": "Provide `report.md` and the Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the parent verifier should validate the proposal",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or live-call receipt was provided to confirm the parent verifier's action.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_AND_RECEIPT",
+        "recommendedFixRoute": "Provide `report.md` and the Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And promotion should require receipt-backed evidence.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or live-call receipt was provided to confirm the requirement for receipt-backed evidence for promotion.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_AND_RECEIPT",
+        "recommendedFixRoute": "Provide `report.md` and the Gemini live-call receipt."
+      }
+    ]
+  }
+}

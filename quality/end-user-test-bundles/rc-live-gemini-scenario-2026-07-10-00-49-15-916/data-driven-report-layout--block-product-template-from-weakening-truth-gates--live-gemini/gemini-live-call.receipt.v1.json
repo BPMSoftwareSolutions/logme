@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--block-product-template-from-weakening-truth-gates--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "block-product-template-from-weakening-truth-gates",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 525,
+    "candidatesTokenCount": 538,
+    "totalTokenCount": 1999,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 525
+      }
+    ],
+    "thoughtsTokenCount": 936,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b0a245ccf51acd8472f9b9b490c0d61f5cfb13e2baa3f087d2e9d601c06fb5af",
+  "responseSha256": "271c4dc9a2cfd1387e4ae84d4db42060b09dba55e39591c3c6f422246fa8d5a6",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/block-product-template-from-weakening-truth-gates.response.v1.json",
+  "calledAt": "2026-07-10T00:51:26.175Z"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--generate-a-filesystem-tree-projection-for-review--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "generate-a-filesystem-tree-projection-for-review",
+  "criteria": [
+    {
+      "criterionText": "Then it should write a filesystem tree projection at:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or CLI output was provided to confirm if the filesystem tree projection file was written at the specified path.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` or CLI output that shows the creation of `docs/features/_FEATURE-QUALITY-TREE.txt`."
+    },
+    {
+      "criterionText": "And the tree should show only product-owner scan surfaces:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No content of the generated tree was provided in `report.md` or any other surface to verify if it shows only product-owner scan surfaces.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of the generated `_FEATURE-QUALITY-TREE.txt` or relevant sections from `report.md`."
+    },
+    {
+      "criterionText": "And the tree should make the quality state visible from filenames",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No content of the generated tree was provided to assess if the quality state is visible from filenames within the tree.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of the generated `_FEATURE-QUALITY-TREE.txt` or relevant sections from `report.md`."
+    },
+    {
+      "criterionText": "And the tree should be safe to paste into PI planning notes or architecture review notes.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No content of the generated tree was provided to evaluate its format and suitability for pasting into planning or review notes.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of the generated `_FEATURE-QUALITY-TREE.txt` or relevant sections from `report.md`."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:06:17.508Z"
+}

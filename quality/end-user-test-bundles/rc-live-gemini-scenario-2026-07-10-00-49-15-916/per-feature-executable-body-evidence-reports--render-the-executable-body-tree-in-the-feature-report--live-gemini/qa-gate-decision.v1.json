@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--render-the-executable-body-tree-in-the-feature-report--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "render-the-executable-body-tree-in-the-feature-report",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:20:37.232Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.049Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EVIDENCE_REPORT_MD"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--preserve-existing-feature-document-paths-during-rollout--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "preserve-existing-feature-document-paths-during-rollout",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 575,
+    "candidatesTokenCount": 883,
+    "totalTokenCount": 2510,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 575
+      }
+    ],
+    "thoughtsTokenCount": 1052,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e78777cfeed5399cfc46df44220d4565bf2b1e22624a18816b85fcdbb9d70686",
+  "responseSha256": "e330103031f9967a562b6bb49584cb7d8ca160ac62419607d1eeb98da3779978",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/preserve-existing-feature-document-paths-during-rollout.response.v1.json",
+  "calledAt": "2026-07-10T01:07:50.909Z"
+}

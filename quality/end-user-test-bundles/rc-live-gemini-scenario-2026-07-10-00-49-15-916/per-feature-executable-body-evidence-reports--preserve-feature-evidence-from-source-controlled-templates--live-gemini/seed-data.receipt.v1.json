@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "preserve-feature-evidence-from-source-controlled-templates",
+  "seedDataId": "per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T01:21:35.734Z"
+}

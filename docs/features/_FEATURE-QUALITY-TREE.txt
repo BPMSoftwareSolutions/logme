@@ -1,0 +1,83 @@
+docs/features/
+|-- _FEATURE-QUALITY-BOARD.md
+|-- _FEATURE-QUALITY-BOARD.v1.json
+|-- _FEATURE-QUALITY-TREE.txt
+|-- _STATUS.qa-blocked.adversarial-challenge-packet.md
+|-- _STATUS.qa-blocked.ci-cd-report-truth-guardrails.md
+|-- _STATUS.qa-blocked.data-driven-report-layout.md
+|-- _STATUS.qa-blocked.development-time-report-truth-guardrails.md
+|-- _STATUS.qa-blocked.domain-body-sprawl-visibility.md
+|-- _STATUS.qa-blocked.domain-naming-convention-correction.md
+|-- _STATUS.qa-blocked.domain-ownership-boundary-proof.md
+|-- _STATUS.qa-blocked.end-user-quality-evidence-bundle.md
+|-- _STATUS.qa-blocked.evidence-receipt-coverage.md
+|-- _STATUS.qa-blocked.feature-execution-proof-source-of-truth.md
+|-- _STATUS.qa-blocked.feature-filesystem-quality-status-projection.md
+|-- _STATUS.qa-blocked.feature-quality-board-filesystem-body.md
+|-- _STATUS.qa-blocked.feature-scoped-ascii-execution-flow-report.md
+|-- _STATUS.qa-blocked.fractal-llm-harness.md
+|-- _STATUS.qa-blocked.gherkin-driven-report-development.md
+|-- _STATUS.qa-blocked.llm-domain-body-analysis-and-tie-out.md
+|-- _STATUS.qa-blocked.llm-end-user-testing-conveyor.md
+|-- _STATUS.qa-blocked.method-level-execution-drill-down.md
+|-- _STATUS.qa-blocked.pi-readiness-gate-for-report-truth.md
+|-- _STATUS.qa-blocked.portable-evidence-paths.md
+|-- _STATUS.qa-blocked.projection-language-honesty.md
+|-- _STATUS.qa-blocked.report-contract-schema-enforcement.md
+|-- _STATUS.qa-blocked.report-provenance-and-freshness-gate.md
+|-- _STATUS.qa-blocked.summary-findings-and-method-row-tie-out.md
+|-- _STATUS.qa-blocked.verdict-derivation-consistency.md
+|-- _STATUS.qa-passed.per-feature-executable-body-evidence-reports.md
+|-- _feature-status/
+|   |-- adversarial-challenge-packet.status.v1.json
+|   |-- ci-cd-report-truth-guardrails.status.v1.json
+|   |-- data-driven-report-layout.status.v1.json
+|   |-- development-time-report-truth-guardrails.status.v1.json
+|   |-- domain-body-sprawl-visibility.status.v1.json
+|   |-- domain-naming-convention-correction.status.v1.json
+|   |-- domain-ownership-boundary-proof.status.v1.json
+|   |-- end-user-quality-evidence-bundle.status.v1.json
+|   |-- evidence-receipt-coverage.status.v1.json
+|   |-- feature-execution-proof-source-of-truth.status.v1.json
+|   |-- feature-filesystem-quality-status-projection.status.v1.json
+|   |-- feature-quality-board-filesystem-body.status.v1.json
+|   |-- feature-scoped-ascii-execution-flow-report.status.v1.json
+|   |-- fractal-llm-harness.status.v1.json
+|   |-- gherkin-driven-report-development.status.v1.json
+|   |-- llm-domain-body-analysis-and-tie-out.status.v1.json
+|   |-- llm-end-user-testing-conveyor.status.v1.json
+|   |-- method-level-execution-drill-down.status.v1.json
+|   |-- per-feature-executable-body-evidence-reports.status.v1.json
+|   |-- pi-readiness-gate-for-report-truth.status.v1.json
+|   |-- portable-evidence-paths.status.v1.json
+|   |-- projection-language-honesty.status.v1.json
+|   |-- report-contract-schema-enforcement.status.v1.json
+|   |-- report-provenance-and-freshness-gate.status.v1.json
+|   |-- summary-findings-and-method-row-tie-out.status.v1.json
+|   |-- verdict-derivation-consistency.status.v1.json
+|-- adversarial-challenge-packet.feature.md
+|-- ci-cd-report-truth-guardrails.feature.md
+|-- data-driven-report-layout.feature.md
+|-- development-time-report-truth-guardrails.feature.md
+|-- domain-body-sprawl-visibility.feature.md
+|-- domain-naming-convention-correction.feature.md
+|-- domain-ownership-boundary-proof.feature.md
+|-- end-user-quality-evidence-bundle.feature.md
+|-- evidence-receipt-coverage.feature.md
+|-- feature-execution-proof-source-of-truth.feature.md
+|-- feature-filesystem-quality-status-projection.feature.md
+|-- feature-quality-board-filesystem-body.feature.md
+|-- feature-scoped-ascii-execution-flow-report.feature.md
+|-- fractal-llm-harness.feature.md
+|-- gherkin-driven-report-development.feature.md
+|-- llm-domain-body-analysis-and-tie-out.feature.md
+|-- llm-end-user-testing-conveyor.feature.md
+|-- method-level-execution-drill-down.feature.md
+|-- per-feature-executable-body-evidence-reports.feature.md
+|-- pi-readiness-gate.feature.md
+|-- portable-evidence-paths.feature.md
+|-- projection-language-honesty.feature.md
+|-- report-contract-schema-enforcement.feature.md
+|-- report-provenance-and-freshness-gate.feature.md
+|-- summary-findings-and-method-row-tie-out.feature.md
+|-- verdict-derivation-consistency.feature.md

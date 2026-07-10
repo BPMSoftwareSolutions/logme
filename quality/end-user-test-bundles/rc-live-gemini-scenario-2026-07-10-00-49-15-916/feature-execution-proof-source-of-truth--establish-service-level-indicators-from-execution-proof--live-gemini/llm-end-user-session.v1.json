@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--establish-service-level-indicators-from-execution-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "establish-service-level-indicators-from-execution-proof",
+  "scenarioName": "Establish service level indicators from execution proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Establish service level indicators from execution proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:196-224; report.md; live Gemini prompt",
+      "expectedResult": "Service Level Indicators (SLIs) should be calculated from observed execution evidence, include a specific set of supported SLIs with detailed fields (name, description, numerator, denominator, unit, value, measurement window, evidence source paths), and explicitly not be derived from report labels, static source inventory, or manual claims, as detailed in the scenario Gherkin.",
+      "observedResult": "No `report.md` content was observed. Therefore, no SLIs or their derivation could be verified. The Gherkin describes the expected behavior, but no actual execution proof or report was available for review.",
+      "timestamp": "2026-07-10T00:59:41.165Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--establish-service-level-indicators-from-execution-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--establish-service-level-indicators-from-execution-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

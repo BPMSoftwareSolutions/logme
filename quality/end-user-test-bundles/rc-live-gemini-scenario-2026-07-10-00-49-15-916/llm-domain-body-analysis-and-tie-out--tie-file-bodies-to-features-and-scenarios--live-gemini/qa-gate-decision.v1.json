@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "tie-file-bodies-to-features-and-scenarios",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:13:37.555Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.015Z",
+  "rawLlmBlockerCodes": [
+    "EVIDENCE_MISSING"
+  ]
+}

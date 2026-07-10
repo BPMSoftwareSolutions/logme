@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--child-harness-proposes-the-next-harness--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "child-harness-proposes-the-next-harness",
+  "criteria": [
+    {
+      "criterionText": "Then the proposal should be stored as proposed only",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or live-call receipt was provided to confirm the storage status of the proposal.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_AND_RECEIPT",
+      "recommendedFixRoute": "Provide `report.md` and the Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the parent verifier should validate the proposal",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or live-call receipt was provided to confirm the parent verifier's action.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_AND_RECEIPT",
+      "recommendedFixRoute": "Provide `report.md` and the Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And promotion should require receipt-backed evidence.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or live-call receipt was provided to confirm the requirement for receipt-backed evidence for promotion.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_AND_RECEIPT",
+      "recommendedFixRoute": "Provide `report.md` and the Gemini live-call receipt."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:12:42.649Z"
+}

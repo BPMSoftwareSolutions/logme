@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--keep-generated-run-evidence-out-of-source-control--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "keep-generated-run-evidence-out-of-source-control",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "generated-harness-proves-its-own-execution",
+  "seedDataId": "fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T01:12:33.966Z"
+}

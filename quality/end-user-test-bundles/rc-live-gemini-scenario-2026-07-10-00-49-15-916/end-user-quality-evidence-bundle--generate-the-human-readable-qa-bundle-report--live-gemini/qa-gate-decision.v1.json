@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--generate-the-human-readable-qa-bundle-report--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "generate-the-human-readable-qa-bundle-report",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T00:56:27.908Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.932Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EVIDENCE"
+  ]
+}

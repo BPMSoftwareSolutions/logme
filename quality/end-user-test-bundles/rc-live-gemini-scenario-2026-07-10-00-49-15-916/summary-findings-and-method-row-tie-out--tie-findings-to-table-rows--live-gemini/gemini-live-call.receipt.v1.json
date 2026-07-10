@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "tie-findings-to-table-rows",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:41:16.036Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 275,
+    "candidatesTokenCount": 269,
+    "totalTokenCount": 942,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 275
+      }
+    ],
+    "thoughtsTokenCount": 398,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "2940f948c34c3703701b9949a13324230e3a2409f982f67d5004cd763a9f1736",
+  "responseSha256": "524d057cf212e89bdd53bb3fb54873363d3193c5a7860d911f538e45e8b7f9f4",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/summary-findings-and-method-row-tie-out/tie-findings-to-table-rows.response.v1.json"
+}

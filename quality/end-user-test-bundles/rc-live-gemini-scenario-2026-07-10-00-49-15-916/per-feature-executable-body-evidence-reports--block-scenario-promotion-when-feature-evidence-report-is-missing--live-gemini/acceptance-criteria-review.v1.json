@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--block-scenario-promotion-when-feature-evidence-report-is-missing--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "block-scenario-promotion-when-feature-evidence-report-is-missing",
+  "criteria": [
+    {
+      "criterionText": "But no feature evidence packet exists under `evidence/runs/<run-id>/features/<feature-id>/scenarios/<scenario-id>/`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a precondition for the scenario. As a tester, I cannot verify the existence or non-existence of a file path from the provided Gherkin or the absence of external reports. This is a setup condition, not an observable outcome.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the necessary reports (report.md, Gemini receipt) which would reflect the outcome of this precondition being met."
+    },
+    {
+      "criterionText": "Then the feature scenario verdict should be BLOCKED",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the scenario verdict requires inspecting the 'report.md' or the Gemini live-call receipt, neither of which were provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt that contain the scenario verdict."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the finding code 'feature-executable-body-report-missing' requires inspecting the 'report.md' or the Gemini live-call receipt, neither of which were provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt that contain the finding code."
+    },
+    {
+      "criterionText": "And no global report should mark the scenario promotion-ready.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the global report status requires inspecting the 'report.md' or the Gemini live-call receipt, neither of which were provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt that contain the global report status."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:20:59.310Z"
+}

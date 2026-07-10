@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "generate-the-human-readable-qa-bundle-report",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 704,
+    "candidatesTokenCount": 675,
+    "totalTokenCount": 2697,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 704
+      }
+    ],
+    "thoughtsTokenCount": 1318,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file, which is crucial for verifying the content and structure of the human-readable QA bundle report, was not provided. Without this evidence, it is impossible to confirm if the report includes the specified sections and fields, or if it meets the readability requirements for a product owner.",
+    "expectedResult": "A human-readable QA bundle report (`qa-evidence-bundle.report.md`) should be generated, containing specific product-facing fields and sections, and be understandable by a product owner without needing to inspect JSON.",
+    "observedResult": "The `report.md` file was not available for review, preventing any observation of its content or structure.",
+    "confusingOrRiskyExperiencePoints": "The absence of the primary evidence surface (`report.md`) makes it impossible to assess the user experience of consuming the QA bundle report. This is a critical gap in the testing process.",
+    "accessibilityOrReadabilityObservations": "Cannot assess accessibility or readability without the report content. The core premise of the scenario is to generate a *human-readable* report, but no such report was provided for review.",
+    "recommendedFollowUps": "Provide the `qa-evidence-bundle.report.md` file for review. Ensure that future test runs include all necessary evidence surfaces as specified in the test context.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the first product-facing section should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so the presence and content of the first product-facing section could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` file for review to verify the presence of the specified fields."
+      },
+      {
+        "criterionText": "And the report should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so the inclusion of the specified sections could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` file for review to verify the inclusion of all specified sections."
+      },
+      {
+        "criterionText": "And a product owner should not need to open JSON to understand whether the release candidate is QA passed.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Without the `report.md` file, it is impossible to assess if its content is sufficiently clear and comprehensive for a product owner to understand the QA status without resorting to JSON.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` file for review and ensure its content is self-explanatory and clearly communicates the QA status to a product owner."
+      }
+    ]
+  }
+}

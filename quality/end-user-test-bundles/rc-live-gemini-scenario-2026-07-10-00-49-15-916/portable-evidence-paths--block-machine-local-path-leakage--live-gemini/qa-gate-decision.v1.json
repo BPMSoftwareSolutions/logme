@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "portable-evidence-paths--block-machine-local-path-leakage--live-gemini",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "block-machine-local-path-leakage",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-executable-proof-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:23:07.684Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.052Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EXECUTION_EVIDENCE"
+  ]
+}

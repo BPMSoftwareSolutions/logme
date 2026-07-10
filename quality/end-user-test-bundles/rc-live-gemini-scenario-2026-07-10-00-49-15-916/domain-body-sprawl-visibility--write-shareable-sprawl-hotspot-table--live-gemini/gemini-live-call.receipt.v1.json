@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-shareable-sprawl-hotspot-table",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 638,
+    "candidatesTokenCount": 746,
+    "totalTokenCount": 2123,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 638
+      }
+    ],
+    "thoughtsTokenCount": 739,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "dac6c946e1310d227db83a8c20d92f262711b4e8deb85236d58470e63ee8cb1d",
+  "responseSha256": "df877c22d20ffa9892dcfb9edf4a8fb50a09c0018d79491655146a7b6c326fde",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/write-shareable-sprawl-hotspot-table.response.v1.json",
+  "calledAt": "2026-07-10T00:53:17.965Z"
+}

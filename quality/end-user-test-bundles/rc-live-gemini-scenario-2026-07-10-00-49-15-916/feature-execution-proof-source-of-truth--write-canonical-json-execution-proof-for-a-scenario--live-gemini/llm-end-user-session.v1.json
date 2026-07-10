@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--write-canonical-json-execution-proof-for-a-scenario--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "write-canonical-json-execution-proof-for-a-scenario",
+  "scenarioName": "Write canonical JSON execution proof for a scenario",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Write canonical JSON execution proof for a scenario",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:33-63; report.md; live Gemini prompt",
+      "expectedResult": "The system should write a canonical JSON execution proof at the specified path, containing all listed fields, and all report fields should be derived from this proof or marked 'not observed'.",
+      "observedResult": "Cannot observe the actual outcome as the necessary generated artifacts (JSON proof, report.md) were not provided as evidence.",
+      "timestamp": "2026-07-10T00:58:14.924Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-canonical-json-execution-proof-for-a-scenario--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-canonical-json-execution-proof-for-a-scenario--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

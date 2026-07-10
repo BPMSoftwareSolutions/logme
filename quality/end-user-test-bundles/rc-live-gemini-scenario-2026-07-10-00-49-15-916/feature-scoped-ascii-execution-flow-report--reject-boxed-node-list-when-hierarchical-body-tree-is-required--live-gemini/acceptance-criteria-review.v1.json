@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-boxed-node-list-when-hierarchical-body-tree-is-required",
+  "criteria": [
+    {
+      "criterionText": "But the section renders body nodes as flat boxed rows",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a precondition for the scenario. Without the actual report content or a visual representation, it's impossible to confirm if the section indeed renders body nodes as flat boxed rows.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated `report.md` or a screenshot/text snippet of the relevant section."
+    },
+    {
+      "criterionText": "And the section does not render nested ASCII branches under each body node",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a precondition. Verification requires visual inspection of the report or its textual representation to confirm the absence of nested ASCII branches.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated `report.md` or a screenshot/text snippet of the relevant section."
+    },
+    {
+      "criterionText": "Then the report should fail",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a core outcome criterion. Without the `report.md` or CLI evidence indicating the report's status, it's impossible to confirm if the report actually failed.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated `report.md` which should explicitly state the report's failure status, or CLI logs confirming the failure."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the finding code as 'executable-body-tree-shape-mismatch'. However, without the `report.md` or CLI evidence, it's impossible to verify if this specific finding code was indeed present in the failure output.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated `report.md` or CLI logs that clearly display the finding code associated with the report failure."
+    },
+    {
+      "criterionText": "And the failure should explain that each node must contain branch groups for:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin lists the required branch groups (contract, runtime, telemetry, receipt, status). Verification requires inspecting the failure explanation in the `report.md` or CLI output to confirm these details are present.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated `report.md` or CLI logs that include the full failure explanation, allowing verification of the specified branch groups."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:09:51.724Z"
+}

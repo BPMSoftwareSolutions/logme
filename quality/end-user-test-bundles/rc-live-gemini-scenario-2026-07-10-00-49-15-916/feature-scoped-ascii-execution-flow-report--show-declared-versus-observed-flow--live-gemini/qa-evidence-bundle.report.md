@@ -1,0 +1,24 @@
+# LLM QA Evidence Bundle: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini
+- Feature id: feature-scoped-ascii-execution-flow-report
+- Scenario id: show-declared-versus-observed-flow
+- Quality gate decision: QA passed
+- LLM promotion allowed: false
+- Blocker count: 0
+
+## Deterministic Gate Result
+
+The deterministic evidence gate found no blockers. Promotion still remains outside the LLM.
+
+## Replay Sources
+
+- llm-qa-assignment.v1.json
+- llm-handoff-packet.report.md
+- seed-data.receipt.v1.json
+- llm-end-user-session.v1.json
+- end-user-test-session.md
+- llm-user-experience.report.md
+- acceptance-criteria-review.report.md
+- qa-gate-decision.v1.json

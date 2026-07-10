@@ -1,0 +1,15 @@
+# Blocker Worklist: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini
+- Feature id: llm-end-user-testing-conveyor
+- Scenario id: prepare-future-notification-without-sending-it
+
+- finding code: qa-cleanup-assigned-surface-insufficient
+- finding code: qa-cleanup-precondition-or-negative-case-evidence-missing
+
+## Raw LLM Blocker Codes
+
+- EVIDENCE_NOT_PRESENT_IN_SURFACE
+- DEPENDENT_CRITERION_NOT_TESTABLE
+

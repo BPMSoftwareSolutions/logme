@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--keep-method-drill-down-portable-for-html-and-visual-review--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "keep-method-drill-down-portable-for-html-and-visual-review",
+  "scenarioName": "Keep method drill-down portable for HTML and visual review",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Keep method drill-down portable for HTML and visual review\n    Given the Markdown proof report will be transformed into HTML, a dashboard, a deck, or a publication\n    When method drill-down ASCII is rendered\n    Then it should use only portable ASCII characters\n    And it should fit in Markdown without relying on color or terminal-specific rendering\n    And long method names should wrap or be summarized without hiding the full method name from the detailed appendix\n    And HTML visual QA should verify that method call branches remain readable.\n```\n",
+    "acceptanceCriteria": [
+      "Then it should use only portable ASCII characters",
+      "And it should fit in Markdown without relying on color or terminal-specific rendering",
+      "And long method names should wrap or be summarized without hiding the full method name from the detailed appendix",
+      "And HTML visual QA should verify that method call branches remain readable."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:20:15.846Z"
+}

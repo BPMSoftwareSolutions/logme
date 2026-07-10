@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--assign-a-feature-scenario-to-the-llm-testing-conveyor--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "assign-a-feature-scenario-to-the-llm-testing-conveyor",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 679,
+    "candidatesTokenCount": 859,
+    "totalTokenCount": 3297,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 679
+      }
+    ],
+    "thoughtsTokenCount": 1759,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "30554e3e0e77c9a2df9a7c90cb5e4fe63e7bdeb05e985239e346f03196fa5521",
+  "responseSha256": "f054b75b3751fca91a372ac2d12fe4d48624fca27420cc1bee03cfbd00e7bc51",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/assign-a-feature-scenario-to-the-llm-testing-conveyor.response.v1.json",
+  "calledAt": "2026-07-10T01:13:59.894Z"
+}

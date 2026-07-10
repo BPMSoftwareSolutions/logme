@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--do-not-promote-unexecuted-features--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "do-not-promote-unexecuted-features",
+  "criteria": [
+    {
+      "criterionText": "But the scenario was not executed in the current run",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if the scenario was indeed 'not executed' in the current run as the `report.md` evidence surface, which would reflect this state, was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "Then the scenario should show `not executed`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if the scenario shows 'not executed' in the global report as the `report.md` evidence surface was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "And it should not show PASS, STERILE, observed telemetry, written receipts, SLO met, or SLA satisfied for that run",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify the absence of execution-related statuses (PASS, STERILE, telemetry, receipts, SLO/SLA) in the global report as the `report.md` evidence surface was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "And the scenario should not have a generated evidence packet unless execution actually occurred.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify the absence of a generated evidence packet as the `report.md` evidence surface, which would indicate its presence or absence, was not provided. The mention of a 'Gemini live-call receipt' in the QA bundle is also not directly verifiable without the bundle itself or its reflection in `report.md`.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the `report.md` file and/or details on how to inspect the QA bundle for evidence packet generation."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:21:09.327Z"
+}

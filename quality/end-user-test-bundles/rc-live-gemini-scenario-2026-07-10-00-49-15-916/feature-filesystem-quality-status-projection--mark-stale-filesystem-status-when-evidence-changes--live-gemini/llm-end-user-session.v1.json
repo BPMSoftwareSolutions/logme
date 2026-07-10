@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-stale-filesystem-status-when-evidence-changes--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-stale-filesystem-status-when-evidence-changes",
+  "scenarioName": "Mark stale filesystem status when evidence changes",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Mark stale filesystem status when evidence changes",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:179-189; report.md; live Gemini prompt",
+      "expectedResult": "Upon detecting a change in the source feature document hash, QA bundle manifest hash, or promotion decision hash, the system should set the display status to 'stale', identify the specific source that changed as the stale reason, ensure the stale feature is not reported as promoted, and recommend regenerating evidence or rerunning the status projection.",
+      "observedResult": "The Gherkin describes the expected behavior. Actual system behavior could not be observed or verified as no execution reports or live-call receipts were provided.",
+      "timestamp": "2026-07-10T01:04:44.976Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-stale-filesystem-status-when-evidence-changes--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-stale-filesystem-status-when-evidence-changes--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

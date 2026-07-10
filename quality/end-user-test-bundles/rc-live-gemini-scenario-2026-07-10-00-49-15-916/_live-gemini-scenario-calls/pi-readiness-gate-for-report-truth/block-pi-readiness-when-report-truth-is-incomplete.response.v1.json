@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "block-pi-readiness-when-report-truth-is-incomplete",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 504,
+    "candidatesTokenCount": 655,
+    "totalTokenCount": 2391,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 504
+      }
+    ],
+    "thoughtsTokenCount": 1232,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence (Gherkin scenario) is insufficient to verify the acceptance criteria. The `report.md` and Gemini live-call receipt, which are crucial for validating the 'Then' clauses and system state, were not supplied.",
+    "expectedResult": "The PI verdict should be BLOCKED, and the control report should detail blockers for each report feature, given that report truth features are incomplete.",
+    "observedResult": "Cannot observe the PI verdict or the content of the control report as the necessary `report.md` and live-call receipt evidence were not provided.",
+    "confusingOrRiskyExperiencePoints": "Without the actual report output, it's impossible to confirm if the system correctly identifies and blocks PI readiness or provides actionable feedback on incomplete report truth features. This poses a risk of incomplete or incorrect PI readiness assessments going unnoticed.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and readable, but the lack of accompanying output makes it impossible to assess the end-user experience of the PI readiness gate itself.",
+    "recommendedFollowUps": "Provide the `report.md` file and the Gemini live-call receipt to enable verification of the scenario's outcomes. Ensure all evidence surfaces mentioned are actually supplied for testing.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And one or more report truth features lack schema, tests, telemetry, receipts, or Gherkin traceability",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This is a precondition. Verification requires inspecting the state of report truth features, which is not possible with only the Gherkin.",
+        "blockerCode": "MISSING_EVIDENCE_PRECONDITION",
+        "recommendedFixRoute": "Provide system state or a detailed log/report confirming this precondition was met during execution."
+      },
+      {
+        "criterionText": "Then the PI verdict should be BLOCKED",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of the PI verdict requires the actual output of the PI readiness gate, typically found in `report.md` or a CLI output, which was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_OUTCOME",
+        "recommendedFixRoute": "Supply the `report.md` file or relevant CLI output showing the PI verdict."
+      },
+      {
+        "criterionText": "And the control report should show the top blocker for each report feature.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of the control report's content requires the `report.md` file, which was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+        "recommendedFixRoute": "Supply the `report.md` file to verify the content of the control report."
+      }
+    ]
+  }
+}

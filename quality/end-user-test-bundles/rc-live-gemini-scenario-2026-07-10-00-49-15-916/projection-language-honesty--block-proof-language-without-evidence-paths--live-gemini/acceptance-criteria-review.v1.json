@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--block-proof-language-without-evidence-paths--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "block-proof-language-without-evidence-paths",
+  "criteria": [
+    {
+      "criterionText": "But the report does not include an evidence path for that claim",
+      "status": "PASS",
+      "llmObservationSummary": "A report containing 'proof' language (e.g., 'proof of execution') was submitted without an associated evidence path. The report language validator was then executed.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "No immediate follow-ups are required as the feature behaved as expected. Consider testing with various combinations of 'proof' language keywords and missing evidence paths to ensure robustness."
+    },
+    {
+      "criterionText": "Then the report should be BLOCKED",
+      "status": "PASS",
+      "llmObservationSummary": "A report containing 'proof' language (e.g., 'proof of execution') was submitted without an associated evidence path. The report language validator was then executed.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "No immediate follow-ups are required as the feature behaved as expected. Consider testing with various combinations of 'proof' language keywords and missing evidence paths to ensure robustness."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "PASS",
+      "llmObservationSummary": "A report containing 'proof' language (e.g., 'proof of execution') was submitted without an associated evidence path. The report language validator was then executed.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "No immediate follow-ups are required as the feature behaved as expected. Consider testing with various combinations of 'proof' language keywords and missing evidence paths to ensure robustness."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:28:36.555Z"
+}

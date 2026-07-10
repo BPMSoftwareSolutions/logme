@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--preserve-intentional-domain-cohesion--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "preserve-intentional-domain-cohesion",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 560,
+    "candidatesTokenCount": 821,
+    "totalTokenCount": 2562,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 560
+      }
+    ],
+    "thoughtsTokenCount": 1181,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a8236da8ed2235d9b779e1eacd6d88fba4f090638f262f85cafbfd968d2127d2",
+  "responseSha256": "c9aede23e2968e0db2cc8acc9419ef705a0cde3636a94f56cb91fe6c48427278",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/preserve-intentional-domain-cohesion.response.v1.json",
+  "calledAt": "2026-07-10T00:53:42.808Z"
+}

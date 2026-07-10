@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "reject-report-facts-not-backed-by-json-proof",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 576,
+    "candidatesTokenCount": 779,
+    "totalTokenCount": 2877,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 576
+      }
+    ],
+    "thoughtsTokenCount": 1522,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file and the Gemini live-call receipt, which are critical evidence surfaces for verifying the scenario's acceptance criteria, were not provided. Without these, it is impossible to determine if the feature report truth gate correctly identifies and rejects facts not backed by JSON proof, or if the correct finding code is generated.",
+    "expectedResult": "The feature report truth gate should fail, indicating that a fact in the report is not backed by JSON proof, and the finding code `feature-report-fact-without-json-proof` should be present in the `report.md`. All facts should tie back to `feature-execution.contract.v1.json`, and JSON proof facts should tie back to raw telemetry or receipt evidence.",
+    "observedResult": "Unable to observe any results as the necessary evidence (`report.md` and Gemini live-call receipt) was not provided.",
+    "confusingOrRiskyExperiencePoints": "The absence of crucial evidence makes it impossible to perform the requested QA, leading to an inability to verify the feature's intended behavior.",
+    "accessibilityOrReadabilityObservations": "N/A. The issue is missing evidence, not the readability of provided content.",
+    "recommendedFollowUps": "Provide the `report.md` file and the Gemini live-call receipt for this scenario so that the acceptance criteria can be properly evaluated.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then every such fact should tie back to `feature-execution.contract.v1.json`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` was not provided, preventing verification of whether facts in the report tie back to the JSON proof.",
+        "blockerCode": "missing-report-md",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And every JSON proof fact should tie back to raw telemetry or receipt evidence",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Neither the `report.md` (which would reference JSON proof facts) nor the Gemini live-call receipt (raw telemetry/receipt evidence) were provided, making verification impossible.",
+        "blockerCode": "missing-report-md-and-receipt",
+        "recommendedFixRoute": "Provide the `report.md` file and the Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the gate should fail when the report contains a fact that is absent from the JSON proof",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` was not provided, so it's impossible to determine if the gate failed under the specified conditions.",
+        "blockerCode": "missing-report-md",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` was not provided, preventing verification of the presence of the `feature-report-fact-without-json-proof` finding code.",
+        "blockerCode": "missing-report-md",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      }
+    ]
+  }
+}

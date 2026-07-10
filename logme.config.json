@@ -1,7 +1,7 @@
 {
   "rootDir": ".",
   "includeExtensions": [".js", ".ts"],
-  "excludeDirectories": [".git", "node_modules", "evidence", "tests", "generated-harnesses"],
+  "excludeDirectories": [".git", "node_modules", "evidence", "quality", "tests", "generated-harnesses"],
   "forbiddenLocalUtilityNames": ["utils", "helpers", "common", "shared", "lib", "misc"],
   "excludeFiles": ["report.md"],
   "includeTestFiles": false,

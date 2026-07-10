@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-passed-but-not-promoted-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-passed-but-not-promoted-from-the-filesystem-body",
+  "scenarioName": "Mark QA passed but not promoted from the filesystem body",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Mark QA passed but not promoted from the filesystem body\n    Given a latest QA bundle exists for a feature\n    And its QA gate decision is `QA passed`\n    But no deterministic promotion decision exists\n    When status projection runs\n    Then the status sentinel should be:\n      \"\"\"\n      docs/features/_STATUS.qa-passed.<feature-id>.md\n      \"\"\"\n    And the sentinel should state that QA passed is not the same as release promotion\n    And the next recommended action should be to run the deterministic promotion gate.\n",
+    "acceptanceCriteria": [
+      "And its QA gate decision is `QA passed`",
+      "But no deterministic promotion decision exists",
+      "Then the status sentinel should be:",
+      "And the sentinel should state that QA passed is not the same as release promotion",
+      "And the next recommended action should be to run the deterministic promotion gate."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:04:32.184Z"
+}

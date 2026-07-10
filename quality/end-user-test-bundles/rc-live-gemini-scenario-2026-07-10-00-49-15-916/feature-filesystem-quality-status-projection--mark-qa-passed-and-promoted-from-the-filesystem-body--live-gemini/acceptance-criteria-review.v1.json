@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-passed-and-promoted-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-passed-and-promoted-from-the-filesystem-body",
+  "criteria": [
+    {
+      "criterionText": "And the QA bundle manifest hashes match",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a prerequisite step. While present in the Gherkin, there is no execution evidence to confirm that the QA bundle manifest hashes actually matched during the test run.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or CLI evidence demonstrating that this precondition was met."
+    },
+    {
+      "criterionText": "And machine provenance exists",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a prerequisite step. While present in the Gherkin, there is no execution evidence to confirm that machine provenance actually existed during the test run.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or CLI evidence demonstrating that this precondition was met."
+    },
+    {
+      "criterionText": "And the deterministic promotion gate has promoted the feature",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a prerequisite step. While present in the Gherkin, there is no execution evidence to confirm that the deterministic promotion gate actually promoted the feature during the test run.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or CLI evidence demonstrating that this precondition was met."
+    },
+    {
+      "criterionText": "Then the status sentinel should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the expected path for the status sentinel. However, without 'report.md' or CLI evidence, it's impossible to verify if a file at this path was actually created.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or CLI evidence showing the creation and path of the status sentinel file."
+    },
+    {
+      "criterionText": "And the JSON status should set:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin defines the expected JSON fields and values within the status. Without 'report.md' or CLI evidence showing the content of the status sentinel, it's impossible to verify if these JSON values were correctly set.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or CLI evidence showing the content of the JSON status within the sentinel."
+    },
+    {
+      "criterionText": "And the sentinel should link to the immutable promoted QA bundle",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states the sentinel should contain a link to the QA bundle. Without 'report.md' or CLI evidence showing the content of the status sentinel, it's impossible to verify the presence and correctness of this link.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or CLI evidence showing the content of the status sentinel, specifically the link to the QA bundle."
+    },
+    {
+      "criterionText": "And the sentinel should link to the promotion decision artifact.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states the sentinel should contain a link to the promotion decision artifact. Without 'report.md' or CLI evidence showing the content of the status sentinel, it's impossible to verify the presence and correctness of this link.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or CLI evidence showing the content of the status sentinel, specifically the link to the promotion decision artifact."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:04:44.967Z"
+}

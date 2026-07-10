@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-unsafe-output-is-blocked",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 466,
+    "candidatesTokenCount": 512,
+    "totalTokenCount": 2973,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 466
+      }
+    ],
+    "thoughtsTokenCount": 1995,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "27bfcaec305fa6ab758e5a355a5d317af3ac11c57a4f5339f2c8f149b4a5fa86",
+  "responseSha256": "a372c16aaff1896c2408e17659b2369bfd2e43b7ac76719f92d436156f155da0",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/llm-unsafe-output-is-blocked.response.v1.json",
+  "calledAt": "2026-07-10T01:12:42.677Z"
+}

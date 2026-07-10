@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "preserve-feature-evidence-from-source-controlled-templates",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 514,
+    "candidatesTokenCount": 918,
+    "totalTokenCount": 3551,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 514
+      }
+    ],
+    "thoughtsTokenCount": 2119,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence, consisting solely of the scenario Gherkin and a single report.md (whose content is not provided for review), is insufficient to verify the dynamic aspects of the scenario. Specifically, it is impossible to confirm template updates, the absence of code deployments, or the non-source-controlled nature of generated evidence without comparative reports, deployment logs, or direct access to source control status.",
+    "expectedResult": "The regenerated feature evidence report should clearly demonstrate the application of an updated template, without requiring a code deployment for layout-only changes, and confirm that generated feature evidence is not source controlled.",
+    "observedResult": "A single static report.md (content not provided for review) cannot demonstrate template updates (which require comparison), confirm the absence of code deployment (which requires deployment logs), or verify source control status (which requires access to the source control system).",
+    "confusingOrRiskyExperiencePoints": "The lack of comparative evidence (e.g., 'before' and 'after' reports), deployment logs, or direct insight into source control status makes it impossible to validate the core claims of the scenario. This creates a significant gap in test coverage.",
+    "accessibilityOrReadabilityObservations": "N/A",
+    "recommendedFollowUps": "To enable proper testing of this scenario, provide: 1) A 'before' and 'after' version of the report.md to demonstrate template changes. 2) Deployment logs or system configuration details to confirm whether a code deployment was required. 3) Evidence or documentation confirming the source control status of generated feature evidence.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And generated feature evidence is not source controlled",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of source control status for generated evidence requires access to the source control system or explicit documentation, which is not available in the provided report.md or Gherkin.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE",
+        "recommendedFixRoute": "Provide access to source control system status or explicit documentation confirming the non-source-controlled nature of generated evidence."
+      },
+      {
+        "criterionText": "And a feature run is executed again",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes an action (a feature run being executed again). The provided report.md is a static output and cannot confirm that a *second* run occurred after a template change. This requires dynamic observation or logs.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE",
+        "recommendedFixRoute": "Provide execution logs or a sequence of reports demonstrating the 'before' and 'after' states of the feature run."
+      },
+      {
+        "criterionText": "Then the regenerated feature evidence report should use the updated template",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "To verify the use of an 'updated template', a comparison between the report generated *before* the template change and the report generated *after* the template change is required. Only a single report.md is provided, making comparison impossible.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE",
+        "recommendedFixRoute": "Provide two versions of the report: one generated with the old template and one with the updated template, along with a description of the expected changes."
+      },
+      {
+        "criterionText": "And no code deployment should be required for layout-only changes.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that 'no code deployment' was required for layout changes necessitates access to deployment logs or system configuration details. The provided report.md and Gherkin do not contain this information. The Gemini live-call receipt is mentioned but not provided.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE",
+        "recommendedFixRoute": "Provide deployment logs, system configuration details, or the Gemini live-call receipt to confirm the absence of a code deployment for layout changes."
+      }
+    ]
+  }
+}

@@ -185,6 +185,79 @@ function formatsSprawlHotspotRow(hotspot) {
   ].join(' ');
 }
 
+function rendersDomainAnalysisSummarySection(contract) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  if (!contract.domainAnalysis || !contract.domainAnalysis.summary) {
+    return '_No domain body analysis evidence artifact was attached to this report contract._';
+  }
+
+  const summary = contract.domainAnalysis.summary;
+  const summaryLines = [
+    `- Evidence artifact: ${contract.domainAnalysis.evidencePath}`,
+    `- Analysis report: ${contract.domainAnalysis.reportPath}`,
+    `- Total executable files: ${summary.totalExecutableFiles}`,
+    `- Action-bearing executable files: ${summary.actionBearingExecutableFiles}`,
+    `- Executable file names missing action verb: ${summary.executableFileNamesMissingActionVerb}`,
+    `- Files missing body contract: ${summary.filesMissingBodyContract}`,
+    `- Files missing scenario tie-out: ${summary.filesMissingScenarioTieOut}`,
+    `- Decomposition candidates: ${summary.decompositionCandidates}`,
+    `- Analysis blocker candidates: ${summary.totalBlockers}`,
+    '',
+    '_Domain-analysis findings are deterministic review findings. They do not change the sterility verdict until a promotion gate adopts them._',
+  ];
+
+  const topFindings = readsTopDomainAnalysisFindings(contract.domainAnalysis.sourceFiles || []);
+
+  if (topFindings.length === 0) {
+    return [...summaryLines, '', '_No domain analysis findings detected._'].join('\n');
+  }
+
+  return [
+    ...summaryLines,
+    '',
+    'Top domain analysis findings:',
+    '',
+    '| File | Grammar | Methods | Findings | Decomposition |',
+    '| --- | --- | ---: | --- | --- |',
+    ...topFindings.map(formatsDomainAnalysisFindingRow),
+  ].join('\n');
+}
+
+function readsTopDomainAnalysisFindings(sourceFiles) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const findingFiles = [];
+
+  for (const sourceFile of sourceFiles) {
+    if (sourceFile.findingCodes.length > 0) {
+      findingFiles.push(sourceFile);
+    }
+  }
+
+  return findingFiles.slice(0, 5);
+}
+
+function formatsDomainAnalysisFindingRow(sourceFile) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return [
+    '|',
+    sourceFile.filePath,
+    sourceFile.fileNameGrammar.classification,
+    sourceFile.executableMethodCount,
+    sourceFile.findingCodes.join(', ') || 'none',
+    sourceFile.decomposition.status,
+    '|',
+  ].join(' ');
+}
+
 function rendersSectionBody(sectionId, section, contract) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -220,6 +293,10 @@ function rendersSectionBody(sectionId, section, contract) {
 
   if (section.template === 'kind:sprawl-summary') {
     return rendersSprawlSummarySection(contract);
+  }
+
+  if (section.template === 'kind:domain-analysis-summary') {
+    return rendersDomainAnalysisSummarySection(contract);
   }
 
   if (section.template === 'kind:findings-summary') {

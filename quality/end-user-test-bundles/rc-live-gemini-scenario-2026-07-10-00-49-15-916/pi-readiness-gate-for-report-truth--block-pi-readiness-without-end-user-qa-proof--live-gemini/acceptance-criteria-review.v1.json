@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "pi-readiness-gate-for-report-truth--block-pi-readiness-without-end-user-qa-proof--live-gemini",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "block-pi-readiness-without-end-user-qa-proof",
+  "criteria": [
+    {
+      "criterionText": "But no QA evidence bundle exists for the release candidate",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a precondition. Its direct verification is outside the scope of end-user surfaces. The scenario's outcome, which would confirm the system's reaction to this precondition, cannot be verified due to missing `report.md`.",
+      "evidencePaths": [],
+      "blockerCode": "missing-evidence-report-md",
+      "recommendedFixRoute": "Provide the content of `report.md` to allow verification of the scenario's outcomes, which are dependent on this precondition."
+    },
+    {
+      "criterionText": "Then the PI verdict should be BLOCKED",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The PI verdict cannot be confirmed as the content of `report.md` was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing-evidence-report-md",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And the control report should link to the missing QA proof requirement",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The control report's content, including any links, cannot be verified as `report.md` was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing-evidence-report-md",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The finding code `pi-scope-without-end-user-qa-proof` cannot be confirmed as the content of `report.md` was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing-evidence-report-md",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:22:07.071Z"
+}

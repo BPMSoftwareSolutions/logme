@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "evidence-receipt-coverage--block-verdict-promotion-without-receipt--live-gemini",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "block-verdict-promotion-without-receipt",
+  "scenarioName": "Block verdict promotion without receipt",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block verdict promotion without receipt",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/evidence-receipt-coverage.feature.md:44-53; report.md; live Gemini prompt",
+      "expectedResult": "Given report.md claims a passing or sterile verdict, and the report-generation receipt does not exist, the PI readiness gate should block the verdict promotion, resulting in a PI verdict of BLOCKED and the finding code 'report-verdict-without-receipt'.",
+      "observedResult": "Cannot observe the expected outcome because the critical precondition (absence of receipt) is explicitly contradicted by the test environment setup described, making the scenario untestable under the given conditions.",
+      "timestamp": "2026-07-10T00:57:53.233Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--block-verdict-promotion-without-receipt--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/evidence-receipt-coverage.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--block-verdict-promotion-without-receipt--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "validate-generated-markdown-and-html-projections-as-user-facing-surfaces",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 661,
+    "candidatesTokenCount": 1517,
+    "totalTokenCount": 4424,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 661
+      }
+    ],
+    "thoughtsTokenCount": 2246,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "4da439093747607796f6bc8542fcd74a30381a2a9c2aa29f29c1fdfc66ce6130",
+  "responseSha256": "0ca0b50d32ccda34a459fa1820800886098cee860bb894a0263758e8d9d3ee32",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/validate-generated-markdown-and-html-projections-as-user-facing-surfaces.response.v1.json",
+  "calledAt": "2026-07-10T01:15:02.138Z"
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--keep-json-proof-portable-for-downstream-analysis--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "keep-json-proof-portable-for-downstream-analysis",
+  "criteria": [
+    {
+      "criterionText": "Then the JSON proof should be convertible to CSV without reading the human report",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No canonical JSON proof or CSV output was provided to verify convertibility. The report.md is a human report, not the JSON proof itself, and does not demonstrate this conversion capability.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING_JSON_PROOF_AND_CSV_OUTPUT",
+      "recommendedFixRoute": "Provide the canonical JSON proof and a sample CSV output, or a mechanism (e.g., CLI command output) to perform the conversion and demonstrate its result."
+    },
+    {
+      "criterionText": "And every row projection should preserve:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No CSV or other tabular row projection was provided to inspect for the preservation of the specified fields (run id, feature id, scenario id, node id, node label, runtime path, call index, timestamp, duration ms, elapsed since previous node ms, status, blocker code).",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING_TABULAR_PROJECTION",
+      "recommendedFixRoute": "Provide a sample CSV or other tabular projection derived from the JSON proof, allowing for inspection of all required preserved fields."
+    },
+    {
+      "criterionText": "And CSV, Markdown, and ASCII projections should be treated as projections, not source truth.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin explicitly states this principle. The report.md is a Markdown projection, which is consistent with this statement. However, without access to the canonical JSON proof and the system's internal logic, it is not possible to verify that the implementation truly treats these projections as secondary to the JSON source.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT_FOR_IMPLEMENTATION_PROOF",
+      "recommendedFixRoute": "Provide a clear mechanism or output that demonstrates the JSON proof as the canonical source, from which projections are derived, to confirm the system's adherence to this principle from an end-user perspective."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:02:39.906Z"
+}

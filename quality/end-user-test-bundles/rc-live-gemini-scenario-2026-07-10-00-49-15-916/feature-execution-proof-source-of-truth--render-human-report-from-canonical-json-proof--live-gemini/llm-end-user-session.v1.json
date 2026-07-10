@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--render-human-report-from-canonical-json-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "render-human-report-from-canonical-json-proof",
+  "scenarioName": "Render human report from canonical JSON proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render human report from canonical JSON proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:259-279; report.md; live Gemini prompt",
+      "expectedResult": "A human-readable report (`report.md`) would be generated, containing specific sections, an ASCII sketch with detailed node information, timing/call-count details, method-level drill-down, and generation metadata, all derived from a JSON proof, making it understandable without needing to inspect the raw JSON.",
+      "observedResult": "No `report.md` was observed. Therefore, no verification of the report's content or adherence to the specified criteria could be performed.",
+      "timestamp": "2026-07-10T01:02:03.213Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--render-human-report-from-canonical-json-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--render-human-report-from-canonical-json-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

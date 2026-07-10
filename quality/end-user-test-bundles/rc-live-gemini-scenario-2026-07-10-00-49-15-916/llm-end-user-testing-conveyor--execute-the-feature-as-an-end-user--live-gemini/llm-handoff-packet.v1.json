@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--execute-the-feature-as-an-end-user--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "execute-the-feature-as-an-end-user",
+  "scenarioName": "Execute the feature as an end user",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Execute the feature as an end user\n    Given seed data has been approved or no seed data is required\n    When the LLM executes the feature scenario\n    Then it should interact only through allowed end-user surfaces\n    And allowed surfaces may include:\n      | surface |\n      | CLI command |\n      | Markdown report review |\n      | HTML preview review |\n      | browser workflow |\n      | local app workflow |\n      | CI preview artifact |\n    And every action should be recorded as an end-user step\n    And each step should include:\n      | field |\n      | step index |\n      | action |\n      | target surface |\n      | input used |\n      | expected result |\n      | observed result |\n      | timestamp |\n      | screenshot or output path |\n      | status |\n    And the raw user-session transcript should be written to:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/llm-end-user-session.v1.json\n      \"\"\"\n    And a readable session narrative should be written to:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/end-user-test-session.md\n      \"\"\"\n",
+    "acceptanceCriteria": [
+      "Then it should interact only through allowed end-user surfaces",
+      "And allowed surfaces may include:",
+      "And every action should be recorded as an end-user step",
+      "And each step should include:",
+      "And the raw user-session transcript should be written to:",
+      "And a readable session narrative should be written to:"
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:15:02.126Z"
+}

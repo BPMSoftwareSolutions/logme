@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--project-one-visible-status-sentinel-for-every-feature--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "project-one-visible-status-sentinel-for-every-feature",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 650,
+    "candidatesTokenCount": 1157,
+    "totalTokenCount": 3355,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 650
+      }
+    ],
+    "thoughtsTokenCount": 1548,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "40d192b348f68648c2efb55bbb6cd4e18f58c96b983b4330bb8716dc02750912",
+  "responseSha256": "e09fe64bb3177b55ead32333ea6dfcfd4932c59883a7ee551cddfb7c789ddcc4",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/project-one-visible-status-sentinel-for-every-feature.response.v1.json",
+  "calledAt": "2026-07-10T01:02:39.916Z"
+}

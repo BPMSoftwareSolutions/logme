@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "llm-qa-assignment.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-missing-status-projection-for-a-feature",
+  "scenarioName": "Detect missing status projection for a feature",
+  "acceptanceSourcePath": "docs/features/feature-quality-board-filesystem-body.feature.md",
+  "acceptanceSourceLineRange": {
+    "start": 123,
+    "end": 133
+  },
+  "requestedEndUserPersona": "live Gemini adversarial product owner",
+  "allowedTestSurfaces": [
+    "Markdown report review",
+    "CLI evidence review"
+  ],
+  "allowedSeedDataPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini/seed-data"
+  ],
+  "allowedEvidencePaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini"
+  ],
+  "forbiddenMutationPaths": [
+    "src/",
+    "packages/",
+    "contracts/",
+    "docs/features/"
+  ],
+  "requiredHumanReportArtifacts": [
+    "executable-body-contract.report.md",
+    "feature-execution.contract.v1.json",
+    "method-execution-timeline.table.md",
+    "method-call-evidence.report.md"
+  ],
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "allowsFixtureSeedData": false,
+  "assembledAt": "2026-07-10T01:06:27.110Z"
+}

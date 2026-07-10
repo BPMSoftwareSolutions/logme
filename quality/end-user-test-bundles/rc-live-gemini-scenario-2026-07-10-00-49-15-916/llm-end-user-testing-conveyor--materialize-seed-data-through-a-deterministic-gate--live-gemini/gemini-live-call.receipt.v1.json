@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--materialize-seed-data-through-a-deterministic-gate--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "materialize-seed-data-through-a-deterministic-gate",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 642,
+    "candidatesTokenCount": 826,
+    "totalTokenCount": 2265,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 642
+      }
+    ],
+    "thoughtsTokenCount": 797,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "6bdbd7cdef293479b7a6650bf91c4cac901d4fc193b1a7f647d259b4f59dd46e",
+  "responseSha256": "4673070d68ba5a7b11f4f19a6e89fc661096a0e371e79129c45361001f186db0",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/materialize-seed-data-through-a-deterministic-gate.response.v1.json",
+  "calledAt": "2026-07-10T01:14:36.617Z"
+}

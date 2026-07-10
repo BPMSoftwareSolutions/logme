@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--require-branch-assertions-in-report-tests--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "require-branch-assertions-in-report-tests",
+  "scenarioName": "Require branch assertions in report tests",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Require branch assertions in report tests",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:244-262; report.md; live Gemini prompt",
+      "expectedResult": "The tests should assert that the rendered report contains specific branch lines and should fail if the report lacks the expected branching structure, as described in the Gherkin scenario.",
+      "observedResult": "The Gherkin scenario outlines the expected test behavior. However, no `report.md` or CLI evidence was provided to confirm that the tests actually perform these assertions or fail as expected.",
+      "timestamp": "2026-07-10T01:09:51.733Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--require-branch-assertions-in-report-tests--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--require-branch-assertions-in-report-tests--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

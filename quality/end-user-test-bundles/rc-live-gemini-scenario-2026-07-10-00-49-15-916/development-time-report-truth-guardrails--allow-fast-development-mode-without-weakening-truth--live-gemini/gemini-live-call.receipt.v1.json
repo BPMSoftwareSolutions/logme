@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--allow-fast-development-mode-without-weakening-truth--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "allow-fast-development-mode-without-weakening-truth",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 523,
+    "candidatesTokenCount": 1096,
+    "totalTokenCount": 3351,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 523
+      }
+    ],
+    "thoughtsTokenCount": 1732,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e96e684abf2d991767c8665411edff7ad54b4e228b49f0dedd57e55c7f9df1ac",
+  "responseSha256": "9973971b74b42c9fde644dbc6088cbf281c2e17fee1c7a799bcca3188b248712",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/allow-fast-development-mode-without-weakening-truth.response.v1.json",
+  "calledAt": "2026-07-10T00:52:42.103Z"
+}

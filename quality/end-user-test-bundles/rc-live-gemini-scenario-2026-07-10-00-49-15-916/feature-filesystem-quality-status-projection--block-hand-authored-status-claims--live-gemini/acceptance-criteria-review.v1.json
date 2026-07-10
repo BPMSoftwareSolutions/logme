@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "block-hand-authored-status-claims",
+  "criteria": [
+    {
+      "criterionText": "Then the sentinel should contain a generated signature block",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states this behavior, and the implied passing test suite suggests it works. However, no end-user visible evidence (e.g., actual sentinel content) is provided to confirm the presence of the signature block.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_END_USER_EVIDENCE",
+      "recommendedFixRoute": "Provide actual generated sentinel content in the report or CLI evidence."
+    },
+    {
+      "criterionText": "And the signature block should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin lists the required fields, and the implied passing test suite suggests they are included. However, no end-user visible evidence (e.g., actual signature block content) is provided to confirm these fields are present and correctly populated.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_END_USER_EVIDENCE",
+      "recommendedFixRoute": "Provide actual generated signature block content with populated fields in the report or CLI evidence."
+    },
+    {
+      "criterionText": "And if the sentinel content does not match the source JSON contract, the projection should fail with:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected failure and finding code. The implied passing test suite suggests this failure occurs as expected. However, no end-user visible evidence (e.g., actual error message output showing the finding code) is provided to confirm how this failure is presented.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_END_USER_EVIDENCE",
+      "recommendedFixRoute": "Provide actual error message output, clearly showing the 'feature-status-sentinel-drift' code, in the report or CLI evidence."
+    },
+    {
+      "criterionText": "And a drifted sentinel should not be used for promotion.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states this consequence. The implied passing test suite suggests this behavior is enforced. However, no end-user visible evidence (e.g., CLI output or UI feedback explicitly blocking promotion) is provided to confirm how this 'not used for promotion' manifests to an end-user.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_END_USER_EVIDENCE",
+      "recommendedFixRoute": "Provide observable evidence (e.g., CLI output, UI screenshot) demonstrating the blocking of promotion for a drifted sentinel."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:05:26.949Z"
+}

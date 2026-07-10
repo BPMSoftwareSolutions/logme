@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-contract-schema-enforcement--block-empty-report-schema--live-gemini",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "block-empty-report-schema",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:33:54.310Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 236,
+    "candidatesTokenCount": 203,
+    "totalTokenCount": 1109,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 236
+      }
+    ],
+    "thoughtsTokenCount": 670,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a2788f363efa392573f319f6a2a05e9b1ca09a22dcf6d3f57a43a782b8771d86",
+  "responseSha256": "29c0bbf2cf46bd088c7489ba13f07a728078cc0b48d3532f5c732abcb915a00d",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/report-contract-schema-enforcement/block-empty-report-schema.response.v1.json"
+}

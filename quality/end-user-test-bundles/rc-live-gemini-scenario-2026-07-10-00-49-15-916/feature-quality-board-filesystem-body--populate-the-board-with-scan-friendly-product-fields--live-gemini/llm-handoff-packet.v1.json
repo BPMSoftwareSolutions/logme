@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--populate-the-board-with-scan-friendly-product-fields--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "populate-the-board-with-scan-friendly-product-fields",
+  "scenarioName": "Populate the board with scan-friendly product fields",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Populate the board with scan-friendly product fields\n    Given feature status contracts exist\n    When the Markdown quality board is generated\n    Then each feature row should include:\n      | field |\n      | feature id |\n      | feature name |\n      | display status |\n      | implementation status |\n      | execution proof status |\n      | end-user QA status |\n      | promotion status |\n      | latest release candidate id |\n      | latest QA run id |\n      | latest QA bundle path |\n      | blocker count |\n      | top blocker code |\n      | stale indicator |\n      | next action |\n    And the board should sort features by product urgency:\n      | order |\n      | stale |\n      | QA blocked |\n      | QA failed |\n      | implemented but not tested |\n      | proof blocked |\n      | not implemented |\n      | QA passed but not promoted |\n      | QA waived |\n      | QA passed and promoted |\n    And the board should group promoted features separately from features needing action.\n",
+    "acceptanceCriteria": [
+      "Then each feature row should include:",
+      "And the board should sort features by product urgency:",
+      "And the board should group promoted features separately from features needing action."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:05:55.049Z"
+}

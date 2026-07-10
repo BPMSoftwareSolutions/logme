@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--keep-renderer-code-as-a-generic-engine--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "keep-renderer-code-as-a-generic-engine",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 505,
+    "candidatesTokenCount": 677,
+    "totalTokenCount": 2657,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 505
+      }
+    ],
+    "thoughtsTokenCount": 1475,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "068a668f29625989d331b2b5c2e02816aba8a18f9262a0bca8b7c8d4f7c03caa",
+  "responseSha256": "b332872b5830647632f7e5bc9359581efb74afbc778d521318a8b6bd07920949",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/keep-renderer-code-as-a-generic-engine.response.v1.json",
+  "calledAt": "2026-07-10T00:51:34.156Z"
+}

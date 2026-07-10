@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "recompute-summary-from-method-rows",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 367,
+    "candidatesTokenCount": 243,
+    "totalTokenCount": 908,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 367
+      }
+    ],
+    "thoughtsTokenCount": 298,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "FAIL",
+    "observationSummary": "As an AI, I cannot directly execute the feature or access `report.md` or CLI evidence to verify the recomputation of summary metrics from method rows. Therefore, I cannot provide an observed result based on actual execution.",
+    "expectedResult": "`localExecutableMethods` should equal the number of method rows. `methodsWithLogMeCall` should equal rows where LogMe is `yes`. `silentLocalMethods` should equal rows where LogMe is `no`. `methodsWithLogMeCall + silentLocalMethods` should equal `localExecutableMethods`. `coverage` should equal `methodsWithLogMeCall / localExecutableMethods`.",
+    "observedResult": "Unable to observe due to AI limitations; no direct execution or file access is possible.",
+    "recommendedFollowUps": "A human tester or an automated testing framework should execute the scenario 'Recompute summary from method rows' against the live Gemini system. Evidence from `report.md` and CLI output should be collected to verify that the summary metrics are correctly recomputed and tie out with the method rows as specified in the criteria."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--preserve-sla-evidence-without-turning-reports-into-contracts--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-sla-evidence-without-turning-reports-into-contracts",
+  "scenarioName": "Preserve SLA evidence without turning reports into contracts",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve SLA evidence without turning reports into contracts",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:249-258; report.md; live Gemini prompt",
+      "expectedResult": "The `report.md` should clearly indicate SLO status (met, missed, lacked evidence), avoid presenting satisfied SLAs without satisfied SLOs, and use the specified finding code for unsupported SLA claims. The JSON proof should contain all necessary SLA calculation evidence.",
+      "observedResult": "No `report.md` content or JSON proof was provided, preventing observation of the expected behavior.",
+      "timestamp": "2026-07-10T01:01:43.976Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--preserve-sla-evidence-without-turning-reports-into-contracts--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--preserve-sla-evidence-without-turning-reports-into-contracts--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--block-scenario-promotion-when-feature-evidence-report-is-missing--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "block-scenario-promotion-when-feature-evidence-report-is-missing",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 579,
+    "candidatesTokenCount": 779,
+    "totalTokenCount": 2098,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 579
+      }
+    ],
+    "thoughtsTokenCount": 740,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "dd066644d2bf2ee332fe5d7a32df86e18e4126d7024ade9b7abc93432f60b0d2",
+  "responseSha256": "5e21964a74ce9bab883847ca2651f18079ae26a0a3a899feb37d4b319546382f",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/block-scenario-promotion-when-feature-evidence-report-is-missing.response.v1.json",
+  "calledAt": "2026-07-10T01:20:52.006Z"
+}

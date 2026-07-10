@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--label-inventory-order-honestly--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "label-inventory-order-honestly",
+  "proofReportPaths": [],
+  "missingReports": []
+}

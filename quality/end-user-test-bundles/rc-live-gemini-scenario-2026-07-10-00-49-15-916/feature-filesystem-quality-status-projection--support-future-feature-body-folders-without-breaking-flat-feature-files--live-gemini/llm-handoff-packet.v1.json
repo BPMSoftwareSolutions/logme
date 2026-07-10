@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--support-future-feature-body-folders-without-breaking-flat-feature-files--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "support-future-feature-body-folders-without-breaking-flat-feature-files",
+  "scenarioName": "Support future feature body folders without breaking flat feature files",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Support future feature body folders without breaking flat feature files\n    Given the repository currently stores feature specs as flat `docs/features/<feature-id>.feature.md` files\n    When the projection writes filesystem status\n    Then it should use the root-level `_STATUS.<display-status>.<feature-id>.md` sentinel pattern\n    And if a future feature body folder exists at:\n      \"\"\"\n      docs/features/<feature-id>/feature.md\n      \"\"\"\n    Then the projection may also write:\n      \"\"\"\n      docs/features/<feature-id>/_STATUS.<display-status>.md\n      docs/features/<feature-id>/feature.status.v1.json\n      docs/features/<feature-id>/latest-qa-bundle.pointer.json\n      \"\"\"\n    But the flat-file projection should remain supported until the repository explicitly migrates feature specs into folders.\n",
+    "acceptanceCriteria": [
+      "Then it should use the root-level `_STATUS.<display-status>.<feature-id>.md` sentinel pattern",
+      "And if a future feature body folder exists at:",
+      "Then the projection may also write:",
+      "But the flat-file projection should remain supported until the repository explicitly migrates feature specs into folders."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:05:08.104Z"
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "llm-seed-data-proposal.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "fail-local-verification-when-tests-pass-but-report-is-contaminated",
+  "seedDataId": "development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini-seed-data",
+  "purpose": "No seed records required for Markdown and CLI evidence review.",
+  "scenarioCoverage": [
+    "fail-local-verification-when-tests-pass-but-report-is-contaminated"
+  ],
+  "recordsToCreate": [],
+  "filesToCreate": [],
+  "expectedUserVisibleState": "No additional user-visible seed state required.",
+  "cleanupInstructions": "Remove the QA bundle seed-data directory after review if cleanup is requested.",
+  "allowedPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini/seed-data"
+  ],
+  "privacyClassification": "synthetic",
+  "syntheticDataDeclaration": "All proposed seed data is synthetic."
+}

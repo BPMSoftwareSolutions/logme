@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-receipt-proof--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "tie-method-calls-to-receipt-proof",
+  "scenarioName": "Tie method calls to receipt proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Tie method calls to receipt proof\n    Given a method call performs or participates in a receipted action\n    When method-level receipt tie-out runs\n    Then the method call should list the receipt paths that prove the action\n    And each receipt path should be repo-relative\n    And each receipt path should include a content hash or receipt id in the canonical JSON proof\n    And a required receipt missing from disk should block that method call\n    And the finding code should be:\n      | finding |\n      | method-call-receipt-missing |\n",
+    "acceptanceCriteria": [
+      "Then the method call should list the receipt paths that prove the action",
+      "And each receipt path should be repo-relative",
+      "And each receipt path should include a content hash or receipt id in the canonical JSON proof",
+      "And a required receipt missing from disk should block that method call",
+      "And the finding code should be:"
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:18:37.685Z"
+}

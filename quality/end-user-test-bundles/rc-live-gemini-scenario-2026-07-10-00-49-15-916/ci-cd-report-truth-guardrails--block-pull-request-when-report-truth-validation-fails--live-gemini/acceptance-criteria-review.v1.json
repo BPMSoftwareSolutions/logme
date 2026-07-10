@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-pull-request-when-report-truth-validation-fails--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-pull-request-when-report-truth-validation-fails",
+  "criteria": [
+    {
+      "criterionText": "Then it should run:",
+      "status": "met",
+      "llmObservationSummary": "The report.md generated after a passing local test suite implicitly confirms that the listed gates successfully executed as part of the report truth workflow.",
+      "evidencePaths": [
+        "docs/features/ci-cd-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-pull-request-when-report-truth-validation-fails--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And the pull request should fail if any gate fails.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The provided report.md is from a passing local test suite. It does not contain evidence of a gate failing or a pull request being blocked due to a gate failure. To verify this, evidence of a failing gate and the subsequent PR status would be required.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_EVIDENCE_FOR_FAILURE_CONDITION",
+      "recommendedFixRoute": "Provide evidence of a CI run where a report truth gate fails and the pull request is subsequently blocked."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:49:43.866Z"
+}

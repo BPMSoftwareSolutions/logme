@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-method-evidence-appendix-for-deep-review--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-method-evidence-appendix-for-deep-review",
+  "scenarioName": "Render method evidence appendix for deep review",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render method evidence appendix for deep review",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:183-198; report.md; live Gemini prompt",
+      "expectedResult": "A detailed Markdown appendix (`method-call-evidence.report.md`) should be generated at the specified path, grouping method calls by body node, runtime file, method name, and call index. Each method call should expose telemetry event IDs, receipt paths, source line range, and blocker/fix route. The appendix should also link back to `executable-body-contract.report.md`.",
+      "observedResult": "No `report.md` or `method-call-evidence.report.md` content was provided, preventing any observation of the expected results.",
+      "timestamp": "2026-07-10T01:19:03.982Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-method-evidence-appendix-for-deep-review--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-method-evidence-appendix-for-deep-review--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

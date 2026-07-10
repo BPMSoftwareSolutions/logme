@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "fail-local-verification-when-tests-pass-but-report-is-contaminated",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 601,
+    "candidatesTokenCount": 845,
+    "totalTokenCount": 2458,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 601
+      }
+    ],
+    "thoughtsTokenCount": 1012,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario's acceptance criteria require review of the `report.md` file and CLI output from the local verification command. Neither of these critical evidence surfaces were provided, preventing any verification of the expected behavior.",
+    "expectedResult": "The local verification command should fail, indicating 'tests pass, report truth gate fails', display specific output fields including 'report verdict' and 'coverage', and not emit any promotion-ready or clean claims, as detailed in the acceptance criteria.",
+    "observedResult": "No `report.md` content or CLI output was provided, making it impossible to observe the expected command failure, status message, output fields, or the absence of promotion claims.",
+    "confusingOrRiskyExperiencePoints": "Without access to the actual `report.md` and CLI output, it's impossible to identify any confusing or risky user experience points related to the feature's behavior.",
+    "accessibilityOrReadabilityObservations": "The provided Gherkin is clear and readable. However, the lack of actual report and CLI evidence makes it impossible to assess the accessibility or readability of the feature's output.",
+    "recommendedFollowUps": "Provide the `report.md` content and the full CLI output of the local verification command for this specific scenario to enable proper testing against the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And the generated report verdict is `DOMAIN BODY CONTAMINATED`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so the generated report verdict could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file content."
+      },
+      {
+        "criterionText": "Then the command should fail",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The CLI output for the local verification command was not provided, so it could not be verified if the command failed.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the CLI output of the local verification command."
+      },
+      {
+        "criterionText": "And the status should say: \"tests pass, report truth gate fails\"",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The CLI output for the local verification command was not provided, so the status message could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the CLI output of the local verification command."
+      },
+      {
+        "criterionText": "And the output should show: | field | | report verdict | | coverage | | silent local methods | | anonymous executable methods | | top finding codes | | top finding paths |",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The CLI output for the local verification command was not provided, so the presence of the specified output fields could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the CLI output of the local verification command."
+      },
+      {
+        "criterionText": "And no local command should emit a promotion-ready or clean claim.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The CLI output for the local verification command was not provided, so it could not be verified that no promotion-ready or clean claim was emitted.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the CLI output of the local verification command."
+      }
+    ]
+  }
+}

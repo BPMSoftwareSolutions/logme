@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--assign-a-feature-scenario-to-the-llm-testing-conveyor--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "assign-a-feature-scenario-to-the-llm-testing-conveyor",
+  "scenarioName": "Assign a feature scenario to the LLM testing conveyor",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Assign a feature scenario to the LLM testing conveyor",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:8-34; report.md; live Gemini prompt",
+      "expectedResult": "An LLM QA assignment should be created with all specified fields, the provider should default to Gemini, and the assignment should be written to the expected path: quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/llm-qa-assignment.v1.json.",
+      "observedResult": "The creation, content, and storage location of the LLM QA assignment could not be observed or verified from the provided end-user surfaces. The Gherkin states the scenario is ready for validation.",
+      "timestamp": "2026-07-10T01:13:59.894Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--assign-a-feature-scenario-to-the-llm-testing-conveyor--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--assign-a-feature-scenario-to-the-llm-testing-conveyor--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

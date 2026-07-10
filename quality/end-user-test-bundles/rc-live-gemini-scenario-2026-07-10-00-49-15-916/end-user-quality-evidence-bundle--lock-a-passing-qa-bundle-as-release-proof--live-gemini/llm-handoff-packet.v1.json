@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--lock-a-passing-qa-bundle-as-release-proof--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "lock-a-passing-qa-bundle-as-release-proof",
+  "scenarioName": "Lock a passing QA bundle as release proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Lock a passing QA bundle as release proof\n    Given a QA bundle has quality gate decision `QA passed`\n    When the quality promotion gate runs\n    Then it should mark the release candidate as promotable only if:\n      | requirement |\n      | all required feature scenarios are QA passed or explicitly waived |\n      | every QA-passed scenario has executable body proof |\n      | every required Markdown report exists |\n      | every required HTML preview exists when the feature has an HTML projection |\n      | machine provenance is present |\n      | bundle manifest hashes match bundle contents |\n      | blocker count is zero |\n    And it should write the promotion decision to:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/qa-gate-decision.v1.json\n      \"\"\"\n    And a promoted bundle should be immutable\n    And any correction should create a new QA run id, not mutate the promoted bundle.\n",
+    "acceptanceCriteria": [
+      "Then it should mark the release candidate as promotable only if:",
+      "And it should write the promotion decision to:",
+      "And a promoted bundle should be immutable",
+      "And any correction should create a new QA run id, not mutate the promoted bundle."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:56:50.934Z"
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "block-package-governed-claim-without-package-receipt",
+  "criteria": [
+    {
+      "criterionText": "But no package governance contract or receipt path is rendered",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the absence of a package governance contract or receipt path requires inspecting the 'report.md' or Gemini live-call receipt, neither of which were provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD_OR_GEMINI_RECEIPT",
+      "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "Then the report should show the package scope as UNVERIFIED",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the 'UNVERIFIED' package scope requires inspecting the 'report.md' or Gemini live-call receipt, neither of which were provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD_OR_GEMINI_RECEIPT",
+      "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the 'package-governance-unproven' finding code requires inspecting the 'report.md' or Gemini live-call receipt, neither of which were provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD_OR_GEMINI_RECEIPT",
+      "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:55:38.988Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini",
+  "featureId": "gherkin-driven-report-development",
+  "scenarioId": "trace-report-sections-to-scenarios",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 482,
+    "candidatesTokenCount": 613,
+    "totalTokenCount": 2322,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 482
+      }
+    ],
+    "thoughtsTokenCount": 1227,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b6eba1b9fe7a74083078e8c080f857ea447d9fdd6f837bd0dd712cb8ecc2a72a",
+  "responseSha256": "3c9030ae9689e899ffc24cc41129853627ecce02c23f2092f4a11808206b59fe",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/gherkin-driven-report-development/trace-report-sections-to-scenarios.response.v1.json",
+  "calledAt": "2026-07-10T01:13:03.384Z"
+}

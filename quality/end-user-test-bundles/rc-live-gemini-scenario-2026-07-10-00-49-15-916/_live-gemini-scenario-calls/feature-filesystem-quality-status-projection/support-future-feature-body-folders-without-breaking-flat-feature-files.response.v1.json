@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "support-future-feature-body-folders-without-breaking-flat-feature-files",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 649,
+    "candidatesTokenCount": 849,
+    "totalTokenCount": 3598,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 649
+      }
+    ],
+    "thoughtsTokenCount": 2100,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided Gherkin describes the intended behavior and acceptance criteria for the feature. However, no actual test execution report (e.g., report.md) or live-call receipt was provided to verify if the described behavior was observed during a test run. Therefore, it is impossible to confirm the implementation status based on the supplied end-user surfaces.",
+    "expectedResult": "The system should correctly project filesystem status for both flat feature files and future folder-based feature bodies, maintaining backward compatibility for flat files as described in the Gherkin scenario.",
+    "observedResult": "Cannot be determined as no execution evidence (e.g., report.md content or live-call receipt) was provided for review.",
+    "confusingOrRiskyExperiencePoints": "The absence of execution evidence makes it impossible to identify any confusing or risky experience points from an end-user perspective.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario itself is clear and readable. The issue lies with the missing evidence of execution.",
+    "recommendedFollowUps": "Provide the 'report.md' content and the Gemini live-call receipt for review. Without these, no meaningful QA can be performed to verify the implementation against the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should use the root-level `_STATUS.<display-status>.<feature-id>.md` sentinel pattern",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes this as an expected outcome, but no test report or execution evidence is provided to confirm this behavior was observed.",
+        "blockerCode": "NO_EXECUTION_EVIDENCE",
+        "recommendedFixRoute": "Provide the 'report.md' content or other execution logs/receipts that demonstrate this behavior."
+      },
+      {
+        "criterionText": "And if a future feature body folder exists at:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a conditional setup for the test, not an outcome. There is no execution evidence to confirm the system's behavior under this condition or if the condition was met during testing.",
+        "blockerCode": "NO_EXECUTION_EVIDENCE",
+        "recommendedFixRoute": "Provide the 'report.md' content or other execution logs/receipts that demonstrate the system's handling of this condition."
+      },
+      {
+        "criterionText": "Then the projection may also write:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes potential additional files written for folder-based features, but no test report or execution evidence is provided to confirm if and when these files are written.",
+        "blockerCode": "NO_EXECUTION_EVIDENCE",
+        "recommendedFixRoute": "Provide the 'report.md' content or other execution logs/receipts, specifically showing the presence or absence of these files under the specified conditions."
+      },
+      {
+        "criterionText": "But the flat-file projection should remain supported until the repository explicitly migrates feature specs into folders.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a long-term support and backward compatibility requirement. The Gherkin states this as an expectation, but no test report or execution evidence is provided to confirm that the flat-file projection did remain supported during the test run, especially in the presence of folder-based features.",
+        "blockerCode": "NO_EXECUTION_EVIDENCE",
+        "recommendedFixRoute": "Provide the 'report.md' content or other execution logs/receipts that explicitly demonstrate the continued support for flat-file projections."
+      }
+    ]
+  }
+}

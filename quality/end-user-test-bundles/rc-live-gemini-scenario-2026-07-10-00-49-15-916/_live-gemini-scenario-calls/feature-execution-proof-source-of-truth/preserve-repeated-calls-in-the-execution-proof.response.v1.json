@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-repeated-calls-in-the-execution-proof",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 604,
+    "candidatesTokenCount": 771,
+    "totalTokenCount": 2664,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 604
+      }
+    ],
+    "thoughtsTokenCount": 1289,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "Crucial evidence surfaces, specifically the 'report.md' and the Gemini live-call receipt, were not provided. This prevents any verification of the acceptance criteria for the 'Preserve repeated calls in the execution proof' scenario.",
+    "expectedResult": "All acceptance criteria should be verifiable through the provided 'report.md' and Gemini live-call receipt, demonstrating that repeated calls are preserved, summarized correctly, and presented clearly in the report and any dense table projections.",
+    "observedResult": "No verification was possible due to the absence of the 'report.md' and Gemini live-call receipt. The Gherkin alone is insufficient to confirm the implementation.",
+    "confusingOrRiskyExperiencePoints": "The inability to review the actual output (report, JSON proof) means there's a high risk that the feature might not behave as expected for repeated calls, potentially leading to incomplete or misleading execution proofs for end-users.",
+    "accessibilityOrReadabilityObservations": "N/A - No report or UI was provided to evaluate for accessibility or readability.",
+    "recommendedFollowUps": "Provide the 'report.md' and Gemini live-call receipt for this scenario to enable proper QA testing. Without these, the feature cannot be adequately verified from an end-user perspective.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the node should preserve each observed call in order",
+        "status": "blocked",
+        "llmObservationSummary": "Cannot verify if the node preserves each observed call in order as the canonical JSON proof or a detailed report showing this is not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the canonical JSON proof or a detailed report section demonstrating the preservation and order of observed calls."
+      },
+      {
+        "criterionText": "And the node summary should include:",
+        "status": "blocked",
+        "llmObservationSummary": "Cannot verify if the node summary includes the specified fields (call count, first call timestamp, last call timestamp, total duration ms, minimum call duration ms, maximum call duration ms, average call duration ms) as the canonical JSON proof or a detailed report is not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the canonical JSON proof or a detailed report showing the node summary with all the required fields."
+      },
+      {
+        "criterionText": "And the report should show the call count in the ASCII sketch",
+        "status": "blocked",
+        "llmObservationSummary": "Cannot verify if the report shows the call count in the ASCII sketch as the 'report.md' file is not provided for review.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the 'report.md' file for review, specifically highlighting the ASCII sketch section."
+      },
+      {
+        "criterionText": "And any dense table projection should allow the product owner to inspect every call without changing the source JSON.",
+        "status": "blocked",
+        "llmObservationSummary": "Cannot verify if any dense table projection allows inspection of every call without changing the source JSON, as no such projection or UI is provided for review.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide access to the dense table projection (e.g., screenshot, UI link, or detailed report section) for review."
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--block-clean-label-with-nonzero-findings--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "block-clean-label-with-nonzero-findings",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

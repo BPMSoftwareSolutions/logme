@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--preserve-product-readable-execution-tree-shape--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "preserve-product-readable-execution-tree-shape",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 585,
+    "candidatesTokenCount": 880,
+    "totalTokenCount": 2526,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 585
+      }
+    ],
+    "thoughtsTokenCount": 1061,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "21dae8d0248750b2b600e4628b2af8ff3585f91e0561500aab03c22360db3df5",
+  "responseSha256": "c153091d12dc25256776cee49b4d6442a2e4706dd0cfd5a44850e98a5c61cb80",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/preserve-product-readable-execution-tree-shape.response.v1.json",
+  "calledAt": "2026-07-10T01:11:08.988Z"
+}

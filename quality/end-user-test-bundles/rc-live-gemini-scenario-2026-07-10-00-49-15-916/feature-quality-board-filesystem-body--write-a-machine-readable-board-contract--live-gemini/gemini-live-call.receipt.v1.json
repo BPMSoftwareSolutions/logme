@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "write-a-machine-readable-board-contract",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 656,
+    "candidatesTokenCount": 947,
+    "totalTokenCount": 3305,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 656
+      }
+    ],
+    "thoughtsTokenCount": 1702,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a5817ebbdaa6887940fe9ccd83e68f74b3f4bf9737c46fb5fa0000d8a01803da",
+  "responseSha256": "b6f6709c2a9686aa98d1059aac3064fc1f467d347a5dce42f63a742ba71af7c5",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/write-a-machine-readable-board-contract.response.v1.json",
+  "calledAt": "2026-07-10T01:05:55.128Z"
+}

@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "machine-environment.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--inventory-qa-status-for-every-feature-scenario--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "inventory-qa-status-for-every-feature-scenario",
+  "nodeVersion": "v20.19.0",
+  "platform": "win32",
+  "commandExecuted": "npm test; node scripts/report-truth.js --fast; live Gemini scenario QA call",
+  "capturedAt": "2026-07-10T00:55:49.854Z"
+}

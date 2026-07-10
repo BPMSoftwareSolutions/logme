@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "extend-canonical-json-proof-with-method-calls-under-each-body-node",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 749,
+    "candidatesTokenCount": 1026,
+    "totalTokenCount": 3001,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 749
+      }
+    ],
+    "thoughtsTokenCount": 1226,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (Gherkin, mention of report.md, and future Gemini receipt) do not allow for direct inspection of the generated `feature-execution.contract.v1.json` proof. Therefore, none of the acceptance criteria related to the structure, content, or ordering of `methodCalls` within the JSON proof can be verified.",
+    "expectedResult": "The `feature-execution.contract.v1.json` proof should be extended with `methodCalls` under each body node, containing specific fields, ordered by runtime sequence, and handling missing telemetry/receipts as specified, without inventing calls.",
+    "observedResult": "Cannot observe the actual `feature-execution.contract.v1.json` proof or its contents from the provided surfaces. The Gherkin describes the expected behavior, and `report.md` is stated to have passed, but its content is not accessible for verification.",
+    "confusingOrRiskyExperiencePoints": "The inability to inspect the actual output (the JSON proof) makes it impossible to confirm the feature's implementation from an end-user QA perspective. Relying solely on a 'passed' report without content verification introduces risk.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is lack of access to the artifact, not its readability.",
+    "recommendedFollowUps": "Provide direct access to the `feature-execution.contract.v1.json` proof, or a detailed excerpt from `report.md` that explicitly shows the structure and content of the `methodCalls` for a representative execution node, to enable verification of these criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then each observed execution node should contain `methodCalls`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if each observed execution node contains `methodCalls` as the `feature-execution.contract.v1.json` proof is not accessible.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the generated JSON proof."
+      },
+      {
+        "criterionText": "And each method call should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if each method call includes the specified fields as the `feature-execution.contract.v1.json` proof is not accessible.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the generated JSON proof."
+      },
+      {
+        "criterionText": "And every method call should be ordered by observed runtime sequence",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the ordering of method calls by observed runtime sequence as the `feature-execution.contract.v1.json` proof is not accessible.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the generated JSON proof."
+      },
+      {
+        "criterionText": "And a method call without telemetry should use `not observed` for timing fields",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the handling of timing fields for method calls without telemetry as the `feature-execution.contract.v1.json` proof is not accessible.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the generated JSON proof."
+      },
+      {
+        "criterionText": "And a method call without required receipt proof should use `missing` for receipt fields",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the handling of receipt fields for method calls without required receipt proof as the `feature-execution.contract.v1.json` proof is not accessible.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the generated JSON proof."
+      },
+      {
+        "criterionText": "And the JSON proof should not invent method calls from static inventory.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify that the JSON proof does not invent method calls from static inventory as the `feature-execution.contract.v1.json` proof is not accessible.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the generated JSON proof."
+      }
+    ]
+  }
+}

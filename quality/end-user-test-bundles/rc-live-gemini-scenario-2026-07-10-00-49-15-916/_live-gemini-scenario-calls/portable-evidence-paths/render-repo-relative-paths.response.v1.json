@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "render-repo-relative-paths",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 460,
+    "candidatesTokenCount": 523,
+    "totalTokenCount": 1607,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 460
+      }
+    ],
+    "thoughtsTokenCount": 624,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` and Gemini live-call receipt evidence surfaces were not provided, preventing verification of the scenario's acceptance criteria.",
+    "expectedResult": "The `report.md` should display repo-relative paths for locations, include line start and end numbers, and show the configured root once in the provenance section.",
+    "observedResult": "No `report.md` or Gemini live-call receipt was provided, so the expected rendering could not be observed.",
+    "confusingOrRiskyExperiencePoints": "Without the actual `report.md`, it's impossible to confirm if the feature works as expected, leading to uncertainty about the correctness of path rendering.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is missing evidence, not readability of existing evidence.",
+    "recommendedFollowUps": "Provide the `report.md` and Gemini live-call receipt for review to enable proper verification of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the Location value should be repo-relative",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` was not provided, so this criterion could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` for review."
+      },
+      {
+        "criterionText": "And the report should show line start and line end",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` was not provided, so this criterion could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` for review."
+      },
+      {
+        "criterionText": "And the report should render the configured root once in the provenance section.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` was not provided, so this criterion could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` for review."
+      }
+    ]
+  }
+}

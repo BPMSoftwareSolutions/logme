@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "domain-naming-convention-correction",
+  "featureName": "Domain naming convention correction",
+  "sourceFeaturePath": "docs/features/domain-naming-convention-correction.feature.md",
+  "sourceFeatureContentHash": "583fd069f1e666711869d645252069f0ff38d1090d1e6d2e895ab5a8f62172ce",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "e32639231df3c49c425ee7ca6900b7fa068d76d603d8e4adbb9e92da60077f30"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Domain naming convention correction is currently qa-blocked."
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "write-machine-readable-status-beside-the-filesystem-sentinel",
+  "scenarioName": "Write machine-readable status beside the filesystem sentinel",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Write machine-readable status beside the filesystem sentinel",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:74-107; report.md; live Gemini prompt",
+      "expectedResult": "All acceptance criteria should be verifiable and met based on provided evidence, including the generated JSON status contract and the updated sentinel Markdown.",
+      "observedResult": "No evidence was provided to verify the actual output of the system. The `report.md` and other generated artifacts mentioned as 'available' were not included in the prompt, rendering all criteria untestable from the assigned surface.",
+      "timestamp": "2026-07-10T01:03:29.776Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

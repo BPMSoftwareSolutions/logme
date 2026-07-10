@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "method-level-execution-drill-down",
+  "featureName": "Method-level execution drill-down",
+  "sourceFeaturePath": "docs/features/method-level-execution-drill-down.feature.md",
+  "sourceFeatureContentHash": "14079b63420c187a40dbe46d7abf406437b91a52538ac55a2d83ff764fe43bb5",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "1b75c7e2e61b236138741a9cdb7f3e8fc33e016a86a81cfbb89f362893f6b289"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Method-level execution drill-down is currently qa-blocked."
+}

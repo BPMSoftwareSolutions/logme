@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "write-machine-readable-status-beside-the-filesystem-sentinel",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 709,
+    "candidatesTokenCount": 829,
+    "totalTokenCount": 2492,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 709
+      }
+    ],
+    "thoughtsTokenCount": 954,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "59b402b9fcdcc35643ef1b2c5c0dc7b49b7219293109d8bae05d84f1ddc83b3b",
+  "responseSha256": "ba420926edd205b071bf94a356d53d48e5fb57816460f706577a76d209d124e3",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/write-machine-readable-status-beside-the-filesystem-sentinel.response.v1.json",
+  "calledAt": "2026-07-10T01:03:29.776Z"
+}

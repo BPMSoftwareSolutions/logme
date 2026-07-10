@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--lock-a-passing-qa-bundle-as-release-proof--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "lock-a-passing-qa-bundle-as-release-proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 661,
+    "candidatesTokenCount": 939,
+    "totalTokenCount": 3130,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 661
+      }
+    ],
+    "thoughtsTokenCount": 1530,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "bb435f030267eb4a6f6952469098914b149a7ed921c23b0ffbb950f71a4208ca",
+  "responseSha256": "69d0e0197aacef81f79fc1a45a53f75d6c4cb96d5e3d134eeb488ec6b136401b",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/lock-a-passing-qa-bundle-as-release-proof.response.v1.json",
+  "calledAt": "2026-07-10T00:56:40.227Z"
+}

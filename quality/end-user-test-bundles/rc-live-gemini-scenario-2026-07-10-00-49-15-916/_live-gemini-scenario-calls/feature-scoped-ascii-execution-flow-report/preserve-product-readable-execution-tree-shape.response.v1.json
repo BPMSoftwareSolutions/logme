@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "preserve-product-readable-execution-tree-shape",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 585,
+    "candidatesTokenCount": 880,
+    "totalTokenCount": 2526,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 585
+      }
+    ],
+    "thoughtsTokenCount": 1061,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` artifact, crucial for verifying the visual layout, grouping, and content of the feature-scoped ASCII execution flow report, was not provided. Without this evidence, it is impossible to test whether the execution tree shape is preserved, sections fit on screen, evidence routes are visible, or blockers are correctly placed.",
+    "expectedResult": "The feature-scoped executable body report should render the body tree grouped by sections (acceptance source, surface receipt, canonical binding, shared runner, root contract resolution, gates, routing, provider call, receipt writeback, and surface parity). Each section should fit on screen without dense paragraphs. Every section should display the evidence route 'contract -> runtime -> telemetry -> receipt -> status'. Blockers should appear directly under the section where truth broke.",
+    "observedResult": "No `report.md` artifact was available for review. Therefore, no observations could be made regarding the rendered report's structure, content, or visual presentation against the acceptance criteria.",
+    "confusingOrRiskyExperiencePoints": "The absence of the `report.md` makes it impossible to confirm the user experience of navigating the execution flow report. Without visual confirmation, there's a risk that the report might not be product-readable, sections could be too dense, or critical information like evidence routes and blockers might be missing or misplaced, leading to a poor debugging or understanding experience for product owners.",
+    "accessibilityOrReadabilityObservations": "Cannot assess accessibility or readability without the `report.md`. The criteria specifically mention 'fit on screen without requiring the product owner to read a dense paragraph', which directly relates to readability. Without the report, this aspect cannot be evaluated.",
+    "recommendedFollowUps": "Provide the `report.md` artifact generated after the local test suite passed for `rc-live-gemini-scenario-2026-07-10-00-49-15-916` to enable testing of the 'Preserve product-readable execution tree shape' scenario. Re-run this QA test once the report is available.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the report should keep the tree grouped by those body sections",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` artifact was not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` artifact for review."
+      },
+      {
+        "criterionText": "And each section should fit on screen without requiring the product owner to read a dense paragraph",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` artifact was not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` artifact for review."
+      },
+      {
+        "criterionText": "And every section should make the evidence route visible as:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` artifact was not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` artifact for review."
+      },
+      {
+        "criterionText": "And the report should show blockers directly under the section where truth broke.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` artifact was not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` artifact for review."
+      }
+    ]
+  }
+}

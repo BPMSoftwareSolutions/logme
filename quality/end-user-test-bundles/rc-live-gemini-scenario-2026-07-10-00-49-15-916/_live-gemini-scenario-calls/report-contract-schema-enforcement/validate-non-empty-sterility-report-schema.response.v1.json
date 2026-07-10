@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "validate-non-empty-sterility-report-schema",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 354,
+    "candidatesTokenCount": 363,
+    "totalTokenCount": 1319,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 354
+      }
+    ],
+    "thoughtsTokenCount": 602,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "INCONCLUSIVE",
+    "observationSummary": "As an AI, I lack the ability to execute the report generator, inspect in-memory data structures, or verify the contents of generated files like 'report.md' or CLI output. Therefore, I cannot provide direct evidence for the criteria 'the report generator has built an in-memory report contract', 'the contract should include' specific fields, or 'markdown should be written only after schema validation passes'.",
+    "expectedResult": "The report generator successfully builds an in-memory report contract, schema validation passes against 'contracts/domains/logme/sterility-report.schema.v1.json', and a 'report.md' file is generated containing all specified fields (generatedBy, schemaVersion, reportPath, configPath, rootDir, filesScanned, localExecutableMethods, domainBoundMethods, methodsWithLogMeCall, silentLocalMethods, findings, methods, coverage, verdict, evidence), indicating successful schema enforcement and markdown generation post-validation.",
+    "observedResult": "Unable to observe the execution of the report generator, the state of the in-memory contract, the outcome of schema validation, or the generation and content of 'report.md' due to environmental limitations. No CLI evidence or 'report.md' content could be provided.",
+    "recommendedFollowUps": "This test requires execution within a live environment where the report generator can be run, and its output (both in-memory contract details and the generated 'report.md' file) can be inspected. A human tester or an automated test harness with file system and process execution access should perform this validation, providing 'report.md' content and relevant CLI logs as evidence."
+  }
+}

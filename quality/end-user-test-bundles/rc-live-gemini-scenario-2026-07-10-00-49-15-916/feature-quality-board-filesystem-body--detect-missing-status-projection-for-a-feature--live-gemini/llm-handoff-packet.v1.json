@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-missing-status-projection-for-a-feature",
+  "scenarioName": "Detect missing status projection for a feature",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Detect missing status projection for a feature\n    Given a committed feature specification exists\n    But no matching status contract exists under `docs/features/_feature-status/`\n    When the quality board projection runs\n    Then the board should fail with:\n      | finding code |\n      | feature-missing-status-projection |\n    And the board should list the missing feature id\n    And the Markdown board should still be written with the missing row marked `stale`\n    And no missing feature should be silently treated as QA passed.\n",
+    "acceptanceCriteria": [
+      "But no matching status contract exists under `docs/features/_feature-status/`",
+      "Then the board should fail with:",
+      "And the board should list the missing feature id",
+      "And the Markdown board should still be written with the missing row marked `stale`",
+      "And no missing feature should be silently treated as QA passed."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:06:27.110Z"
+}

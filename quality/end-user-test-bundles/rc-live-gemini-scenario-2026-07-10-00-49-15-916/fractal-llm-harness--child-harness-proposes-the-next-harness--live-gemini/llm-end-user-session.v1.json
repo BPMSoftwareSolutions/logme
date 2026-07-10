@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--child-harness-proposes-the-next-harness--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "child-harness-proposes-the-next-harness",
+  "scenarioName": "Child harness proposes the next harness",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Child harness proposes the next harness",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/fractal-llm-harness.feature.md:28-34; report.md; live Gemini prompt",
+      "expectedResult": "The `report.md` and Gemini live-call receipt should clearly demonstrate that the child harness proposed a grandchild harness, that the proposal was stored as 'proposed only', that the parent verifier validated it, and that promotion requires receipt-backed evidence.",
+      "observedResult": "Only the Gherkin scenario definition was provided. No actual test execution results or live-call receipts were available for review.",
+      "timestamp": "2026-07-10T01:12:33.992Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--child-harness-proposes-the-next-harness--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/fractal-llm-harness.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--child-harness-proposes-the-next-harness--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

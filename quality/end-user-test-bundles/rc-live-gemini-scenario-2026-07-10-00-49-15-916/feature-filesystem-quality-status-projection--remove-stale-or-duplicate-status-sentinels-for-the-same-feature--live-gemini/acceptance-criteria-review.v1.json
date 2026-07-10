@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--remove-stale-or-duplicate-status-sentinels-for-the-same-feature--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "remove-stale-or-duplicate-status-sentinels-for-the-same-feature",
+  "criteria": [
+    {
+      "criterionText": "Then it should delete or replace obsolete sentinels for `<feature-id>`",
+      "status": "met",
+      "llmObservationSummary": "The passing automated test report indicates that obsolete status sentinels are successfully deleted or replaced, ensuring a clean state.",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--remove-stale-or-duplicate-status-sentinels-for-the-same-feature--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And exactly one `_STATUS.<display-status>.<feature-id>.md` file should remain",
+      "status": "met",
+      "llmObservationSummary": "The passing automated test report confirms that after the status projection, precisely one `_STATUS.<display-status>.<feature-id>.md` file remains for the feature, indicating correct consolidation.",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--remove-stale-or-duplicate-status-sentinels-for-the-same-feature--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And if two different statuses remain for the same feature id, the projection should fail with:",
+      "status": "met",
+      "llmObservationSummary": "The passing automated test report demonstrates that when two different statuses remain for the same feature ID, the projection correctly fails and reports the 'duplicate-feature-status-sentinel' finding code, as expected.",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--remove-stale-or-duplicate-status-sentinels-for-the-same-feature--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And the failure should be visible in the feature quality board.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The visibility of the projection failure on the 'feature quality board' cannot be directly verified from the provided end-user surfaces (Gherkin, 'report.md', CLI evidence). The feature quality board itself is not accessible for review.",
+      "evidencePaths": [],
+      "blockerCode": "not-testable-external-system",
+      "recommendedFixRoute": "To verify this criterion, direct access to the feature quality board or a verifiable screenshot/recording of the board showing the failure would be required as an end-user surface."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:03:56.959Z"
+}

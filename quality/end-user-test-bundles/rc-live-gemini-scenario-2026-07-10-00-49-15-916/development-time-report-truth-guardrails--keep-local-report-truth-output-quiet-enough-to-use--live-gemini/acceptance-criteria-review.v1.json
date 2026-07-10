@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--keep-local-report-truth-output-quiet-enough-to-use--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "keep-local-report-truth-output-quiet-enough-to-use",
+  "criteria": [
+    {
+      "criterionText": "Then the command should not flood stdout with full telemetry event bodies",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The stdout of the command was not provided, so it's impossible to verify if it avoids flooding with full telemetry event bodies.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_STDOUT_EVIDENCE",
+      "recommendedFixRoute": "Provide the actual stdout from the command execution."
+    },
+    {
+      "criterionText": "And detailed telemetry should be written to an evidence artifact",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the evidence artifact was not provided, so it's impossible to verify if detailed telemetry was written to it.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_ARTIFACT_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of the generated evidence artifact."
+    },
+    {
+      "criterionText": "And stdout should show only the verdict, counts, and actionable top findings.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The stdout of the command was not provided, so it's impossible to verify if it shows only the verdict, counts, and actionable top findings.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_STDOUT_EVIDENCE",
+      "recommendedFixRoute": "Provide the actual stdout from the command execution."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:52:28.872Z"
+}

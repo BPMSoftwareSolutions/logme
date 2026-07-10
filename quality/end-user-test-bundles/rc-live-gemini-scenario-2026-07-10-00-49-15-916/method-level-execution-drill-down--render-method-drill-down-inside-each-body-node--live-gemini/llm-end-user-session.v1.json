@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-method-drill-down-inside-each-body-node--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-method-drill-down-inside-each-body-node",
+  "scenarioName": "Render method drill-down inside each body node",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render method drill-down inside each body node",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:92-140; report.md; live Gemini prompt",
+      "expectedResult": "Each body node in `executable-body-contract.report.md` should include a nested method drill-down matching the specified shape, and all timing, telemetry, receipt, and status values should exactly match canonical JSON proof.",
+      "observedResult": "The `executable-body-contract.report.md` file was not provided for review, so no observations could be made regarding its content or structure.",
+      "timestamp": "2026-07-10T01:18:37.728Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-method-drill-down-inside-each-body-node--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-method-drill-down-inside-each-body-node--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

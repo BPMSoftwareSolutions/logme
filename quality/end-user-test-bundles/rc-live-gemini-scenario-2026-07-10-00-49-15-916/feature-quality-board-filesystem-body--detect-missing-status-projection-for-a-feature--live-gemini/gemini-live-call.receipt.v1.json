@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-missing-status-projection-for-a-feature",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 564,
+    "candidatesTokenCount": 870,
+    "totalTokenCount": 2593,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 564
+      }
+    ],
+    "thoughtsTokenCount": 1159,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "5c9c31ca20c0468a5a437cd7a452cfa7f8301de1a7d1430a7f8aace298c116c1",
+  "responseSha256": "c846754ad39264c1daaac62c0826935aad08dbd1d618aaa3fa377b3e64220d79",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/detect-missing-status-projection-for-a-feature.response.v1.json",
+  "calledAt": "2026-07-10T01:06:17.534Z"
+}

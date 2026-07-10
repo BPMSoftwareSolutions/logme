@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "promote-only-through-deterministic-evidence",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 561,
+    "candidatesTokenCount": 639,
+    "totalTokenCount": 3506,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 561
+      }
+    ],
+    "thoughtsTokenCount": 2306,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The content of `report.md` was not provided, preventing verification of scenario execution and acceptance criteria fulfillment. Only the Gherkin scenario definition was available for review.",
+    "expectedResult": "The system should validate promotion based on deterministic evidence, reject LLM-authored claims, and produce the `feature-promotion-not-evidence-backed` finding code on failure, as detailed in the Gherkin scenario.",
+    "observedResult": "Unable to observe the actual execution results or findings due to the absence of the `report.md` content.",
+    "confusingOrRiskyExperiencePoints": "The lack of direct access to the generated `report.md` content makes it impossible to confirm the system's behavior, leading to uncertainty about the feature's implementation and adherence to deterministic evidence requirements.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is lack of content, not readability of available content.",
+    "recommendedFollowUps": "Provide the actual content of `report.md` for review to enable proper verification of the scenario's execution and acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should require:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content, which would detail whether the listed requirements (latest QA gate decision is QA passed, QA bundle manifest hashes match, machine provenance exists, required human reports exist, deterministic promotion decision exists, promotion decision points to the same release candidate id, promotion decision points to the same QA run id, no unresolved blocker findings exist) were checked and met during promotion validation, was not provided.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Supply the `report.md` content for review."
+      },
+      {
+        "criterionText": "And an LLM-authored claim of promotion should not satisfy promotion",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification of whether an LLM-authored claim of promotion was correctly rejected could not be performed as the `report.md` content was not provided.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Supply the `report.md` content for review."
+      },
+      {
+        "criterionText": "And failure should produce:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Confirmation that the `feature-promotion-not-evidence-backed` finding code is produced upon failure could not be made due to the absence of the `report.md` content.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Supply the `report.md` content for review."
+      }
+    ]
+  }
+}

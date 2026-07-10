@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--do-not-promote-unexecuted-features--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "do-not-promote-unexecuted-features",
+  "scenarioName": "Do not promote unexecuted features",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Do not promote unexecuted features",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/per-feature-executable-body-evidence-reports.feature.md:78-85; report.md; live Gemini prompt",
+      "expectedResult": "The global report should indicate that the scenario was 'not executed' and should explicitly omit any execution-related statuses (PASS, STERILE, telemetry, receipts, SLO/SLA) and evidence packets, as per the scenario's preconditions.",
+      "observedResult": "Cannot observe the global report or its contents as the `report.md` file was not provided.",
+      "timestamp": "2026-07-10T01:20:59.345Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--do-not-promote-unexecuted-features--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--do-not-promote-unexecuted-features--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

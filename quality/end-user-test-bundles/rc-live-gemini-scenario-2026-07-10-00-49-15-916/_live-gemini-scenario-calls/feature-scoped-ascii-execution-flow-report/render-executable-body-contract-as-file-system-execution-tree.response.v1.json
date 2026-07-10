@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-executable-body-contract-as-file-system-execution-tree",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 698,
+    "candidatesTokenCount": 982,
+    "totalTokenCount": 3708,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 698
+      }
+    ],
+    "thoughtsTokenCount": 2028,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The `report.md` evidence, which is crucial for verifying the rendering of the ASCII execution sketch and its contents, was not provided. Only the Gherkin scenario text was available for review, making it impossible to test most of the acceptance criteria.",
+    "expectedResult": "The ASCII execution sketch should be rendered according to the specified structure, showing all required node fields in execution order, with correct rendering for missing telemetry and receipts, and no runtime fields populated from static contract data alone.",
+    "observedResult": "Cannot be determined as the `report.md` containing the rendered ASCII execution sketch was not provided.",
+    "confusingOrRiskyExperiencePoints": "The inability to review the actual rendered report makes it impossible to assess user experience or potential risks related to the report's clarity, completeness, or accuracy.",
+    "accessibilityOrReadabilityObservations": "Without the `report.md`, no observations can be made regarding the accessibility or readability of the generated ASCII execution flow report.",
+    "recommendedFollowUps": "Provide the `report.md` content for review to enable full verification of the scenario's acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And each node may declare contract paths, runtime paths, telemetry paths, receipt paths, gates, or parity evidence",
+        "status": "met",
+        "llmObservationSummary": "The Gherkin scenario explicitly states that 'each node may declare contract paths, runtime paths, telemetry paths, receipt paths, gates, or parity evidence', directly confirming this capability of the executable body contract.",
+        "blockerCode": "N/A",
+        "recommendedFixRoute": "N/A"
+      },
+      {
+        "criterionText": "Then every declared body node should appear in execution order",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires inspection of the generated ASCII execution sketch in `report.md` to confirm nodes appear in execution order. The `report.md` was not provided.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And each node should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires inspection of the generated ASCII execution sketch in `report.md` to confirm all specified fields (node id, node label, contract path, etc.) are present for each node. The `report.md` was not provided.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And missing telemetry should render as `not observed`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires inspecting the `report.md` to see how missing telemetry is rendered in the ASCII execution sketch. The `report.md` was not provided.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And missing receipts should render as `missing`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires inspecting the `report.md` to see how missing receipts are rendered in the ASCII execution sketch. The `report.md` was not provided.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And no runtime observation field should be populated from the static contract alone.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires inspecting the `report.md` to confirm that runtime observation fields (e.g., 'observed runtime step', 'first seen at') are not populated from static contract data when no runtime observation is available. The `report.md` was not provided.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      }
+    ]
+  }
+}

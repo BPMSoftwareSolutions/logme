@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-passed-and-promoted-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-passed-and-promoted-from-the-filesystem-body",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 609,
+    "candidatesTokenCount": 1207,
+    "totalTokenCount": 3523,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 609
+      }
+    ],
+    "thoughtsTokenCount": 1707,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "34ff592c656636768e3829670f56feba03ad531ffa3c1d2af97925e667d1aa6b",
+  "responseSha256": "9929c3962e30b7c98f0f88bd066848789bff1a910febdf9fb5b583644a5b5011",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-qa-passed-and-promoted-from-the-filesystem-body.response.v1.json",
+  "calledAt": "2026-07-10T01:04:32.195Z"
+}

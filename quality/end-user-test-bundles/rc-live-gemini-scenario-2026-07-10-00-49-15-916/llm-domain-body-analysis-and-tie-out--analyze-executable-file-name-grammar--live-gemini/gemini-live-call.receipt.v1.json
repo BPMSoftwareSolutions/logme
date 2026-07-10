@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--analyze-executable-file-name-grammar--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "analyze-executable-file-name-grammar",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 572,
+    "candidatesTokenCount": 790,
+    "totalTokenCount": 2535,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 572
+      }
+    ],
+    "thoughtsTokenCount": 1173,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "fc9f037e1b8ceb484e41bf8b2a2341895d6d93385b46c9d5b001d3e57ef665e8",
+  "responseSha256": "467af5a58673636870f3067f48be87f7be088c7b167a77dc21c7d84f97883901",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/analyze-executable-file-name-grammar.response.v1.json",
+  "calledAt": "2026-07-10T01:13:11.431Z"
+}

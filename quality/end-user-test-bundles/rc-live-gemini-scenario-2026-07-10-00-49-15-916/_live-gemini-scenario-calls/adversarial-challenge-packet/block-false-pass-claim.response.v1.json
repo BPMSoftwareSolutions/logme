@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "block-false-pass-claim",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 485,
+    "candidatesTokenCount": 652,
+    "totalTokenCount": 2644,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 485
+      }
+    ],
+    "thoughtsTokenCount": 1507,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (Gherkin, description of report.md, and future Gemini live-call receipt) do not allow observation or verification of the 'When' condition (challenge packet revealing issues) or the 'Then' conditions (report verdict changing to BLOCKED and specific finding codes being applied). I cannot access or process the 'challenge packet' or observe the dynamic change in the report's verdict.",
+    "expectedResult": "The report verdict should be changed to BLOCKED, and the finding codes 'false-pass-claim' and 'report-overclaims-evidence' should be applied when the challenge packet reveals issues like missing schema or stale hash.",
+    "observedResult": "Cannot observe the 'When' condition (challenge packet revealing issues) or the 'Then' conditions (report verdict change and finding code application) with the provided evidence surfaces.",
+    "confusingOrRiskyExperiencePoints": "The scenario describes a dynamic interaction with a 'challenge packet' and a subsequent change in a report's verdict. Without access to the 'challenge packet' content or the mechanism that processes it and updates the report, it's impossible to verify the intended behavior. This creates a gap in end-to-end testing from the assigned surfaces.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is clear, but the execution context and available evidence do not provide the necessary visibility to test the scenario's core logic.",
+    "recommendedFollowUps": "To test this scenario from an end-user perspective, access to the 'challenge packet' content (e.g., a sample file or its output) and a mechanism to observe the *updated* report.md or a system log showing the verdict change would be required. Alternatively, a surface that simulates the 'challenge packet's' findings and shows the resulting report state would be needed.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the report verdict should be changed to BLOCKED",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot observe if the report verdict is changed to BLOCKED as there is no access to the challenge packet or the updated report state.",
+        "blockerCode": "insufficient-evidence-surface",
+        "recommendedFixRoute": "provide-access-to-challenge-packet-and-updated-report"
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot observe if the specified finding codes ('false-pass-claim', 'report-overclaims-evidence') are applied, as the trigger condition (challenge packet revealing issues) and the resulting state are not visible.",
+        "blockerCode": "insufficient-evidence-surface",
+        "recommendedFixRoute": "provide-access-to-challenge-packet-and-updated-report"
+      }
+    ]
+  }
+}

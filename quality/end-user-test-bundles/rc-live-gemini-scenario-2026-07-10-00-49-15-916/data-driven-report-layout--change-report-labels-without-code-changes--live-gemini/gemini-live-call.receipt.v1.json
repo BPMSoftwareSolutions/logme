@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--change-report-labels-without-code-changes--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "change-report-labels-without-code-changes",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 490,
+    "candidatesTokenCount": 645,
+    "totalTokenCount": 2703,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 490
+      }
+    ],
+    "thoughtsTokenCount": 1568,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "ec8bbe806e47e0648b6b3df54853dc217cbacced20d86aa58f5cd0f228986822",
+  "responseSha256": "3697982c8a632bdb107d6a23c5a1cb78edb9f220570507db36f466c018395a1c",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/change-report-labels-without-code-changes.response.v1.json",
+  "calledAt": "2026-07-10T00:50:39.307Z"
+}

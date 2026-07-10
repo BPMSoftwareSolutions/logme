@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "verdict-derivation-consistency",
+  "featureName": "Verdict derivation consistency",
+  "sourceFeaturePath": "docs/features/verdict-derivation-consistency.feature.md",
+  "sourceFeatureContentHash": "f8d47970bb6de80c633c448a52f57e3e7729de6b71a0e64a42be5ceb01ad3933",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "58deac8723f854e29fa1bb3f9593f36d5a33cbdb9ff48440c5951736820d167a"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-external-surface-not-testable-locally"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Verdict derivation consistency is currently qa-blocked."
+}

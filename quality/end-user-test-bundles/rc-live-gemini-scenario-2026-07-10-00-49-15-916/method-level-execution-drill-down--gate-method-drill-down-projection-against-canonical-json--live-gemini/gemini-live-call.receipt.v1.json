@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--gate-method-drill-down-projection-against-canonical-json--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "gate-method-drill-down-projection-against-canonical-json",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 599,
+    "candidatesTokenCount": 844,
+    "totalTokenCount": 2619,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 599
+      }
+    ],
+    "thoughtsTokenCount": 1176,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "7c156138021fb60306a74bcc47a17ab4a74f0f6f6373f73dd09ec21a2f6ca11d",
+  "responseSha256": "96ba0c55caeb0ddf600e3a344c3de351c60b7466cdbcf912132fb0de8891b6bd",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/gate-method-drill-down-projection-against-canonical-json.response.v1.json",
+  "calledAt": "2026-07-10T01:19:42.937Z"
+}

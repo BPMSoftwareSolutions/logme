@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-human-readable-sprawl-report-beside-json-evidence--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-human-readable-sprawl-report-beside-json-evidence",
+  "scenarioName": "Write human-readable sprawl report beside JSON evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Write human-readable sprawl report beside JSON evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-body-sprawl-visibility.feature.md:34-58; report.md; live Gemini prompt",
+      "expectedResult": "A human-readable Markdown sprawl report should be generated, containing specific sections, a compact sprawl risk summary, and a link to its JSON source, suitable for various stakeholders.",
+      "observedResult": "The prompt confirms `report.md` was generated. However, without access to its content, it's impossible to observe if the report meets the specified structural and content requirements.",
+      "timestamp": "2026-07-10T00:53:01.661Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-human-readable-sprawl-report-beside-json-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/domain-body-sprawl-visibility.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-human-readable-sprawl-report-beside-json-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

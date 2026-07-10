@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "adversarial-challenge-packet--generate-report-challenge-packet--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "generate-report-challenge-packet",
+  "scenarioName": "Generate report challenge packet",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Generate report challenge packet",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/adversarial-challenge-packet.feature.md:8-28; report.md; live Gemini prompt",
+      "expectedResult": "The challenge packet should list specific claims for reviewer disproval and include all necessary file paths (source, config, schema, telemetry, receipt) for a comprehensive review.",
+      "observedResult": "The content of the challenge packet or `report.md` was not available for observation.",
+      "timestamp": "2026-07-10T00:49:15.933Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/adversarial-challenge-packet--generate-report-challenge-packet--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/adversarial-challenge-packet.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/adversarial-challenge-packet--generate-report-challenge-packet--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

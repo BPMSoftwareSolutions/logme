@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-a-compact-blocked-sketch",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 621,
+    "candidatesTokenCount": 479,
+    "totalTokenCount": 2839,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 621
+      }
+    ],
+    "thoughtsTokenCount": 1739,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The actual generated report.md content was not provided for review. Therefore, it is not possible to verify if the ASCII execution sketch was rendered as specified in the Gherkin 'Then' step.",
+    "expectedResult": "The report.md should contain the specified compact blocked ASCII sketch, clearly indicating a 'BLOCKED' promotion and not burying this state.",
+    "observedResult": "The actual report.md content was not available for observation.",
+    "confusingOrRiskyExperiencePoints": "Without direct access to the generated report, an end-user cannot confirm the feature's output, leading to uncertainty about the report's accuracy and clarity.",
+    "accessibilityOrReadabilityObservations": "N/A, as the report content was not available for review.",
+    "recommendedFollowUps": "Provide the actual report.md file for review to enable verification of the rendered ASCII sketch and its presentation.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the sketch should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The expected ASCII sketch structure is clearly defined in the Gherkin. However, the actual generated report.md was not provided, preventing verification of whether the sketch was rendered correctly.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Supply the report.md output for review."
+      },
+      {
+        "criterionText": "And the report should not bury the blocked state below prose or dense tables.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Based on the Gherkin's specified sketch design, the 'BLOCKED' promotion is prominently displayed at the top. However, without the actual report.md, it's impossible to confirm if this design was implemented and if other content might still inadvertently bury the state.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Supply the report.md output for review to confirm the visual hierarchy and prominence of the blocked state."
+      }
+    ]
+  }
+}

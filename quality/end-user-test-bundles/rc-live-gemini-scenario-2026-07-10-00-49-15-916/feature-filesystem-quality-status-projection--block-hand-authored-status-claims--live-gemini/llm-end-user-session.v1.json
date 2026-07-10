@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "block-hand-authored-status-claims",
+  "scenarioName": "Block hand-authored status claims",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block hand-authored status claims",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:206-221; report.md; live Gemini prompt",
+      "expectedResult": "A generated signature block should be present in the sentinel with specific fields (generator name, generated at, source JSON path, source JSON hash). If sentinel content drifts, the projection should fail with 'feature-status-sentinel-drift', and a drifted sentinel should not be used for promotion.",
+      "observedResult": "The Gherkin describes the expected outcomes. The implied passing of the local test suite suggests these conditions were met internally. However, no concrete end-user visible evidence (e.g., actual file content, explicit error messages, or promotion blocking feedback) was available to confirm these observations from the assigned surfaces.",
+      "timestamp": "2026-07-10T01:05:08.114Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

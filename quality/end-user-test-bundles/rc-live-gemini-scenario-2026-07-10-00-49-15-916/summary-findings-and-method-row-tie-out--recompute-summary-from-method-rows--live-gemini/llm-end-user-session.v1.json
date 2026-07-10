@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--recompute-summary-from-method-rows--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "recompute-summary-from-method-rows",
+  "scenarioName": "Recompute summary from method rows",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Recompute summary from method rows",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/summary-findings-and-method-row-tie-out.feature.md:8-16; report.md; live Gemini prompt",
+      "expectedResult": "`localExecutableMethods` should equal the number of method rows. `methodsWithLogMeCall` should equal rows where LogMe is `yes`. `silentLocalMethods` should equal rows where LogMe is `no`. `methodsWithLogMeCall + silentLocalMethods` should equal `localExecutableMethods`. `coverage` should equal `methodsWithLogMeCall / localExecutableMethods`.",
+      "observedResult": "Unable to observe due to AI limitations; no direct execution or file access is possible.",
+      "timestamp": "2026-07-10T01:41:11.861Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/summary-findings-and-method-row-tie-out--recompute-summary-from-method-rows--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "FAIL",
+      "evidencePaths": [
+        "docs/features/summary-findings-and-method-row-tie-out.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/summary-findings-and-method-row-tie-out--recompute-summary-from-method-rows--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

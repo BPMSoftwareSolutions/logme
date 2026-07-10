@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "adversarial-challenge-packet--block-false-pass-claim--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "block-false-pass-claim",
+  "proofReportPaths": [],
+  "missingReports": []
+}

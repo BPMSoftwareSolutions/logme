@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--render-human-report-from-canonical-json-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "render-human-report-from-canonical-json-proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 702,
+    "candidatesTokenCount": 963,
+    "totalTokenCount": 2680,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 702
+      }
+    ],
+    "thoughtsTokenCount": 1015,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "102788b5b965d6572464f6c12c3801669463c537986ad6b571b38e792a82af4b",
+  "responseSha256": "a7385afa99f3e5761282fbf29567cb370c1d5b979d173ab6e9010285e5fe5e0e",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/render-human-report-from-canonical-json-proof.response.v1.json",
+  "calledAt": "2026-07-10T01:02:03.213Z"
+}

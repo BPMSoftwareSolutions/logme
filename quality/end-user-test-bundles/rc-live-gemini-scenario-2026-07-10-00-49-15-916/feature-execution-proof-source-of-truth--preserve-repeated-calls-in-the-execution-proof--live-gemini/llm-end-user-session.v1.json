@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--preserve-repeated-calls-in-the-execution-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-repeated-calls-in-the-execution-proof",
+  "scenarioName": "Preserve repeated calls in the execution proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve repeated calls in the execution proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:163-178; report.md; live Gemini prompt",
+      "expectedResult": "All acceptance criteria should be verifiable through the provided 'report.md' and Gemini live-call receipt, demonstrating that repeated calls are preserved, summarized correctly, and presented clearly in the report and any dense table projections.",
+      "observedResult": "No verification was possible due to the absence of the 'report.md' and Gemini live-call receipt. The Gherkin alone is insufficient to confirm the implementation.",
+      "timestamp": "2026-07-10T00:59:20.822Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--preserve-repeated-calls-in-the-execution-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--preserve-repeated-calls-in-the-execution-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

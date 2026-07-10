@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+  "featureId": "verdict-derivation-consistency",
+  "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-external-surface-not-testable-locally"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:45:05.057Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.066Z",
+  "rawLlmBlockerCodes": [
+    "llm-end-user-surface-insufficient"
+  ]
+}

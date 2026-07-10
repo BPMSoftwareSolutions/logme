@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "show-blocked-report-as-a-worklist",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 551,
+    "candidatesTokenCount": 663,
+    "totalTokenCount": 2438,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 551
+      }
+    ],
+    "thoughtsTokenCount": 1224,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file, which is essential for verifying the rendering of the ASCII execution sketch and its contents, was not provided. Without this evidence, it is impossible to confirm if the blocked state is displayed correctly or if the actionable findings are listed as specified.",
+    "expectedResult": "The ASCII execution sketch should clearly show the blocked state before any dense details, list specific actionable findings (finding code, method, source path, line range, telemetry status, one-line fix route), and allow a product owner to discover the blocker without reading the full method table.",
+    "observedResult": "Unable to observe the rendered ASCII execution sketch as the `report.md` file was not provided in the evidence surfaces.",
+    "confusingOrRiskyExperiencePoints": "The inability to review the generated report directly prevents verification of the user experience for blocked reports. If the report does not meet the criteria, it could lead to confusion or delays in identifying and resolving issues.",
+    "accessibilityOrReadabilityObservations": "Cannot assess accessibility or readability without the actual report content. The criteria specifically address readability (e.g., not requiring reading the full method table to find the blocker).",
+    "recommendedFollowUps": "Provide the `report.md` file generated after the local test suite passed for this scenario to enable proper testing of the report rendering and content against the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the sketch should show the blocked state before any dense details",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification of whether the blocked state is shown before dense details in the ASCII execution sketch.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And it should list the top actionable findings as:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification of whether the top actionable findings are listed with the specified fields in the ASCII execution sketch.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And the report should not require a product owner to read the full method table to discover the blocker.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification of whether the report allows a product owner to discover the blocker without reading the full method table.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      }
+    ]
+  }
+}

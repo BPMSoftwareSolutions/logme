@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-missing-status-projection-for-a-feature",
+  "scenarioName": "Detect missing status projection for a feature",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Detect missing status projection for a feature",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-quality-board-filesystem-body.feature.md:123-133; report.md; live Gemini prompt",
+      "expectedResult": "The quality board projection should fail with a specific finding code for a missing status projection, list the missing feature ID, mark the row as 'stale' in the Markdown board, and not silently treat the missing feature as QA passed.",
+      "observedResult": "Cannot observe the actual outcome as no execution report or live-call receipt was provided. Only the Gherkin scenario outlining the expected behavior is available.",
+      "timestamp": "2026-07-10T01:06:17.534Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-quality-board-filesystem-body.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--preserve-replayability-for-human-reviewers--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "preserve-replayability-for-human-reviewers",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

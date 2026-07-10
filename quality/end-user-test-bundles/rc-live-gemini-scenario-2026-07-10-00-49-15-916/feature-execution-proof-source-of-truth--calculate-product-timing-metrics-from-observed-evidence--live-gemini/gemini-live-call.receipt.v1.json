@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "calculate-product-timing-metrics-from-observed-evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 616,
+    "candidatesTokenCount": 934,
+    "totalTokenCount": 3103,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 616
+      }
+    ],
+    "thoughtsTokenCount": 1553,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b5dbb3b9049c720335d5e5e92c12c93433e37faa254b7e763cdf1948217236f0",
+  "responseSha256": "079c2a234097283a2388d9e1d0ab95314490f4dfcc5721c356fb4cf1ec62215c",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/calculate-product-timing-metrics-from-observed-evidence.response.v1.json",
+  "calledAt": "2026-07-10T00:59:30.123Z"
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots",
+  "scenarioName": "Roll up method-level sterility findings into file-level sprawl hotspots",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Roll up method-level sterility findings into file-level sprawl hotspots\n    Given the domain sterility gate reports local method findings\n    When the sprawl report is rendered\n    Then findings should be grouped by file so the product owner can see responsibility concentration\n    And grouped sterility signals should include:\n      | signal |\n      | local method without testimony |\n      | anonymous executable method |\n      | method name outside domain vocabulary |\n      | local generic utility detected |\n      | unimplemented stub detected |\n    And a file with many grouped findings should appear as a top sprawl hotspot\n    And the report should distinguish:\n      | hotspot type |\n      | missing observability discipline |\n      | anonymous local callback sprawl |\n      | generic package-worthy mechanics |\n      | unclear domain vocabulary |\n      | unimplemented source body |\n",
+    "acceptanceCriteria": [
+      "Then findings should be grouped by file so the product owner can see responsibility concentration",
+      "And grouped sterility signals should include:",
+      "And a file with many grouped findings should appear as a top sprawl hotspot",
+      "And the report should distinguish:"
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:54:15.085Z"
+}

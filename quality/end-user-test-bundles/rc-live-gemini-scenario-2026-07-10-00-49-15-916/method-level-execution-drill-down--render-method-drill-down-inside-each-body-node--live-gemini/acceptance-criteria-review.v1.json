@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-method-drill-down-inside-each-body-node--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-method-drill-down-inside-each-body-node",
+  "criteria": [
+    {
+      "criterionText": "Then each body node should include a nested method drill-down shaped like:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `executable-body-contract.report.md` file, which is the output surface for this criterion, was not provided. Therefore, it's impossible to verify the presence and shape of method drill-downs.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the `executable-body-contract.report.md` file for review."
+    },
+    {
+      "criterionText": "And every timing, telemetry, receipt, and status value should match canonical JSON proof exactly.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `executable-body-contract.report.md` file, which contains the values to be matched against canonical proof, was not provided. Thus, exact value matching cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the `executable-body-contract.report.md` file for review, along with the canonical JSON proof if it's external to the Gherkin's shape definition."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:18:44.968Z"
+}

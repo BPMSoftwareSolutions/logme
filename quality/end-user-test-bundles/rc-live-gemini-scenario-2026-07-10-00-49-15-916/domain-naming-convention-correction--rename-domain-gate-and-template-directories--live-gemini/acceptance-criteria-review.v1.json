@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-domain-gate-and-template-directories--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-domain-gate-and-template-directories",
+  "criteria": [
+    {
+      "criterionText": "And gate contracts live under `contracts/gates/logme2/`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a 'Given' condition describing the initial state. Cannot verify if this initial state was met without the `report.md` or live-call receipt, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt for review."
+    },
+    {
+      "criterionText": "And templates live under `contracts/templates/logme2/`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a 'Given' condition describing the initial state. Cannot verify if this initial state was met without the `report.md` or live-call receipt, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt for review."
+    },
+    {
+      "criterionText": "Then the directories should be renamed to `contracts/domains/logme/`,",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if the directories were renamed as expected without the `report.md` or live-call receipt, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt for review."
+    },
+    {
+      "criterionText": "And every path string inside contract JSON files, source modules, and tests",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if all path strings were updated as expected without the `report.md` or live-call receipt, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt for review."
+    },
+    {
+      "criterionText": "And no runtime read or write should target a `logme2` path.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify this runtime behavior without the `report.md` or live-call receipt, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:55:05.845Z"
+}

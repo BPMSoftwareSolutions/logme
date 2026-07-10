@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--keep-product-meaning-separate-from-generic-mechanics--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "keep-product-meaning-separate-from-generic-mechanics",
+  "scenarioName": "Keep product meaning separate from generic mechanics",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Keep product meaning separate from generic mechanics",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-body-sprawl-visibility.feature.md:97-116; report.md; live Gemini prompt",
+      "expectedResult": "Methods performing generic mechanics without domain responsibility should be reported as package extraction candidates, with specific finding codes and fix route instructions, including the listed generic mechanics.",
+      "observedResult": "The Gherkin defines the expected generic mechanics, finding code, and fix route. However, the actual reporting of methods and their details by the sprawl classifier could not be observed or verified from the provided surfaces.",
+      "timestamp": "2026-07-10T00:53:33.739Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--keep-product-meaning-separate-from-generic-mechanics--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-body-sprawl-visibility.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--keep-product-meaning-separate-from-generic-mechanics--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

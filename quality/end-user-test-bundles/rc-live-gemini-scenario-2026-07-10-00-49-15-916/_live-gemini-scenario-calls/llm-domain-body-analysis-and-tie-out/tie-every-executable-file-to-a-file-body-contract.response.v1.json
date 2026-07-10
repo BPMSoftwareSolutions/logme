@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "tie-every-executable-file-to-a-file-body-contract",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 531,
+    "candidatesTokenCount": 673,
+    "totalTokenCount": 2273,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 531
+      }
+    ],
+    "thoughtsTokenCount": 1069,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence (scenario Gherkin) describes the expected behavior but does not include the actual output from a test run (e.g., report.md or Gemini live-call receipt). Therefore, it is not possible to verify if the acceptance criteria were met.",
+    "expectedResult": "The analysis should list every owning body contract, identify files with no declaring body contract as 'file-body-contract-missing', and provide a recommended fix that names the authorizing contract or owned package boundary.",
+    "observedResult": "Only the Gherkin scenario definition was provided, which describes the expected behavior but does not contain any observed results from an actual test execution.",
+    "confusingOrRiskyExperiencePoints": "The absence of actual test output makes it impossible to confirm the feature's functionality from an end-user perspective. This is a critical gap for QA.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear and readable, but without the corresponding test report, its utility for verification is limited.",
+    "recommendedFollowUps": "Provide the 'report.md' and the Gemini live-call receipt as evidence to enable verification of the acceptance criteria. Without these, the feature cannot be tested from the assigned surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the analysis should list every owning body contract",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes this as an expected outcome, but no actual test output (e.g., from report.md or live-call receipt) was provided to verify its occurrence.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt containing the actual analysis output."
+      },
+      {
+        "criterionText": "And a file with no declaring body contract should receive:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes this as an expected outcome, but no actual test output (e.g., from report.md or live-call receipt) was provided to verify its occurrence.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt containing the actual analysis output."
+      },
+      {
+        "criterionText": "And the recommended fix should name the contract or owned package boundary that must authorize the file.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes this as an expected outcome, but no actual test output (e.g., from report.md or live-call receipt) was provided to verify its occurrence.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt containing the actual analysis output."
+      }
+    ]
+  }
+}

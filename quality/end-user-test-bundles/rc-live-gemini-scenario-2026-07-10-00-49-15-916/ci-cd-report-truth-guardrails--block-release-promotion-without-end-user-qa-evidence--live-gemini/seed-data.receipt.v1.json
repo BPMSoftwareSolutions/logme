@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-release-promotion-without-end-user-qa-evidence--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-release-promotion-without-end-user-qa-evidence",
+  "seedDataId": "ci-cd-report-truth-guardrails--block-release-promotion-without-end-user-qa-evidence--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-release-promotion-without-end-user-qa-evidence--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T00:50:31.622Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--preserve-replayability-for-human-reviewers--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "preserve-replayability-for-human-reviewers",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 554,
+    "candidatesTokenCount": 786,
+    "totalTokenCount": 2906,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 554
+      }
+    ],
+    "thoughtsTokenCount": 1566,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "241a13a0efaf5c53d69fc968196c0f407c80d3ddf544bb60b1c485e2d8839c56",
+  "responseSha256": "41fde95662fb6643f1c891f7e5b26f359ce66f0305a68c68ffee92abedb905b4",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/preserve-replayability-for-human-reviewers.response.v1.json",
+  "calledAt": "2026-07-10T01:17:14.157Z"
+}

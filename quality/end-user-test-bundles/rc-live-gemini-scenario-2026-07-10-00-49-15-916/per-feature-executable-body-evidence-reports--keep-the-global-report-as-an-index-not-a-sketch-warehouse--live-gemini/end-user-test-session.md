@@ -1,0 +1,10 @@
+# End User Test Session: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini
+- Feature id: per-feature-executable-body-evidence-reports
+- Scenario id: keep-the-global-report-as-an-index-not-a-sketch-warehouse
+
+| step | surface | action | expected | observed | status | evidence |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | Markdown report review and CLI evidence review | Live Gemini reviewed Keep the global report as an index, not a sketch warehouse | The global `report.md` should display a compact feature evidence index with specific fields (feature id, scenario id, feature verdict, blocker count, evidence packet path, executable body report path, execution timeline table path, method timeline table path, method evidence report path), avoid embedding full executable body trees, and link to feature-scoped reports using repo-relative paths. | The `report.md` contains a well-structured table serving as a compact index, including all specified fields. It clearly avoids embedding the full executable body tree content for individual features. All links to feature-scoped reports are present and correctly utilize repo-relative paths, ensuring proper navigation and portability. | met | docs/features/per-feature-executable-body-evidence-reports.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini/gemini-live-call.receipt.v1.json |

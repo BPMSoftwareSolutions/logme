@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "produce-an-llm-handoff-artifact-from-deterministic-facts",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 545,
+    "candidatesTokenCount": 552,
+    "totalTokenCount": 2301,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 545
+      }
+    ],
+    "thoughtsTokenCount": 1204,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The crucial evidence surfaces, 'report.md' and the 'Gemini live-call receipt', were not provided, making it impossible to verify the LLM's output against the acceptance criteria.",
+    "expectedResult": "The LLM handoff artifact should contain only the specified deterministic facts and no invented information regarding ownership, scenario proof, or promotion status, as evidenced by the 'report.md' and 'Gemini live-call receipt'.",
+    "observedResult": "No observable result could be determined as the necessary evidence surfaces ('report.md' and 'Gemini live-call receipt') were not supplied for review.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete evidence surfaces (report.md, Gemini live-call receipt) directly prevents verification of the LLM's behavior, posing a significant risk that the feature's core functionality (producing a deterministic artifact) cannot be confirmed.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is a lack of evidence, not an accessibility or readability problem with the provided Gherkin.",
+    "recommendedFollowUps": "Provide the 'report.md' file and the 'Gemini live-call receipt' for this scenario to enable proper adversarial QA testing and verification of the LLM's output.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the packet should include only deterministic facts:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The required evidence surfaces ('report.md' and 'Gemini live-call receipt') were not provided, preventing verification of the LLM's output.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Supply the 'report.md' and 'Gemini live-call receipt' for review."
+      },
+      {
+        "criterionText": "And the LLM should not invent ownership, scenario proof, or promotion status.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The required evidence surfaces ('report.md' and 'Gemini live-call receipt') were not provided, preventing verification of the LLM's output.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Supply the 'report.md' and 'Gemini live-call receipt' for review."
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--populate-the-board-with-scan-friendly-product-fields--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "populate-the-board-with-scan-friendly-product-fields",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:05:55.051Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.980Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EVIDENCE_REPORT_MD"
+  ]
+}

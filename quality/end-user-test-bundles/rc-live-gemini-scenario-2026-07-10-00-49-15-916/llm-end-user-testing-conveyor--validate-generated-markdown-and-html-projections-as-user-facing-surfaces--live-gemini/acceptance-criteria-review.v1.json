@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "validate-generated-markdown-and-html-projections-as-user-facing-surfaces",
+  "criteria": [
+    {
+      "criterionText": "Then it should inspect the generated Markdown report as a human-facing artifact",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the 'report.md' file was not provided to the LLM for inspection, preventing verification of this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the actual content of the 'report.md' file for review."
+    },
+    {
+      "criterionText": "And it should inspect the HTML projection when HTML rendering is available",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Neither the HTML projection file nor a rendered view of it was provided to the LLM, preventing inspection.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the actual HTML projection or a rendered view for review."
+    },
+    {
+      "criterionText": "And the inspection should verify:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the 'report.md' file was not provided to the LLM for inspection, preventing verification of this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the actual content of the 'report.md' file for review."
+    },
+    {
+      "criterionText": "And visual or readability blockers should be recorded in the QA bundle",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "As the primary report surfaces were not provided, no visual or readability blockers could be identified or recorded by the LLM.",
+      "evidencePaths": [],
+      "blockerCode": "DEPENDENCY_BLOCKED",
+      "recommendedFixRoute": "Provide the report content to enable identification and recording of blockers."
+    },
+    {
+      "criterionText": "And a screenshot index should be written when visual surfaces are inspected.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No visual surfaces (e.g., rendered HTML with screenshots) were provided for inspection, thus the presence or absence of a screenshot index could not be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Provide the visual surfaces and the QA bundle to verify the screenshot index."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:15:51.065Z"
+}

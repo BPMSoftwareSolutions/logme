@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-a-compact-blocked-sketch--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-a-compact-blocked-sketch",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 621,
+    "candidatesTokenCount": 479,
+    "totalTokenCount": 2839,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 621
+      }
+    ],
+    "thoughtsTokenCount": 1739,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "653713c3ad1e92e62de3bb5cb5bc91a0065a0a62530bff9e04e274cee534500c",
+  "responseSha256": "532faef26c96e97de91c1fdeba5b6a4ced30e661f20170d3bb1bda9d9e1f7bcb",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-a-compact-blocked-sketch.response.v1.json",
+  "calledAt": "2026-07-10T01:11:37.734Z"
+}

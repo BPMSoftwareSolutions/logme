@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-duration-inferred-without-timing-evidence--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-duration-inferred-without-timing-evidence",
+  "scenarioName": "Reject duration inferred without timing evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Reject duration inferred without timing evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:331-342; report.md; live Gemini prompt",
+      "expectedResult": "The ASCII execution sketch should display 'duration ms   : not observed', avoid showing 'observed', '0', '0ms', or blank duration as a successful timing value, and present 'runtime-duration-evidence-missing' as the finding code.",
+      "observedResult": "Cannot observe the actual report or finding code as the evidence files (report.md and Gemini live-call receipt) are missing from the provided context.",
+      "timestamp": "2026-07-10T01:11:02.534Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-duration-inferred-without-timing-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-duration-inferred-without-timing-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

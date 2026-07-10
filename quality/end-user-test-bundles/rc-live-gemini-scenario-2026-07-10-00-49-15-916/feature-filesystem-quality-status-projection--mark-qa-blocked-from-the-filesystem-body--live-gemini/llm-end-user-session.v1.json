@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-blocked-from-the-filesystem-body",
+  "scenarioName": "Mark QA blocked from the filesystem body",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Mark QA blocked from the filesystem body",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:134-149; report.md; live Gemini prompt",
+      "expectedResult": "A status sentinel file `docs/features/_STATUS.qa-blocked.<feature-id>.md` should be created, containing blocker count, blocker codes, links to relevant artifacts, and a recommended action pointing to the first blocker route, as described in the Gherkin.",
+      "observedResult": "No output or report detailing the creation or content of the status sentinel file was available for observation.",
+      "timestamp": "2026-07-10T01:04:05.859Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

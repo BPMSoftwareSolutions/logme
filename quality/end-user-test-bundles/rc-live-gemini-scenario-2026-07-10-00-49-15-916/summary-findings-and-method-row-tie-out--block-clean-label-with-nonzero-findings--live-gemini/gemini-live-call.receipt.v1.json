@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--block-clean-label-with-nonzero-findings--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "block-clean-label-with-nonzero-findings",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:42:05.958Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 276,
+    "candidatesTokenCount": 201,
+    "totalTokenCount": 1123,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 276
+      }
+    ],
+    "thoughtsTokenCount": 646,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "f70cc68ac482c8d9bea94a7a9a8973ad601559ef66c64a526a7652d4657f118a",
+  "responseSha256": "d3b6b4215d6fa20864829e1fd85a066b49791242d4dbc70150891439866b49d7",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/summary-findings-and-method-row-tie-out/block-clean-label-with-nonzero-findings.response.v1.json"
+}

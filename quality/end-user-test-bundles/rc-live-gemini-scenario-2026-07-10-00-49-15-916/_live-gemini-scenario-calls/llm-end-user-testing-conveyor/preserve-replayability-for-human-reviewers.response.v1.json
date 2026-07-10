@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "preserve-replayability-for-human-reviewers",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 554,
+    "candidatesTokenCount": 786,
+    "totalTokenCount": 2906,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 554
+      }
+    ],
+    "thoughtsTokenCount": 1566,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file, which is crucial for verifying the replayability features and distinctions within the QA bundle, was not provided. Without this key evidence surface, it is impossible to confirm if the system meets the specified acceptance criteria regarding replayability, command explanations, and the distinction between LLM and deterministic observations.",
+    "expectedResult": "The `report.md` should clearly present sections or mechanisms demonstrating that a human reviewer can replay the test from various specified sources (assignment, handoff packet, seed data receipt, end-user session steps, screenshots or terminal outputs, user experience report, acceptance criteria review, QA gate decision). It should also explicitly state the command or surface used for testing and clearly differentiate between observations made by the LLM and deterministic gate results.",
+    "observedResult": "The `report.md` file was not available for review. Consequently, no observations could be made regarding the presence or functionality of the replayability features, command explanations, or the distinction between LLM and deterministic gate results within the generated report.",
+    "confusingOrRiskyExperiencePoints": "The absence of the `report.md` makes it impossible to assess any confusing or risky experience points related to the replayability features. A human reviewer would be unable to verify the test's execution or context without this report.",
+    "accessibilityOrReadabilityObservations": "The absence of the `report.md` makes it impossible to assess the accessibility or readability of the replayability information. If the report were present, I would evaluate how clearly the replay sources, commands, and observation distinctions are presented.",
+    "recommendedFollowUps": "Provide the `report.md` file generated after the local test suite passed. This is essential for verifying all acceptance criteria related to the 'Preserve replayability for human reviewers' scenario. Without it, the feature's implementation cannot be confirmed from the assigned end-user surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the reviewer should be able to replay the test in sequence from:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain evidence of replayability sources, was not provided. Therefore, it's impossible to verify if the bundle allows replay from the specified sources.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And the bundle should explain what command or surface was used",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain evidence of explanations for commands or surfaces used, was not provided. Therefore, it's impossible to verify this criterion.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And the bundle should distinguish LLM observations from deterministic gate results.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain evidence of distinguishing LLM observations from deterministic gate results, was not provided. Therefore, it's impossible to verify this criterion.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      }
+    ]
+  }
+}

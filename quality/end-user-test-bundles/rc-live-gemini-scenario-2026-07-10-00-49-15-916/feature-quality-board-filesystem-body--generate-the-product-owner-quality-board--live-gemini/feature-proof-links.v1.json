@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--generate-the-product-owner-quality-board--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "generate-the-product-owner-quality-board",
+  "proofReportPaths": [],
+  "missingReports": []
+}

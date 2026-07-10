@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-unsafe-output-is-blocked",
+  "scenarioName": "LLM unsafe output is blocked",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed LLM unsafe output is blocked",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/fractal-llm-harness.feature.md:35-44; report.md; live Gemini prompt",
+      "expectedResult": "The LLM-generated harness should be blocked, a blocker receipt should be written, and no code should be promoted, as outlined in the Gherkin scenario.",
+      "observedResult": "Unable to observe the actual outcome of the scenario due to the absence of concrete evidence from the specified end-user surfaces.",
+      "timestamp": "2026-07-10T01:12:42.677Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/fractal-llm-harness.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

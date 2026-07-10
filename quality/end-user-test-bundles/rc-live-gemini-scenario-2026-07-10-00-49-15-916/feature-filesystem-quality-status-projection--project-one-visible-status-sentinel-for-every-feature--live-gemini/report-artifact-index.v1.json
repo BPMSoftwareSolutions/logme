@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--project-one-visible-status-sentinel-for-every-feature--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "project-one-visible-status-sentinel-for-every-feature",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

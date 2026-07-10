@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "tie-file-bodies-to-features-and-scenarios",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 539,
+    "candidatesTokenCount": 701,
+    "totalTokenCount": 2292,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 539
+      }
+    ],
+    "thoughtsTokenCount": 1052,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "01baffba1c746fbf4f558e038b33259c1390bc457a3fda48aa9a5e835c8bb391",
+  "responseSha256": "22d7e1f6e3bf9cfca98eef731e43f171b96dbd3afd6c19a0acb224bfc5d5a3aa",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/tie-file-bodies-to-features-and-scenarios.response.v1.json",
+  "calledAt": "2026-07-10T01:13:29.459Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--llm-generates-a-child-harness-from-a-parent-harness-contract--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-generates-a-child-harness-from-a-parent-harness-contract",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 604,
+    "candidatesTokenCount": 1247,
+    "totalTokenCount": 3601,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 604
+      }
+    ],
+    "thoughtsTokenCount": 1750,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0d0e2f50834eb67473bb50538a5a9e0b3529fa0fe419e63763694612e1eb9726",
+  "responseSha256": "3b311a2ac2982ce2d300b286f0da6433369f42c4e958b333b0774afd9b3928df",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/llm-generates-a-child-harness-from-a-parent-harness-contract.response.v1.json",
+  "calledAt": "2026-07-10T01:11:48.326Z"
+}

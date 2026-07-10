@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "evidence-receipt-coverage",
+  "featureName": "Evidence receipt coverage",
+  "sourceFeaturePath": "docs/features/evidence-receipt-coverage.feature.md",
+  "sourceFeatureContentHash": "c7e1b5e6bb5a6e236484d293bc99a23a5a638b0a3489bd00befde0a2cd5f2008",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "evidence-receipt-coverage--write-report-evidence-packet--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--write-report-evidence-packet--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--write-report-evidence-packet--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--write-report-evidence-packet--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "5b5a3912858456f6b06ab766e60400b5b7b87ad8aa4dcf261635b94a16fa92d7"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-assigned-surface-insufficient"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Evidence receipt coverage is currently qa-blocked."
+}

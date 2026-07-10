@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--keep-qa-pass-separate-from-promotion--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "keep-qa-pass-separate-from-promotion",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 540,
+    "candidatesTokenCount": 754,
+    "totalTokenCount": 2486,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 540
+      }
+    ],
+    "thoughtsTokenCount": 1192,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "58ee8b611c668dc454d6706cb41649f71dcc163d7efe096bd89a60b3f1b9dc1a",
+  "responseSha256": "f625dff51860810e91e3bb8199b4a1c080741cf4e37c5f8dc874b8dbf58ec2b3",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/keep-qa-pass-separate-from-promotion.response.v1.json",
+  "calledAt": "2026-07-10T01:06:45.575Z"
+}

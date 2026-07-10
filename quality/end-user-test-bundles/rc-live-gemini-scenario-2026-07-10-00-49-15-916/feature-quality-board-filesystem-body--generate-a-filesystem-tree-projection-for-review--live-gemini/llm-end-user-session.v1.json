@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--generate-a-filesystem-tree-projection-for-review--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "generate-a-filesystem-tree-projection-for-review",
+  "scenarioName": "Generate a filesystem tree projection for review",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Generate a filesystem tree projection for review",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-quality-board-filesystem-body.feature.md:107-122; report.md; live Gemini prompt",
+      "expectedResult": "A `report.md` or CLI output showing the successful generation of `docs/features/_FEATURE-QUALITY-TREE.txt` with content adhering to the specified criteria (product-owner surfaces only, quality state visible in filenames, safe to paste).",
+      "observedResult": "No `report.md` or CLI output was provided to verify the generation or content of the filesystem tree projection.",
+      "timestamp": "2026-07-10T01:06:07.802Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--generate-a-filesystem-tree-projection-for-review--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-quality-board-filesystem-body.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--generate-a-filesystem-tree-projection-for-review--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "block-commit-when-report-truth-gate-fails",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 518,
+    "candidatesTokenCount": 902,
+    "totalTokenCount": 3401,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 518
+      }
+    ],
+    "thoughtsTokenCount": 1981,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The provided evidence indicates that the `report-truth` command exited successfully (zero), which directly contradicts the scenario's `Given` condition that 'the report truth command exits nonzero'. As a result, the core behavior of blocking a commit/push when the truth gate fails could not be observed or verified under the specified preconditions.",
+    "expectedResult": "Given that the `report-truth` command exits nonzero, a pre-commit/pre-push hook should block the commit/push action, and the message displayed to the developer should identify the `report-truth` command to run and include the first actionable finding path.",
+    "observedResult": "The `report.md` was generated after the local test suite passed, implying `report-truth` exited successfully (zero). Therefore, the scenario's precondition for blocking was not met, and no blocking action or associated message was observed under the specified conditions.",
+    "confusingOrRiskyExperiencePoints": "The test setup appears to be flawed, as the evidence provided (successful `report.md` generation) directly contradicts a critical `Given` condition of the scenario. This makes it impossible to verify the intended feature behavior.",
+    "accessibilityOrReadabilityObservations": "N/A",
+    "recommendedFollowUps": "The test for this scenario needs to be re-executed ensuring that the `Given` condition 'And the report truth command exits nonzero' is genuinely met. Provide clear evidence, such as CLI output or logs, that demonstrates the hook blocking the action and the exact content of the message displayed to the developer when `report-truth` fails.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And the report truth command exits nonzero",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` was generated after the local test suite passed, which implies `report-truth` exited successfully (zero). This contradicts the `Given` condition that `report-truth` exits nonzero, meaning the precondition for the scenario was not met.",
+        "blockerCode": "PRECONDITION_NOT_MET",
+        "recommendedFixRoute": "Ensure the test environment correctly simulates `report-truth` exiting nonzero before attempting to commit/push for this scenario."
+      },
+      {
+        "criterionText": "Then the hook should block the action",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The available evidence (`report.md`, Gemini receipt) does not provide any direct observation of a git hook blocking a commit or push action. Furthermore, the scenario's precondition for this action was not met.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE",
+        "recommendedFixRoute": "Provide CLI output or logs that explicitly show the git hook blocking the commit/push action."
+      },
+      {
+        "criterionText": "And the message should identify the report truth command to run",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The available evidence does not include the actual message output by the git hook. Without this, it's impossible to verify if the message identifies the `report-truth` command. The scenario's precondition for this message was also not met.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE",
+        "recommendedFixRoute": "Provide CLI output or logs showing the exact message displayed by the hook, including the command identification."
+      },
+      {
+        "criterionText": "And the message should include the first actionable finding path.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The available evidence does not include the actual message output by the git hook. Therefore, it's impossible to verify if the message includes the first actionable finding path. The scenario's precondition for this message was also not met.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE",
+        "recommendedFixRoute": "Provide CLI output or logs showing the exact message displayed by the hook, including the first actionable finding path."
+      }
+    ]
+  }
+}

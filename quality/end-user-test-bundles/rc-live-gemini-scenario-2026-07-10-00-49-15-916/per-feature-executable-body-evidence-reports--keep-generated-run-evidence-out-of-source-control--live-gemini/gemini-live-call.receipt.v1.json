@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--keep-generated-run-evidence-out-of-source-control--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "keep-generated-run-evidence-out-of-source-control",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 511,
+    "candidatesTokenCount": 725,
+    "totalTokenCount": 2952,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 511
+      }
+    ],
+    "thoughtsTokenCount": 1716,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "5ef5bb0b40e7d4bd896920dfa8f282e20e1290abbce90c94451efb93652aceab",
+  "responseSha256": "c1e19da83b45633f6486cec4834b78c0a4250d4c5557a6d17b157f43f1e19e87",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/keep-generated-run-evidence-out-of-source-control.response.v1.json",
+  "calledAt": "2026-07-10T01:21:09.365Z"
+}

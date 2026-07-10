@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "evidence-receipt-coverage--write-report-evidence-packet--live-gemini",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "write-report-evidence-packet",
+  "scenarioName": "Write report evidence packet",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Write report evidence packet",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/evidence-receipt-coverage.feature.md:8-33; report.md; live Gemini prompt",
+      "expectedResult": "An evidence packet containing all listed artifacts should be generated, and 'report.md' should contain repo-relative links to each of them.",
+      "observedResult": "Cannot observe due to missing 'report.md' content.",
+      "timestamp": "2026-07-10T00:57:31.674Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--write-report-evidence-packet--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/evidence-receipt-coverage.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--write-report-evidence-packet--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

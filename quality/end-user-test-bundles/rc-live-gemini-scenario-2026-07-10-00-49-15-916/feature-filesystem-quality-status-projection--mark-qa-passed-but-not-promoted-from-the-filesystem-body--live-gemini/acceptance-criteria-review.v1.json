@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-passed-but-not-promoted-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-passed-but-not-promoted-from-the-filesystem-body",
+  "criteria": [
+    {
+      "criterionText": "And its QA gate decision is `QA passed`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a precondition for the scenario. Verification that this precondition was met during actual execution requires reviewing `report.md` or other execution logs, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` or other execution logs that confirm the QA gate decision was 'QA passed'."
+    },
+    {
+      "criterionText": "But no deterministic promotion decision exists",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a negative precondition. Verification that this condition was true during actual execution requires reviewing `report.md` or other execution logs, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` or other execution logs that confirm no deterministic promotion decision existed."
+    },
+    {
+      "criterionText": "Then the status sentinel should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes the expected creation and path of the status sentinel. Verification requires `report.md` or CLI evidence showing the created sentinel file, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` or CLI evidence (e.g., file system listing) demonstrating the creation of the sentinel file at the specified path."
+    },
+    {
+      "criterionText": "And the sentinel should state that QA passed is not the same as release promotion",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes specific content expected within the sentinel file. Verification requires `report.md` or CLI evidence showing the actual content of the sentinel, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` or CLI evidence (e.g., `cat` command output) showing the content of the sentinel file, confirming this statement."
+    },
+    {
+      "criterionText": "And the next recommended action should be to run the deterministic promotion gate.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes another piece of content expected within the sentinel file. Verification requires `report.md` or CLI evidence showing the actual content of the sentinel, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` or CLI evidence (e.g., `cat` command output) showing the content of the sentinel file, confirming this recommended action."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:04:32.185Z"
+}

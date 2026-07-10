@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "portable-evidence-paths--block-machine-local-path-leakage--live-gemini",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "block-machine-local-path-leakage",
+  "scenarioName": "Block machine-local path leakage",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block machine-local path leakage",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/portable-evidence-paths.feature.md:15-23; report.md; live Gemini prompt",
+      "expectedResult": "The report portability gate should block the report, and the finding code 'report-path-not-portable' should be present.",
+      "observedResult": "Not observed due to lack of execution environment and evidence.",
+      "timestamp": "2026-07-10T01:23:07.677Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/portable-evidence-paths--block-machine-local-path-leakage--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "BLOCKED",
+      "evidencePaths": [
+        "docs/features/portable-evidence-paths.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/portable-evidence-paths--block-machine-local-path-leakage--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

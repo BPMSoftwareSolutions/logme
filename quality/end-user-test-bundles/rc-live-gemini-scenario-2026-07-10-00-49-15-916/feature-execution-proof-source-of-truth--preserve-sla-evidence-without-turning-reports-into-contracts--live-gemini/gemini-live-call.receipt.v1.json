@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--preserve-sla-evidence-without-turning-reports-into-contracts--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-sla-evidence-without-turning-reports-into-contracts",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 579,
+    "candidatesTokenCount": 661,
+    "totalTokenCount": 2891,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 579
+      }
+    ],
+    "thoughtsTokenCount": 1651,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "4fa159cac71fa015d82a62a208849128e398af60251b92e28ae1f4267d5ea497",
+  "responseSha256": "2dc0d56f6af24926d3a575cd3a70e61899312fdfcb905121974b02e1652ade62",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/preserve-sla-evidence-without-turning-reports-into-contracts.response.v1.json",
+  "calledAt": "2026-07-10T01:01:43.976Z"
+}

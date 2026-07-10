@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "use-fallback-only-as-a-non-promotable-development-diagnostic",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

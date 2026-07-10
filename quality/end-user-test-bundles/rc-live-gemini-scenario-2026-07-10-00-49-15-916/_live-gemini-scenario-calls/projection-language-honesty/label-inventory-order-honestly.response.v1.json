@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "label-inventory-order-honestly",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 296,
+    "candidatesTokenCount": 702,
+    "totalTokenCount": 2208,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 296
+      }
+    ],
+    "thoughtsTokenCount": 1210,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "BLOCKED",
+    "observationSummary": "The test could not be executed as critical evidence from `report.md` and CLI output, which are necessary to verify the preconditions and assertions, was not provided. Without access to the rendered method table and report content, it's impossible to confirm the labeling and terminology used.",
+    "expectedResult": "The method table column should be labeled `Inventory Step` and the report should not refer to it as `Execution Step`, given that method ordering is derived from source scan order and no runtime telemetry event is tied to the method row.",
+    "observedResult": "The necessary evidence (rendered method table, report content, and confirmation of telemetry event absence) was missing, preventing any observation of the expected behavior.",
+    "confusingOrRiskyExperiencePoints": "Without the actual output, it's impossible to assess the user experience. However, if the labeling is incorrect, it could lead to significant confusion regarding the nature and purpose of the displayed steps (inventory vs. execution).",
+    "accessibilityOrReadabilityObservations": "N/A. The actual user-facing output (report.md, CLI evidence) was not available for review, thus no observations on accessibility or readability could be made.",
+    "recommendedFollowUps": "Provide the `report.md` and relevant CLI output that includes the rendered method table, clearly showing column headers, and any sections discussing method ordering. Additionally, provide evidence confirming the absence of runtime telemetry events tied to method rows.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And no runtime telemetry event is tied to the method row",
+        "status": "NOT_TESTABLE",
+        "llmObservationSummary": "This precondition requires evidence from CLI output or a report confirming the absence of runtime telemetry events tied to method rows. Such evidence was not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide CLI output or report sections that explicitly show the absence of runtime telemetry events tied to method rows, or confirm this state through other verifiable means."
+      },
+      {
+        "criterionText": "Then the column should be labeled `Inventory Step`",
+        "status": "BLOCKED",
+        "llmObservationSummary": "Verification of the column label requires access to the rendered method table in `report.md` or CLI output. This evidence was not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide a screenshot or text representation of the rendered method table from `report.md` or CLI output, clearly showing the column headers for verification."
+      },
+      {
+        "criterionText": "And the report should not call it `Execution Step`.",
+        "status": "BLOCKED",
+        "llmObservationSummary": "Verification of the terminology used in the report requires access to the relevant sections of `report.md` or CLI output. This evidence was not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the relevant section of `report.md` or CLI output that describes the method steps, allowing verification that the term 'Execution Step' is not used."
+      }
+    ]
+  }
+}

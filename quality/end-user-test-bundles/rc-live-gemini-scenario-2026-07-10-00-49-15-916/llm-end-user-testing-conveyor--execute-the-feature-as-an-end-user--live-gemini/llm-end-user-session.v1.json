@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--execute-the-feature-as-an-end-user--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "execute-the-feature-as-an-end-user",
+  "scenarioName": "Execute the feature as an end user",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Execute the feature as an end user",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:104-136; report.md; live Gemini prompt",
+      "expectedResult": "The LLM should execute the feature scenario, interacting only through allowed end-user surfaces, with every action recorded as a detailed step, and specific session transcripts and narratives written to designated paths.",
+      "observedResult": "No direct observation of the LLM's execution or its generated artifacts (beyond the Gherkin itself) could be made from the provided context. The 'report.md' was mentioned as an available surface but its content was not supplied, nor was any CLI evidence.",
+      "timestamp": "2026-07-10T01:14:44.933Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--execute-the-feature-as-an-end-user--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--execute-the-feature-as-an-end-user--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "keep-qa-pass-separate-from-promotion",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 540,
+    "candidatesTokenCount": 754,
+    "totalTokenCount": 2486,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 540
+      }
+    ],
+    "thoughtsTokenCount": 1192,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario Gherkin outlines the expected behavior, but the `report.md` and Gemini live-call receipt, which are critical for verifying the actual observed results on the board, were not provided in this prompt. Therefore, the acceptance criteria cannot be tested from the assigned surfaces.",
+    "expectedResult": "The board should display 'qa-passed' status, 'not promoted' promotion status, 'run deterministic promotion gate' as the next action, and clearly indicate the feature is not yet releasable, as per the Gherkin.",
+    "observedResult": "Not observable due to missing `report.md` and Gemini live-call receipt.",
+    "confusingOrRiskyExperiencePoints": "N/A - cannot assess without observing the actual output.",
+    "accessibilityOrReadabilityObservations": "N/A - cannot assess without observing the actual output.",
+    "recommendedFollowUps": "Provide the `report.md` and Gemini live-call receipt to enable full testing of the scenario's acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But no deterministic promotion decision exists",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "Then the display status should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the promotion status should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the next action should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the board should not imply the feature is releasable.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      }
+    ]
+  }
+}

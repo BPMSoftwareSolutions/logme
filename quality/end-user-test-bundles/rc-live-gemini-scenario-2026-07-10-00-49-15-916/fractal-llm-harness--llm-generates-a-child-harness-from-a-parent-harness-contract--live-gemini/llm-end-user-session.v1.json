@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--llm-generates-a-child-harness-from-a-parent-harness-contract--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-generates-a-child-harness-from-a-parent-harness-contract",
+  "scenarioName": "LLM generates a child harness from a parent harness contract",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed LLM generates a child harness from a parent harness contract",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/fractal-llm-harness.feature.md:8-19; report.md; live Gemini prompt",
+      "expectedResult": "The LLM should generate a child harness that includes a body contract, an execution path, tests, telemetry testimony requirements, and receipt coverage. Additionally, the proposal should not be promoted automatically, and the prerequisites regarding parent harness conformance and LLM assignment should be met.",
+      "observedResult": "No evidence was provided to observe the generated child harness, its components, its promotion status, or the fulfillment of the prerequisite conditions.",
+      "timestamp": "2026-07-10T01:11:48.326Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--llm-generates-a-child-harness-from-a-parent-harness-contract--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/fractal-llm-harness.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--llm-generates-a-child-harness-from-a-parent-harness-contract--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

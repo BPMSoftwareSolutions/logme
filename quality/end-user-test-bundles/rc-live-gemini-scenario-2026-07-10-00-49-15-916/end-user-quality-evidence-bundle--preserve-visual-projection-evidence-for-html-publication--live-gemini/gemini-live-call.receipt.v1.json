@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--preserve-visual-projection-evidence-for-html-publication--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "preserve-visual-projection-evidence-for-html-publication",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 586,
+    "candidatesTokenCount": 698,
+    "totalTokenCount": 2167,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 586
+      }
+    ],
+    "thoughtsTokenCount": 883,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "2240bbee91bb0d2b8264aea8e1df546b86e31254e7b4898587924c2eb60002b5",
+  "responseSha256": "10e0676b56a6ce9207efc712100ca031ce4f78f7a3defcd92e24325dd16e28c1",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/preserve-visual-projection-evidence-for-html-publication.response.v1.json",
+  "calledAt": "2026-07-10T00:57:05.841Z"
+}

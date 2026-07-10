@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--tie-every-executable-file-to-a-file-body-contract--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "tie-every-executable-file-to-a-file-body-contract",
+  "criteria": [
+    {
+      "criterionText": "Then the analysis should list every owning body contract",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes this as an expected outcome, but no actual test output (e.g., from report.md or live-call receipt) was provided to verify its occurrence.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt containing the actual analysis output."
+    },
+    {
+      "criterionText": "And a file with no declaring body contract should receive:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes this as an expected outcome, but no actual test output (e.g., from report.md or live-call receipt) was provided to verify its occurrence.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt containing the actual analysis output."
+    },
+    {
+      "criterionText": "And the recommended fix should name the contract or owned package boundary that must authorize the file.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes this as an expected outcome, but no actual test output (e.g., from report.md or live-call receipt) was provided to verify its occurrence.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' and Gemini live-call receipt containing the actual analysis output."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:13:29.426Z"
+}

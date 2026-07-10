@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--require-branch-assertions-in-report-tests--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "require-branch-assertions-in-report-tests",
+  "criteria": [
+    {
+      "criterionText": "Then the tests should assert that the rendered report contains branch lines matching:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the patterns the tests should assert. However, the `report.md` content was not provided, so it's impossible to verify if the rendered report actually contains these lines or if the tests correctly assert their presence.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the `report.md` file and CLI test output."
+    },
+    {
+      "criterionText": "And the tests should fail when the report only contains a box title, node labels, and flat `contract :`, `runtime :`, `telemetry :`, `receipt :`, or `status :` rows.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the negative test case where tests should fail. However, no `report.md` (under failure conditions) or CLI test output was provided to confirm that the tests correctly implement this failure condition.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_TEST_FAILURE_BEHAVIOR",
+      "recommendedFixRoute": "Provide CLI test output demonstrating this failure condition, or a `report.md` that would trigger it."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:10:02.270Z"
+}

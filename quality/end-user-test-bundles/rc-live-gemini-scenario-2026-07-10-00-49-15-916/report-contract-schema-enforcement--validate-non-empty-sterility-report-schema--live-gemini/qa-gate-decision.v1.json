@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "validate-non-empty-sterility-report-schema",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-external-surface-not-testable-locally"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:33:42.142Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.060Z",
+  "rawLlmBlockerCodes": [
+    "llm-end-user-surface-insufficient"
+  ]
+}

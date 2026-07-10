@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--preserve-method-call-drill-down-inside-observed-body-nodes--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-method-call-drill-down-inside-observed-body-nodes",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 683,
+    "candidatesTokenCount": 1223,
+    "totalTokenCount": 4760,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 683
+      }
+    ],
+    "thoughtsTokenCount": 2854,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "ab37538ded8a723b88c063ab76a6b45c4c2e2066e46f3786af9b36622f4112cd",
+  "responseSha256": "a8c2b8e62c03861ca313970584ba0c47377a9517e6109c7fdbaf50ec50fbc5c8",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/preserve-method-call-drill-down-inside-observed-body-nodes.response.v1.json",
+  "calledAt": "2026-07-10T00:59:01.739Z"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "block-stale-quality-board-promotion-in-ci",
+  "criteria": [
+    {
+      "criterionText": "Then it should regenerate:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The provided evidence surfaces (Gherkin, mention of a passing local test suite, and future Gemini receipt) do not contain the actual 'report.md' content or any other output that would demonstrate the regeneration of the specified artifacts.",
+      "evidencePaths": [],
+      "blockerCode": "insufficient-evidence-report-content-missing",
+      "recommendedFixRoute": "Provide the actual 'report.md' content for review, explicitly showing the regeneration of artifacts."
+    },
+    {
+      "criterionText": "And it should fail if generated artifacts differ from committed artifacts",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The provided evidence surfaces do not contain the actual 'report.md' content or any other output that would demonstrate a CI failure under the specified conditions. The statement 'local test suite passed' refers to the test itself, not the CI behavior.",
+      "evidencePaths": [],
+      "blockerCode": "insufficient-evidence-report-content-missing",
+      "recommendedFixRoute": "Provide the actual 'report.md' content for review, specifically showing a failure scenario when artifacts differ."
+    },
+    {
+      "criterionText": "And the failure should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Without the actual 'report.md' content or CI logs, it is impossible to verify if the specific finding code 'feature-quality-board-stale' was included in a failure message.",
+      "evidencePaths": [],
+      "blockerCode": "insufficient-evidence-report-content-missing",
+      "recommendedFixRoute": "Provide the actual 'report.md' content or CI logs showing the failure output, including the specified finding code."
+    },
+    {
+      "criterionText": "And a stale board should block release promotion.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a blocking behavior in a CI/release pipeline. The provided evidence (Gherkin, mention of local test suite passing, future Gemini receipt) does not include any logs, reports, or live system output that would demonstrate this blocking action.",
+      "evidencePaths": [],
+      "blockerCode": "insufficient-evidence-report-content-missing",
+      "recommendedFixRoute": "Provide actual CI/CD pipeline logs or a report that explicitly shows a release promotion being blocked due to a stale quality board."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:07:42.133Z"
+}

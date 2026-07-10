@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "establish-service-level-indicators-from-execution-proof",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 667,
+    "candidatesTokenCount": 798,
+    "totalTokenCount": 3467,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 667
+      }
+    ],
+    "thoughtsTokenCount": 2002,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The `report.md` content, which is crucial for verifying the derivation and structure of Service Level Indicators (SLIs), was not provided as part of the evidence surfaces. Without this report, it is impossible to confirm if SLIs are correctly established from execution proof, include the specified fields, or avoid forbidden calculation sources.",
+    "expectedResult": "Service Level Indicators (SLIs) should be calculated from observed execution evidence, include a specific set of supported SLIs with detailed fields (name, description, numerator, denominator, unit, value, measurement window, evidence source paths), and explicitly not be derived from report labels, static source inventory, or manual claims, as detailed in the scenario Gherkin.",
+    "observedResult": "No `report.md` content was observed. Therefore, no SLIs or their derivation could be verified. The Gherkin describes the expected behavior, but no actual execution proof or report was available for review.",
+    "confusingOrRiskyExperiencePoints": "The lack of the `report.md` content makes it impossible to verify the feature's implementation from an end-user perspective. This is a critical gap in the QA process as the primary evidence surface for this scenario is missing.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is missing content, not readability of existing content.",
+    "recommendedFollowUps": "Provide the `report.md` content for review to enable verification of SLI derivation and structure. Ensure all specified evidence surfaces are actually provided when requesting a QA review.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then each SLI should be derived from observed execution evidence",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` content, which would demonstrate the derivation of SLIs from execution evidence, was not provided. Verification is impossible.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And supported SLIs should include:",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` content, which would list the supported SLIs, was not provided. It is impossible to confirm if all specified SLIs are included.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And each SLI should include:",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` content, which would detail the structure of each SLI, was not provided. It is impossible to confirm if each SLI includes the required fields.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And no SLI should be calculated from a report label, static source inventory, or manually entered claim.",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` content, which would show the source of SLI calculations, was not provided. It is impossible to confirm that SLIs are not derived from forbidden sources.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--package-the-llm-qa-evidence-bundle--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "package-the-llm-qa-evidence-bundle",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 741,
+    "candidatesTokenCount": 841,
+    "totalTokenCount": 3017,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 741
+      }
+    ],
+    "thoughtsTokenCount": 1435,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "d7e8c457de0c0fc41860863a6b2a1a9229077a958eadd0ea68506ce6deb9d3ec",
+  "responseSha256": "1ec7eb949340dafe978064d655df3d7d2ba132f53ea908adabb20468e8f32268",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/package-the-llm-qa-evidence-bundle.response.v1.json",
+  "calledAt": "2026-07-10T01:16:26.703Z"
+}

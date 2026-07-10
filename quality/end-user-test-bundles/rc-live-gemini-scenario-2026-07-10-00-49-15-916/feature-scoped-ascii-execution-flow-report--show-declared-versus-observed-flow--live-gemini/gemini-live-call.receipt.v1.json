@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "show-declared-versus-observed-flow",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 513,
+    "candidatesTokenCount": 682,
+    "totalTokenCount": 2983,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 513
+      }
+    ],
+    "thoughtsTokenCount": 1788,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "6806fa9ecd7d4063c67887ffc46b54b27c2d7dbdbda0e2ed30d1c01643823bc4",
+  "responseSha256": "c3520a7e63e6aeada301e66528af05f7ad8da4061cb9592feb9943273a14b618",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/show-declared-versus-observed-flow.response.v1.json",
+  "calledAt": "2026-07-10T01:08:15.981Z"
+}

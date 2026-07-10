@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-status-sentinel-and-json-contract-mismatch--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-status-sentinel-and-json-contract-mismatch",
+  "scenarioName": "Detect status sentinel and JSON contract mismatch",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Detect status sentinel and JSON contract mismatch\n    Given a status contract exists for `<feature-id>`\n    And a visible status sentinel exists for `<feature-id>`\n    But the sentinel display status does not match the JSON display status\n    When the quality board projection verifies filesystem status\n    Then it should add a board finding:\n      | finding code |\n      | feature-status-filesystem-mismatch |\n    And the feature row should be marked `stale`\n    And the board should include the expected sentinel path\n    And the board should include the observed sentinel path.\n",
+    "acceptanceCriteria": [
+      "And a visible status sentinel exists for `<feature-id>`",
+      "But the sentinel display status does not match the JSON display status",
+      "Then it should add a board finding:",
+      "And the feature row should be marked `stale`",
+      "And the board should include the expected sentinel path",
+      "And the board should include the observed sentinel path."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:06:36.342Z"
+}

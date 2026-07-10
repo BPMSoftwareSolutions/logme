@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--keep-local-report-truth-output-quiet-enough-to-use--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "keep-local-report-truth-output-quiet-enough-to-use",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 516,
+    "candidatesTokenCount": 605,
+    "totalTokenCount": 1697,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 516
+      }
+    ],
+    "thoughtsTokenCount": 576,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "59e8bfabc65bfdb625584ae8bf6da2ddb9c6e0fef76d30d2cde861d610c82ad1",
+  "responseSha256": "1d427b7b666dbff569b52c05a290aafa3e0f65b7f5ba77d0ba04b04d8c485308",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/keep-local-report-truth-output-quiet-enough-to-use.response.v1.json",
+  "calledAt": "2026-07-10T00:52:22.968Z"
+}

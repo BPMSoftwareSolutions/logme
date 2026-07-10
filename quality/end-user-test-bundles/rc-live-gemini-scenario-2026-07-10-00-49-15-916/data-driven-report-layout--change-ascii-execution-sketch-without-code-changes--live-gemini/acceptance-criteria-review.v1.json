@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--change-ascii-execution-sketch-without-code-changes--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "change-ascii-execution-sketch-without-code-changes",
+  "criteria": [
+    {
+      "criterionText": "And the template references report data using declared variables",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of how the template references report data requires access to the template file itself, which is not available through the assigned end-user surfaces (report.md, Gherkin).",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_TEMPLATE_FILE",
+      "recommendedFixRoute": "Provide access to the template file or a detailed representation of its variable referencing mechanism."
+    },
+    {
+      "criterionText": "And the report generator runs",
+      "status": "met",
+      "llmObservationSummary": "The existence and provision of the report.md file confirms that the report generator successfully ran.",
+      "evidencePaths": [
+        "docs/features/data-driven-report-layout.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--change-ascii-execution-sketch-without-code-changes--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "Then report.md should reflect the updated sketch",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "To verify that report.md reflects an 'updated sketch', a baseline (the original sketch) and the specific changes applied are required for comparison. These are not provided in the available evidence.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_COMPARATIVE_SKETCH",
+      "recommendedFixRoute": "Provide the original ASCII execution sketch and the specific updated sketch for comparison against the generated report.md."
+    },
+    {
+      "criterionText": "And no renderer code change should be required",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion refers to an implementation detail (code changes) that cannot be verified from the assigned end-user surfaces (report.md, Gherkin).",
+      "evidencePaths": [],
+      "blockerCode": "NOT_ACCESSIBLE_IMPLEMENTATION_DETAIL",
+      "recommendedFixRoute": "Clarify how an end-user QA can verify this, or assign this criterion to a different testing surface (e.g., code review, build logs)."
+    },
+    {
+      "criterionText": "And every template variable should resolve against the report data contract.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verifying that *every* template variable resolves against the *report data contract* requires access to both the template file and the data contract, neither of which are available through the assigned end-user surfaces.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_TEMPLATE_AND_CONTRACT",
+      "recommendedFixRoute": "Provide access to the template file and the report data contract for comprehensive variable resolution verification."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:51:00.789Z"
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-unsafe-output-is-blocked",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 466,
+    "candidatesTokenCount": 512,
+    "totalTokenCount": 2973,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 466
+      }
+    ],
+    "thoughtsTokenCount": 1995,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The acceptance criteria for blocking unsafe LLM output could not be verified. The content of the 'report.md' and the 'Gemini live-call receipt' were not supplied for review, making it impossible to confirm if the harness was blocked, a receipt was written, or code was not promoted.",
+    "expectedResult": "The LLM-generated harness should be blocked, a blocker receipt should be written, and no code should be promoted, as outlined in the Gherkin scenario.",
+    "observedResult": "Unable to observe the actual outcome of the scenario due to the absence of concrete evidence from the specified end-user surfaces.",
+    "confusingOrRiskyExperiencePoints": "The inability to verify that unsafe LLM output is blocked poses a critical risk. Without direct evidence from the report or receipts, the safety mechanism's functionality remains unconfirmed.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is the absence of required evidence content, not the readability of any provided content.",
+    "recommendedFollowUps": "To enable proper testing, ensure that the actual content of 'report.md' and the 'Gemini live-call receipt' are provided as part of the evidence surfaces for review.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the harness should be blocked",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (e.g., report.md content, receipt content) was provided to confirm that the harness was blocked.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the content of 'report.md' and the 'Gemini live-call receipt' to verify this criterion."
+      },
+      {
+        "criterionText": "And a blocker receipt should be written",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (e.g., receipt content, log entries) was provided to confirm that a blocker receipt was written.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the content of the 'Gemini live-call receipt' to verify this criterion."
+      },
+      {
+        "criterionText": "And no code should be promoted.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (e.g., deployment logs, status reports) was provided to confirm that no code was promoted.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide relevant evidence from 'report.md' or other CLI outputs to verify this criterion."
+      }
+    ]
+  }
+}

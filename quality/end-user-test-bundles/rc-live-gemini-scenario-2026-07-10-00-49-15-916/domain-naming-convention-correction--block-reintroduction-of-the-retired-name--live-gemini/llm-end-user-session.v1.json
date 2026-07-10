@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--block-reintroduction-of-the-retired-name--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "block-reintroduction-of-the-retired-name",
+  "scenarioName": "Block reintroduction of the retired name",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block reintroduction of the retired name",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-naming-convention-correction.feature.md:45-55; report.md; live Gemini prompt",
+      "expectedResult": "The system should treat the reintroduction of `logme2` as a naming regression, produce the `retired-domain-name-reintroduced` finding code, and the report should not promote a verdict.",
+      "observedResult": "Cannot observe the actual system behavior or report output as the necessary evidence (report.md, live-call receipt) was not provided.",
+      "timestamp": "2026-07-10T00:55:15.508Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--block-reintroduction-of-the-retired-name--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-naming-convention-correction.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--block-reintroduction-of-the-retired-name--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

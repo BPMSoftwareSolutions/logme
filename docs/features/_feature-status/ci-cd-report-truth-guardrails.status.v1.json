@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "featureName": "CI/CD report truth guardrails",
+  "sourceFeaturePath": "docs/features/ci-cd-report-truth-guardrails.feature.md",
+  "sourceFeatureContentHash": "b4a15bfcb50f0acbf6f6f37a420f7c5494ca8636f024455b0dd0b5b091e09d8a",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "ad62283b46f30658230f04f536d2acf47d4708053a47760df34d45bd54e655e0"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-required-artifact-evidence-missing",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 3,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "CI/CD report truth guardrails is currently qa-blocked."
+}

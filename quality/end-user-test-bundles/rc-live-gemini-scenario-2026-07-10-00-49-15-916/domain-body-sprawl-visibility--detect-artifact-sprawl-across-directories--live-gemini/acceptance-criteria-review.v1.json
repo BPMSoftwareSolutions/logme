@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--detect-artifact-sprawl-across-directories--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-artifact-sprawl-across-directories",
+  "criteria": [
+    {
+      "criterionText": "Then it should verify that related artifacts follow the declared file-system body contract",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify internal system behavior without external evidence like a report or CLI output.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide report.md or CLI output showing verification status."
+    },
+    {
+      "criterionText": "And it should report:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The specific findings listed in the Gherkin table cannot be confirmed without the actual report.md.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide report.md to confirm the presence and content of the reported findings."
+    },
+    {
+      "criterionText": "And each finding should include the expected home or declared owner.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify the detail of findings (inclusion of home/owner) without the actual report.md.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide report.md to confirm the structure and content of each finding."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:54:07.469Z"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--preserve-repeated-method-calls-in-order--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "preserve-repeated-method-calls-in-order",
+  "scenarioName": "Preserve repeated method calls in order",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve repeated method calls in order",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:199-214; report.md; live Gemini prompt",
+      "expectedResult": "The generated report should clearly display stable call indices for each instance of a repeated method call, include a comprehensive method summary with fields like 'call count', 'first call started at', 'last call completed at', 'total duration ms', 'minimum duration ms', 'maximum duration ms', 'average duration ms', and 'total wait between calls ms'. Furthermore, the report should present each repeated call individually without collapsing them into an invented aggregate.",
+      "observedResult": "No `report.md` content was available for review, preventing any observation of the actual reporting behavior.",
+      "timestamp": "2026-07-10T01:19:18.786Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--preserve-repeated-method-calls-in-order--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--preserve-repeated-method-calls-in-order--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

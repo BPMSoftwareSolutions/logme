@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "decide-qa-pass-or-fail-outside-the-llm",
+  "criteria": [
+    {
+      "criterionText": "And the QA bundle has been assembled",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states this as a precondition, but no end-user surface provides direct evidence of the bundle's assembly or its contents.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide access to the QA bundle manifest or a log confirming its successful assembly."
+    },
+    {
+      "criterionText": "Then the gate should calculate the quality decision from evidence",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected outcome, but no end-user surface (like the qa-gate-decision.v1.json content or a detailed report) demonstrates the calculation process or its result.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of qa-gate-decision.v1.json or a detailed section in report.md showing the decision calculation."
+    },
+    {
+      "criterionText": "And the LLM should not be allowed to promote its own run",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a system-level constraint. No end-user surface provides evidence of this restriction's enforcement or verification.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide a configuration file, audit log, or a specific section in report.md that confirms this constraint is active and enforced."
+    },
+    {
+      "criterionText": "And QA pass should require:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin lists the requirements for a QA pass, but no end-user surface demonstrates how these individual requirements are evaluated or if they were met for a specific run. The qa-gate-decision.v1.json would be the primary evidence, but it's not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of qa-gate-decision.v1.json which should detail the evaluation against each of these requirements, or a dedicated section in report.md."
+    },
+    {
+      "criterionText": "And the decision should be written to:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the output path, but no end-user surface provides direct proof of the file's existence at that path or its content.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of the qa-gate-decision.v1.json file itself, or a screenshot/CLI output showing its presence at the specified path."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:16:52.849Z"
+}

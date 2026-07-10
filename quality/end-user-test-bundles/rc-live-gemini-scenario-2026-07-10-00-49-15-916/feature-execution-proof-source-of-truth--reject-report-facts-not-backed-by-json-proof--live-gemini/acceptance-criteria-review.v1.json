@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--reject-report-facts-not-backed-by-json-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "reject-report-facts-not-backed-by-json-proof",
+  "criteria": [
+    {
+      "criterionText": "Then every such fact should tie back to `feature-execution.contract.v1.json`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` was not provided, preventing verification of whether facts in the report tie back to the JSON proof.",
+      "evidencePaths": [],
+      "blockerCode": "missing-report-md",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "And every JSON proof fact should tie back to raw telemetry or receipt evidence",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Neither the `report.md` (which would reference JSON proof facts) nor the Gemini live-call receipt (raw telemetry/receipt evidence) were provided, making verification impossible.",
+      "evidencePaths": [],
+      "blockerCode": "missing-report-md-and-receipt",
+      "recommendedFixRoute": "Provide the `report.md` file and the Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the gate should fail when the report contains a fact that is absent from the JSON proof",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` was not provided, so it's impossible to determine if the gate failed under the specified conditions.",
+      "evidencePaths": [],
+      "blockerCode": "missing-report-md",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` was not provided, preventing verification of the presence of the `feature-report-fact-without-json-proof` finding code.",
+      "evidencePaths": [],
+      "blockerCode": "missing-report-md",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:02:23.898Z"
+}

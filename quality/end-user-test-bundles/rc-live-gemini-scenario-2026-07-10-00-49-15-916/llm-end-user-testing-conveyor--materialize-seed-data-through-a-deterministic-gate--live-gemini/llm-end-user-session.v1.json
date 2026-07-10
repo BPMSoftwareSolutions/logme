@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--materialize-seed-data-through-a-deterministic-gate--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "materialize-seed-data-through-a-deterministic-gate",
+  "scenarioName": "Materialize seed data through a deterministic gate",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Materialize seed data through a deterministic gate",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:83-103; report.md; live Gemini prompt",
+      "expectedResult": "The system should validate seed data against specified rules, block LLM QA runs for rejected proposals, and materialize approved seed data and its receipt to the designated paths.",
+      "observedResult": "No execution results or output artifacts were provided to confirm the expected behavior. Only the Gherkin definition was available for review.",
+      "timestamp": "2026-07-10T01:14:36.617Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--materialize-seed-data-through-a-deterministic-gate--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--materialize-seed-data-through-a-deterministic-gate--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

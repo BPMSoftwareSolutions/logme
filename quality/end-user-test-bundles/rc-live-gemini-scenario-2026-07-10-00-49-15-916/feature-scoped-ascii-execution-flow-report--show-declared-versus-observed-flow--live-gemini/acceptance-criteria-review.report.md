@@ -1,0 +1,13 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini
+- Feature id: feature-scoped-ascii-execution-flow-report
+- Scenario id: show-declared-versus-observed-flow
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| And runtime telemetry exists for that feature run | met | The 'Observed Telemetry' lane in the ASCII sketch contains specific telemetry events, confirming their existence and use for runtime observations. | docs/features/feature-scoped-ascii-execution-flow-report.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |
+| Then it should separate: | met | The ASCII execution sketch clearly presents four distinct, labeled lanes: 'Declared Flow', 'Observed Telemetry', 'Receipt Proof', and 'Blockers', fulfilling the separation requirement. | docs/features/feature-scoped-ascii-execution-flow-report.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |
+| And runtime observation should come only from telemetry events | met | The 'Observed Telemetry' lane exclusively displays entries identified as telemetry events, with no static Gherkin steps or source inventory present, confirming observations are telemetry-derived. | docs/features/feature-scoped-ascii-execution-flow-report.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |
+| And source inventory should not be presented as runtime execution. | met | The 'Declared Flow' lane contains the Gherkin steps, while the 'Observed Telemetry' lane contains distinct runtime events. There is no overlap or misrepresentation of source inventory as runtime execution. | docs/features/feature-scoped-ascii-execution-flow-report.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "mark-unobserved-runtime-methods-explicitly",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 334,
+    "candidatesTokenCount": 349,
+    "totalTokenCount": 1234,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 334
+      }
+    ],
+    "thoughtsTokenCount": 551,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "FAIL",
+    "observationSummary": "No markdown, report.md, or CLI evidence was provided to verify the rendering of the method table when a method is present in the source inventory but no telemetry event is observed during the run. Without evidence, it is impossible to confirm if 'not observed' values are displayed correctly for runtime step, first observed at, and duration ms, or if the telemetry status is 'missing', and if the row avoids showing misleading values like '0ms' or blank duration.",
+    "expectedResult": "When a method is present in source inventory but no telemetry event is observed for it during the run, the rendered method table should explicitly mark 'runtime step' as 'not observed', 'first observed at' as 'not observed', 'duration ms' as 'not observed', and 'telemetry status' as 'missing'. The row should not display '0ms', blank duration, or any value that could be interpreted as a successful runtime observation.",
+    "observedResult": "No evidence (report.md, CLI output, or markdown rendering) was provided to observe the actual behavior of the method table for unobserved runtime methods. Therefore, the expected rendering and explicit marking of 'not observed' values could not be verified.",
+    "recommendedFollowUps": "Provide the `report.md` file, relevant CLI output, or screenshots of the markdown rendering that clearly show the method table for a method with no observed telemetry events. This evidence is crucial to verify that 'not observed' is explicitly displayed for runtime step, first observed at, and duration ms, that telemetry status is 'missing', and that no misleading values are present."
+  }
+}

@@ -7,6 +7,7 @@ const { loadsWorkspaceObservabilityConfig } = require('../loads-workspace-observ
 const { buildsDomainBodySterilityContract } = require('../builds-domain-body-sterility-contract/builds-domain-body-sterility-contract');
 const { writesDomainBodySterilityReceipt } = require('../writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt');
 const { checksReportTruthGate } = require('../report-provenance/report-provenance');
+const { writesFeatureQualityBoardProjection } = require('../feature-quality-board/feature-quality-board');
 
 const SUMMARY_FIELD_NAMES = {
   'Files scanned': 'filesScanned',
@@ -225,7 +226,7 @@ function readsMarkdownMethodTable(reportContent) {
     LogMe(sampleMethod);
   }
 
-  const tableBlock = readsMarkdownSection(reportContent, 'Discovered Methods');
+  const tableBlock = readsFirstMarkdownSectionBody(readsMarkdownSection(reportContent, 'Discovered Methods'));
 
   if (!tableBlock) {
     return [];
@@ -243,6 +244,14 @@ function readsMarkdownMethodTable(reportContent) {
   }
 
   return rows;
+}
+
+function readsFirstMarkdownSectionBody(sectionContent) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return String(sectionContent || '').split(/\n##\s+/u)[0].trim();
 }
 
 function isMarkdownTableRow(line) {
@@ -567,6 +576,9 @@ function runsReportTruthCommand(options = {}) {
   }
 
   const snapshot = buildsReportTruthSnapshot();
+  const featureQualityProjection = snapshot.layoutFailureReason || options.writeFeatureQualityBoard === false
+    ? null
+    : writesFeatureQualityBoardProjection({ rootDir: snapshot.config.rootDir });
   const blockers = buildsFailureBlockers(snapshot);
   const topFindingCodes = snapshot.layoutFailureReason ? [] : collectsTopFindingCodes(snapshot.findings);
   const topFindingPaths = snapshot.layoutFailureReason ? [] : collectsTopFindingPaths(snapshot.findings);
@@ -588,6 +600,7 @@ function runsReportTruthCommand(options = {}) {
     topFindingCodes,
     topFindingPaths,
     blockers,
+    featureQualityProjection,
     snapshot,
   };
 

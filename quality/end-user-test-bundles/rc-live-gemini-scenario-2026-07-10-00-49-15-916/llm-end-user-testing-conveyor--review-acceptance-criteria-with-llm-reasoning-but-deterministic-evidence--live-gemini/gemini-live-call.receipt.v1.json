@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 584,
+    "candidatesTokenCount": 834,
+    "totalTokenCount": 2646,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 584
+      }
+    ],
+    "thoughtsTokenCount": 1228,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "d5114e8061731adb93d89bdba3e09ce8489101a389b85f9ef534d6799de9d65b",
+  "responseSha256": "9cb7230c304479f1a5b9af07e3719202df69e39061cd666853c5fbe6cfbe1e14",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence.response.v1.json",
+  "calledAt": "2026-07-10T01:16:16.560Z"
+}

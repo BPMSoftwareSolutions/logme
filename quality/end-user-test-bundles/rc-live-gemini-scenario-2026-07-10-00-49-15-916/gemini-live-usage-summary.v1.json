@@ -1,0 +1,3575 @@
+{
+  "schemaVersion": "gemini-live-usage-summary.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "providerName": "Gemini",
+  "modelName": "mixed - see calls[].modelName",
+  "scenarioCallCount": 178,
+  "scenarioBundleCount": 178,
+  "aggregateUsage": {
+    "promptTokenCount": 103181,
+    "candidatesTokenCount": 136782,
+    "totalTokenCount": 487249,
+    "thoughtsTokenCount": 247286
+  },
+  "calls": [
+    {
+      "featureId": "adversarial-challenge-packet",
+      "scenarioId": "generate-report-challenge-packet",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 569,
+        "candidatesTokenCount": 445,
+        "totalTokenCount": 1943,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 569
+          }
+        ],
+        "thoughtsTokenCount": 929,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/adversarial-challenge-packet/generate-report-challenge-packet.response.v1.json"
+    },
+    {
+      "featureId": "adversarial-challenge-packet",
+      "scenarioId": "block-false-pass-claim",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 485,
+        "candidatesTokenCount": 652,
+        "totalTokenCount": 2644,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 485
+          }
+        ],
+        "thoughtsTokenCount": 1507,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/adversarial-challenge-packet/block-false-pass-claim.response.v1.json"
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-pull-request-when-report-truth-validation-fails",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 554,
+        "candidatesTokenCount": 516,
+        "totalTokenCount": 2677,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 554
+          }
+        ],
+        "thoughtsTokenCount": 1607,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/block-pull-request-when-report-truth-validation-fails.response.v1.json"
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "publish-report-evidence-packet-as-ci-artifact",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 682,
+        "candidatesTokenCount": 628,
+        "totalTokenCount": 2665,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 682
+          }
+        ],
+        "thoughtsTokenCount": 1355,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/publish-report-evidence-packet-as-ci-artifact.response.v1.json"
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-stale-local-report-projection",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 523,
+        "candidatesTokenCount": 952,
+        "totalTokenCount": 3374,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 523
+          }
+        ],
+        "thoughtsTokenCount": 1899,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/block-stale-local-report-projection.response.v1.json"
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-false-pass-in-promotion-workflow",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 618,
+        "candidatesTokenCount": 1210,
+        "totalTokenCount": 3609,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 618
+          }
+        ],
+        "thoughtsTokenCount": 1781,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/block-false-pass-in-promotion-workflow.response.v1.json"
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-release-promotion-without-end-user-qa-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 672,
+        "candidatesTokenCount": 1265,
+        "totalTokenCount": 3382,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 672
+          }
+        ],
+        "thoughtsTokenCount": 1445,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/block-release-promotion-without-end-user-qa-evidence.response.v1.json"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "change-report-section-order-without-code-changes",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 510,
+        "candidatesTokenCount": 705,
+        "totalTokenCount": 2111,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 510
+          }
+        ],
+        "thoughtsTokenCount": 896,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/change-report-section-order-without-code-changes.response.v1.json"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "change-report-labels-without-code-changes",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 490,
+        "candidatesTokenCount": 645,
+        "totalTokenCount": 2703,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 490
+          }
+        ],
+        "thoughtsTokenCount": 1568,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/change-report-labels-without-code-changes.response.v1.json"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "change-ascii-execution-sketch-without-code-changes",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 539,
+        "candidatesTokenCount": 992,
+        "totalTokenCount": 2885,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 539
+          }
+        ],
+        "thoughtsTokenCount": 1354,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/change-ascii-execution-sketch-without-code-changes.response.v1.json"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "validate-report-layout-contract-before-rendering",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 513,
+        "candidatesTokenCount": 686,
+        "totalTokenCount": 3367,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 513
+          }
+        ],
+        "thoughtsTokenCount": 2168,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/validate-report-layout-contract-before-rendering.response.v1.json"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "block-template-variable-that-has-no-data-source",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 531,
+        "candidatesTokenCount": 716,
+        "totalTokenCount": 3166,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 531
+          }
+        ],
+        "thoughtsTokenCount": 1919,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/block-template-variable-that-has-no-data-source.response.v1.json"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "block-product-template-from-weakening-truth-gates",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 525,
+        "candidatesTokenCount": 538,
+        "totalTokenCount": 1999,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 525
+          }
+        ],
+        "thoughtsTokenCount": 936,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/block-product-template-from-weakening-truth-gates.response.v1.json"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "keep-renderer-code-as-a-generic-engine",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 505,
+        "candidatesTokenCount": 677,
+        "totalTokenCount": 2657,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 505
+          }
+        ],
+        "thoughtsTokenCount": 1475,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/keep-renderer-code-as-a-generic-engine.response.v1.json"
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "fail-local-verification-when-tests-pass-but-report-is-contaminated",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 601,
+        "candidatesTokenCount": 845,
+        "totalTokenCount": 2458,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 601
+          }
+        ],
+        "thoughtsTokenCount": 1012,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/fail-local-verification-when-tests-pass-but-report-is-contaminated.response.v1.json"
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "provide-one-command-for-local-report-truth",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 561,
+        "candidatesTokenCount": 976,
+        "totalTokenCount": 2710,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 561
+          }
+        ],
+        "thoughtsTokenCount": 1173,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/provide-one-command-for-local-report-truth.response.v1.json"
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "keep-local-report-truth-output-quiet-enough-to-use",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 516,
+        "candidatesTokenCount": 605,
+        "totalTokenCount": 1697,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 516
+          }
+        ],
+        "thoughtsTokenCount": 576,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/keep-local-report-truth-output-quiet-enough-to-use.response.v1.json"
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "block-commit-when-report-truth-gate-fails",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 518,
+        "candidatesTokenCount": 902,
+        "totalTokenCount": 3401,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 518
+          }
+        ],
+        "thoughtsTokenCount": 1981,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/block-commit-when-report-truth-gate-fails.response.v1.json"
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "allow-fast-development-mode-without-weakening-truth",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 523,
+        "candidatesTokenCount": 1096,
+        "totalTokenCount": 3351,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 523
+          }
+        ],
+        "thoughtsTokenCount": 1732,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/allow-fast-development-mode-without-weakening-truth.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "inventory-file-responsibility-signals",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 625,
+        "candidatesTokenCount": 635,
+        "totalTokenCount": 1879,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 625
+          }
+        ],
+        "thoughtsTokenCount": 619,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/inventory-file-responsibility-signals.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "write-human-readable-sprawl-report-beside-json-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 755,
+        "candidatesTokenCount": 956,
+        "totalTokenCount": 4513,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 755
+          }
+        ],
+        "thoughtsTokenCount": 2802,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/write-human-readable-sprawl-report-beside-json-evidence.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "write-shareable-sprawl-hotspot-table",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 638,
+        "candidatesTokenCount": 746,
+        "totalTokenCount": 2123,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 638
+          }
+        ],
+        "thoughtsTokenCount": 739,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/write-shareable-sprawl-hotspot-table.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "detect-god-file-candidates-without-automatically-condemning-them",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 595,
+        "candidatesTokenCount": 694,
+        "totalTokenCount": 2417,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 595
+          }
+        ],
+        "thoughtsTokenCount": 1128,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/detect-god-file-candidates-without-automatically-condemning-them.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "keep-product-meaning-separate-from-generic-mechanics",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 635,
+        "candidatesTokenCount": 923,
+        "totalTokenCount": 2541,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 635
+          }
+        ],
+        "thoughtsTokenCount": 983,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/keep-product-meaning-separate-from-generic-mechanics.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "preserve-intentional-domain-cohesion",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 560,
+        "candidatesTokenCount": 821,
+        "totalTokenCount": 2562,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 560
+          }
+        ],
+        "thoughtsTokenCount": 1181,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/preserve-intentional-domain-cohesion.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "detect-mixed-responsibility-clusters-in-one-file",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 597,
+        "candidatesTokenCount": 693,
+        "totalTokenCount": 2270,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 597
+          }
+        ],
+        "thoughtsTokenCount": 980,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/detect-mixed-responsibility-clusters-in-one-file.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "detect-artifact-sprawl-across-directories",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 544,
+        "candidatesTokenCount": 642,
+        "totalTokenCount": 2316,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 544
+          }
+        ],
+        "thoughtsTokenCount": 1130,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/detect-artifact-sprawl-across-directories.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 630,
+        "candidatesTokenCount": 791,
+        "totalTokenCount": 2246,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 630
+          }
+        ],
+        "thoughtsTokenCount": 825,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "render-product-owner-sprawl-report",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 697,
+        "candidatesTokenCount": 710,
+        "totalTokenCount": 2793,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 697
+          }
+        ],
+        "thoughtsTokenCount": 1386,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/render-product-owner-sprawl-report.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "block-promotion-only-for-severe-unowned-sprawl",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 595,
+        "candidatesTokenCount": 857,
+        "totalTokenCount": 2276,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 595
+          }
+        ],
+        "thoughtsTokenCount": 824,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/block-promotion-only-for-severe-unowned-sprawl.response.v1.json"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "make-sprawl-thresholds-product-owned",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 548,
+        "candidatesTokenCount": 622,
+        "totalTokenCount": 2110,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 548
+          }
+        ],
+        "thoughtsTokenCount": 940,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/make-sprawl-thresholds-product-owned.response.v1.json"
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "rename-the-declared-file-system-body-contract",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 615,
+        "candidatesTokenCount": 953,
+        "totalTokenCount": 2740,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 615
+          }
+        ],
+        "thoughtsTokenCount": 1172,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/rename-the-declared-file-system-body-contract.response.v1.json"
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "rename-domain-gate-and-template-directories",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 631,
+        "candidatesTokenCount": 923,
+        "totalTokenCount": 3170,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 631
+          }
+        ],
+        "thoughtsTokenCount": 1616,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/rename-domain-gate-and-template-directories.response.v1.json"
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "update-every-in-repo-reference-after-the-rename",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 577,
+        "candidatesTokenCount": 736,
+        "totalTokenCount": 2692,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 577
+          }
+        ],
+        "thoughtsTokenCount": 1379,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/update-every-in-repo-reference-after-the-rename.response.v1.json"
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "block-reintroduction-of-the-retired-name",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 530,
+        "candidatesTokenCount": 628,
+        "totalTokenCount": 1996,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 530
+          }
+        ],
+        "thoughtsTokenCount": 838,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/block-reintroduction-of-the-retired-name.response.v1.json"
+    },
+    {
+      "featureId": "domain-ownership-boundary-proof",
+      "scenarioId": "require-ownership-evidence-for-domain-bound-methods",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 506,
+        "candidatesTokenCount": 648,
+        "totalTokenCount": 2012,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 506
+          }
+        ],
+        "thoughtsTokenCount": 858,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-ownership-boundary-proof/require-ownership-evidence-for-domain-bound-methods.response.v1.json"
+    },
+    {
+      "featureId": "domain-ownership-boundary-proof",
+      "scenarioId": "block-package-governed-claim-without-package-receipt",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 511,
+        "candidatesTokenCount": 709,
+        "totalTokenCount": 2358,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 511
+          }
+        ],
+        "thoughtsTokenCount": 1138,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-ownership-boundary-proof/block-package-governed-claim-without-package-receipt.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "inventory-qa-status-for-every-feature-scenario",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 657,
+        "candidatesTokenCount": 776,
+        "totalTokenCount": 3079,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 657
+          }
+        ],
+        "thoughtsTokenCount": 1646,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/inventory-qa-status-for-every-feature-scenario.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "execute-real-end-user-qa-from-the-user-perspective",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 679,
+        "candidatesTokenCount": 917,
+        "totalTokenCount": 2729,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 679
+          }
+        ],
+        "thoughtsTokenCount": 1133,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/execute-real-end-user-qa-from-the-user-perspective.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "create-a-qa-evidence-bundle-for-every-qa-attempt",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 804,
+        "candidatesTokenCount": 1013,
+        "totalTokenCount": 3028,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 804
+          }
+        ],
+        "thoughtsTokenCount": 1211,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/create-a-qa-evidence-bundle-for-every-qa-attempt.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "preserve-machine-and-execution-provenance",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 589,
+        "candidatesTokenCount": 525,
+        "totalTokenCount": 2540,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 589
+          }
+        ],
+        "thoughtsTokenCount": 1426,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/preserve-machine-and-execution-provenance.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "generate-the-human-readable-qa-bundle-report",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 704,
+        "candidatesTokenCount": 675,
+        "totalTokenCount": 2697,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 704
+          }
+        ],
+        "thoughtsTokenCount": 1318,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/generate-the-human-readable-qa-bundle-report.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "link-executable-body-reports-into-the-qa-bundle",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 671,
+        "candidatesTokenCount": 830,
+        "totalTokenCount": 3436,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 671
+          }
+        ],
+        "thoughtsTokenCount": 1935,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/link-executable-body-reports-into-the-qa-bundle.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "lock-a-passing-qa-bundle-as-release-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 661,
+        "candidatesTokenCount": 939,
+        "totalTokenCount": 3130,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 661
+          }
+        ],
+        "thoughtsTokenCount": 1530,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/lock-a-passing-qa-bundle-as-release-proof.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "block-release-without-qa-bundle",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 560,
+        "candidatesTokenCount": 873,
+        "totalTokenCount": 2404,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 560
+          }
+        ],
+        "thoughtsTokenCount": 971,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/block-release-without-qa-bundle.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "render-qa-status-in-the-global-report",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 615,
+        "candidatesTokenCount": 492,
+        "totalTokenCount": 1972,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 615
+          }
+        ],
+        "thoughtsTokenCount": 865,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/render-qa-status-in-the-global-report.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "preserve-visual-projection-evidence-for-html-publication",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 586,
+        "candidatesTokenCount": 698,
+        "totalTokenCount": 2167,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 586
+          }
+        ],
+        "thoughtsTokenCount": 883,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/preserve-visual-projection-evidence-for-html-publication.response.v1.json"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "keep-transient-run-evidence-separate-from-promoted-qa-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 598,
+        "candidatesTokenCount": 1048,
+        "totalTokenCount": 4611,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 598
+          }
+        ],
+        "thoughtsTokenCount": 2965,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/keep-transient-run-evidence-separate-from-promoted-qa-evidence.response.v1.json"
+    },
+    {
+      "featureId": "evidence-receipt-coverage",
+      "scenarioId": "write-report-evidence-packet",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 812,
+        "candidatesTokenCount": 491,
+        "totalTokenCount": 2668,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 812
+          }
+        ],
+        "thoughtsTokenCount": 1365,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/evidence-receipt-coverage/write-report-evidence-packet.response.v1.json"
+    },
+    {
+      "featureId": "evidence-receipt-coverage",
+      "scenarioId": "block-evidence-packet-without-human-report-surface",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 537,
+        "candidatesTokenCount": 783,
+        "totalTokenCount": 3091,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 537
+          }
+        ],
+        "thoughtsTokenCount": 1771,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/evidence-receipt-coverage/block-evidence-packet-without-human-report-surface.response.v1.json"
+    },
+    {
+      "featureId": "evidence-receipt-coverage",
+      "scenarioId": "block-verdict-promotion-without-receipt",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 482,
+        "candidatesTokenCount": 888,
+        "totalTokenCount": 2803,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 482
+          }
+        ],
+        "thoughtsTokenCount": 1433,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/evidence-receipt-coverage/block-verdict-promotion-without-receipt.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "inventory-every-feature-scenario-and-proof-state",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 630,
+        "candidatesTokenCount": 864,
+        "totalTokenCount": 2924,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 630
+          }
+        ],
+        "thoughtsTokenCount": 1430,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/inventory-every-feature-scenario-and-proof-state.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "write-canonical-json-execution-proof-for-a-scenario",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 762,
+        "candidatesTokenCount": 956,
+        "totalTokenCount": 3704,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 762
+          }
+        ],
+        "thoughtsTokenCount": 1986,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/write-canonical-json-execution-proof-for-a-scenario.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "write-human-readable-scenario-proof-report-beside-json-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 785,
+        "candidatesTokenCount": 976,
+        "totalTokenCount": 3783,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 785
+          }
+        ],
+        "thoughtsTokenCount": 2022,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/write-human-readable-scenario-proof-report-beside-json-proof.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "write-shareable-timing-table-projection",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 650,
+        "candidatesTokenCount": 759,
+        "totalTokenCount": 2183,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 650
+          }
+        ],
+        "thoughtsTokenCount": 774,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/write-shareable-timing-table-projection.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "tie-json-proof-to-raw-telemetry-and-receipts",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 697,
+        "candidatesTokenCount": 1145,
+        "totalTokenCount": 3177,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 697
+          }
+        ],
+        "thoughtsTokenCount": 1335,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/tie-json-proof-to-raw-telemetry-and-receipts.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "preserve-method-call-drill-down-inside-observed-body-nodes",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 683,
+        "candidatesTokenCount": 1223,
+        "totalTokenCount": 4760,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 683
+          }
+        ],
+        "thoughtsTokenCount": 2854,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/preserve-method-call-drill-down-inside-observed-body-nodes.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "preserve-repeated-calls-in-the-execution-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 604,
+        "candidatesTokenCount": 771,
+        "totalTokenCount": 2664,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 604
+          }
+        ],
+        "thoughtsTokenCount": 1289,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/preserve-repeated-calls-in-the-execution-proof.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "calculate-product-timing-metrics-from-observed-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 616,
+        "candidatesTokenCount": 934,
+        "totalTokenCount": 3103,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 616
+          }
+        ],
+        "thoughtsTokenCount": 1553,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/calculate-product-timing-metrics-from-observed-evidence.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "establish-service-level-indicators-from-execution-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 667,
+        "candidatesTokenCount": 798,
+        "totalTokenCount": 3467,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 667
+          }
+        ],
+        "thoughtsTokenCount": 2002,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/establish-service-level-indicators-from-execution-proof.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "evaluate-service-level-objectives-from-scenario-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 639,
+        "candidatesTokenCount": 932,
+        "totalTokenCount": 3814,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 639
+          }
+        ],
+        "thoughtsTokenCount": 2243,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/evaluate-service-level-objectives-from-scenario-evidence.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "preserve-sla-evidence-without-turning-reports-into-contracts",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 579,
+        "candidatesTokenCount": 661,
+        "totalTokenCount": 2891,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 579
+          }
+        ],
+        "thoughtsTokenCount": 1651,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/preserve-sla-evidence-without-turning-reports-into-contracts.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "render-human-report-from-canonical-json-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 702,
+        "candidatesTokenCount": 963,
+        "totalTokenCount": 2680,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 702
+          }
+        ],
+        "thoughtsTokenCount": 1015,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/render-human-report-from-canonical-json-proof.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "reject-report-facts-not-backed-by-json-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 576,
+        "candidatesTokenCount": 779,
+        "totalTokenCount": 2877,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 576
+          }
+        ],
+        "thoughtsTokenCount": 1522,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/reject-report-facts-not-backed-by-json-proof.response.v1.json"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "keep-json-proof-portable-for-downstream-analysis",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 587,
+        "candidatesTokenCount": 846,
+        "totalTokenCount": 3913,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 587
+          }
+        ],
+        "thoughtsTokenCount": 2480,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/keep-json-proof-portable-for-downstream-analysis.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "project-one-visible-status-sentinel-for-every-feature",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 650,
+        "candidatesTokenCount": 1157,
+        "totalTokenCount": 3355,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 650
+          }
+        ],
+        "thoughtsTokenCount": 1548,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/project-one-visible-status-sentinel-for-every-feature.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "use-a-constrained-filesystem-status-vocabulary",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 630,
+        "candidatesTokenCount": 791,
+        "totalTokenCount": 2407,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 630
+          }
+        ],
+        "thoughtsTokenCount": 986,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/use-a-constrained-filesystem-status-vocabulary.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "keep-status-truth-separate-from-status-projection",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 631,
+        "candidatesTokenCount": 863,
+        "totalTokenCount": 3345,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 631
+          }
+        ],
+        "thoughtsTokenCount": 1851,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/keep-status-truth-separate-from-status-projection.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "write-machine-readable-status-beside-the-filesystem-sentinel",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 709,
+        "candidatesTokenCount": 829,
+        "totalTokenCount": 2492,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 709
+          }
+        ],
+        "thoughtsTokenCount": 954,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/write-machine-readable-status-beside-the-filesystem-sentinel.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "remove-stale-or-duplicate-status-sentinels-for-the-same-feature",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 606,
+        "candidatesTokenCount": 823,
+        "totalTokenCount": 4273,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 606
+          }
+        ],
+        "thoughtsTokenCount": 2844,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/remove-stale-or-duplicate-status-sentinels-for-the-same-feature.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-a-feature-untested-from-the-filesystem-body",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 576,
+        "candidatesTokenCount": 761,
+        "totalTokenCount": 2435,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 576
+          }
+        ],
+        "thoughtsTokenCount": 1098,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-a-feature-untested-from-the-filesystem-body.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-qa-blocked-from-the-filesystem-body",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 582,
+        "candidatesTokenCount": 913,
+        "totalTokenCount": 3356,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 582
+          }
+        ],
+        "thoughtsTokenCount": 1861,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-qa-blocked-from-the-filesystem-body.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-qa-passed-but-not-promoted-from-the-filesystem-body",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 564,
+        "candidatesTokenCount": 1017,
+        "totalTokenCount": 3260,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 564
+          }
+        ],
+        "thoughtsTokenCount": 1679,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-qa-passed-but-not-promoted-from-the-filesystem-body.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-qa-passed-and-promoted-from-the-filesystem-body",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 609,
+        "candidatesTokenCount": 1207,
+        "totalTokenCount": 3523,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 609
+          }
+        ],
+        "thoughtsTokenCount": 1707,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-qa-passed-and-promoted-from-the-filesystem-body.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-stale-filesystem-status-when-evidence-changes",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 559,
+        "candidatesTokenCount": 852,
+        "totalTokenCount": 2376,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 559
+          }
+        ],
+        "thoughtsTokenCount": 965,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-stale-filesystem-status-when-evidence-changes.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "support-future-feature-body-folders-without-breaking-flat-feature-files",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 649,
+        "candidatesTokenCount": 849,
+        "totalTokenCount": 3598,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 649
+          }
+        ],
+        "thoughtsTokenCount": 2100,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/support-future-feature-body-folders-without-breaking-flat-feature-files.response.v1.json"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "block-hand-authored-status-claims",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 553,
+        "candidatesTokenCount": 1122,
+        "totalTokenCount": 4607,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 553
+          }
+        ],
+        "thoughtsTokenCount": 2932,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/block-hand-authored-status-claims.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "generate-the-product-owner-quality-board",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 591,
+        "candidatesTokenCount": 894,
+        "totalTokenCount": 2595,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 591
+          }
+        ],
+        "thoughtsTokenCount": 1110,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/generate-the-product-owner-quality-board.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "show-feature-status-without-opening-feature-documents",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 607,
+        "candidatesTokenCount": 904,
+        "totalTokenCount": 3002,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 607
+          }
+        ],
+        "thoughtsTokenCount": 1491,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/show-feature-status-without-opening-feature-documents.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "populate-the-board-with-scan-friendly-product-fields",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 639,
+        "candidatesTokenCount": 550,
+        "totalTokenCount": 1970,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 639
+          }
+        ],
+        "thoughtsTokenCount": 781,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/populate-the-board-with-scan-friendly-product-fields.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "write-a-machine-readable-board-contract",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 656,
+        "candidatesTokenCount": 947,
+        "totalTokenCount": 3305,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 656
+          }
+        ],
+        "thoughtsTokenCount": 1702,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/write-a-machine-readable-board-contract.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "generate-a-filesystem-tree-projection-for-review",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 576,
+        "candidatesTokenCount": 803,
+        "totalTokenCount": 2720,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 576
+          }
+        ],
+        "thoughtsTokenCount": 1341,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/generate-a-filesystem-tree-projection-for-review.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "detect-missing-status-projection-for-a-feature",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 564,
+        "candidatesTokenCount": 870,
+        "totalTokenCount": 2593,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 564
+          }
+        ],
+        "thoughtsTokenCount": 1159,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/detect-missing-status-projection-for-a-feature.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "detect-status-sentinel-and-json-contract-mismatch",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 580,
+        "candidatesTokenCount": 1009,
+        "totalTokenCount": 2453,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 580
+          }
+        ],
+        "thoughtsTokenCount": 864,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/detect-status-sentinel-and-json-contract-mismatch.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "tie-board-status-to-immutable-qa-bundle-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 665,
+        "candidatesTokenCount": 811,
+        "totalTokenCount": 2643,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 665
+          }
+        ],
+        "thoughtsTokenCount": 1167,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/tie-board-status-to-immutable-qa-bundle-evidence.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "keep-qa-pass-separate-from-promotion",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 540,
+        "candidatesTokenCount": 754,
+        "totalTokenCount": 2486,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 540
+          }
+        ],
+        "thoughtsTokenCount": 1192,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/keep-qa-pass-separate-from-promotion.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "promote-only-through-deterministic-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 561,
+        "candidatesTokenCount": 639,
+        "totalTokenCount": 3506,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 561
+          }
+        ],
+        "thoughtsTokenCount": 2306,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/promote-only-through-deterministic-evidence.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "block-stale-quality-board-promotion-in-ci",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 583,
+        "candidatesTokenCount": 884,
+        "totalTokenCount": 2962,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 583
+          }
+        ],
+        "thoughtsTokenCount": 1495,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/block-stale-quality-board-promotion-in-ci.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "provide-pi-ready-summary-counts",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 578,
+        "candidatesTokenCount": 682,
+        "totalTokenCount": 2493,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 578
+          }
+        ],
+        "thoughtsTokenCount": 1233,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/provide-pi-ready-summary-counts.response.v1.json"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "preserve-existing-feature-document-paths-during-rollout",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 575,
+        "candidatesTokenCount": 883,
+        "totalTokenCount": 2510,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 575
+          }
+        ],
+        "thoughtsTokenCount": 1052,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/preserve-existing-feature-document-paths-during-rollout.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-executive-execution-flow-first",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 561,
+        "candidatesTokenCount": 612,
+        "totalTokenCount": 2142,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 561
+          }
+        ],
+        "thoughtsTokenCount": 969,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-executive-execution-flow-first.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-clean-ascii-only",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 508,
+        "candidatesTokenCount": 494,
+        "totalTokenCount": 2076,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 508
+          }
+        ],
+        "thoughtsTokenCount": 1074,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-clean-ascii-only.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "show-declared-versus-observed-flow",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 513,
+        "candidatesTokenCount": 682,
+        "totalTokenCount": 2983,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 513
+          }
+        ],
+        "thoughtsTokenCount": 1788,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/show-declared-versus-observed-flow.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-executable-body-contract-as-file-system-execution-tree",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 698,
+        "candidatesTokenCount": 982,
+        "totalTokenCount": 3708,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 698
+          }
+        ],
+        "thoughtsTokenCount": 2028,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-executable-body-contract-as-file-system-execution-tree.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-required-ascii-body-tree-shape",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 765,
+        "candidatesTokenCount": 698,
+        "totalTokenCount": 2235,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 765
+          }
+        ],
+        "thoughtsTokenCount": 772,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-required-ascii-body-tree-shape.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-hierarchical-ascii-executable-body-tree",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 1239,
+        "candidatesTokenCount": 713,
+        "totalTokenCount": 3334,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1239
+          }
+        ],
+        "thoughtsTokenCount": 1382,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-hierarchical-ascii-executable-body-tree.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-timing-and-call-count-facts-from-canonical-json-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 621,
+        "candidatesTokenCount": 973,
+        "totalTokenCount": 3396,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 621
+          }
+        ],
+        "thoughtsTokenCount": 1802,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-timing-and-call-count-facts-from-canonical-json-proof.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-method-drill-down-under-each-observed-body-node",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 627,
+        "candidatesTokenCount": 766,
+        "totalTokenCount": 2354,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 627
+          }
+        ],
+        "thoughtsTokenCount": 961,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-method-drill-down-under-each-observed-body-node.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-boxed-node-list-when-hierarchical-body-tree-is-required",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 601,
+        "candidatesTokenCount": 992,
+        "totalTokenCount": 3539,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 601
+          }
+        ],
+        "thoughtsTokenCount": 1946,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-boxed-node-list-when-hierarchical-body-tree-is-required.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "require-branch-assertions-in-report-tests",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 659,
+        "candidatesTokenCount": 653,
+        "totalTokenCount": 2900,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 659
+          }
+        ],
+        "thoughtsTokenCount": 1588,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/require-branch-assertions-in-report-tests.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-invented-fallback-execution-body-tree-for-promotion",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 553,
+        "candidatesTokenCount": 939,
+        "totalTokenCount": 3609,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 553
+          }
+        ],
+        "thoughtsTokenCount": 2117,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-invented-fallback-execution-body-tree-for-promotion.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "use-fallback-only-as-a-non-promotable-development-diagnostic",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 562,
+        "candidatesTokenCount": 834,
+        "totalTokenCount": 3709,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 562
+          }
+        ],
+        "thoughtsTokenCount": 2313,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/use-fallback-only-as-a-non-promotable-development-diagnostic.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-blocked-ascii-body-tree-shape",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 669,
+        "candidatesTokenCount": 635,
+        "totalTokenCount": 2661,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 669
+          }
+        ],
+        "thoughtsTokenCount": 1357,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-blocked-ascii-body-tree-shape.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-header-only-execution-sketch",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 521,
+        "candidatesTokenCount": 679,
+        "totalTokenCount": 2934,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 521
+          }
+        ],
+        "thoughtsTokenCount": 1734,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-header-only-execution-sketch.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-telemetry-inferred-from-verdict",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 550,
+        "candidatesTokenCount": 909,
+        "totalTokenCount": 2434,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 550
+          }
+        ],
+        "thoughtsTokenCount": 975,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-telemetry-inferred-from-verdict.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-duration-inferred-without-timing-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 533,
+        "candidatesTokenCount": 645,
+        "totalTokenCount": 1830,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 533
+          }
+        ],
+        "thoughtsTokenCount": 652,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-duration-inferred-without-timing-evidence.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "preserve-product-readable-execution-tree-shape",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 585,
+        "candidatesTokenCount": 880,
+        "totalTokenCount": 2526,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 585
+          }
+        ],
+        "thoughtsTokenCount": 1061,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/preserve-product-readable-execution-tree-shape.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "show-blocked-report-as-a-worklist",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 551,
+        "candidatesTokenCount": 663,
+        "totalTokenCount": 2438,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 551
+          }
+        ],
+        "thoughtsTokenCount": 1224,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/show-blocked-report-as-a-worklist.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-a-compact-happy-path-sketch",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 603,
+        "candidatesTokenCount": 779,
+        "totalTokenCount": 2842,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 603
+          }
+        ],
+        "thoughtsTokenCount": 1460,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-a-compact-happy-path-sketch.response.v1.json"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-a-compact-blocked-sketch",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 621,
+        "candidatesTokenCount": 479,
+        "totalTokenCount": 2839,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 621
+          }
+        ],
+        "thoughtsTokenCount": 1739,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-a-compact-blocked-sketch.response.v1.json"
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "llm-generates-a-child-harness-from-a-parent-harness-contract",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 604,
+        "candidatesTokenCount": 1247,
+        "totalTokenCount": 3601,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 604
+          }
+        ],
+        "thoughtsTokenCount": 1750,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/llm-generates-a-child-harness-from-a-parent-harness-contract.response.v1.json"
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "generated-harness-proves-its-own-execution",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 497,
+        "candidatesTokenCount": 814,
+        "totalTokenCount": 2358,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 497
+          }
+        ],
+        "thoughtsTokenCount": 1047,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/generated-harness-proves-its-own-execution.response.v1.json"
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "child-harness-proposes-the-next-harness",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 465,
+        "candidatesTokenCount": 634,
+        "totalTokenCount": 2392,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 465
+          }
+        ],
+        "thoughtsTokenCount": 1293,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/child-harness-proposes-the-next-harness.response.v1.json"
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "llm-unsafe-output-is-blocked",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 466,
+        "candidatesTokenCount": 512,
+        "totalTokenCount": 2973,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 466
+          }
+        ],
+        "thoughtsTokenCount": 1995,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/llm-unsafe-output-is-blocked.response.v1.json"
+    },
+    {
+      "featureId": "gherkin-driven-report-development",
+      "scenarioId": "require-gherkin-before-report-feature-implementation",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 502,
+        "candidatesTokenCount": 577,
+        "totalTokenCount": 2198,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 502
+          }
+        ],
+        "thoughtsTokenCount": 1119,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/gherkin-driven-report-development/require-gherkin-before-report-feature-implementation.response.v1.json"
+    },
+    {
+      "featureId": "gherkin-driven-report-development",
+      "scenarioId": "trace-report-sections-to-scenarios",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 482,
+        "candidatesTokenCount": 613,
+        "totalTokenCount": 2322,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 482
+          }
+        ],
+        "thoughtsTokenCount": 1227,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/gherkin-driven-report-development/trace-report-sections-to-scenarios.response.v1.json"
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "analyze-executable-file-name-grammar",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 572,
+        "candidatesTokenCount": 790,
+        "totalTokenCount": 2535,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 572
+          }
+        ],
+        "thoughtsTokenCount": 1173,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/analyze-executable-file-name-grammar.response.v1.json"
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "tie-every-executable-file-to-a-file-body-contract",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 531,
+        "candidatesTokenCount": 673,
+        "totalTokenCount": 2273,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 531
+          }
+        ],
+        "thoughtsTokenCount": 1069,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/tie-every-executable-file-to-a-file-body-contract.response.v1.json"
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "tie-file-bodies-to-features-and-scenarios",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 539,
+        "candidatesTokenCount": 701,
+        "totalTokenCount": 2292,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 539
+          }
+        ],
+        "thoughtsTokenCount": 1052,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/tie-file-bodies-to-features-and-scenarios.response.v1.json"
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "recommend-decomposition-without-promoting-the-llm-recommendation",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 589,
+        "candidatesTokenCount": 954,
+        "totalTokenCount": 3535,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 589
+          }
+        ],
+        "thoughtsTokenCount": 1992,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/recommend-decomposition-without-promoting-the-llm-recommendation.response.v1.json"
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "produce-an-llm-handoff-artifact-from-deterministic-facts",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 545,
+        "candidatesTokenCount": 552,
+        "totalTokenCount": 2301,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 545
+          }
+        ],
+        "thoughtsTokenCount": 1204,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/produce-an-llm-handoff-artifact-from-deterministic-facts.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "assign-a-feature-scenario-to-the-llm-testing-conveyor",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 679,
+        "candidatesTokenCount": 859,
+        "totalTokenCount": 3297,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 679
+          }
+        ],
+        "thoughtsTokenCount": 1759,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/assign-a-feature-scenario-to-the-llm-testing-conveyor.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "build-the-llm-handoff-packet",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 694,
+        "candidatesTokenCount": 961,
+        "totalTokenCount": 3882,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 694
+          }
+        ],
+        "thoughtsTokenCount": 2227,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/build-the-llm-handoff-packet.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "let-the-llm-propose-seed-data-before-testing",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 668,
+        "candidatesTokenCount": 1115,
+        "totalTokenCount": 2932,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 668
+          }
+        ],
+        "thoughtsTokenCount": 1149,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/let-the-llm-propose-seed-data-before-testing.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "materialize-seed-data-through-a-deterministic-gate",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 642,
+        "candidatesTokenCount": 826,
+        "totalTokenCount": 2265,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 642
+          }
+        ],
+        "thoughtsTokenCount": 797,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/materialize-seed-data-through-a-deterministic-gate.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "execute-the-feature-as-an-end-user",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 742,
+        "candidatesTokenCount": 1117,
+        "totalTokenCount": 4153,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 742
+          }
+        ],
+        "thoughtsTokenCount": 2294,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/execute-the-feature-as-an-end-user.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "validate-generated-markdown-and-html-projections-as-user-facing-surfaces",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 661,
+        "candidatesTokenCount": 1517,
+        "totalTokenCount": 4424,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 661
+          }
+        ],
+        "thoughtsTokenCount": 2246,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/validate-generated-markdown-and-html-projections-as-user-facing-surfaces.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "tie-llm-observations-to-executable-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 624,
+        "candidatesTokenCount": 910,
+        "totalTokenCount": 4473,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 624
+          }
+        ],
+        "thoughtsTokenCount": 2939,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/tie-llm-observations-to-executable-proof.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "generate-the-llm-user-experience-report",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 671,
+        "candidatesTokenCount": 801,
+        "totalTokenCount": 2113,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 671
+          }
+        ],
+        "thoughtsTokenCount": 641,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/generate-the-llm-user-experience-report.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 584,
+        "candidatesTokenCount": 834,
+        "totalTokenCount": 2646,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 584
+          }
+        ],
+        "thoughtsTokenCount": 1228,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "package-the-llm-qa-evidence-bundle",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 741,
+        "candidatesTokenCount": 841,
+        "totalTokenCount": 3017,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 741
+          }
+        ],
+        "thoughtsTokenCount": 1435,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/package-the-llm-qa-evidence-bundle.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "decide-qa-pass-or-fail-outside-the-llm",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 643,
+        "candidatesTokenCount": 871,
+        "totalTokenCount": 4143,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 643
+          }
+        ],
+        "thoughtsTokenCount": 2629,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/decide-qa-pass-or-fail-outside-the-llm.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "block-unsafe-or-out-of-bounds-llm-testing",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 604,
+        "candidatesTokenCount": 748,
+        "totalTokenCount": 2318,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 604
+          }
+        ],
+        "thoughtsTokenCount": 966,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/block-unsafe-or-out-of-bounds-llm-testing.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "support-feature-wide-scenario-conveyor-runs",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 577,
+        "candidatesTokenCount": 878,
+        "totalTokenCount": 3304,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 577
+          }
+        ],
+        "thoughtsTokenCount": 1849,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/support-feature-wide-scenario-conveyor-runs.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "preserve-replayability-for-human-reviewers",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 554,
+        "candidatesTokenCount": 786,
+        "totalTokenCount": 2906,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 554
+          }
+        ],
+        "thoughtsTokenCount": 1566,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/preserve-replayability-for-human-reviewers.response.v1.json"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "prepare-future-notification-without-sending-it",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 557,
+        "candidatesTokenCount": 726,
+        "totalTokenCount": 4007,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 557
+          }
+        ],
+        "thoughtsTokenCount": 2724,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/prepare-future-notification-without-sending-it.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "preserve-the-three-level-execution-review-model",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 630,
+        "candidatesTokenCount": 792,
+        "totalTokenCount": 3093,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 630
+          }
+        ],
+        "thoughtsTokenCount": 1671,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/preserve-the-three-level-execution-review-model.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "extend-canonical-json-proof-with-method-calls-under-each-body-node",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 749,
+        "candidatesTokenCount": 1026,
+        "totalTokenCount": 3001,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 749
+          }
+        ],
+        "thoughtsTokenCount": 1226,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/extend-canonical-json-proof-with-method-calls-under-each-body-node.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "distinguish-discovered-methods-from-observed-method-calls",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 590,
+        "candidatesTokenCount": 834,
+        "totalTokenCount": 3266,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 590
+          }
+        ],
+        "thoughtsTokenCount": 1842,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/distinguish-discovered-methods-from-observed-method-calls.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "tie-method-calls-to-telemetry-event-pairs",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 652,
+        "candidatesTokenCount": 995,
+        "totalTokenCount": 3159,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 652
+          }
+        ],
+        "thoughtsTokenCount": 1512,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/tie-method-calls-to-telemetry-event-pairs.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "tie-method-calls-to-receipt-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 561,
+        "candidatesTokenCount": 754,
+        "totalTokenCount": 3028,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 561
+          }
+        ],
+        "thoughtsTokenCount": 1713,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/tie-method-calls-to-receipt-proof.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-method-drill-down-inside-each-body-node",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 1172,
+        "candidatesTokenCount": 539,
+        "totalTokenCount": 2684,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1172
+          }
+        ],
+        "thoughtsTokenCount": 973,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-method-drill-down-inside-each-body-node.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 563,
+        "candidatesTokenCount": 607,
+        "totalTokenCount": 2391,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 563
+          }
+        ],
+        "thoughtsTokenCount": 1221,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-runtime-file-drill-down-before-method-calls.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-compact-method-timeline-table",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 662,
+        "candidatesTokenCount": 802,
+        "totalTokenCount": 2731,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 662
+          }
+        ],
+        "thoughtsTokenCount": 1267,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-compact-method-timeline-table.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-method-evidence-appendix-for-deep-review",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 604,
+        "candidatesTokenCount": 964,
+        "totalTokenCount": 3931,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 604
+          }
+        ],
+        "thoughtsTokenCount": 2363,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-method-evidence-appendix-for-deep-review.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "preserve-repeated-method-calls-in-order",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 544,
+        "candidatesTokenCount": 702,
+        "totalTokenCount": 2437,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 544
+          }
+        ],
+        "thoughtsTokenCount": 1191,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/preserve-repeated-method-calls-in-order.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "show-slow-methods-and-wait-time-as-product-signals",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 566,
+        "candidatesTokenCount": 672,
+        "totalTokenCount": 2150,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 566
+          }
+        ],
+        "thoughtsTokenCount": 912,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/show-slow-methods-and-wait-time-as-product-signals.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-blocked-method-call-inline",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 803,
+        "candidatesTokenCount": 695,
+        "totalTokenCount": 2353,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 803
+          }
+        ],
+        "thoughtsTokenCount": 855,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-blocked-method-call-inline.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "gate-method-drill-down-projection-against-canonical-json",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 599,
+        "candidatesTokenCount": 844,
+        "totalTokenCount": 2619,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 599
+          }
+        ],
+        "thoughtsTokenCount": 1176,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/gate-method-drill-down-projection-against-canonical-json.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "gate-method-drill-down-completeness",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 572,
+        "candidatesTokenCount": 909,
+        "totalTokenCount": 2272,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 572
+          }
+        ],
+        "thoughtsTokenCount": 791,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/gate-method-drill-down-completeness.response.v1.json"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "keep-method-drill-down-portable-for-html-and-visual-review",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 562,
+        "candidatesTokenCount": 886,
+        "totalTokenCount": 3203,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 562
+          }
+        ],
+        "thoughtsTokenCount": 1755,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/keep-method-drill-down-portable-for-html-and-visual-review.response.v1.json"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "write-one-feature-scenario-evidence-packet-for-an-executed-scenario",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 808,
+        "candidatesTokenCount": 1145,
+        "totalTokenCount": 3503,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 808
+          }
+        ],
+        "thoughtsTokenCount": 1550,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/write-one-feature-scenario-evidence-packet-for-an-executed-scenario.response.v1.json"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "render-the-executable-body-tree-in-the-feature-report",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 614,
+        "candidatesTokenCount": 823,
+        "totalTokenCount": 2597,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 614
+          }
+        ],
+        "thoughtsTokenCount": 1160,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/render-the-executable-body-tree-in-the-feature-report.response.v1.json"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "keep-the-global-report-as-an-index-not-a-sketch-warehouse",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 602,
+        "candidatesTokenCount": 620,
+        "totalTokenCount": 3458,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 602
+          }
+        ],
+        "thoughtsTokenCount": 2236,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/keep-the-global-report-as-an-index-not-a-sketch-warehouse.response.v1.json"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "block-scenario-promotion-when-feature-evidence-report-is-missing",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 579,
+        "candidatesTokenCount": 779,
+        "totalTokenCount": 2098,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 579
+          }
+        ],
+        "thoughtsTokenCount": 740,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/block-scenario-promotion-when-feature-evidence-report-is-missing.response.v1.json"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "do-not-promote-unexecuted-features",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 545,
+        "candidatesTokenCount": 788,
+        "totalTokenCount": 2823,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 545
+          }
+        ],
+        "thoughtsTokenCount": 1490,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/do-not-promote-unexecuted-features.response.v1.json"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "keep-generated-run-evidence-out-of-source-control",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 511,
+        "candidatesTokenCount": 725,
+        "totalTokenCount": 2952,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 511
+          }
+        ],
+        "thoughtsTokenCount": 1716,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/keep-generated-run-evidence-out-of-source-control.response.v1.json"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "preserve-feature-evidence-from-source-controlled-templates",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 514,
+        "candidatesTokenCount": 918,
+        "totalTokenCount": 3551,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 514
+          }
+        ],
+        "thoughtsTokenCount": 2119,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/preserve-feature-evidence-from-source-controlled-templates.response.v1.json"
+    },
+    {
+      "featureId": "pi-readiness-gate-for-report-truth",
+      "scenarioId": "block-pi-readiness-when-report-truth-is-incomplete",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 504,
+        "candidatesTokenCount": 655,
+        "totalTokenCount": 2391,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 504
+          }
+        ],
+        "thoughtsTokenCount": 1232,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/pi-readiness-gate-for-report-truth/block-pi-readiness-when-report-truth-is-incomplete.response.v1.json"
+    },
+    {
+      "featureId": "pi-readiness-gate-for-report-truth",
+      "scenarioId": "pass-pi-readiness",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 522,
+        "candidatesTokenCount": 496,
+        "totalTokenCount": 2421,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 522
+          }
+        ],
+        "thoughtsTokenCount": 1403,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/pi-readiness-gate-for-report-truth/pass-pi-readiness.response.v1.json"
+    },
+    {
+      "featureId": "pi-readiness-gate-for-report-truth",
+      "scenarioId": "block-pi-readiness-without-end-user-qa-proof",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 532,
+        "candidatesTokenCount": 770,
+        "totalTokenCount": 3577,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 532
+          }
+        ],
+        "thoughtsTokenCount": 2275,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/pi-readiness-gate-for-report-truth/block-pi-readiness-without-end-user-qa-proof.response.v1.json"
+    },
+    {
+      "featureId": "portable-evidence-paths",
+      "scenarioId": "render-repo-relative-paths",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 460,
+        "candidatesTokenCount": 523,
+        "totalTokenCount": 1607,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 460
+          }
+        ],
+        "thoughtsTokenCount": 624,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/portable-evidence-paths/render-repo-relative-paths.response.v1.json"
+    },
+    {
+      "featureId": "portable-evidence-paths",
+      "scenarioId": "block-machine-local-path-leakage",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 287,
+        "candidatesTokenCount": 428,
+        "totalTokenCount": 1674,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 287
+          }
+        ],
+        "thoughtsTokenCount": 959,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/portable-evidence-paths/block-machine-local-path-leakage.response.v1.json"
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "label-inventory-order-honestly",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 296,
+        "candidatesTokenCount": 702,
+        "totalTokenCount": 2208,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 296
+          }
+        ],
+        "thoughtsTokenCount": 1210,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/label-inventory-order-honestly.response.v1.json"
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "allow-execution-step-only-with-telemetry-evidence",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 348,
+        "candidatesTokenCount": 666,
+        "totalTokenCount": 2004,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 348
+          }
+        ],
+        "thoughtsTokenCount": 990,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/allow-execution-step-only-with-telemetry-evidence.response.v1.json"
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "separate-source-location-from-runtime-observation",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 400,
+        "candidatesTokenCount": 710,
+        "totalTokenCount": 2372,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 400
+          }
+        ],
+        "thoughtsTokenCount": 1262,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/separate-source-location-from-runtime-observation.response.v1.json"
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "mark-unobserved-runtime-methods-explicitly",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 334,
+        "candidatesTokenCount": 349,
+        "totalTokenCount": 1234,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 334
+          }
+        ],
+        "thoughtsTokenCount": 551,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/mark-unobserved-runtime-methods-explicitly.response.v1.json"
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "require-duration-evidence-for-execution-time",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 278,
+        "candidatesTokenCount": 282,
+        "totalTokenCount": 995,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 278
+          }
+        ],
+        "thoughtsTokenCount": 435,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/require-duration-evidence-for-execution-time.response.v1.json"
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "block-proof-language-without-evidence-paths",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 262,
+        "candidatesTokenCount": 156,
+        "totalTokenCount": 1080,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 262
+          }
+        ],
+        "thoughtsTokenCount": 662,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/block-proof-language-without-evidence-paths.response.v1.json"
+    },
+    {
+      "featureId": "report-contract-schema-enforcement",
+      "scenarioId": "validate-non-empty-sterility-report-schema",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 354,
+        "candidatesTokenCount": 363,
+        "totalTokenCount": 1319,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 354
+          }
+        ],
+        "thoughtsTokenCount": 602,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/report-contract-schema-enforcement/validate-non-empty-sterility-report-schema.response.v1.json"
+    },
+    {
+      "featureId": "report-contract-schema-enforcement",
+      "scenarioId": "block-empty-report-schema",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 236,
+        "candidatesTokenCount": 203,
+        "totalTokenCount": 1109,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 236
+          }
+        ],
+        "thoughtsTokenCount": 670,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/report-contract-schema-enforcement/block-empty-report-schema.response.v1.json"
+    },
+    {
+      "featureId": "report-provenance-and-freshness-gate",
+      "scenarioId": "render-report-provenance",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 288,
+        "candidatesTokenCount": 285,
+        "totalTokenCount": 1258,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 288
+          }
+        ],
+        "thoughtsTokenCount": 685,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/report-provenance-and-freshness-gate/render-report-provenance.response.v1.json"
+    },
+    {
+      "featureId": "report-provenance-and-freshness-gate",
+      "scenarioId": "block-stale-report-projection",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 294,
+        "candidatesTokenCount": 288,
+        "totalTokenCount": 1298,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 294
+          }
+        ],
+        "thoughtsTokenCount": 716,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/report-provenance-and-freshness-gate/block-stale-report-projection.response.v1.json"
+    },
+    {
+      "featureId": "summary-findings-and-method-row-tie-out",
+      "scenarioId": "recompute-summary-from-method-rows",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 367,
+        "candidatesTokenCount": 243,
+        "totalTokenCount": 908,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 367
+          }
+        ],
+        "thoughtsTokenCount": 298,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/summary-findings-and-method-row-tie-out/recompute-summary-from-method-rows.response.v1.json"
+    },
+    {
+      "featureId": "summary-findings-and-method-row-tie-out",
+      "scenarioId": "tie-findings-to-table-rows",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 275,
+        "candidatesTokenCount": 269,
+        "totalTokenCount": 942,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 275
+          }
+        ],
+        "thoughtsTokenCount": 398,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/summary-findings-and-method-row-tie-out/tie-findings-to-table-rows.response.v1.json"
+    },
+    {
+      "featureId": "summary-findings-and-method-row-tie-out",
+      "scenarioId": "block-clean-label-with-nonzero-findings",
+      "modelName": "gemini-2.5-flash",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 276,
+        "candidatesTokenCount": 201,
+        "totalTokenCount": 1123,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 276
+          }
+        ],
+        "thoughtsTokenCount": 646,
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/summary-findings-and-method-row-tie-out/block-clean-label-with-nonzero-findings.response.v1.json"
+    },
+    {
+      "featureId": "verdict-derivation-consistency",
+      "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+      "modelName": "gemini-flash-lite-latest",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 218,
+        "candidatesTokenCount": 178,
+        "totalTokenCount": 396,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 218
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/verdict-derivation-consistency/block-sterile-verdict-when-any-hard-law-is-violated.response.v1.json"
+    },
+    {
+      "featureId": "verdict-derivation-consistency",
+      "scenarioId": "allow-sterile-verdict-only-when-all-gates-pass",
+      "modelName": "gemini-flash-lite-latest",
+      "finishReason": "STOP",
+      "usageMetadata": {
+        "promptTokenCount": 286,
+        "candidatesTokenCount": 225,
+        "totalTokenCount": 511,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 286
+          }
+        ],
+        "serviceTier": "standard"
+      },
+      "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/verdict-derivation-consistency/allow-sterile-verdict-only-when-all-gates-pass.response.v1.json"
+    }
+  ],
+  "writtenAt": "2026-07-10T01:45:06.663Z"
+}

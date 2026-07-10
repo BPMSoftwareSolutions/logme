@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "show-feature-status-without-opening-feature-documents",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 607,
+    "candidatesTokenCount": 904,
+    "totalTokenCount": 3002,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 607
+      }
+    ],
+    "thoughtsTokenCount": 1491,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario describes the expected behavior of status sentinels and a quality board within a directory. However, the actual content of `report.md` or any CLI evidence (such as directory listings or screenshots) that would demonstrate the presence and format of these files was not provided. Without this concrete end-user surface evidence, it is impossible to verify if the implementation meets the acceptance criteria from an end-user perspective.",
+    "expectedResult": "The `docs/features/` directory should contain visible status sentinels matching the specified pattern, a generated quality board, and the sentinel filenames should clearly indicate feature states without requiring opening feature specifications.",
+    "observedResult": "No direct observation of the `docs/features/` directory contents or the `report.md` output demonstrating these elements was possible from the provided surfaces. Only the Gherkin scenario describing the desired outcome was available.",
+    "confusingOrRiskyExperiencePoints": "The absence of concrete evidence (e.g., actual file listings, screenshots, or the full `report.md` content) makes it impossible to confirm the feature's implementation from an end-user perspective. This represents a critical gap in the testing process, as the core functionality cannot be verified.",
+    "accessibilityOrReadabilityObservations": "N/A, as no visual or interactive surface was provided for evaluation.",
+    "recommendedFollowUps": "Provide the actual `report.md` content, including any relevant CLI output or screenshots that demonstrate the presence and format of the status sentinels and the quality board in the `docs/features/` directory. This is essential for end-user QA verification.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the directory should include visible status sentinels matching:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The criterion describes the expected directory content, but no `report.md` content or CLI evidence (e.g., directory listing, screenshots) was provided to verify the presence and format of the status sentinels.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the actual `report.md` output or CLI evidence showing the directory contents."
+      },
+      {
+        "criterionText": "And the directory should include the generated quality board",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The criterion describes the expected directory content, but no `report.md` content or CLI evidence (e.g., directory listing, screenshots) was provided to verify the presence of the generated quality board.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the actual `report.md` output or CLI evidence showing the directory contents."
+      },
+      {
+        "criterionText": "And the status sentinel filenames should make it obvious which features are:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The criterion describes the expected clarity of sentinel filenames, but no `report.md` content or CLI evidence (e.g., directory listing, screenshots) was provided to verify the actual filenames and their obviousness.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the actual `report.md` output or CLI evidence showing the directory contents."
+      },
+      {
+        "criterionText": "And the product owner should not have to open a feature specification to know the current quality state.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion relies on the visibility and clarity of the status sentinels and quality board. Without `report.md` content or CLI evidence showing these elements, it's impossible to verify if the product owner can discern the quality state without opening feature specifications.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the actual `report.md` output or CLI evidence showing the directory contents."
+      }
+    ]
+  }
+}

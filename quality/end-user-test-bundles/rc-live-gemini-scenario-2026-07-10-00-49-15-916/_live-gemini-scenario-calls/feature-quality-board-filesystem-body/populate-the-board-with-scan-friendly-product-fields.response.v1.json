@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "populate-the-board-with-scan-friendly-product-fields",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 639,
+    "candidatesTokenCount": 550,
+    "totalTokenCount": 1970,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 639
+      }
+    ],
+    "thoughtsTokenCount": 781,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The primary evidence surface, the generated 'report.md' (Markdown quality board), was not provided for review. Without this artifact, it is impossible to verify if the board was generated correctly according to the acceptance criteria.",
+    "expectedResult": "The Markdown quality board should be generated and include specific fields per feature row, sort features by product urgency, and group promoted features separately.",
+    "observedResult": "No generated Markdown quality board ('report.md') was available for observation.",
+    "confusingOrRiskyExperiencePoints": "The absence of the generated report makes it impossible to assess the end-user experience of the quality board itself. This is a critical gap for an end-user QA tester.",
+    "accessibilityOrReadabilityObservations": "Cannot make observations regarding the accessibility or readability of the generated board as it was not provided.",
+    "recommendedFollowUps": "Provide the 'report.md' file, which is the generated Markdown quality board, as an accessible evidence surface for future QA testing of this scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then each feature row should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The generated Markdown quality board ('report.md') was not provided, preventing verification of feature row content.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the generated 'report.md' file."
+      },
+      {
+        "criterionText": "And the board should sort features by product urgency:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The generated Markdown quality board ('report.md') was not provided, preventing verification of feature sorting.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the generated 'report.md' file."
+      },
+      {
+        "criterionText": "And the board should group promoted features separately from features needing action.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The generated Markdown quality board ('report.md') was not provided, preventing verification of feature grouping.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the generated 'report.md' file."
+      }
+    ]
+  }
+}

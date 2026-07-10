@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "adversarial-challenge-packet--block-false-pass-claim--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "block-false-pass-claim",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 485,
+    "candidatesTokenCount": 652,
+    "totalTokenCount": 2644,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 485
+      }
+    ],
+    "thoughtsTokenCount": 1507,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "36b3d0f96cdeb0af60355435d19749a254a123eb2869e1ec1ae4b5561c50cec1",
+  "responseSha256": "36fe02b1a582c2323325451fe702fc988696618be25989b7b4e858774bcb9ea3",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/adversarial-challenge-packet/block-false-pass-claim.response.v1.json",
+  "calledAt": "2026-07-10T00:49:22.351Z"
+}

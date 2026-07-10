@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--reject-report-facts-not-backed-by-json-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "reject-report-facts-not-backed-by-json-proof",
+  "scenarioName": "Reject report facts not backed by JSON proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Reject report facts not backed by JSON proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:280-289; report.md; live Gemini prompt",
+      "expectedResult": "The feature report truth gate should fail, indicating that a fact in the report is not backed by JSON proof, and the finding code `feature-report-fact-without-json-proof` should be present in the `report.md`. All facts should tie back to `feature-execution.contract.v1.json`, and JSON proof facts should tie back to raw telemetry or receipt evidence.",
+      "observedResult": "Unable to observe any results as the necessary evidence (`report.md` and Gemini live-call receipt) was not provided.",
+      "timestamp": "2026-07-10T01:02:12.920Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--reject-report-facts-not-backed-by-json-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--reject-report-facts-not-backed-by-json-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

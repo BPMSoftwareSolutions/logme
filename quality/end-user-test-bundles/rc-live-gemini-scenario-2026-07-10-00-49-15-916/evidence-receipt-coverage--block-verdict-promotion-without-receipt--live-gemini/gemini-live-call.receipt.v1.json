@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "evidence-receipt-coverage--block-verdict-promotion-without-receipt--live-gemini",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "block-verdict-promotion-without-receipt",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 482,
+    "candidatesTokenCount": 888,
+    "totalTokenCount": 2803,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 482
+      }
+    ],
+    "thoughtsTokenCount": 1433,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "aa88d1b8f92e60529607eb2a5057d329ae3b0104d226ef3d1b0a054f58c66833",
+  "responseSha256": "f7685fcbdf20972a63943f164123673e1afe8fece4f61a1c19d421f6c043042f",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/evidence-receipt-coverage/block-verdict-promotion-without-receipt.response.v1.json",
+  "calledAt": "2026-07-10T00:57:53.233Z"
+}

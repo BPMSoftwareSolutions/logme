@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-a-compact-happy-path-sketch--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-a-compact-happy-path-sketch",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 603,
+    "candidatesTokenCount": 779,
+    "totalTokenCount": 2842,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 603
+      }
+    ],
+    "thoughtsTokenCount": 1460,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "6f94c0224ecc6d75e211d1df494c6cd9edbcd178af967a7115f2777b97eced18",
+  "responseSha256": "62d32c7b596862ea45f91e9c28de3b38b49c5db19ab9bdcc1a9724c4196f68af",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-a-compact-happy-path-sketch.response.v1.json",
+  "calledAt": "2026-07-10T01:11:26.873Z"
+}

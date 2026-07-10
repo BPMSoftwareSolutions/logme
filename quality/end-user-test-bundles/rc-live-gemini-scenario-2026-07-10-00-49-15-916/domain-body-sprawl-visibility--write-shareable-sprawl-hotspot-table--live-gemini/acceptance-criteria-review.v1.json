@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-shareable-sprawl-hotspot-table",
+  "criteria": [
+    {
+      "criterionText": "Then it may write a Markdown hotspot table at:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the expected output file path for the Markdown table. Without `report.md` or CLI evidence, the existence and location of this file cannot be confirmed.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` or CLI output showing the generated file."
+    },
+    {
+      "criterionText": "And every row should be generated from the JSON evidence",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion requires inspecting the generated table's content and comparing it against the source JSON evidence. Neither the table nor the JSON evidence was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated table and relevant JSON evidence for comparison."
+    },
+    {
+      "criterionText": "And each row should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin lists specific fields that should be present in each row of the table. Without the generated table, it's impossible to verify the presence of these columns.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated Markdown table to verify its column structure."
+    },
+    {
+      "criterionText": "And the table should be safe to paste into architecture review notes, PI planning notes, dashboards, decks, or publications.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion assesses the formatting, readability, and general usability of the generated table. Without the table itself, this cannot be evaluated.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated Markdown table to assess its formatting and suitability for pasting into various documents."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:53:25.855Z"
+}

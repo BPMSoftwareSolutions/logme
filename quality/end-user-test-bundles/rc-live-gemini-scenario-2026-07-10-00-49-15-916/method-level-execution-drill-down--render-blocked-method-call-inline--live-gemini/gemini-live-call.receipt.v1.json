@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-blocked-method-call-inline--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-blocked-method-call-inline",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 803,
+    "candidatesTokenCount": 695,
+    "totalTokenCount": 2353,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 803
+      }
+    ],
+    "thoughtsTokenCount": 855,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "6429301ea9020ff9b36502951b5faea368303d8f881f197ce950961cb158c5bc",
+  "responseSha256": "56e8265ed4eff0a05217e3c20b56e0bb7c6869df5aaebdcd72ac625cb07a348e",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-blocked-method-call-inline.response.v1.json",
+  "calledAt": "2026-07-10T01:19:35.649Z"
+}

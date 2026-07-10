@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-unsafe-output-is-blocked",
+  "criteria": [
+    {
+      "criterionText": "Then the harness should be blocked",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (e.g., report.md content, receipt content) was provided to confirm that the harness was blocked.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of 'report.md' and the 'Gemini live-call receipt' to verify this criterion."
+    },
+    {
+      "criterionText": "And a blocker receipt should be written",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (e.g., receipt content, log entries) was provided to confirm that a blocker receipt was written.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of the 'Gemini live-call receipt' to verify this criterion."
+    },
+    {
+      "criterionText": "And no code should be promoted.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (e.g., deployment logs, status reports) was provided to confirm that no code was promoted.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide relevant evidence from 'report.md' or other CLI outputs to verify this criterion."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:12:55.271Z"
+}

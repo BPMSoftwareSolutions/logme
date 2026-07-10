@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--produce-an-llm-handoff-artifact-from-deterministic-facts--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "produce-an-llm-handoff-artifact-from-deterministic-facts",
+  "criteria": [
+    {
+      "criterionText": "Then the packet should include only deterministic facts:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The required evidence surfaces ('report.md' and 'Gemini live-call receipt') were not provided, preventing verification of the LLM's output.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Supply the 'report.md' and 'Gemini live-call receipt' for review."
+    },
+    {
+      "criterionText": "And the LLM should not invent ownership, scenario proof, or promotion status.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The required evidence surfaces ('report.md' and 'Gemini live-call receipt') were not provided, preventing verification of the LLM's output.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SURFACE",
+      "recommendedFixRoute": "Supply the 'report.md' and 'Gemini live-call receipt' for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:13:59.854Z"
+}

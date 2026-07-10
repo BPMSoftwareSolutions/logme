@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--inventory-file-responsibility-signals--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "inventory-file-responsibility-signals",
+  "criteria": [
+    {
+      "criterionText": "Then it should write a sprawl evidence JSON artifact at:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The 'domain-body-sprawl.contract.v1.json' artifact was not provided, so its existence and path cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated 'domain-body-sprawl.contract.v1.json' artifact for review."
+    },
+    {
+      "criterionText": "And each source file entry should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The 'domain-body-sprawl.contract.v1.json' artifact was not provided, preventing verification of its internal structure and the inclusion of specified fields.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated 'domain-body-sprawl.contract.v1.json' artifact for review, allowing inspection of its source file entries."
+    },
+    {
+      "criterionText": "And the human report should be rendered from this JSON artifact, not hand-authored prose.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The 'report.md' was not provided, making it impossible to verify if it was rendered from the JSON artifact or if it contains hand-authored prose.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the generated 'report.md' for review to confirm its rendering source and content."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:53:01.650Z"
+}

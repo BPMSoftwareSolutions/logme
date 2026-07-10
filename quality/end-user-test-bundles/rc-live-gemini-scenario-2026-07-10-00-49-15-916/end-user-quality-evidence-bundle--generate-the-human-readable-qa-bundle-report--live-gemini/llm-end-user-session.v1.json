@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--generate-the-human-readable-qa-bundle-report--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "generate-the-human-readable-qa-bundle-report",
+  "scenarioName": "Generate the human-readable QA bundle report",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Generate the human-readable QA bundle report",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/end-user-quality-evidence-bundle.feature.md:99-131; report.md; live Gemini prompt",
+      "expectedResult": "A human-readable QA bundle report (`qa-evidence-bundle.report.md`) should be generated, containing specific product-facing fields and sections, and be understandable by a product owner without needing to inspect JSON.",
+      "observedResult": "The `report.md` file was not available for review, preventing any observation of its content or structure.",
+      "timestamp": "2026-07-10T00:56:19.107Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--generate-the-human-readable-qa-bundle-report--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/end-user-quality-evidence-bundle.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--generate-the-human-readable-qa-bundle-report--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

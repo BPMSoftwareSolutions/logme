@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "keep-the-global-report-as-an-index-not-a-sketch-warehouse",
+  "seedDataId": "per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T01:20:51.961Z"
+}

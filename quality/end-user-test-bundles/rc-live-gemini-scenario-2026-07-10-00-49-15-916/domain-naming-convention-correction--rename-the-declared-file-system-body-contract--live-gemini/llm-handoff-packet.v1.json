@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-the-declared-file-system-body-contract--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-the-declared-file-system-body-contract",
+  "scenarioName": "Rename the declared file-system body contract",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Rename the declared file-system body contract\n    Given the declared file-system body contract file is named\n      `contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json`\n    When the domain naming convention correction is applied\n    Then the file should be renamed to\n      `contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json`\n    And its `featureId` field should read `logme`\n    And its `bodyId` field should read `logme.workspace-observability-domain`\n    And no file named with `logme2` should remain declared as required.\n",
+    "acceptanceCriteria": [
+      "Then the file should be renamed to",
+      "And its `featureId` field should read `logme`",
+      "And its `bodyId` field should read `logme.workspace-observability-domain`",
+      "And no file named with `logme2` should remain declared as required."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:54:53.821Z"
+}

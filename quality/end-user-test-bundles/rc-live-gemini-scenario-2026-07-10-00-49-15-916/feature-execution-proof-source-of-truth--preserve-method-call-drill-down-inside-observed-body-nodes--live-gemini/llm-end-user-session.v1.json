@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--preserve-method-call-drill-down-inside-observed-body-nodes--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-method-call-drill-down-inside-observed-body-nodes",
+  "scenarioName": "Preserve method call drill-down inside observed body nodes",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve method call drill-down inside observed body nodes",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:139-162; report.md; live Gemini prompt",
+      "expectedResult": "Each observed executable body node should include ordered `methodCalls` with specific fields, timing from telemetry, status from receipts, and proper marking for nodes without method details.",
+      "observedResult": "Without the content of `report.md`, no specific observed result regarding the structure or content of `feature-execution.contract.v1.json` can be confirmed. The scenario Gherkin outlines the expected behavior, but the end-user surface for verification is missing.",
+      "timestamp": "2026-07-10T00:59:01.739Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--preserve-method-call-drill-down-inside-observed-body-nodes--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--preserve-method-call-drill-down-inside-observed-body-nodes--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

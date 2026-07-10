@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--preserve-machine-and-execution-provenance--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "preserve-machine-and-execution-provenance",
+  "criteria": [
+    {
+      "criterionText": "Then `machine-environment.v1.json` should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file, which would contain evidence of `machine-environment.v1.json`'s contents, was not provided. Therefore, the inclusion of the specified fields cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And secrets, API keys, and personal access tokens should be redacted.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file, which would contain evidence to verify redaction, was not provided. Therefore, the redaction of sensitive information cannot be confirmed.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:56:19.093Z"
+}

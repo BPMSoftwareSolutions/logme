@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-a-feature-untested-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-a-feature-untested-from-the-filesystem-body",
+  "criteria": [
+    {
+      "criterionText": "But no end-user QA bundle exists for the feature",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a precondition described in the Gherkin. Evidence (report.md, live-call receipt) was not provided to verify this criterion's state.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide report.md and live-call receipt."
+    },
+    {
+      "criterionText": "Then the status sentinel should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected status sentinel. Evidence (report.md, live-call receipt) was not provided to verify the actual generated sentinel.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide report.md and live-call receipt."
+    },
+    {
+      "criterionText": "And the JSON status should set:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected JSON status fields. Evidence (report.md, live-call receipt) was not provided to verify the actual generated JSON status.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide report.md and live-call receipt."
+    },
+    {
+      "criterionText": "And the next recommended action should be to run the LLM end-user testing conveyor.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected recommended action. Evidence (report.md, live-call receipt) was not provided to verify the actual recommended action.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide report.md and live-call receipt."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:04:05.847Z"
+}

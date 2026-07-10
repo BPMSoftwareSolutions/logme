@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--build-the-llm-handoff-packet--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "build-the-llm-handoff-packet",
+  "scenarioName": "Build the LLM handoff packet",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Build the LLM handoff packet\n    Given an LLM QA assignment exists\n    When the conveyor prepares the handoff packet\n    Then it should give the LLM only bounded testing context:\n      | context |\n      | feature Gherkin |\n      | acceptance criteria |\n      | current executable body proof report |\n      | current method drill-down report when available |\n      | current sprawl report when available |\n      | target user surface instructions |\n      | seed data rules |\n      | evidence bundle requirements |\n      | forbidden actions |\n      | pass/fail reporting expectations |\n    And the packet should not include secrets, API keys, personal tokens, or unrelated repository context\n    And the handoff packet should be written to:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/llm-handoff-packet.report.md\n      \"\"\"\n    And a machine-readable copy should be written to:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/llm-handoff-packet.v1.json\n      \"\"\"\n",
+    "acceptanceCriteria": [
+      "Then it should give the LLM only bounded testing context:",
+      "And the packet should not include secrets, API keys, personal tokens, or unrelated repository context",
+      "And the handoff packet should be written to:",
+      "And a machine-readable copy should be written to:"
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:14:25.670Z"
+}

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "block-proof-language-without-evidence-paths",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 262,
+    "candidatesTokenCount": 156,
+    "totalTokenCount": 1080,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 262
+      }
+    ],
+    "thoughtsTokenCount": 662,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "PASS",
+    "observationSummary": "A report containing 'proof' language (e.g., 'proof of execution') was submitted without an associated evidence path. The report language validator was then executed.",
+    "expectedResult": "The report should be BLOCKED, and the finding code 'projection-language-overclaim' should be returned.",
+    "observedResult": "The report was successfully BLOCKED by the language validator, and the finding code 'projection-language-overclaim' was correctly identified.",
+    "recommendedFollowUps": "No immediate follow-ups are required as the feature behaved as expected. Consider testing with various combinations of 'proof' language keywords and missing evidence paths to ensure robustness."
+  }
+}

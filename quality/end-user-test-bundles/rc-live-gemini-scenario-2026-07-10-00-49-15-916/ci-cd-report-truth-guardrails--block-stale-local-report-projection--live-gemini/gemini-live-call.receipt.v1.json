@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-stale-local-report-projection--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-stale-local-report-projection",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 523,
+    "candidatesTokenCount": 952,
+    "totalTokenCount": 3374,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 523
+      }
+    ],
+    "thoughtsTokenCount": 1899,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "334f92d4469cdf881f3e6ce41284d9adda34cd3b495207fa707d8cc554501532",
+  "responseSha256": "f664ffe91a4deeb6c4983ebb1c4c655ff5cbafdb946963d5974817f4c0c1d953",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/block-stale-local-report-projection.response.v1.json",
+  "calledAt": "2026-07-10T00:49:53.122Z"
+}

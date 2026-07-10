@@ -1,0 +1,13 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini
+- Feature id: per-feature-executable-body-evidence-reports
+- Scenario id: preserve-feature-evidence-from-source-controlled-templates
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| And generated feature evidence is not source controlled | not testable from assigned surface | Verification of source control status for generated evidence requires access to the source control system or explicit documentation, which is not available in the provided report.md or Gherkin. | not observed | INSUFFICIENT_EVIDENCE | Provide access to source control system status or explicit documentation confirming the non-source-controlled nature of generated evidence. |
+| And a feature run is executed again | not testable from assigned surface | This criterion describes an action (a feature run being executed again). The provided report.md is a static output and cannot confirm that a *second* run occurred after a template change. This requires dynamic observation or logs. | not observed | INSUFFICIENT_EVIDENCE | Provide execution logs or a sequence of reports demonstrating the 'before' and 'after' states of the feature run. |
+| Then the regenerated feature evidence report should use the updated template | not testable from assigned surface | To verify the use of an 'updated template', a comparison between the report generated *before* the template change and the report generated *after* the template change is required. Only a single report.md is provided, making comparison impossible. | not observed | INSUFFICIENT_EVIDENCE | Provide two versions of the report: one generated with the old template and one with the updated template, along with a description of the expected changes. |
+| And no code deployment should be required for layout-only changes. | not testable from assigned surface | Verification that 'no code deployment' was required for layout changes necessitates access to deployment logs or system configuration details. The provided report.md and Gherkin do not contain this information. The Gemini live-call receipt is mentioned but not provided. | not observed | INSUFFICIENT_EVIDENCE | Provide deployment logs, system configuration details, or the Gemini live-call receipt to confirm the absence of a code deployment for layout changes. |

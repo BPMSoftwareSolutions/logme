@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--detect-artifact-sprawl-across-directories--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-artifact-sprawl-across-directories",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 544,
+    "candidatesTokenCount": 642,
+    "totalTokenCount": 2316,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 544
+      }
+    ],
+    "thoughtsTokenCount": 1130,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "23ae5898eca0e844e2a5618f1cb8ecfddbd58fc85e0da134242949919966fd58",
+  "responseSha256": "78fc69837250890ac9a5a427e5867af0d3cdb891868cfbaa61745724d4c6a9cd",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/detect-artifact-sprawl-across-directories.response.v1.json",
+  "calledAt": "2026-07-10T00:53:59.196Z"
+}

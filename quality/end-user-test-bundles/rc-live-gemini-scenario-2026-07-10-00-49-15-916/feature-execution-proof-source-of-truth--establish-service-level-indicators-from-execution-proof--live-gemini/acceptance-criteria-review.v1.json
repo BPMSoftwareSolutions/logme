@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--establish-service-level-indicators-from-execution-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "establish-service-level-indicators-from-execution-proof",
+  "criteria": [
+    {
+      "criterionText": "Then each SLI should be derived from observed execution evidence",
+      "status": "blocked",
+      "llmObservationSummary": "The `report.md` content, which would demonstrate the derivation of SLIs from execution evidence, was not provided. Verification is impossible.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` content for review."
+    },
+    {
+      "criterionText": "And supported SLIs should include:",
+      "status": "blocked",
+      "llmObservationSummary": "The `report.md` content, which would list the supported SLIs, was not provided. It is impossible to confirm if all specified SLIs are included.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` content for review."
+    },
+    {
+      "criterionText": "And each SLI should include:",
+      "status": "blocked",
+      "llmObservationSummary": "The `report.md` content, which would detail the structure of each SLI, was not provided. It is impossible to confirm if each SLI includes the required fields.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` content for review."
+    },
+    {
+      "criterionText": "And no SLI should be calculated from a report label, static source inventory, or manually entered claim.",
+      "status": "blocked",
+      "llmObservationSummary": "The `report.md` content, which would show the source of SLI calculations, was not provided. It is impossible to confirm that SLIs are not derived from forbidden sources.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` content for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:59:55.223Z"
+}

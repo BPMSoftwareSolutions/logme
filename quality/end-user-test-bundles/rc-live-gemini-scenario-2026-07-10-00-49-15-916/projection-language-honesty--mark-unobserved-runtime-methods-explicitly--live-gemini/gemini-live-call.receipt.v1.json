@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--mark-unobserved-runtime-methods-explicitly--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "mark-unobserved-runtime-methods-explicitly",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:27:03.109Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 334,
+    "candidatesTokenCount": 349,
+    "totalTokenCount": 1234,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 334
+      }
+    ],
+    "thoughtsTokenCount": 551,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "090d833364e02ab47f0b8a0ff54ae3c9c89155a4995063d712bc97b55d94a742",
+  "responseSha256": "421f76f1fa916f9ea81332b7b02a79830881f695e0a81dd5e0169e1ab74d1d5c",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/mark-unobserved-runtime-methods-explicitly.response.v1.json"
+}

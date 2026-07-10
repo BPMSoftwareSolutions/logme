@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "machine-environment.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--show-feature-status-without-opening-feature-documents--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "show-feature-status-without-opening-feature-documents",
+  "nodeVersion": "v20.19.0",
+  "platform": "win32",
+  "commandExecuted": "npm test; node scripts/report-truth.js --fast; live Gemini scenario QA call",
+  "capturedAt": "2026-07-10T01:05:48.297Z"
+}

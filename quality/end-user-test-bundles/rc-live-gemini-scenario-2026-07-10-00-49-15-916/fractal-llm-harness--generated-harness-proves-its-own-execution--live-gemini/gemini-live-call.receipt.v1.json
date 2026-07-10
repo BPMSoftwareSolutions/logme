@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "generated-harness-proves-its-own-execution",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 497,
+    "candidatesTokenCount": 814,
+    "totalTokenCount": 2358,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 497
+      }
+    ],
+    "thoughtsTokenCount": 1047,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "9bf9cf0153c400ef21a95b4c4184d8fb5bef03fa5b6c5fe7a4788c4596706dea",
+  "responseSha256": "cef8dd2456a9e7ec3750e2796e8b11c5b9899a9f3edf3c4a13b85eae0efc9f41",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/generated-harness-proves-its-own-execution.response.v1.json",
+  "calledAt": "2026-07-10T01:12:23.795Z"
+}

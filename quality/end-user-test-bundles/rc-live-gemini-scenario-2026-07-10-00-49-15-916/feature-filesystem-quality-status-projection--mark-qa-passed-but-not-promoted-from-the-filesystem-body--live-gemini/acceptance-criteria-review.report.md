@@ -1,0 +1,14 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: feature-filesystem-quality-status-projection--mark-qa-passed-but-not-promoted-from-the-filesystem-body--live-gemini
+- Feature id: feature-filesystem-quality-status-projection
+- Scenario id: mark-qa-passed-but-not-promoted-from-the-filesystem-body
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| And its QA gate decision is `QA passed` | not testable from assigned surface | This criterion describes a precondition for the scenario. Verification that this precondition was met during actual execution requires reviewing `report.md` or other execution logs, which were not provided. | not observed | MISSING_EXECUTION_EVIDENCE | Provide `report.md` or other execution logs that confirm the QA gate decision was 'QA passed'. |
+| But no deterministic promotion decision exists | not testable from assigned surface | This criterion describes a negative precondition. Verification that this condition was true during actual execution requires reviewing `report.md` or other execution logs, which were not provided. | not observed | MISSING_EXECUTION_EVIDENCE | Provide `report.md` or other execution logs that confirm no deterministic promotion decision existed. |
+| Then the status sentinel should be: | not testable from assigned surface | This criterion describes the expected creation and path of the status sentinel. Verification requires `report.md` or CLI evidence showing the created sentinel file, which were not provided. | not observed | MISSING_EXECUTION_EVIDENCE | Provide `report.md` or CLI evidence (e.g., file system listing) demonstrating the creation of the sentinel file at the specified path. |
+| And the sentinel should state that QA passed is not the same as release promotion | not testable from assigned surface | This criterion describes specific content expected within the sentinel file. Verification requires `report.md` or CLI evidence showing the actual content of the sentinel, which were not provided. | not observed | MISSING_EXECUTION_EVIDENCE | Provide `report.md` or CLI evidence (e.g., `cat` command output) showing the content of the sentinel file, confirming this statement. |
+| And the next recommended action should be to run the deterministic promotion gate. | not testable from assigned surface | This criterion describes another piece of content expected within the sentinel file. Verification requires `report.md` or CLI evidence showing the actual content of the sentinel, which were not provided. | not observed | MISSING_EXECUTION_EVIDENCE | Provide `report.md` or CLI evidence (e.g., `cat` command output) showing the content of the sentinel file, confirming this recommended action. |

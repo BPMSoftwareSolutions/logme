@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--promote-only-through-deterministic-evidence--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "promote-only-through-deterministic-evidence",
+  "scenarioName": "Promote only through deterministic evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Promote only through deterministic evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-quality-board-filesystem-body.feature.md:172-189; report.md; live Gemini prompt",
+      "expectedResult": "The system should validate promotion based on deterministic evidence, reject LLM-authored claims, and produce the `feature-promotion-not-evidence-backed` finding code on failure, as detailed in the Gherkin scenario.",
+      "observedResult": "Unable to observe the actual execution results or findings due to the absence of the `report.md` content.",
+      "timestamp": "2026-07-10T01:06:54.530Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--promote-only-through-deterministic-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-quality-board-filesystem-body.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--promote-only-through-deterministic-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

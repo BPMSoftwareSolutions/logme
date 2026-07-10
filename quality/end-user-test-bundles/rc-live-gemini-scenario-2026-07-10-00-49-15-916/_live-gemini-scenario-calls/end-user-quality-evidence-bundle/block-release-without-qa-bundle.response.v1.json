@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "block-release-without-qa-bundle",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 560,
+    "candidatesTokenCount": 873,
+    "totalTokenCount": 2404,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 560
+      }
+    ],
+    "thoughtsTokenCount": 971,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario's acceptance criteria could not be verified as the 'report.md' and 'Gemini live-call receipt' evidence surfaces, though mentioned as available, were not provided for review. Without these crucial pieces of evidence, it is impossible to confirm if the release candidate was blocked, if the correct finding code was issued, or if CI/CD acted as expected.",
+    "expectedResult": "The release candidate should be BLOCKED with the specified finding code, and CI/CD should not mark it releasable, as verified by the provided report.md and Gemini live-call receipt.",
+    "observedResult": "No verification possible due to missing evidence surfaces. The actual outcomes regarding blocking, finding code, and CI/CD status could not be observed or confirmed.",
+    "confusingOrRiskyExperiencePoints": "The primary risk is the inability to confirm critical release blocking behavior due to missing evidence. This prevents proper QA validation of a core quality gate.",
+    "accessibilityOrReadabilityObservations": "The prompt clearly stated the existence of 'report.md' and a 'Gemini live-call receipt' but did not include their content, making the task of verification impossible.",
+    "recommendedFollowUps": "To enable proper testing, ensure that all mentioned evidence surfaces (e.g., report.md, Gemini live-call receipt) are actually provided in the prompt for review. Without the content of these reports, no meaningful QA can be performed for this scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But no QA evidence bundle exists under `quality/end-user-test-bundles/<release-candidate-id>/`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This precondition could not be verified as the 'report.md' or 'Gemini live-call receipt' were not provided to confirm the absence of the QA evidence bundle.",
+        "blockerCode": "missing-evidence-surface",
+        "recommendedFixRoute": "Provide the actual 'report.md' and 'Gemini live-call receipt' for review to confirm the precondition."
+      },
+      {
+        "criterionText": "Then the release candidate should be BLOCKED",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The outcome of the release candidate being BLOCKED could not be verified as the 'report.md' or 'Gemini live-call receipt' were not provided.",
+        "blockerCode": "missing-evidence-surface",
+        "recommendedFixRoute": "Provide the actual 'report.md' and 'Gemini live-call receipt' for review to confirm the blocking status."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The specific finding code 'release-candidate-without-end-user-qa-bundle' could not be verified as the 'report.md' or 'Gemini live-call receipt' were not provided.",
+        "blockerCode": "missing-evidence-surface",
+        "recommendedFixRoute": "Provide the actual 'report.md' and 'Gemini live-call receipt' for review to confirm the finding code."
+      },
+      {
+        "criterionText": "And CI/CD should not mark the release candidate releasable.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The CI/CD behavior regarding marking the release candidate as not releasable could not be verified as the 'report.md' or 'Gemini live-call receipt' were not provided.",
+        "blockerCode": "missing-evidence-surface",
+        "recommendedFixRoute": "Provide the actual 'report.md' and 'Gemini live-call receipt' for review to confirm CI/CD status."
+      }
+    ]
+  }
+}

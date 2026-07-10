@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--mark-unobserved-runtime-methods-explicitly--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "mark-unobserved-runtime-methods-explicitly",
+  "scenarioName": "Mark unobserved runtime methods explicitly",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Mark unobserved runtime methods explicitly",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/projection-language-honesty.feature.md:43-52; report.md; live Gemini prompt",
+      "expectedResult": "When a method is present in source inventory but no telemetry event is observed for it during the run, the rendered method table should explicitly mark 'runtime step' as 'not observed', 'first observed at' as 'not observed', 'duration ms' as 'not observed', and 'telemetry status' as 'missing'. The row should not display '0ms', blank duration, or any value that could be interpreted as a successful runtime observation.",
+      "observedResult": "No evidence (report.md, CLI output, or markdown rendering) was provided to observe the actual behavior of the method table for unobserved runtime methods. Therefore, the expected rendering and explicit marking of 'not observed' values could not be verified.",
+      "timestamp": "2026-07-10T01:27:03.109Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/projection-language-honesty--mark-unobserved-runtime-methods-explicitly--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "FAIL",
+      "evidencePaths": [
+        "docs/features/projection-language-honesty.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/projection-language-honesty--mark-unobserved-runtime-methods-explicitly--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

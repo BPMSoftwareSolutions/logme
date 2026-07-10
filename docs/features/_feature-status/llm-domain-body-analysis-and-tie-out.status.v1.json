@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "featureName": "LLM domain body analysis and tie-out",
+  "sourceFeaturePath": "docs/features/llm-domain-body-analysis-and-tie-out.feature.md",
+  "sourceFeatureContentHash": "88e8f752a52858574ac2b98829c5da559f3552821704d884f2ea4b88cb75cf53",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "9045e1e4b0d181479534fc1d1302bc77e924fcf1f526caa91defbc1893562565"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "LLM domain body analysis and tie-out is currently qa-blocked."
+}

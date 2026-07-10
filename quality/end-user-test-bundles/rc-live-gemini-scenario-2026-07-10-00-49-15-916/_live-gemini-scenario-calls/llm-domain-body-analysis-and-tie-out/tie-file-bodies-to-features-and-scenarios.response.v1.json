@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "tie-file-bodies-to-features-and-scenarios",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 539,
+    "candidatesTokenCount": 701,
+    "totalTokenCount": 2292,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 539
+      }
+    ],
+    "thoughtsTokenCount": 1052,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (Gherkin) describe the expected behavior but do not offer any concrete output or report to verify the implementation of the 'LLM domain body analysis and tie-out' feature. Without `report.md` or a Gemini live-call receipt, it's impossible to confirm if the system correctly ties file bodies to features/scenarios, handles missing tie-outs, or avoids false positives.",
+    "expectedResult": "The system should correctly tie file bodies to feature and scenario IDs, flag files with missing tie-outs, and avoid false positives from method names, folder names, or loose report text, as evidenced by `report.md` or a Gemini live-call receipt.",
+    "observedResult": "No observable results or reports were provided to confirm the expected behavior. Only the Gherkin scenario outlining the desired functionality was available.",
+    "confusingOrRiskyExperiencePoints": "Lack of concrete evidence makes it impossible to assess the user experience or potential risks. If the feature is implemented incorrectly, users might experience incorrect file-to-feature/scenario mappings or missed findings.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear and readable. However, the absence of actual test output or reports makes it impossible to evaluate the accessibility or readability of the feature's output.",
+    "recommendedFollowUps": "Provide the `report.md` file and the Gemini live-call receipt for this scenario to enable proper verification of the acceptance criteria. Without these, the feature cannot be tested from the assigned surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the file should tie to one or more feature ids and scenario ids",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or Gemini live-call receipt was provided to verify this criterion. The Gherkin only describes the expected outcome.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And a file with no scenario tie-out should receive:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or Gemini live-call receipt was provided to verify this criterion. The Gherkin only describes the expected outcome.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the analysis should not treat a method name, folder name, or loose report text as scenario proof.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or Gemini live-call receipt was provided to verify this criterion. The Gherkin only describes the expected outcome.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      }
+    ]
+  }
+}

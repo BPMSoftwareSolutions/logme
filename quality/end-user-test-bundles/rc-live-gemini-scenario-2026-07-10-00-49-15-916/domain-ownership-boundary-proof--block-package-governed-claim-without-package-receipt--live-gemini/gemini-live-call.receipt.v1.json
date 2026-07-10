@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "block-package-governed-claim-without-package-receipt",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 511,
+    "candidatesTokenCount": 709,
+    "totalTokenCount": 2358,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 511
+      }
+    ],
+    "thoughtsTokenCount": 1138,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "105a58cb91c2b76d1231461e8787240c1683769eb84da7ef9906fc1db6d87596",
+  "responseSha256": "c07f8c4b6e41281dec45446c916bc14f49104b84c07715f55b74252fbbbfd650",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-ownership-boundary-proof/block-package-governed-claim-without-package-receipt.response.v1.json",
+  "calledAt": "2026-07-10T00:55:30.456Z"
+}

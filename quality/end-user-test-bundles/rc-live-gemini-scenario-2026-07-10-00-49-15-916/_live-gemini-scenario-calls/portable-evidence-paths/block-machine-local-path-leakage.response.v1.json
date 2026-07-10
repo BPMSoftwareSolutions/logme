@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "block-machine-local-path-leakage",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 287,
+    "candidatesTokenCount": 428,
+    "totalTokenCount": 1674,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 287
+      }
+    ],
+    "thoughtsTokenCount": 959,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "BLOCKED",
+    "observationSummary": "The scenario requires execution with a specific `report.md` containing an absolute local workspace path and observation of the report portability gate's output. Without access to the execution environment or simulated output, verification of the expected blocking behavior and finding code is not possible.",
+    "expectedResult": "The report portability gate should block the report, and the finding code 'report-path-not-portable' should be present.",
+    "observedResult": "Not observed due to lack of execution environment and evidence.",
+    "confusingOrRiskyExperiencePoints": "N/A - The scenario itself is clear, but the lack of an execution environment prevents testing.",
+    "accessibilityOrReadabilityObservations": "The feature markdown and Gherkin are clear and readable.",
+    "recommendedFollowUps": "Provide a simulated `report.md` with an absolute local path and the expected output from the report portability gate (e.g., CLI evidence) to allow for verification of this scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the report should be BLOCKED",
+        "status": "BLOCKED",
+        "llmObservationSummary": "Cannot verify without executing the report portability gate with a `report.md` containing an absolute local workspace path and observing its output.",
+        "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+        "recommendedFixRoute": "Provide execution environment or simulated CLI output."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "BLOCKED",
+        "llmObservationSummary": "Cannot verify the finding code 'report-path-not-portable' without executing the report portability gate and observing the specific finding generated.",
+        "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+        "recommendedFixRoute": "Provide execution environment or simulated CLI output."
+      }
+    ]
+  }
+}

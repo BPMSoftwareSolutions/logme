@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "featureName": "Per-feature executable body evidence reports",
+  "sourceFeaturePath": "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+  "sourceFeatureContentHash": "5423e0363965221c44c2af83aa5f5080ead74a1d641313731866174edfd0f8b3",
+  "displayStatus": "qa-passed",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "QA passed",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "1206fad9a9d7fd1ffa22925ed79533013ae2b4491e3679b813c0fde27b590608"
+    }
+  },
+  "blockerCodes": [],
+  "staleReasons": [],
+  "blockerCount": 0,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "run deterministic promotion gate",
+  "productOwnerSummary": "Per-feature executable body evidence reports passed QA, but release promotion is still separate."
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "validate-report-layout-contract-before-rendering",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 513,
+    "candidatesTokenCount": 686,
+    "totalTokenCount": 3367,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 513
+      }
+    ],
+    "thoughtsTokenCount": 2168,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "12cc7e9992bafb502a95dbb76472df2b14bce2ef7e203bd49c887f084fc200c2",
+  "responseSha256": "31528fec7e3550593d77136f9ad0572cb309f2f471dbc200d470015f91311d20",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/validate-report-layout-contract-before-rendering.response.v1.json",
+  "calledAt": "2026-07-10T00:51:00.801Z"
+}

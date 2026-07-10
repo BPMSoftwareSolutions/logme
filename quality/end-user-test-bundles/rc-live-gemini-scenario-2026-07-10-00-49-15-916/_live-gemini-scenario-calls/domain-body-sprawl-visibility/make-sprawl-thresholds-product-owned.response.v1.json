@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "make-sprawl-thresholds-product-owned",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 548,
+    "candidatesTokenCount": 622,
+    "totalTokenCount": 2110,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 548
+      }
+    ],
+    "thoughtsTokenCount": 940,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided Gherkin scenario outlines the expected behavior regarding product-owned sprawl thresholds and their configurability. However, without the `report.md` or the Gemini live-call receipt, there is no concrete evidence to verify that these expectations were met during execution. All acceptance criteria require external verification beyond the Gherkin itself.",
+    "expectedResult": "Sprawl thresholds are loaded from product-owned configuration, supported threshold fields are as listed, and changing a threshold does not require classifier code changes.",
+    "observedResult": "No execution results or live system observations were provided to confirm the expected behavior. The Gherkin merely describes the desired outcome.",
+    "confusingOrRiskyExperiencePoints": "The lack of execution evidence makes it impossible to assess any confusing or risky points from an end-user perspective. The Gherkin itself is clear.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and readable. No accessibility issues with the provided text.",
+    "recommendedFollowUps": "Provide the `report.md` and the Gemini live-call receipt to enable verification of the scenario's execution and the fulfillment of acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then thresholds should be loaded from product-owned configuration",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes this expectation, but no execution evidence (report.md or live-call receipt) was provided to confirm its fulfillment.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And supported threshold fields should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin lists the expected supported fields, but no execution evidence (report.md or live-call receipt) was provided to confirm that these fields are indeed supported and correctly handled by the system.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And changing a threshold should not require changing classifier code.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes this behavioral expectation, but no execution evidence (report.md or live-call receipt) was provided to confirm that threshold changes can be made without modifying classifier code.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-missing-status-projection-for-a-feature",
+  "criteria": [
+    {
+      "criterionText": "But no matching status contract exists under `docs/features/_feature-status/`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify this criterion as the `report.md` and Gemini live-call receipt were not provided, which would confirm the setup precondition.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Supply the `report.md` and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "Then the board should fail with:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify this criterion as the `report.md` and Gemini live-call receipt were not provided, which would show the board's failure and finding code.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Supply the `report.md` and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "And the board should list the missing feature id",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify this criterion as the `report.md` and Gemini live-call receipt were not provided, which would show the listed feature ID.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Supply the `report.md` and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "And the Markdown board should still be written with the missing row marked `stale`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify this criterion as the `report.md` and Gemini live-call receipt were not provided, which would show the content of the Markdown board.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Supply the `report.md` and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "And no missing feature should be silently treated as QA passed.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify this criterion as the `report.md` and Gemini live-call receipt were not provided, which would confirm the absence of silent QA pass.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Supply the `report.md` and Gemini live-call receipt for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:06:27.112Z"
+}

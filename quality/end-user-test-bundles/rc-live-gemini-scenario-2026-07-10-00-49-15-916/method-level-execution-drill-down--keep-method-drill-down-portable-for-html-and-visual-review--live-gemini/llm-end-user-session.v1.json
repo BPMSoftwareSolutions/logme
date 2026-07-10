@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--keep-method-drill-down-portable-for-html-and-visual-review--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "keep-method-drill-down-portable-for-html-and-visual-review",
+  "scenarioName": "Keep method drill-down portable for HTML and visual review",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Keep method drill-down portable for HTML and visual review",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:286-294; report.md; live Gemini prompt",
+      "expectedResult": "The method drill-down ASCII in the `report.md` should use only portable ASCII characters, fit in Markdown without relying on color or terminal-specific rendering, and handle long method names by wrapping or summarizing while retaining the full name in a detailed appendix. HTML visual QA should confirm readability of method call branches.",
+      "observedResult": "Unable to observe the `report.md` content or perform HTML visual QA, therefore unable to verify any of the expected rendering or formatting.",
+      "timestamp": "2026-07-10T01:20:02.769Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--keep-method-drill-down-portable-for-html-and-visual-review--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--keep-method-drill-down-portable-for-html-and-visual-review--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

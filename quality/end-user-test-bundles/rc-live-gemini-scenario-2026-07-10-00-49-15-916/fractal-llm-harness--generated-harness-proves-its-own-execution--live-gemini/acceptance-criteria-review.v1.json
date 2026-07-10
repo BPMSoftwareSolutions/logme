@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "generated-harness-proves-its-own-execution",
+  "criteria": [
+    {
+      "criterionText": "Then every declared executable node should testify",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if every declared executable node testified, as the content of report.md and the Gemini live-call receipt were not provided for review.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of report.md and the Gemini live-call receipt to allow verification of node testimony."
+    },
+    {
+      "criterionText": "And telemetry should match the child harness execution order",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if telemetry matched the child harness execution order, as the content of report.md and the Gemini live-call receipt were not provided for review.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of report.md and the Gemini live-call receipt to allow verification of telemetry order."
+    },
+    {
+      "criterionText": "And every receipt-writing node should write proof",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if every receipt-writing node wrote proof, as the content of report.md and the Gemini live-call receipt were not provided for review.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of report.md and the Gemini live-call receipt to allow verification of receipt generation."
+    },
+    {
+      "criterionText": "And the child harness should produce a self-conformance report.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if the child harness produced a self-conformance report, as the content of report.md was not provided for review.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of report.md to allow verification of the self-conformance report generation."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:12:33.967Z"
+}

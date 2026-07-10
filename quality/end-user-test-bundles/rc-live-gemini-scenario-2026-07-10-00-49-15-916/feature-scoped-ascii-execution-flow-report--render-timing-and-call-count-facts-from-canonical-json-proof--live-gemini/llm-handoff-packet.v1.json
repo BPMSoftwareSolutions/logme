@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-timing-and-call-count-facts-from-canonical-json-proof--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-timing-and-call-count-facts-from-canonical-json-proof",
+  "scenarioName": "Render timing and call count facts from canonical JSON proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render timing and call count facts from canonical JSON proof\n    Given `feature-execution.contract.v1.json` exists for a feature scenario\n    And the JSON proof contains observed node timing and call-count facts\n    When the ASCII execution sketch is rendered\n    Then every executable node should show:\n      | telemetry fact |\n      | first seen at |\n      | last seen at |\n      | duration ms |\n      | elapsed since previous node ms |\n      | call count |\n    And the values should match the canonical JSON proof exactly\n    And a node with missing telemetry should render `not observed` for each missing timing fact\n    And the sketch should not calculate or round timing values independently from the JSON proof.\n",
+    "acceptanceCriteria": [
+      "And the JSON proof contains observed node timing and call-count facts",
+      "Then every executable node should show:",
+      "And the values should match the canonical JSON proof exactly",
+      "And a node with missing telemetry should render `not observed` for each missing timing fact",
+      "And the sketch should not calculate or round timing values independently from the JSON proof."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:09:29.580Z"
+}

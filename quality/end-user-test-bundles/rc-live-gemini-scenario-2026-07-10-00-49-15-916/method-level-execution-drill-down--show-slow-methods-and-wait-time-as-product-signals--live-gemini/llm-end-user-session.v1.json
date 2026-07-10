@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--show-slow-methods-and-wait-time-as-product-signals--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "show-slow-methods-and-wait-time-as-product-signals",
+  "scenarioName": "Show slow methods and wait time as product signals",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Show slow methods and wait time as product signals",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:215-229; report.md; live Gemini prompt",
+      "expectedResult": "The canonical JSON proof should identify the specified metrics, missing timing should be 'not observed', and method timing signals should not be calculated from line count, method count, or static source inventory.",
+      "observedResult": "No actual report or JSON proof was observed. Only the Gherkin describing the expected outcome was available.",
+      "timestamp": "2026-07-10T01:19:28.090Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--show-slow-methods-and-wait-time-as-product-signals--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--show-slow-methods-and-wait-time-as-product-signals--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

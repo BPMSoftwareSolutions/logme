@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots",
+  "scenarioName": "Roll up method-level sterility findings into file-level sprawl hotspots",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Roll up method-level sterility findings into file-level sprawl hotspots",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-body-sprawl-visibility.feature.md:158-177; report.md; live Gemini prompt",
+      "expectedResult": "Findings should be grouped by file, including specific sterility signals ('local method without testimony', 'anonymous executable method', 'method name outside domain vocabulary', 'local generic utility detected', 'unimplemented stub detected'). Files with many grouped findings should appear as top sprawl hotspots, and the report should distinguish between 'missing observability discipline', 'anonymous local callback sprawl', 'generic package-worthy mechanics', 'unclear domain vocabulary', and 'unimplemented source body' hotspot types.",
+      "observedResult": "No report or live-call receipt was provided, therefore no observations could be made regarding the grouping of findings, the inclusion of specific signals, the identification of top sprawl hotspots, or the distinction of hotspot types.",
+      "timestamp": "2026-07-10T00:54:07.476Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-body-sprawl-visibility.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

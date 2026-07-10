@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "report-contract-schema-enforcement",
+  "featureName": "Report contract schema enforcement",
+  "sourceFeaturePath": "docs/features/report-contract-schema-enforcement.feature.md",
+  "sourceFeatureContentHash": "ee0ed5e75701447171526b98a2d03bda450e8c56960ee09419937a154762688d",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "b5dd8e9c0a46da1ecc112506a480168d96c07a8f2b8aa305d520f31ac5d8e49c"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-external-surface-not-testable-locally"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Report contract schema enforcement is currently qa-blocked."
+}

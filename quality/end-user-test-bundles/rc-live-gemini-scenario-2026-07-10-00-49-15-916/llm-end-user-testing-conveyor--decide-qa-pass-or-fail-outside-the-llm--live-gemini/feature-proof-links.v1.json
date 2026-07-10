@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "decide-qa-pass-or-fail-outside-the-llm",
+  "proofReportPaths": [],
+  "missingReports": []
+}

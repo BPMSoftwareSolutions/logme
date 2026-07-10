@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "validate-report-layout-contract-before-rendering",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 513,
+    "candidatesTokenCount": 686,
+    "totalTokenCount": 3367,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 513
+      }
+    ],
+    "thoughtsTokenCount": 2168,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "partially met",
+    "observationSummary": "The `report.md` file was generated, confirming rendering after successful validation. However, the specific fields of the report layout contract are not visible through the provided end-user surfaces, and the behavior of `report.md` rendering when validation fails could not be verified.",
+    "expectedResult": "The report layout contract should define the specified fields, and `report.md` should be rendered only after layout validation passes.",
+    "observedResult": "The `report.md` file was generated. The definition of the report layout contract fields was not observable. It was not possible to observe if `report.md` is not rendered when validation fails.",
+    "confusingOrRiskyExperiencePoints": "The lack of visibility into the report layout contract definition makes it difficult for an end-user to understand or debug report structure issues. The critical 'only after' condition for rendering, which prevents malformed reports, is not verifiable from the provided evidence.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is clear and `report.md` is a standard readable markdown file. However, the absence of contract visibility impacts the readability and understanding of the report generation logic.",
+    "recommendedFollowUps": "Provide a mechanism (e.g., CLI command, debug log, or a section in the generated report) to inspect the loaded report layout contract and its defined fields. Include evidence from a test case where layout validation fails to demonstrate that `report.md` is not rendered in such scenarios.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the contract should define: | field | | schema version | | report title | | section order | | section ids | | section templates | | required data fields | | optional data fields | | blocker display rules | | promotion display rules |",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report layout contract definition, including the specified fields, is not exposed through the provided end-user surfaces (Gherkin, report.md). There is no direct evidence to confirm these fields are defined within the contract.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Expose the report layout contract definition (e.g., via a CLI command, debug log, or a dedicated section in the report itself) to allow verification of its structure."
+      },
+      {
+        "criterionText": "And report.md should be rendered only after layout validation passes.",
+        "status": "partially met",
+        "llmObservationSummary": "The `report.md` file was successfully generated, indicating that rendering occurred after validation passed in this scenario. However, the 'only after' condition, which implies `report.md` should not be rendered if validation fails, cannot be verified with the provided evidence (which only shows a successful validation path).",
+        "blockerCode": "NEGATIVE_CASE_MISSING",
+        "recommendedFixRoute": "Provide evidence from a test case where layout validation fails, demonstrating that `report.md` is not rendered in such a scenario."
+      }
+    ]
+  }
+}

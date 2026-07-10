@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-a-compact-happy-path-sketch",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 603,
+    "candidatesTokenCount": 779,
+    "totalTokenCount": 2842,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 603
+      }
+    ],
+    "thoughtsTokenCount": 1460,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The core output of the scenario, the ASCII execution sketch, and its backing evidence cannot be verified as the 'report.md' content and the Gemini live-call receipt were not provided as evidence surfaces. Without these, it's impossible to confirm if the sketch is rendered correctly or if its labels are backed by evidence.",
+    "expectedResult": "The system should render the specified ASCII execution sketch in 'report.md' exactly as described in the Gherkin, and all 'ok', 'observed', or 'written' labels within the sketch should be demonstrably backed by evidence (e.g., telemetry data, live-call receipt).",
+    "observedResult": "The actual rendered sketch in 'report.md' and the Gemini live-call receipt were not available for observation. Therefore, no direct observation of the expected output or its backing evidence could be made.",
+    "confusingOrRiskyExperiencePoints": "The inability to access the generated 'report.md' and the live-call receipt makes it impossible to confirm the feature's functionality from an end-user perspective. This poses a risk that the feature might not be working as intended, even if local tests passed.",
+    "accessibilityOrReadabilityObservations": "Not applicable, as the actual report content was not provided for review.",
+    "recommendedFollowUps": "To enable proper verification, ensure that the 'report.md' file, containing the rendered ASCII execution sketch, and the Gemini live-call receipt are provided as part of the evidence bundle for review.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And every required runtime node has telemetry and receipt proof",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "While the Gherkin states this as a precondition, the actual proof for 'telemetry' and 'receipt' (e.g., the live-call receipt itself or explicit confirmation within 'report.md') could not be verified due to missing evidence surfaces.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+        "recommendedFixRoute": "Provide the 'report.md' and the Gemini live-call receipt to allow verification of telemetry and receipt proof."
+      },
+      {
+        "criterionText": "Then the sketch should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The content of 'report.md', which should contain the ASCII execution sketch, was not provided. Therefore, it's impossible to verify if the sketch matches the expected output specified in the Gherkin.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+        "recommendedFixRoute": "Provide the 'report.md' containing the rendered ASCII sketch for verification against the expected output."
+      },
+      {
+        "criterionText": "And every `ok`, `observed`, or `written` label should be backed by evidence.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Without the 'report.md' and the actual Gemini live-call receipt, it's impossible to verify if the labels ('ok', 'observed', 'written') in the sketch are genuinely backed by corresponding evidence as required.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+        "recommendedFixRoute": "Provide the 'report.md' and the Gemini live-call receipt to verify the backing evidence for all labels in the sketch."
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "llm-seed-data-proposal.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--preserve-existing-feature-document-paths-during-rollout--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "preserve-existing-feature-document-paths-during-rollout",
+  "seedDataId": "feature-quality-board-filesystem-body--preserve-existing-feature-document-paths-during-rollout--live-gemini-seed-data",
+  "purpose": "No seed records required for Markdown and CLI evidence review.",
+  "scenarioCoverage": [
+    "preserve-existing-feature-document-paths-during-rollout"
+  ],
+  "recordsToCreate": [],
+  "filesToCreate": [],
+  "expectedUserVisibleState": "No additional user-visible seed state required.",
+  "cleanupInstructions": "Remove the QA bundle seed-data directory after review if cleanup is requested.",
+  "allowedPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--preserve-existing-feature-document-paths-during-rollout--live-gemini/seed-data"
+  ],
+  "privacyClassification": "synthetic",
+  "syntheticDataDeclaration": "All proposed seed data is synthetic."
+}

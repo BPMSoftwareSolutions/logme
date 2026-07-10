@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+  "scenarioName": "Render runtime-file drill-down before method calls",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render runtime-file drill-down before method calls",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:141-156; report.md; live Gemini prompt",
+      "expectedResult": "The method drill-down should first show participating runtime files, each row containing specific fields, and method calls grouped under their respective runtime files when a node spans multiple files, as described in the Gherkin.",
+      "observedResult": "No observable result could be determined as no execution evidence (e.g., `report.md`, CLI output) was provided for review.",
+      "timestamp": "2026-07-10T01:18:45.010Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

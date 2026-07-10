@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

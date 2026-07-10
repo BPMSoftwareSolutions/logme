@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "validate-non-empty-sterility-report-schema",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:33:42.138Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 354,
+    "candidatesTokenCount": 363,
+    "totalTokenCount": 1319,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 354
+      }
+    ],
+    "thoughtsTokenCount": 602,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e8282b9a7a17e1fc77b4fd121e8cd4191f8fb15cf808a5e227f3b88eb8a8f794",
+  "responseSha256": "5365cae2c3bc63ab5f002269aad454be8ec5e3bf5256158813de07ab5dbcceaa",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/report-contract-schema-enforcement/validate-non-empty-sterility-report-schema.response.v1.json"
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "keep-method-drill-down-portable-for-html-and-visual-review",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 562,
+    "candidatesTokenCount": 886,
+    "totalTokenCount": 3203,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 562
+      }
+    ],
+    "thoughtsTokenCount": 1755,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file, which is crucial for verifying the rendering and formatting of method drill-down ASCII, was mentioned as an available evidence surface but its content was not provided. Without access to the actual report, it is impossible to verify the specified rendering and portability requirements. Additionally, one criterion explicitly requires 'HTML visual QA', which is not among the assigned end-user surfaces.",
+    "expectedResult": "The method drill-down ASCII in the `report.md` should use only portable ASCII characters, fit in Markdown without relying on color or terminal-specific rendering, and handle long method names by wrapping or summarizing while retaining the full name in a detailed appendix. HTML visual QA should confirm readability of method call branches.",
+    "observedResult": "Unable to observe the `report.md` content or perform HTML visual QA, therefore unable to verify any of the expected rendering or formatting.",
+    "confusingOrRiskyExperiencePoints": "The absence of the actual `report.md` content makes it impossible to perform the requested QA, leading to a 'not testable' outcome for criteria dependent on it. The explicit requirement for 'HTML visual QA' for one criterion, when HTML visual output is not an assigned surface, also creates a testing gap.",
+    "accessibilityOrReadabilityObservations": "N/A, as the primary evidence (`report.md` content) was not accessible for review.",
+    "recommendedFollowUps": "Provide the actual `report.md` content for review to enable verification of the acceptance criteria. For the HTML visual QA criterion, either provide access to HTML visual output or rephrase the criterion to be testable via markdown/report review.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should use only portable ASCII characters",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content, necessary to verify the use of portable ASCII characters in method drill-down, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And it should fit in Markdown without relying on color or terminal-specific rendering",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content, necessary to verify Markdown compatibility and absence of terminal-specific rendering, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And long method names should wrap or be summarized without hiding the full method name from the detailed appendix",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content, necessary to verify the handling of long method names and their presence in an appendix, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And HTML visual QA should verify that method call branches remain readable.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion explicitly requires 'HTML visual QA', which is not an assigned end-user surface (feature markdown review, generated report review, CLI evidence review). The `report.md` content was also not provided, which might have contained some textual representation, but visual HTML inspection is explicitly requested and not available.",
+        "blockerCode": "UNSUPPORTED_TEST_SURFACE_REQUIRED_FOR_CRITERION",
+        "recommendedFixRoute": "Either provide access to HTML visual output or rephrase the criterion to be testable via markdown/report review."
+      }
+    ]
+  }
+}

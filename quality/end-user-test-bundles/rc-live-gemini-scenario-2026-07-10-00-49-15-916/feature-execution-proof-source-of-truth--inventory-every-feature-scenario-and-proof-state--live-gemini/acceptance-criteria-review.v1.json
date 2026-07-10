@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--inventory-every-feature-scenario-and-proof-state--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "inventory-every-feature-scenario-and-proof-state",
+  "criteria": [
+    {
+      "criterionText": "Then it should discover every feature and scenario",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of feature and scenario discovery requires inspecting the generated inventory or `report.md`, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` and/or the generated inventory file for review."
+    },
+    {
+      "criterionText": "And it should write a run-scoped feature proof inventory containing:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Confirmation of the inventory's structure and field inclusion necessitates reviewing the actual generated inventory file or its representation in `report.md`, neither of which was supplied.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` and/or the generated inventory file for review."
+    },
+    {
+      "criterionText": "And proof status should be one of:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "To ensure the 'proof status' field adheres to the specified enumerated values, the generated inventory or `report.md` must be examined, but these artifacts are absent.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` and/or the generated inventory file for review."
+    },
+    {
+      "criterionText": "And no scenario should be omitted because it has no implementation yet.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verifying that no scenarios are omitted, especially unimplemented ones, requires comparing a complete list of all features/scenarios against the generated inventory, which is not available for review.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` and/or the generated inventory file for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:58:14.914Z"
+}

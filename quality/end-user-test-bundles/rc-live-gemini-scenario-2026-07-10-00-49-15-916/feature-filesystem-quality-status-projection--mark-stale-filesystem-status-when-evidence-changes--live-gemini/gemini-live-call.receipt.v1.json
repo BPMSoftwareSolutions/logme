@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-stale-filesystem-status-when-evidence-changes--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-stale-filesystem-status-when-evidence-changes",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 559,
+    "candidatesTokenCount": 852,
+    "totalTokenCount": 2376,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 559
+      }
+    ],
+    "thoughtsTokenCount": 965,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "bfc688f5370eab62875891e4916424e826530bbf9d3384e0d28c46277e413a8c",
+  "responseSha256": "cf6ddf317be3a2bc039978d5c5eb235594ab584a00ec56fd0b21f69964f15d1a",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-stale-filesystem-status-when-evidence-changes.response.v1.json",
+  "calledAt": "2026-07-10T01:04:44.976Z"
+}

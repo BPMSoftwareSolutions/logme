@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "tie-method-calls-to-telemetry-event-pairs",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 652,
+    "candidatesTokenCount": 995,
+    "totalTokenCount": 3159,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 652
+      }
+    ],
+    "thoughtsTokenCount": 1512,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "Only the Gherkin scenario description was available for review. No execution evidence (report.md, live-call receipt) was provided to verify the implementation of the described behaviors.",
+    "expectedResult": "The system should correctly tie method calls to telemetry event pairs, supporting various telemetry shapes and accurately deriving 'started at', 'completed at', and 'duration ms' values, with a specific fallback for unproven duration.",
+    "observedResult": "The Gherkin clearly describes the expected behavior for tying method calls to telemetry events and deriving timing information. However, no actual execution results or reports were available to observe the system's behavior.",
+    "confusingOrRiskyExperiencePoints": "None identified from the Gherkin alone. The Gherkin is clear and unambiguous in its description of expected behavior.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is well-structured and easy to read. The use of a table for specifying supported telemetry shapes is effective and enhances clarity.",
+    "recommendedFollowUps": "Provide the 'report.md' and the Gemini live-call receipt for a complete review of the scenario's implementation against the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then each observed method call should tie to one or more telemetry event ids",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes that each observed method call should tie to one or more telemetry event IDs. No execution evidence was provided to verify this behavior.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt for review."
+      },
+      {
+        "criterionText": "And the proof should support:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin lists specific telemetry shapes (single call event with explicit duration, start/end event pair, nested LogMe testimony events, repeated calls) that the proof should support. No execution evidence was provided to verify this support.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt for review."
+      },
+      {
+        "criterionText": "And `started at` should come from the earliest event for that call",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies that 'started at' should be derived from the earliest event for a call. No execution evidence was provided to verify this derivation logic.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt for review."
+      },
+      {
+        "criterionText": "And `completed at` should come from the latest event for that call when available",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies that 'completed at' should be derived from the latest event for a call when available. No execution evidence was provided to verify this derivation logic.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt for review."
+      },
+      {
+        "criterionText": "And `duration ms` should come from explicit telemetry duration or from observed start/end timestamps",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies that 'duration ms' should come from explicit telemetry duration or calculated from start/end timestamps. No execution evidence was provided to verify this derivation logic.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt for review."
+      },
+      {
+        "criterionText": "And if timing cannot be proven, duration should be `not observed`, not `0`.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies that if timing cannot be proven, duration should be 'not observed' instead of '0'. No execution evidence was provided to verify this fallback behavior.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt for review."
+      }
+    ]
+  }
+}

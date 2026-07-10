@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "verdict-derivation-consistency",
+  "scenarioId": "allow-sterile-verdict-only-when-all-gates-pass",
+  "modelName": "gemini-flash-lite-latest",
+  "usageMetadata": {
+    "promptTokenCount": 286,
+    "candidatesTokenCount": 225,
+    "totalTokenCount": 511,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 286
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "fail",
+    "observationSummary": "The system failed to enforce the 'STERILE DOMAIN BODY' verdict constraint when a generic utility method was introduced into the domain body. The verdict derivation logic incorrectly returned 'STERILE DOMAIN BODY' despite the presence of a violation in the domain body.",
+    "expectedResult": "The verdict should not be 'STERILE DOMAIN BODY' when generic utility methods or other violations are present in the domain body.",
+    "observedResult": "The system returned 'STERILE DOMAIN BODY' even when a generic utility method was detected in the domain body, violating the gate requirements.",
+    "recommendedFollowUps": [
+      "Audit the verdict derivation engine to ensure all gate conditions are evaluated as a conjunction before returning the 'STERILE' status.",
+      "Add unit tests to verify that each individual gate failure correctly prevents the 'STERILE DOMAIN BODY' verdict.",
+      "Review the report.md evidence logs to identify why the generic utility method check was bypassed during the derivation process."
+    ]
+  }
+}

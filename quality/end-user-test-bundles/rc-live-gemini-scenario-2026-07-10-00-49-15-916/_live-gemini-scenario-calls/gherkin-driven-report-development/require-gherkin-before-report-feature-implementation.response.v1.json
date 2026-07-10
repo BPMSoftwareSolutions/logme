@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "gherkin-driven-report-development",
+  "scenarioId": "require-gherkin-before-report-feature-implementation",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 502,
+    "candidatesTokenCount": 577,
+    "totalTokenCount": 2198,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 502
+      }
+    ],
+    "thoughtsTokenCount": 1119,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The required evidence surfaces, specifically `report.md` and the Gemini live-call receipt, were not provided in the prompt, making it impossible to evaluate the acceptance criteria.",
+    "expectedResult": "All acceptance criteria should be verifiable through the provided `report.md` and Gemini live-call receipt, demonstrating that Gherkin is required before report feature implementation.",
+    "observedResult": "No verification could be performed as the `report.md` and Gemini live-call receipt evidence surfaces were missing from the prompt.",
+    "confusingOrRiskyExperiencePoints": "The absence of critical evidence surfaces prevents any meaningful QA testing, leading to uncertainty about the feature's implementation status.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is with missing evidence, not the readability of existing evidence.",
+    "recommendedFollowUps": "Provide the `report.md` and Gemini live-call receipt as specified in the 'Evidence surfaces available' section to enable proper testing of the scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the pull request should include or reference a scenario under `docs/features/**/*.feature.md`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing evaluation of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the implementation tests should reference the scenario id",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing evaluation of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the report should not add a new section or claim without acceptance criteria.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` and Gemini live-call receipt were not provided, preventing evaluation of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt."
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "validate-report-layout-contract-before-rendering",
+  "scenarioName": "Validate report layout contract before rendering",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Validate report layout contract before rendering",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/data-driven-report-layout.feature.md:32-47; report.md; live Gemini prompt",
+      "expectedResult": "The report layout contract should define the specified fields, and `report.md` should be rendered only after layout validation passes.",
+      "observedResult": "The `report.md` file was generated. The definition of the report layout contract fields was not observable. It was not possible to observe if `report.md` is not rendered when validation fails.",
+      "timestamp": "2026-07-10T00:51:00.801Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "partially met",
+      "evidencePaths": [
+        "docs/features/data-driven-report-layout.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

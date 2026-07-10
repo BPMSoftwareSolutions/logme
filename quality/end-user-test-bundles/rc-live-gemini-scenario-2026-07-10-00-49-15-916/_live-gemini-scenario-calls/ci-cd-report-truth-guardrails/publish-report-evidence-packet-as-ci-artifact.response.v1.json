@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "publish-report-evidence-packet-as-ci-artifact",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 682,
+    "candidatesTokenCount": 628,
+    "totalTokenCount": 2665,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 682
+      }
+    ],
+    "thoughtsTokenCount": 1355,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (Gherkin, report.md) do not allow for verification of artifact publishing or pull request summary linking. The full artifact content and PR summary are external to these surfaces.",
+    "expectedResult": "The CI report truth workflow should publish a CI artifact containing a specific list of files, and the pull request summary should include a link to this artifact.",
+    "observedResult": "No evidence was provided to confirm the publication of the CI artifact or the presence of a link in the pull request summary. The `report.md` file was provided, but it is only one component of the expected artifact and does not confirm the artifact's existence or full content.",
+    "confusingOrRiskyExperiencePoints": "The scenario describes actions that occur within a CI/CD pipeline (publishing artifacts, updating PR summaries), but the provided end-user surfaces (markdown, a single report file) are insufficient to observe these actions directly. This creates a gap in testability from the assigned perspective.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is clear and readable. The `report.md` is a standard markdown file. No specific accessibility issues with the provided evidence.",
+    "recommendedFollowUps": "To properly test this scenario from an end-user perspective, access to the actual CI/CD pipeline output (e.g., a link to the published artifact, a screenshot/text of the PR summary) would be required. Alternatively, a manifest or log confirming artifact publication and contents would be needed. The 'Gemini live-call receipt' is mentioned as being in the QA bundle, but the QA bundle itself is not provided for review.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should publish an artifact containing:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected artifact contents, but no actual artifact or manifest of its contents was provided for verification. `report.md` is only one file, not the full artifact.",
+        "blockerCode": "EVIDENCE_MISSING_ARTIFACT_OR_MANIFEST",
+        "recommendedFixRoute": "Provide access to the published CI artifact, a manifest of its contents, or a log confirming its publication."
+      },
+      {
+        "criterionText": "And the pull request summary should link to the artifact.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (e.g., screenshot, text excerpt) of the pull request summary was provided to verify the presence of a link to the artifact.",
+        "blockerCode": "EVIDENCE_MISSING_PR_SUMMARY",
+        "recommendedFixRoute": "Provide a screenshot or text excerpt of the pull request summary showing the link."
+      }
+    ]
+  }
+}

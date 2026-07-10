@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--llm-generates-a-child-harness-from-a-parent-harness-contract--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-generates-a-child-harness-from-a-parent-harness-contract",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:12:23.754Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.007Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EVIDENCE"
+  ]
+}

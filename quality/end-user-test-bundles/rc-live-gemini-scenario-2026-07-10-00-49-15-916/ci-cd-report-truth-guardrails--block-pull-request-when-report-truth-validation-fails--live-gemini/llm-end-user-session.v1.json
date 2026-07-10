@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-pull-request-when-report-truth-validation-fails--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-pull-request-when-report-truth-validation-fails",
+  "scenarioName": "Block pull request when report truth validation fails",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block pull request when report truth validation fails",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/ci-cd-report-truth-guardrails.feature.md:8-23; report.md; live Gemini prompt",
+      "expectedResult": "The CI report truth workflow should execute all specified gates, and if any gate fails, the pull request should be blocked.",
+      "observedResult": "The report.md from a passing local test suite indicates that the gates can run successfully. There is no evidence to confirm that a pull request would be blocked if any of these gates were to fail.",
+      "timestamp": "2026-07-10T00:49:32.968Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-pull-request-when-report-truth-validation-fails--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "partially met",
+      "evidencePaths": [
+        "docs/features/ci-cd-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-pull-request-when-report-truth-validation-fails--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

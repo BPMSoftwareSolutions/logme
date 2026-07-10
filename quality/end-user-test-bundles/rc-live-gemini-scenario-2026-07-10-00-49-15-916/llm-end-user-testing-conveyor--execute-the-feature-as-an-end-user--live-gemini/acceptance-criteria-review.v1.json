@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--execute-the-feature-as-an-end-user--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "execute-the-feature-as-an-end-user",
+  "criteria": [
+    {
+      "criterionText": "Then it should interact only through allowed end-user surfaces",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if the LLM interacted only through allowed end-user surfaces as the 'report.md' detailing its interactions was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of 'report.md' for review."
+    },
+    {
+      "criterionText": "And allowed surfaces may include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion lists allowed surfaces. Verification depends on observing the LLM's actual interactions, which is not possible without 'report.md'.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of 'report.md' for review."
+    },
+    {
+      "criterionText": "And every action should be recorded as an end-user step",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if every action was recorded as an end-user step without access to the 'report.md' or the raw session transcript.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of 'report.md' or the raw session transcript for review."
+    },
+    {
+      "criterionText": "And each step should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if each step included the specified fields without access to the 'report.md' or the raw session transcript.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of 'report.md' or the raw session transcript for review."
+    },
+    {
+      "criterionText": "And the raw user-session transcript should be written to:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if the LLM interacted only through allowed end-user surfaces as the 'report.md' detailing its interactions was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of 'report.md' for review."
+    },
+    {
+      "criterionText": "And a readable session narrative should be written to:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify if the LLM interacted only through allowed end-user surfaces as the 'report.md' detailing its interactions was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the content of 'report.md' for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:15:02.128Z"
+}

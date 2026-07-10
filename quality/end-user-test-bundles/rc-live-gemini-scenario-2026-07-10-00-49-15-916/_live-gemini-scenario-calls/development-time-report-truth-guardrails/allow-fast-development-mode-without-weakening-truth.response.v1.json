@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "allow-fast-development-mode-without-weakening-truth",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 523,
+    "candidatesTokenCount": 1096,
+    "totalTokenCount": 3351,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 523
+      }
+    ],
+    "thoughtsTokenCount": 1732,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario could not be fully tested as the `report.md` and Gemini live-call receipt evidence surfaces were not provided for review. Verification of both the skipping of artifact publication and the failure conditions is impossible without this evidence.",
+    "expectedResult": "The fast report truth command should skip long-running receipt artifact publication but still fail on specific truth guardrail violations such as contaminated verdict, stale report provenance, summary-to-row mismatch, silent local methods, anonymous executable methods, and unsupported clean or sterile claims.",
+    "observedResult": "No observation could be made regarding the skipping of receipt artifact publication or the failure conditions due to missing evidence.",
+    "confusingOrRiskyExperiencePoints": "Without the generated report and live-call receipt, it's impossible to assess if the fast development mode correctly balances speed with truth guardrails, which could lead to developers missing critical truth violations.",
+    "accessibilityOrReadabilityObservations": "N/A - This test focuses on functional verification, not documentation accessibility.",
+    "recommendedFollowUps": "Provide the `report.md` generated after the local test suite and the Gemini live-call receipt for this scenario to enable proper verification of the fast development mode's behavior regarding artifact publication and truth guardrail failures.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it may skip long-running receipt artifact publication",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that the fast command skips long-running receipt artifact publication requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "But it should still fail on: contaminated verdict",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that the fast command fails on 'contaminated verdict' requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "But it should still fail on: stale report provenance",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that the fast command fails on 'stale report provenance' requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "But it should still fail on: summary-to-row mismatch",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that the fast command fails on 'summary-to-row mismatch' requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "But it should still fail on: silent local methods",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that the fast command fails on 'silent local methods' requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "But it should still fail on: anonymous executable methods",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that the fast command fails on 'anonymous executable methods' requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "But it should still fail on: unsupported clean or sterile claim",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification that the fast command fails on 'unsupported clean or sterile claim' requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+      }
+    ]
+  }
+}

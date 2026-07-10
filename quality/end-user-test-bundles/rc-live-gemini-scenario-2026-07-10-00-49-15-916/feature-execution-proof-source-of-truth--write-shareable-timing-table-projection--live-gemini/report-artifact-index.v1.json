@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "write-shareable-timing-table-projection",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

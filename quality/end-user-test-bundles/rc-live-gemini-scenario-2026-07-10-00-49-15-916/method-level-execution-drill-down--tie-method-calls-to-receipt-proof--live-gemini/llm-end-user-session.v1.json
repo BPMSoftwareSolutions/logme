@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-receipt-proof--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "tie-method-calls-to-receipt-proof",
+  "scenarioName": "Tie method calls to receipt proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Tie method calls to receipt proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:81-91; report.md; live Gemini prompt",
+      "expectedResult": "The method call should list repo-relative receipt paths including content hashes/receipt IDs. A missing required receipt should block the method call with the finding code 'method-call-receipt-missing'.",
+      "observedResult": "No execution results could be observed as the `report.md` and Gemini live-call receipt were not provided.",
+      "timestamp": "2026-07-10T01:18:27.146Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-receipt-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-receipt-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

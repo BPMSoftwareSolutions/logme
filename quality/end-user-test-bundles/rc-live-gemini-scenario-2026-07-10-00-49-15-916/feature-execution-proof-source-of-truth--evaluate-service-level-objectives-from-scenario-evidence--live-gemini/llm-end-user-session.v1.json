@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--evaluate-service-level-objectives-from-scenario-evidence--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "evaluate-service-level-objectives-from-scenario-evidence",
+  "scenarioName": "Evaluate service level objectives from scenario evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Evaluate service level objectives from scenario evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:225-248; report.md; live Gemini prompt",
+      "expectedResult": "The system should successfully evaluate service level objectives, compare observed SLIs against declared SLO targets, and produce a structured output containing specific fields and status values, correctly handling cases of missing telemetry by assigning a 'not enough evidence' status.",
+      "observedResult": "No observable results from the `report.md` were available to confirm the expected system behavior or output as described in the Gherkin.",
+      "timestamp": "2026-07-10T00:59:55.235Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--evaluate-service-level-objectives-from-scenario-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--evaluate-service-level-objectives-from-scenario-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "provide-one-command-for-local-report-truth",
+  "criteria": [
+    {
+      "criterionText": "Then it should regenerate the report contract from current source",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of report contract regeneration requires access to the generated 'report.md' or a live-call receipt detailing the command's actions, neither of which was provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide 'report.md' and/or live-call receipt showing evidence of report contract regeneration."
+    },
+    {
+      "criterionText": "And it should validate report freshness",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Validation of report freshness cannot be confirmed without the 'report.md' or a live-call receipt showing the validation output.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide 'report.md' and/or live-call receipt showing report freshness validation output."
+    },
+    {
+      "criterionText": "And it should validate summary-to-row consistency",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Confirmation of summary-to-row consistency validation requires the 'report.md' or a live-call receipt detailing the validation results.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide 'report.md' and/or live-call receipt showing summary-to-row consistency validation output."
+    },
+    {
+      "criterionText": "And it should validate verdict derivation",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of verdict derivation validation is not possible without the 'report.md' or a live-call receipt showing the validation output.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide 'report.md' and/or live-call receipt showing verdict derivation validation output."
+    },
+    {
+      "criterionText": "And it should print a bounded, human-readable failure summary",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "To verify the format and content of a failure summary, command output (e.g., from a live-call receipt) under a failure condition is required. This evidence was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide command output (e.g., via live-call receipt) that includes a failure summary to assess its boundedness and human-readability."
+    },
+    {
+      "criterionText": "And it should exit nonzero when the report is contaminated.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Observing the exit code of the command, especially under a contamination scenario, requires execution logs or a live-call receipt that explicitly captures this information. This evidence was not supplied.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide execution logs or a live-call receipt that explicitly shows the command's exit code when the report is contaminated."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:52:22.948Z"
+}

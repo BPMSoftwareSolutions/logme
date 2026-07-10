@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--block-proof-language-without-evidence-paths--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "block-proof-language-without-evidence-paths",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:28:36.552Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 262,
+    "candidatesTokenCount": 156,
+    "totalTokenCount": 1080,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 262
+      }
+    ],
+    "thoughtsTokenCount": 662,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "3596eacb6daf7b1fd50cbb2ff216ebce0508c7289d72e32bd8bda8335010587c",
+  "responseSha256": "22fb696ead0a50a981d0d1d5bc78af1a1c2d97bc27c528b4a8eedfddd282299d",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/block-proof-language-without-evidence-paths.response.v1.json"
+}

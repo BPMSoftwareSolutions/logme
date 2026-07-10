@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "publish-report-evidence-packet-as-ci-artifact",
+  "scenarioName": "Publish report evidence packet as CI artifact",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Publish report evidence packet as CI artifact\n    Given the CI report truth workflow has generated report evidence\n    When the workflow completes\n    Then it should publish an artifact containing:\n      | artifact |\n      | method-inventory.v1.json |\n      | report-contract.v1.json |\n      | report.md |\n      | report-generation.receipt.v1.json |\n      | telemetry.events.v1.jsonl |\n      | report-validation.v1.json |\n      | adversarial-challenge-packet.md |\n      | features/<feature-id>/executable-body-contract.report.md |\n      | features/<feature-id>/executable-body-tree.ascii.md |\n      | features/<feature-id>/feature-execution.receipt.v1.json |\n      | quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/qa-evidence-bundle.report.md |\n      | quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/qa-gate-decision.v1.json |\n    And the pull request summary should link to the artifact.\n",
+    "acceptanceCriteria": [
+      "Then it should publish an artifact containing:",
+      "And the pull request summary should link to the artifact."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:49:53.114Z"
+}

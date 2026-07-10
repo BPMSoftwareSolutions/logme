@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+  "featureId": "verdict-derivation-consistency",
+  "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+  "providerName": "Gemini",
+  "modelName": "gemini-flash-lite-latest",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 218,
+    "candidatesTokenCount": 178,
+    "totalTokenCount": 396,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 218
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "promptSha256": "8f11d325fbb7688287bfeaac72cb5e53b55a6c0ee207c42f3e758c94c10b2ecd",
+  "responseSha256": "13b429611c0d9d14d38a418102bab03f5c98cf80d1c3a40a8aecfc102a141adb",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/verdict-derivation-consistency/block-sterile-verdict-when-any-hard-law-is-violated.response.v1.json",
+  "calledAt": "2026-07-10T01:45:05.050Z"
+}

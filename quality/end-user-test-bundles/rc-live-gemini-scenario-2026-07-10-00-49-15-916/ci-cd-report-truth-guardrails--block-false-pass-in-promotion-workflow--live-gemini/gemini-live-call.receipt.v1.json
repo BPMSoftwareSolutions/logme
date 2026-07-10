@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-false-pass-in-promotion-workflow--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-false-pass-in-promotion-workflow",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 618,
+    "candidatesTokenCount": 1210,
+    "totalTokenCount": 3609,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 618
+      }
+    ],
+    "thoughtsTokenCount": 1781,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b4f0f9e50c304d9604f5fae86e3eed3babfa0322cee201847bb174a19b7625e2",
+  "responseSha256": "17fdd6c348458f9f8d2f5bf85776c4212b2c6fb752bdd324947e2d9605018dc4",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/block-false-pass-in-promotion-workflow.response.v1.json",
+  "calledAt": "2026-07-10T00:50:05.652Z"
+}

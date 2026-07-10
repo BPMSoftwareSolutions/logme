@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--recommend-decomposition-without-promoting-the-llm-recommendation--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "recommend-decomposition-without-promoting-the-llm-recommendation",
+  "scenarioName": "Recommend decomposition without promoting the LLM recommendation",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Recommend decomposition without promoting the LLM recommendation\n    Given an executable file has many responsibilities, multiple method-action clusters, or an actionless file name\n    When domain body analysis builds decomposition guidance\n    Then it should propose durable action-bearing boundaries\n    And each proposed boundary should include:\n      | field |\n      | proposed file path |\n      | reason |\n      | source method names |\n      | contract action required |\n    And the finding code should be:\n      | finding |\n      | decomposition-recommended |\n    And the LLM may narrate or challenge the recommendation\n    But deterministic gates should decide whether the repository is promotable.\n",
+    "acceptanceCriteria": [
+      "Then it should propose durable action-bearing boundaries",
+      "And each proposed boundary should include:",
+      "And the finding code should be:",
+      "And the LLM may narrate or challenge the recommendation",
+      "But deterministic gates should decide whether the repository is promotable."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:13:51.276Z"
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "gherkin-driven-report-development",
+  "featureName": "Gherkin-driven report development",
+  "sourceFeaturePath": "docs/features/gherkin-driven-report-development.feature.md",
+  "sourceFeatureContentHash": "4ba984311d30ebb9e2321516f8bcfe996972e7fd152419b9f05b73f38a23bf6c",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "e12dab123435a50d313ae6922fe32be6102844ecc22a4a491ca1902fdd7c5d8a"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Gherkin-driven report development is currently qa-blocked."
+}

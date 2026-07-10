@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-2026-07-10-00-47-01-674",
+  "qaRunId": "adversarial-challenge-packet--block-false-pass-claim--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "block-false-pass-claim",
+  "scenarioName": "Block false pass claim",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block false pass claim",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/adversarial-challenge-packet.feature.md:29-38; report.md; live Gemini prompt",
+      "expectedResult": "If the challenge packet reveals issues (missing schema, stale hash, etc.), the report verdict should change to BLOCKED, and specific finding codes (false-pass-claim, report-overclaims-evidence) should be present.",
+      "observedResult": "Not observable from assigned surfaces.",
+      "timestamp": "2026-07-10T00:47:01.688Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-2026-07-10-00-47-01-674/adversarial-challenge-packet--block-false-pass-claim--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/adversarial-challenge-packet.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-2026-07-10-00-47-01-674/adversarial-challenge-packet--block-false-pass-claim--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

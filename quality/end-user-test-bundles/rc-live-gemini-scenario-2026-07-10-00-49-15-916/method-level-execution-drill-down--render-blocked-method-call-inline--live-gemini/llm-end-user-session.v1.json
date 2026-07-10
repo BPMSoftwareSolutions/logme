@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-blocked-method-call-inline--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-blocked-method-call-inline",
+  "scenarioName": "Render blocked method call inline",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render blocked method call inline",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:230-264; report.md; live Gemini prompt",
+      "expectedResult": "A blocked method call, missing telemetry or receipt evidence, should appear inline under its body node, shaped precisely as described in the Gherkin, with details appearing before the dense static method inventory, eliminating the need for inference from a global findings table.",
+      "observedResult": "No rendered output (report.md or CLI evidence) was provided to observe the actual behavior. Therefore, the expected rendering could not be confirmed.",
+      "timestamp": "2026-07-10T01:19:35.649Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-blocked-method-call-inline--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-blocked-method-call-inline--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

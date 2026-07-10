@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-method-drill-down-under-each-observed-body-node--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-method-drill-down-under-each-observed-body-node",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 627,
+    "candidatesTokenCount": 766,
+    "totalTokenCount": 2354,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 627
+      }
+    ],
+    "thoughtsTokenCount": 961,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a628fa4875a3a94c0e1ed902fa92de8081c6cc52fc02f7d3be7f4193594e15c2",
+  "responseSha256": "de326bc96a33b0d5c6cbf9f45e98b0f6abe2bcea5c7b3d7fcba52d3fcce11adb",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-method-drill-down-under-each-observed-body-node.response.v1.json",
+  "calledAt": "2026-07-10T01:09:29.593Z"
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--generate-a-filesystem-tree-projection-for-review--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "generate-a-filesystem-tree-projection-for-review",
+  "scenarioName": "Generate a filesystem tree projection for review",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Generate a filesystem tree projection for review\n    Given the status sentinels and board have been generated\n    When the board projection writes review artifacts\n    Then it should write a filesystem tree projection at:\n      \"\"\"\n      docs/features/_FEATURE-QUALITY-TREE.txt\n      \"\"\"\n    And the tree should show only product-owner scan surfaces:\n      | surface |\n      | generated quality board |\n      | visible status sentinels |\n      | feature source documents |\n      | status contract directory |\n    And the tree should make the quality state visible from filenames\n    And the tree should be safe to paste into PI planning notes or architecture review notes.\n",
+    "acceptanceCriteria": [
+      "Then it should write a filesystem tree projection at:",
+      "And the tree should show only product-owner scan surfaces:",
+      "And the tree should make the quality state visible from filenames",
+      "And the tree should be safe to paste into PI planning notes or architecture review notes."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:06:17.506Z"
+}

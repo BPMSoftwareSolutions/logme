@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-a-compact-happy-path-sketch--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-a-compact-happy-path-sketch",
+  "scenarioName": "Render a compact happy-path sketch",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render a compact happy-path sketch",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:368-386; report.md; live Gemini prompt",
+      "expectedResult": "The system should render the specified ASCII execution sketch in 'report.md' exactly as described in the Gherkin, and all 'ok', 'observed', or 'written' labels within the sketch should be demonstrably backed by evidence (e.g., telemetry data, live-call receipt).",
+      "observedResult": "The actual rendered sketch in 'report.md' and the Gemini live-call receipt were not available for observation. Therefore, no direct observation of the expected output or its backing evidence could be made.",
+      "timestamp": "2026-07-10T01:11:26.873Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-a-compact-happy-path-sketch--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-a-compact-happy-path-sketch--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

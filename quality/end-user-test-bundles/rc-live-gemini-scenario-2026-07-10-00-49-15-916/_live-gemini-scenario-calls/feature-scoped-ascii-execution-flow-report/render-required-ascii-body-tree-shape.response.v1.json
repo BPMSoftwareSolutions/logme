@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-required-ascii-body-tree-shape",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 765,
+    "candidatesTokenCount": 698,
+    "totalTokenCount": 2235,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 765
+      }
+    ],
+    "thoughtsTokenCount": 772,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file, which is crucial for verifying the ASCII execution flow report's tree shape and content, was not provided. Therefore, none of the acceptance criteria could be tested from the assigned end-user surfaces.",
+    "expectedResult": "The `report.md` should contain an ASCII tree shaped as specified in the Gherkin, with consistent node patterns, repo-relative paths, and source line ranges in runtime rows.",
+    "observedResult": "No `report.md` was observed, preventing any verification of the expected ASCII tree shape or its contents.",
+    "confusingOrRiskyExperiencePoints": "The absence of the primary evidence surface (`report.md`) makes it impossible to confirm the feature's implementation from an end-user perspective, leading to a blocked testing process.",
+    "accessibilityOrReadabilityObservations": "N/A - The lack of evidence prevents any observations regarding accessibility or readability of the report itself.",
+    "recommendedFollowUps": "Provide the `report.md` file generated after the local test suite passed, as specified in the available evidence surfaces, to enable proper testing of this scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the report should include a tree shaped like:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so the presence and shape of the ASCII tree could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And every executable node should use the same contract/runtime/telemetry/duration/receipt/status row pattern",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Without the `report.md` file, it is impossible to inspect the row patterns for consistency across executable nodes.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And every path should be repo-relative",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not available to check if all paths rendered in the report are repo-relative.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And runtime rows should include source line range.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification that runtime rows include source line ranges as specified.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      }
+    ]
+  }
+}

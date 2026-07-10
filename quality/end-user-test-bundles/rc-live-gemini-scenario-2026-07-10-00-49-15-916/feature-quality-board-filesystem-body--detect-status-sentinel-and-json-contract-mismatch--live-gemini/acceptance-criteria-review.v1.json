@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-status-sentinel-and-json-contract-mismatch--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-status-sentinel-and-json-contract-mismatch",
+  "criteria": [
+    {
+      "criterionText": "And a visible status sentinel exists for `<feature-id>`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a 'Given' condition in the Gherkin. Without the `report.md` or direct board output, it's impossible to confirm if this prerequisite was met by the system.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide `report.md`."
+    },
+    {
+      "criterionText": "But the sentinel display status does not match the JSON display status",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a 'But' condition in the Gherkin. Verification requires inspecting the system's output, which is not available in the provided evidence surfaces.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide `report.md`."
+    },
+    {
+      "criterionText": "Then it should add a board finding:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states a finding should be added. Confirmation requires reviewing the `report.md` for the presence of the 'feature-status-filesystem-mismatch' finding, which is not available.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide `report.md`."
+    },
+    {
+      "criterionText": "And the feature row should be marked `stale`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the feature row should be marked `stale`. This can only be verified by examining the quality board's state, as presented in `report.md`, which is currently missing.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide `report.md`."
+    },
+    {
+      "criterionText": "And the board should include the expected sentinel path",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin indicates the board should display the expected sentinel path. This requires visual confirmation from the `report.md` or the board itself, neither of which is provided.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide `report.md`."
+    },
+    {
+      "criterionText": "And the board should include the observed sentinel path.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states the board should display the observed sentinel path. This cannot be verified without the `report.md` or direct access to the quality board projection.",
+      "evidencePaths": [],
+      "blockerCode": "missing_evidence_report",
+      "recommendedFixRoute": "Provide `report.md`."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:06:36.343Z"
+}

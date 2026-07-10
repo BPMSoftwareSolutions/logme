@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--recommend-decomposition-without-promoting-the-llm-recommendation--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "recommend-decomposition-without-promoting-the-llm-recommendation",
+  "scenarioName": "Recommend decomposition without promoting the LLM recommendation",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Recommend decomposition without promoting the LLM recommendation",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-domain-body-analysis-and-tie-out.feature.md:40-55; report.md; live Gemini prompt",
+      "expectedResult": "The system should propose durable action-bearing boundaries, each including 'proposed file path', 'reason', 'source method names', and 'contract action required'. The finding code should be 'decomposition-recommended'. The LLM may narrate or challenge the recommendation, but deterministic gates should ultimately decide repository promotability, as outlined in the Gherkin.",
+      "observedResult": "No actual system output (report.md or Gemini live-call receipt) was available for observation. Therefore, no expected results could be verified.",
+      "timestamp": "2026-07-10T01:13:37.603Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--recommend-decomposition-without-promoting-the-llm-recommendation--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-domain-body-analysis-and-tie-out.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--recommend-decomposition-without-promoting-the-llm-recommendation--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

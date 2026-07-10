@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "gemini-feature-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-2026-07-10-00-47-01-674",
+  "featureId": "adversarial-challenge-packet",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 840,
+    "candidatesTokenCount": 1038,
+    "totalTokenCount": 3776,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 840
+      }
+    ],
+    "thoughtsTokenCount": 1898,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "featureId": "adversarial-challenge-packet",
+    "testerPersona": "adversarial end-user QA tester",
+    "scenarioResults": [
+      {
+        "scenarioId": "generate-report-challenge-packet",
+        "status": "not testable from assigned surface",
+        "observationSummary": "The content of the generated report.md and the feature markdown are not provided for review. Without these, it is impossible to verify if the challenge packet asks a reviewer to disprove the specified claims or includes the required paths.",
+        "expectedResult": "The challenge packet should ask a reviewer to disprove specific claims (files scanned, local executable method count, etc.) and include every source, config, schema, telemetry, and receipt path required for review.",
+        "observedResult": "Not observable from assigned surfaces.",
+        "confusingOrRiskyExperiencePoints": "Lack of direct access to generated report content and feature markdown prevents verification of critical output.",
+        "accessibilityOrReadabilityObservations": "The Gherkin clearly describes the expected content, but the absence of the actual content makes testing impossible.",
+        "recommendedFollowUps": "Provide the actual content of the generated report.md and the feature markdown for direct review to verify the challenge packet's contents.",
+        "criteriaReviews": [
+          {
+            "criterionText": "Then it should ask a reviewer to disprove:",
+            "status": "not testable from assigned surface",
+            "llmObservationSummary": "Cannot verify if the challenge packet asks a reviewer to disprove the listed claims as the content of report.md is not provided.",
+            "blockerCode": "missing-report-content",
+            "recommendedFixRoute": "Supply the full content of the generated report.md for review."
+          },
+          {
+            "criterionText": "And it should include every source, config, schema, telemetry, and receipt path required for review.",
+            "status": "not testable from assigned surface",
+            "llmObservationSummary": "Cannot verify the inclusion of required paths as the content of report.md is not provided.",
+            "blockerCode": "missing-report-content",
+            "recommendedFixRoute": "Supply the full content of the generated report.md for review."
+          }
+        ]
+      },
+      {
+        "scenarioId": "block-false-pass-claim",
+        "status": "not testable from assigned surface",
+        "observationSummary": "This scenario describes dynamic behavior where a report's verdict changes based on certain conditions. As an end-user QA tester with only static evidence (feature markdown, a single report.md state, CLI evidence), I cannot trigger or observe these conditions or the subsequent change in the report verdict and finding codes.",
+        "expectedResult": "If the challenge packet reveals issues (missing schema, stale hash, etc.), the report verdict should change to BLOCKED, and specific finding codes (false-pass-claim, report-overclaims-evidence) should be present.",
+        "observedResult": "Not observable from assigned surfaces.",
+        "confusingOrRiskyExperiencePoints": "The dynamic nature of the scenario cannot be verified with static evidence, leading to an inability to confirm critical blocking logic.",
+        "accessibilityOrReadabilityObservations": "The Gherkin clearly outlines the conditional behavior, but the provided testing surfaces do not allow for observing this behavior.",
+        "recommendedFollowUps": "Provide a mechanism to simulate or demonstrate the 'When' conditions (e.g., a report with missing schema) and show the resulting 'Then' outcome in the report, including the changed verdict and finding codes. Alternatively, provide multiple versions of report.md demonstrating the state change.",
+        "criteriaReviews": [
+          {
+            "criterionText": "Then the report verdict should be changed to BLOCKED",
+            "status": "not testable from assigned surface",
+            "llmObservationSummary": "Cannot observe the dynamic change of the report verdict to BLOCKED based on the specified conditions, as only static evidence is available.",
+            "blockerCode": "dynamic-behavior-unobservable",
+            "recommendedFixRoute": "Provide a demonstration or multiple report states showing the verdict change under specific conditions."
+          },
+          {
+            "criterionText": "And the finding code should be:",
+            "status": "not testable from assigned surface",
+            "llmObservationSummary": "Cannot verify the presence of the specified finding codes (false-pass-claim, report-overclaims-evidence) as the dynamic condition for their appearance cannot be observed.",
+            "blockerCode": "dynamic-behavior-unobservable",
+            "recommendedFixRoute": "Provide a demonstration or multiple report states showing the finding codes appearing under specific conditions."
+          }
+        ]
+      }
+    ]
+  }
+}

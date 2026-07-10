@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--support-feature-wide-scenario-conveyor-runs--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "support-feature-wide-scenario-conveyor-runs",
+  "scenarioName": "Support feature-wide scenario conveyor runs",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Support feature-wide scenario conveyor runs",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:278-294; report.md; live Gemini prompt",
+      "expectedResult": "The LLM end-user testing conveyor should run each scenario independently within a feature, assign each a unique QA run record or scenario sub-run id, provide a comprehensive feature-level summary with the specified fields (total scenarios, scenarios passed, scenarios failed, scenarios blocked, scenarios not testable, seed data sets used, overall quality gate decision, bundle paths), and ensure that the pass/fail status of one scenario does not imply another scenario passed.",
+      "observedResult": "The Gherkin describes the expected behavior. Without the actual content of the `report.md` or any CLI evidence, it is impossible to observe or verify whether the system performs as expected against any of the acceptance criteria.",
+      "timestamp": "2026-07-10T01:17:01.384Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--support-feature-wide-scenario-conveyor-runs--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--support-feature-wide-scenario-conveyor-runs--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

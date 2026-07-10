@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "keep-local-report-truth-output-quiet-enough-to-use",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 516,
+    "candidatesTokenCount": 605,
+    "totalTokenCount": 1697,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 516
+      }
+    ],
+    "thoughtsTokenCount": 576,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The actual stdout and the content of the evidence artifact were not provided, making it impossible to verify any of the acceptance criteria related to command output and artifact content. The scenario Gherkin and acceptance criteria alone are insufficient to confirm implementation.",
+    "expectedResult": "The command's stdout should be concise, showing only the verdict, counts, and top findings, without full telemetry event bodies. Detailed telemetry should be written to a separate evidence artifact.",
+    "observedResult": "Cannot observe the actual stdout or the content of the evidence artifact as they were not provided as part of the evidence surfaces.",
+    "confusingOrRiskyExperiencePoints": "Without the actual output, it's impossible to assess if the user experience is confusing or risky regarding the verbosity of stdout or the availability of detailed telemetry.",
+    "accessibilityOrReadabilityObservations": "Cannot make observations on accessibility or readability without the actual command output or the generated report content.",
+    "recommendedFollowUps": "To properly test this scenario, the actual stdout from the command execution and the content of the generated evidence artifact (e.g., `report.md` or other detailed telemetry output) must be provided for review.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the command should not flood stdout with full telemetry event bodies",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The stdout of the command was not provided, so it's impossible to verify if it avoids flooding with full telemetry event bodies.",
+        "blockerCode": "MISSING_STDOUT_EVIDENCE",
+        "recommendedFixRoute": "Provide the actual stdout from the command execution."
+      },
+      {
+        "criterionText": "And detailed telemetry should be written to an evidence artifact",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The content of the evidence artifact was not provided, so it's impossible to verify if detailed telemetry was written to it.",
+        "blockerCode": "MISSING_ARTIFACT_EVIDENCE",
+        "recommendedFixRoute": "Provide the content of the generated evidence artifact."
+      },
+      {
+        "criterionText": "And stdout should show only the verdict, counts, and actionable top findings.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The stdout of the command was not provided, so it's impossible to verify if it shows only the verdict, counts, and actionable top findings.",
+        "blockerCode": "MISSING_STDOUT_EVIDENCE",
+        "recommendedFixRoute": "Provide the actual stdout from the command execution."
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "adversarial-challenge-packet--block-false-pass-claim--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "block-false-pass-claim",
+  "criteria": [
+    {
+      "criterionText": "Then the report verdict should be changed to BLOCKED",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot observe if the report verdict is changed to BLOCKED as there is no access to the challenge packet or the updated report state.",
+      "evidencePaths": [],
+      "blockerCode": "insufficient-evidence-surface",
+      "recommendedFixRoute": "provide-access-to-challenge-packet-and-updated-report"
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot observe if the specified finding codes ('false-pass-claim', 'report-overclaims-evidence') are applied, as the trigger condition (challenge packet revealing issues) and the resulting state are not visible.",
+      "evidencePaths": [],
+      "blockerCode": "insufficient-evidence-surface",
+      "recommendedFixRoute": "provide-access-to-challenge-packet-and-updated-report"
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:49:32.959Z"
+}

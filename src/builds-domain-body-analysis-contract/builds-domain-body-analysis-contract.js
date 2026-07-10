@@ -29,6 +29,7 @@ function buildsDomainBodyAnalysisContract(config, sourceFiles, methods, provenan
     schemaVersion: CONTRACT_SCHEMA_VERSION,
     runId,
     evidencePath: `evidence/runs/${runId}/domain-analysis/domain-body-analysis.contract.v1.json`,
+    reportPath: `evidence/runs/${runId}/domain-analysis/domain-body-analysis.report.md`,
     summary: buildsDomainBodyAnalysisSummary(analyzedFiles),
     sourceFiles: analyzedFiles,
     findingCodes: collectsFindingCodes(analyzedFiles),

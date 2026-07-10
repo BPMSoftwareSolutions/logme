@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--let-the-llm-propose-seed-data-before-testing--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "let-the-llm-propose-seed-data-before-testing",
+  "scenarioName": "Let the LLM propose seed data before testing",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Let the LLM propose seed data before testing",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:60-82; report.md; live Gemini prompt",
+      "expectedResult": "The LLM should propose seed data containing the specified fields, written to the designated path, and ensure the data is synthetic while avoiding mutation of production data or unapproved repository paths.",
+      "observedResult": "Only the Gherkin definition of the scenario was available for review. No actual output or execution logs from the LLM were provided to observe its behavior or verify the generation of the seed data proposal.",
+      "timestamp": "2026-07-10T01:14:25.710Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--let-the-llm-propose-seed-data-before-testing--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--let-the-llm-propose-seed-data-before-testing--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

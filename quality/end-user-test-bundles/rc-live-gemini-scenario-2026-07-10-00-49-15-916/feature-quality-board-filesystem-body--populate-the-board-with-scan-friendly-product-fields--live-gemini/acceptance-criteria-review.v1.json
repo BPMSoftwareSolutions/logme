@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--populate-the-board-with-scan-friendly-product-fields--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "populate-the-board-with-scan-friendly-product-fields",
+  "criteria": [
+    {
+      "criterionText": "Then each feature row should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The generated Markdown quality board ('report.md') was not provided, preventing verification of feature row content.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the generated 'report.md' file."
+    },
+    {
+      "criterionText": "And the board should sort features by product urgency:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The generated Markdown quality board ('report.md') was not provided, preventing verification of feature sorting.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the generated 'report.md' file."
+    },
+    {
+      "criterionText": "And the board should group promoted features separately from features needing action.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The generated Markdown quality board ('report.md') was not provided, preventing verification of feature grouping.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the generated 'report.md' file."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:05:55.051Z"
+}

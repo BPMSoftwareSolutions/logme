@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "publish-report-evidence-packet-as-ci-artifact",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 682,
+    "candidatesTokenCount": 628,
+    "totalTokenCount": 2665,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 682
+      }
+    ],
+    "thoughtsTokenCount": 1355,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b4661d5411dc40d45bacba97f2b70c2b439e02dfbad51ab29379cf4ac00f444a",
+  "responseSha256": "dcf1e98c988f992157aad48ae1627b39bad770638850e3b5bafa23304b522c44",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/ci-cd-report-truth-guardrails/publish-report-evidence-packet-as-ci-artifact.response.v1.json",
+  "calledAt": "2026-07-10T00:49:43.878Z"
+}

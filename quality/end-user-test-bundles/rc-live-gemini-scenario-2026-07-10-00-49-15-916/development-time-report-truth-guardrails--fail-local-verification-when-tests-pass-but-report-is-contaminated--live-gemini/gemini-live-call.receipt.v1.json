@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "fail-local-verification-when-tests-pass-but-report-is-contaminated",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 601,
+    "candidatesTokenCount": 845,
+    "totalTokenCount": 2458,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 601
+      }
+    ],
+    "thoughtsTokenCount": 1012,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "ce8b2c20b810e3d487024035023199863af127f5ac0c574f53cbca900d5b938d",
+  "responseSha256": "ee86d3b7fae224ea5c9c883b93880f410567dacfe306a86cdd7658016a2eb80b",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/fail-local-verification-when-tests-pass-but-report-is-contaminated.response.v1.json",
+  "calledAt": "2026-07-10T00:51:45.422Z"
+}

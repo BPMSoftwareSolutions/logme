@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-human-readable-sprawl-report-beside-json-evidence--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-human-readable-sprawl-report-beside-json-evidence",
+  "criteria": [
+    {
+      "criterionText": "Then it should write a Markdown sprawl report at:",
+      "status": "partially met",
+      "llmObservationSummary": "The prompt states `report.md` was generated, confirming a report was written. However, the exact path and confirmation of Markdown format cannot be verified without seeing the file or its metadata.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_EVIDENCE_DETAIL",
+      "recommendedFixRoute": "Provide the full path and content of the generated `report.md`."
+    },
+    {
+      "criterionText": "And the report should be generated from `domain-body-sprawl.contract.v1.json`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Neither the `domain-body-sprawl.contract.v1.json` nor the content of `report.md` were provided, making it impossible to verify the generation source.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_SOURCE",
+      "recommendedFixRoute": "Provide both the source JSON and the generated report content for comparison."
+    },
+    {
+      "criterionText": "And the report should be suitable for product owners, architects, engineering leads, and PI planning review",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so its suitability for the target audience cannot be assessed.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And the first product-facing section should be a compact sprawl risk summary",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so the presence and nature of its first section cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And the report should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so the inclusion of the specified sections cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And the report should link back to the canonical JSON evidence using a repo-relative path.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of `report.md` was not provided, so the presence and correctness of the link to the JSON evidence cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:53:17.954Z"
+}

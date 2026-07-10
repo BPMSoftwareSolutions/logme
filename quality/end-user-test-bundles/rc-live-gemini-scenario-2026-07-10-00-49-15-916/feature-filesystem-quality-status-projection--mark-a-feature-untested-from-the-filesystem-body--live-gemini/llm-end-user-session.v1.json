@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-a-feature-untested-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-a-feature-untested-from-the-filesystem-body",
+  "scenarioName": "Mark a feature untested from the filesystem body",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Mark a feature untested from the filesystem body",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:118-133; report.md; live Gemini prompt",
+      "expectedResult": "The system should generate a status sentinel `docs/features/_STATUS.implemented.not-tested.<feature-id>.md`, set specific JSON status fields (implementation status: implemented, execution proof status: proven, end-user QA status: not QAed, promotion status: not promoted), and recommend running the LLM end-user testing conveyor.",
+      "observedResult": "No actual system output or report was observed to verify the expected results. Only the Gherkin scenario describing the expected behavior was available.",
+      "timestamp": "2026-07-10T01:03:57.053Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-a-feature-untested-from-the-filesystem-body--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-a-feature-untested-from-the-filesystem-body--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--preserve-the-three-level-execution-review-model--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "preserve-the-three-level-execution-review-model",
+  "scenarioName": "Preserve the three-level execution review model",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Preserve the three-level execution review model\n    Given a feature scenario has canonical execution proof\n    When the human execution report is generated\n    Then the report should expose three drill-down levels:\n      | level | question answered | projection |\n      | 01 Executive flow | Can I trust this run? | report truth sketch |\n      | 02 Body-node flow | Which executable body nodes ran? | executable body tree |\n      | 03 Method-by-method flow | Which methods executed inside each node, in what order, with what evidence? | method execution drill-down |\n    And the method drill-down should appear after the body-node sketch\n    And the dense static method inventory should appear only after runtime execution proof\n    And the report should not make an architect jump from a body node directly to a hundreds-row static method table.\n",
+    "acceptanceCriteria": [
+      "Then the report should expose three drill-down levels:",
+      "And the method drill-down should appear after the body-node sketch",
+      "And the dense static method inventory should appear only after runtime execution proof",
+      "And the report should not make an architect jump from a body node directly to a hundreds-row static method table."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:17:52.897Z"
+}

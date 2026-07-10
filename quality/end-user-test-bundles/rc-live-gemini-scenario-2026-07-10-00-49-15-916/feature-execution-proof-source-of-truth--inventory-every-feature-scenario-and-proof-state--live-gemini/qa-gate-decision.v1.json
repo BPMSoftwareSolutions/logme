@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--inventory-every-feature-scenario-and-proof-state--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "inventory-every-feature-scenario-and-proof-state",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T00:58:14.914Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.948Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_REPORT_EVIDENCE"
+  ]
+}

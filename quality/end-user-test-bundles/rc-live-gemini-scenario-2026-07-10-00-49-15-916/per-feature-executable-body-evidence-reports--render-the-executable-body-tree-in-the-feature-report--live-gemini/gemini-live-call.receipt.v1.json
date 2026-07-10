@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--render-the-executable-body-tree-in-the-feature-report--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "render-the-executable-body-tree-in-the-feature-report",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 614,
+    "candidatesTokenCount": 823,
+    "totalTokenCount": 2597,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 614
+      }
+    ],
+    "thoughtsTokenCount": 1160,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "237cbecb4fafb068f50f90d39a826e65955ad71d916601e47246fbebc97229f2",
+  "responseSha256": "59fcf3729ebbdf75851169248f8e24efb111c6bed024086090db74623a5ce392",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/render-the-executable-body-tree-in-the-feature-report.response.v1.json",
+  "calledAt": "2026-07-10T01:20:27.534Z"
+}

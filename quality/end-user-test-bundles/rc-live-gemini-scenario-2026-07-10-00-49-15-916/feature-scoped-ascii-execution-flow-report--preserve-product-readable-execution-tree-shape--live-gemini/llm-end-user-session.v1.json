@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--preserve-product-readable-execution-tree-shape--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "preserve-product-readable-execution-tree-shape",
+  "scenarioName": "Preserve product-readable execution tree shape",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve product-readable execution tree shape",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:343-353; report.md; live Gemini prompt",
+      "expectedResult": "The feature-scoped executable body report should render the body tree grouped by sections (acceptance source, surface receipt, canonical binding, shared runner, root contract resolution, gates, routing, provider call, receipt writeback, and surface parity). Each section should fit on screen without dense paragraphs. Every section should display the evidence route 'contract -> runtime -> telemetry -> receipt -> status'. Blockers should appear directly under the section where truth broke.",
+      "observedResult": "No `report.md` artifact was available for review. Therefore, no observations could be made regarding the rendered report's structure, content, or visual presentation against the acceptance criteria.",
+      "timestamp": "2026-07-10T01:11:08.988Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--preserve-product-readable-execution-tree-shape--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--preserve-product-readable-execution-tree-shape--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

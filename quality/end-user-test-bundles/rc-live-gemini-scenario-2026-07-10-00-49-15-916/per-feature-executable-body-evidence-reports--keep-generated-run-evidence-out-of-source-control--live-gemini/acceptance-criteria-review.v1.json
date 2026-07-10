@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--keep-generated-run-evidence-out-of-source-control--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "keep-generated-run-evidence-out-of-source-control",
+  "criteria": [
+    {
+      "criterionText": "Then generated run evidence should not be staged or committed by default",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states this as an expectation, but the `report.md` content, which would provide evidence of this behavior (e.g., `.gitignore` configuration or source control status output), was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Supply the `report.md` content for review."
+    },
+    {
+      "criterionText": "And source control should keep only contracts, templates, schemas, and tests",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin defines this scope for source control, but the `report.md` content, which would confirm this policy (e.g., by listing included/excluded file types or showing source control status), was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Supply the `report.md` content for review."
+    },
+    {
+      "criterionText": "And CI may publish run evidence as build artifacts outside the committed source tree.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the CI's potential role in publishing evidence. However, the `report.md` content, which would detail how this is achieved or confirmed (e.g., CI configuration snippets or build artifact descriptions), was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_CONTENT",
+      "recommendedFixRoute": "Supply the `report.md` content for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:21:22.099Z"
+}

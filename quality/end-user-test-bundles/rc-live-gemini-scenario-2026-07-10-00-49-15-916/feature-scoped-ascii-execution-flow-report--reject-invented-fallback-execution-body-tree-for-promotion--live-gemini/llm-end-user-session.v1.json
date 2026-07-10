@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-invented-fallback-execution-body-tree-for-promotion--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-invented-fallback-execution-body-tree-for-promotion",
+  "scenarioName": "Reject invented fallback execution body tree for promotion",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Reject invented fallback execution body tree for promotion",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:263-276; report.md; live Gemini prompt",
+      "expectedResult": "The feature-scoped executable body report should be rendered without invented fallback body nodes, displaying 'EXECUTABLE BODY TREE: missing', and promotion should be BLOCKED with the finding code 'executable-body-contract-missing'.",
+      "observedResult": "The `report.md` file was not provided, preventing observation of the rendered report content, promotion status, or finding code.",
+      "timestamp": "2026-07-10T01:10:02.359Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-invented-fallback-execution-body-tree-for-promotion--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-invented-fallback-execution-body-tree-for-promotion--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

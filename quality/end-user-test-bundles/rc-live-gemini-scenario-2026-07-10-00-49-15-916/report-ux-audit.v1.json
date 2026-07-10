@@ -1,0 +1,141 @@
+{
+  "schemaVersion": "report-ux-audit.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "reportPath": "report.md",
+  "uxVerdict": "DOES_NOT_FULLY_MATCH_EXPECTED_UX",
+  "blockerCodes": [
+    "report-ux-absolute-path-leak",
+    "report-ux-html-preview-missing",
+    "report-ux-shareability-risk"
+  ],
+  "checks": [
+    {
+      "expectation": "executive summary is understandable",
+      "status": "met",
+      "evidence": "report.md opens with verdict, promotion, run id, evidence state, blocker count"
+    },
+    {
+      "expectation": "ASCII sketches render clearly",
+      "status": "met",
+      "evidence": "top fenced text block contains aligned ASCII execution tree"
+    },
+    {
+      "expectation": "links use repo-relative or artifact-relative paths",
+      "status": "not met",
+      "evidence": "absolute Windows paths found in report surface"
+    },
+    {
+      "expectation": "evidence paths resolve",
+      "status": "partially met",
+      "evidence": "evidence is named, but local absolute path reduces portability"
+    },
+    {
+      "expectation": "blocker states are visible before dense details",
+      "status": "met",
+      "evidence": "Blocker Summary appears before config and dense method details"
+    },
+    {
+      "expectation": "timing and call-count facts are readable",
+      "status": "met",
+      "evidence": "duration and method counts are visible in summary and tree"
+    },
+    {
+      "expectation": "no JSON-only evidence is presented as product-ready",
+      "status": "met",
+      "evidence": "domain-analysis caveat separates deterministic findings from promotion gate"
+    },
+    {
+      "expectation": "report can be shared with architects and business owners",
+      "status": "partially met",
+      "evidence": "summary is readable, but absolute paths are a sharing blocker"
+    },
+    {
+      "expectation": "HTML projection inspected when available",
+      "status": "blocked",
+      "evidence": "no HTML preview artifact or screenshot index was produced for report.md in this run"
+    }
+  ],
+  "absolutePathExamples": [
+    {
+      "line": 104,
+      "text": "- Generation command: C:\\nvm4w\\nodejs\\node.exe C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\scripts\\report-truth.js --fast"
+    },
+    {
+      "line": 106,
+      "text": "- Config path: C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\logme.config.json"
+    },
+    {
+      "line": 110,
+      "text": "- Evidence directory: C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\evidence"
+    },
+    {
+      "line": 114,
+      "text": "- Root: C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme"
+    },
+    {
+      "line": 116,
+      "text": "- Config: C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\logme.config.json"
+    },
+    {
+      "line": 199,
+      "text": "| 1 | 1 | lowercasesSingleValue | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-config-primitives\\src\\lowercases-string-list.js:4-10 |"
+    },
+    {
+      "line": 200,
+      "text": "| 2 | 2 | lowercasesStringList | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-config-primitives\\src\\lowercases-string-list.js:12-18 |"
+    },
+    {
+      "line": 201,
+      "text": "| 3 | 3 | normalizesConfigStringArray | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-config-primitives\\src\\normalizes-config-string-array.js:5-11 |"
+    },
+    {
+      "line": 202,
+      "text": "| 4 | 4 | readsJsonConfigFile | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-config-primitives\\src\\reads-json-config-file.js:5-12 |"
+    },
+    {
+      "line": 203,
+      "text": "| 5 | 5 | resolvesConfiguredRootPath | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-config-primitives\\src\\resolves-configured-root-path.js:5-11 |"
+    },
+    {
+      "line": 204,
+      "text": "| 6 | 6 | isMethodLikeNode | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\detects-logme-call-in-node.js:5-16 |"
+    },
+    {
+      "line": 205,
+      "text": "| 7 | 7 | detectsLogmeCallInNode | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\detects-logme-call-in-node.js:18-58 |"
+    },
+    {
+      "line": 206,
+      "text": "| 8 | 8 | searchesForLogmeCall | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\detects-logme-call-in-node.js:25-51 |"
+    },
+    {
+      "line": 207,
+      "text": "| 9 | 9 | isMethodLikeNode | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\extracts-executable-method-nodes.js:5-16 |"
+    },
+    {
+      "line": 208,
+      "text": "| 10 | 10 | extractsExecutableMethodNodes | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\extracts-executable-method-nodes.js:18-39 |"
+    },
+    {
+      "line": 209,
+      "text": "| 11 | 11 | collectsMethodLikeNode | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\extracts-executable-method-nodes.js:25-35 |"
+    },
+    {
+      "line": 210,
+      "text": "| 12 | 12 | getScriptKind | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\parses-javascript-typescript-source.js:6-17 |"
+    },
+    {
+      "line": 211,
+      "text": "| 13 | 13 | parsesJavascriptTypescriptSource | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\parses-javascript-typescript-source.js:19-"
+    },
+    {
+      "line": 212,
+      "text": "| 14 | 14 | resolvesMethodKind | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\resolves-method-kind.js:5-35 |"
+    },
+    {
+      "line": 213,
+      "text": "| 15 | 15 | resolvesMethodName | function | yes | C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme\\packages\\logme-method-inventory-primitives\\src\\resolves-method-name.js:6-42 |"
+    }
+  ],
+  "writtenAt": "2026-07-10T02:39:53.514Z"
+}

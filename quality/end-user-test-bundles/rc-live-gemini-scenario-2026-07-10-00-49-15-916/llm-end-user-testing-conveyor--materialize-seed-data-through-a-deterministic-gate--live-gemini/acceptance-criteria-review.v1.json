@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--materialize-seed-data-through-a-deterministic-gate--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "materialize-seed-data-through-a-deterministic-gate",
+  "criteria": [
+    {
+      "criterionText": "Then it should validate:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin defines the validation rules for seed data, but no evidence (e.g., report.md) was provided to confirm that these validations were actually performed or their outcomes.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the 'report.md' content to verify validation execution and results."
+    },
+    {
+      "criterionText": "And rejected seed proposals should block the LLM QA run",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a behavioral outcome. Without execution logs or a report detailing a rejected seed proposal and its impact on the LLM QA run, it's impossible to verify this behavior.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the 'report.md' content, specifically looking for evidence of a rejected seed proposal and the subsequent blocking of the QA run."
+    },
+    {
+      "criterionText": "And approved seed data should be materialized under:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the target path for materialized seed data. However, no evidence (e.g., file system output in report.md or the live-call receipt) was provided to confirm that data was written to this location.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the 'report.md' content or the live-call receipt to show the actual path where approved seed data was materialized."
+    },
+    {
+      "criterionText": "And the materialization receipt should be written to:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the target path for the materialization receipt. No evidence was provided to confirm that this receipt was written to the specified location.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the 'report.md' content or the live-call receipt to show the actual path where the materialization receipt was written."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:14:44.920Z"
+}

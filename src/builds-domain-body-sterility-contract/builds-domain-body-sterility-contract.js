@@ -8,6 +8,8 @@ const { buildsReportProvenance } = require('../report-provenance/report-provenan
 const { rendersDomainBodySterilityReport } = require('../renders-domain-body-sterility-report/renders-domain-body-sterility-report');
 const { buildsDomainBodySprawlContract } = require('../builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract');
 const { writesDomainBodySprawlEvidence } = require('../writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence');
+const { buildsDomainBodyAnalysisContract } = require('../builds-domain-body-analysis-contract/builds-domain-body-analysis-contract');
+const { writesDomainBodyAnalysisEvidence } = require('../writes-domain-body-analysis-evidence/writes-domain-body-analysis-evidence');
 
 function inventoriesMethodsForFile(config, executionStepState) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -202,6 +204,8 @@ function buildsDomainBodySterilityContract(config) {
   const findings = buildsDomainBodySterilityFindings(config, sourceFiles, methods);
   const summary = calculatesDomainBodySterilitySummary(config, sourceFiles, methods, findings);
   const provenance = buildsReportProvenance(config, sourceFiles, methods);
+  const domainAnalysis = buildsDomainBodyAnalysisContract(config, sourceFiles, methods, provenance);
+  const domainAnalysisEvidenceReceipt = writesDomainBodyAnalysisEvidence(config, domainAnalysis);
   const sprawl = buildsDomainBodySprawlContract(config, sourceFiles, methods, findings, provenance);
   const sprawlEvidenceReceipt = writesDomainBodySprawlEvidence(config, sprawl);
   const executionNodes = buildsExecutionNodes({ ...summary, provenance }, methods);
@@ -209,6 +213,8 @@ function buildsDomainBodySterilityContract(config) {
     ...summary,
     reportPath: config.reportPath,
     provenance,
+    domainAnalysis,
+    domainAnalysisEvidenceReceipt,
     sprawl,
     sprawlEvidenceReceipt,
     featureId: 'ASCII execution flow report',
@@ -227,6 +233,8 @@ function buildsDomainBodySterilityContract(config) {
     findings,
     summary,
     provenance,
+    domainAnalysis,
+    domainAnalysisEvidenceReceipt,
     sprawl,
     sprawlEvidenceReceipt,
     contract,

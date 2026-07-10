@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--recommend-decomposition-without-promoting-the-llm-recommendation--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "recommend-decomposition-without-promoting-the-llm-recommendation",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 589,
+    "candidatesTokenCount": 954,
+    "totalTokenCount": 3535,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 589
+      }
+    ],
+    "thoughtsTokenCount": 1992,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "298d723d32e2404ba84e270a9fd309979e12526b5aa2a38face15ca836db7f9d",
+  "responseSha256": "84e59460a5aa7d53175848cb012ce22aba772c6a5dde2d52669459d24f75264b",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/recommend-decomposition-without-promoting-the-llm-recommendation.response.v1.json",
+  "calledAt": "2026-07-10T01:13:37.603Z"
+}

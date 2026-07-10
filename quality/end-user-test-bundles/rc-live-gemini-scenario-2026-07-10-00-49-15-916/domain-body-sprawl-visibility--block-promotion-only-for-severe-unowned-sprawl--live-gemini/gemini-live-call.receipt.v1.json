@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--block-promotion-only-for-severe-unowned-sprawl--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "block-promotion-only-for-severe-unowned-sprawl",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 595,
+    "candidatesTokenCount": 857,
+    "totalTokenCount": 2276,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 595
+      }
+    ],
+    "thoughtsTokenCount": 824,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "ec6b02fc47f1254a7da3061ac023d89ef8de2ca9cc11e87574c7dc3cc10786e9",
+  "responseSha256": "8a5c5a418a3c9aa85647367777410fe686df11e92f26b752b69b05221f6c22aa",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/block-promotion-only-for-severe-unowned-sprawl.response.v1.json",
+  "calledAt": "2026-07-10T00:54:27.558Z"
+}

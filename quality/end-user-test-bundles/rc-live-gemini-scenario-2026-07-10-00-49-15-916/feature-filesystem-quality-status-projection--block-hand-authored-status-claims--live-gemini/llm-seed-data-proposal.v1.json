@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "llm-seed-data-proposal.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "block-hand-authored-status-claims",
+  "seedDataId": "feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini-seed-data",
+  "purpose": "No seed records required for Markdown and CLI evidence review.",
+  "scenarioCoverage": [
+    "block-hand-authored-status-claims"
+  ],
+  "recordsToCreate": [],
+  "filesToCreate": [],
+  "expectedUserVisibleState": "No additional user-visible seed state required.",
+  "cleanupInstructions": "Remove the QA bundle seed-data directory after review if cleanup is requested.",
+  "allowedPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini/seed-data"
+  ],
+  "privacyClassification": "synthetic",
+  "syntheticDataDeclaration": "All proposed seed data is synthetic."
+}

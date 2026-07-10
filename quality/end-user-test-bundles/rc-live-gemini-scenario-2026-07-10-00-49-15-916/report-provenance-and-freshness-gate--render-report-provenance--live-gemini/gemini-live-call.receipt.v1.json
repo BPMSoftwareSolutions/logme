@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-provenance-and-freshness-gate--render-report-provenance--live-gemini",
+  "featureId": "report-provenance-and-freshness-gate",
+  "scenarioId": "render-report-provenance",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:37:22.823Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 288,
+    "candidatesTokenCount": 285,
+    "totalTokenCount": 1258,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 288
+      }
+    ],
+    "thoughtsTokenCount": 685,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a841546de2024d3ec6782446f25b91d27c0d874e5b83faa6ae752ffe31254f49",
+  "responseSha256": "e5a0413d8564fbe1798751642ac0ee7e41ec018e5a2d9a5dc5c56f917b83d59b",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/report-provenance-and-freshness-gate/render-report-provenance.response.v1.json"
+}

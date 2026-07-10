@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "write-shareable-timing-table-projection",
+  "criteria": [
+    {
+      "criterionText": "Then it may write a Markdown timing table at:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin indicates a Markdown timing table *may* be written, but no evidence (e.g., report.md) was provided to confirm if it was actually written or at the specified path.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' or other output showing the generated table and its path."
+    },
+    {
+      "criterionText": "And every timing table row should be generated from the JSON proof",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the source of the table data, but without the generated table and the JSON proof, it's impossible to verify this generation process.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' containing the table and access to the JSON proof for comparison."
+    },
+    {
+      "criterionText": "And each row should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin lists the required fields for each row, but no generated table was provided to verify the presence of these columns.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' containing the generated table for inspection of its columns."
+    },
+    {
+      "criterionText": "And the table should be safe to paste into PI planning notes, architecture review notes, decks, dashboards, or publications.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion relates to the format, content quality, and suitability of the table for external use. Without seeing the actual table, its safety and usability cannot be assessed.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the 'report.md' containing the generated table to assess its safety and suitability for various uses."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:58:50.032Z"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-boxed-node-list-when-hierarchical-body-tree-is-required",
+  "scenarioName": "Reject boxed node list when hierarchical body tree is required",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Reject boxed node list when hierarchical body tree is required",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:227-243; report.md; live Gemini prompt",
+      "expectedResult": "The report should fail with the finding code 'executable-body-tree-shape-mismatch' and an explanation detailing the required branch groups (contract, runtime, telemetry, receipt, status), given that the report contains a flat boxed node list without nested ASCII branches.",
+      "observedResult": "No `report.md` or CLI evidence was provided, preventing observation of the actual report outcome.",
+      "timestamp": "2026-07-10T01:09:37.703Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

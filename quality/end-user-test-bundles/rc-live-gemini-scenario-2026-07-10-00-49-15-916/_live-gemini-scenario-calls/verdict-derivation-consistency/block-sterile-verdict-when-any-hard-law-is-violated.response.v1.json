@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "verdict-derivation-consistency",
+  "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+  "modelName": "gemini-flash-lite-latest",
+  "usageMetadata": {
+    "promptTokenCount": 218,
+    "candidatesTokenCount": 178,
+    "totalTokenCount": 396,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 218
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "fail",
+    "observationSummary": "The system failed to trigger the 'DOMAIN BODY CONTAMINATED' verdict when a silent local method was present, instead defaulting to a 'STERILE' verdict.",
+    "expectedResult": "The verdict should be 'DOMAIN BODY CONTAMINATED' and the report must include the silent method finding.",
+    "observedResult": "The verdict was 'STERILE' and the silent method finding was omitted from the final report.",
+    "recommendedFollowUps": [
+      "Investigate the verdict derivation logic in the policy engine to ensure hard law violations override sterile status.",
+      "Verify the report generation module's filtering logic to ensure silent methods are not being suppressed.",
+      "Run regression tests on the 'No local executable method without LogMe' rule implementation."
+    ]
+  }
+}

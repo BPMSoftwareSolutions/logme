@@ -81,6 +81,7 @@ test('buildsDomainBodyAnalysisContract flags noun executable files and recommend
 
     assert.equal(contract.schemaVersion, 'domain-body-analysis.contract.v1');
     assert.equal(contract.evidencePath, 'evidence/runs/run-domain-analysis-1/domain-analysis/domain-body-analysis.contract.v1.json');
+    assert.equal(contract.reportPath, 'evidence/runs/run-domain-analysis-1/domain-analysis/domain-body-analysis.report.md');
     assert.equal(contract.summary.totalExecutableFiles, 2);
     assert.equal(contract.summary.executableFileNamesMissingActionVerb, 1);
     assert.equal(contract.summary.filesMissingBodyContract, 1);

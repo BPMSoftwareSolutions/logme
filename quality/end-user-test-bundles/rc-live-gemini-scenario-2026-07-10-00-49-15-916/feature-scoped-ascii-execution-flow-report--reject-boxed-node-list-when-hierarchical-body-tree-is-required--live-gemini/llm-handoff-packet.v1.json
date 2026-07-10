@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-boxed-node-list-when-hierarchical-body-tree-is-required",
+  "scenarioName": "Reject boxed node list when hierarchical body tree is required",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Reject boxed node list when hierarchical body tree is required\n    Given a feature-scoped executable body report contains an `EXECUTABLE BODY TREE` section\n    But the section renders body nodes as flat boxed rows\n    And the section does not render nested ASCII branches under each body node\n    When the report presentation gate runs\n    Then the report should fail\n    And the finding code should be:\n      | finding |\n      | executable-body-tree-shape-mismatch |\n    And the failure should explain that each node must contain branch groups for:\n      | required branch |\n      | contract |\n      | runtime |\n      | telemetry |\n      | receipt |\n      | status |\n",
+    "acceptanceCriteria": [
+      "But the section renders body nodes as flat boxed rows",
+      "And the section does not render nested ASCII branches under each body node",
+      "Then the report should fail",
+      "And the finding code should be:",
+      "And the failure should explain that each node must contain branch groups for:"
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:09:51.721Z"
+}

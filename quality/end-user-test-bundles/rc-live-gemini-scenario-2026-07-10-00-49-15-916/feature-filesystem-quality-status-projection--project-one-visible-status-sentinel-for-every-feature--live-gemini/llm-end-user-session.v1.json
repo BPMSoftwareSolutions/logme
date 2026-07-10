@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--project-one-visible-status-sentinel-for-every-feature--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "project-one-visible-status-sentinel-for-every-feature",
+  "scenarioName": "Project one visible status sentinel for every feature",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Project one visible status sentinel for every feature",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:15-30; report.md; live Gemini prompt",
+      "expectedResult": "Exactly one visible status sentinel should be written for every feature, with a filename that clearly indicates the feature's quality state. Sentinels should be generated even without implementation proof or QA evidence, link to the source feature document, and link to the latest evidence bundle when available. No feature should be omitted regardless of its implementation or QA status.",
+      "observedResult": "Cannot be determined as no execution evidence (e.g., `report.md`, CLI output, or file system snapshots) was provided to observe the feature's actual behavior.",
+      "timestamp": "2026-07-10T01:02:39.916Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--project-one-visible-status-sentinel-for-every-feature--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--project-one-visible-status-sentinel-for-every-feature--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

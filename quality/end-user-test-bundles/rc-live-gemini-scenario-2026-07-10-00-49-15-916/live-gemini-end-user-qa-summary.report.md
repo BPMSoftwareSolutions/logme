@@ -1,0 +1,210 @@
+# Live Gemini End-User QA Run: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Provider: Gemini
+- Scenario calls: 178
+- Scenario QA bundles: 178
+- Overall deterministic gate: BLOCKED
+- Scenarios passed: 4
+- Scenarios blocked or failed: 174
+- Cleanup report: blocked-scenario-cleanup.report.md
+
+## API Usage
+
+- Prompt tokens: 103181
+- Candidate tokens: 136782
+- Thoughts tokens: 247286
+- Total tokens: 487249
+
+## Normalized Blocker Summary
+
+- qa-cleanup-human-report-evidence-missing: 115
+- qa-cleanup-external-surface-not-testable-locally: 31
+- qa-cleanup-required-artifact-evidence-missing: 19
+- qa-cleanup-assigned-surface-insufficient: 17
+- qa-cleanup-precondition-or-negative-case-evidence-missing: 9
+- qa-cleanup-executable-proof-missing: 9
+- qa-cleanup-visual-or-html-evidence-missing: 2
+
+## Passed Scenarios
+
+- feature-scoped-ascii-execution-flow-report/reject-header-only-execution-sketch
+- feature-scoped-ascii-execution-flow-report/show-declared-versus-observed-flow
+- per-feature-executable-body-evidence-reports/keep-the-global-report-as-an-index-not-a-sketch-warehouse
+- per-feature-executable-body-evidence-reports/write-one-feature-scenario-evidence-packet-for-an-executed-scenario
+
+## Blocked Or Failed Scenarios
+
+- adversarial-challenge-packet/block-false-pass-claim: qa-cleanup-external-surface-not-testable-locally
+- adversarial-challenge-packet/generate-report-challenge-packet: qa-cleanup-required-artifact-evidence-missing
+- ci-cd-report-truth-guardrails/block-false-pass-in-promotion-workflow: qa-cleanup-human-report-evidence-missing, qa-cleanup-required-artifact-evidence-missing, qa-cleanup-external-surface-not-testable-locally
+- ci-cd-report-truth-guardrails/block-pull-request-when-report-truth-validation-fails: qa-cleanup-external-surface-not-testable-locally
+- ci-cd-report-truth-guardrails/block-release-promotion-without-end-user-qa-evidence: qa-cleanup-external-surface-not-testable-locally, qa-cleanup-human-report-evidence-missing
+- ci-cd-report-truth-guardrails/block-stale-local-report-projection: qa-cleanup-human-report-evidence-missing, qa-cleanup-external-surface-not-testable-locally, qa-cleanup-precondition-or-negative-case-evidence-missing
+- ci-cd-report-truth-guardrails/publish-report-evidence-packet-as-ci-artifact: qa-cleanup-required-artifact-evidence-missing, qa-cleanup-human-report-evidence-missing
+- data-driven-report-layout/block-product-template-from-weakening-truth-gates: qa-cleanup-human-report-evidence-missing
+- data-driven-report-layout/block-template-variable-that-has-no-data-source: qa-cleanup-human-report-evidence-missing
+- data-driven-report-layout/change-ascii-execution-sketch-without-code-changes: qa-cleanup-human-report-evidence-missing
+- data-driven-report-layout/change-report-labels-without-code-changes: qa-cleanup-assigned-surface-insufficient
+- data-driven-report-layout/change-report-section-order-without-code-changes: qa-cleanup-human-report-evidence-missing, qa-cleanup-assigned-surface-insufficient
+- data-driven-report-layout/keep-renderer-code-as-a-generic-engine: qa-cleanup-external-surface-not-testable-locally
+- data-driven-report-layout/validate-report-layout-contract-before-rendering: qa-cleanup-human-report-evidence-missing, qa-cleanup-precondition-or-negative-case-evidence-missing
+- development-time-report-truth-guardrails/allow-fast-development-mode-without-weakening-truth: qa-cleanup-human-report-evidence-missing
+- development-time-report-truth-guardrails/block-commit-when-report-truth-gate-fails: qa-cleanup-precondition-or-negative-case-evidence-missing, qa-cleanup-external-surface-not-testable-locally
+- development-time-report-truth-guardrails/fail-local-verification-when-tests-pass-but-report-is-contaminated: qa-cleanup-human-report-evidence-missing
+- development-time-report-truth-guardrails/keep-local-report-truth-output-quiet-enough-to-use: qa-cleanup-human-report-evidence-missing, qa-cleanup-required-artifact-evidence-missing
+- development-time-report-truth-guardrails/provide-one-command-for-local-report-truth: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/block-promotion-only-for-severe-unowned-sprawl: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/detect-artifact-sprawl-across-directories: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/detect-god-file-candidates-without-automatically-condemning-them: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/detect-mixed-responsibility-clusters-in-one-file: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/inventory-file-responsibility-signals: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/keep-product-meaning-separate-from-generic-mechanics: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/make-sprawl-thresholds-product-owned: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/preserve-intentional-domain-cohesion: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/render-product-owner-sprawl-report: qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots: qa-cleanup-external-surface-not-testable-locally
+- domain-body-sprawl-visibility/write-human-readable-sprawl-report-beside-json-evidence: qa-cleanup-external-surface-not-testable-locally, qa-cleanup-human-report-evidence-missing
+- domain-body-sprawl-visibility/write-shareable-sprawl-hotspot-table: qa-cleanup-human-report-evidence-missing
+- domain-naming-convention-correction/block-reintroduction-of-the-retired-name: qa-cleanup-human-report-evidence-missing
+- domain-naming-convention-correction/rename-domain-gate-and-template-directories: qa-cleanup-human-report-evidence-missing
+- domain-naming-convention-correction/rename-the-declared-file-system-body-contract: qa-cleanup-assigned-surface-insufficient
+- domain-naming-convention-correction/update-every-in-repo-reference-after-the-rename: qa-cleanup-human-report-evidence-missing
+- domain-ownership-boundary-proof/block-package-governed-claim-without-package-receipt: qa-cleanup-required-artifact-evidence-missing
+- domain-ownership-boundary-proof/require-ownership-evidence-for-domain-bound-methods: qa-cleanup-human-report-evidence-missing
+- end-user-quality-evidence-bundle/block-release-without-qa-bundle: qa-cleanup-assigned-surface-insufficient
+- end-user-quality-evidence-bundle/create-a-qa-evidence-bundle-for-every-qa-attempt: qa-cleanup-human-report-evidence-missing
+- end-user-quality-evidence-bundle/execute-real-end-user-qa-from-the-user-perspective: qa-cleanup-visual-or-html-evidence-missing
+- end-user-quality-evidence-bundle/generate-the-human-readable-qa-bundle-report: qa-cleanup-human-report-evidence-missing
+- end-user-quality-evidence-bundle/inventory-qa-status-for-every-feature-scenario: qa-cleanup-human-report-evidence-missing
+- end-user-quality-evidence-bundle/keep-transient-run-evidence-separate-from-promoted-qa-evidence: qa-cleanup-external-surface-not-testable-locally
+- end-user-quality-evidence-bundle/link-executable-body-reports-into-the-qa-bundle: qa-cleanup-required-artifact-evidence-missing, qa-cleanup-executable-proof-missing
+- end-user-quality-evidence-bundle/lock-a-passing-qa-bundle-as-release-proof: qa-cleanup-executable-proof-missing
+- end-user-quality-evidence-bundle/preserve-machine-and-execution-provenance: qa-cleanup-human-report-evidence-missing
+- end-user-quality-evidence-bundle/preserve-visual-projection-evidence-for-html-publication: qa-cleanup-required-artifact-evidence-missing, qa-cleanup-visual-or-html-evidence-missing
+- end-user-quality-evidence-bundle/render-qa-status-in-the-global-report: qa-cleanup-human-report-evidence-missing
+- evidence-receipt-coverage/block-evidence-packet-without-human-report-surface: qa-cleanup-precondition-or-negative-case-evidence-missing, qa-cleanup-assigned-surface-insufficient
+- evidence-receipt-coverage/block-verdict-promotion-without-receipt: qa-cleanup-precondition-or-negative-case-evidence-missing
+- evidence-receipt-coverage/write-report-evidence-packet: qa-cleanup-assigned-surface-insufficient
+- feature-execution-proof-source-of-truth/calculate-product-timing-metrics-from-observed-evidence: qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/establish-service-level-indicators-from-execution-proof: qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/evaluate-service-level-objectives-from-scenario-evidence: qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/inventory-every-feature-scenario-and-proof-state: qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/keep-json-proof-portable-for-downstream-analysis: qa-cleanup-executable-proof-missing, qa-cleanup-external-surface-not-testable-locally
+- feature-execution-proof-source-of-truth/preserve-method-call-drill-down-inside-observed-body-nodes: qa-cleanup-external-surface-not-testable-locally
+- feature-execution-proof-source-of-truth/preserve-repeated-calls-in-the-execution-proof: qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/preserve-sla-evidence-without-turning-reports-into-contracts: qa-cleanup-executable-proof-missing, qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/reject-report-facts-not-backed-by-json-proof: qa-cleanup-human-report-evidence-missing, qa-cleanup-required-artifact-evidence-missing
+- feature-execution-proof-source-of-truth/render-human-report-from-canonical-json-proof: qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/tie-json-proof-to-raw-telemetry-and-receipts: qa-cleanup-required-artifact-evidence-missing
+- feature-execution-proof-source-of-truth/write-canonical-json-execution-proof-for-a-scenario: qa-cleanup-required-artifact-evidence-missing
+- feature-execution-proof-source-of-truth/write-human-readable-scenario-proof-report-beside-json-proof: qa-cleanup-human-report-evidence-missing
+- feature-execution-proof-source-of-truth/write-shareable-timing-table-projection: qa-cleanup-human-report-evidence-missing
+- feature-filesystem-quality-status-projection/block-hand-authored-status-claims: qa-cleanup-external-surface-not-testable-locally
+- feature-filesystem-quality-status-projection/keep-status-truth-separate-from-status-projection: qa-cleanup-required-artifact-evidence-missing
+- feature-filesystem-quality-status-projection/mark-a-feature-untested-from-the-filesystem-body: qa-cleanup-human-report-evidence-missing
+- feature-filesystem-quality-status-projection/mark-qa-blocked-from-the-filesystem-body: qa-cleanup-human-report-evidence-missing
+- feature-filesystem-quality-status-projection/mark-qa-passed-and-promoted-from-the-filesystem-body: qa-cleanup-executable-proof-missing
+- feature-filesystem-quality-status-projection/mark-qa-passed-but-not-promoted-from-the-filesystem-body: qa-cleanup-executable-proof-missing
+- feature-filesystem-quality-status-projection/mark-stale-filesystem-status-when-evidence-changes: qa-cleanup-human-report-evidence-missing
+- feature-filesystem-quality-status-projection/project-one-visible-status-sentinel-for-every-feature: qa-cleanup-human-report-evidence-missing
+- feature-filesystem-quality-status-projection/remove-stale-or-duplicate-status-sentinels-for-the-same-feature: qa-cleanup-external-surface-not-testable-locally
+- feature-filesystem-quality-status-projection/support-future-feature-body-folders-without-breaking-flat-feature-files: qa-cleanup-executable-proof-missing
+- feature-filesystem-quality-status-projection/use-a-constrained-filesystem-status-vocabulary: qa-cleanup-human-report-evidence-missing
+- feature-filesystem-quality-status-projection/write-machine-readable-status-beside-the-filesystem-sentinel: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/block-stale-quality-board-promotion-in-ci: qa-cleanup-external-surface-not-testable-locally
+- feature-quality-board-filesystem-body/detect-missing-status-projection-for-a-feature: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/detect-status-sentinel-and-json-contract-mismatch: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/generate-a-filesystem-tree-projection-for-review: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/generate-the-product-owner-quality-board: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/keep-qa-pass-separate-from-promotion: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/populate-the-board-with-scan-friendly-product-fields: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/preserve-existing-feature-document-paths-during-rollout: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/promote-only-through-deterministic-evidence: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/provide-pi-ready-summary-counts: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/show-feature-status-without-opening-feature-documents: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/tie-board-status-to-immutable-qa-bundle-evidence: qa-cleanup-human-report-evidence-missing
+- feature-quality-board-filesystem-body/write-a-machine-readable-board-contract: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/preserve-product-readable-execution-tree-shape: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/reject-boxed-node-list-when-hierarchical-body-tree-is-required: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/reject-duration-inferred-without-timing-evidence: qa-cleanup-required-artifact-evidence-missing
+- feature-scoped-ascii-execution-flow-report/reject-invented-fallback-execution-body-tree-for-promotion: qa-cleanup-external-surface-not-testable-locally, qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/reject-telemetry-inferred-from-verdict: qa-cleanup-precondition-or-negative-case-evidence-missing, qa-cleanup-human-report-evidence-missing, qa-cleanup-required-artifact-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-a-compact-blocked-sketch: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-a-compact-happy-path-sketch: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-blocked-ascii-body-tree-shape: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-clean-ascii-only: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-executable-body-contract-as-file-system-execution-tree: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-executive-execution-flow-first: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-hierarchical-ascii-executable-body-tree: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-method-drill-down-under-each-observed-body-node: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-required-ascii-body-tree-shape: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/render-timing-and-call-count-facts-from-canonical-json-proof: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/require-branch-assertions-in-report-tests: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/show-blocked-report-as-a-worklist: qa-cleanup-human-report-evidence-missing
+- feature-scoped-ascii-execution-flow-report/use-fallback-only-as-a-non-promotable-development-diagnostic: qa-cleanup-external-surface-not-testable-locally
+- fractal-llm-harness/child-harness-proposes-the-next-harness: qa-cleanup-required-artifact-evidence-missing
+- fractal-llm-harness/generated-harness-proves-its-own-execution: qa-cleanup-human-report-evidence-missing
+- fractal-llm-harness/llm-generates-a-child-harness-from-a-parent-harness-contract: qa-cleanup-human-report-evidence-missing
+- fractal-llm-harness/llm-unsafe-output-is-blocked: qa-cleanup-human-report-evidence-missing
+- gherkin-driven-report-development/require-gherkin-before-report-feature-implementation: qa-cleanup-assigned-surface-insufficient
+- gherkin-driven-report-development/trace-report-sections-to-scenarios: qa-cleanup-human-report-evidence-missing
+- llm-domain-body-analysis-and-tie-out/analyze-executable-file-name-grammar: qa-cleanup-required-artifact-evidence-missing
+- llm-domain-body-analysis-and-tie-out/produce-an-llm-handoff-artifact-from-deterministic-facts: qa-cleanup-assigned-surface-insufficient
+- llm-domain-body-analysis-and-tie-out/recommend-decomposition-without-promoting-the-llm-recommendation: qa-cleanup-human-report-evidence-missing
+- llm-domain-body-analysis-and-tie-out/tie-every-executable-file-to-a-file-body-contract: qa-cleanup-human-report-evidence-missing
+- llm-domain-body-analysis-and-tie-out/tie-file-bodies-to-features-and-scenarios: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/assign-a-feature-scenario-to-the-llm-testing-conveyor: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/block-unsafe-or-out-of-bounds-llm-testing: qa-cleanup-external-surface-not-testable-locally
+- llm-end-user-testing-conveyor/build-the-llm-handoff-packet: qa-cleanup-assigned-surface-insufficient
+- llm-end-user-testing-conveyor/decide-qa-pass-or-fail-outside-the-llm: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/execute-the-feature-as-an-end-user: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/generate-the-llm-user-experience-report: qa-cleanup-human-report-evidence-missing, qa-cleanup-required-artifact-evidence-missing
+- llm-end-user-testing-conveyor/let-the-llm-propose-seed-data-before-testing: qa-cleanup-executable-proof-missing, qa-cleanup-required-artifact-evidence-missing
+- llm-end-user-testing-conveyor/materialize-seed-data-through-a-deterministic-gate: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/package-the-llm-qa-evidence-bundle: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/prepare-future-notification-without-sending-it: qa-cleanup-assigned-surface-insufficient, qa-cleanup-precondition-or-negative-case-evidence-missing
+- llm-end-user-testing-conveyor/preserve-replayability-for-human-reviewers: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/support-feature-wide-scenario-conveyor-runs: qa-cleanup-human-report-evidence-missing
+- llm-end-user-testing-conveyor/tie-llm-observations-to-executable-proof: qa-cleanup-assigned-surface-insufficient
+- llm-end-user-testing-conveyor/validate-generated-markdown-and-html-projections-as-user-facing-surfaces: qa-cleanup-assigned-surface-insufficient, qa-cleanup-precondition-or-negative-case-evidence-missing
+- method-level-execution-drill-down/distinguish-discovered-methods-from-observed-method-calls: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/extend-canonical-json-proof-with-method-calls-under-each-body-node: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/gate-method-drill-down-completeness: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/gate-method-drill-down-projection-against-canonical-json: qa-cleanup-human-report-evidence-missing, qa-cleanup-required-artifact-evidence-missing
+- method-level-execution-drill-down/keep-method-drill-down-portable-for-html-and-visual-review: qa-cleanup-human-report-evidence-missing, qa-cleanup-assigned-surface-insufficient
+- method-level-execution-drill-down/preserve-repeated-method-calls-in-order: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/preserve-the-three-level-execution-review-model: qa-cleanup-required-artifact-evidence-missing
+- method-level-execution-drill-down/render-blocked-method-call-inline: qa-cleanup-assigned-surface-insufficient
+- method-level-execution-drill-down/render-compact-method-timeline-table: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/render-method-drill-down-inside-each-body-node: qa-cleanup-assigned-surface-insufficient
+- method-level-execution-drill-down/render-method-evidence-appendix-for-deep-review: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/render-runtime-file-drill-down-before-method-calls: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/show-slow-methods-and-wait-time-as-product-signals: qa-cleanup-human-report-evidence-missing, qa-cleanup-assigned-surface-insufficient
+- method-level-execution-drill-down/tie-method-calls-to-receipt-proof: qa-cleanup-human-report-evidence-missing
+- method-level-execution-drill-down/tie-method-calls-to-telemetry-event-pairs: qa-cleanup-human-report-evidence-missing
+- per-feature-executable-body-evidence-reports/block-scenario-promotion-when-feature-evidence-report-is-missing: qa-cleanup-human-report-evidence-missing
+- per-feature-executable-body-evidence-reports/do-not-promote-unexecuted-features: qa-cleanup-assigned-surface-insufficient
+- per-feature-executable-body-evidence-reports/keep-generated-run-evidence-out-of-source-control: qa-cleanup-human-report-evidence-missing
+- per-feature-executable-body-evidence-reports/preserve-feature-evidence-from-source-controlled-templates: qa-cleanup-external-surface-not-testable-locally
+- per-feature-executable-body-evidence-reports/render-the-executable-body-tree-in-the-feature-report: qa-cleanup-human-report-evidence-missing
+- pi-readiness-gate-for-report-truth/block-pi-readiness-when-report-truth-is-incomplete: qa-cleanup-precondition-or-negative-case-evidence-missing, qa-cleanup-human-report-evidence-missing
+- pi-readiness-gate-for-report-truth/block-pi-readiness-without-end-user-qa-proof: qa-cleanup-human-report-evidence-missing
+- pi-readiness-gate-for-report-truth/pass-pi-readiness: qa-cleanup-human-report-evidence-missing
+- portable-evidence-paths/block-machine-local-path-leakage: qa-cleanup-executable-proof-missing
+- portable-evidence-paths/render-repo-relative-paths: qa-cleanup-human-report-evidence-missing
+- projection-language-honesty/allow-execution-step-only-with-telemetry-evidence: qa-cleanup-human-report-evidence-missing
+- projection-language-honesty/block-proof-language-without-evidence-paths: qa-cleanup-external-surface-not-testable-locally
+- projection-language-honesty/label-inventory-order-honestly: qa-cleanup-human-report-evidence-missing
+- projection-language-honesty/mark-unobserved-runtime-methods-explicitly: qa-cleanup-external-surface-not-testable-locally
+- projection-language-honesty/require-duration-evidence-for-execution-time: qa-cleanup-external-surface-not-testable-locally
+- projection-language-honesty/separate-source-location-from-runtime-observation: qa-cleanup-human-report-evidence-missing
+- report-contract-schema-enforcement/block-empty-report-schema: qa-cleanup-external-surface-not-testable-locally
+- report-contract-schema-enforcement/validate-non-empty-sterility-report-schema: qa-cleanup-external-surface-not-testable-locally
+- report-provenance-and-freshness-gate/block-stale-report-projection: qa-cleanup-external-surface-not-testable-locally
+- report-provenance-and-freshness-gate/render-report-provenance: qa-cleanup-external-surface-not-testable-locally
+- summary-findings-and-method-row-tie-out/block-clean-label-with-nonzero-findings: qa-cleanup-external-surface-not-testable-locally
+- summary-findings-and-method-row-tie-out/recompute-summary-from-method-rows: qa-cleanup-external-surface-not-testable-locally
+- summary-findings-and-method-row-tie-out/tie-findings-to-table-rows: qa-cleanup-external-surface-not-testable-locally
+- verdict-derivation-consistency/allow-sterile-verdict-only-when-all-gates-pass: qa-cleanup-external-surface-not-testable-locally
+- verdict-derivation-consistency/block-sterile-verdict-when-any-hard-law-is-violated: qa-cleanup-external-surface-not-testable-locally

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "create-a-qa-evidence-bundle-for-every-qa-attempt",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

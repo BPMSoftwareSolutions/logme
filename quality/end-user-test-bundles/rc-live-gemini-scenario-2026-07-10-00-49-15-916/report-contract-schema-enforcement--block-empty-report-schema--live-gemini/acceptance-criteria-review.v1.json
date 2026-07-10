@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-contract-schema-enforcement--block-empty-report-schema--live-gemini",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "block-empty-report-schema",
+  "criteria": [
+    {
+      "criterionText": "Then the report verdict should be BLOCKED",
+      "status": "FAIL",
+      "llmObservationSummary": "The scenario 'Block empty report schema' could not be verified due to the absence of CLI evidence. The test requires execution of the report generator in a CI environment with an empty or no-required-fields report schema to confirm the expected verdict and finding codes.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "Provide CLI evidence showing the execution of the report generator with an empty report schema, demonstrating the 'BLOCKED' verdict and the specified finding codes ('report-schema-empty', 'report-contract-not-enforced')."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "FAIL",
+      "llmObservationSummary": "The scenario 'Block empty report schema' could not be verified due to the absence of CLI evidence. The test requires execution of the report generator in a CI environment with an empty or no-required-fields report schema to confirm the expected verdict and finding codes.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "Provide CLI evidence showing the execution of the report generator with an empty report schema, demonstrating the 'BLOCKED' verdict and the specified finding codes ('report-schema-empty', 'report-contract-not-enforced')."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:33:54.313Z"
+}

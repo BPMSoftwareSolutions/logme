@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-invented-fallback-execution-body-tree-for-promotion--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-invented-fallback-execution-body-tree-for-promotion",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 2,
+  "blockerCodes": [
+    "qa-cleanup-external-surface-not-testable-locally",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:10:16.130Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.990Z",
+  "rawLlmBlockerCodes": [
+    "EVIDENCE_MISSING_OR_INSUFFICIENT",
+    "REPORT_MD_MISSING"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--keep-transient-run-evidence-separate-from-promoted-qa-evidence--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "keep-transient-run-evidence-separate-from-promoted-qa-evidence",
+  "criteria": [
+    {
+      "criterionText": "And a QA bundle is promoted",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The prompt states a Gemini live-call receipt *will be written* into the QA bundle, implying promotion, but the actual promoted bundle or receipt is not provided for direct verification by an end-user tester.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+      "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+    },
+    {
+      "criterionText": "Then the promoted bundle should live under `quality/end-user-test-bundles/`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (report.md, Gherkin, or promise of receipt) directly shows the file path of the promoted bundle to confirm its location.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+      "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+    },
+    {
+      "criterionText": "And it should include hashes or copied snapshots of the evidence needed for human review",
+      "status": "partially met",
+      "llmObservationSummary": "The prompt indicates a Gemini live-call receipt *will be written* into the QA bundle, confirming *some* evidence inclusion. However, it doesn't confirm if it's a hash/snapshot or if *all* necessary evidence for human review is included.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+      "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+    },
+    {
+      "criterionText": "And transient `evidence/runs/` paths alone should not be release authority",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a system policy/behavior. While the promotion of a QA bundle implies a separate authority, the provided surfaces do not offer direct evidence to confirm that transient paths *alone* are explicitly excluded as release authority.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+      "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+    },
+    {
+      "criterionText": "And the source-controlled QA bundle should be the durable promotion record.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence is provided to confirm that the QA bundle is source-controlled or that it serves as a durable promotion record.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+      "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:57:31.664Z"
+}

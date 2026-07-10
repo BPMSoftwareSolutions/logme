@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-release-promotion-without-end-user-qa-evidence--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-release-promotion-without-end-user-qa-evidence",
+  "scenarioName": "Block release promotion without end-user QA evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block release promotion without end-user QA evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/ci-cd-report-truth-guardrails.feature.md:63-78; report.md; live Gemini prompt",
+      "expectedResult": "The system should block release promotion if a source-controlled QA evidence bundle is missing or incomplete, specifically failing with 'release-candidate-without-end-user-qa-bundle'. The bundle should contain 'qa-evidence-bundle.report.md', 'machine-environment.v1.json', and 'qa-gate-decision.v1.json', with the latter indicating 'QA passed'.",
+      "observedResult": "I can confirm the conceptual existence of 'report.md' as an artifact generated, but I cannot confirm its inclusion in a bundle, the presence of other required files, the quality gate decision, or the actual blocking/failure behavior of the promotion workflow. The provided surfaces only describe what should happen, not what did happen in a verifiable way.",
+      "timestamp": "2026-07-10T00:50:18.539Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-release-promotion-without-end-user-qa-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/ci-cd-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-release-promotion-without-end-user-qa-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

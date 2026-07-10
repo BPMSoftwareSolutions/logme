@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--preserve-intentional-domain-cohesion--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "preserve-intentional-domain-cohesion",
+  "scenarioName": "Preserve intentional domain cohesion",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve intentional domain cohesion",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-body-sprawl-visibility.feature.md:117-125; report.md; live Gemini prompt",
+      "expectedResult": "The file should be classified as `authorized dense orchestrator`, the report should show the authorizing contract path, line count, method count, and responsibility clusters, and the file should not be hidden from the sprawl report.",
+      "observedResult": "No observable results could be confirmed as the necessary evidence surfaces (report.md, Gemini live-call receipt) were not provided or accessible.",
+      "timestamp": "2026-07-10T00:53:42.808Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--preserve-intentional-domain-cohesion--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-body-sprawl-visibility.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--preserve-intentional-domain-cohesion--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

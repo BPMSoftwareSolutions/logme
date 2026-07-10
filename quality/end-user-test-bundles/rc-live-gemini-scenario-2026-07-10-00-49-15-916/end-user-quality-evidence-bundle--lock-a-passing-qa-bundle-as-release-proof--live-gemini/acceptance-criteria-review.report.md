@@ -1,0 +1,13 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: end-user-quality-evidence-bundle--lock-a-passing-qa-bundle-as-release-proof--live-gemini
+- Feature id: end-user-quality-evidence-bundle
+- Scenario id: lock-a-passing-qa-bundle-as-release-proof
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| Then it should mark the release candidate as promotable only if: | not testable from assigned surface | The Gherkin describes the conditions for promotability. However, no execution evidence (like 'report.md' or a live-call receipt) is provided to confirm if these conditions were actually evaluated by the quality promotion gate and if the release candidate was marked promotable accordingly. | not observed | MISSING_EXECUTION_EVIDENCE | Provide the 'report.md' and the Gemini live-call receipt to verify the execution of the quality promotion gate and its decision. |
+| And it should write the promotion decision to: | not testable from assigned surface | The Gherkin specifies the output path for the promotion decision. However, no evidence (like 'report.md' or a live-call receipt) is provided to confirm that this file was actually written to the specified location. | not observed | MISSING_EXECUTION_EVIDENCE | Provide the 'report.md' and the Gemini live-call receipt to show evidence of the 'qa-gate-decision.v1.json' file being written. |
+| And a promoted bundle should be immutable | not testable from assigned surface | The Gherkin states that a promoted bundle should be immutable. This is a behavioral characteristic that requires observing attempts to modify a promoted bundle and verifying that such attempts fail. No such evidence is provided in the available surfaces. | not observed | MISSING_EXECUTION_EVIDENCE | Provide test logs or a specific report section demonstrating an attempt to modify a promoted bundle and the system's response confirming its immutability. |
+| And any correction should create a new QA run id, not mutate the promoted bundle. | not testable from assigned surface | The Gherkin specifies that corrections should result in a new QA run ID. This requires observing a correction workflow and verifying the generation of a new ID. No evidence of such a workflow or its outcome is provided. | not observed | MISSING_EXECUTION_EVIDENCE | Provide test logs or a specific report section demonstrating a correction process and the creation of a new QA run ID, along with confirmation that the original promoted bundle was not mutated. |

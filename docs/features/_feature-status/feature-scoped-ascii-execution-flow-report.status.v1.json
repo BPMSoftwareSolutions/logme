@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "featureName": "Feature-scoped ASCII execution flow report",
+  "sourceFeaturePath": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+  "sourceFeatureContentHash": "8856c2a19c08c5ac7c9c7605f16790a76c03892378f75067b9b7f742f76fab31",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "codex-feature-ascii-evidence",
+  "latestQaRunId": "feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "evidence/runs/codex-feature-ascii-evidence/features/feature-scoped-ascii-execution-flow-report/scenarios/render-hierarchical-ascii-executable-body-tree/feature-execution.contract.v1.json",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestExecutionProof": {
+      "path": "evidence/runs/codex-feature-ascii-evidence/features/feature-scoped-ascii-execution-flow-report/scenarios/render-hierarchical-ascii-executable-body-tree/feature-execution.contract.v1.json",
+      "sha256": "461e320ebbd3b3e45760f16bab71e4e520bfcb9c2618f8ac7402584f5d4ccf46"
+    },
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "bcb3c450b7a8374dd8fc80709e1e90ec4fdd2d807563a975be2d8053d7d46ae4"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-external-surface-not-testable-locally"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Feature-scoped ASCII execution flow report is currently qa-blocked."
+}

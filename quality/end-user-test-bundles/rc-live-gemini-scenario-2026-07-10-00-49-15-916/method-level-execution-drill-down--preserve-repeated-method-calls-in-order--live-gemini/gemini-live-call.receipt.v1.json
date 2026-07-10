@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--preserve-repeated-method-calls-in-order--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "preserve-repeated-method-calls-in-order",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 544,
+    "candidatesTokenCount": 702,
+    "totalTokenCount": 2437,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 544
+      }
+    ],
+    "thoughtsTokenCount": 1191,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "c1ac0213358d5ad53d8afbf72b7808b60d65db8dd150120e6745fd5df5fe1248",
+  "responseSha256": "83efca31eb4c17284c9f6f5800b1da3de43675e7f96c708415349254cec49400",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/preserve-repeated-method-calls-in-order.response.v1.json",
+  "calledAt": "2026-07-10T01:19:18.786Z"
+}

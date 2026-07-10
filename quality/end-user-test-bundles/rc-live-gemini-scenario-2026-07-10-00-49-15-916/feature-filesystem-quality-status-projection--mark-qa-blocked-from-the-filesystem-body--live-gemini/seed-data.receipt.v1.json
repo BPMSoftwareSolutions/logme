@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-blocked-from-the-filesystem-body",
+  "seedDataId": "feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T01:04:18.956Z"
+}

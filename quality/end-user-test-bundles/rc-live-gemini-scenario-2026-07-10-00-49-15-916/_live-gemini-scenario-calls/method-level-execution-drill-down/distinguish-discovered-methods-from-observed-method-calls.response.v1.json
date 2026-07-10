@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "distinguish-discovered-methods-from-observed-method-calls",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 590,
+    "candidatesTokenCount": 834,
+    "totalTokenCount": 3266,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 590
+      }
+    ],
+    "thoughtsTokenCount": 1842,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The `report.md` artifact, crucial for verifying the scenario's acceptance criteria, was not provided. Without this evidence, it is impossible to confirm if the distinctions, labeling rules, and finding codes are correctly implemented in the generated report.",
+    "expectedResult": "The `report.md` should clearly distinguish between 'discovered method', 'observed method call', and 'receipted method action' with their specified meanings and promotion authorities. It should also correctly apply the `static-method-presented-as-runtime-execution` finding code for false runtime claims and avoid labeling discovered methods as executed unless telemetry proves an observed call.",
+    "observedResult": "Unable to observe the report's content as the `report.md` artifact was not provided.",
+    "confusingOrRiskyExperiencePoints": "The lack of the generated report makes it impossible to assess the clarity or potential confusion for an end-user regarding method distinctions and execution proofs. A user would be unable to verify the system's behavior without the report.",
+    "accessibilityOrReadabilityObservations": "Cannot assess the accessibility or readability of the report without its content. The Gherkin itself is clear.",
+    "recommendedFollowUps": "Provide the `report.md` artifact generated after the local test suite passed for this scenario to enable proper end-user QA testing. Ensure all specified distinctions, labeling rules, and finding codes are present and correctly applied in the report.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And runtime telemetry exists for a scenario",
+        "status": "blocked",
+        "llmObservationSummary": "This is a precondition stated in the Gherkin. As an end-user QA tester, I cannot directly verify the existence of runtime telemetry from the provided surfaces. The `report.md` would be the primary evidence for its effects, but it was not provided.",
+        "blockerCode": "missing-evidence-report-content",
+        "recommendedFixRoute": "Provide the `report.md` artifact to allow verification of how runtime telemetry is reflected in the report."
+      },
+      {
+        "criterionText": "Then the report should distinguish:",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` artifact, which should contain the distinctions for 'discovered method', 'observed method call', and 'receipted method action', was not provided. Therefore, I cannot verify if these distinctions are correctly made with their specified meanings and promotion authorities.",
+        "blockerCode": "missing-evidence-report-content",
+        "recommendedFixRoute": "Provide the `report.md` artifact to allow verification of the method distinctions."
+      },
+      {
+        "criterionText": "And the report should not label a discovered method as executed unless telemetry proves an observed call",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` artifact was not provided, preventing verification that discovered methods are not incorrectly labeled as executed without corresponding telemetry proof.",
+        "blockerCode": "missing-evidence-report-content",
+        "recommendedFixRoute": "Provide the `report.md` artifact to allow verification of correct labeling of discovered methods."
+      },
+      {
+        "criterionText": "And the finding code for a false runtime claim should be:",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` artifact was not provided, making it impossible to verify if the `static-method-presented-as-runtime-execution` finding code is correctly applied for false runtime claims.",
+        "blockerCode": "missing-evidence-report-content",
+        "recommendedFixRoute": "Provide the `report.md` artifact to allow verification of the correct finding code application."
+      }
+    ]
+  }
+}

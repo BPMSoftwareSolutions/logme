@@ -4,6 +4,7 @@
     "schemaVersion",
     "runId",
     "evidencePath",
+    "reportPath",
     "summary",
     "sourceFiles",
     "findingCodes"

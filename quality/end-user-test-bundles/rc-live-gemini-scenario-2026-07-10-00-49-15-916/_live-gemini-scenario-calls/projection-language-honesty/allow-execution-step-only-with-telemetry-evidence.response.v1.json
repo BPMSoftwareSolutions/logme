@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "allow-execution-step-only-with-telemetry-evidence",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 348,
+    "candidatesTokenCount": 666,
+    "totalTokenCount": 2004,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 348
+      }
+    ],
+    "thoughtsTokenCount": 990,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "No evidence (report.md, CLI output) was provided to verify the scenario's criteria. The test is blocked as no observations could be made regarding telemetry events, file path/method name matching, or the rendering of the method table and its columns/rows.",
+    "expectedResult": "The method table should be rendered with an 'Execution Step' column. Each row should display the declared step, observed step, telemetry status, and receipt status, contingent on telemetry having an observed event for the step ID and matching file path/method name.",
+    "observedResult": "No observations could be made as no report.md or CLI evidence was provided to simulate the rendering of the method table or the presence of telemetry data.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete evidence makes it impossible to assess any confusing or risky experience points related to the feature's implementation.",
+    "accessibilityOrReadabilityObservations": "Without rendered output or CLI evidence, no accessibility or readability observations can be made regarding the presentation of the method table or its data.",
+    "recommendedFollowUps": "Provide the necessary `report.md` and `CLI evidence` as specified in the instructions to allow for proper testing and verification of the scenario's criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And telemetry has an observed event for the same step id",
+        "status": "blocked",
+        "llmObservationSummary": "No evidence (report.md, CLI output) was provided to verify this criterion.",
+        "blockerCode": "no_evidence_provided",
+        "recommendedFixRoute": "Provide `report.md` and `CLI evidence`."
+      },
+      {
+        "criterionText": "And the event references the same file path and method name",
+        "status": "blocked",
+        "llmObservationSummary": "No evidence (report.md, CLI output) was provided to verify this criterion.",
+        "blockerCode": "no_evidence_provided",
+        "recommendedFixRoute": "Provide `report.md` and `CLI evidence`."
+      },
+      {
+        "criterionText": "Then the column may be labeled `Execution Step`",
+        "status": "blocked",
+        "llmObservationSummary": "No evidence (report.md, CLI output) was provided to verify this criterion.",
+        "blockerCode": "no_evidence_provided",
+        "recommendedFixRoute": "Provide `report.md` and `CLI evidence`."
+      },
+      {
+        "criterionText": "And the row should show declared step, observed step, telemetry status, and receipt status.",
+        "status": "blocked",
+        "llmObservationSummary": "No evidence (report.md, CLI output) was provided to verify this criterion.",
+        "blockerCode": "no_evidence_provided",
+        "recommendedFixRoute": "Provide `report.md` and `CLI evidence`."
+      }
+    ]
+  }
+}

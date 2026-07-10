@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "block-clean-label-with-nonzero-findings",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 276,
+    "candidatesTokenCount": 201,
+    "totalTokenCount": 1123,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 276
+      }
+    ],
+    "thoughtsTokenCount": 646,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "PASS",
+    "observationSummary": "The report was rendered with one or more findings present. The system correctly suppressed the 'clean findings' label and did not display a 'STERILE DOMAIN BODY' verdict. The expected finding code 'clean-label-with-findings' was observed.",
+    "expectedResult": "The Findings section should not show the configured clean findings label. The verdict should not be 'STERILE DOMAIN BODY'. The finding code 'clean-label-with-findings' should be present.",
+    "observedResult": "The Findings section did not show the configured clean findings label. The verdict was not 'STERILE DOMAIN BODY'. The finding code 'clean-label-with-findings' was present.",
+    "recommendedFollowUps": "No further follow-ups are immediately recommended for this specific scenario, as the feature behaved as expected. Consider testing edge cases with varying numbers and types of findings."
+  }
+}

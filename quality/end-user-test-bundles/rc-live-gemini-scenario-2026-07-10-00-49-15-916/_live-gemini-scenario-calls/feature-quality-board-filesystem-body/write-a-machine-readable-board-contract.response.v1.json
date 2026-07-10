@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "write-a-machine-readable-board-contract",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 656,
+    "candidatesTokenCount": 947,
+    "totalTokenCount": 3305,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 656
+      }
+    ],
+    "thoughtsTokenCount": 1702,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The `report.md` and Gemini live-call receipt, which are critical evidence surfaces for verifying the generated JSON and Markdown board content, were not provided. Consequently, none of the acceptance criteria could be tested.",
+    "expectedResult": "A machine-readable JSON board contract (`docs/features/_FEATURE-QUALITY-BOARD.v1.json`) should be generated containing specified fields and repo-relative paths within board rows. A Markdown board should also be generated, with its counts accurately derived from the JSON board.",
+    "observedResult": "No generated JSON or Markdown board content was available for review. The `report.md` and Gemini live-call receipt were referenced but not supplied, preventing any verification of the scenario's output.",
+    "confusingOrRiskyExperiencePoints": "The inability to access the generated `report.md` or the JSON output means that the core functionality of writing a machine-readable board contract cannot be verified by an end-user QA tester. This leaves a significant gap in the testing coverage.",
+    "accessibilityOrReadabilityObservations": "The scenario Gherkin is clear and well-defined. However, the absence of the actual generated output makes it impossible to perform the requested end-user QA testing.",
+    "recommendedFollowUps": "For future tests, ensure that all listed evidence surfaces, especially `report.md` and any generated files, are explicitly provided or made accessible for review. If a 'Gemini live-call receipt' is an evidence surface, its content or a summary should be included.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the JSON board should contain:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The generated JSON board (`docs/features/_FEATURE-QUALITY-BOARD.v1.json`) was not provided for review, nor was its content summarized in `report.md`. Therefore, the presence of the specified fields could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file, including the content or a detailed summary of the generated JSON board, to allow verification of its structure and fields."
+      },
+      {
+        "criterionText": "And each board row should include the repo-relative path to its status sentinel",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The content of the generated JSON board was not available. Without access to the `board rows` within the JSON, it's impossible to confirm if each row includes the repo-relative path to its status sentinel.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file, including the content or a detailed summary of the generated JSON board, to allow verification of board row structure."
+      },
+      {
+        "criterionText": "And each board row should include the repo-relative path to its feature specification",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The content of the generated JSON board was not available. Without access to the `board rows` within the JSON, it's impossible to confirm if each row includes the repo-relative path to its feature specification.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file, including the content or a detailed summary of the generated JSON board, to allow verification of board row structure."
+      },
+      {
+        "criterionText": "And every count in the Markdown board should be derived from the JSON board.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Neither the generated JSON board nor the Markdown board content was provided. Without both outputs, it's impossible to verify if the counts in the Markdown board are correctly derived from the JSON board.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide both the generated JSON board content (or a summary) and the Markdown board content (e.g., within `report.md`) to enable verification of count derivation."
+      }
+    ]
+  }
+}

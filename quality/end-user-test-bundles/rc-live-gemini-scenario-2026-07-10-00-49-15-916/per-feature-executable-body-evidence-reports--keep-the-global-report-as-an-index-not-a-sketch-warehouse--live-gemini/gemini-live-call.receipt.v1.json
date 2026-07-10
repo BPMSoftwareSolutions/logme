@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "keep-the-global-report-as-an-index-not-a-sketch-warehouse",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 602,
+    "candidatesTokenCount": 620,
+    "totalTokenCount": 3458,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 602
+      }
+    ],
+    "thoughtsTokenCount": 2236,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "55fc80e29adbd085c4418ebf618129c26fffeb501042238bc3ee5530a01ad68f",
+  "responseSha256": "c22c44f1505a57644d5c2acf2b0ab0a2e6f0021389c090adc06bc5f51c1c63cf",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/per-feature-executable-body-evidence-reports/keep-the-global-report-as-an-index-not-a-sketch-warehouse.response.v1.json",
+  "calledAt": "2026-07-10T01:20:37.256Z"
+}

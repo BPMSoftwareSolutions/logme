@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-clean-ascii-only",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 508,
+    "candidatesTokenCount": 494,
+    "totalTokenCount": 2076,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 508
+      }
+    ],
+    "thoughtsTokenCount": 1074,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The primary evidence surface, 'report.md', was not provided, making it impossible to verify the generated ASCII execution sketch against the specified criteria.",
+    "expectedResult": "The 'report.md' should contain an ASCII execution sketch that uses only portable ASCII characters (+, -, |, `, >, /, \\) and does not depend on Unicode box drawing, emoji, color, or terminal-specific rendering.",
+    "observedResult": "The 'report.md' file was not supplied as an evidence surface, therefore no observation of the ASCII sketch could be made.",
+    "confusingOrRiskyExperiencePoints": "Without the 'report.md' evidence, the behavior of the feature regarding ASCII rendering cannot be confirmed, posing a risk that non-compliant characters might be used in production.",
+    "accessibilityOrReadabilityObservations": "N/A - The content to be reviewed for accessibility or readability was not provided.",
+    "recommendedFollowUps": "Provide the 'report.md' file generated after the local test suite passed, as specified in the available evidence surfaces, to allow for proper verification of the ASCII execution sketch.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the sketch should use only portable ASCII characters:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The 'report.md' file, which is expected to contain the ASCII sketch, was not provided, preventing verification of character usage.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Supply the 'report.md' file for review."
+      },
+      {
+        "criterionText": "And the sketch should not depend on Unicode box drawing, emoji, color, or terminal-specific rendering.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The 'report.md' file, which is expected to contain the ASCII sketch, was not provided, preventing verification of rendering dependencies.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Supply the 'report.md' file for review."
+      }
+    ]
+  }
+}

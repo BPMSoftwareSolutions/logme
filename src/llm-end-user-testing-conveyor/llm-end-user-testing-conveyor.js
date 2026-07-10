@@ -205,9 +205,14 @@ function buildsLlmHandoffPacket(assignment, options = {}) {
 
   const rootDir = options.rootDir || process.cwd();
   const proofReports = [];
+  const domainAnalysisReports = [];
 
   for (const reportPath of options.currentProofReportPaths || []) {
     proofReports.push(readsBoundedReportContent(rootDir, reportPath));
+  }
+
+  for (const reportPath of options.currentDomainAnalysisReportPaths || []) {
+    domainAnalysisReports.push(readsBoundedReportContent(rootDir, reportPath));
   }
 
   const packet = {
@@ -223,6 +228,7 @@ function buildsLlmHandoffPacket(assignment, options = {}) {
       featureGherkin: redactsSensitiveText(readsAcceptanceSourceSlice(rootDir, assignment)),
       acceptanceCriteria: options.acceptanceCriteria || [],
       currentProofReports: proofReports,
+      currentDomainAnalysisReports: domainAnalysisReports,
       targetUserSurfaceInstructions: options.targetUserSurfaceInstructions || assignment.allowedTestSurfaces,
       seedDataRules: [
         'seed data must be synthetic unless fixture data is explicitly allowed',
@@ -281,6 +287,16 @@ function rendersLlmHandoffPacketReport(packet) {
   lines.push('', '## Current Proof Reports', '');
 
   for (const report of packet.boundedContext.currentProofReports) {
+    lines.push(`### ${report.path}`, '', report.content, '');
+  }
+
+  lines.push('', '## Current Domain Body Analysis', '');
+
+  if (packet.boundedContext.currentDomainAnalysisReports.length === 0) {
+    lines.push('- not attached');
+  }
+
+  for (const report of packet.boundedContext.currentDomainAnalysisReports) {
     lines.push(`### ${report.path}`, '', report.content, '');
   }
 

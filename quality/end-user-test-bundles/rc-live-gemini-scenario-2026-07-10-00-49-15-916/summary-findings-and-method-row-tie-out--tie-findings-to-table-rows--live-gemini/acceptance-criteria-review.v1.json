@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "tie-findings-to-table-rows",
+  "criteria": [
+    {
+      "criterionText": "Then the method table should contain a row with the same file path and method name",
+      "status": "Incomplete",
+      "llmObservationSummary": "As an AI, I cannot directly execute the test scenario or access external files like 'report.md' or CLI evidence. Therefore, I am unable to verify if the feature 'summary-findings-and-method-row-tie-out' correctly ties findings to table rows as described in the scenario and criteria. No evidence (markdown, report.md, CLI output) was provided for analysis.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "To complete this test, please provide the 'report.md' file generated after executing the scenario 'Tie findings to table rows' and any relevant CLI output. This evidence is crucial for verifying the implementation against the specified criteria."
+    },
+    {
+      "criterionText": "And the row state should explain the finding",
+      "status": "Incomplete",
+      "llmObservationSummary": "As an AI, I cannot directly execute the test scenario or access external files like 'report.md' or CLI evidence. Therefore, I am unable to verify if the feature 'summary-findings-and-method-row-tie-out' correctly ties findings to table rows as described in the scenario and criteria. No evidence (markdown, report.md, CLI output) was provided for analysis.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "To complete this test, please provide the 'report.md' file generated after executing the scenario 'Tie findings to table rows' and any relevant CLI output. This evidence is crucial for verifying the implementation against the specified criteria."
+    },
+    {
+      "criterionText": "And duplicate method names should be disambiguated by file path and line range.",
+      "status": "Incomplete",
+      "llmObservationSummary": "As an AI, I cannot directly execute the test scenario or access external files like 'report.md' or CLI evidence. Therefore, I am unable to verify if the feature 'summary-findings-and-method-row-tie-out' correctly ties findings to table rows as described in the scenario and criteria. No evidence (markdown, report.md, CLI output) was provided for analysis.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "To complete this test, please provide the 'report.md' file generated after executing the scenario 'Tie findings to table rows' and any relevant CLI output. This evidence is crucial for verifying the implementation against the specified criteria."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:41:16.040Z"
+}

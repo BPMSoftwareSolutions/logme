@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--block-clean-label-with-nonzero-findings--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "block-clean-label-with-nonzero-findings",
+  "criteria": [
+    {
+      "criterionText": "Then the Findings section should not show the configured clean findings label",
+      "status": "PASS",
+      "llmObservationSummary": "The report was rendered with one or more findings present. The system correctly suppressed the 'clean findings' label and did not display a 'STERILE DOMAIN BODY' verdict. The expected finding code 'clean-label-with-findings' was observed.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "No further follow-ups are immediately recommended for this specific scenario, as the feature behaved as expected. Consider testing edge cases with varying numbers and types of findings."
+    },
+    {
+      "criterionText": "And the verdict should not be `STERILE DOMAIN BODY`",
+      "status": "PASS",
+      "llmObservationSummary": "The report was rendered with one or more findings present. The system correctly suppressed the 'clean findings' label and did not display a 'STERILE DOMAIN BODY' verdict. The expected finding code 'clean-label-with-findings' was observed.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "No further follow-ups are immediately recommended for this specific scenario, as the feature behaved as expected. Consider testing edge cases with varying numbers and types of findings."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "PASS",
+      "llmObservationSummary": "The report was rendered with one or more findings present. The system correctly suppressed the 'clean findings' label and did not display a 'STERILE DOMAIN BODY' verdict. The expected finding code 'clean-label-with-findings' was observed.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "No further follow-ups are immediately recommended for this specific scenario, as the feature behaved as expected. Consider testing edge cases with varying numbers and types of findings."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:42:05.963Z"
+}

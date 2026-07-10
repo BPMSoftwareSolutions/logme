@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "block-stale-quality-board-promotion-in-ci",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-external-surface-not-testable-locally"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:07:42.133Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.973Z",
+  "rawLlmBlockerCodes": [
+    "insufficient-evidence-report-content-missing"
+  ]
+}

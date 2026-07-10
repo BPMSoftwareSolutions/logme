@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "execute-real-end-user-qa-from-the-user-perspective",
+  "seedDataId": "end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T00:55:59.752Z"
+}

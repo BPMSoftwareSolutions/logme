@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "gherkin-driven-report-development--require-gherkin-before-report-feature-implementation--live-gemini",
+  "featureId": "gherkin-driven-report-development",
+  "scenarioId": "require-gherkin-before-report-feature-implementation",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 502,
+    "candidatesTokenCount": 577,
+    "totalTokenCount": 2198,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 502
+      }
+    ],
+    "thoughtsTokenCount": 1119,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "2eb32b4ae36d63a4b2bb199a81c1bea853b3b778ddc09fa40bfc9213603fc109",
+  "responseSha256": "c8df458c420fc796109c561ab63f3aa614eb934c82cdb6107eccd22c48beb511",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/gherkin-driven-report-development/require-gherkin-before-report-feature-implementation.response.v1.json",
+  "calledAt": "2026-07-10T01:12:55.279Z"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "require-ownership-evidence-for-domain-bound-methods",
+  "criteria": [
+    {
+      "criterionText": "Then the method should show one of:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin outlines the expected ownership proof options for domain-bound methods. However, without `report.md` or a live-call receipt, there is no evidence to confirm that methods actually display one of these proofs.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Supply `report.md` and the live-call receipt to demonstrate that domain-bound methods correctly show an ownership proof."
+    },
+    {
+      "criterionText": "And `domainBoundMethods` should count only methods with ownership proof.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies that `domainBoundMethods` should only count methods with ownership proof. This cannot be verified without access to the `report.md` or live-call receipt, which would show the actual count and composition of `domainBoundMethods`.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide `report.md` and the live-call receipt to allow verification of the `domainBoundMethods` count and ensure it aligns with the ownership proof requirement."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:55:30.449Z"
+}

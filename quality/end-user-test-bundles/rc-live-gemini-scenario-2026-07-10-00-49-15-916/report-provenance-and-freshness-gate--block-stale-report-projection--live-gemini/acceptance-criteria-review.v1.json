@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-provenance-and-freshness-gate--block-stale-report-projection--live-gemini",
+  "featureId": "report-provenance-and-freshness-gate",
+  "scenarioId": "block-stale-report-projection",
+  "criteria": [
+    {
+      "criterionText": "And the current source inventory hash differs from the hash rendered in report.md",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the Gherkin scenario or access a live environment to verify the report's state, source inventory hash, or the output of the report truth gate. Therefore, I cannot provide CLI evidence for this test.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "To verify this scenario, a human tester or an automated testing framework with access to the file system and CLI execution capabilities must: 1. Create a 'report.md' file. 2. Ensure the current source inventory hash differs from the one rendered in 'report.md'. 3. Run the report truth gate. 4. Verify the output for a 'BLOCKED' verdict, the specified finding codes, and the absence of clean/sterile claims. Provide CLI evidence of these steps and their outputs."
+    },
+    {
+      "criterionText": "Then the report verdict should be BLOCKED",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the Gherkin scenario or access a live environment to verify the report's state, source inventory hash, or the output of the report truth gate. Therefore, I cannot provide CLI evidence for this test.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "To verify this scenario, a human tester or an automated testing framework with access to the file system and CLI execution capabilities must: 1. Create a 'report.md' file. 2. Ensure the current source inventory hash differs from the one rendered in 'report.md'. 3. Run the report truth gate. 4. Verify the output for a 'BLOCKED' verdict, the specified finding codes, and the absence of clean/sterile claims. Provide CLI evidence of these steps and their outputs."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the Gherkin scenario or access a live environment to verify the report's state, source inventory hash, or the output of the report truth gate. Therefore, I cannot provide CLI evidence for this test.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "To verify this scenario, a human tester or an automated testing framework with access to the file system and CLI execution capabilities must: 1. Create a 'report.md' file. 2. Ensure the current source inventory hash differs from the one rendered in 'report.md'. 3. Run the report truth gate. 4. Verify the output for a 'BLOCKED' verdict, the specified finding codes, and the absence of clean/sterile claims. Provide CLI evidence of these steps and their outputs."
+    },
+    {
+      "criterionText": "And the report should not claim a clean or sterile state.",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the Gherkin scenario or access a live environment to verify the report's state, source inventory hash, or the output of the report truth gate. Therefore, I cannot provide CLI evidence for this test.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "To verify this scenario, a human tester or an automated testing framework with access to the file system and CLI execution capabilities must: 1. Create a 'report.md' file. 2. Ensure the current source inventory hash differs from the one rendered in 'report.md'. 3. Run the report truth gate. 4. Verify the output for a 'BLOCKED' verdict, the specified finding codes, and the absence of clean/sterile claims. Provide CLI evidence of these steps and their outputs."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:39:46.941Z"
+}

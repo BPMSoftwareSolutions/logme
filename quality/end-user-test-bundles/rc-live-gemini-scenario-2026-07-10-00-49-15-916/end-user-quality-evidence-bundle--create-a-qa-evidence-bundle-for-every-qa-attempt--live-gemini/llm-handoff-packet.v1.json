@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "create-a-qa-evidence-bundle-for-every-qa-attempt",
+  "scenarioName": "Create a QA evidence bundle for every QA attempt",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Create a QA evidence bundle for every QA attempt\n    Given an end-user QA test has run\n    And the release candidate id is `<release-candidate-id>`\n    And the QA run id is `<qa-run-id>`\n    When the QA evidence collector closes the run\n    Then it should write a source-controlled QA bundle under:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/\n      \"\"\"\n    And the bundle should be written for both passing and failing QA attempts\n    And the bundle should contain:\n      | artifact |\n      | qa-evidence-bundle.manifest.v1.json |\n      | qa-evidence-bundle.report.md |\n      | qa-gate-decision.v1.json |\n      | qa-execution-timeline.table.md |\n      | machine-environment.v1.json |\n      | end-user-test-session.md |\n      | llm-user-experience.report.md |\n      | acceptance-criteria-review.report.md |\n      | feature-proof-links.v1.json |\n      | report-artifact-index.v1.json |\n      | blocker-worklist.md |\n      | screenshots.index.md |\n      | html-preview.index.md |\n    And every artifact should include the same release candidate id and QA run id.\n",
+    "acceptanceCriteria": [
+      "And the release candidate id is `<release-candidate-id>`",
+      "And the QA run id is `<qa-run-id>`",
+      "Then it should write a source-controlled QA bundle under:",
+      "And the bundle should be written for both passing and failing QA attempts",
+      "And the bundle should contain:",
+      "And every artifact should include the same release candidate id and QA run id."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:56:09.650Z"
+}

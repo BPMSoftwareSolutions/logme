@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--produce-an-llm-handoff-artifact-from-deterministic-facts--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "produce-an-llm-handoff-artifact-from-deterministic-facts",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 545,
+    "candidatesTokenCount": 552,
+    "totalTokenCount": 2301,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 545
+      }
+    ],
+    "thoughtsTokenCount": 1204,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "75dee33a65c82eb00b5b8d83b58fdfe2d7ef5e806ea29bac5efe5b3b9af01814",
+  "responseSha256": "be8ff8adcefefe6bd88a9855705c2b2ab6fdd6bf806ee9ed02c328dce6bb7037",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-domain-body-analysis-and-tie-out/produce-an-llm-handoff-artifact-from-deterministic-facts.response.v1.json",
+  "calledAt": "2026-07-10T01:13:51.434Z"
+}

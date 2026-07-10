@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--inventory-file-responsibility-signals--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "inventory-file-responsibility-signals",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 625,
+    "candidatesTokenCount": 635,
+    "totalTokenCount": 1879,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 625
+      }
+    ],
+    "thoughtsTokenCount": 619,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "bf9dbce277c75b4fd7677cc2c598be5b9254f260e14f4f3e46b532a0e099b8fb",
+  "responseSha256": "edb48f0665a217edbfa0d4cc772648df07bc40413f0a94c5f788bbd9aef59995",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/inventory-file-responsibility-signals.response.v1.json",
+  "calledAt": "2026-07-10T00:52:55.636Z"
+}

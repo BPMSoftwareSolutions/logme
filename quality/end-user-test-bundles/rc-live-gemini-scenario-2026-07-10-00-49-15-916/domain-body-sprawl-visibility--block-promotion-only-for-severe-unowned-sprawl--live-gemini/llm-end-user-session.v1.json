@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--block-promotion-only-for-severe-unowned-sprawl--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "block-promotion-only-for-severe-unowned-sprawl",
+  "scenarioName": "Block promotion only for severe unowned sprawl",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block promotion only for severe unowned sprawl",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-body-sprawl-visibility.feature.md:204-216; report.md; live Gemini prompt",
+      "expectedResult": "The system should correctly block promotion based on the specified conditions (e.g., generic mechanics, mixed responsibilities, generated artifacts, undeclared source files) but not solely on watchlist files. Blocking findings should appear before dense method tables, and the product owner should clearly see if an issue is a product-boundary or package-extraction problem.",
+      "observedResult": "No system output or report was provided to observe the actual behavior or presentation of findings. Consequently, no results could be observed against the expected outcomes.",
+      "timestamp": "2026-07-10T00:54:27.558Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--block-promotion-only-for-severe-unowned-sprawl--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-body-sprawl-visibility.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--block-promotion-only-for-severe-unowned-sprawl--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "domain-ownership-boundary-proof",
+  "featureName": "Domain ownership boundary proof",
+  "sourceFeaturePath": "docs/features/domain-ownership-boundary-proof.feature.md",
+  "sourceFeatureContentHash": "66e8503f13c2f816398b0a642ef808616016498486da01e3f0078df43e8bf6ab",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "48a0400b699b68ce2e9b4291af8880abeba552e5daad03c9deb1719a78485040"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Domain ownership boundary proof is currently qa-blocked."
+}

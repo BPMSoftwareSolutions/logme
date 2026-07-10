@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "tie-json-proof-to-raw-telemetry-and-receipts",
+  "seedDataId": "feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T00:59:01.726Z"
+}

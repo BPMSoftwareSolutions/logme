@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "pi-readiness-gate-for-report-truth--block-pi-readiness-when-report-truth-is-incomplete--live-gemini",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "block-pi-readiness-when-report-truth-is-incomplete",
+  "criteria": [
+    {
+      "criterionText": "And one or more report truth features lack schema, tests, telemetry, receipts, or Gherkin traceability",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a precondition. Verification requires inspecting the state of report truth features, which is not possible with only the Gherkin.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_PRECONDITION",
+      "recommendedFixRoute": "Provide system state or a detailed log/report confirming this precondition was met during execution."
+    },
+    {
+      "criterionText": "Then the PI verdict should be BLOCKED",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the PI verdict requires the actual output of the PI readiness gate, typically found in `report.md` or a CLI output, which was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_OUTCOME",
+      "recommendedFixRoute": "Supply the `report.md` file or relevant CLI output showing the PI verdict."
+    },
+    {
+      "criterionText": "And the control report should show the top blocker for each report feature.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of the control report's content requires the `report.md` file, which was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_CONTENT",
+      "recommendedFixRoute": "Supply the `report.md` file to verify the content of the control report."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:21:44.190Z"
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-mixed-responsibility-clusters-in-one-file",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 597,
+    "candidatesTokenCount": 693,
+    "totalTokenCount": 2270,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 597
+      }
+    ],
+    "thoughtsTokenCount": 980,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "Crucial evidence surfaces, specifically the `report.md` and Gemini live-call receipt, were not provided in the prompt. This absence prevents any evaluation of the acceptance criteria for the 'Detect mixed responsibility clusters in one file' scenario.",
+    "expectedResult": "The system should generate a report detailing detected clusters, their derivation signals, specific findings for mixed-responsibility files, and appropriate fix route suggestions, as described in the Gherkin scenario.",
+    "observedResult": "No report or live-call receipt evidence was provided to observe the system's output against the acceptance criteria.",
+    "confusingOrRiskyExperiencePoints": "The inability to review the generated report or live-call receipt means an end-user cannot verify the feature's functionality or the quality of its output, leading to a lack of confidence in the system's behavior.",
+    "accessibilityOrReadabilityObservations": "N/A - no report content was provided to assess for accessibility or readability.",
+    "recommendedFollowUps": "Provide the `report.md` and Gemini live-call receipt for review to enable testing of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the report should show each detected cluster",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify if each detected cluster is shown in the report.",
+        "blockerCode": "missing_report_evidence",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "And clusters should be derived from:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify the derivation signals for clusters.",
+        "blockerCode": "missing_report_evidence",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "And files with unrelated clusters should be reported with:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify how files with unrelated clusters are reported.",
+        "blockerCode": "missing_report_evidence",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+      },
+      {
+        "criterionText": "And the fix route should suggest the next durable boundary, not a mechanical split.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify the nature of the suggested fix route.",
+        "blockerCode": "missing_report_evidence",
+        "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+      }
+    ]
+  }
+}

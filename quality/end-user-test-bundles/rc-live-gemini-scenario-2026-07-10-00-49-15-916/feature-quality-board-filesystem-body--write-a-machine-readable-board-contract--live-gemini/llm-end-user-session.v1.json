@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "write-a-machine-readable-board-contract",
+  "scenarioName": "Write a machine-readable board contract",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Write a machine-readable board contract",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-quality-board-filesystem-body.feature.md:81-106; report.md; live Gemini prompt",
+      "expectedResult": "A machine-readable JSON board contract (`docs/features/_FEATURE-QUALITY-BOARD.v1.json`) should be generated containing specified fields and repo-relative paths within board rows. A Markdown board should also be generated, with its counts accurately derived from the JSON board.",
+      "observedResult": "No generated JSON or Markdown board content was available for review. The `report.md` and Gemini live-call receipt were referenced but not supplied, preventing any verification of the scenario's output.",
+      "timestamp": "2026-07-10T01:05:55.128Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-quality-board-filesystem-body.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

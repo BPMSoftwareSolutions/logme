@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini",
+  "featureId": "gherkin-driven-report-development",
+  "scenarioId": "trace-report-sections-to-scenarios",
+  "scenarioName": "Trace report sections to scenarios",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Trace report sections to scenarios",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/gherkin-driven-report-development.feature.md:15-24; report.md; live Gemini prompt",
+      "expectedResult": "Report sections should display their owning feature/scenario IDs, unowned sections should be BLOCKED, and the finding code 'report-section-without-acceptance-source' should be present for unowned sections.",
+      "observedResult": "No `report.md` or Gemini live-call receipt was provided, so no observations could be made regarding the rendering of report sections or their associated IDs/statuses/finding codes.",
+      "timestamp": "2026-07-10T01:13:03.384Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/gherkin-driven-report-development.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

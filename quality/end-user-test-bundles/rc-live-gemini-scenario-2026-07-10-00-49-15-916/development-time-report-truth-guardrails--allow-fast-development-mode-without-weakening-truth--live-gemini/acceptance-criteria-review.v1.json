@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--allow-fast-development-mode-without-weakening-truth--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "allow-fast-development-mode-without-weakening-truth",
+  "criteria": [
+    {
+      "criterionText": "Then it may skip long-running receipt artifact publication",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification that the fast command skips long-running receipt artifact publication requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "But it should still fail on:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification that the fast command skips long-running receipt artifact publication requires review of the generated report.md and Gemini live-call receipt, which were not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide report.md and Gemini live-call receipt for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:52:55.626Z"
+}

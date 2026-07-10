@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--inventory-every-feature-scenario-and-proof-state--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "inventory-every-feature-scenario-and-proof-state",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 630,
+    "candidatesTokenCount": 864,
+    "totalTokenCount": 2924,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 630
+      }
+    ],
+    "thoughtsTokenCount": 1430,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "7aea763c9e5499d50aadd6e6071b7c5799ea5f3b20fa5d2895a5afb3d44ff89f",
+  "responseSha256": "5b461c979fb083f3fa251f62786891f08d34f6f24033b674b24a758edf8ce182",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/inventory-every-feature-scenario-and-proof-state.response.v1.json",
+  "calledAt": "2026-07-10T00:58:03.922Z"
+}

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--detect-artifact-sprawl-across-directories--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-artifact-sprawl-across-directories",
+  "scenarioName": "Detect artifact sprawl across directories",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Detect artifact sprawl across directories\n    Given feature code, contracts, tests, reports, receipts, or templates are introduced\n    When the sprawl inventory runs\n    Then it should verify that related artifacts follow the declared file-system body contract\n    And it should report:\n      | finding |\n      | orphan-source-file |\n      | orphan-test-file |\n      | orphan-contract-file |\n      | scattered-feature-artifact |\n      | undeclared-generated-artifact |\n    And each finding should include the expected home or declared owner.\n",
+    "acceptanceCriteria": [
+      "Then it should verify that related artifacts follow the declared file-system body contract",
+      "And it should report:",
+      "And each finding should include the expected home or declared owner."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:54:07.467Z"
+}

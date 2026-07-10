@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--require-branch-assertions-in-report-tests--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "require-branch-assertions-in-report-tests",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 659,
+    "candidatesTokenCount": 653,
+    "totalTokenCount": 2900,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 659
+      }
+    ],
+    "thoughtsTokenCount": 1588,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "6cfe91f9a31af753117338286a4c09dece3999eb6492dc12ad750e43930d319f",
+  "responseSha256": "94780cdbb81bdb09d295bd4ac6ca980b15b17a50787023810bfde9c3cc722986",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/require-branch-assertions-in-report-tests.response.v1.json",
+  "calledAt": "2026-07-10T01:09:51.733Z"
+}

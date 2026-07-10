@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-compact-method-timeline-table--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-compact-method-timeline-table",
+  "criteria": [
+    {
+      "criterionText": "Then it should write a Markdown method timeline table at:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Evidence (report.md or CLI output) detailing the creation and content of the method timeline table was not provided, preventing verification.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_OR_CLI",
+      "recommendedFixRoute": "Provide `report.md` or CLI output showing the generated `method-execution-timeline.table.md` file."
+    },
+    {
+      "criterionText": "And every row should be generated from `feature-execution.contract.v1.json`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Evidence (report.md or CLI output) detailing the creation and content of the method timeline table was not provided, preventing verification.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_OR_CLI",
+      "recommendedFixRoute": "Provide `report.md` or CLI output showing the generated `method-execution-timeline.table.md` file."
+    },
+    {
+      "criterionText": "And each row should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Evidence (report.md or CLI output) detailing the creation and content of the method timeline table was not provided, preventing verification.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_OR_CLI",
+      "recommendedFixRoute": "Provide `report.md` or CLI output showing the generated `method-execution-timeline.table.md` file."
+    },
+    {
+      "criterionText": "And the table should be safe to paste into architecture review notes, PI planning notes, dashboards, decks, or publications.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Evidence (report.md or CLI output) detailing the creation and content of the method timeline table was not provided, preventing verification.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_OR_CLI",
+      "recommendedFixRoute": "Provide `report.md` or CLI output showing the generated `method-execution-timeline.table.md` file."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:19:03.940Z"
+}

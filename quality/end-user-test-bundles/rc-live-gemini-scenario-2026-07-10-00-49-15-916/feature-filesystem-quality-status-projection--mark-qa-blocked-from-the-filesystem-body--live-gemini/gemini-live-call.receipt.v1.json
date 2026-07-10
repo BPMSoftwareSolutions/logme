@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-blocked-from-the-filesystem-body",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 582,
+    "candidatesTokenCount": 913,
+    "totalTokenCount": 3356,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 582
+      }
+    ],
+    "thoughtsTokenCount": 1861,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "5ba449562a0c31e19cfe7371d95ea471fdabf8589cb8628466c29f908a792993",
+  "responseSha256": "261b20def82db3b32b6fc3ddb29a25965a5453eb7c09490be603a8ee4f618829",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-qa-blocked-from-the-filesystem-body.response.v1.json",
+  "calledAt": "2026-07-10T01:04:05.859Z"
+}

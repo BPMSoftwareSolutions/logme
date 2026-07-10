@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "llm-qa-assignment.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "pi-readiness-gate-for-report-truth--block-pi-readiness-without-end-user-qa-proof--live-gemini",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "block-pi-readiness-without-end-user-qa-proof",
+  "scenarioName": "Block PI readiness without end-user QA proof",
+  "acceptanceSourcePath": "docs/features/pi-readiness-gate.feature.md",
+  "acceptanceSourceLineRange": {
+    "start": 32,
+    "end": 42
+  },
+  "requestedEndUserPersona": "live Gemini adversarial product owner",
+  "allowedTestSurfaces": [
+    "Markdown report review",
+    "CLI evidence review"
+  ],
+  "allowedSeedDataPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/pi-readiness-gate-for-report-truth--block-pi-readiness-without-end-user-qa-proof--live-gemini/seed-data"
+  ],
+  "allowedEvidencePaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/pi-readiness-gate-for-report-truth--block-pi-readiness-without-end-user-qa-proof--live-gemini"
+  ],
+  "forbiddenMutationPaths": [
+    "src/",
+    "packages/",
+    "contracts/",
+    "docs/features/"
+  ],
+  "requiredHumanReportArtifacts": [
+    "executable-body-contract.report.md",
+    "feature-execution.contract.v1.json",
+    "method-execution-timeline.table.md",
+    "method-call-evidence.report.md"
+  ],
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "allowsFixtureSeedData": false,
+  "assembledAt": "2026-07-10T01:22:07.066Z"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--block-commit-when-report-truth-gate-fails--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "block-commit-when-report-truth-gate-fails",
+  "scenarioName": "Block commit when report truth gate fails",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block commit when report truth gate fails",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/development-time-report-truth-guardrails.feature.md:44-51; report.md; live Gemini prompt",
+      "expectedResult": "Given that the `report-truth` command exits nonzero, a pre-commit/pre-push hook should block the commit/push action, and the message displayed to the developer should identify the `report-truth` command to run and include the first actionable finding path.",
+      "observedResult": "The `report.md` was generated after the local test suite passed, implying `report-truth` exited successfully (zero). Therefore, the scenario's precondition for blocking was not met, and no blocking action or associated message was observed under the specified conditions.",
+      "timestamp": "2026-07-10T00:52:28.885Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--block-commit-when-report-truth-gate-fails--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/development-time-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--block-commit-when-report-truth-gate-fails--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

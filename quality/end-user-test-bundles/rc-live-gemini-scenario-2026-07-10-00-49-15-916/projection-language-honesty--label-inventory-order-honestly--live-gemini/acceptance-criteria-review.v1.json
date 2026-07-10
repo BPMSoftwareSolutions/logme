@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--label-inventory-order-honestly--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "label-inventory-order-honestly",
+  "criteria": [
+    {
+      "criterionText": "And no runtime telemetry event is tied to the method row",
+      "status": "NOT_TESTABLE",
+      "llmObservationSummary": "This precondition requires evidence from CLI output or a report confirming the absence of runtime telemetry events tied to method rows. Such evidence was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide CLI output or report sections that explicitly show the absence of runtime telemetry events tied to method rows, or confirm this state through other verifiable means."
+    },
+    {
+      "criterionText": "Then the column should be labeled `Inventory Step`",
+      "status": "BLOCKED",
+      "llmObservationSummary": "Verification of the column label requires access to the rendered method table in `report.md` or CLI output. This evidence was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide a screenshot or text representation of the rendered method table from `report.md` or CLI output, clearly showing the column headers for verification."
+    },
+    {
+      "criterionText": "And the report should not call it `Execution Step`.",
+      "status": "BLOCKED",
+      "llmObservationSummary": "Verification of the terminology used in the report requires access to the relevant sections of `report.md` or CLI output. This evidence was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the relevant section of `report.md` or CLI output that describes the method steps, allowing verification that the term 'Execution Step' is not used."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:23:16.703Z"
+}

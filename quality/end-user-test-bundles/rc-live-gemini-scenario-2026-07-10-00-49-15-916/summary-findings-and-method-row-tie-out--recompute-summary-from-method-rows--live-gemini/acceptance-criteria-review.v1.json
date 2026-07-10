@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--recompute-summary-from-method-rows--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "recompute-summary-from-method-rows",
+  "criteria": [
+    {
+      "criterionText": "Then `localExecutableMethods` should equal the number of method rows",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the feature or access `report.md` or CLI evidence to verify the recomputation of summary metrics from method rows. Therefore, I cannot provide an observed result based on actual execution.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "A human tester or an automated testing framework should execute the scenario 'Recompute summary from method rows' against the live Gemini system. Evidence from `report.md` and CLI output should be collected to verify that the summary metrics are correctly recomputed and tie out with the method rows as specified in the criteria."
+    },
+    {
+      "criterionText": "And `methodsWithLogMeCall` should equal rows where LogMe is `yes`",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the feature or access `report.md` or CLI evidence to verify the recomputation of summary metrics from method rows. Therefore, I cannot provide an observed result based on actual execution.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "A human tester or an automated testing framework should execute the scenario 'Recompute summary from method rows' against the live Gemini system. Evidence from `report.md` and CLI output should be collected to verify that the summary metrics are correctly recomputed and tie out with the method rows as specified in the criteria."
+    },
+    {
+      "criterionText": "And `silentLocalMethods` should equal rows where LogMe is `no`",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the feature or access `report.md` or CLI evidence to verify the recomputation of summary metrics from method rows. Therefore, I cannot provide an observed result based on actual execution.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "A human tester or an automated testing framework should execute the scenario 'Recompute summary from method rows' against the live Gemini system. Evidence from `report.md` and CLI output should be collected to verify that the summary metrics are correctly recomputed and tie out with the method rows as specified in the criteria."
+    },
+    {
+      "criterionText": "And `methodsWithLogMeCall + silentLocalMethods` should equal `localExecutableMethods`",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the feature or access `report.md` or CLI evidence to verify the recomputation of summary metrics from method rows. Therefore, I cannot provide an observed result based on actual execution.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "A human tester or an automated testing framework should execute the scenario 'Recompute summary from method rows' against the live Gemini system. Evidence from `report.md` and CLI output should be collected to verify that the summary metrics are correctly recomputed and tie out with the method rows as specified in the criteria."
+    },
+    {
+      "criterionText": "And `coverage` should equal `methodsWithLogMeCall / localExecutableMethods`",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I cannot directly execute the feature or access `report.md` or CLI evidence to verify the recomputation of summary metrics from method rows. Therefore, I cannot provide an observed result based on actual execution.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "A human tester or an automated testing framework should execute the scenario 'Recompute summary from method rows' against the live Gemini system. Evidence from `report.md` and CLI output should be collected to verify that the summary metrics are correctly recomputed and tie out with the method rows as specified in the criteria."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:41:11.864Z"
+}

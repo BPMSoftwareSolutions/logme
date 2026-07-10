@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--block-unsafe-or-out-of-bounds-llm-testing--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "block-unsafe-or-out-of-bounds-llm-testing",
+  "criteria": [
+    {
+      "criterionText": "Then the run should be blocked if the LLM attempts to:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies a list of forbidden actions that should trigger a block. However, no execution evidence (e.g., report.md or live-call receipt) was provided to confirm that the system actually blocks runs for these actions.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_EVIDENCE",
+      "recommendedFixRoute": "Supply the 'report.md' and Gemini live-call receipt for this scenario to demonstrate the blocking behavior."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies that the finding code should be 'llm-end-user-testing-guardrail-violation'. Without execution evidence, it's impossible to verify if blocked runs correctly produce this finding code.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_EVIDENCE",
+      "recommendedFixRoute": "Supply the 'report.md' and Gemini live-call receipt for this scenario, showing the finding code for a blocked run."
+    },
+    {
+      "criterionText": "And the blocked run should still produce a QA bundle with the blocker evidence.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states that a blocked run should still produce a QA bundle with blocker evidence. Without access to an actual QA bundle from a blocked run, this criterion cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_EVIDENCE",
+      "recommendedFixRoute": "Supply the 'report.md' and Gemini live-call receipt, and ideally, access to a sample QA bundle from a blocked run, to verify this criterion."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:17:01.358Z"
+}

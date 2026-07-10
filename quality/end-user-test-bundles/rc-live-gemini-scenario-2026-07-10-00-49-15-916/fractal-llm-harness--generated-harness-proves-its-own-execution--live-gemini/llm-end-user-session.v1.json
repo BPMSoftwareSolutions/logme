@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "generated-harness-proves-its-own-execution",
+  "scenarioName": "Generated harness proves its own execution",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Generated harness proves its own execution",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/fractal-llm-harness.feature.md:20-27; report.md; live Gemini prompt",
+      "expectedResult": "The report.md and Gemini live-call receipt should contain explicit evidence confirming that every declared executable node testified, telemetry matched the execution order, every receipt-writing node wrote proof, and a self-conformance report was produced.",
+      "observedResult": "The content of report.md and the Gemini live-call receipt were not available for review, preventing any verification of the scenario's expected outcomes.",
+      "timestamp": "2026-07-10T01:12:23.795Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/fractal-llm-harness.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

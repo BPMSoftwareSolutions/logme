@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "write-canonical-json-execution-proof-for-a-scenario",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 762,
+    "candidatesTokenCount": 956,
+    "totalTokenCount": 3704,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 762
+      }
+    ],
+    "thoughtsTokenCount": 1986,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence (scenario Gherkin) is insufficient to verify any of the acceptance criteria. All criteria require inspection of generated artifacts such as the canonical JSON proof or the 'report.md', which were not supplied.",
+    "expectedResult": "The system should write a canonical JSON execution proof at the specified path, containing all listed fields, and all report fields should be derived from this proof or marked 'not observed'.",
+    "observedResult": "Cannot observe the actual outcome as the necessary generated artifacts (JSON proof, report.md) were not provided as evidence.",
+    "confusingOrRiskyExperiencePoints": "The lack of generated artifacts makes it impossible to confirm the feature's implementation from an end-user perspective. This creates a risk that the feature might not be working as expected, even if the Gherkin describes it correctly.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear and readable, but without the actual output, its effectiveness as a specification cannot be fully assessed.",
+    "recommendedFollowUps": "Provide the generated 'report.md' and the canonical JSON execution proof for the scenario to enable proper verification of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And the run id is `<run-id>`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires inspecting the generated JSON proof to confirm the 'run id' field matches the expected value. The JSON proof was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_ARTIFACTS",
+        "recommendedFixRoute": "Provide the generated JSON proof for review."
+      },
+      {
+        "criterionText": "And the feature id is `<feature-id>`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires inspecting the generated JSON proof to confirm the 'feature id' field matches the expected value. The JSON proof was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_ARTIFACTS",
+        "recommendedFixRoute": "Provide the generated JSON proof for review."
+      },
+      {
+        "criterionText": "And the scenario id is `<scenario-id>`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires inspecting the generated JSON proof to confirm the 'scenario id' field matches the expected value. The JSON proof was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_ARTIFACTS",
+        "recommendedFixRoute": "Provide the generated JSON proof for review."
+      },
+      {
+        "criterionText": "Then it should write canonical JSON proof at:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires verifying the existence of the JSON proof file at the specified path. This cannot be confirmed without access to the file system or a report confirming its creation. Neither was provided.",
+        "blockerCode": "MISSING_EVIDENCE_ARTIFACTS",
+        "recommendedFixRoute": "Provide the generated JSON proof and/or a report confirming its creation for review."
+      },
+      {
+        "criterionText": "And the JSON proof should contain:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires inspecting the content of the generated JSON proof to ensure all listed fields are present. The JSON proof was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_ARTIFACTS",
+        "recommendedFixRoute": "Provide the generated JSON proof for review."
+      },
+      {
+        "criterionText": "And every report field about execution should be derived from this JSON proof or explicitly marked `not observed`.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires comparing the 'report.md' with the generated JSON proof. Neither the 'report.md' nor the JSON proof was provided.",
+        "blockerCode": "MISSING_EVIDENCE_ARTIFACTS",
+        "recommendedFixRoute": "Provide both the generated JSON proof and the 'report.md' for review."
+      }
+    ]
+  }
+}

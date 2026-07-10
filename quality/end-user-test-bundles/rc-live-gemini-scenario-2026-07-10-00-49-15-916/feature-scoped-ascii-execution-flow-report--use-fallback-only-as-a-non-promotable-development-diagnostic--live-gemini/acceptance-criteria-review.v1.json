@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "use-fallback-only-as-a-non-promotable-development-diagnostic",
+  "criteria": [
+    {
+      "criterionText": "And no executable body contract nodes are available",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a precondition (a 'Given' step) related to the internal state of the system. Its fulfillment cannot be verified by inspecting the Gherkin or the `report.md` output, which reflects the *result* of this condition being met.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT",
+      "recommendedFixRoute": "Provide CLI evidence or a specific section within `report.md` that explicitly confirms the absence of executable body contract nodes."
+    },
+    {
+      "criterionText": "Then the fallback sketch should be labeled:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification requires inspecting the generated `report.md` to confirm the presence and exact text of the 'DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE' label on the fallback sketch. The content of `report.md` was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT",
+      "recommendedFixRoute": "Provide the `report.md` content for review."
+    },
+    {
+      "criterionText": "And the report verdict should not be promoted from the fallback sketch",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification requires inspecting the generated `report.md` to confirm the overall report's verdict and its non-promotable status. The content of `report.md` was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT",
+      "recommendedFixRoute": "Provide the `report.md` content for review."
+    },
+    {
+      "criterionText": "And telemetry, receipt, status, and duration fields should not show successful values unless backed by real evidence.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification requires inspecting the generated `report.md` for the values of telemetry, receipt, status, and duration fields. The content of `report.md` was not provided. The Gemini live-call receipt, though mentioned as available, was also not provided for direct inspection.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_INSUFFICIENT",
+      "recommendedFixRoute": "Provide the `report.md` content and the Gemini live-call receipt (if applicable) for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:10:31.867Z"
+}

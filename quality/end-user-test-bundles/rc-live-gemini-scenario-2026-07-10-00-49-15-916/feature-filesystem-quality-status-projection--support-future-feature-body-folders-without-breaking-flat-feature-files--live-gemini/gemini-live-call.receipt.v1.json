@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--support-future-feature-body-folders-without-breaking-flat-feature-files--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "support-future-feature-body-folders-without-breaking-flat-feature-files",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 649,
+    "candidatesTokenCount": 849,
+    "totalTokenCount": 3598,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 649
+      }
+    ],
+    "thoughtsTokenCount": 2100,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "8460aaccb5bd50b5fb8736d812e4e8285d5cf0dbb7998bb67a9daadb2027f282",
+  "responseSha256": "e66ec3246c29c420d6ce8af339a340e0fa94bfda34260550e3ea409f372353c1",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/support-future-feature-body-folders-without-breaking-flat-feature-files.response.v1.json",
+  "calledAt": "2026-07-10T01:04:53.754Z"
+}

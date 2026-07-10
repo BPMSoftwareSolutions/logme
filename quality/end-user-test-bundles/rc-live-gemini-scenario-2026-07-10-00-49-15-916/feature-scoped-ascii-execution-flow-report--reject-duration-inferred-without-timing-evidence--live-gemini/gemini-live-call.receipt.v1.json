@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-duration-inferred-without-timing-evidence--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-duration-inferred-without-timing-evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 533,
+    "candidatesTokenCount": 645,
+    "totalTokenCount": 1830,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 533
+      }
+    ],
+    "thoughtsTokenCount": 652,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "fc88158caf27c4fad2d212e3b5f5d5ea7db3d51df79fe15110e7eeda5a4d1ac5",
+  "responseSha256": "a101db5c2434d1398a682e0ac3bdedf23665f06bf79257dc38cdf984d51d223f",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-duration-inferred-without-timing-evidence.response.v1.json",
+  "calledAt": "2026-07-10T01:11:02.534Z"
+}

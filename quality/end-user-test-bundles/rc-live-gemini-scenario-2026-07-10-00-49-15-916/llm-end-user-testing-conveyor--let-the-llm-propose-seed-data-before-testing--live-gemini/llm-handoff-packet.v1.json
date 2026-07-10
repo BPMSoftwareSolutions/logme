@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--let-the-llm-propose-seed-data-before-testing--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "let-the-llm-propose-seed-data-before-testing",
+  "scenarioName": "Let the LLM propose seed data before testing",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Let the LLM propose seed data before testing\n    Given the LLM has received a handoff packet\n    When the LLM prepares to test the feature\n    Then it may propose seed data required to exercise the scenario\n    And the seed data proposal should include:\n      | field |\n      | seed data id |\n      | purpose |\n      | scenario coverage |\n      | records to create |\n      | files to create |\n      | expected user-visible state |\n      | cleanup instructions |\n      | allowed paths |\n      | privacy classification |\n      | synthetic data declaration |\n    And seed data should be synthetic unless the assignment explicitly allows fixture data\n    And the proposal should be written to:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/llm-seed-data-proposal.v1.json\n      \"\"\"\n    And the LLM should not directly mutate production data or unapproved repository paths.\n",
+    "acceptanceCriteria": [
+      "Then it may propose seed data required to exercise the scenario",
+      "And the seed data proposal should include:",
+      "And seed data should be synthetic unless the assignment explicitly allows fixture data",
+      "And the proposal should be written to:",
+      "And the LLM should not directly mutate production data or unapproved repository paths."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:14:36.604Z"
+}

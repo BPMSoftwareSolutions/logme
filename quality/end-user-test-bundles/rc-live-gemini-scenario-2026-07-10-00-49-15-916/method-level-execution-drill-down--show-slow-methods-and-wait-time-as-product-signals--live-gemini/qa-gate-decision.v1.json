@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--show-slow-methods-and-wait-time-as-product-signals--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "show-slow-methods-and-wait-time-as-product-signals",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 2,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing",
+    "qa-cleanup-assigned-surface-insufficient"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:19:35.621Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.041Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_REPORT_EVIDENCE",
+    "NOT_VERIFIABLE_FROM_END_USER_SURFACE"
+  ]
+}

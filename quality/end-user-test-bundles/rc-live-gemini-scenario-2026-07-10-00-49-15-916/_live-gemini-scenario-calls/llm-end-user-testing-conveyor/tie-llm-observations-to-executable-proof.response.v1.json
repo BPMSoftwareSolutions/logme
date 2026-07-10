@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "tie-llm-observations-to-executable-proof",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 624,
+    "candidatesTokenCount": 910,
+    "totalTokenCount": 4473,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 624
+      }
+    ],
+    "thoughtsTokenCount": 2939,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario describes the expected behavior for tying LLM observations to executable proof and handling unproven observations. However, the primary evidence surface, `report.md`, which is stated to be generated after the local test suite passed, was not provided for review. Without access to the generated report, it is impossible to verify if LLM observations are correctly tied to evidence sources, if unproven observations are marked, or if they impact the quality gate as specified.",
+    "expectedResult": "1. Feature execution proof exists for the scenario. 2. Each LLM observation is tied to one or more specified evidence sources within the generated report. 3. Any LLM observation without evidence is explicitly marked as `unproven observation` in the report. 4. Unproven observations are not used to pass the quality gate.",
+    "observedResult": "The `report.md` was not provided as an accessible end-user surface for review. Therefore, it is not possible to observe the actual results of the scenario's execution or verify the claims made in the acceptance criteria.",
+    "confusingOrRiskyExperiencePoints": "The primary evidence surface (`report.md`) was mentioned as generated but not supplied for direct review, making verification of the core functionality impossible from the assigned surfaces. This creates a critical gap in the testing process.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is clear and readable. However, the lack of the `report.md` content makes the overall testing task inaccessible.",
+    "recommendedFollowUps": "Provide the actual content of the `report.md` for review to enable verification of the scenario's implementation. Without it, the testing of this scenario is blocked.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And feature execution proof exists for the same scenario",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The prompt states `report.md` was generated after the local test suite passed, which implies proof exists. However, the `report.md` content itself was not provided for direct review, so this cannot be confirmed from an end-user surface.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE_CONTENT",
+        "recommendedFixRoute": "Provide the content of `report.md` for review."
+      },
+      {
+        "criterionText": "Then each LLM observation should tie to one or more evidence sources:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content, which would demonstrate the linkage of LLM observations to evidence sources, was not provided for review.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE_CONTENT",
+        "recommendedFixRoute": "Provide the content of `report.md` for review, explicitly showing how LLM observations are tied to the listed evidence sources."
+      },
+      {
+        "criterionText": "And an LLM observation without evidence should be marked `unproven observation`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content, which would show how unproven observations are marked, was not provided for review.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE_CONTENT",
+        "recommendedFixRoute": "Provide the content of `report.md` for review, demonstrating the marking of `unproven observation`."
+      },
+      {
+        "criterionText": "And unproven observations should not be used to pass the quality gate.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content or any quality gate report, which would indicate how unproven observations affect the quality gate, was not provided for review.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE_CONTENT",
+        "recommendedFixRoute": "Provide the content of `report.md` or a quality gate report for review, illustrating the impact of unproven observations on the quality gate."
+      }
+    ]
+  }
+}

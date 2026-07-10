@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "block-hand-authored-status-claims",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 553,
+    "candidatesTokenCount": 1122,
+    "totalTokenCount": 4607,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 553
+      }
+    ],
+    "thoughtsTokenCount": 2932,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "054d29c9e64cc3187dd34d1e2a7b3f92c8a52d7e8df241a66fbee4712bab474f",
+  "responseSha256": "c904ad0eb3736d0a2bb7e5c863b9e97e796081e6e8bc10df8c275a99a714fae7",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/block-hand-authored-status-claims.response.v1.json",
+  "calledAt": "2026-07-10T01:05:08.114Z"
+}

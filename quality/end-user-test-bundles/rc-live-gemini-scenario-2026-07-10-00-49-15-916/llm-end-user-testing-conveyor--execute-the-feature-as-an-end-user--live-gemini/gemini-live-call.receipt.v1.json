@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--execute-the-feature-as-an-end-user--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "execute-the-feature-as-an-end-user",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 742,
+    "candidatesTokenCount": 1117,
+    "totalTokenCount": 4153,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 742
+      }
+    ],
+    "thoughtsTokenCount": 2294,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "603501f55a2a6070720f91525a39b07434b48f6f85ed435b4098de436b0b32e2",
+  "responseSha256": "a052c25dfb4845e2a20605a2689fe7e3a267541c1f4b7912b436d716ea0ee07e",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/execute-the-feature-as-an-end-user.response.v1.json",
+  "calledAt": "2026-07-10T01:14:44.933Z"
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--separate-source-location-from-runtime-observation--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "separate-source-location-from-runtime-observation",
+  "criteria": [
+    {
+      "criterionText": "Then the report should show source facts as:",
+      "status": "blocked",
+      "llmObservationSummary": "The feature markdown specifies the expected source facts (declared path, method name, method kind, line start, line end, inventory step). However, no actual report was provided to verify if these facts are displayed as described.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide actual `report.md` or `CLI evidence`."
+    },
+    {
+      "criterionText": "And the report should show runtime facts only from telemetry as:",
+      "status": "blocked",
+      "llmObservationSummary": "The feature markdown specifies the expected runtime facts (observed runtime step, first observed at, last observed at, duration ms, telemetry status) and states they should be from telemetry. No actual report was provided to verify this implementation.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide actual `report.md` or `CLI evidence`."
+    },
+    {
+      "criterionText": "And the report should not derive runtime facts from scan order, file order, or line numbers.",
+      "status": "blocked",
+      "llmObservationSummary": "The feature markdown explicitly states that runtime facts should not be derived from static source information. Without an actual report and insight into its data derivation, it's impossible to verify this negative assertion.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide actual `report.md` or `CLI evidence` and potentially details on data lineage."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:23:34.577Z"
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-shareable-sprawl-hotspot-table",
+  "scenarioName": "Write shareable sprawl hotspot table",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Write shareable sprawl hotspot table\n    Given `domain-body-sprawl.contract.v1.json` exists for a run\n    When sprawl reporting completes\n    Then it may write a Markdown hotspot table at:\n      \"\"\"\n      evidence/runs/<run-id>/sprawl/domain-body-sprawl-hotspots.table.md\n      \"\"\"\n    And every row should be generated from the JSON evidence\n    And each row should include:\n      | field |\n      | rank |\n      | file path |\n      | classification |\n      | line count |\n      | executable method count |\n      | responsibility cluster count |\n      | generic mechanic count |\n      | sterility finding count |\n      | blocker count |\n      | recommended owner action |\n    And the table should be safe to paste into architecture review notes, PI planning notes, dashboards, decks, or publications.\n",
+    "acceptanceCriteria": [
+      "Then it may write a Markdown hotspot table at:",
+      "And every row should be generated from the JSON evidence",
+      "And each row should include:",
+      "And the table should be safe to paste into architecture review notes, PI planning notes, dashboards, decks, or publications."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:53:25.852Z"
+}

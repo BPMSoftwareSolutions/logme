@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "block-stale-quality-board-promotion-in-ci",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 583,
+    "candidatesTokenCount": 884,
+    "totalTokenCount": 2962,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 583
+      }
+    ],
+    "thoughtsTokenCount": 1495,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "04bf0287f2d24437e97c08a38ee3260b15c581c42ef443543ad3807db73f1393",
+  "responseSha256": "f267f41c3d371f37ebe5584d2f878cbc7f29b53a4fe4f81531772643f93918ea",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/block-stale-quality-board-promotion-in-ci.response.v1.json",
+  "calledAt": "2026-07-10T01:07:08.616Z"
+}

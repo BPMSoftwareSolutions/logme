@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "block-verdict-promotion-without-receipt",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 482,
+    "candidatesTokenCount": 888,
+    "totalTokenCount": 2803,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 482
+      }
+    ],
+    "thoughtsTokenCount": 1433,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The scenario's core precondition, 'But the report-generation receipt does not exist', is directly contradicted by the provided context stating 'A Gemini live-call receipt will be written into the QA bundle for this scenario.' This fundamental mismatch prevents the scenario from being tested as intended.",
+    "expectedResult": "Given report.md claims a passing or sterile verdict, and the report-generation receipt does not exist, the PI readiness gate should block the verdict promotion, resulting in a PI verdict of BLOCKED and the finding code 'report-verdict-without-receipt'.",
+    "observedResult": "Cannot observe the expected outcome because the critical precondition (absence of receipt) is explicitly contradicted by the test environment setup described, making the scenario untestable under the given conditions.",
+    "confusingOrRiskyExperiencePoints": "The direct contradiction between the scenario's 'But' clause and the description of the test environment's output (receipt will be written) is highly confusing and indicates a significant misalignment between the scenario definition and the actual test execution environment. This makes it impossible to validate the feature's behavior for this specific scenario.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario itself is clear and readable. The issue stems from the discrepancy between the scenario's preconditions and the described test environment.",
+    "recommendedFollowUps": "1. Clarify the intended test setup for this scenario. If the scenario is meant to test the *absence* of a receipt, ensure the test environment genuinely simulates this condition. 2. If a receipt is *always* generated in the actual system, then this scenario's premise is flawed, and the Gherkin should be updated or the scenario removed. 3. Investigate the process that led to this contradiction between the scenario definition and the test environment description.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But the report-generation receipt does not exist",
+        "status": "blocked",
+        "llmObservationSummary": "The scenario Gherkin explicitly states 'But the report-generation receipt does not exist'. However, the provided context states 'A Gemini live-call receipt will be written into the QA bundle for this scenario.' This creates a direct contradiction, making it impossible to verify the absence of the receipt as a precondition.",
+        "blockerCode": "CONTRADICTORY_EVIDENCE_SETUP",
+        "recommendedFixRoute": "Clarify the test setup. If the scenario intends to test the *absence* of a receipt, the test environment must ensure no receipt is generated or available for this specific test run. If a receipt *is* always generated, then the scenario Gherkin needs to be updated to reflect the actual test conditions or the scenario is fundamentally untestable as written."
+      },
+      {
+        "criterionText": "Then the PI verdict should be BLOCKED",
+        "status": "blocked",
+        "llmObservationSummary": "This criterion depends on the precondition that the report-generation receipt does not exist. Since that precondition cannot be verified due to contradictory information, the expected outcome of a BLOCKED PI verdict cannot be reliably tested.",
+        "blockerCode": "DEPENDENT_PRECONDITION_FAILED",
+        "recommendedFixRoute": "Resolve the contradiction in the setup for the 'report-generation receipt does not exist' criterion. Once the precondition can be reliably established, this outcome can be tested."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "blocked",
+        "llmObservationSummary": "Similar to the previous criterion, this outcome is contingent on the absence of the report-generation receipt. With the precondition being unverified/contradicted, the presence of this specific finding code ('report-verdict-without-receipt') cannot be reliably asserted.",
+        "blockerCode": "DEPENDENT_PRECONDITION_FAILED",
+        "recommendedFixRoute": "Resolve the contradiction in the setup for the 'report-generation receipt does not exist' criterion. Once the precondition can be reliably established, this outcome can be tested."
+      }
+    ]
+  }
+}

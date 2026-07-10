@@ -87,6 +87,20 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
       promotionDecision: 'ALLOWED',
       missingTelemetry: false,
       missingReceipt: false,
+      domainAnalysis: {
+        evidencePath: 'evidence/runs/run-789/domain-analysis/domain-body-analysis.contract.v1.json',
+        reportPath: 'evidence/runs/run-789/domain-analysis/domain-body-analysis.report.md',
+        summary: {
+          totalExecutableFiles: 1,
+          actionBearingExecutableFiles: 1,
+          executableFileNamesMissingActionVerb: 0,
+          filesMissingBodyContract: 0,
+          filesMissingScenarioTieOut: 0,
+          decompositionCandidates: 0,
+          totalBlockers: 0,
+        },
+        sourceFiles: [],
+      },
       findings: [],
       methods: [
         {
@@ -124,6 +138,7 @@ test('writesDomainBodySterilityReceipt orchestrates rendering and writing, retur
     assert.match(receipt.reportContent, /## Provenance/);
     assert.match(receipt.reportContent, /## Config/);
     assert.match(receipt.reportContent, /## Sterility Summary/);
+    assert.match(receipt.reportContent, /## Domain Body Analysis Summary/);
     assert.match(receipt.reportContent, /## Discovered Methods/);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });

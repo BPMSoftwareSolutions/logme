@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "validate-non-empty-sterility-report-schema",
+  "scenarioName": "Validate non-empty sterility report schema",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Validate non-empty sterility report schema",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/report-contract-schema-enforcement.feature.md:8-30; report.md; live Gemini prompt",
+      "expectedResult": "The report generator successfully builds an in-memory report contract, schema validation passes against 'contracts/domains/logme/sterility-report.schema.v1.json', and a 'report.md' file is generated containing all specified fields (generatedBy, schemaVersion, reportPath, configPath, rootDir, filesScanned, localExecutableMethods, domainBoundMethods, methodsWithLogMeCall, silentLocalMethods, findings, methods, coverage, verdict, evidence), indicating successful schema enforcement and markdown generation post-validation.",
+      "observedResult": "Unable to observe the execution of the report generator, the state of the in-memory contract, the outcome of schema validation, or the generation and content of 'report.md' due to environmental limitations. No CLI evidence or 'report.md' content could be provided.",
+      "timestamp": "2026-07-10T01:33:42.138Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "INCONCLUSIVE",
+      "evidencePaths": [
+        "docs/features/report-contract-schema-enforcement.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

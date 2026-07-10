@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-stale-local-report-projection--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-stale-local-report-projection",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 3,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing",
+    "qa-cleanup-external-surface-not-testable-locally",
+    "qa-cleanup-precondition-or-negative-case-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T00:50:05.640Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.893Z",
+  "rawLlmBlockerCodes": [
+    "N/A",
+    "INSUFFICIENT_EVIDENCE_CI_BEHAVIOR",
+    "DEPENDENT_CRITERIA_BLOCKED"
+  ]
+}

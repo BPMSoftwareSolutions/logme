@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "provide-one-command-for-local-report-truth",
+  "scenarioName": "Provide one command for local report truth",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Provide one command for local report truth",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/development-time-report-truth-guardrails.feature.md:27-36; report.md; live Gemini prompt",
+      "expectedResult": "The 'report truth' command should regenerate the report contract, validate freshness, summary-to-row consistency, and verdict derivation, print a bounded failure summary, and exit nonzero on contamination, as described in the Gherkin.",
+      "observedResult": "No observable results could be confirmed as the required evidence artifacts were absent.",
+      "timestamp": "2026-07-10T00:52:12.111Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/development-time-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

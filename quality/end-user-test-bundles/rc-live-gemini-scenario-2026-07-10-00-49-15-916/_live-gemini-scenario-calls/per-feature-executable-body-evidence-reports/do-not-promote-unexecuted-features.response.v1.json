@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "do-not-promote-unexecuted-features",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 545,
+    "candidatesTokenCount": 788,
+    "totalTokenCount": 2823,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 545
+      }
+    ],
+    "thoughtsTokenCount": 1490,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The primary evidence surface, `report.md`, was not provided, making it impossible to verify the scenario's outcomes regarding the global report rendering and the display of execution status or lack thereof. The absence of the `report.md` file prevents any observation of the expected 'not executed' status or the omission of execution-related details.",
+    "expectedResult": "The global report should indicate that the scenario was 'not executed' and should explicitly omit any execution-related statuses (PASS, STERILE, telemetry, receipts, SLO/SLA) and evidence packets, as per the scenario's preconditions.",
+    "observedResult": "Cannot observe the global report or its contents as the `report.md` file was not provided.",
+    "confusingOrRiskyExperiencePoints": "N/A - The test could not be executed due to missing evidence.",
+    "accessibilityOrReadabilityObservations": "N/A - The test could not be executed due to missing evidence.",
+    "recommendedFollowUps": "Provide the `report.md` file for review to enable testing of this scenario's acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But the scenario was not executed in the current run",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if the scenario was indeed 'not executed' in the current run as the `report.md` evidence surface, which would reflect this state, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "Then the scenario should show `not executed`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if the scenario shows 'not executed' in the global report as the `report.md` evidence surface was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And it should not show PASS, STERILE, observed telemetry, written receipts, SLO met, or SLA satisfied for that run",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the absence of execution-related statuses (PASS, STERILE, telemetry, receipts, SLO/SLA) in the global report as the `report.md` evidence surface was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And the scenario should not have a generated evidence packet unless execution actually occurred.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the absence of a generated evidence packet as the `report.md` evidence surface, which would indicate its presence or absence, was not provided. The mention of a 'Gemini live-call receipt' in the QA bundle is also not directly verifiable without the bundle itself or its reflection in `report.md`.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` file and/or details on how to inspect the QA bundle for evidence packet generation."
+      }
+    ]
+  }
+}

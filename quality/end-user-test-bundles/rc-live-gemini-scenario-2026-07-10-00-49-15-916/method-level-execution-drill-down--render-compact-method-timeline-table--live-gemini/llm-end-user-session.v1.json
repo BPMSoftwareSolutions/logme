@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-compact-method-timeline-table--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-compact-method-timeline-table",
+  "scenarioName": "Render compact method timeline table",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render compact method timeline table",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:157-182; report.md; live Gemini prompt",
+      "expectedResult": "A Markdown method timeline table should be generated at the specified path, with rows derived from `feature-execution.contract.v1.json`, including all specified fields, and formatted safely for various documentation purposes.",
+      "observedResult": "No generated Markdown method timeline table or `report.md` was provided for review, preventing any observation of the expected output.",
+      "timestamp": "2026-07-10T01:18:54.103Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-compact-method-timeline-table--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--render-compact-method-timeline-table--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--require-duration-evidence-for-execution-time--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "require-duration-evidence-for-execution-time",
+  "criteria": [
+    {
+      "criterionText": "Then duration ms should come from a telemetry event containing start and end time or an explicit duration",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I lack the ability to execute code, interact with a CLI, or analyze `report.md` files directly. Therefore, I cannot observe telemetry events, render reports, or verify the presence or absence of duration evidence as required by the scenario. I cannot provide evidence for a 'PASS' status.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "This scenario requires execution in a live environment with access to the telemetry system, report generation, and CLI output. A human tester or an automated testing framework with the appropriate access and tools should execute this test. The test should involve scenarios where duration evidence is present and scenarios where it is intentionally missing, verifying the blocking mechanism."
+    },
+    {
+      "criterionText": "And the telemetry event should reference the same method name and source path as the method inventory row",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I lack the ability to execute code, interact with a CLI, or analyze `report.md` files directly. Therefore, I cannot observe telemetry events, render reports, or verify the presence or absence of duration evidence as required by the scenario. I cannot provide evidence for a 'PASS' status.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "This scenario requires execution in a live environment with access to the telemetry system, report generation, and CLI output. A human tester or an automated testing framework with the appropriate access and tools should execute this test. The test should involve scenarios where duration evidence is present and scenarios where it is intentionally missing, verifying the blocking mechanism."
+    },
+    {
+      "criterionText": "And the report should block execution timing claims when duration evidence is missing.",
+      "status": "FAIL",
+      "llmObservationSummary": "As an AI, I lack the ability to execute code, interact with a CLI, or analyze `report.md` files directly. Therefore, I cannot observe telemetry events, render reports, or verify the presence or absence of duration evidence as required by the scenario. I cannot provide evidence for a 'PASS' status.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": "This scenario requires execution in a live environment with access to the telemetry system, report generation, and CLI output. A human tester or an automated testing framework with the appropriate access and tools should execute this test. The test should involve scenarios where duration evidence is present and scenarios where it is intentionally missing, verifying the blocking mechanism."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:28:32.426Z"
+}

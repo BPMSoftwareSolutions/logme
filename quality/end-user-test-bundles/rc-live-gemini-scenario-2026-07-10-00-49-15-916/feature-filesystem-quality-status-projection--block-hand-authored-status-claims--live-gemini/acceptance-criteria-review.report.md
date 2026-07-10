@@ -1,0 +1,13 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini
+- Feature id: feature-filesystem-quality-status-projection
+- Scenario id: block-hand-authored-status-claims
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| Then the sentinel should contain a generated signature block | not testable from assigned surface | The Gherkin states this behavior, and the implied passing test suite suggests it works. However, no end-user visible evidence (e.g., actual sentinel content) is provided to confirm the presence of the signature block. | not observed | INSUFFICIENT_END_USER_EVIDENCE | Provide actual generated sentinel content in the report or CLI evidence. |
+| And the signature block should include: | not testable from assigned surface | The Gherkin lists the required fields, and the implied passing test suite suggests they are included. However, no end-user visible evidence (e.g., actual signature block content) is provided to confirm these fields are present and correctly populated. | not observed | INSUFFICIENT_END_USER_EVIDENCE | Provide actual generated signature block content with populated fields in the report or CLI evidence. |
+| And if the sentinel content does not match the source JSON contract, the projection should fail with: | not testable from assigned surface | The Gherkin describes the expected failure and finding code. The implied passing test suite suggests this failure occurs as expected. However, no end-user visible evidence (e.g., actual error message output showing the finding code) is provided to confirm how this failure is presented. | not observed | INSUFFICIENT_END_USER_EVIDENCE | Provide actual error message output, clearly showing the 'feature-status-sentinel-drift' code, in the report or CLI evidence. |
+| And a drifted sentinel should not be used for promotion. | not testable from assigned surface | The Gherkin states this consequence. The implied passing test suite suggests this behavior is enforced. However, no end-user visible evidence (e.g., CLI output or UI feedback explicitly blocking promotion) is provided to confirm how this 'not used for promotion' manifests to an end-user. | not observed | INSUFFICIENT_END_USER_EVIDENCE | Provide observable evidence (e.g., CLI output, UI screenshot) demonstrating the blocking of promotion for a drifted sentinel. |

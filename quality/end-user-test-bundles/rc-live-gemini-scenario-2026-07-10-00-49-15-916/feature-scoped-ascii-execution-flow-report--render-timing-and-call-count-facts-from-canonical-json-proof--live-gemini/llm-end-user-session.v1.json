@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-timing-and-call-count-facts-from-canonical-json-proof--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-timing-and-call-count-facts-from-canonical-json-proof",
+  "scenarioName": "Render timing and call count facts from canonical JSON proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render timing and call count facts from canonical JSON proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:193-207; report.md; live Gemini prompt",
+      "expectedResult": "The ASCII execution sketch should be rendered with precise timing and call count facts from the canonical JSON proof, including specific rendering for missing telemetry, and without independent calculation or rounding.",
+      "observedResult": "No ASCII execution sketch or report was observed, making it impossible to verify the rendering behavior or any of the acceptance criteria.",
+      "timestamp": "2026-07-10T01:08:57.815Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-timing-and-call-count-facts-from-canonical-json-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-timing-and-call-count-facts-from-canonical-json-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--let-the-llm-propose-seed-data-before-testing--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "let-the-llm-propose-seed-data-before-testing",
+  "criteria": [
+    {
+      "criterionText": "Then it may propose seed data required to exercise the scenario",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states the LLM 'may propose' seed data. Without the 'report.md' or live-call receipt, there is no evidence to confirm if the LLM actually proposed seed data.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt to verify LLM's action."
+    },
+    {
+      "criterionText": "And the seed data proposal should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the required fields for the seed data proposal. However, without the actual 'llm-seed-data-proposal.v1.json' file or its content in 'report.md', it's impossible to verify if these fields were included.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_OUTPUT_ARTIFACT",
+      "recommendedFixRoute": "Provide the 'llm-seed-data-proposal.v1.json' file or its content within 'report.md'."
+    },
+    {
+      "criterionText": "And seed data should be synthetic unless the assignment explicitly allows fixture data",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion sets a constraint on the type of data. Without inspecting the actual proposed seed data and the assignment details, it's impossible to verify if the data generated was synthetic as required.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_OUTPUT_ARTIFACT_CONTENT",
+      "recommendedFixRoute": "Provide the 'llm-seed-data-proposal.v1.json' file and relevant assignment details to verify data type."
+    },
+    {
+      "criterionText": "And the proposal should be written to:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states the LLM 'may propose' seed data. Without the 'report.md' or live-call receipt, there is no evidence to confirm if the LLM actually proposed seed data.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' and Gemini live-call receipt to verify LLM's action."
+    },
+    {
+      "criterionText": "And the LLM should not directly mutate production data or unapproved repository paths.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This is a critical safety constraint. Without the Gemini live-call receipt or detailed logs/audit trails within 'report.md' showing the LLM's actions, there is no evidence to confirm adherence to this non-mutation rule.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EXECUTION_EVIDENCE",
+      "recommendedFixRoute": "Provide Gemini live-call receipt and detailed logs in 'report.md' to verify non-mutation."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:14:36.606Z"
+}

@@ -53,6 +53,28 @@ function buildsContract() {
     methods: [],
     executionNodes: [],
     executionSketchTemplate,
+    domainAnalysis: {
+      evidencePath: 'evidence/runs/run-123/domain-analysis/domain-body-analysis.contract.v1.json',
+      reportPath: 'evidence/runs/run-123/domain-analysis/domain-body-analysis.report.md',
+      summary: {
+        totalExecutableFiles: 3,
+        actionBearingExecutableFiles: 2,
+        executableFileNamesMissingActionVerb: 1,
+        filesMissingBodyContract: 1,
+        filesMissingScenarioTieOut: 1,
+        decompositionCandidates: 1,
+        totalBlockers: 1,
+      },
+      sourceFiles: [
+        {
+          filePath: 'src/session.js',
+          executableMethodCount: 3,
+          fileNameGrammar: { classification: 'noun-or-capability-label' },
+          decomposition: { status: 'decomposition recommended' },
+          findingCodes: ['executable-file-name-missing-action-verb'],
+        },
+      ],
+    },
     sprawl: {
       evidencePath: 'evidence/runs/run-123/sprawl/domain-body-sprawl.contract.v1.json',
       reportPath: 'evidence/runs/run-123/sprawl/domain-body-sprawl.report.md',
@@ -216,4 +238,22 @@ test('rendersReportFromLayoutContract renders compact sprawl summary from the sp
   assert.match(result.reportContent, /Package extraction candidates: 1/);
   assert.match(result.reportContent, /package-worthy-mechanic-inside-domain-body/);
   assert.match(result.reportContent, /move generic mechanics to a package primitive/);
+});
+
+test('rendersReportFromLayoutContract renders compact domain analysis summary from the analysis contract', () => {
+  const layoutContract = buildsLayoutContract({
+    sectionOrder: ['domainAnalysisSummary'],
+    sections: {
+      domainAnalysisSummary: { title: 'Domain Body Analysis Summary', template: 'kind:domain-analysis-summary' },
+    },
+  });
+  const result = rendersReportFromLayoutContract(LAYOUT_SCHEMA, layoutContract, REPORT_SCHEMA, buildsContract());
+
+  assert.equal(result.isValid, true);
+  assert.match(result.reportContent, /## Domain Body Analysis Summary/);
+  assert.match(result.reportContent, /Evidence artifact: evidence\/runs\/run-123\/domain-analysis\/domain-body-analysis\.contract\.v1\.json/);
+  assert.match(result.reportContent, /Analysis report: evidence\/runs\/run-123\/domain-analysis\/domain-body-analysis\.report\.md/);
+  assert.match(result.reportContent, /Executable file names missing action verb: 1/);
+  assert.match(result.reportContent, /Domain-analysis findings are deterministic review findings/);
+  assert.match(result.reportContent, /src\/session\.js/);
 });

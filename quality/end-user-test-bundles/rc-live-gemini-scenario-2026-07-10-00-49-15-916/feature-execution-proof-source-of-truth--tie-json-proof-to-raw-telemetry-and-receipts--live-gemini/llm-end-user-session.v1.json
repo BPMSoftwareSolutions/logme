@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "tie-json-proof-to-raw-telemetry-and-receipts",
+  "scenarioName": "Tie JSON proof to raw telemetry and receipts",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Tie JSON proof to raw telemetry and receipts",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:114-138; report.md; live Gemini prompt",
+      "expectedResult": "The 'feature-execution.contract.v1.json' should be correctly generated, including all specified fields for observed executable body nodes, accurately reflecting telemetry and receipt data, and explicitly marking nodes as 'not observed' or 'missing' where applicable, without inferring data from static source inventory.",
+      "observedResult": "No 'report.md' or 'Gemini live-call receipt' was provided, so no observations could be made regarding the generated 'feature-execution.contract.v1.json' or the presence of telemetry/receipt files.",
+      "timestamp": "2026-07-10T00:58:50.041Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

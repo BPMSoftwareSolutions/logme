@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-false-pass-in-promotion-workflow--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-false-pass-in-promotion-workflow",
+  "scenarioName": "Block false pass in promotion workflow",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block false pass in promotion workflow",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/ci-cd-report-truth-guardrails.feature.md:51-62; report.md; live Gemini prompt",
+      "expectedResult": "The promotion workflow should correctly evaluate evidence, ensuring all hard-law blockers are zero, report schema is valid, freshness gate passes, all required receipts exist, report sections trace to Gherkin, a QA evidence bundle exists, and promotion fails if any proof is missing.",
+      "observedResult": "No evidence was provided to observe the outcome of the promotion workflow or the state of the generated report and receipts. Therefore, the expected results could not be observed or verified.",
+      "timestamp": "2026-07-10T00:50:05.652Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-false-pass-in-promotion-workflow--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/ci-cd-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--block-false-pass-in-promotion-workflow--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

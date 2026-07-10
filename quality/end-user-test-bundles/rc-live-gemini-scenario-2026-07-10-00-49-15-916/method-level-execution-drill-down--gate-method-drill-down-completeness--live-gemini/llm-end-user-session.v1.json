@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--gate-method-drill-down-completeness--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "gate-method-drill-down-completeness",
+  "scenarioName": "Gate method drill-down completeness",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Gate method drill-down completeness",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:275-285; report.md; live Gemini prompt",
+      "expectedResult": "The body node should be marked `method detail missing`, the feature scenario should not be promoted as fully drill-down proven, the finding code should be `observed-body-node-without-method-drilldown`, and the report should render the body node with a clear missing-detail blocker.",
+      "observedResult": "No observable results could be confirmed as the required `report.md` and Gemini live-call receipt evidence surfaces were not supplied.",
+      "timestamp": "2026-07-10T01:19:52.566Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--gate-method-drill-down-completeness--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--gate-method-drill-down-completeness--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

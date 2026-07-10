@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "data-driven-report-layout",
+  "featureName": "Data-driven report layout",
+  "sourceFeaturePath": "docs/features/data-driven-report-layout.feature.md",
+  "sourceFeatureContentHash": "0531e017e90c87f3fcbe4afbb34f8fb584ee11b200c48345145a019f968eb57a",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "4e92b78e306bf3198e51748b71530ea1b44910e5b68068b949e34ba5b20ea5d0"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-human-report-evidence-missing",
+    "qa-cleanup-precondition-or-negative-case-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 3,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Data-driven report layout is currently qa-blocked."
+}

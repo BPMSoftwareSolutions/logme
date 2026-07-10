@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-contract-schema-enforcement--block-empty-report-schema--live-gemini",
+  "featureId": "report-contract-schema-enforcement",
+  "scenarioId": "block-empty-report-schema",
+  "scenarioName": "Block empty report schema",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block empty report schema",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/report-contract-schema-enforcement.feature.md:31-40; report.md; live Gemini prompt",
+      "expectedResult": "The report verdict should be BLOCKED and the finding codes should include 'report-schema-empty' and 'report-contract-not-enforced'.",
+      "observedResult": "No CLI evidence was provided to confirm the report generator's behavior when an empty report schema is used. Therefore, the expected outcome could not be observed or verified.",
+      "timestamp": "2026-07-10T01:33:54.310Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--block-empty-report-schema--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "FAIL",
+      "evidencePaths": [
+        "docs/features/report-contract-schema-enforcement.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--block-empty-report-schema--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

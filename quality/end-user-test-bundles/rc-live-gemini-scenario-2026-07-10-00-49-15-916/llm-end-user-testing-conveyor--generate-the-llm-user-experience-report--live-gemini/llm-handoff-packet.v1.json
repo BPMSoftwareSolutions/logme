@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--generate-the-llm-user-experience-report--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "generate-the-llm-user-experience-report",
+  "scenarioName": "Generate the LLM user experience report",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Generate the LLM user experience report\n    Given the LLM has completed end-user testing\n    When the conveyor asks for the user experience report\n    Then the LLM should generate a Markdown report at:\n      \"\"\"\n      quality/end-user-test-bundles/<release-candidate-id>/<qa-run-id>/llm-user-experience.report.md\n      \"\"\"\n    And the report should include:\n      | section |\n      | executive user experience summary |\n      | persona and test intent |\n      | seed data used |\n      | user journey steps |\n      | acceptance criteria review |\n      | what passed |\n      | what failed |\n      | confusing or risky experience points |\n      | evidence links |\n      | screenshots or output links |\n      | accessibility or readability observations |\n      | recommended product follow-ups |\n    And the report should explain the LLM's user-visible observations without requiring hidden chain-of-thought\n    And every pass/fail claim should link to evidence in the QA bundle.\n",
+    "acceptanceCriteria": [
+      "Then the LLM should generate a Markdown report at:",
+      "And the report should include:",
+      "And the report should explain the LLM's user-visible observations without requiring hidden chain-of-thought",
+      "And every pass/fail claim should link to evidence in the QA bundle."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:16:16.549Z"
+}

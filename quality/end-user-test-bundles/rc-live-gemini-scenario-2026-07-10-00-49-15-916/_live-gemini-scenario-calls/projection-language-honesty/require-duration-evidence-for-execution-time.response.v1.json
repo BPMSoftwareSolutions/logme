@@ -1,0 +1,28 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "require-duration-evidence-for-execution-time",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 278,
+    "candidatesTokenCount": 282,
+    "totalTokenCount": 995,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 278
+      }
+    ],
+    "thoughtsTokenCount": 435,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "FAIL",
+    "observationSummary": "As an AI, I lack the ability to execute code, interact with a CLI, or analyze `report.md` files directly. Therefore, I cannot observe telemetry events, render reports, or verify the presence or absence of duration evidence as required by the scenario. I cannot provide evidence for a 'PASS' status.",
+    "expectedResult": "The report should accurately display execution timing (duration ms) derived from telemetry events containing start/end times or explicit durations. These telemetry events must correctly reference the method name and source path. Crucially, the report should prevent or block any execution timing claims if the necessary duration evidence is missing.",
+    "observedResult": "I was unable to execute the scenario or access the necessary runtime telemetry, report generation, or CLI output to verify the specified criteria. Consequently, I could not confirm if duration evidence is correctly sourced, if telemetry events reference the correct methods, or if the report blocks claims without evidence.",
+    "recommendedFollowUps": "This scenario requires execution in a live environment with access to the telemetry system, report generation, and CLI output. A human tester or an automated testing framework with the appropriate access and tools should execute this test. The test should involve scenarios where duration evidence is present and scenarios where it is intentionally missing, verifying the blocking mechanism."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--change-ascii-execution-sketch-without-code-changes--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "change-ascii-execution-sketch-without-code-changes",
+  "scenarioName": "Change ASCII execution sketch without code changes",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Change ASCII execution sketch without code changes",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/data-driven-report-layout.feature.md:23-31; report.md; live Gemini prompt",
+      "expectedResult": "report.md should reflect the updated sketch, no renderer code change should be required, and every template variable should resolve against the report data contract.",
+      "observedResult": "A report.md file was generated. Its content cannot be fully evaluated against the scenario's specific claims due to missing comparative data (original sketch, specific updates, template details).",
+      "timestamp": "2026-07-10T00:50:49.837Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--change-ascii-execution-sketch-without-code-changes--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/data-driven-report-layout.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--change-ascii-execution-sketch-without-code-changes--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

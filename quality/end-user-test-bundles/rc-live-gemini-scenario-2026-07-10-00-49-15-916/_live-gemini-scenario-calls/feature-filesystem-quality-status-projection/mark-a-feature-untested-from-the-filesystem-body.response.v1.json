@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-a-feature-untested-from-the-filesystem-body",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 576,
+    "candidatesTokenCount": 761,
+    "totalTokenCount": 2435,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 576
+      }
+    ],
+    "thoughtsTokenCount": 1098,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (report.md and Gemini live-call receipt) were not available for review. Only the scenario Gherkin was provided, which describes expected outcomes but does not provide proof of execution.",
+    "expectedResult": "The system should generate a status sentinel `docs/features/_STATUS.implemented.not-tested.<feature-id>.md`, set specific JSON status fields (implementation status: implemented, execution proof status: proven, end-user QA status: not QAed, promotion status: not promoted), and recommend running the LLM end-user testing conveyor.",
+    "observedResult": "No actual system output or report was observed to verify the expected results. Only the Gherkin scenario describing the expected behavior was available.",
+    "confusingOrRiskyExperiencePoints": "Without access to the actual `report.md` or the Gemini live-call receipt, it is impossible to confirm if the feature behaves as expected from an end-user perspective. This lack of evidence prevents proper QA.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and readable, but its clarity alone does not substitute for actual execution evidence.",
+    "recommendedFollowUps": "Provide the `report.md` and the Gemini live-call receipt for this scenario to enable proper end-user QA testing. Without these, the scenario remains untested from the assigned surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But no end-user QA bundle exists for the feature",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This is a precondition described in the Gherkin. Evidence (report.md, live-call receipt) was not provided to verify this criterion's state.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt."
+      },
+      {
+        "criterionText": "Then the status sentinel should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected status sentinel. Evidence (report.md, live-call receipt) was not provided to verify the actual generated sentinel.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt."
+      },
+      {
+        "criterionText": "And the JSON status should set:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected JSON status fields. Evidence (report.md, live-call receipt) was not provided to verify the actual generated JSON status.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt."
+      },
+      {
+        "criterionText": "And the next recommended action should be to run the LLM end-user testing conveyor.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected recommended action. Evidence (report.md, live-call receipt) was not provided to verify the actual recommended action.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md and live-call receipt."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--block-commit-when-report-truth-gate-fails--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "block-commit-when-report-truth-gate-fails",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 518,
+    "candidatesTokenCount": 902,
+    "totalTokenCount": 3401,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 518
+      }
+    ],
+    "thoughtsTokenCount": 1981,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "2d562ec5a93971d53fd5427170d7d6756374a3b6976468ce433f3ce6431d500d",
+  "responseSha256": "2d33f67c5b305d7a1e7b4465051c464383c751545815b8e6a0446792043cedfe",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/block-commit-when-report-truth-gate-fails.response.v1.json",
+  "calledAt": "2026-07-10T00:52:28.885Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-receipt-proof--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "tie-method-calls-to-receipt-proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 561,
+    "candidatesTokenCount": 754,
+    "totalTokenCount": 3028,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 561
+      }
+    ],
+    "thoughtsTokenCount": 1713,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "977525a4285b77b1f61a651be40f7bd341c642262e2878b389a236df31567eb4",
+  "responseSha256": "ec4c1fee1026102f641942f9506db2da28e908588064a251c2f352e6debf760d",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/tie-method-calls-to-receipt-proof.response.v1.json",
+  "calledAt": "2026-07-10T01:18:27.146Z"
+}

@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "domain-body-sprawl-visibility",
+  "featureName": "Domain body sprawl visibility",
+  "sourceFeaturePath": "docs/features/domain-body-sprawl-visibility.feature.md",
+  "sourceFeatureContentHash": "07f716568a8eb1ef30cdb30cb6229f51f1031dcb5febf0ef7aafeac104e21d7f",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "2b2cd302b79f8170c4bc230e8bddd18232afbbe6eff10144da86d9fd0e9e93bb"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Domain body sprawl visibility is currently qa-blocked."
+}

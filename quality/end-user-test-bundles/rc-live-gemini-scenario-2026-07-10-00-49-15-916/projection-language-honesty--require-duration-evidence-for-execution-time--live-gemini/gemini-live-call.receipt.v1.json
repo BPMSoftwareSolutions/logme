@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--require-duration-evidence-for-execution-time--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "require-duration-evidence-for-execution-time",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:28:32.423Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 278,
+    "candidatesTokenCount": 282,
+    "totalTokenCount": 995,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 278
+      }
+    ],
+    "thoughtsTokenCount": 435,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "7386ec9b508007c53cf5b5c925d9b3f2e213b62d64485aa2fcb0f033bb9a4798",
+  "responseSha256": "e05f1d1530ddbb4fc8df785b978ee09825507b3a13160316d88ddb59a635c3b2",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/require-duration-evidence-for-execution-time.response.v1.json"
+}

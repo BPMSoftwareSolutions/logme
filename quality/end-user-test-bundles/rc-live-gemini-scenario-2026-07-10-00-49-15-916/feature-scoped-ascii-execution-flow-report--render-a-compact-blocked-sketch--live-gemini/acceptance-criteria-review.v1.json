@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-a-compact-blocked-sketch--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-a-compact-blocked-sketch",
+  "criteria": [
+    {
+      "criterionText": "Then the sketch should show:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The expected ASCII sketch structure is clearly defined in the Gherkin. However, the actual generated report.md was not provided, preventing verification of whether the sketch was rendered correctly.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Supply the report.md output for review."
+    },
+    {
+      "criterionText": "And the report should not bury the blocked state below prose or dense tables.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Based on the Gherkin's specified sketch design, the 'BLOCKED' promotion is prominently displayed at the top. However, without the actual report.md, it's impossible to confirm if this design was implemented and if other content might still inadvertently bury the state.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Supply the report.md output for review to confirm the visual hierarchy and prominence of the blocked state."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:11:48.205Z"
+}

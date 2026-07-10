@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "render-qa-status-in-the-global-report",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 615,
+    "candidatesTokenCount": 492,
+    "totalTokenCount": 1972,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 615
+      }
+    ],
+    "thoughtsTokenCount": 865,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The primary evidence surface, `report.md`, was not provided, making it impossible to verify any of the acceptance criteria for rendering QA status in the global report.",
+    "expectedResult": "The `report.md` file should be available and demonstrate the presence of a compact QA readiness section with all specified fields, a repo-relative link to `qa-evidence-bundle.report.md`, and confirmation that the full QA bundle is not embedded.",
+    "observedResult": "No `report.md` file was provided, preventing any verification of the expected output.",
+    "confusingOrRiskyExperiencePoints": "The absence of the `report.md` file is a critical blocker, as all acceptance criteria depend on its content. This prevents any meaningful QA testing for this scenario.",
+    "accessibilityOrReadabilityObservations": "Not applicable, as no `report.md` was available for review.",
+    "recommendedFollowUps": "The `report.md` file must be included in the evidence surfaces for this scenario to be testable.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should include a compact QA readiness section with:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which is necessary to verify the presence and content of the QA readiness section, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And `report.md` should link to `qa-evidence-bundle.report.md` using a repo-relative path",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which is necessary to verify the presence and correctness of the link, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And `report.md` should not embed the full QA bundle.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which is necessary to verify that the full QA bundle is not embedded, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      }
+    ]
+  }
+}

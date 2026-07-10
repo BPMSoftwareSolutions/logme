@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--keep-local-report-truth-output-quiet-enough-to-use--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "keep-local-report-truth-output-quiet-enough-to-use",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 2,
+  "blockerCodes": [
+    "qa-cleanup-human-report-evidence-missing",
+    "qa-cleanup-required-artifact-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T00:52:28.872Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.907Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_STDOUT_EVIDENCE",
+    "MISSING_ARTIFACT_EVIDENCE"
+  ]
+}

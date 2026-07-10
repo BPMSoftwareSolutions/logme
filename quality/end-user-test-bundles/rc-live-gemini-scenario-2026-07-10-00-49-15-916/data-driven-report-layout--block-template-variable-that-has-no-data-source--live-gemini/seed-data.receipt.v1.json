@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "block-template-variable-that-has-no-data-source",
+  "seedDataId": "data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T00:51:26.167Z"
+}

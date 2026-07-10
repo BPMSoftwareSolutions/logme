@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--detect-mixed-responsibility-clusters-in-one-file--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-mixed-responsibility-clusters-in-one-file",
+  "criteria": [
+    {
+      "criterionText": "Then the report should show each detected cluster",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify if each detected cluster is shown in the report.",
+      "evidencePaths": [],
+      "blockerCode": "missing_report_evidence",
+      "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "And clusters should be derived from:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify the derivation signals for clusters.",
+      "evidencePaths": [],
+      "blockerCode": "missing_report_evidence",
+      "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "And files with unrelated clusters should be reported with:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify how files with unrelated clusters are reported.",
+      "evidencePaths": [],
+      "blockerCode": "missing_report_evidence",
+      "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+    },
+    {
+      "criterionText": "And the fix route should suggest the next durable boundary, not a mechanical split.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or live-call receipt was provided to verify the nature of the suggested fix route.",
+      "evidencePaths": [],
+      "blockerCode": "missing_report_evidence",
+      "recommendedFixRoute": "Provide the `report.md` and Gemini live-call receipt for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:53:59.185Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-clean-ascii-only--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-clean-ascii-only",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 508,
+    "candidatesTokenCount": 494,
+    "totalTokenCount": 2076,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 508
+      }
+    ],
+    "thoughtsTokenCount": 1074,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "96ab996783f8d72ba96efead34dd65b35b88216bbde0ff69ad721a7e6562cc09",
+  "responseSha256": "22dd6e50c54040ec6193bee825bc0c722c7055f8c83d2e7cfd5c4cdc8e0cee06",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-clean-ascii-only.response.v1.json",
+  "calledAt": "2026-07-10T01:08:07.481Z"
+}

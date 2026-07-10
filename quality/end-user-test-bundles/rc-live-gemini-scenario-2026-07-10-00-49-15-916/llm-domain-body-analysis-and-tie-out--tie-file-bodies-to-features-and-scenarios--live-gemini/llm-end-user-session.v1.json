@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "tie-file-bodies-to-features-and-scenarios",
+  "scenarioName": "Tie file bodies to features and scenarios",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Tie file bodies to features and scenarios",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-domain-body-analysis-and-tie-out.feature.md:31-39; report.md; live Gemini prompt",
+      "expectedResult": "The system should correctly tie file bodies to feature and scenario IDs, flag files with missing tie-outs, and avoid false positives from method names, folder names, or loose report text, as evidenced by `report.md` or a Gemini live-call receipt.",
+      "observedResult": "No observable results or reports were provided to confirm the expected behavior. Only the Gherkin scenario outlining the desired functionality was available.",
+      "timestamp": "2026-07-10T01:13:29.459Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-domain-body-analysis-and-tie-out.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

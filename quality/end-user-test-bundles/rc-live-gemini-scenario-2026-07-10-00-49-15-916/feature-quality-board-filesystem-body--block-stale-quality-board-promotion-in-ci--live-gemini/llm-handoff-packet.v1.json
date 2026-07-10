@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "block-stale-quality-board-promotion-in-ci",
+  "scenarioName": "Block stale quality board promotion in CI",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Block stale quality board promotion in CI\n    Given a pull request changes feature specs, feature status contracts, QA bundles, or promotion decisions\n    When the CI quality board gate runs\n    Then it should regenerate:\n      | artifact |\n      | docs/features/_FEATURE-QUALITY-BOARD.md |\n      | docs/features/_FEATURE-QUALITY-BOARD.v1.json |\n      | docs/features/_FEATURE-QUALITY-TREE.txt |\n      | docs/features/_STATUS.<display-status>.<feature-id>.md |\n    And it should fail if generated artifacts differ from committed artifacts\n    And the failure should include:\n      | finding code |\n      | feature-quality-board-stale |\n    And a stale board should block release promotion.\n",
+    "acceptanceCriteria": [
+      "Then it should regenerate:",
+      "And it should fail if generated artifacts differ from committed artifacts",
+      "And the failure should include:",
+      "And a stale board should block release promotion."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:07:42.131Z"
+}

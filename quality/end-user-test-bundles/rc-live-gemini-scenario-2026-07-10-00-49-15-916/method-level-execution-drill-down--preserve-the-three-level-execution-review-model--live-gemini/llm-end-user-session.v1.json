@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--preserve-the-three-level-execution-review-model--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "preserve-the-three-level-execution-review-model",
+  "scenarioName": "Preserve the three-level execution review model",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve the three-level execution review model",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:8-19; report.md; live Gemini prompt",
+      "expectedResult": "The generated report (`report.md`) should clearly expose three drill-down levels in the specified order, with the method drill-down appearing after the body-node sketch, and the dense static method inventory appearing only after runtime execution proof, preventing a direct jump from a body node to a large static method table.",
+      "observedResult": "The `report.md` artifact was not available for review. Therefore, no observations could be made regarding the structure, content, or ordering of the execution report levels.",
+      "timestamp": "2026-07-10T01:17:42.284Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--preserve-the-three-level-execution-review-model--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--preserve-the-three-level-execution-review-model--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

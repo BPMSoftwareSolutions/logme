@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "write-a-machine-readable-board-contract",
+  "seedDataId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T01:06:07.783Z"
+}

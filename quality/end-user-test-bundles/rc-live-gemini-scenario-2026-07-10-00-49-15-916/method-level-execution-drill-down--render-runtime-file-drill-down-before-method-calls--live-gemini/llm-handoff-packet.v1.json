@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+  "scenarioName": "Render runtime-file drill-down before method calls",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render runtime-file drill-down before method calls\n    Given one body node executes methods from one or more runtime files\n    When the method drill-down is rendered\n    Then the body node should first show the participating runtime files\n    And each runtime file row should include:\n      | field |\n      | runtime file path |\n      | participating method count |\n      | observed call count |\n      | first seen at |\n      | last seen at |\n      | total duration ms |\n      | slowest method |\n      | receipt coverage status |\n    And the method calls should be grouped under the runtime file when a node spans multiple files.\n",
+    "acceptanceCriteria": [
+      "Then the body node should first show the participating runtime files",
+      "And each runtime file row should include:",
+      "And the method calls should be grouped under the runtime file when a node spans multiple files."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:18:54.062Z"
+}

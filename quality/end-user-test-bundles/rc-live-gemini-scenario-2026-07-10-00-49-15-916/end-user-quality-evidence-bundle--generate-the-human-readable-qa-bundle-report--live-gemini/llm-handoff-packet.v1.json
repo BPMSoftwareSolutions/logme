@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--generate-the-human-readable-qa-bundle-report--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "generate-the-human-readable-qa-bundle-report",
+  "scenarioName": "Generate the human-readable QA bundle report",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Generate the human-readable QA bundle report\n    Given `qa-evidence-bundle.manifest.v1.json` exists\n    When `qa-evidence-bundle.report.md` is generated\n    Then the first product-facing section should show:\n      | field |\n      | release candidate id |\n      | QA run id |\n      | quality gate decision |\n      | tested feature scenarios |\n      | QA operator or automation identity |\n      | machine identity |\n      | started at |\n      | finished at |\n      | duration ms |\n      | blocker count |\n      | promotion recommendation |\n    And the report should include:\n      | section |\n      | executive QA summary |\n      | tested user journeys |\n      | end-user surface inspected |\n      | generated Markdown reports reviewed |\n      | generated HTML previews reviewed |\n      | LLM user experience report |\n      | acceptance criteria review |\n      | linked executable body proof reports |\n      | linked sprawl reports |\n      | screenshots or visual evidence index |\n      | machine and run provenance |\n      | blocker worklist |\n      | reviewer notes |\n    And a product owner should not need to open JSON to understand whether the release candidate is QA passed.\n",
+    "acceptanceCriteria": [
+      "Then the first product-facing section should show:",
+      "And the report should include:",
+      "And a product owner should not need to open JSON to understand whether the release candidate is QA passed."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:56:27.906Z"
+}

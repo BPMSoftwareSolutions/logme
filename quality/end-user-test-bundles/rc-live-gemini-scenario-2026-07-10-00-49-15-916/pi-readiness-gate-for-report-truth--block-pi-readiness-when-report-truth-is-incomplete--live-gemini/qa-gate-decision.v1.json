@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "pi-readiness-gate-for-report-truth--block-pi-readiness-when-report-truth-is-incomplete--live-gemini",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "block-pi-readiness-when-report-truth-is-incomplete",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 2,
+  "blockerCodes": [
+    "qa-cleanup-precondition-or-negative-case-evidence-missing",
+    "qa-cleanup-human-report-evidence-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:21:44.190Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:11.050Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EVIDENCE_PRECONDITION",
+    "MISSING_EVIDENCE_OUTCOME",
+    "MISSING_EVIDENCE_REPORT_CONTENT"
+  ]
+}

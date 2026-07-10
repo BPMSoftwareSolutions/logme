@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "write-machine-readable-status-beside-the-filesystem-sentinel",
+  "scenarioName": "Write machine-readable status beside the filesystem sentinel",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Write machine-readable status beside the filesystem sentinel\n    Given the status sentinel has been generated\n    When the projection closes the feature status calculation\n    Then it should write a machine-readable status contract at:\n      \"\"\"\n      docs/features/_feature-status/<feature-id>.status.v1.json\n      \"\"\"\n    And the JSON status contract should contain:\n      | field |\n      | schema version |\n      | feature id |\n      | feature name |\n      | source feature path |\n      | source feature content hash |\n      | display status |\n      | implementation status |\n      | execution proof status |\n      | end-user QA status |\n      | promotion status |\n      | latest execution run id |\n      | latest QA run id |\n      | latest release candidate id |\n      | latest execution proof path |\n      | latest QA bundle path |\n      | latest QA gate decision path |\n      | latest promotion decision path |\n      | evidence hashes |\n      | blocker codes |\n      | stale reasons |\n      | generated at |\n      | generator name |\n    And the JSON should be the source used to regenerate the sentinel Markdown\n    And the sentinel Markdown should include a repo-relative link to this JSON contract.\n",
+    "acceptanceCriteria": [
+      "Then it should write a machine-readable status contract at:",
+      "And the JSON status contract should contain:",
+      "And the JSON should be the source used to regenerate the sentinel Markdown",
+      "And the sentinel Markdown should include a repo-relative link to this JSON contract."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:03:38.865Z"
+}

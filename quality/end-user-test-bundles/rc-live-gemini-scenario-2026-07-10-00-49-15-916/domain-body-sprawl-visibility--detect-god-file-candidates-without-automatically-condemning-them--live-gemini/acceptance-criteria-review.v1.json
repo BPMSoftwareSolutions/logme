@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--detect-god-file-candidates-without-automatically-condemning-them--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-god-file-candidates-without-automatically-condemning-them",
+  "criteria": [
+    {
+      "criterionText": "Then the file should be classified as one of:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And a `god-file candidate` should include the signals that triggered it",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the report should not require a product owner to infer risk from line count alone",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:53:33.726Z"
+}

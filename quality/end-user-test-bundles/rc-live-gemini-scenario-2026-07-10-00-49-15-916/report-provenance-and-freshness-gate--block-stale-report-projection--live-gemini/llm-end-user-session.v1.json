@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-provenance-and-freshness-gate--block-stale-report-projection--live-gemini",
+  "featureId": "report-provenance-and-freshness-gate",
+  "scenarioId": "block-stale-report-projection",
+  "scenarioName": "Block stale report projection",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block stale report projection",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/report-provenance-and-freshness-gate.feature.md:25-36; report.md; live Gemini prompt",
+      "expectedResult": "The report truth gate should run, and the report verdict should be BLOCKED. The finding codes 'stale-report-projection' and 'report-source-hash-mismatch' should be present. The report should explicitly not claim a clean or sterile state.",
+      "observedResult": "Unable to observe the actual result as I cannot execute the scenario or access the necessary files and CLI output. No evidence of the report truth gate running, its verdict, or finding codes could be gathered.",
+      "timestamp": "2026-07-10T01:39:46.938Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-provenance-and-freshness-gate--block-stale-report-projection--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "FAIL",
+      "evidencePaths": [
+        "docs/features/report-provenance-and-freshness-gate.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-provenance-and-freshness-gate--block-stale-report-projection--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

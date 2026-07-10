@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--render-product-owner-sprawl-report--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "render-product-owner-sprawl-report",
+  "scenarioName": "Render product-owner sprawl report",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render product-owner sprawl report\n    Given `domain-body-sprawl.contract.v1.json` exists for a run\n    When the global `report.md` is rendered\n    Then it should include a compact sprawl summary with:\n      | field |\n      | total source files scanned |\n      | focused files |\n      | watchlist files |\n      | god-file candidates |\n      | package extraction candidates |\n      | mixed-responsibility files |\n      | orphan artifacts |\n      | top sprawl hotspots |\n    And each hotspot should show:\n      | field |\n      | file path |\n      | classification |\n      | line count |\n      | executable method count |\n      | responsibility cluster count |\n      | generic mechanic count |\n      | finding codes |\n      | one-line fix route |\n    And dense per-method detail should live in the sprawl evidence artifact or a linked sprawl report.\n    And `report.md` should link to `evidence/runs/<run-id>/sprawl/domain-body-sprawl.report.md`.\n",
+    "acceptanceCriteria": [
+      "Then it should include a compact sprawl summary with:",
+      "And each hotspot should show:",
+      "And dense per-method detail should live in the sprawl evidence artifact or a linked sprawl report.",
+      "And `report.md` should link to `evidence/runs/<run-id>/sprawl/domain-body-sprawl.report.md`."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:54:27.547Z"
+}

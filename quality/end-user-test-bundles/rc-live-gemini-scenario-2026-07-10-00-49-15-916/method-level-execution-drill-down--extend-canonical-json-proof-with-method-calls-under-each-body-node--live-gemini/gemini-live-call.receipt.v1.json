@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--extend-canonical-json-proof-with-method-calls-under-each-body-node--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "extend-canonical-json-proof-with-method-calls-under-each-body-node",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 749,
+    "candidatesTokenCount": 1026,
+    "totalTokenCount": 3001,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 749
+      }
+    ],
+    "thoughtsTokenCount": 1226,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "286fac4bb8c42a45d28434faa577745206aa66197998d8faeb84bd88b4610df0",
+  "responseSha256": "9100c459c753cb68f59280d01f985263284b38d8796b0e5fb66a90b60237ef4d",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/extend-canonical-json-proof-with-method-calls-under-each-body-node.response.v1.json",
+  "calledAt": "2026-07-10T01:17:52.906Z"
+}

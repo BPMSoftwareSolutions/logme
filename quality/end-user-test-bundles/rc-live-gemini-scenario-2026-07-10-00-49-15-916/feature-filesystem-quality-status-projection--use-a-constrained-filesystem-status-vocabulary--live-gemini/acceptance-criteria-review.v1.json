@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--use-a-constrained-filesystem-status-vocabulary--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "use-a-constrained-filesystem-status-vocabulary",
+  "criteria": [
+    {
+      "criterionText": "Then the display status should be one of:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify that the display status adheres to the constrained vocabulary without the `report.md` or Gemini live-call receipt.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the projection should prefer the most urgent product signal",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify the prioritization logic for product signals without the `report.md` or Gemini live-call receipt.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And `stale` should override a previously passing status when source evidence no longer matches the projection",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify the 'stale' override behavior without the `report.md` or Gemini live-call receipt.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And `qa-passed.promoted` should only be used when both QA pass evidence and deterministic promotion evidence exist.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Cannot verify the conditions for using 'qa-passed.promoted' without the `report.md` or Gemini live-call receipt.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:03:16.838Z"
+}

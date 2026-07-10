@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-false-pass-in-promotion-workflow",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 618,
+    "candidatesTokenCount": 1210,
+    "totalTokenCount": 3609,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 618
+      }
+    ],
+    "thoughtsTokenCount": 1781,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The scenario's acceptance criteria could not be evaluated as the required evidence surfaces (report.md, Gemini live-call receipt, and promotion workflow output) were not provided for review. All criteria are marked as 'not testable from assigned surface'.",
+    "expectedResult": "The promotion workflow should correctly evaluate evidence, ensuring all hard-law blockers are zero, report schema is valid, freshness gate passes, all required receipts exist, report sections trace to Gherkin, a QA evidence bundle exists, and promotion fails if any proof is missing.",
+    "observedResult": "No evidence was provided to observe the outcome of the promotion workflow or the state of the generated report and receipts. Therefore, the expected results could not be observed or verified.",
+    "confusingOrRiskyExperiencePoints": "The lack of actual evidence makes it impossible to assess the feature's behavior. The prompt mentions evidence surfaces are 'available' but does not provide them, leading to a blocked test.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and readable. However, the absence of the actual report.md and Gemini receipt makes it impossible to comment on their accessibility or readability.",
+    "recommendedFollowUps": "Provide all specified evidence surfaces (report.md, Gemini live-call receipt, and any relevant promotion workflow logs/outputs) to enable a comprehensive review of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And the report claims `STERILE DOMAIN BODY` or any PASS-style verdict",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so I cannot verify its claims.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "Then every hard-law blocker should be zero",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (report, logs, or Gemini receipt) was provided to verify the state of hard-law blockers.",
+        "blockerCode": "MISSING_EVIDENCE_PROMOTION_OUTCOME",
+        "recommendedFixRoute": "Provide the promotion workflow output or relevant sections of the Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the report schema should be valid",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so its schema validity cannot be checked.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And the freshness gate should pass",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (logs or Gemini receipt) was provided to verify the freshness gate status.",
+        "blockerCode": "MISSING_EVIDENCE_PROMOTION_OUTCOME",
+        "recommendedFixRoute": "Provide the promotion workflow output or relevant sections of the Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And every required receipt should exist",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The prompt states a Gemini live-call receipt *will be written*, but the actual receipt or a list of required receipts was not provided for verification.",
+        "blockerCode": "MISSING_EVIDENCE_RECEIPTS",
+        "recommendedFixRoute": "Provide the actual receipts or a manifest of expected receipts for verification."
+      },
+      {
+        "criterionText": "And every report section should trace to Gherkin acceptance criteria",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification that its sections trace to the Gherkin acceptance criteria.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And every release-candidate promotion should have a QA evidence bundle",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a system-wide policy. The provided scenario-specific evidence (Gherkin, mention of future receipt) is insufficient to verify this general claim about *every* release-candidate promotion.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE_SCOPE",
+        "recommendedFixRoute": "Provide system-level documentation or a broader set of evidence across multiple promotions to verify this claim."
+      },
+      {
+        "criterionText": "And promotion should fail if any proof is missing.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (e.g., logs, promotion workflow output showing a failure due to missing proof) was provided to verify this conditional failure mechanism.",
+        "blockerCode": "MISSING_EVIDENCE_PROMOTION_OUTCOME",
+        "recommendedFixRoute": "Provide promotion workflow execution logs or a specific test case demonstrating this failure condition."
+      }
+    ]
+  }
+}

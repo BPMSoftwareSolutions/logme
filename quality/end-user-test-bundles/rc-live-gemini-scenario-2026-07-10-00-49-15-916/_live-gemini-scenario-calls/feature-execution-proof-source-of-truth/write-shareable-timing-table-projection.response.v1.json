@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "write-shareable-timing-table-projection",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 650,
+    "candidatesTokenCount": 759,
+    "totalTokenCount": 2183,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 650
+      }
+    ],
+    "thoughtsTokenCount": 774,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario Gherkin describes the expected output (a Markdown timing table and its contents), but no actual report.md or other output evidence was provided to verify if the table was generated, its content, or its format. Therefore, none of the acceptance criteria can be tested.",
+    "expectedResult": "A Markdown timing table should be generated at the specified path, containing rows derived from JSON proof, with all required fields, and be safe for external sharing.",
+    "observedResult": "No evidence (report.md or live-call receipt) was provided to observe the generation or content of the timing table.",
+    "confusingOrRiskyExperiencePoints": "The prompt states that 'report.md' and a 'Gemini live-call receipt' are available evidence surfaces, but these were not provided in the input, making it impossible to perform the requested QA.",
+    "accessibilityOrReadabilityObservations": "N/A - No output was provided to review for accessibility or readability.",
+    "recommendedFollowUps": "Provide the actual 'report.md' file or other relevant output evidence for review to enable testing of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it may write a Markdown timing table at:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin indicates a Markdown timing table *may* be written, but no evidence (e.g., report.md) was provided to confirm if it was actually written or at the specified path.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the 'report.md' or other output showing the generated table and its path."
+      },
+      {
+        "criterionText": "And every timing table row should be generated from the JSON proof",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies the source of the table data, but without the generated table and the JSON proof, it's impossible to verify this generation process.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the 'report.md' containing the table and access to the JSON proof for comparison."
+      },
+      {
+        "criterionText": "And each row should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin lists the required fields for each row, but no generated table was provided to verify the presence of these columns.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the 'report.md' containing the generated table for inspection of its columns."
+      },
+      {
+        "criterionText": "And the table should be safe to paste into PI planning notes, architecture review notes, decks, dashboards, or publications.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion relates to the format, content quality, and suitability of the table for external use. Without seeing the actual table, its safety and usability cannot be assessed.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the 'report.md' containing the generated table to assess its safety and suitability for various uses."
+      }
+    ]
+  }
+}

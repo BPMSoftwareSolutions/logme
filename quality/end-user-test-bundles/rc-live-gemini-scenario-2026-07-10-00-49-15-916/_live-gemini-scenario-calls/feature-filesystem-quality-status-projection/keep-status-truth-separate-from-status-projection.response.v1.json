@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "keep-status-truth-separate-from-status-projection",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 631,
+    "candidatesTokenCount": 863,
+    "totalTokenCount": 3345,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 631
+      }
+    ],
+    "thoughtsTokenCount": 1851,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided `report.md` is a report on the test suite execution, not the 'status sentinel' artifact described in the scenario. As such, there is no end-user surface available to observe the behavior or content of the 'status sentinel' as a product owner would.",
+    "expectedResult": "A 'status sentinel' artifact, accessible via an end-user surface, that clearly states it is a projection, includes specific fields, a summary, a recommended action, and does not require JSON inspection.",
+    "observedResult": "Only a `report.md` detailing test suite pass/fail, which does not represent the 'status sentinel' for a product owner. The actual 'status sentinel' artifact is not available for review.",
+    "confusingOrRiskyExperiencePoints": "The lack of direct access to the 'status sentinel' artifact makes it impossible to verify the feature's implementation from an end-user perspective, leading to an inability to confirm the scenario's acceptance criteria.",
+    "accessibilityOrReadabilityObservations": "N/A, as the 'status sentinel' artifact itself is not available for review.",
+    "recommendedFollowUps": "Provide an end-user accessible surface (e.g., a path to the generated sentinel file, or a rendered view of it) that represents the 'status sentinel' for a product owner, allowing for direct verification of its content and presentation.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the sentinel should clearly state that the sentinel is a projection, not the source of truth",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The 'status sentinel' artifact is not available for review via the provided end-user surfaces.",
+        "blockerCode": "NO_SENTINEL_EVIDENCE",
+        "recommendedFixRoute": "Provide access to the 'status sentinel' artifact itself."
+      },
+      {
+        "criterionText": "And it should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The 'status sentinel' artifact is not available for review via the provided end-user surfaces, thus its contents cannot be verified.",
+        "blockerCode": "NO_SENTINEL_EVIDENCE",
+        "recommendedFixRoute": "Provide access to the 'status sentinel' artifact itself."
+      },
+      {
+        "criterionText": "And it should include a short product-owner summary",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The 'status sentinel' artifact is not available for review via the provided end-user surfaces, thus its contents cannot be verified.",
+        "blockerCode": "NO_SENTINEL_EVIDENCE",
+        "recommendedFixRoute": "Provide access to the 'status sentinel' artifact itself."
+      },
+      {
+        "criterionText": "And it should include the next recommended action",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The 'status sentinel' artifact is not available for review via the provided end-user surfaces, thus its contents cannot be verified.",
+        "blockerCode": "NO_SENTINEL_EVIDENCE",
+        "recommendedFixRoute": "Provide access to the 'status sentinel' artifact itself."
+      },
+      {
+        "criterionText": "And it should never require a reader to inspect JSON to understand the status.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The 'status sentinel' artifact is not available for review via the provided end-user surfaces, thus its presentation format cannot be verified.",
+        "blockerCode": "NO_SENTINEL_EVIDENCE",
+        "recommendedFixRoute": "Provide access to the 'status sentinel' artifact itself."
+      }
+    ]
+  }
+}

@@ -16,12 +16,12 @@ const EXEMPT_REFERENCE_PATHS = [
 const SCANNED_CONTENT_EXTENSIONS = ['.js', '.ts', '.json', '.md', '.txt'];
 const MAX_SCANNED_FILE_BYTES = 1_000_000;
 
-function excludesDirectory(entryName) {
+function excludesDirectory(entryName, excludedDirectories = EXCLUDED_DIRECTORIES) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  return EXCLUDED_DIRECTORIES.includes(entryName);
+  return excludedDirectories.includes(entryName);
 }
 
 function isExemptReference(relativePath) {
@@ -33,7 +33,7 @@ function isExemptReference(relativePath) {
   return EXEMPT_REFERENCE_PATHS.includes(normalizedPath);
 }
 
-function walksRepositoryEntries(rootDir) {
+function walksRepositoryEntries(rootDir, excludedDirectories = EXCLUDED_DIRECTORIES) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
@@ -54,7 +54,7 @@ function walksRepositoryEntries(rootDir) {
       entries.push(fullPath);
 
       if (entry.isDirectory()) {
-        if (excludesDirectory(entry.name)) {
+        if (excludesDirectory(entry.name, excludedDirectories)) {
           continue;
         }
 
@@ -126,7 +126,7 @@ function detectsRetiredDomainNameReintroduction(config) {
   }
 
   const rootDir = config.rootDir;
-  const entries = walksRepositoryEntries(rootDir);
+  const entries = walksRepositoryEntries(rootDir, config.excludeDirectories || EXCLUDED_DIRECTORIES);
   const findings = [];
   const flaggedPaths = new Set();
 

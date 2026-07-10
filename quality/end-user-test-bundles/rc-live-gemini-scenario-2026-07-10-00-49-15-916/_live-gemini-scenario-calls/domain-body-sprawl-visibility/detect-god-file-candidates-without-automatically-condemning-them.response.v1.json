@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-god-file-candidates-without-automatically-condemning-them",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 595,
+    "candidatesTokenCount": 694,
+    "totalTokenCount": 2417,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 595
+      }
+    ],
+    "thoughtsTokenCount": 1128,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (Gherkin) are insufficient to verify any of the acceptance criteria. The `report.md` and Gemini live-call receipt, which are critical for verification, were not provided.",
+    "expectedResult": "The system should classify files into specified categories, include triggering signals for 'god-file candidate' classifications, provide comprehensive risk context beyond line count, and use the 'god-file-candidate' finding code, as demonstrated in the `report.md` and live-call receipt.",
+    "observedResult": "No `report.md` or Gemini live-call receipt was provided, making it impossible to observe the system's behavior against the acceptance criteria.",
+    "confusingOrRiskyExperiencePoints": "The absence of concrete evidence (report.md, live-call receipt) prevents any assessment of the user experience or potential risks associated with the feature's output.",
+    "accessibilityOrReadabilityObservations": "Without the actual report or live-call output, no observations can be made regarding accessibility or readability.",
+    "recommendedFollowUps": "Provide the `report.md` and the Gemini live-call receipt for comprehensive testing of the scenario's acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the file should be classified as one of:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And a `god-file candidate` should include the signals that triggered it",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the report should not require a product owner to infer risk from line count alone",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires `report.md` or Gemini live-call receipt, neither of which was provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+      }
+    ]
+  }
+}

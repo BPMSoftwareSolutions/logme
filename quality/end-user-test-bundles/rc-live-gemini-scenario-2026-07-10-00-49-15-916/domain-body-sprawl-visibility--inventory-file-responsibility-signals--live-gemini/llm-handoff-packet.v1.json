@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--inventory-file-responsibility-signals--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "inventory-file-responsibility-signals",
+  "scenarioName": "Inventory file responsibility signals",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Inventory file responsibility signals\n    Given LogMe scans the configured domain body\n    When the sprawl inventory runs\n    Then it should write a sprawl evidence JSON artifact at:\n      \"\"\"\n      evidence/runs/<run-id>/sprawl/domain-body-sprawl.contract.v1.json\n      \"\"\"\n    And each source file entry should include:\n      | field |\n      | file path |\n      | package or domain scope |\n      | line count |\n      | byte count |\n      | executable method count |\n      | exported symbol count |\n      | imported module count |\n      | local nested function count |\n      | domain vocabulary tokens |\n      | responsibility clusters |\n      | side-effect lanes |\n      | feature ids referenced |\n      | contract paths referenced |\n      | generic mechanic candidates |\n      | finding codes |\n    And the human report should be rendered from this JSON artifact, not hand-authored prose.\n",
+    "acceptanceCriteria": [
+      "Then it should write a sprawl evidence JSON artifact at:",
+      "And each source file entry should include:",
+      "And the human report should be rendered from this JSON artifact, not hand-authored prose."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:53:01.649Z"
+}

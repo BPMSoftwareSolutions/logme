@@ -1,0 +1,11 @@
+{
+  "schemaVersion": "machine-environment.v1",
+  "releaseCandidateId": "rc-live-gemini-2026-07-10-00-47-01-674",
+  "qaRunId": "adversarial-challenge-packet--generate-report-challenge-packet--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "generate-report-challenge-packet",
+  "nodeVersion": "v20.19.0",
+  "platform": "win32",
+  "commandExecuted": "npm test; node scripts/report-truth.js --fast; live Gemini feature QA call",
+  "capturedAt": "2026-07-10T00:47:15.957Z"
+}

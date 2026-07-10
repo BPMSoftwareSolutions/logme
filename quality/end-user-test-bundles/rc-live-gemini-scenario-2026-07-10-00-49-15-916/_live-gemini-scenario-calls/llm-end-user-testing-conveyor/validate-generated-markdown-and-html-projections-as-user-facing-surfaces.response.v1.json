@@ -1,0 +1,116 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "validate-generated-markdown-and-html-projections-as-user-facing-surfaces",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 661,
+    "candidatesTokenCount": 1517,
+    "totalTokenCount": 4424,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 661
+      }
+    ],
+    "thoughtsTokenCount": 2246,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The core evidence surfaces, specifically the content of the 'report.md' file and any HTML projection, were not provided for inspection. This prevented the LLM from performing the required validation of the generated reports as human-facing artifacts.",
+    "expectedResult": "The LLM should have been provided with the actual content of the 'report.md' file and, if applicable, the HTML projection or a rendered view, to inspect them against the specified criteria.",
+    "observedResult": "The LLM was informed that 'report.md' and an HTML projection were available surfaces, but their content was not supplied, making direct inspection impossible.",
+    "confusingOrRiskyExperiencePoints": "The prompt indicated that 'report.md' and an HTML projection were available evidence surfaces, but their actual content was not provided. This creates a confusing testing experience as the LLM is tasked with inspecting artifacts it cannot access.",
+    "accessibilityOrReadabilityObservations": "Not applicable, as the reports themselves were not provided for review.",
+    "recommendedFollowUps": "For future tests requiring inspection of generated reports (Markdown, HTML), ensure the actual content of these reports is directly provided to the LLM as part of the evidence surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should inspect the generated Markdown report as a human-facing artifact",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The content of the 'report.md' file was not provided to the LLM for inspection, preventing verification of this criterion.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the actual content of the 'report.md' file for review."
+      },
+      {
+        "criterionText": "And it should inspect the HTML projection when HTML rendering is available",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Neither the HTML projection file nor a rendered view of it was provided to the LLM, preventing inspection.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the actual HTML projection or a rendered view for review."
+      },
+      {
+        "criterionText": "And the inspection should verify: executive summary is understandable",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so the understandability of the executive summary could not be verified.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And the inspection should verify: ASCII sketches render clearly",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so the clarity of ASCII sketches could not be verified.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And the inspection should verify: links use repo-relative or artifact-relative paths",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so the pathing of links could not be verified.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And the inspection should verify: evidence paths resolve",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so the resolution of evidence paths could not be verified.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And the inspection should verify: blocker states are visible before dense details",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so the visibility of blocker states could not be verified.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And the inspection should verify: timing and call-count facts are readable",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so the readability of timing and call-count facts could not be verified.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And the inspection should verify: no JSON-only evidence is presented as product-ready",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so the presentation of JSON-only evidence could not be verified.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And the inspection should verify: report can be shared with architects and business owners",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The report content was not provided, so its suitability for sharing with architects and business owners could not be assessed.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable verification."
+      },
+      {
+        "criterionText": "And visual or readability blockers should be recorded in the QA bundle",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "As the primary report surfaces were not provided, no visual or readability blockers could be identified or recorded by the LLM.",
+        "blockerCode": "DEPENDENCY_BLOCKED",
+        "recommendedFixRoute": "Provide the report content to enable identification and recording of blockers."
+      },
+      {
+        "criterionText": "And a screenshot index should be written when visual surfaces are inspected.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No visual surfaces (e.g., rendered HTML with screenshots) were provided for inspection, thus the presence or absence of a screenshot index could not be verified.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the visual surfaces and the QA bundle to verify the screenshot index."
+      }
+    ]
+  }
+}

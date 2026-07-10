@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--inventory-qa-status-for-every-feature-scenario--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "inventory-qa-status-for-every-feature-scenario",
+  "criteria": [
+    {
+      "criterionText": "And feature execution proof reports may exist for one or more scenarios",
+      "status": "blocked",
+      "llmObservationSummary": "Cannot verify how the system handles the existence of feature execution proof reports as the 'report.md' output, which would show the 'implementation proof status' field, is missing.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the report.md file for review."
+    },
+    {
+      "criterionText": "Then it should discover every feature scenario",
+      "status": "blocked",
+      "llmObservationSummary": "Cannot verify if every feature scenario is discovered as the 'report.md' output, which would list the scenarios, is missing.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the report.md file for review."
+    },
+    {
+      "criterionText": "And it should classify each scenario as one of:",
+      "status": "blocked",
+      "llmObservationSummary": "Cannot verify the classification of each scenario's QA status as the 'report.md' output, which would contain the 'QA status' field, is missing.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the report.md file for review."
+    },
+    {
+      "criterionText": "And each inventory row should include:",
+      "status": "blocked",
+      "llmObservationSummary": "Cannot verify if each inventory row includes all specified fields (feature id, scenario id, scenario name, etc.) as the 'report.md' output is missing.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the report.md file for review."
+    },
+    {
+      "criterionText": "And no implemented or proven scenario should be omitted from the QA inventory.",
+      "status": "blocked",
+      "llmObservationSummary": "Cannot verify that no implemented or proven scenario is omitted from the QA inventory as the 'report.md' output, which would show the complete list, is missing.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the report.md file for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:55:49.852Z"
+}

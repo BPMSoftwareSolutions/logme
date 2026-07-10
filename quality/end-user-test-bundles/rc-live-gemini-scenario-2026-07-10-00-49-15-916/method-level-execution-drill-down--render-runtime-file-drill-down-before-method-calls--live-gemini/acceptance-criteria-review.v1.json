@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+  "criteria": [
+    {
+      "criterionText": "Then the body node should first show the participating runtime files",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected behavior, but no execution evidence was provided to verify this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide report.md or CLI output for review."
+    },
+    {
+      "criterionText": "And each runtime file row should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected fields for each runtime file row, but no execution evidence was provided to verify this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide report.md or CLI output for review."
+    },
+    {
+      "criterionText": "And the method calls should be grouped under the runtime file when a node spans multiple files.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected grouping logic for method calls, but no execution evidence was provided to verify this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide report.md or CLI output for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:18:54.066Z"
+}

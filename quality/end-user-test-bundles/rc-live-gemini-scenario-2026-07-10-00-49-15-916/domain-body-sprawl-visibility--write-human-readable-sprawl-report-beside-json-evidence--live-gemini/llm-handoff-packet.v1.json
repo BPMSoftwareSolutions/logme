@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-human-readable-sprawl-report-beside-json-evidence--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-human-readable-sprawl-report-beside-json-evidence",
+  "scenarioName": "Write human-readable sprawl report beside JSON evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Write human-readable sprawl report beside JSON evidence\n    Given `domain-body-sprawl.contract.v1.json` has been written for a run\n    When sprawl reporting completes\n    Then it should write a Markdown sprawl report at:\n      \"\"\"\n      evidence/runs/<run-id>/sprawl/domain-body-sprawl.report.md\n      \"\"\"\n    And the report should be generated from `domain-body-sprawl.contract.v1.json`\n    And the report should be suitable for product owners, architects, engineering leads, and PI planning review\n    And the first product-facing section should be a compact sprawl risk summary\n    And the report should include:\n      | section |\n      | executive sprawl summary |\n      | top hotspots |\n      | god-file candidates |\n      | package extraction candidates |\n      | mixed responsibility files |\n      | orphan and scattered artifacts |\n      | severe promotion blockers |\n      | watchlist files |\n      | one-line fix routes |\n      | source evidence links |\n      | dense file inventory appendix |\n    And the report should link back to the canonical JSON evidence using a repo-relative path.\n",
+    "acceptanceCriteria": [
+      "Then it should write a Markdown sprawl report at:",
+      "And the report should be generated from `domain-body-sprawl.contract.v1.json`",
+      "And the report should be suitable for product owners, architects, engineering leads, and PI planning review",
+      "And the first product-facing section should be a compact sprawl risk summary",
+      "And the report should include:",
+      "And the report should link back to the canonical JSON evidence using a repo-relative path."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:53:17.953Z"
+}

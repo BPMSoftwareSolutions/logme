@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "use-fallback-only-as-a-non-promotable-development-diagnostic",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 562,
+    "candidatesTokenCount": 834,
+    "totalTokenCount": 3709,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 562
+      }
+    ],
+    "thoughtsTokenCount": 2313,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e6075cf0101124c2ff714ffe394b16f7e8679202102f205e671aa20cbb88272b",
+  "responseSha256": "eafd232765dd511734846da216ac2362dab6b44a29e7aaa62116a064f77c3192",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/use-fallback-only-as-a-non-promotable-development-diagnostic.response.v1.json",
+  "calledAt": "2026-07-10T01:10:16.144Z"
+}

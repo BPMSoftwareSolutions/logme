@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-false-pass-in-promotion-workflow--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-false-pass-in-promotion-workflow",
+  "criteria": [
+    {
+      "criterionText": "And the report claims `STERILE DOMAIN BODY` or any PASS-style verdict",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, so I cannot verify its claims.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "Then every hard-law blocker should be zero",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (report, logs, or Gemini receipt) was provided to verify the state of hard-law blockers.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_PROMOTION_OUTCOME",
+      "recommendedFixRoute": "Provide the promotion workflow output or relevant sections of the Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the report schema should be valid",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, so its schema validity cannot be checked.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And the freshness gate should pass",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (logs or Gemini receipt) was provided to verify the freshness gate status.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_PROMOTION_OUTCOME",
+      "recommendedFixRoute": "Provide the promotion workflow output or relevant sections of the Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And every required receipt should exist",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The prompt states a Gemini live-call receipt *will be written*, but the actual receipt or a list of required receipts was not provided for verification.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_RECEIPTS",
+      "recommendedFixRoute": "Provide the actual receipts or a manifest of expected receipts for verification."
+    },
+    {
+      "criterionText": "And every report section should trace to Gherkin acceptance criteria",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification that its sections trace to the Gherkin acceptance criteria.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And every release-candidate promotion should have a QA evidence bundle",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a system-wide policy. The provided scenario-specific evidence (Gherkin, mention of future receipt) is insufficient to verify this general claim about *every* release-candidate promotion.",
+      "evidencePaths": [],
+      "blockerCode": "INSUFFICIENT_EVIDENCE_SCOPE",
+      "recommendedFixRoute": "Provide system-level documentation or a broader set of evidence across multiple promotions to verify this claim."
+    },
+    {
+      "criterionText": "And promotion should fail if any proof is missing.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (e.g., logs, promotion workflow output showing a failure due to missing proof) was provided to verify this conditional failure mechanism.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_PROMOTION_OUTCOME",
+      "recommendedFixRoute": "Provide promotion workflow execution logs or a specific test case demonstrating this failure condition."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:50:18.525Z"
+}

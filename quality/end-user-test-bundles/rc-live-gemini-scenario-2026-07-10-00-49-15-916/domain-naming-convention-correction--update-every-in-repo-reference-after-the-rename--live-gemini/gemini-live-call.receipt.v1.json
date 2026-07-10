@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "update-every-in-repo-reference-after-the-rename",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 577,
+    "candidatesTokenCount": 736,
+    "totalTokenCount": 2692,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 577
+      }
+    ],
+    "thoughtsTokenCount": 1379,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "17fb9ae7fcf4a5655bdaf13989828694fcefca111d6e451bbd5cff103d9ae4e5",
+  "responseSha256": "2ea6f5bd1a51f4a0f083274af10419e68741dcc893906a211facaea8f04b772a",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/update-every-in-repo-reference-after-the-rename.response.v1.json",
+  "calledAt": "2026-07-10T00:55:05.858Z"
+}

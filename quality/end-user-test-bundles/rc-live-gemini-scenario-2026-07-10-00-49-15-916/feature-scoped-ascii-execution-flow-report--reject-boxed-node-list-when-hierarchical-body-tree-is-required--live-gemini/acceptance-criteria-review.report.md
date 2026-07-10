@@ -1,0 +1,14 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini
+- Feature id: feature-scoped-ascii-execution-flow-report
+- Scenario id: reject-boxed-node-list-when-hierarchical-body-tree-is-required
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| But the section renders body nodes as flat boxed rows | not testable from assigned surface | This criterion describes a precondition for the scenario. Without the actual report content or a visual representation, it's impossible to confirm if the section indeed renders body nodes as flat boxed rows. | not observed | MISSING_REPORT_EVIDENCE | Provide the generated `report.md` or a screenshot/text snippet of the relevant section. |
+| And the section does not render nested ASCII branches under each body node | not testable from assigned surface | This criterion describes a precondition. Verification requires visual inspection of the report or its textual representation to confirm the absence of nested ASCII branches. | not observed | MISSING_REPORT_EVIDENCE | Provide the generated `report.md` or a screenshot/text snippet of the relevant section. |
+| Then the report should fail | not testable from assigned surface | This is a core outcome criterion. Without the `report.md` or CLI evidence indicating the report's status, it's impossible to confirm if the report actually failed. | not observed | MISSING_REPORT_EVIDENCE | Provide the generated `report.md` which should explicitly state the report's failure status, or CLI logs confirming the failure. |
+| And the finding code should be: | not testable from assigned surface | The Gherkin specifies the finding code as 'executable-body-tree-shape-mismatch'. However, without the `report.md` or CLI evidence, it's impossible to verify if this specific finding code was indeed present in the failure output. | not observed | MISSING_REPORT_EVIDENCE | Provide the generated `report.md` or CLI logs that clearly display the finding code associated with the report failure. |
+| And the failure should explain that each node must contain branch groups for: | not testable from assigned surface | The Gherkin lists the required branch groups (contract, runtime, telemetry, receipt, status). Verification requires inspecting the failure explanation in the `report.md` or CLI output to confirm these details are present. | not observed | MISSING_REPORT_EVIDENCE | Provide the generated `report.md` or CLI logs that include the full failure explanation, allowing verification of the specified branch groups. |

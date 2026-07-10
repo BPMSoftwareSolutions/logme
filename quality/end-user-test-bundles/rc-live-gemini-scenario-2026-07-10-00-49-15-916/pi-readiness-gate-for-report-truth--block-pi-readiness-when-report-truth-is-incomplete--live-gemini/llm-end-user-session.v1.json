@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "pi-readiness-gate-for-report-truth--block-pi-readiness-when-report-truth-is-incomplete--live-gemini",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "block-pi-readiness-when-report-truth-is-incomplete",
+  "scenarioName": "Block PI readiness when report truth is incomplete",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block PI readiness when report truth is incomplete",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/pi-readiness-gate.feature.md:8-14; report.md; live Gemini prompt",
+      "expectedResult": "The PI verdict should be BLOCKED, and the control report should detail blockers for each report feature, given that report truth features are incomplete.",
+      "observedResult": "Cannot observe the PI verdict or the content of the control report as the necessary `report.md` and live-call receipt evidence were not provided.",
+      "timestamp": "2026-07-10T01:21:35.761Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/pi-readiness-gate-for-report-truth--block-pi-readiness-when-report-truth-is-incomplete--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/pi-readiness-gate.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/pi-readiness-gate-for-report-truth--block-pi-readiness-when-report-truth-is-incomplete--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

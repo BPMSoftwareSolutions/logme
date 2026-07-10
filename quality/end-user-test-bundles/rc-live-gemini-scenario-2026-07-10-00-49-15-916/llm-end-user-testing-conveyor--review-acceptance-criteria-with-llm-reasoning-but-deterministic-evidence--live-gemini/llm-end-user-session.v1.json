@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence",
+  "scenarioName": "Review acceptance criteria with LLM reasoning but deterministic evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Review acceptance criteria with LLM reasoning but deterministic evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:196-215; report.md; live Gemini prompt",
+      "expectedResult": "The system should produce a report (`report.md`) and a live-call receipt that demonstrate the classification of acceptance criteria, including the specified fields, LLM recommendations, and the application of the quality gate logic where evidence paths prove the recommendation.",
+      "observedResult": "Only the Gherkin specification was available. The actual `report.md` and live-call receipt, which are critical for end-user verification, were not provided.",
+      "timestamp": "2026-07-10T01:16:16.560Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

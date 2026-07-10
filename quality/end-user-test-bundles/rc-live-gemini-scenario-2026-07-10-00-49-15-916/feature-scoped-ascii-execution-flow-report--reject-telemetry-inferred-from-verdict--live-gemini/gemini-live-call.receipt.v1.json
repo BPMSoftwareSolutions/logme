@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-telemetry-inferred-from-verdict--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-telemetry-inferred-from-verdict",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 550,
+    "candidatesTokenCount": 909,
+    "totalTokenCount": 2434,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 550
+      }
+    ],
+    "thoughtsTokenCount": 975,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "7a74392e03c370812be4589f31532071420a7539bb0e96705e73cec95c403afb",
+  "responseSha256": "139214d0e61127953bc7c215516bc5a3144ec02ea82e6fc887a0f80afef7b46a",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-telemetry-inferred-from-verdict.response.v1.json",
+  "calledAt": "2026-07-10T01:10:53.645Z"
+}

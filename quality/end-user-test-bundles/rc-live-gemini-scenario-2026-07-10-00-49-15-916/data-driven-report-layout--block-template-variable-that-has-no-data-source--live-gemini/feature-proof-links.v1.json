@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "block-template-variable-that-has-no-data-source",
+  "proofReportPaths": [],
+  "missingReports": []
+}

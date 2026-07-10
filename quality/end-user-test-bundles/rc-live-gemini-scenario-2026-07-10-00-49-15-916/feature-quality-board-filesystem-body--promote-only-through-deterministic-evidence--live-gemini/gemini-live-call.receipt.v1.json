@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--promote-only-through-deterministic-evidence--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "promote-only-through-deterministic-evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 561,
+    "candidatesTokenCount": 639,
+    "totalTokenCount": 3506,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 561
+      }
+    ],
+    "thoughtsTokenCount": 2306,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "bc6d7830e76f7b866068bdea9f336dabd2ca67a05b2627716d0718ebac59c203",
+  "responseSha256": "4a04b18e0bc23d66707b72a58644c1d74d87dd9655a2dd1961d323e2deac4032",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/promote-only-through-deterministic-evidence.response.v1.json",
+  "calledAt": "2026-07-10T01:06:54.530Z"
+}

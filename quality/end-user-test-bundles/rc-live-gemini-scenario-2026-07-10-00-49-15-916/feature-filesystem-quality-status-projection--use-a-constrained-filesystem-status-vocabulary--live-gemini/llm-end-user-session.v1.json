@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--use-a-constrained-filesystem-status-vocabulary--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "use-a-constrained-filesystem-status-vocabulary",
+  "scenarioName": "Use a constrained filesystem status vocabulary",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Use a constrained filesystem status vocabulary",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:31-49; report.md; live Gemini prompt",
+      "expectedResult": "The display status should be one of the specified constrained vocabulary, prioritizing the most urgent product signal. 'stale' should override previously passing statuses when evidence no longer matches, and 'qa-passed.promoted' should only be used with both QA pass and deterministic promotion evidence.",
+      "observedResult": "No observed result could be determined as the `report.md` and Gemini live-call receipt evidence surfaces were not provided.",
+      "timestamp": "2026-07-10T01:02:53.353Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--use-a-constrained-filesystem-status-vocabulary--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--use-a-constrained-filesystem-status-vocabulary--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--remove-stale-or-duplicate-status-sentinels-for-the-same-feature--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "remove-stale-or-duplicate-status-sentinels-for-the-same-feature",
+  "scenarioName": "Remove stale or duplicate status sentinels for the same feature",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Remove stale or duplicate status sentinels for the same feature\n    Given `docs/features/` contains one or more status sentinels for `<feature-id>`\n    When the status projection recalculates the feature status\n    Then it should delete or replace obsolete sentinels for `<feature-id>`\n    And exactly one `_STATUS.<display-status>.<feature-id>.md` file should remain\n    And if two different statuses remain for the same feature id, the projection should fail with:\n      | finding code |\n      | duplicate-feature-status-sentinel |\n    And the failure should be visible in the feature quality board.\n",
+    "acceptanceCriteria": [
+      "Then it should delete or replace obsolete sentinels for `<feature-id>`",
+      "And exactly one `_STATUS.<display-status>.<feature-id>.md` file should remain",
+      "And if two different statuses remain for the same feature id, the projection should fail with:",
+      "And the failure should be visible in the feature quality board."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:03:56.957Z"
+}

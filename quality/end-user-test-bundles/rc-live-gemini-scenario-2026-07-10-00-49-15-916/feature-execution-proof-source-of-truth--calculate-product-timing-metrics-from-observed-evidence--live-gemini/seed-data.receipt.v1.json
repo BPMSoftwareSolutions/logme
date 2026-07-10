@@ -1,0 +1,13 @@
+{
+  "schemaVersion": "seed-data.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "calculate-product-timing-metrics-from-observed-evidence",
+  "seedDataId": "feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini-seed-data",
+  "approved": true,
+  "blockerCodes": [],
+  "materializedSeedDataPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini/seed-data",
+  "materializedFiles": [],
+  "writtenAt": "2026-07-10T00:59:41.152Z"
+}

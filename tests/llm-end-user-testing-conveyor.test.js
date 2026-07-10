@@ -48,9 +48,24 @@ function writesProofReports(rootDir) {
   ];
 }
 
+function writesDomainAnalysisReport(rootDir) {
+  const analysisRoot = path.join(rootDir, 'evidence', 'runs', 'proof-run-1', 'domain-analysis');
+  fs.mkdirSync(analysisRoot, { recursive: true });
+  fs.writeFileSync(path.join(analysisRoot, 'domain-body-analysis.report.md'), [
+    '# Domain Body Analysis Report',
+    '',
+    '- Executable file names missing action verb: 0',
+    '- Files missing body contract: 0',
+    '- Files missing scenario tie-out: 0',
+    '',
+  ].join('\n'), 'utf8');
+  return path.join(analysisRoot, 'domain-body-analysis.report.md');
+}
+
 function buildsRunOptions(rootDir, overrides = {}) {
   const featurePath = writesFeatureFile(rootDir);
   const proofReports = writesProofReports(rootDir);
+  const domainAnalysisReport = writesDomainAnalysisReport(rootDir);
 
   return {
     rootDir,
@@ -65,6 +80,7 @@ function buildsRunOptions(rootDir, overrides = {}) {
       'assignment contains release candidate, run, feature, scenario, provider, model, surfaces, and paths',
     ],
     currentProofReportPaths: proofReports,
+    currentDomainAnalysisReportPaths: [domainAnalysisReport],
     requiredHumanReportPaths: proofReports,
     steps: [{
       action: 'open generated assignment',
@@ -151,6 +167,9 @@ test('writes an LLM QA bundle with redacted handoff context, deterministic decis
     assert.equal(assignment.providerName, 'Gemini');
     assert.doesNotMatch(handoffReport, /secret-value/);
     assert.match(handoffReport, /token=\[REDACTED\]/);
+    assert.match(handoffReport, /## Current Domain Body Analysis/);
+    assert.match(handoffReport, /Domain Body Analysis Report/);
+    assert.match(handoffReport, /Executable file names missing action verb: 0/);
     assert.equal(gateDecision.qualityGateDecision, 'QA passed');
     assert.equal(gateDecision.promotable, false);
     assert.equal(gateDecision.llmPromotionAllowed, false);

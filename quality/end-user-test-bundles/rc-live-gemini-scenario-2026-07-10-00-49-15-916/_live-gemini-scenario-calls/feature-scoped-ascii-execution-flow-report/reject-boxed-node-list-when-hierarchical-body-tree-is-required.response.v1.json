@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-boxed-node-list-when-hierarchical-body-tree-is-required",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 601,
+    "candidatesTokenCount": 992,
+    "totalTokenCount": 3539,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 601
+      }
+    ],
+    "thoughtsTokenCount": 1946,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario's expected outcomes regarding report failure, finding code, and failure explanation could not be verified due to the absence of the generated `report.md` and CLI evidence. The preconditions describing the report's initial state also could not be confirmed from the provided Gherkin.",
+    "expectedResult": "The report should fail with the finding code 'executable-body-tree-shape-mismatch' and an explanation detailing the required branch groups (contract, runtime, telemetry, receipt, status), given that the report contains a flat boxed node list without nested ASCII branches.",
+    "observedResult": "No `report.md` or CLI evidence was provided, preventing observation of the actual report outcome.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete output evidence (e.g., `report.md` or CLI logs) makes it impossible to validate the scenario's success or failure from an end-user perspective. This is a critical gap for QA.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and well-structured, making the intent of the test understandable. The acceptance criteria directly map to the Gherkin steps.",
+    "recommendedFollowUps": "Provide the `report.md` file and any relevant CLI evidence (e.g., logs showing the report presentation gate's output) to enable verification of the scenario's outcomes. Ensure all required evidence surfaces are present for future QA tasks.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But the section renders body nodes as flat boxed rows",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a precondition for the scenario. Without the actual report content or a visual representation, it's impossible to confirm if the section indeed renders body nodes as flat boxed rows.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` or a screenshot/text snippet of the relevant section."
+      },
+      {
+        "criterionText": "And the section does not render nested ASCII branches under each body node",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a precondition. Verification requires visual inspection of the report or its textual representation to confirm the absence of nested ASCII branches.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` or a screenshot/text snippet of the relevant section."
+      },
+      {
+        "criterionText": "Then the report should fail",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This is a core outcome criterion. Without the `report.md` or CLI evidence indicating the report's status, it's impossible to confirm if the report actually failed.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` which should explicitly state the report's failure status, or CLI logs confirming the failure."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies the finding code as 'executable-body-tree-shape-mismatch'. However, without the `report.md` or CLI evidence, it's impossible to verify if this specific finding code was indeed present in the failure output.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` or CLI logs that clearly display the finding code associated with the report failure."
+      },
+      {
+        "criterionText": "And the failure should explain that each node must contain branch groups for:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin lists the required branch groups (contract, runtime, telemetry, receipt, status). Verification requires inspecting the failure explanation in the `report.md` or CLI output to confirm these details are present.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated `report.md` or CLI logs that include the full failure explanation, allowing verification of the specified branch groups."
+      }
+    ]
+  }
+}

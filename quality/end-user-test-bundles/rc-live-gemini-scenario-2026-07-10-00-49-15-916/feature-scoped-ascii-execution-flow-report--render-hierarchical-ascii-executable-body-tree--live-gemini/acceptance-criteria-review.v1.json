@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-hierarchical-ascii-executable-body-tree--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-hierarchical-ascii-executable-body-tree",
+  "criteria": [
+    {
+      "criterionText": "Then the report should include a hierarchical tree shaped like:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of the hierarchical tree's presence and shape as described in the Gherkin.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "And the tree should use nested ASCII branches to show body ownership",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of nested ASCII branches for body ownership within the rendered tree.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "And the tree should appear before dense method tables",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of the tree's placement relative to dense method tables in the report.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    },
+    {
+      "criterionText": "And the tree should show blockers inline under the body node where truth broke.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of inline blocker display under the relevant body nodes within the tree.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:08:57.807Z"
+}

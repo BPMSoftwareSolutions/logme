@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-a-feature-untested-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-a-feature-untested-from-the-filesystem-body",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 576,
+    "candidatesTokenCount": 761,
+    "totalTokenCount": 2435,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 576
+      }
+    ],
+    "thoughtsTokenCount": 1098,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b0e9608ceceffc291a417befb3acd7159e8ef8b4e4bbe8e3a253879f1e1de87f",
+  "responseSha256": "7ecf2c704663e042bceeb7aff3d65d35f500f8fa46aa62e9edd62a4ac0b35c73",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/mark-a-feature-untested-from-the-filesystem-body.response.v1.json",
+  "calledAt": "2026-07-10T01:03:57.053Z"
+}

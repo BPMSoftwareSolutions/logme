@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--preserve-existing-feature-document-paths-during-rollout--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "preserve-existing-feature-document-paths-during-rollout",
+  "criteria": [
+    {
+      "criterionText": "Then the implementation should not require moving existing feature specs",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion requires observing the implementation or a test report confirming no movement of existing feature specs. No such evidence was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply `report.md` or Gemini live-call receipt detailing the outcome of this step."
+    },
+    {
+      "criterionText": "And the board should discover flat feature specs",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Verification of this criterion requires evidence from the feature quality board's behavior or a test report. No such evidence was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply `report.md` or Gemini live-call receipt detailing the outcome of this step."
+    },
+    {
+      "criterionText": "And the board should write generated status artifacts beside the flat feature specs",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion requires observing file system changes or a test report confirming the placement of status artifacts. No such evidence was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply `report.md` or Gemini live-call receipt detailing the outcome of this step."
+    },
+    {
+      "criterionText": "And if feature body folders are introduced later, the board should support both shapes during migration",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes future compatibility and migration support. Verification requires observing the board's behavior in a migration scenario or a test report. No such evidence was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply `report.md` or Gemini live-call receipt detailing the outcome of this step."
+    },
+    {
+      "criterionText": "And duplicate feature ids across flat files and folders should produce:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion specifies an error condition and its expected output. Verification requires observing the system's response to duplicate feature IDs or a test report. No such evidence was provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply `report.md` or Gemini live-call receipt detailing the outcome of this step."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:08:00.078Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--show-blocked-report-as-a-worklist--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "show-blocked-report-as-a-worklist",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 551,
+    "candidatesTokenCount": 663,
+    "totalTokenCount": 2438,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 551
+      }
+    ],
+    "thoughtsTokenCount": 1224,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "1e4e2ce281aea6723e625342f490fcf4125781c9bdca35e5b337fab6f6fdc322",
+  "responseSha256": "95f1e3fc816d67704b54b1446ea7802e7fe085d7194ad1c7b72e3e89f41f2546",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/show-blocked-report-as-a-worklist.response.v1.json",
+  "calledAt": "2026-07-10T01:11:18.359Z"
+}

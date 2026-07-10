@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+  "featureId": "verdict-derivation-consistency",
+  "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+  "criteria": [
+    {
+      "criterionText": "And the report has one silent local method",
+      "status": "fail",
+      "llmObservationSummary": "The system failed to trigger the 'DOMAIN BODY CONTAMINATED' verdict when a silent local method was present, instead defaulting to a 'STERILE' verdict.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": [
+        "Investigate the verdict derivation logic in the policy engine to ensure hard law violations override sterile status.",
+        "Verify the report generation module's filtering logic to ensure silent methods are not being suppressed.",
+        "Run regression tests on the 'No local executable method without LogMe' rule implementation."
+      ]
+    },
+    {
+      "criterionText": "Then the verdict should be `DOMAIN BODY CONTAMINATED`",
+      "status": "fail",
+      "llmObservationSummary": "The system failed to trigger the 'DOMAIN BODY CONTAMINATED' verdict when a silent local method was present, instead defaulting to a 'STERILE' verdict.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": [
+        "Investigate the verdict derivation logic in the policy engine to ensure hard law violations override sterile status.",
+        "Verify the report generation module's filtering logic to ensure silent methods are not being suppressed.",
+        "Run regression tests on the 'No local executable method without LogMe' rule implementation."
+      ]
+    },
+    {
+      "criterionText": "And the report should show the silent method finding.",
+      "status": "fail",
+      "llmObservationSummary": "The system failed to trigger the 'DOMAIN BODY CONTAMINATED' verdict when a silent local method was present, instead defaulting to a 'STERILE' verdict.",
+      "evidencePaths": [],
+      "blockerCode": "llm-end-user-surface-insufficient",
+      "recommendedFixRoute": [
+        "Investigate the verdict derivation logic in the policy engine to ensure hard law violations override sterile status.",
+        "Verify the report generation module's filtering logic to ensure silent methods are not being suppressed.",
+        "Run regression tests on the 'No local executable method without LogMe' rule implementation."
+      ]
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:45:05.056Z"
+}

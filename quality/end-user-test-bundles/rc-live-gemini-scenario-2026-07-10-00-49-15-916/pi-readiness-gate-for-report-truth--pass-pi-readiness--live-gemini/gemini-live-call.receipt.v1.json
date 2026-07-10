@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "pi-readiness-gate-for-report-truth--pass-pi-readiness--live-gemini",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "pass-pi-readiness",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 522,
+    "candidatesTokenCount": 496,
+    "totalTokenCount": 2421,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 522
+      }
+    ],
+    "thoughtsTokenCount": 1403,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "cf1ec11af8409ff31971563085e6cafd1d5f79c087f3a3b56b677ad34c58ca37",
+  "responseSha256": "6bb2511ea8528bb5fa05f88153a9b59c91c2308d0d6c7f8e1cb430e5a317c9d2",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/pi-readiness-gate-for-report-truth/pass-pi-readiness.response.v1.json",
+  "calledAt": "2026-07-10T01:21:44.216Z"
+}

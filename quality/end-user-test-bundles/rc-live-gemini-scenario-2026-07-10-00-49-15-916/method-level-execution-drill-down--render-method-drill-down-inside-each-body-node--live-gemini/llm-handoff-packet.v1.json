@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-method-drill-down-inside-each-body-node--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-method-drill-down-inside-each-body-node",
+  "scenarioName": "Render method drill-down inside each body node",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render method drill-down inside each body node\n    Given `feature-execution.contract.v1.json` contains method calls under observed body nodes\n    When `executable-body-contract.report.md` is rendered\n    Then each body node should include a nested method drill-down shaped like:\n      \"\"\"\n      [02] CANONICAL REQUEST BINDING\n      |-- contract\n      |   `-- contracts/<feature>/canonical-request.schema.v1.json\n      |\n      |-- runtime file\n      |   `-- src/<feature>/canonical-request.js:20-38\n      |\n      |-- observed node telemetry\n      |   |-- runtime step  : 2\n      |   |-- first seen at : 2026-07-09T12:00:02.000Z\n      |   |-- last seen at  : 2026-07-09T12:00:03.500Z\n      |   |-- duration ms   : 475\n      |   |-- elapsed prev  : 1000\n      |   |-- call count    : 2\n      |   `-- status        : observed\n      |\n      |-- method drill-down\n      |   |-- call 001\n      |   |   |-- method       : bindsCanonicalFeatureRequest\n      |   |   |-- source       : src/<feature>/canonical-request.js:20-28\n      |   |   |-- started at   : 2026-07-09T12:00:02.000Z\n      |   |   |-- completed at : 2026-07-09T12:00:02.175Z\n      |   |   |-- duration ms  : 175\n      |   |   |-- elapsed prev : 1000\n      |   |   |-- telemetry    : telemetry.events.v1.jsonl#evt-001,#evt-002\n      |   |   |-- receipt      : canonical-request.receipt.v1.json\n      |   |   `-- status       : ok\n      |   |\n      |   `-- call 002\n      |       |-- method       : validatesCanonicalRequestShape\n      |       |-- source       : src/<feature>/canonical-request.js:30-38\n      |       |-- started at   : 2026-07-09T12:00:03.025Z\n      |       |-- completed at : 2026-07-09T12:00:03.500Z\n      |       |-- duration ms  : 300\n      |       |-- elapsed prev : 850\n      |       |-- telemetry    : telemetry.events.v1.jsonl#evt-003,#evt-004\n      |       |-- receipt      : canonical-request.receipt.v1.json\n      |       `-- status       : ok\n      |\n      `-- status\n          `-- ok\n      \"\"\"\n    And every timing, telemetry, receipt, and status value should match canonical JSON proof exactly.\n",
+    "acceptanceCriteria": [
+      "Then each body node should include a nested method drill-down shaped like:",
+      "And every timing, telemetry, receipt, and status value should match canonical JSON proof exactly."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:18:44.962Z"
+}

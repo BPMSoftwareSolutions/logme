@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-artifact-sprawl-across-directories",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 544,
+    "candidatesTokenCount": 642,
+    "totalTokenCount": 2316,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 544
+      }
+    ],
+    "thoughtsTokenCount": 1130,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario describes a system that detects artifact sprawl and reports specific findings. However, the actual report (report.md) and any live-call receipts or CLI evidence are not provided, making it impossible to verify the implementation from the given end-user surfaces.",
+    "expectedResult": "The system should verify artifact adherence to file-system body contracts, and report specific findings (orphan-source-file, orphan-test-file, orphan-contract-file, scattered-feature-artifact, undeclared-generated-artifact), with each finding including its expected home or declared owner.",
+    "observedResult": "No report or live-call evidence was provided to observe the actual results of the sprawl inventory run. The Gherkin describes the intended behavior, but no execution evidence is available for observation.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete evidence (report.md, live-call receipt) makes it impossible to assess the feature's actual behavior or potential user experience issues. The Gherkin alone is insufficient for end-user QA.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear and readable. However, the absence of the actual report or other output means there's nothing to evaluate regarding accessibility or readability of the results.",
+    "recommendedFollowUps": "Provide the report.md and any relevant CLI output or live-call receipts to enable proper end-user QA testing against the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should verify that related artifacts follow the declared file-system body contract",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify internal system behavior without external evidence like a report or CLI output.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md or CLI output showing verification status."
+      },
+      {
+        "criterionText": "And it should report:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The specific findings listed in the Gherkin table cannot be confirmed without the actual report.md.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md to confirm the presence and content of the reported findings."
+      },
+      {
+        "criterionText": "And each finding should include the expected home or declared owner.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify the detail of findings (inclusion of home/owner) without the actual report.md.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide report.md to confirm the structure and content of each finding."
+      }
+    ]
+  }
+}

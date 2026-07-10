@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-method-evidence-appendix-for-deep-review--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-method-evidence-appendix-for-deep-review",
+  "proofReportPaths": [],
+  "missingReports": []
+}

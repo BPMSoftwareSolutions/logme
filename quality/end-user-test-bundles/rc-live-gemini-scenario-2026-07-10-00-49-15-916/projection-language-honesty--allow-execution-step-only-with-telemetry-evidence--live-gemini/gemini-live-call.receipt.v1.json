@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--allow-execution-step-only-with-telemetry-evidence--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "allow-execution-step-only-with-telemetry-evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:23:24.829Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 348,
+    "candidatesTokenCount": 666,
+    "totalTokenCount": 2004,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 348
+      }
+    ],
+    "thoughtsTokenCount": 990,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "860ab6f0acfb79ba3a5c1191528e46e37ca3cf1681406252aaf908676ed8ebad",
+  "responseSha256": "d4afba8e64808fb96f1737922b1bc8d4631750be600f152eba5d82bb8cc93cd5",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/allow-execution-step-only-with-telemetry-evidence.response.v1.json"
+}

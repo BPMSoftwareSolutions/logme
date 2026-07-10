@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-domain-gate-and-template-directories--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-domain-gate-and-template-directories",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 631,
+    "candidatesTokenCount": 923,
+    "totalTokenCount": 3170,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 631
+      }
+    ],
+    "thoughtsTokenCount": 1616,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "14853875dabfbe032311c276c52a94e0e90e2632a6070a9eb11e95acc407f326",
+  "responseSha256": "78a01b101fcfa0de8e3b7c8aa88a03309de06654cfdcbe6471349181dba0bfee",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/rename-domain-gate-and-template-directories.response.v1.json",
+  "calledAt": "2026-07-10T00:54:53.833Z"
+}

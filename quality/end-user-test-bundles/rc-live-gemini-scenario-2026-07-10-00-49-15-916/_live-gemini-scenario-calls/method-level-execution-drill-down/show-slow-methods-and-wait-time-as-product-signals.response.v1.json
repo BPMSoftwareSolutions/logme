@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "show-slow-methods-and-wait-time-as-product-signals",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 566,
+    "candidatesTokenCount": 672,
+    "totalTokenCount": 2150,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 566
+      }
+    ],
+    "thoughtsTokenCount": 912,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The scenario Gherkin describes the expected behavior and assertions for method-level timing signals. However, the actual 'report.md' and Gemini live-call receipt, which would contain the concrete evidence of these assertions, were not provided. Therefore, it's impossible to verify if the feature behaves as described.",
+    "expectedResult": "The canonical JSON proof should identify the specified metrics, missing timing should be 'not observed', and method timing signals should not be calculated from line count, method count, or static source inventory.",
+    "observedResult": "No actual report or JSON proof was observed. Only the Gherkin describing the expected outcome was available.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete evidence makes it impossible to confirm the feature's functionality. This is a significant risk as the system's behavior cannot be validated.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear and readable. The issue is the absence of the actual test output.",
+    "recommendedFollowUps": "Provide the 'report.md' and the Gemini live-call receipt for this scenario to enable proper verification of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the canonical JSON proof should identify:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin states that specific metrics should be identified in the canonical JSON proof. However, the actual JSON proof or 'report.md' was not provided, preventing verification.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' or the canonical JSON proof containing the identified metrics."
+      },
+      {
+        "criterionText": "And missing timing should be `not observed`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin asserts that missing timing should be 'not observed'. Without the actual report or JSON output, this assertion cannot be verified.",
+        "blockerCode": "MISSING_REPORT_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' or the canonical JSON proof to verify the 'not observed' status of missing timing."
+      },
+      {
+        "criterionText": "And a method timing signal should never be calculated from line count, method count, or static source inventory.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes an internal implementation constraint. While the Gherkin asserts this, it cannot be verified from end-user surfaces like 'report.md' or a JSON proof, as these typically show outcomes, not internal calculation methods.",
+        "blockerCode": "NOT_VERIFIABLE_FROM_END_USER_SURFACE",
+        "recommendedFixRoute": "Provide design documentation, code review evidence, or a specific section in 'report.md' that explicitly confirms this constraint on calculation methods."
+      }
+    ]
+  }
+}

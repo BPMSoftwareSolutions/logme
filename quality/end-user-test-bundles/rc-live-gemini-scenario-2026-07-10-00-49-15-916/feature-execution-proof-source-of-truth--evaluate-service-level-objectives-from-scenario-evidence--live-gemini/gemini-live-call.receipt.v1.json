@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--evaluate-service-level-objectives-from-scenario-evidence--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "evaluate-service-level-objectives-from-scenario-evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 639,
+    "candidatesTokenCount": 932,
+    "totalTokenCount": 3814,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 639
+      }
+    ],
+    "thoughtsTokenCount": 2243,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b577265ba27ee2a8ea65322d62467f84a59377fcccb081272929c818e84f3cd9",
+  "responseSha256": "94a6a6e549b33f8a50bb1e85ffcd7b29c3208fd30c2057e1e758657b38d36a39",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/evaluate-service-level-objectives-from-scenario-evidence.response.v1.json",
+  "calledAt": "2026-07-10T00:59:55.235Z"
+}

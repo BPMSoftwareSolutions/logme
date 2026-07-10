@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-shareable-sprawl-hotspot-table",
+  "scenarioName": "Write shareable sprawl hotspot table",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Write shareable sprawl hotspot table",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-body-sprawl-visibility.feature.md:59-80; report.md; live Gemini prompt",
+      "expectedResult": "A Markdown hotspot table should be generated at the specified path, with rows derived from JSON evidence, including all specified columns, and formatted safely for various documentation purposes.",
+      "observedResult": "No generated report or CLI evidence was provided, so the actual output could not be observed or verified against the acceptance criteria.",
+      "timestamp": "2026-07-10T00:53:17.965Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-body-sprawl-visibility.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "llm-seed-data-proposal.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "block-package-governed-claim-without-package-receipt",
+  "seedDataId": "domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini-seed-data",
+  "purpose": "No seed records required for Markdown and CLI evidence review.",
+  "scenarioCoverage": [
+    "block-package-governed-claim-without-package-receipt"
+  ],
+  "recordsToCreate": [],
+  "filesToCreate": [],
+  "expectedUserVisibleState": "No additional user-visible seed state required.",
+  "cleanupInstructions": "Remove the QA bundle seed-data directory after review if cleanup is requested.",
+  "allowedPaths": [
+    "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini/seed-data"
+  ],
+  "privacyClassification": "synthetic",
+  "syntheticDataDeclaration": "All proposed seed data is synthetic."
+}

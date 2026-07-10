@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--reject-report-facts-not-backed-by-json-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "reject-report-facts-not-backed-by-json-proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 576,
+    "candidatesTokenCount": 779,
+    "totalTokenCount": 2877,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 576
+      }
+    ],
+    "thoughtsTokenCount": 1522,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "63c36e4362422b735c9adc3fadb0427ed6415b8442057ecdc070c27fcf898e57",
+  "responseSha256": "3835d936feef66b1569fc9f3f4a10e09d39ff62eeaa0ea1340b234d1d9f9edb7",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/reject-report-facts-not-backed-by-json-proof.response.v1.json",
+  "calledAt": "2026-07-10T01:02:12.920Z"
+}

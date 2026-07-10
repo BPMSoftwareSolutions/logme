@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--block-scenario-promotion-when-feature-evidence-report-is-missing--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "block-scenario-promotion-when-feature-evidence-report-is-missing",
+  "proofReportPaths": [],
+  "missingReports": []
+}

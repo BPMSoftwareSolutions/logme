@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "tie-method-calls-to-telemetry-event-pairs",
+  "scenarioName": "Tie method calls to telemetry event pairs",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Tie method calls to telemetry event pairs",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:66-80; report.md; live Gemini prompt",
+      "expectedResult": "The system should correctly tie method calls to telemetry event pairs, supporting various telemetry shapes and accurately deriving 'started at', 'completed at', and 'duration ms' values, with a specific fallback for unproven duration.",
+      "observedResult": "The Gherkin clearly describes the expected behavior for tying method calls to telemetry events and deriving timing information. However, no actual execution results or reports were available to observe the system's behavior.",
+      "timestamp": "2026-07-10T01:18:15.597Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

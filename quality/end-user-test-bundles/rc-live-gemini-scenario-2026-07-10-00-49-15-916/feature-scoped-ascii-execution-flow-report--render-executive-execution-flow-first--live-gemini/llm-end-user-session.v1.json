@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-executive-execution-flow-first--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-executive-execution-flow-first",
+  "scenarioName": "Render executive execution flow first",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render executive execution flow first",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:8-23; report.md; live Gemini prompt",
+      "expectedResult": "The `report.md` should display an ASCII execution flow sketch as the first product-facing section, containing specific elements (verdict, run id, declared source authority, static source inventory, telemetry observation, receipt evidence, blocker count, promotion decision), and dense method tables should appear only after the sketch and blocker summary.",
+      "observedResult": "The `report.md` file was not available for review, preventing any observation of its content or structure.",
+      "timestamp": "2026-07-10T01:08:00.237Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-executive-execution-flow-first--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-executive-execution-flow-first--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

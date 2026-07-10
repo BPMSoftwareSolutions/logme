@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "prepare-future-notification-without-sending-it",
+  "scenarioName": "Prepare future notification without sending it",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Prepare future notification without sending it",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:311-321; report.md; live Gemini prompt",
+      "expectedResult": "A draft notification packet should be written at the specified path, summarizing QA results, bundle path, report path, blockers, and recommended next steps. No email or external notifications should be sent.",
+      "observedResult": "The `report.md` does not provide any explicit confirmation or link to the draft notification packet, nor does it detail its content. Furthermore, there is no explicit statement or log within the `report.md` confirming that no email or external notifications were sent.",
+      "timestamp": "2026-07-10T01:17:25.494Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--change-report-section-order-without-code-changes--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "change-report-section-order-without-code-changes",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 510,
+    "candidatesTokenCount": 705,
+    "totalTokenCount": 2111,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 510
+      }
+    ],
+    "thoughtsTokenCount": 896,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0722a1fa87960a1e39ea18e26212de60bdb361a070fe15617a27afbb4a9bdebc",
+  "responseSha256": "48713539e77e2d4acddb27ae0fa212e56cb5074ba48b271ac95f5e4b904a0932",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/change-report-section-order-without-code-changes.response.v1.json",
+  "calledAt": "2026-07-10T00:50:31.633Z"
+}

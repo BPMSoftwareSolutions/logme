@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-required-ascii-body-tree-shape--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-required-ascii-body-tree-shape",
+  "scenarioName": "Render required ASCII body tree shape",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render required ASCII body tree shape\n    Given an executable body contract declares ordered execution nodes\n    When the ASCII execution sketch is rendered\n    Then the report should include a tree shaped like:\n      \"\"\"\n      +------------------------------------------------------------+\n      | EXECUTABLE BODY TREE                                      |\n      +------------------------------------------------------------+\n      | 00 ACCEPTANCE SOURCE                                      |\n      | contract  : docs/features/<feature>.feature.md      ok     |\n      | runtime   : not executable                         n/a    |\n      | telemetry : not required                           n/a    |\n      | receipt   : not required                           n/a    |\n      | status    : ok                                            |\n      |                                                            |\n      | 01 <NODE LABEL>                                           |\n      | contract  : contracts/<contract>.json              ok     |\n      | runtime   : src/<runtime-file>.js:<start>-<end>    ok     |\n      | telemetry : evidence/runs/<run-id>/<events>.jsonl observed |\n      | duration  : <duration-ms> ms                              |\n      | receipt   : evidence/runs/<run-id>/<receipt>.json  written |\n      | status    : ok                                            |\n      +------------------------------------------------------------+\n      \"\"\"\n    And every executable node should use the same contract/runtime/telemetry/duration/receipt/status row pattern\n    And every path should be repo-relative\n    And runtime rows should include source line range.\n",
+    "acceptanceCriteria": [
+      "Then the report should include a tree shaped like:",
+      "And every executable node should use the same contract/runtime/telemetry/duration/receipt/status row pattern",
+      "And every path should be repo-relative",
+      "And runtime rows should include source line range."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:08:47.707Z"
+}

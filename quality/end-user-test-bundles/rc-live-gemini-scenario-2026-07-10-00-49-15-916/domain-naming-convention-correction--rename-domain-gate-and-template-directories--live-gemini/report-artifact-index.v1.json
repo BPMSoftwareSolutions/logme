@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "report-artifact-index.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-domain-gate-and-template-directories--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-domain-gate-and-template-directories",
+  "reviewedMarkdownReports": [],
+  "reviewedHtmlPreviews": []
+}

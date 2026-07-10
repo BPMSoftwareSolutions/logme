@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "execute-real-end-user-qa-from-the-user-perspective",
+  "scenarioName": "Execute real end-user QA from the user perspective",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Execute real end-user QA from the user perspective",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/end-user-quality-evidence-bundle.feature.md:34-49; report.md; live Gemini prompt",
+      "expectedResult": "The system should be exercised through various end-user surfaces, including generated Markdown reports and HTML projections, with unit tests not being the sole validation method.",
+      "observedResult": "The system was exercised via a generated Markdown report ('report.md') and the current interaction with Gemini. Unit tests ran, but end-user QA is being performed separately. An HTML projection was not provided for review.",
+      "timestamp": "2026-07-10T00:55:49.859Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "partially met",
+      "evidencePaths": [
+        "docs/features/end-user-quality-evidence-bundle.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

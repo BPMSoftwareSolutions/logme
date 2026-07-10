@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "preserve-feature-evidence-from-source-controlled-templates",
+  "scenarioName": "Preserve feature evidence from source-controlled templates",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Preserve feature evidence from source-controlled templates",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/per-feature-executable-body-evidence-reports.feature.md:93-101; report.md; live Gemini prompt",
+      "expectedResult": "The regenerated feature evidence report should clearly demonstrate the application of an updated template, without requiring a code deployment for layout-only changes, and confirm that generated feature evidence is not source controlled.",
+      "observedResult": "A single static report.md (content not provided for review) cannot demonstrate template updates (which require comparison), confirm the absence of code deployment (which requires deployment logs), or verify source control status (which requires access to the source control system).",
+      "timestamp": "2026-07-10T01:21:22.117Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

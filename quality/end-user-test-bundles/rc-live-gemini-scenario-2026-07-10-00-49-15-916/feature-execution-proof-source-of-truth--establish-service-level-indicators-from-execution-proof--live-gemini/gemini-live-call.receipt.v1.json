@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--establish-service-level-indicators-from-execution-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "establish-service-level-indicators-from-execution-proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 667,
+    "candidatesTokenCount": 798,
+    "totalTokenCount": 3467,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 667
+      }
+    ],
+    "thoughtsTokenCount": 2002,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0435f3e3bc9c6ad6924b8b23d892cd6d3695e8ef6f9d1fa2b7664bccd4330bb9",
+  "responseSha256": "3b0fb43be63ae55ba736d02e5ddcd2453405716e9c00ef1b4a9cfe6d9577e920",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/establish-service-level-indicators-from-execution-proof.response.v1.json",
+  "calledAt": "2026-07-10T00:59:41.165Z"
+}

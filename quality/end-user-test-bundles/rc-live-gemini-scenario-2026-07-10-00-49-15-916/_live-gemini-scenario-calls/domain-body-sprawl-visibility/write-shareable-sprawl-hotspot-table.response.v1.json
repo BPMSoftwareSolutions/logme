@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-shareable-sprawl-hotspot-table",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 638,
+    "candidatesTokenCount": 746,
+    "totalTokenCount": 2123,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 638
+      }
+    ],
+    "thoughtsTokenCount": 739,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario describes the expected generation of a Markdown hotspot table with specific content and format. However, no `report.md` or CLI evidence was provided to verify if the table was actually generated, its content, or its format.",
+    "expectedResult": "A Markdown hotspot table should be generated at the specified path, with rows derived from JSON evidence, including all specified columns, and formatted safely for various documentation purposes.",
+    "observedResult": "No generated report or CLI evidence was provided, so the actual output could not be observed or verified against the acceptance criteria.",
+    "confusingOrRiskyExperiencePoints": "Without access to the generated table, it's impossible to assess its usability, readability, or potential for confusion when pasted into other documents.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear. However, the lack of generated evidence prevents any assessment of the accessibility or readability of the actual output table.",
+    "recommendedFollowUps": "Provide the `report.md` and/or the content of the generated Markdown hotspot table (`evidence/runs/<run-id>/sprawl/domain-body-sprawl-hotspots.table.md`) to enable verification of all acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it may write a Markdown hotspot table at:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies the expected output file path for the Markdown table. Without `report.md` or CLI evidence, the existence and location of this file cannot be confirmed.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide `report.md` or CLI output showing the generated file."
+      },
+      {
+        "criterionText": "And every row should be generated from the JSON evidence",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires inspecting the generated table's content and comparing it against the source JSON evidence. Neither the table nor the JSON evidence was provided.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated table and relevant JSON evidence for comparison."
+      },
+      {
+        "criterionText": "And each row should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin lists specific fields that should be present in each row of the table. Without the generated table, it's impossible to verify the presence of these columns.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated Markdown table to verify its column structure."
+      },
+      {
+        "criterionText": "And the table should be safe to paste into architecture review notes, PI planning notes, dashboards, decks, or publications.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion assesses the formatting, readability, and general usability of the generated table. Without the table itself, this cannot be evaluated.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the generated Markdown table to assess its formatting and suitability for pasting into various documents."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--preserve-machine-and-execution-provenance--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "preserve-machine-and-execution-provenance",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 589,
+    "candidatesTokenCount": 525,
+    "totalTokenCount": 2540,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 589
+      }
+    ],
+    "thoughtsTokenCount": 1426,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "01a9b80443f87531803a3cea1e5b46f986b294cffbdcd41181bfa8e992c5b347",
+  "responseSha256": "4bdfac2f5c3add72cdb011e583190cebb552dbf284581f59d136e9a652ebb8b6",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/preserve-machine-and-execution-provenance.response.v1.json",
+  "calledAt": "2026-07-10T00:56:09.663Z"
+}

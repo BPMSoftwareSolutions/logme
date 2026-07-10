@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--block-product-template-from-weakening-truth-gates--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "block-product-template-from-weakening-truth-gates",
+  "scenarioName": "Block product template from weakening truth gates",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block product template from weakening truth gates",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/data-driven-report-layout.feature.md:58-72; report.md; live Gemini prompt",
+      "expectedResult": "The report template should not hide required truth fields (verdict, blocker count, stale provenance, silent local methods, anonymous executable methods, missing telemetry, missing receipt, promotion decision), and report generation should fail if the layout omits these fields.",
+      "observedResult": "Cannot observe the expected behavior as the generated 'report.md' and the Gemini live-call receipt were not available for review.",
+      "timestamp": "2026-07-10T00:51:26.175Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--block-product-template-from-weakening-truth-gates--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/data-driven-report-layout.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--block-product-template-from-weakening-truth-gates--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

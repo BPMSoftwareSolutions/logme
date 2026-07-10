@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "render-qa-status-in-the-global-report",
+  "scenarioName": "Render QA status in the global report",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render QA status in the global report\n    Given one or more QA evidence bundles exist in the repo\n    When the global `report.md` is rendered\n    Then it should include a compact QA readiness section with:\n      | field |\n      | release candidate id |\n      | latest QA run id |\n      | QA status |\n      | quality gate decision |\n      | tested scenario count |\n      | failed scenario count |\n      | waived scenario count |\n      | bundle path |\n      | QA report path |\n      | machine provenance path |\n    And `report.md` should link to `qa-evidence-bundle.report.md` using a repo-relative path\n    And `report.md` should not embed the full QA bundle.\n",
+    "acceptanceCriteria": [
+      "Then it should include a compact QA readiness section with:",
+      "And `report.md` should link to `qa-evidence-bundle.report.md` using a repo-relative path",
+      "And `report.md` should not embed the full QA bundle."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:57:05.826Z"
+}

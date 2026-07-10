@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--preserve-repeated-calls-in-the-execution-proof--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-repeated-calls-in-the-execution-proof",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 604,
+    "candidatesTokenCount": 771,
+    "totalTokenCount": 2664,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 604
+      }
+    ],
+    "thoughtsTokenCount": 1289,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "f386042c3fb8e35e8c0657b1910bf7ba936b3dfafa4b93d77708846634a899d1",
+  "responseSha256": "7559f7df5d407ac447c43ebb4973d4c8e7d9b4faa3987e25c36f6739827755f3",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/preserve-repeated-calls-in-the-execution-proof.response.v1.json",
+  "calledAt": "2026-07-10T00:59:20.822Z"
+}

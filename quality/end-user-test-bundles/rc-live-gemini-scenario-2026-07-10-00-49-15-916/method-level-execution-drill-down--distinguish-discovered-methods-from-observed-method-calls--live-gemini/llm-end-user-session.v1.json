@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--distinguish-discovered-methods-from-observed-method-calls--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "distinguish-discovered-methods-from-observed-method-calls",
+  "scenarioName": "Distinguish discovered methods from observed method calls",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Distinguish discovered methods from observed method calls",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/method-level-execution-drill-down.feature.md:52-65; report.md; live Gemini prompt",
+      "expectedResult": "The `report.md` should clearly distinguish between 'discovered method', 'observed method call', and 'receipted method action' with their specified meanings and promotion authorities. It should also correctly apply the `static-method-presented-as-runtime-execution` finding code for false runtime claims and avoid labeling discovered methods as executed unless telemetry proves an observed call.",
+      "observedResult": "Unable to observe the report's content as the `report.md` artifact was not provided.",
+      "timestamp": "2026-07-10T01:18:03.346Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--distinguish-discovered-methods-from-observed-method-calls--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/method-level-execution-drill-down.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--distinguish-discovered-methods-from-observed-method-calls--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

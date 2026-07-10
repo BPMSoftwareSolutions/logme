@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "execute-real-end-user-qa-from-the-user-perspective",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 679,
+    "candidatesTokenCount": 917,
+    "totalTokenCount": 2729,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 679
+      }
+    ],
+    "thoughtsTokenCount": 1133,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "4442e3eda377cc190eebba0d569403e4e2514812378333f775cb5c10c22660d4",
+  "responseSha256": "e51516e4f674bffdb3acc6a7b3e380f3fc43887c7c31be87ccec052f22082358",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/execute-real-end-user-qa-from-the-user-perspective.response.v1.json",
+  "calledAt": "2026-07-10T00:55:49.859Z"
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--tie-llm-observations-to-executable-proof--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "tie-llm-observations-to-executable-proof",
+  "scenarioName": "Tie LLM observations to executable proof",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Tie LLM observations to executable proof",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:155-171; report.md; live Gemini prompt",
+      "expectedResult": "1. Feature execution proof exists for the scenario. 2. Each LLM observation is tied to one or more specified evidence sources within the generated report. 3. Any LLM observation without evidence is explicitly marked as `unproven observation` in the report. 4. Unproven observations are not used to pass the quality gate.",
+      "observedResult": "The `report.md` was not provided as an accessible end-user surface for review. Therefore, it is not possible to observe the actual results of the scenario's execution or verify the claims made in the acceptance criteria.",
+      "timestamp": "2026-07-10T01:15:51.075Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--tie-llm-observations-to-executable-proof--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--tie-llm-observations-to-executable-proof--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

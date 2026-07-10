@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-method-drill-down-under-each-observed-body-node--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-method-drill-down-under-each-observed-body-node",
+  "criteria": [
+    {
+      "criterionText": "Then the node should include a `method drill-down` branch",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file, which would contain the ASCII execution sketch, was not provided. Therefore, it's impossible to verify the presence of a `method drill-down` branch.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And each method call should show:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of the specific method facts displayed under each method call within a drill-down branch.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And a body node with no method calls should show `method detail missing`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, making it impossible to check if body nodes without method calls correctly display 'method detail missing'.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And method drill-down facts should match `feature-execution.contract.v1.json` exactly.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Neither the `report.md` nor the `feature-execution.contract.v1.json` (or its contents) were provided. Without both, an exact match verification is impossible.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` file and the `feature-execution.contract.v1.json` for review, or details of its expected structure."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:09:37.691Z"
+}

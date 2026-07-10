@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--evaluate-service-level-objectives-from-scenario-evidence--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "evaluate-service-level-objectives-from-scenario-evidence",
+  "scenarioName": "Evaluate service level objectives from scenario evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Evaluate service level objectives from scenario evidence\n    Given product-owned SLO targets are declared for a feature or scenario\n    And canonical JSON proof exists for the measurement window\n    When the feature truth gate evaluates service levels\n    Then it should compare observed SLIs against declared SLO targets\n    And the evaluation should produce:\n      | field |\n      | SLO id |\n      | feature id |\n      | scenario id |\n      | SLI name |\n      | target |\n      | observed value |\n      | unit |\n      | measurement window |\n      | status |\n      | evidence packet paths |\n    And SLO status should be one of:\n      | status |\n      | met |\n      | missed |\n      | not enough evidence |\n    And missing telemetry should produce `not enough evidence`, not a passing SLO.\n",
+    "acceptanceCriteria": [
+      "And canonical JSON proof exists for the measurement window",
+      "Then it should compare observed SLIs against declared SLO targets",
+      "And the evaluation should produce:",
+      "And SLO status should be one of:",
+      "And missing telemetry should produce `not enough evidence`, not a passing SLO."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:00:09.610Z"
+}

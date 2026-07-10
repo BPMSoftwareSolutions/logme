@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-method-drill-down-under-each-observed-body-node",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 627,
+    "candidatesTokenCount": 766,
+    "totalTokenCount": 2354,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 627
+      }
+    ],
+    "thoughtsTokenCount": 961,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The required evidence surfaces, specifically the `report.md` and the Gemini live-call receipt, were not provided. Without these, it is impossible to verify whether the feature correctly renders method drill-down information as described in the scenario.",
+    "expectedResult": "The ASCII execution sketch should include a 'method drill-down' branch for executable body nodes, displaying specific method facts for each call. Body nodes without method calls should show 'method detail missing', and all facts should precisely match `feature-execution.contract.v1.json`.",
+    "observedResult": "No report or live-call receipt was observed, therefore no rendering or data could be verified against the acceptance criteria.",
+    "confusingOrRiskyExperiencePoints": "N/A - No user experience could be observed due to missing evidence.",
+    "accessibilityOrReadabilityObservations": "N/A - No report content was available for review regarding accessibility or readability.",
+    "recommendedFollowUps": "Provide the `report.md` file generated after the local test suite passed, and ensure the Gemini live-call receipt is available in the QA bundle for a complete evaluation of this scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the node should include a `method drill-down` branch",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain the ASCII execution sketch, was not provided. Therefore, it's impossible to verify the presence of a `method drill-down` branch.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And each method call should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification of the specific method facts displayed under each method call within a drill-down branch.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And a body node with no method calls should show `method detail missing`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, making it impossible to check if body nodes without method calls correctly display 'method detail missing'.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And method drill-down facts should match `feature-execution.contract.v1.json` exactly.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Neither the `report.md` nor the `feature-execution.contract.v1.json` (or its contents) were provided. Without both, an exact match verification is impossible.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` file and the `feature-execution.contract.v1.json` for review, or details of its expected structure."
+      }
+    ]
+  }
+}

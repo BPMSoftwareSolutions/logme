@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-passed-and-promoted-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-passed-and-promoted-from-the-filesystem-body",
+  "scenarioName": "Mark QA passed and promoted from the filesystem body",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Mark QA passed and promoted from the filesystem body",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:162-178; report.md; live Gemini prompt",
+      "expectedResult": "A status sentinel file named 'docs/features/_STATUS.qa-passed.promoted.<feature-id>.md' should be created. This sentinel should contain JSON setting 'end-user QA status' to 'QA passed' and 'promotion status' to 'promoted'. Additionally, the sentinel should link to the immutable promoted QA bundle and the promotion decision artifact.",
+      "observedResult": "No execution results were observed as the 'report.md' and Gemini live-call receipt were not provided as evidence surfaces.",
+      "timestamp": "2026-07-10T01:04:32.195Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-qa-passed-and-promoted-from-the-filesystem-body--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--mark-qa-passed-and-promoted-from-the-filesystem-body--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

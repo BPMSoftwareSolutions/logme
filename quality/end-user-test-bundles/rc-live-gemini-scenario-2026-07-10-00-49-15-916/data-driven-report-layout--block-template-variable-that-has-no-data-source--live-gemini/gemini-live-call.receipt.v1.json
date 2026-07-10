@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "block-template-variable-that-has-no-data-source",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 531,
+    "candidatesTokenCount": 716,
+    "totalTokenCount": 3166,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 531
+      }
+    ],
+    "thoughtsTokenCount": 1919,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "20140381f58c72f87eb1acf97f08c2ad75cad99a3224ee5d986874f9ee674b6d",
+  "responseSha256": "abb2497353c69b61a7266177941c6f3f53c8dfa28445db04b414a1688bde6800",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/data-driven-report-layout/block-template-variable-that-has-no-data-source.response.v1.json",
+  "calledAt": "2026-07-10T00:51:13.909Z"
+}

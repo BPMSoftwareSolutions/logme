@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--preserve-machine-and-execution-provenance--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "preserve-machine-and-execution-provenance",
+  "scenarioName": "Preserve machine and execution provenance",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Preserve machine and execution provenance\n    Given a QA evidence bundle is created\n    When machine provenance is captured\n    Then `machine-environment.v1.json` should include:\n      | field |\n      | machine hostname or stable machine id |\n      | operating system |\n      | CPU architecture |\n      | timezone |\n      | Node.js version |\n      | browser name and version when applicable |\n      | viewport or terminal size when applicable |\n      | git branch |\n      | git commit or working-tree marker |\n      | repository root |\n      | command executed |\n      | started at |\n      | finished at |\n      | duration ms |\n      | CI provider and run URL when applicable |\n    And secrets, API keys, and personal access tokens should be redacted.\n",
+    "acceptanceCriteria": [
+      "Then `machine-environment.v1.json` should include:",
+      "And secrets, API keys, and personal access tokens should be redacted."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:56:19.090Z"
+}

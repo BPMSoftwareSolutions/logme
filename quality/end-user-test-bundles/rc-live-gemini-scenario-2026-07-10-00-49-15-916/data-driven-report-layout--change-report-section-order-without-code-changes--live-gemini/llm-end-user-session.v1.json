@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--change-report-section-order-without-code-changes--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "change-report-section-order-without-code-changes",
+  "scenarioName": "Change report section order without code changes",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Change report section order without code changes",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/data-driven-report-layout.feature.md:8-15; report.md; live Gemini prompt",
+      "expectedResult": "report.md should render sections in the new order, and no application source code change should be required.",
+      "observedResult": "The content of 'report.md' was not available for observation. Therefore, the rendering order could not be verified.",
+      "timestamp": "2026-07-10T00:50:31.633Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--change-report-section-order-without-code-changes--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/data-driven-report-layout.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--change-report-section-order-without-code-changes--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

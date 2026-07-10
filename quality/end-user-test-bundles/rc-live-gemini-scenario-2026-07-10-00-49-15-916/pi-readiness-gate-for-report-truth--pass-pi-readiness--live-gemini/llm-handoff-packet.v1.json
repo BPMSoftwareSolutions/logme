@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "pi-readiness-gate-for-report-truth--pass-pi-readiness--live-gemini",
+  "featureId": "pi-readiness-gate-for-report-truth",
+  "scenarioId": "pass-pi-readiness",
+  "scenarioName": "Pass PI readiness",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Pass PI readiness\n    Given every report feature has:\n      | requirement |\n      | Gherkin acceptance criteria |\n      | schema-enforced contract |\n      | implementation tests |\n      | source inventory tie-out |\n      | telemetry or explicit no-telemetry label |\n      | receipt coverage |\n      | adversarial challenge packet |\n      | end-user QA evidence bundle |\n      | human-readable QA report |\n      | machine provenance |\n    When the PI readiness gate runs\n    Then the PI verdict should be PASS\n    And report.md may be promoted as a truthful projection for that run.\n",
+    "acceptanceCriteria": [
+      "Then the PI verdict should be PASS",
+      "And report.md may be promoted as a truthful projection for that run."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:21:53.388Z"
+}

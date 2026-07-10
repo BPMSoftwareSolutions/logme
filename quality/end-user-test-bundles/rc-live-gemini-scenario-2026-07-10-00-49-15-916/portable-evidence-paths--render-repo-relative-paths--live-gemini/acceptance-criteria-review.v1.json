@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "portable-evidence-paths--render-repo-relative-paths--live-gemini",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "render-repo-relative-paths",
+  "criteria": [
+    {
+      "criterionText": "Then the Location value should be repo-relative",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` was not provided, so this criterion could not be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` for review."
+    },
+    {
+      "criterionText": "And the report should show line start and line end",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` was not provided, so this criterion could not be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` for review."
+    },
+    {
+      "criterionText": "And the report should render the configured root once in the provenance section.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` was not provided, so this criterion could not be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Provide the `report.md` for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:22:12.437Z"
+}

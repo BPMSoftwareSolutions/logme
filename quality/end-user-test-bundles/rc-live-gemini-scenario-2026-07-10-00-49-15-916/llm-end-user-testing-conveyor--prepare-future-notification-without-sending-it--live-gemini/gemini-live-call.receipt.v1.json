@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "prepare-future-notification-without-sending-it",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 557,
+    "candidatesTokenCount": 726,
+    "totalTokenCount": 4007,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 557
+      }
+    ],
+    "thoughtsTokenCount": 2724,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "2d10a78c1daf737f8074e99deb41311b4d7f4cae1175246612db0ae645c8aa3f",
+  "responseSha256": "01c08bbf3f21431bd3fa67dc6c19c3300012b94a8eafadc1d18b725991aa554a",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/prepare-future-notification-without-sending-it.response.v1.json",
+  "calledAt": "2026-07-10T01:17:25.494Z"
+}

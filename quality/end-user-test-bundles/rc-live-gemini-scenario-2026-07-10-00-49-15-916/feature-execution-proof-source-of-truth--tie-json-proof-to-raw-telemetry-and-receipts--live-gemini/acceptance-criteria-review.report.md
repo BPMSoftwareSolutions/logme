@@ -1,0 +1,14 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini
+- Feature id: feature-execution-proof-source-of-truth
+- Scenario id: tie-json-proof-to-raw-telemetry-and-receipts
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| And receipt files were written during scenario execution | not testable from assigned surface | This criterion requires inspecting the 'report.md' or 'Gemini live-call receipt' to confirm that receipt files were indeed written. Neither of these evidence surfaces was provided. | not observed | MISSING_EVIDENCE_REPORT_OR_RECEIPT | Provide the 'report.md' and 'Gemini live-call receipt' for review. |
+| Then each observed executable body node should include: | not testable from assigned surface | Verification of the fields within each observed executable body node in 'feature-execution.contract.v1.json' necessitates access to the generated report or receipt. These were not supplied. | not observed | MISSING_EVIDENCE_REPORT_OR_RECEIPT | Provide the 'report.md' or 'Gemini live-call receipt' for review, specifically showing the structure of 'feature-execution.contract.v1.json'. |
+| And a node with no telemetry event should show `not observed` | not testable from assigned surface | To confirm this behavior, the 'feature-execution.contract.v1.json' needs to be examined for nodes lacking telemetry events. The necessary report or receipt was not provided. | not observed | MISSING_EVIDENCE_REPORT_OR_RECEIPT | Provide the 'report.md' or 'Gemini live-call receipt' for review, including an example of a node without telemetry events. |
+| And a node with no required receipt should show `missing` | not testable from assigned surface | Verification requires inspecting 'feature-execution.contract.v1.json' for nodes without required receipts. The 'report.md' or 'Gemini live-call receipt' was not made available. | not observed | MISSING_EVIDENCE_REPORT_OR_RECEIPT | Provide the 'report.md' or 'Gemini live-call receipt' for review, including an example of a node without required receipts. |
+| And the JSON proof should not infer timing, call counts, or status from static source inventory. | not testable from assigned surface | This negative assertion requires examining the 'feature-execution.contract.v1.json' and potentially comparing it against static source inventory to ensure no inference occurs. Neither the JSON proof nor the static source inventory (for comparison) were provided. | not observed | MISSING_EVIDENCE_REPORT_OR_RECEIPT | Provide the 'report.md' or 'Gemini live-call receipt' for review, along with documentation or an example demonstrating how inference is avoided. |

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--gate-method-drill-down-completeness--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "gate-method-drill-down-completeness",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 572,
+    "candidatesTokenCount": 909,
+    "totalTokenCount": 2272,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 572
+      }
+    ],
+    "thoughtsTokenCount": 791,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "04993dd3ad26887f5f0605517205a60b070d2a622f44a2c044a3a3d60d32bfd5",
+  "responseSha256": "2327c6b3174212e141c4383a337ea8354efa46e1ffe6cc762411fa0d20db3279",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/gate-method-drill-down-completeness.response.v1.json",
+  "calledAt": "2026-07-10T01:19:52.566Z"
+}

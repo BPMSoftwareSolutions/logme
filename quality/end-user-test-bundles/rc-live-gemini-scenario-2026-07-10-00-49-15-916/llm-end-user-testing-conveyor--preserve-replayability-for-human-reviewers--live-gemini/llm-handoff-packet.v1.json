@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--preserve-replayability-for-human-reviewers--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "preserve-replayability-for-human-reviewers",
+  "scenarioName": "Preserve replayability for human reviewers",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Preserve replayability for human reviewers\n    Given an LLM QA bundle exists\n    When a human reviewer opens the bundle\n    Then the reviewer should be able to replay the test in sequence from:\n      | replay source |\n      | assignment |\n      | handoff packet |\n      | seed data receipt |\n      | end-user session steps |\n      | screenshots or terminal outputs |\n      | user experience report |\n      | acceptance criteria review |\n      | QA gate decision |\n    And the bundle should explain what command or surface was used\n    And the bundle should distinguish LLM observations from deterministic gate results.\n",
+    "acceptanceCriteria": [
+      "Then the reviewer should be able to replay the test in sequence from:",
+      "And the bundle should explain what command or surface was used",
+      "And the bundle should distinguish LLM observations from deterministic gate results."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:17:25.462Z"
+}

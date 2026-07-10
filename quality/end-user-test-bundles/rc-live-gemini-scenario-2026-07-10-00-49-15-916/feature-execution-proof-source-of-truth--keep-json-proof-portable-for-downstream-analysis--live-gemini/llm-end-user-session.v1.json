@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--keep-json-proof-portable-for-downstream-analysis--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "keep-json-proof-portable-for-downstream-analysis",
+  "scenarioName": "Keep JSON proof portable for downstream analysis",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Keep JSON proof portable for downstream analysis",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:290-310; report.md; live Gemini prompt",
+      "expectedResult": "The JSON proof should be convertible to CSV without reading the human report, preserving specific fields, and all projections (CSV, Markdown, ASCII) should be treated as projections, not source truth.",
+      "observedResult": "No canonical JSON proof or CSV projection was available for observation. The report.md is a human-readable summary, which is a projection, but does not allow for verification of the underlying JSON proof or its conversion capabilities.",
+      "timestamp": "2026-07-10T01:02:23.912Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--keep-json-proof-portable-for-downstream-analysis--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--keep-json-proof-portable-for-downstream-analysis--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

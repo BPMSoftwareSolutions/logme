@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "gherkin-driven-report-development",
+  "scenarioId": "trace-report-sections-to-scenarios",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 482,
+    "candidatesTokenCount": 613,
+    "totalTokenCount": 2322,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 482
+      }
+    ],
+    "thoughtsTokenCount": 1227,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file and Gemini live-call receipt, which are critical evidence surfaces for this scenario, were not provided. Therefore, the scenario's acceptance criteria could not be evaluated.",
+    "expectedResult": "Report sections should display their owning feature/scenario IDs, unowned sections should be BLOCKED, and the finding code 'report-section-without-acceptance-source' should be present for unowned sections.",
+    "observedResult": "No `report.md` or Gemini live-call receipt was provided, so no observations could be made regarding the rendering of report sections or their associated IDs/statuses/finding codes.",
+    "confusingOrRiskyExperiencePoints": "The absence of required evidence makes it impossible to assess any confusing or risky experience points related to the feature's implementation.",
+    "accessibilityOrReadabilityObservations": "The absence of required evidence makes it impossible to assess any accessibility or readability aspects of the feature's implementation.",
+    "recommendedFollowUps": "Provide the `report.md` file and the Gemini live-call receipt as specified in the evidence surfaces for a complete review of this scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then each section should show its owning feature id or scenario id",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` evidence was not provided, so it is impossible to verify if report sections display their owning feature or scenario IDs.",
+        "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And unowned report sections should be BLOCKED",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` evidence was not provided, so it is impossible to verify if unowned report sections are marked as BLOCKED.",
+        "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` evidence was not provided, so it is impossible to verify if the correct finding code 'report-section-without-acceptance-source' is present for unowned sections.",
+        "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      }
+    ]
+  }
+}

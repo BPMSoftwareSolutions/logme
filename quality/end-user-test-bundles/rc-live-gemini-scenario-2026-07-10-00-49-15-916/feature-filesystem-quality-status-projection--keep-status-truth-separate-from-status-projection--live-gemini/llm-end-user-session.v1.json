@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--keep-status-truth-separate-from-status-projection--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "keep-status-truth-separate-from-status-projection",
+  "scenarioName": "Keep status truth separate from status projection",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Keep status truth separate from status projection",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-filesystem-quality-status-projection.feature.md:50-73; report.md; live Gemini prompt",
+      "expectedResult": "A 'status sentinel' artifact, accessible via an end-user surface, that clearly states it is a projection, includes specific fields, a summary, a recommended action, and does not require JSON inspection.",
+      "observedResult": "Only a `report.md` detailing test suite pass/fail, which does not represent the 'status sentinel' for a product owner. The actual 'status sentinel' artifact is not available for review.",
+      "timestamp": "2026-07-10T01:03:16.850Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--keep-status-truth-separate-from-status-projection--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-filesystem-quality-status-projection.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--keep-status-truth-separate-from-status-projection--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--render-the-executable-body-tree-in-the-feature-report--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "render-the-executable-body-tree-in-the-feature-report",
+  "criteria": [
+    {
+      "criterionText": "Then the first product-facing section should be the hierarchical ASCII executable body tree",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` content was not provided, so it's impossible to verify if the hierarchical ASCII executable body tree is the first product-facing section.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And the tree should be generated from the feature's executable body contract and runtime evidence",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` content was not provided, so it's impossible to verify the source of the tree's generation (contract and runtime evidence).",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And the tree should show:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` content was not provided, so it's impossible to verify if the tree displays the specified columns (proof lane, acceptance source, etc.).",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    },
+    {
+      "criterionText": "And dense method tables should be optional supporting detail below the tree.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` content was not provided, so it's impossible to verify the presence or placement of dense method tables below the tree.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the content of `report.md` for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:20:37.232Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--distinguish-discovered-methods-from-observed-method-calls--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "distinguish-discovered-methods-from-observed-method-calls",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 590,
+    "candidatesTokenCount": 834,
+    "totalTokenCount": 3266,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 590
+      }
+    ],
+    "thoughtsTokenCount": 1842,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "63673722dd4d7351fa6273efc5e2546737001f056ce5ed5f30584f29e62de878",
+  "responseSha256": "fe99dc80c5a716bc0931c1a896bca3f0a59f9ac523d34179eebadbc9ec902b9a",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/distinguish-discovered-methods-from-observed-method-calls.response.v1.json",
+  "calledAt": "2026-07-10T01:18:03.346Z"
+}

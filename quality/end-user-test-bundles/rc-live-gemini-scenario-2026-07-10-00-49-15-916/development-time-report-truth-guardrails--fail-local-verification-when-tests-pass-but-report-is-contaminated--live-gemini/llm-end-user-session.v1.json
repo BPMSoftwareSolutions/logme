@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "fail-local-verification-when-tests-pass-but-report-is-contaminated",
+  "scenarioName": "Fail local verification when tests pass but report is contaminated",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Fail local verification when tests pass but report is contaminated",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/development-time-report-truth-guardrails.feature.md:8-26; report.md; live Gemini prompt",
+      "expectedResult": "The local verification command should fail, indicating 'tests pass, report truth gate fails', display specific output fields including 'report verdict' and 'coverage', and not emit any promotion-ready or clean claims, as detailed in the acceptance criteria.",
+      "observedResult": "No `report.md` content or CLI output was provided, making it impossible to observe the expected command failure, status message, output fields, or the absence of promotion claims.",
+      "timestamp": "2026-07-10T00:51:45.422Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/development-time-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

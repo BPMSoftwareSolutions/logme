@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 584,
+    "candidatesTokenCount": 834,
+    "totalTokenCount": 2646,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 584
+      }
+    ],
+    "thoughtsTokenCount": 1228,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided Gherkin describes the expected behavior and output structure for acceptance criteria review. However, the actual output (`report.md`) and LLM live-call receipt, which are necessary to verify if the system adheres to these specifications, were not provided. Consequently, it's impossible to confirm if the described classifications, fields, LLM recommendations, and quality gate logic are implemented correctly.",
+    "expectedResult": "The system should produce a report (`report.md`) and a live-call receipt that demonstrate the classification of acceptance criteria, including the specified fields, LLM recommendations, and the application of the quality gate logic where evidence paths prove the recommendation.",
+    "observedResult": "Only the Gherkin specification was available. The actual `report.md` and live-call receipt, which are critical for end-user verification, were not provided.",
+    "confusingOrRiskyExperiencePoints": "The lack of actual output makes it impossible to assess the end-user experience. Without the report, a user cannot verify the system's functionality.",
+    "accessibilityOrReadabilityObservations": "Not applicable, as no report was provided to review for accessibility or readability.",
+    "recommendedFollowUps": "Provide the `report.md` and the Gemini live-call receipt as specified in the 'Evidence surfaces available' section to enable proper testing and verification of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then each acceptance criterion should be classified as:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected classification statuses, but the actual `report.md` or live-call receipt, which would show if this classification is performed, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` and live-call receipt to verify the actual classification output."
+      },
+      {
+        "criterionText": "And each classification should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin specifies the fields expected in each classification, but the actual `report.md` or live-call receipt, which would show if these fields are present, was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` and live-call receipt to verify the actual fields included in the classification."
+      },
+      {
+        "criterionText": "And the LLM may recommend status",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin implies LLM involvement, but without the `report.md` or live-call receipt, there is no direct evidence to confirm that the LLM actually recommends a status.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` and live-call receipt to show instances of LLM status recommendations."
+      },
+      {
+        "criterionText": "But the quality gate should only pass criteria whose evidence paths prove the recommendation.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a critical logic for the quality gate. Verification requires seeing actual classifications, evidence paths, and final pass/fail statuses in the `report.md`, which was not provided.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT",
+        "recommendedFixRoute": "Provide the `report.md` with detailed criteria reviews, evidence paths, and final statuses to verify the quality gate logic."
+      }
+    ]
+  }
+}

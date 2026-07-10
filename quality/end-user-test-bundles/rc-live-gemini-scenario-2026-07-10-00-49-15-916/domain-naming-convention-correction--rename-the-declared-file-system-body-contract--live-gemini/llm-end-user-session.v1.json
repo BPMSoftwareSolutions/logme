@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-the-declared-file-system-body-contract--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-the-declared-file-system-body-contract",
+  "scenarioName": "Rename the declared file-system body contract",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Rename the declared file-system body contract",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/domain-naming-convention-correction.feature.md:16-25; report.md; live Gemini prompt",
+      "expectedResult": "The file `contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json` should be renamed to `contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json`. Its `featureId` field should be `logme` and `bodyId` field should be `logme.workspace-observability-domain`. No file named with `logme2` should remain declared as required.",
+      "observedResult": "Not observable from the provided Gherkin. No `report.md` content or other output evidence was supplied to confirm the actual state after the scenario execution.",
+      "timestamp": "2026-07-10T00:54:43.613Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--rename-the-declared-file-system-body-contract--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/domain-naming-convention-correction.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--rename-the-declared-file-system-body-contract--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--remove-stale-or-duplicate-status-sentinels-for-the-same-feature--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "remove-stale-or-duplicate-status-sentinels-for-the-same-feature",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 606,
+    "candidatesTokenCount": 823,
+    "totalTokenCount": 4273,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 606
+      }
+    ],
+    "thoughtsTokenCount": 2844,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "867e8372cc9e3ea6b5c64ea57c232d062cee1bcd53782f15d04f051729e48263",
+  "responseSha256": "d716a8c07d2cf0165b60421cb1028af486f10dcded57fb42c0270f44c91e82e9",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/remove-stale-or-duplicate-status-sentinels-for-the-same-feature.response.v1.json",
+  "calledAt": "2026-07-10T01:03:38.875Z"
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "preserve-sla-evidence-without-turning-reports-into-contracts",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 579,
+    "candidatesTokenCount": 661,
+    "totalTokenCount": 2891,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 579
+      }
+    ],
+    "thoughtsTokenCount": 1651,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The required evidence surfaces, specifically the `report.md` content and the JSON proof, were not provided for review. Therefore, none of the acceptance criteria could be tested.",
+    "expectedResult": "The `report.md` should clearly indicate SLO status (met, missed, lacked evidence), avoid presenting satisfied SLAs without satisfied SLOs, and use the specified finding code for unsupported SLA claims. The JSON proof should contain all necessary SLA calculation evidence.",
+    "observedResult": "No `report.md` content or JSON proof was provided, preventing observation of the expected behavior.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete evidence makes it impossible to assess the user experience or potential risks related to SLA reporting.",
+    "accessibilityOrReadabilityObservations": "Cannot assess accessibility or readability without the actual report content.",
+    "recommendedFollowUps": "Provide the `report.md` content and the JSON proof for this scenario so that the acceptance criteria can be properly evaluated.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the JSON proof should preserve the evidence required to support the SLA calculation",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The JSON proof was not provided as an available evidence surface for review.",
+        "blockerCode": "MISSING_JSON_PROOF_EVIDENCE",
+        "recommendedFixRoute": "Provide the actual JSON proof for review."
+      },
+      {
+        "criterionText": "And the human report should show whether the supporting SLOs were met, missed, or lacked evidence",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content was not provided as an available evidence surface for review.",
+        "blockerCode": "MISSING_REPORT_MD_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And the report should not present an SLA as satisfied unless the underlying SLO evidence is satisfied",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content was not provided as an available evidence surface for review.",
+        "blockerCode": "MISSING_REPORT_MD_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      },
+      {
+        "criterionText": "And the finding code for unsupported SLA claims should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` content was not provided as an available evidence surface to check for the specified finding code.",
+        "blockerCode": "MISSING_REPORT_MD_EVIDENCE",
+        "recommendedFixRoute": "Provide the `report.md` content for review."
+      }
+    ]
+  }
+}

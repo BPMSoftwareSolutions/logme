@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "render-qa-status-in-the-global-report",
+  "scenarioName": "Render QA status in the global report",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render QA status in the global report",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/end-user-quality-evidence-bundle.feature.md:181-198; report.md; live Gemini prompt",
+      "expectedResult": "The `report.md` file should be available and demonstrate the presence of a compact QA readiness section with all specified fields, a repo-relative link to `qa-evidence-bundle.report.md`, and confirmation that the full QA bundle is not embedded.",
+      "observedResult": "No `report.md` file was provided, preventing any verification of the expected output.",
+      "timestamp": "2026-07-10T00:56:59.371Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/end-user-quality-evidence-bundle.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

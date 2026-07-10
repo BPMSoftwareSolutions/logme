@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "qa-evidence-bundle.manifest.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "report-provenance-and-freshness-gate--render-report-provenance--live-gemini",
+  "featureId": "report-provenance-and-freshness-gate",
+  "scenarioId": "render-report-provenance",
+  "scenarioName": "Render report provenance",
+  "qaStatus": "BLOCKED",
+  "qualityGateDecision": "BLOCKED",
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed"
+  ],
+  "artifacts": [
+    "llm-qa-assignment.v1.json",
+    "llm-handoff-packet.report.md",
+    "llm-handoff-packet.v1.json",
+    "llm-seed-data-proposal.v1.json",
+    "seed-data.receipt.v1.json",
+    "llm-end-user-session.v1.json",
+    "end-user-test-session.md",
+    "llm-user-experience.report.md",
+    "acceptance-criteria-review.v1.json",
+    "acceptance-criteria-review.report.md",
+    "qa-evidence-bundle.manifest.v1.json",
+    "qa-evidence-bundle.report.md",
+    "qa-gate-decision.v1.json",
+    "machine-environment.v1.json",
+    "feature-proof-links.v1.json",
+    "report-artifact-index.v1.json",
+    "blocker-worklist.md"
+  ],
+  "contentHashes": {
+    "llm-qa-assignment.v1.json": "3f79aab342cdb91a465a229be328459e8f312ca4938cc4ce077285d93a8be1d4",
+    "llm-handoff-packet.report.md": "2ce996cf8d143e58b16b2a80ef9071d85bc6a9073d08c7167f884f58380ad87d",
+    "llm-handoff-packet.v1.json": "b5bdd91a9df9daafdf6fe410a7879009f9d397f6919b2da6865f4f6f1cf25d53",
+    "llm-seed-data-proposal.v1.json": "587fa5aec4b94deb448971d28ac792c8174e71ec85f328fc8f09a440287402f5",
+    "seed-data.receipt.v1.json": "fa8b6ddc1bb4329d31f02e91b7fded53bc576a388c5c271eb667a6dec324f24e",
+    "llm-end-user-session.v1.json": "696b16e3eea2109eb047597dfe2760977b4259e2eb56165884dd86cb63bffb46",
+    "end-user-test-session.md": "0693d60f3c18049f5a37062a72571367fda7014e7c99bc4f4369a4994acc9a9b",
+    "llm-user-experience.report.md": "8631f44b0fae78d6cbd9d2f107d0424ed1062cdc603e8fd7eb9bd5891b1e7919",
+    "acceptance-criteria-review.v1.json": "9899ecea5c2da2036062aef8ca21b6d1b9105bc39e5ae839c582ada8f0cbdd61",
+    "acceptance-criteria-review.report.md": "d72e4d6e9652a412e4f55bad159d50df7e9f81e9e18b62b4e69405a63f55829c",
+    "qa-evidence-bundle.report.md": "dccca408b4c1cc8892a53d87f20adbd24a243f371d4a5807164bf1186c820dce",
+    "qa-gate-decision.v1.json": "7529768d688084fa992661cf8c9fef8e2f88743f82c49047c0c8732bc0af1614",
+    "machine-environment.v1.json": "c2a9fd635596e07c2372ea35e66ecff353ad4bbd358b5c9cd03cf38105c1bb29",
+    "feature-proof-links.v1.json": "07f81a57db63c01e39cc9ecf8e47d1a022888ec13e5f72f886251adaef5da80c",
+    "report-artifact-index.v1.json": "a174bf9c0080519acfe3c7465cbba92db615b6fa173402d0f916316a94524c19",
+    "blocker-worklist.md": "b657699dd7701c127b7296aec733ecdafde0b8ac5d438cac3cae3293af908c84",
+    "qa-evidence-bundle.manifest.v1.json": "465f9013d15e57d55965d628f09865193c8e50dd41d514bbaf87bed0f14a7612"
+  },
+  "createdAt": "2026-07-10T01:37:22.839Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 563,
+    "candidatesTokenCount": 607,
+    "totalTokenCount": 2391,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 563
+      }
+    ],
+    "thoughtsTokenCount": 1221,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "a3ca044fa465b01fe653fc9f2442b90dbf495f8f41a8fc55ec4cd9b4cf5e4d47",
+  "responseSha256": "69c5e9fc0b1d43922fb3eb75c97f7a17f3eeaa8085c450ed75bad3d0a63e237b",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/render-runtime-file-drill-down-before-method-calls.response.v1.json",
+  "calledAt": "2026-07-10T01:18:45.010Z"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "write-a-machine-readable-board-contract",
+  "criteria": [
+    {
+      "criterionText": "Then the JSON board should contain:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The generated JSON board (`docs/features/_FEATURE-QUALITY-BOARD.v1.json`) was not provided for review, nor was its content summarized in `report.md`. Therefore, the presence of the specified fields could not be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file, including the content or a detailed summary of the generated JSON board, to allow verification of its structure and fields."
+    },
+    {
+      "criterionText": "And each board row should include the repo-relative path to its status sentinel",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the generated JSON board was not available. Without access to the `board rows` within the JSON, it's impossible to confirm if each row includes the repo-relative path to its status sentinel.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file, including the content or a detailed summary of the generated JSON board, to allow verification of board row structure."
+    },
+    {
+      "criterionText": "And each board row should include the repo-relative path to its feature specification",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the generated JSON board was not available. Without access to the `board rows` within the JSON, it's impossible to confirm if each row includes the repo-relative path to its feature specification.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file, including the content or a detailed summary of the generated JSON board, to allow verification of board row structure."
+    },
+    {
+      "criterionText": "And every count in the Markdown board should be derived from the JSON board.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Neither the generated JSON board nor the Markdown board content was provided. Without both outputs, it's impossible to verify if the counts in the Markdown board are correctly derived from the JSON board.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+      "recommendedFixRoute": "Provide both the generated JSON board content (or a summary) and the Markdown board content (e.g., within `report.md`) to enable verification of count derivation."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:06:07.784Z"
+}

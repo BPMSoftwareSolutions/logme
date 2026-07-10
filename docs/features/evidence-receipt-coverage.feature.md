@@ -24,13 +24,15 @@ Feature: Evidence receipt coverage
       | features/<feature-id>/scenarios/<scenario-id>/method-call-evidence.report.md |
       | features/<feature-id>/scenarios/<scenario-id>/feature-execution.contract.v1.json |
       | features/<feature-id>/scenarios/<scenario-id>/feature-execution.receipt.v1.json |
+      | domain-analysis/domain-body-analysis.contract.v1.json |
+      | domain-analysis/domain-body-analysis.report.md |
       | sprawl/domain-body-sprawl.contract.v1.json |
       | sprawl/domain-body-sprawl.report.md |
       | sprawl/domain-body-sprawl-hotspots.table.md |
     And report.md should link to each artifact using repo-relative paths.
 
   Scenario: Block evidence packet without human report surface
-    Given a run writes canonical JSON evidence for feature execution or sprawl detection
+    Given a run writes canonical JSON evidence for feature execution, domain body analysis, or sprawl detection
     But the corresponding Markdown report is missing
     When the report truth gate runs
     Then the report verdict should be BLOCKED

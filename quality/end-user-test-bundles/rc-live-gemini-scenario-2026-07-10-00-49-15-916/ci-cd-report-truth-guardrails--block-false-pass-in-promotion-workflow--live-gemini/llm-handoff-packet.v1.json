@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--block-false-pass-in-promotion-workflow--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-false-pass-in-promotion-workflow",
+  "scenarioName": "Block false pass in promotion workflow",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Block false pass in promotion workflow\n    Given CI generated report evidence exists\n    And the report claims `STERILE DOMAIN BODY` or any PASS-style verdict\n    When the promotion workflow evaluates the evidence packet\n    Then every hard-law blocker should be zero\n    And the report schema should be valid\n    And the freshness gate should pass\n    And every required receipt should exist\n    And every report section should trace to Gherkin acceptance criteria\n    And every release-candidate promotion should have a QA evidence bundle\n    And promotion should fail if any proof is missing.\n",
+    "acceptanceCriteria": [
+      "And the report claims `STERILE DOMAIN BODY` or any PASS-style verdict",
+      "Then every hard-law blocker should be zero",
+      "And the report schema should be valid",
+      "And the freshness gate should pass",
+      "And every required receipt should exist",
+      "And every report section should trace to Gherkin acceptance criteria",
+      "And every release-candidate promotion should have a QA evidence bundle",
+      "And promotion should fail if any proof is missing."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:50:18.523Z"
+}

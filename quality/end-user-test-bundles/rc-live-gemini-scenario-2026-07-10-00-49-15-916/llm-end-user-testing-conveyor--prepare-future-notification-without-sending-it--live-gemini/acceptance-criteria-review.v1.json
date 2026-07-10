@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "prepare-future-notification-without-sending-it",
+  "criteria": [
+    {
+      "criterionText": "Then it may write a draft notification packet at:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` does not contain any explicit confirmation or link indicating that a draft notification packet was written at the specified path.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_NOT_PRESENT_IN_SURFACE",
+      "recommendedFixRoute": "Modify the test suite or reporting mechanism to ensure `report.md` explicitly confirms the creation of the draft notification file and its path."
+    },
+    {
+      "criterionText": "And the draft should summarize QA result, bundle path, report path, blockers, and recommended next step",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "As the creation of the draft notification packet itself could not be confirmed from `report.md`, its content cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "DEPENDENT_CRITERION_NOT_TESTABLE",
+      "recommendedFixRoute": "First address the issue of confirming the draft notification packet's creation. Then, ensure `report.md` either includes the draft's content or a verifiable link to it for review."
+    },
+    {
+      "criterionText": "And the conveyor should not send email or external notifications until a separate notification feature is approved.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` does not contain any explicit statement, log, or assertion confirming that no email or external notifications were sent during this scenario.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_NOT_PRESENT_IN_SURFACE",
+      "recommendedFixRoute": "Modify the test suite or reporting mechanism to ensure `report.md` explicitly states that no external notifications were sent, providing confidence in this critical 'not sending' behavior."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:17:42.275Z"
+}

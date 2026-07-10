@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--keep-json-proof-portable-for-downstream-analysis--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "keep-json-proof-portable-for-downstream-analysis",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 587,
+    "candidatesTokenCount": 846,
+    "totalTokenCount": 3913,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 587
+      }
+    ],
+    "thoughtsTokenCount": 2480,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "3662f811b90ef50179f132e449768d6ea709e8db719b35e5070c5287fcaa5dff",
+  "responseSha256": "afb0616665fbe304005384f962b97c9952274cd3a048059faec0f3564ae6cf32",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-execution-proof-source-of-truth/keep-json-proof-portable-for-downstream-analysis.response.v1.json",
+  "calledAt": "2026-07-10T01:02:23.912Z"
+}

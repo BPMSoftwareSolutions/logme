@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--recompute-summary-from-method-rows--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "recompute-summary-from-method-rows",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:41:11.861Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 367,
+    "candidatesTokenCount": 243,
+    "totalTokenCount": 908,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 367
+      }
+    ],
+    "thoughtsTokenCount": 298,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e90238b3cb7fbcd70ddcfaa57452ad680ceb63e41143f8279f7e4b94c0f09f7d",
+  "responseSha256": "5fd59d48b541d311f96c536ba39ec0039fe41595ba24a025f1113bb9b149c725",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/summary-findings-and-method-row-tie-out/recompute-summary-from-method-rows.response.v1.json"
+}

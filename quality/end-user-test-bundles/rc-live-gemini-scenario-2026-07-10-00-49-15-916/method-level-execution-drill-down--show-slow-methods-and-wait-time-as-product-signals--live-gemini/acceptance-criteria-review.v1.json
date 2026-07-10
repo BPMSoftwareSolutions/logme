@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--show-slow-methods-and-wait-time-as-product-signals--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "show-slow-methods-and-wait-time-as-product-signals",
+  "criteria": [
+    {
+      "criterionText": "Then the canonical JSON proof should identify:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states that specific metrics should be identified in the canonical JSON proof. However, the actual JSON proof or 'report.md' was not provided, preventing verification.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or the canonical JSON proof containing the identified metrics."
+    },
+    {
+      "criterionText": "And missing timing should be `not observed`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin asserts that missing timing should be 'not observed'. Without the actual report or JSON output, this assertion cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_REPORT_EVIDENCE",
+      "recommendedFixRoute": "Provide 'report.md' or the canonical JSON proof to verify the 'not observed' status of missing timing."
+    },
+    {
+      "criterionText": "And a method timing signal should never be calculated from line count, method count, or static source inventory.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes an internal implementation constraint. While the Gherkin asserts this, it cannot be verified from end-user surfaces like 'report.md' or a JSON proof, as these typically show outcomes, not internal calculation methods.",
+      "evidencePaths": [],
+      "blockerCode": "NOT_VERIFIABLE_FROM_END_USER_SURFACE",
+      "recommendedFixRoute": "Provide design documentation, code review evidence, or a specific section in 'report.md' that explicitly confirms this constraint on calculation methods."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:19:35.621Z"
+}

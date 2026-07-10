@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "evidence-receipt-coverage--block-evidence-packet-without-human-report-surface--live-gemini",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "block-evidence-packet-without-human-report-surface",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 537,
+    "candidatesTokenCount": 783,
+    "totalTokenCount": 3091,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 537
+      }
+    ],
+    "thoughtsTokenCount": 1771,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "50fab0acf259eb24c4e9308e7a4c1b16ec5f697891fe6a5dbce455f17b600003",
+  "responseSha256": "a385cc78ca398b6d16ae5ed1f1959af0addbb87f73db8e53fe4796b96a37ae78",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/evidence-receipt-coverage/block-evidence-packet-without-human-report-surface.response.v1.json",
+  "calledAt": "2026-07-10T00:57:40.316Z"
+}

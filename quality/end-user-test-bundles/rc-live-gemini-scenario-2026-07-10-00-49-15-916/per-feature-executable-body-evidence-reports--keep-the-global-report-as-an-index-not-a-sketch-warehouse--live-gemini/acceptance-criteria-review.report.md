@@ -1,0 +1,12 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini
+- Feature id: per-feature-executable-body-evidence-reports
+- Scenario id: keep-the-global-report-as-an-index-not-a-sketch-warehouse
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| Then it should show a compact feature evidence index with: | met | The global report presents a table serving as a compact index. It includes columns for feature id, scenario id, feature verdict, blocker count, evidence packet path, executable body report path, execution timeline table path, method timeline table path, and method evidence report path. | docs/features/per-feature-executable-body-evidence-reports.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |
+| And the global report should not embed every feature's full executable body tree | met | The global report successfully avoids embedding the full executable body tree for each feature, maintaining its role as an index. | docs/features/per-feature-executable-body-evidence-reports.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |
+| And the global report should link to each feature-scoped report using repo-relative evidence paths. | met | The global report includes links to feature-scoped reports, and these links appear to use repo-relative paths, ensuring portability and correct navigation within the repository. | docs/features/per-feature-executable-body-evidence-reports.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--keep-the-global-report-as-an-index-not-a-sketch-warehouse--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--show-declared-versus-observed-flow--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "show-declared-versus-observed-flow",
+  "qualityGateDecision": "QA passed",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 0,
+  "blockerCodes": [],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:08:27.915Z"
+}

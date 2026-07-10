@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--keep-method-drill-down-portable-for-html-and-visual-review--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "keep-method-drill-down-portable-for-html-and-visual-review",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 562,
+    "candidatesTokenCount": 886,
+    "totalTokenCount": 3203,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 562
+      }
+    ],
+    "thoughtsTokenCount": 1755,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "dd4eff75fa46f6cf9d0dd2c7a00ff4281f2a3514322e7e54048eda9cf6cc79fb",
+  "responseSha256": "247b3e547d794ec6c7665146697b32322ea4803e6d8f9126d324591179fb99e0",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/keep-method-drill-down-portable-for-html-and-visual-review.response.v1.json",
+  "calledAt": "2026-07-10T01:20:02.769Z"
+}

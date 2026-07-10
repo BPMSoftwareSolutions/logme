@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--support-feature-wide-scenario-conveyor-runs--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "support-feature-wide-scenario-conveyor-runs",
+  "criteria": [
+    {
+      "criterionText": "Then it should run each scenario independently",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin states the expectation for independent scenario runs. However, the `report.md` content, which would provide evidence of these independent executions, was not supplied for review.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply the `report.md` content for review."
+    },
+    {
+      "criterionText": "And each scenario should have its own QA run record or scenario sub-run id",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the requirement for each scenario to have its own QA run record or sub-run id. The `report.md` content, which would display these identifiers, was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply the `report.md` content for review."
+    },
+    {
+      "criterionText": "And the feature-level QA summary should show:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the fields expected in the feature-level QA summary. However, the `report.md` content, which would contain this summary for verification, was not supplied.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply the `report.md` content for review."
+    },
+    {
+      "criterionText": "And one scenario passing should not imply another scenario passed.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin outlines this independence requirement. Verification would necessitate reviewing individual scenario outcomes in the `report.md`, which was not provided for analysis.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE",
+      "recommendedFixRoute": "Supply the `report.md` content for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:17:14.126Z"
+}

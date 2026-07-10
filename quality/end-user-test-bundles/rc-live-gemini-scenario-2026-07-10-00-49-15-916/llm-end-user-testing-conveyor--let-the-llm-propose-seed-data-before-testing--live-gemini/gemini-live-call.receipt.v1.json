@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--let-the-llm-propose-seed-data-before-testing--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "let-the-llm-propose-seed-data-before-testing",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 668,
+    "candidatesTokenCount": 1115,
+    "totalTokenCount": 2932,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 668
+      }
+    ],
+    "thoughtsTokenCount": 1149,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "7ed8990c12bb6210f65cbc003fbf7f2153dfa044dfb0e9f0631ed9a6b7fef6b3",
+  "responseSha256": "7fc2505b4b0e24ae6ce77695853b4342e8f8d28cc51a1357185cbe38838b4079",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/let-the-llm-propose-seed-data-before-testing.response.v1.json",
+  "calledAt": "2026-07-10T01:14:25.710Z"
+}

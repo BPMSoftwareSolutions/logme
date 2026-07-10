@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--keep-local-report-truth-output-quiet-enough-to-use--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "keep-local-report-truth-output-quiet-enough-to-use",
+  "scenarioName": "Keep local report truth output quiet enough to use",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Keep local report truth output quiet enough to use",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/development-time-report-truth-guardrails.feature.md:37-43; report.md; live Gemini prompt",
+      "expectedResult": "The command's stdout should be concise, showing only the verdict, counts, and top findings, without full telemetry event bodies. Detailed telemetry should be written to a separate evidence artifact.",
+      "observedResult": "Cannot observe the actual stdout or the content of the evidence artifact as they were not provided as part of the evidence surfaces.",
+      "timestamp": "2026-07-10T00:52:22.968Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--keep-local-report-truth-output-quiet-enough-to-use--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/development-time-report-truth-guardrails.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--keep-local-report-truth-output-quiet-enough-to-use--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

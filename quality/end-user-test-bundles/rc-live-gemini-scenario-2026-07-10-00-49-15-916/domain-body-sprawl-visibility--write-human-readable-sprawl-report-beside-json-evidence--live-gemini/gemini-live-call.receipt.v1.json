@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--write-human-readable-sprawl-report-beside-json-evidence--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "write-human-readable-sprawl-report-beside-json-evidence",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 755,
+    "candidatesTokenCount": 956,
+    "totalTokenCount": 4513,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 755
+      }
+    ],
+    "thoughtsTokenCount": 2802,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "1af39c23ad9b7e0ad7cd236ce8c78279a2ca15a3361a38f6a8d029b3c1ccdbd1",
+  "responseSha256": "99beebe9de5c0741b717c7fc24eab804ef963845369a53a646a1c4796440627e",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/write-human-readable-sprawl-report-beside-json-evidence.response.v1.json",
+  "calledAt": "2026-07-10T00:53:01.661Z"
+}

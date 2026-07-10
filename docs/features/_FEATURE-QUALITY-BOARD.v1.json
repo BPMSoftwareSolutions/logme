@@ -1,0 +1,777 @@
+{
+  "schemaVersion": "feature-quality-board.v1",
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature quality board filesystem body",
+  "repositoryRoot": "C:\\source\\repos\\bpm\\intelligence\\03-engineering-intelligence\\logme",
+  "gitBranch": "main",
+  "gitCommitOrWorkingTreeMarker": "fe11fdf01bbf3c70d5783976f8d5fe7ec6eae46b+working-tree-changes",
+  "totalFeatures": 26,
+  "featuresNotImplemented": 0,
+  "featuresImplementedNotTested": 0,
+  "featuresProofBlocked": 0,
+  "featuresQaNotRun": 0,
+  "featuresQaBlocked": 25,
+  "featuresQaFailed": 0,
+  "featuresQaPassed": 1,
+  "featuresQaPassedPromoted": 0,
+  "staleFeatures": 0,
+  "boardRows": [
+    {
+      "featureId": "adversarial-challenge-packet",
+      "featureName": "Adversarial challenge packet",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "adversarial-challenge-packet--generate-report-challenge-packet--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/adversarial-challenge-packet--generate-report-challenge-packet--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.adversarial-challenge-packet.md",
+      "sourceFeaturePath": "docs/features/adversarial-challenge-packet.feature.md",
+      "statusContractPath": "docs/features/_feature-status/adversarial-challenge-packet.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "featureName": "CI/CD report truth guardrails",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+      "blockerCount": 3,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.ci-cd-report-truth-guardrails.md",
+      "sourceFeaturePath": "docs/features/ci-cd-report-truth-guardrails.feature.md",
+      "statusContractPath": "docs/features/_feature-status/ci-cd-report-truth-guardrails.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-required-artifact-evidence-missing",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "featureName": "Data-driven report layout",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini",
+      "blockerCount": 3,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.data-driven-report-layout.md",
+      "sourceFeaturePath": "docs/features/data-driven-report-layout.feature.md",
+      "statusContractPath": "docs/features/_feature-status/data-driven-report-layout.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-precondition-or-negative-case-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "featureName": "Development-time report truth guardrails",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.development-time-report-truth-guardrails.md",
+      "sourceFeaturePath": "docs/features/development-time-report-truth-guardrails.feature.md",
+      "statusContractPath": "docs/features/_feature-status/development-time-report-truth-guardrails.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "featureName": "Domain body sprawl visibility",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.domain-body-sprawl-visibility.md",
+      "sourceFeaturePath": "docs/features/domain-body-sprawl-visibility.feature.md",
+      "statusContractPath": "docs/features/_feature-status/domain-body-sprawl-visibility.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "featureName": "Domain naming convention correction",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.domain-naming-convention-correction.md",
+      "sourceFeaturePath": "docs/features/domain-naming-convention-correction.feature.md",
+      "statusContractPath": "docs/features/_feature-status/domain-naming-convention-correction.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "domain-ownership-boundary-proof",
+      "featureName": "Domain ownership boundary proof",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.domain-ownership-boundary-proof.md",
+      "sourceFeaturePath": "docs/features/domain-ownership-boundary-proof.feature.md",
+      "statusContractPath": "docs/features/_feature-status/domain-ownership-boundary-proof.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "featureName": "End-user quality evidence bundle",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.end-user-quality-evidence-bundle.md",
+      "sourceFeaturePath": "docs/features/end-user-quality-evidence-bundle.feature.md",
+      "statusContractPath": "docs/features/_feature-status/end-user-quality-evidence-bundle.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "evidence-receipt-coverage",
+      "featureName": "Evidence receipt coverage",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "evidence-receipt-coverage--write-report-evidence-packet--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--write-report-evidence-packet--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.evidence-receipt-coverage.md",
+      "sourceFeaturePath": "docs/features/evidence-receipt-coverage.feature.md",
+      "statusContractPath": "docs/features/_feature-status/evidence-receipt-coverage.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "featureName": "Feature execution proof source of truth",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.feature-execution-proof-source-of-truth.md",
+      "sourceFeaturePath": "docs/features/feature-execution-proof-source-of-truth.feature.md",
+      "statusContractPath": "docs/features/_feature-status/feature-execution-proof-source-of-truth.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "featureName": "Feature filesystem quality status projection",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.feature-filesystem-quality-status-projection.md",
+      "sourceFeaturePath": "docs/features/feature-filesystem-quality-status-projection.feature.md",
+      "statusContractPath": "docs/features/_feature-status/feature-filesystem-quality-status-projection.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "featureName": "Feature quality board filesystem body",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.feature-quality-board-filesystem-body.md",
+      "sourceFeaturePath": "docs/features/feature-quality-board-filesystem-body.feature.md",
+      "statusContractPath": "docs/features/_feature-status/feature-quality-board-filesystem-body.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "featureName": "Feature-scoped ASCII execution flow report",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.feature-scoped-ascii-execution-flow-report.md",
+      "sourceFeaturePath": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+      "statusContractPath": "docs/features/_feature-status/feature-scoped-ascii-execution-flow-report.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "featureName": "Fractal LLM harness",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.fractal-llm-harness.md",
+      "sourceFeaturePath": "docs/features/fractal-llm-harness.feature.md",
+      "statusContractPath": "docs/features/_feature-status/fractal-llm-harness.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "gherkin-driven-report-development",
+      "featureName": "Gherkin-driven report development",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.gherkin-driven-report-development.md",
+      "sourceFeaturePath": "docs/features/gherkin-driven-report-development.feature.md",
+      "statusContractPath": "docs/features/_feature-status/gherkin-driven-report-development.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "featureName": "LLM domain body analysis and tie-out",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.llm-domain-body-analysis-and-tie-out.md",
+      "sourceFeaturePath": "docs/features/llm-domain-body-analysis-and-tie-out.feature.md",
+      "statusContractPath": "docs/features/_feature-status/llm-domain-body-analysis-and-tie-out.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "featureName": "LLM end-user testing conveyor",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+      "blockerCount": 3,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.llm-end-user-testing-conveyor.md",
+      "sourceFeaturePath": "docs/features/llm-end-user-testing-conveyor.feature.md",
+      "statusContractPath": "docs/features/_feature-status/llm-end-user-testing-conveyor.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-assigned-surface-insufficient",
+        "qa-cleanup-precondition-or-negative-case-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "featureName": "Method-level execution drill-down",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.method-level-execution-drill-down.md",
+      "sourceFeaturePath": "docs/features/method-level-execution-drill-down.feature.md",
+      "statusContractPath": "docs/features/_feature-status/method-level-execution-drill-down.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "pi-readiness-gate-for-report-truth",
+      "featureName": "PI readiness gate for report truth",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "pi-readiness-gate-for-report-truth--pass-pi-readiness--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/pi-readiness-gate-for-report-truth--pass-pi-readiness--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.pi-readiness-gate-for-report-truth.md",
+      "sourceFeaturePath": "docs/features/pi-readiness-gate.feature.md",
+      "statusContractPath": "docs/features/_feature-status/pi-readiness-gate-for-report-truth.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "portable-evidence-paths",
+      "featureName": "Portable evidence paths",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "portable-evidence-paths--render-repo-relative-paths--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/portable-evidence-paths--render-repo-relative-paths--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.portable-evidence-paths.md",
+      "sourceFeaturePath": "docs/features/portable-evidence-paths.feature.md",
+      "statusContractPath": "docs/features/_feature-status/portable-evidence-paths.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "featureName": "Projection language honesty",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "projection-language-honesty--separate-source-location-from-runtime-observation--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/projection-language-honesty--separate-source-location-from-runtime-observation--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.projection-language-honesty.md",
+      "sourceFeaturePath": "docs/features/projection-language-honesty.feature.md",
+      "statusContractPath": "docs/features/_feature-status/projection-language-honesty.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "report-contract-schema-enforcement",
+      "featureName": "Report contract schema enforcement",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.report-contract-schema-enforcement.md",
+      "sourceFeaturePath": "docs/features/report-contract-schema-enforcement.feature.md",
+      "statusContractPath": "docs/features/_feature-status/report-contract-schema-enforcement.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "report-provenance-and-freshness-gate",
+      "featureName": "Report provenance and freshness gate",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "report-provenance-and-freshness-gate--render-report-provenance--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-provenance-and-freshness-gate--render-report-provenance--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.report-provenance-and-freshness-gate.md",
+      "sourceFeaturePath": "docs/features/report-provenance-and-freshness-gate.feature.md",
+      "statusContractPath": "docs/features/_feature-status/report-provenance-and-freshness-gate.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "summary-findings-and-method-row-tie-out",
+      "featureName": "Summary, findings, and method row tie-out",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.summary-findings-and-method-row-tie-out.md",
+      "sourceFeaturePath": "docs/features/summary-findings-and-method-row-tie-out.feature.md",
+      "statusContractPath": "docs/features/_feature-status/summary-findings-and-method-row-tie-out.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "verdict-derivation-consistency",
+      "featureName": "Verdict derivation consistency",
+      "displayStatus": "qa-blocked",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "BLOCKED",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+      "blockerCount": 2,
+      "topBlockerCode": "llm-acceptance-criterion-not-evidence-backed",
+      "staleIndicator": "current",
+      "nextAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+      "statusSentinelPath": "docs/features/_STATUS.qa-blocked.verdict-derivation-consistency.md",
+      "sourceFeaturePath": "docs/features/verdict-derivation-consistency.feature.md",
+      "statusContractPath": "docs/features/_feature-status/verdict-derivation-consistency.status.v1.json",
+      "blockerCodes": [
+        "llm-acceptance-criterion-not-evidence-backed",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "featureName": "Per-feature executable body evidence reports",
+      "displayStatus": "qa-passed",
+      "implementationStatus": "implemented",
+      "executionProofStatus": "not proven",
+      "endUserQaStatus": "QA passed",
+      "promotionStatus": "not promoted",
+      "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+      "latestQaRunId": "per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini",
+      "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini",
+      "blockerCount": 0,
+      "topBlockerCode": "none",
+      "staleIndicator": "current",
+      "nextAction": "run deterministic promotion gate",
+      "statusSentinelPath": "docs/features/_STATUS.qa-passed.per-feature-executable-body-evidence-reports.md",
+      "sourceFeaturePath": "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+      "statusContractPath": "docs/features/_feature-status/per-feature-executable-body-evidence-reports.status.v1.json",
+      "blockerCodes": [],
+      "generatedAt": "2026-07-10T09:04:04.704Z"
+    }
+  ],
+  "sourceStatusContractHashes": [
+    {
+      "path": "docs/features/_feature-status/adversarial-challenge-packet.status.v1.json",
+      "sha256": "4837a391bc014bef8f383939adc916d671d5ebc16da2cd2a7a821017234f7112"
+    },
+    {
+      "path": "docs/features/_feature-status/ci-cd-report-truth-guardrails.status.v1.json",
+      "sha256": "c325b6dc518dc50e720982602b8afd22bbe2853729605b343d3d94196e040fa0"
+    },
+    {
+      "path": "docs/features/_feature-status/data-driven-report-layout.status.v1.json",
+      "sha256": "b879829e160c85fd82ce19f4f7c2d1a0c2ec7ab41e2ad5ce4746656aadfc35e1"
+    },
+    {
+      "path": "docs/features/_feature-status/development-time-report-truth-guardrails.status.v1.json",
+      "sha256": "e311a53152f85761f89b87d5ae5531400544f565eee480d49f4530c34e1355e9"
+    },
+    {
+      "path": "docs/features/_feature-status/domain-body-sprawl-visibility.status.v1.json",
+      "sha256": "5ce3606c9778fe1ad0ed9b5ea33c2bdf27f13231204723ac50926d5a1b424cf4"
+    },
+    {
+      "path": "docs/features/_feature-status/domain-naming-convention-correction.status.v1.json",
+      "sha256": "54fc97ded595627062504bbe5580169ad7224762ffb37d7bac60be524741a26e"
+    },
+    {
+      "path": "docs/features/_feature-status/domain-ownership-boundary-proof.status.v1.json",
+      "sha256": "82af733eb79d1d4f8ccd334a322e6f1faf9994b5af0ae8770ea7900de7c02bc5"
+    },
+    {
+      "path": "docs/features/_feature-status/end-user-quality-evidence-bundle.status.v1.json",
+      "sha256": "8752248b058c2c827ee94d513053e86aa7deb0731a00b3b0c418e9e75457941e"
+    },
+    {
+      "path": "docs/features/_feature-status/evidence-receipt-coverage.status.v1.json",
+      "sha256": "e183dab099fb8e095a4a4a4f05f058a83bce7bf3c621205c303499d839738381"
+    },
+    {
+      "path": "docs/features/_feature-status/feature-execution-proof-source-of-truth.status.v1.json",
+      "sha256": "d07d4a7e55630d2e44892b5052b095855a0fccc0459a6c84cb14b1fea05dad6c"
+    },
+    {
+      "path": "docs/features/_feature-status/feature-filesystem-quality-status-projection.status.v1.json",
+      "sha256": "2c29183617543c72326f3e059c6b66ba0623d1e70582e70df9a122784b38c02f"
+    },
+    {
+      "path": "docs/features/_feature-status/feature-quality-board-filesystem-body.status.v1.json",
+      "sha256": "2a9eeabb2d1523360ee018def9fb1609c74c1a7d417cff06186c739c843262b7"
+    },
+    {
+      "path": "docs/features/_feature-status/feature-scoped-ascii-execution-flow-report.status.v1.json",
+      "sha256": "3649ab1bff7d2253f37ad01dad2b2e1dfeb8705fb8703c3cf1a15441cfa9cd7d"
+    },
+    {
+      "path": "docs/features/_feature-status/fractal-llm-harness.status.v1.json",
+      "sha256": "b9502a968093677802cc2c532b5311f92543d6f61ba3f4a8d99edb5b7c34df16"
+    },
+    {
+      "path": "docs/features/_feature-status/gherkin-driven-report-development.status.v1.json",
+      "sha256": "2d25cfa2a559606309b9abac0ad7e22663f3e913eaec1f3897d64c05dfe135c5"
+    },
+    {
+      "path": "docs/features/_feature-status/llm-domain-body-analysis-and-tie-out.status.v1.json",
+      "sha256": "1abc6d9f953a313a5a4029f8eac186463ad6538966806799646e108ac1ae5d17"
+    },
+    {
+      "path": "docs/features/_feature-status/llm-end-user-testing-conveyor.status.v1.json",
+      "sha256": "595358b337e671336563d915ecafb1ceeab0bd7e572e3b3a5c5fc272ca187d5d"
+    },
+    {
+      "path": "docs/features/_feature-status/method-level-execution-drill-down.status.v1.json",
+      "sha256": "487f6229a02f9789a1562329bf98859b9f93c46f4ff1ba6932ad74822023682b"
+    },
+    {
+      "path": "docs/features/_feature-status/pi-readiness-gate-for-report-truth.status.v1.json",
+      "sha256": "c13314b4b91cb60f256162c13cde44985f60f22ebcfb230e4a85cade79b29c34"
+    },
+    {
+      "path": "docs/features/_feature-status/portable-evidence-paths.status.v1.json",
+      "sha256": "42585ff547e3a414a1e1662e1cb0e8dc05ec66d67bca6260d381cefc61a406f7"
+    },
+    {
+      "path": "docs/features/_feature-status/projection-language-honesty.status.v1.json",
+      "sha256": "cab6d25f94dbc50aee3b2506d75e2d1badab116dd36ddb03ca39102b46290357"
+    },
+    {
+      "path": "docs/features/_feature-status/report-contract-schema-enforcement.status.v1.json",
+      "sha256": "c4b3f7c324711ce342ccc59543d0025ba17d66ce67bd54e927972e263ca93d58"
+    },
+    {
+      "path": "docs/features/_feature-status/report-provenance-and-freshness-gate.status.v1.json",
+      "sha256": "bf3be5ca631c3861b0c8310afc4c7042dd7256f9953af6d0c6130d5043b8c211"
+    },
+    {
+      "path": "docs/features/_feature-status/summary-findings-and-method-row-tie-out.status.v1.json",
+      "sha256": "4f72c77d0587520f176eb25229129b0158c4e59ab3c5f225a913c2cc26894183"
+    },
+    {
+      "path": "docs/features/_feature-status/verdict-derivation-consistency.status.v1.json",
+      "sha256": "90322431e99fe3102ec261b1cde02d555682179f559deed9635bccd16f252c28"
+    },
+    {
+      "path": "docs/features/_feature-status/per-feature-executable-body-evidence-reports.status.v1.json",
+      "sha256": "0141c958077afe79508362bc53b07080ed17ba49c1ca543a1225652994205365"
+    }
+  ],
+  "blockerSummary": [
+    {
+      "code": "llm-acceptance-criterion-not-evidence-backed",
+      "count": 25
+    },
+    {
+      "code": "qa-cleanup-human-report-evidence-missing",
+      "count": 17
+    },
+    {
+      "code": "qa-cleanup-external-surface-not-testable-locally",
+      "count": 5
+    },
+    {
+      "code": "qa-cleanup-assigned-surface-insufficient",
+      "count": 2
+    },
+    {
+      "code": "qa-cleanup-precondition-or-negative-case-evidence-missing",
+      "count": 2
+    },
+    {
+      "code": "qa-cleanup-required-artifact-evidence-missing",
+      "count": 2
+    }
+  ],
+  "findings": []
+}

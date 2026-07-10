@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "adversarial-challenge-packet--generate-report-challenge-packet--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "generate-report-challenge-packet",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 569,
+    "candidatesTokenCount": 445,
+    "totalTokenCount": 1943,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 569
+      }
+    ],
+    "thoughtsTokenCount": 929,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "b9fe90d6042ff3a5a8a6a0a1504fdf3f0f2364b80a8fb1c26155a0d33825e9e8",
+  "responseSha256": "3c26b3e26412da0e8d600a732a8825a07ab136bb59fd79c9a6f43f51647b6414",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/adversarial-challenge-packet/generate-report-challenge-packet.response.v1.json",
+  "calledAt": "2026-07-10T00:49:15.933Z"
+}

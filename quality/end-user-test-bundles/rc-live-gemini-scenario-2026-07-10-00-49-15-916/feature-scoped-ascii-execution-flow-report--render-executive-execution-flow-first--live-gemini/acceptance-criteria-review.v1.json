@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-executive-execution-flow-first--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-executive-execution-flow-first",
+  "criteria": [
+    {
+      "criterionText": "Then the first product-facing section should be an ASCII execution flow sketch",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And the sketch should show:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    },
+    {
+      "criterionText": "And dense method tables should appear only after the sketch and blocker summary.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The `report.md` file was not provided, preventing verification of this criterion.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+      "recommendedFixRoute": "Provide the `report.md` file for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:08:07.465Z"
+}

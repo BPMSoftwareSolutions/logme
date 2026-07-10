@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--build-the-llm-handoff-packet--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "build-the-llm-handoff-packet",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 694,
+    "candidatesTokenCount": 961,
+    "totalTokenCount": 3882,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 694
+      }
+    ],
+    "thoughtsTokenCount": 2227,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e53fe61be4ee60846fb1b0990fa635ec8085948b7176a2048f216e49ab32e0d3",
+  "responseSha256": "7c85002820bed08e95f49dace06158a2b613c4ebbe27d176203373c92030efb3",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/llm-end-user-testing-conveyor/build-the-llm-handoff-packet.response.v1.json",
+  "calledAt": "2026-07-10T01:14:12.043Z"
+}

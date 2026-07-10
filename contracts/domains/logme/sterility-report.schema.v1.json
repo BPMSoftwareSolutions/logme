@@ -33,6 +33,8 @@
     "methodsOutsideDomainVocabulary",
     "unimplementedStubMethods",
     "coverage",
+    "domainAnalysis.summary.totalExecutableFiles",
+    "domainAnalysis.reportPath",
     "sprawl.summary.totalSourceFilesScanned",
     "sprawl.reportPath",
     "findings",

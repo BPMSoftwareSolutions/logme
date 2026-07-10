@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--preserve-visual-projection-evidence-for-html-publication--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "preserve-visual-projection-evidence-for-html-publication",
+  "criteria": [
+    {
+      "criterionText": "Then the QA bundle should include an HTML preview index when HTML rendering is available",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The QA bundle and its contents were not provided, preventing verification of the HTML preview index's inclusion.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_ARTIFACT",
+      "recommendedFixRoute": "Provide the complete QA bundle for direct inspection."
+    },
+    {
+      "criterionText": "And the preview index should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The HTML preview index was not provided, making it impossible to verify if it contains the specified fields.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_ARTIFACT",
+      "recommendedFixRoute": "Provide the HTML preview index for direct inspection."
+    },
+    {
+      "criterionText": "And ASCII sketches should be checked for readable HTML rendering",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No rendered HTML output or visual evidence of ASCII sketches was provided, preventing a check for readable rendering.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_VISUAL_EVIDENCE",
+      "recommendedFixRoute": "Provide the rendered HTML output or screenshots showing ASCII sketches for review."
+    },
+    {
+      "criterionText": "And visual render blockers should prevent QA pass.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "Without access to the rendered HTML or a mechanism to observe visual render blockers and their impact on QA pass/fail status, this criterion cannot be verified.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_VISUAL_EVIDENCE_AND_STATUS",
+      "recommendedFixRoute": "Provide rendered HTML and the final QA pass/fail status, along with any identified render blockers, for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:57:13.643Z"
+}

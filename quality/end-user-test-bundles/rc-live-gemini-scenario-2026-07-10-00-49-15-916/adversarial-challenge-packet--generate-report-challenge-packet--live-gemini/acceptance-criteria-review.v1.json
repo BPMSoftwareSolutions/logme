@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "adversarial-challenge-packet--generate-report-challenge-packet--live-gemini",
+  "featureId": "adversarial-challenge-packet",
+  "scenarioId": "generate-report-challenge-packet",
+  "criteria": [
+    {
+      "criterionText": "Then it should ask a reviewer to disprove:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the challenge packet, which should list claims for reviewer disproval, was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_ARTIFACT",
+      "recommendedFixRoute": "Supply the generated challenge packet or `report.md` content for review."
+    },
+    {
+      "criterionText": "And it should include every source, config, schema, telemetry, and receipt path required for review.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The challenge packet content, which should include paths to review artifacts, was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_ARTIFACT",
+      "recommendedFixRoute": "Supply the generated challenge packet or `report.md` content for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:49:22.338Z"
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 630,
+    "candidatesTokenCount": 791,
+    "totalTokenCount": 2246,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 630
+      }
+    ],
+    "thoughtsTokenCount": 825,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "219308309d4ec07d3a484c7ae2e3c226549bb7d2435527e806d3ff67eb9c1bb4",
+  "responseSha256": "57f01ebfa960df3051d893af7ab1606f543a509f1c142caec61a64e0def2cbe2",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots.response.v1.json",
+  "calledAt": "2026-07-10T00:54:07.476Z"
+}

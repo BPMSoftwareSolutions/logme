@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 563,
+    "candidatesTokenCount": 607,
+    "totalTokenCount": 2391,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 563
+      }
+    ],
+    "thoughtsTokenCount": 1221,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The Gherkin describes the expected rendering behavior for runtime file drill-down, including the order of elements, required fields, and grouping logic. However, no `report.md` or CLI evidence was provided to verify that the implementation matches these specifications.",
+    "expectedResult": "The method drill-down should first show participating runtime files, each row containing specific fields, and method calls grouped under their respective runtime files when a node spans multiple files, as described in the Gherkin.",
+    "observedResult": "No observable result could be determined as no execution evidence (e.g., `report.md`, CLI output) was provided for review.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete execution evidence makes it impossible to confirm the user experience. Without visual or textual output, potential confusion regarding the drill-down structure or missing information cannot be identified.",
+    "accessibilityOrReadabilityObservations": "No accessibility or readability observations can be made without access to the rendered drill-down output (e.g., `report.md` or CLI output).",
+    "recommendedFollowUps": "Provide the `report.md` and/or CLI evidence (Gemini live-call receipt) for this scenario to allow for proper verification against the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the body node should first show the participating runtime files",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected behavior, but no execution evidence was provided to verify this criterion.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md or CLI output for review."
+      },
+      {
+        "criterionText": "And each runtime file row should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected fields for each runtime file row, but no execution evidence was provided to verify this criterion.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md or CLI output for review."
+      },
+      {
+        "criterionText": "And the method calls should be grouped under the runtime file when a node spans multiple files.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected grouping logic for method calls, but no execution evidence was provided to verify this criterion.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide report.md or CLI output for review."
+      }
+    ]
+  }
+}

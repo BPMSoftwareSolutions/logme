@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence",
+  "criteria": [
+    {
+      "criterionText": "Then each acceptance criterion should be classified as:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected classification statuses, but the actual `report.md` or live-call receipt, which would show if this classification is performed, was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt to verify the actual classification output."
+    },
+    {
+      "criterionText": "And each classification should include:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin specifies the fields expected in each classification, but the actual `report.md` or live-call receipt, which would show if these fields are present, was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt to verify the actual fields included in the classification."
+    },
+    {
+      "criterionText": "And the LLM may recommend status",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin implies LLM involvement, but without the `report.md` or live-call receipt, there is no direct evidence to confirm that the LLM actually recommends a status.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT",
+      "recommendedFixRoute": "Provide the `report.md` and live-call receipt to show instances of LLM status recommendations."
+    },
+    {
+      "criterionText": "But the quality gate should only pass criteria whose evidence paths prove the recommendation.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a critical logic for the quality gate. Verification requires seeing actual classifications, evidence paths, and final pass/fail statuses in the `report.md`, which was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "MISSING_EVIDENCE_REPORT",
+      "recommendedFixRoute": "Provide the `report.md` with detailed criteria reviews, evidence paths, and final statuses to verify the quality gate logic."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:16:26.402Z"
+}

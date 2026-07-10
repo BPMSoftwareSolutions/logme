@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--show-feature-status-without-opening-feature-documents--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "show-feature-status-without-opening-feature-documents",
+  "scenarioName": "Show feature status without opening feature documents",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Show feature status without opening feature documents\n    Given `docs/features/_FEATURE-QUALITY-BOARD.md` exists\n    When a product owner opens the `docs/features/` directory\n    Then the directory should include visible status sentinels matching:\n      \"\"\"\n      _STATUS.<display-status>.<feature-id>.md\n      \"\"\"\n    And the directory should include the generated quality board\n    And the status sentinel filenames should make it obvious which features are:\n      | state |\n      | not implemented |\n      | implemented but not tested |\n      | QA blocked |\n      | QA failed |\n      | QA passed |\n      | QA passed and promoted |\n      | stale |\n    And the product owner should not have to open a feature specification to know the current quality state.\n",
+    "acceptanceCriteria": [
+      "Then the directory should include visible status sentinels matching:",
+      "And the directory should include the generated quality board",
+      "And the status sentinel filenames should make it obvious which features are:",
+      "And the product owner should not have to open a feature specification to know the current quality state."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:05:48.286Z"
+}

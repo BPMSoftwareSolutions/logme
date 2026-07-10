@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--support-feature-wide-scenario-conveyor-runs--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "support-feature-wide-scenario-conveyor-runs",
+  "scenarioName": "Support feature-wide scenario conveyor runs",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Support feature-wide scenario conveyor runs\n    Given a feature has multiple scenarios\n    When the LLM end-user testing conveyor is assigned the whole feature\n    Then it should run each scenario independently\n    And each scenario should have its own QA run record or scenario sub-run id\n    And the feature-level QA summary should show:\n      | field |\n      | total scenarios |\n      | scenarios passed |\n      | scenarios failed |\n      | scenarios blocked |\n      | scenarios not testable |\n      | seed data sets used |\n      | overall quality gate decision |\n      | bundle paths |\n    And one scenario passing should not imply another scenario passed.\n",
+    "acceptanceCriteria": [
+      "Then it should run each scenario independently",
+      "And each scenario should have its own QA run record or scenario sub-run id",
+      "And the feature-level QA summary should show:",
+      "And one scenario passing should not imply another scenario passed."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:17:14.123Z"
+}

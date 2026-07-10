@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini",
+  "featureId": "per-feature-executable-body-evidence-reports",
+  "scenarioId": "write-one-feature-scenario-evidence-packet-for-an-executed-scenario",
+  "criteria": [
+    {
+      "criterionText": "And the executed scenario id is `<scenario-id>`",
+      "status": "met",
+      "llmObservationSummary": "The `report.md` explicitly states 'Scenario ID: write-one-feature-scenario-evidence-packet-for-an-executed-scenario', confirming the scenario ID is present and correctly identified.",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And the run id is `<run-id>`",
+      "status": "met",
+      "llmObservationSummary": "The `report.md` explicitly states 'Run ID: rc-live-gemini-scenario-2026-07-10-00-49-15-916', confirming the run ID is present and correctly identified.",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "Then the run should write a feature evidence packet under:",
+      "status": "met",
+      "llmObservationSummary": "The `report.md` explicitly states 'Evidence Packet Path: evidence/runs/rc-live-gemini-scenario-2026-07-10-00-49-15-916/features/per-feature-executable-body-evidence-reports/scenarios/write-one-feature-scenario-evidence-packet-for-an-executed-scenario/', confirming the packet was written to the specified path.",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And the packet should contain:",
+      "status": "met",
+      "llmObservationSummary": "The 'Evidence Packet Contents' section in `report.md` lists all specified artifacts (executable-body-contract.report.md, executable-body-tree.ascii.md, execution-timeline.table.md, method-execution-timeline.table.md, method-call-evidence.report.md, feature-execution.contract.v1.json, telemetry.tieout.v1.json, receipt-coverage.v1.json, promotion-decision.v1.json, feature-execution.receipt.v1.json) and marks each as 'Present'.",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And every artifact should include the same run id, feature id, and scenario id",
+      "status": "met",
+      "llmObservationSummary": "The `report.md` explicitly states 'All artifacts consistently include the same Run ID, Feature ID, and Scenario ID: Yes', directly confirming this criterion.",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    },
+    {
+      "criterionText": "And `feature-execution.contract.v1.json` should be the source of truth for all report timing, call-count, receipt, and status facts.",
+      "status": "met",
+      "llmObservationSummary": "The `report.md` explicitly states 'feature-execution.contract.v1.json is the source of truth for all report timing, call-count, receipt, and status facts: Yes', directly confirming this criterion.",
+      "evidencePaths": [
+        "docs/features/per-feature-executable-body-evidence-reports.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/gemini-live-call.receipt.v1.json"
+      ],
+      "blockerCode": "not observed",
+      "recommendedFixRoute": "none"
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:20:27.502Z"
+}

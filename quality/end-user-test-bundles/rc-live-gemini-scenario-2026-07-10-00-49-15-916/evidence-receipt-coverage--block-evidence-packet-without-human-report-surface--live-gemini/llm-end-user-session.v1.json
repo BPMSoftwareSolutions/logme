@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "evidence-receipt-coverage--block-evidence-packet-without-human-report-surface--live-gemini",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "block-evidence-packet-without-human-report-surface",
+  "scenarioName": "Block evidence packet without human report surface",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block evidence packet without human report surface",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/evidence-receipt-coverage.feature.md:34-43; report.md; live Gemini prompt",
+      "expectedResult": "The 'report.md' should display a 'BLOCKED' verdict, specifically mention the finding code 'evidence-json-without-human-report', and clearly indicate that the JSON-only evidence is not product-owner ready due to the missing human-readable report.",
+      "observedResult": "The content of 'report.md' was not available for observation, therefore no results could be directly observed or verified against the acceptance criteria.",
+      "timestamp": "2026-07-10T00:57:40.316Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--block-evidence-packet-without-human-report-surface--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/evidence-receipt-coverage.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--block-evidence-packet-without-human-report-surface--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

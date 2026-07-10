@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-header-only-execution-sketch--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-header-only-execution-sketch",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 521,
+    "candidatesTokenCount": 679,
+    "totalTokenCount": 2934,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 521
+      }
+    ],
+    "thoughtsTokenCount": 1734,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e90620acc0dea28074a2ad747f76647b3cb2678968121f8db5bdd05626f16ed3",
+  "responseSha256": "0bee82da64cef8430ac05ec4b44b7963d50a2b940c6d24b89753b780d9b003a0",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-header-only-execution-sketch.response.v1.json",
+  "calledAt": "2026-07-10T01:10:41.116Z"
+}

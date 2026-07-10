@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-the-declared-file-system-body-contract--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-the-declared-file-system-body-contract",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 615,
+    "candidatesTokenCount": 953,
+    "totalTokenCount": 2740,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 615
+      }
+    ],
+    "thoughtsTokenCount": 1172,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0b9772ea4c1f5f52830d8d2ba6d18fc7814424280ca3c4623ca69aee6b7af086",
+  "responseSha256": "ad695057bc040bdb3de4032e4ea3551d20ecb7533ca4bff37b9174b081996b31",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/rename-the-declared-file-system-body-contract.response.v1.json",
+  "calledAt": "2026-07-10T00:54:43.613Z"
+}

@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "execute-real-end-user-qa-from-the-user-perspective",
+  "scenarioName": "Execute real end-user QA from the user perspective",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Execute real end-user QA from the user perspective\n    Given a feature scenario is ready for quality validation\n    When the QA test is executed\n    Then the test should exercise the system through an end-user surface\n    And an end-user surface may be:\n      | surface |\n      | CLI command used by a product owner |\n      | generated Markdown report reviewed by a human |\n      | browser-rendered HTML projection |\n      | local app workflow |\n      | CI preview artifact |\n    And the QA test should validate the actual human projection when the feature produces one\n    And a Markdown report feature should be QAed by generating and inspecting the Markdown artifact\n    And an HTML projection feature should be QAed by rendering the Markdown-to-HTML artifact before promotion\n    And unit tests alone should not satisfy end-user QA.\n",
+    "acceptanceCriteria": [
+      "Then the test should exercise the system through an end-user surface",
+      "And an end-user surface may be:",
+      "And the QA test should validate the actual human projection when the feature produces one",
+      "And a Markdown report feature should be QAed by generating and inspecting the Markdown artifact",
+      "And an HTML projection feature should be QAed by rendering the Markdown-to-HTML artifact before promotion",
+      "And unit tests alone should not satisfy end-user QA."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:55:59.751Z"
+}

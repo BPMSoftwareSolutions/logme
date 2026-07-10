@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-duration-inferred-without-timing-evidence",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 533,
+    "candidatesTokenCount": 645,
+    "totalTokenCount": 1830,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 533
+      }
+    ],
+    "thoughtsTokenCount": 652,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The necessary evidence (report.md and Gemini live-call receipt) was not provided to verify the scenario's acceptance criteria. Without these artifacts, it is impossible to confirm the observed behavior of the ASCII execution sketch and finding codes.",
+    "expectedResult": "The ASCII execution sketch should display 'duration ms   : not observed', avoid showing 'observed', '0', '0ms', or blank duration as a successful timing value, and present 'runtime-duration-evidence-missing' as the finding code.",
+    "observedResult": "Cannot observe the actual report or finding code as the evidence files (report.md and Gemini live-call receipt) are missing from the provided context.",
+    "confusingOrRiskyExperiencePoints": "Without the generated report and live-call receipt, it's impossible to confirm if the system correctly rejects inferred durations without timing evidence. This could lead to misleading performance metrics or incorrect diagnostic information being presented to end-users if the feature does not behave as expected.",
+    "accessibilityOrReadabilityObservations": "N/A - The issue is with missing evidence, not the readability of the evidence itself.",
+    "recommendedFollowUps": "Provide the `report.md` file generated after the local test suite passed and the Gemini live-call receipt for this scenario to enable proper testing and verification of the acceptance criteria.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the duration branch should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so it's impossible to verify what the duration branch shows in the ASCII execution sketch.",
+        "blockerCode": "missing-evidence-report-or-receipt",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And the report should not show `observed`, `0`, `0ms`, or blank duration as a successful timing value",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so it's impossible to verify the absence of specific timing values in the report.",
+        "blockerCode": "missing-evidence-report-or-receipt",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, so it's impossible to verify the finding code displayed in the report.",
+        "blockerCode": "missing-evidence-report-or-receipt",
+        "recommendedFixRoute": "Provide the `report.md` file."
+      }
+    ]
+  }
+}

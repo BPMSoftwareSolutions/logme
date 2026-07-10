@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "create-a-qa-evidence-bundle-for-every-qa-attempt",
+  "scenarioName": "Create a QA evidence bundle for every QA attempt",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Create a QA evidence bundle for every QA attempt",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/end-user-quality-evidence-bundle.feature.md:50-76; report.md; live Gemini prompt",
+      "expectedResult": "A source-controlled QA bundle should be written to the specified path, containing the listed artifacts, for both passing and failing QA attempts, with consistent release candidate and QA run IDs across all artifacts.",
+      "observedResult": "No evidence (e.g., file system output, 'report.md' content, or actual bundle contents) was provided to confirm the creation, location, content, or ID consistency of the QA evidence bundle.",
+      "timestamp": "2026-07-10T00:55:59.767Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/end-user-quality-evidence-bundle.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

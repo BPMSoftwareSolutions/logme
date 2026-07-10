@@ -1,0 +1,2028 @@
+{
+  "schemaVersion": "blocked-scenario-cleanup.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "cleanedScenarioCount": 174,
+  "blockerSummary": [
+    {
+      "code": "qa-cleanup-human-report-evidence-missing",
+      "count": 115
+    },
+    {
+      "code": "qa-cleanup-external-surface-not-testable-locally",
+      "count": 31
+    },
+    {
+      "code": "qa-cleanup-required-artifact-evidence-missing",
+      "count": 19
+    },
+    {
+      "code": "qa-cleanup-assigned-surface-insufficient",
+      "count": 17
+    },
+    {
+      "code": "qa-cleanup-precondition-or-negative-case-evidence-missing",
+      "count": 9
+    },
+    {
+      "code": "qa-cleanup-executable-proof-missing",
+      "count": 9
+    },
+    {
+      "code": "qa-cleanup-visual-or-html-evidence-missing",
+      "count": 2
+    }
+  ],
+  "scenarios": [
+    {
+      "featureId": "adversarial-challenge-packet",
+      "scenarioId": "block-false-pass-claim",
+      "qaRunId": "adversarial-challenge-packet--block-false-pass-claim--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "insufficient-evidence-surface"
+      ]
+    },
+    {
+      "featureId": "adversarial-challenge-packet",
+      "scenarioId": "generate-report-challenge-packet",
+      "qaRunId": "adversarial-challenge-packet--generate-report-challenge-packet--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_ARTIFACT"
+      ]
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-false-pass-in-promotion-workflow",
+      "qaRunId": "ci-cd-report-truth-guardrails--block-false-pass-in-promotion-workflow--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-required-artifact-evidence-missing",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD",
+        "MISSING_EVIDENCE_PROMOTION_OUTCOME",
+        "MISSING_EVIDENCE_RECEIPTS",
+        "INSUFFICIENT_EVIDENCE_SCOPE"
+      ]
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-pull-request-when-report-truth-validation-fails",
+      "qaRunId": "ci-cd-report-truth-guardrails--block-pull-request-when-report-truth-validation-fails--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "INSUFFICIENT_EVIDENCE_FOR_FAILURE_CONDITION"
+      ]
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-release-promotion-without-end-user-qa-evidence",
+      "qaRunId": "ci-cd-report-truth-guardrails--block-release-promotion-without-end-user-qa-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_INSUFFICIENT",
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "block-stale-local-report-projection",
+      "qaRunId": "ci-cd-report-truth-guardrails--block-stale-local-report-projection--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-external-surface-not-testable-locally",
+        "qa-cleanup-precondition-or-negative-case-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "N/A",
+        "INSUFFICIENT_EVIDENCE_CI_BEHAVIOR",
+        "DEPENDENT_CRITERIA_BLOCKED"
+      ]
+    },
+    {
+      "featureId": "ci-cd-report-truth-guardrails",
+      "scenarioId": "publish-report-evidence-packet-as-ci-artifact",
+      "qaRunId": "ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING_ARTIFACT_OR_MANIFEST",
+        "EVIDENCE_MISSING_PR_SUMMARY"
+      ]
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "block-product-template-from-weakening-truth-gates",
+      "qaRunId": "data-driven-report-layout--block-product-template-from-weakening-truth-gates--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "block-template-variable-that-has-no-data-source",
+      "qaRunId": "data-driven-report-layout--block-template-variable-that-has-no-data-source--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "change-ascii-execution-sketch-without-code-changes",
+      "qaRunId": "data-driven-report-layout--change-ascii-execution-sketch-without-code-changes--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_TEMPLATE_FILE",
+        "MISSING_EVIDENCE_COMPARATIVE_SKETCH",
+        "NOT_ACCESSIBLE_IMPLEMENTATION_DETAIL",
+        "MISSING_EVIDENCE_TEMPLATE_AND_CONTRACT"
+      ]
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "change-report-labels-without-code-changes",
+      "qaRunId": "data-driven-report-layout--change-report-labels-without-code-changes--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE"
+      ]
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "change-report-section-order-without-code-changes",
+      "qaRunId": "data-driven-report-layout--change-report-section-order-without-code-changes--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE",
+        "SCOPE_LIMITATION"
+      ]
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "keep-renderer-code-as-a-generic-engine",
+      "qaRunId": "data-driven-report-layout--keep-renderer-code-as-a-generic-engine--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_INSUFFICIENT"
+      ]
+    },
+    {
+      "featureId": "data-driven-report-layout",
+      "scenarioId": "validate-report-layout-contract-before-rendering",
+      "qaRunId": "data-driven-report-layout--validate-report-layout-contract-before-rendering--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-precondition-or-negative-case-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING",
+        "NEGATIVE_CASE_MISSING"
+      ]
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "allow-fast-development-mode-without-weakening-truth",
+      "qaRunId": "development-time-report-truth-guardrails--allow-fast-development-mode-without-weakening-truth--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "block-commit-when-report-truth-gate-fails",
+      "qaRunId": "development-time-report-truth-guardrails--block-commit-when-report-truth-gate-fails--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-precondition-or-negative-case-evidence-missing",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "PRECONDITION_NOT_MET",
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "fail-local-verification-when-tests-pass-but-report-is-contaminated",
+      "qaRunId": "development-time-report-truth-guardrails--fail-local-verification-when-tests-pass-but-report-is-contaminated--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "keep-local-report-truth-output-quiet-enough-to-use",
+      "qaRunId": "development-time-report-truth-guardrails--keep-local-report-truth-output-quiet-enough-to-use--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_STDOUT_EVIDENCE",
+        "MISSING_ARTIFACT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "development-time-report-truth-guardrails",
+      "scenarioId": "provide-one-command-for-local-report-truth",
+      "qaRunId": "development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "block-promotion-only-for-severe-unowned-sprawl",
+      "qaRunId": "domain-body-sprawl-visibility--block-promotion-only-for-severe-unowned-sprawl--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_OR_LIVE_CALL"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "detect-artifact-sprawl-across-directories",
+      "qaRunId": "domain-body-sprawl-visibility--detect-artifact-sprawl-across-directories--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "detect-god-file-candidates-without-automatically-condemning-them",
+      "qaRunId": "domain-body-sprawl-visibility--detect-god-file-candidates-without-automatically-condemning-them--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "detect-mixed-responsibility-clusters-in-one-file",
+      "qaRunId": "domain-body-sprawl-visibility--detect-mixed-responsibility-clusters-in-one-file--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing_report_evidence"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "inventory-file-responsibility-signals",
+      "qaRunId": "domain-body-sprawl-visibility--inventory-file-responsibility-signals--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "keep-product-meaning-separate-from-generic-mechanics",
+      "qaRunId": "domain-body-sprawl-visibility--keep-product-meaning-separate-from-generic-mechanics--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SOURCE",
+        "MISSING_EVIDENCE_REPORT"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "make-sprawl-thresholds-product-owned",
+      "qaRunId": "domain-body-sprawl-visibility--make-sprawl-thresholds-product-owned--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "preserve-intentional-domain-cohesion",
+      "qaRunId": "domain-body-sprawl-visibility--preserve-intentional-domain-cohesion--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "render-product-owner-sprawl-report",
+      "qaRunId": "domain-body-sprawl-visibility--render-product-owner-sprawl-report--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_CONTENT"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots",
+      "qaRunId": "domain-body-sprawl-visibility--roll-up-method-level-sterility-findings-into-file-level-sprawl-hotspots--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "INSUFFICIENT_EVIDENCE_SURFACES"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "write-human-readable-sprawl-report-beside-json-evidence",
+      "qaRunId": "domain-body-sprawl-visibility--write-human-readable-sprawl-report-beside-json-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "INSUFFICIENT_EVIDENCE_DETAIL",
+        "MISSING_EVIDENCE_SOURCE",
+        "MISSING_REPORT_CONTENT"
+      ]
+    },
+    {
+      "featureId": "domain-body-sprawl-visibility",
+      "scenarioId": "write-shareable-sprawl-hotspot-table",
+      "qaRunId": "domain-body-sprawl-visibility--write-shareable-sprawl-hotspot-table--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "block-reintroduction-of-the-retired-name",
+      "qaRunId": "domain-naming-convention-correction--block-reintroduction-of-the-retired-name--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-report-evidence"
+      ]
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "rename-domain-gate-and-template-directories",
+      "qaRunId": "domain-naming-convention-correction--rename-domain-gate-and-template-directories--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing_evidence_report"
+      ]
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "rename-the-declared-file-system-body-contract",
+      "qaRunId": "domain-naming-convention-correction--rename-the-declared-file-system-body-contract--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE"
+      ]
+    },
+    {
+      "featureId": "domain-naming-convention-correction",
+      "scenarioId": "update-every-in-repo-reference-after-the-rename",
+      "qaRunId": "domain-naming-convention-correction--update-every-in-repo-reference-after-the-rename--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPOSITORY_CONTENT_EVIDENCE",
+        "MISSING_TEST_REPORT_AND_REPOSITORY_CONTENT_EVIDENCE",
+        "MISSING_REPORT_TRUTH_FILE"
+      ]
+    },
+    {
+      "featureId": "domain-ownership-boundary-proof",
+      "scenarioId": "block-package-governed-claim-without-package-receipt",
+      "qaRunId": "domain-ownership-boundary-proof--block-package-governed-claim-without-package-receipt--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD_OR_GEMINI_RECEIPT"
+      ]
+    },
+    {
+      "featureId": "domain-ownership-boundary-proof",
+      "scenarioId": "require-ownership-evidence-for-domain-bound-methods",
+      "qaRunId": "domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "block-release-without-qa-bundle",
+      "qaRunId": "end-user-quality-evidence-bundle--block-release-without-qa-bundle--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-evidence-surface"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "create-a-qa-evidence-bundle-for-every-qa-attempt",
+      "qaRunId": "end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "execute-real-end-user-qa-from-the-user-perspective",
+      "qaRunId": "end-user-quality-evidence-bundle--execute-real-end-user-qa-from-the-user-perspective--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-visual-or-html-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_HTML_PROJECTION"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "generate-the-human-readable-qa-bundle-report",
+      "qaRunId": "end-user-quality-evidence-bundle--generate-the-human-readable-qa-bundle-report--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "inventory-qa-status-for-every-feature-scenario",
+      "qaRunId": "end-user-quality-evidence-bundle--inventory-qa-status-for-every-feature-scenario--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "keep-transient-run-evidence-separate-from-promoted-qa-evidence",
+      "qaRunId": "end-user-quality-evidence-bundle--keep-transient-run-evidence-separate-from-promoted-qa-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_INSUFFICIENT_DETAIL"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "link-executable-body-reports-into-the-qa-bundle",
+      "qaRunId": "end-user-quality-evidence-bundle--link-executable-body-reports-into-the-qa-bundle--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing",
+        "qa-cleanup-executable-proof-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-qa-bundle-content-evidence",
+        "missing-qa-bundle-manifest-evidence",
+        "missing-dynamic-behavior-evidence",
+        "missing-finding-code-output"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "lock-a-passing-qa-bundle-as-release-proof",
+      "qaRunId": "end-user-quality-evidence-bundle--lock-a-passing-qa-bundle-as-release-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EXECUTION_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "preserve-machine-and-execution-provenance",
+      "qaRunId": "end-user-quality-evidence-bundle--preserve-machine-and-execution-provenance--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "preserve-visual-projection-evidence-for-html-publication",
+      "qaRunId": "end-user-quality-evidence-bundle--preserve-visual-projection-evidence-for-html-publication--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing",
+        "qa-cleanup-visual-or-html-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_ARTIFACT",
+        "MISSING_VISUAL_EVIDENCE",
+        "MISSING_VISUAL_EVIDENCE_AND_STATUS"
+      ]
+    },
+    {
+      "featureId": "end-user-quality-evidence-bundle",
+      "scenarioId": "render-qa-status-in-the-global-report",
+      "qaRunId": "end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "evidence-receipt-coverage",
+      "scenarioId": "block-evidence-packet-without-human-report-surface",
+      "qaRunId": "evidence-receipt-coverage--block-evidence-packet-without-human-report-surface--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-precondition-or-negative-case-evidence-missing",
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "precondition-not-directly-observable",
+        "missing-evidence-surface-content"
+      ]
+    },
+    {
+      "featureId": "evidence-receipt-coverage",
+      "scenarioId": "block-verdict-promotion-without-receipt",
+      "qaRunId": "evidence-receipt-coverage--block-verdict-promotion-without-receipt--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-precondition-or-negative-case-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "CONTRADICTORY_EVIDENCE_SETUP",
+        "DEPENDENT_PRECONDITION_FAILED"
+      ]
+    },
+    {
+      "featureId": "evidence-receipt-coverage",
+      "scenarioId": "write-report-evidence-packet",
+      "qaRunId": "evidence-receipt-coverage--write-report-evidence-packet--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE_CONTENT"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "calculate-product-timing-metrics-from-observed-evidence",
+      "qaRunId": "feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "establish-service-level-indicators-from-execution-proof",
+      "qaRunId": "feature-execution-proof-source-of-truth--establish-service-level-indicators-from-execution-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "evaluate-service-level-objectives-from-scenario-evidence",
+      "qaRunId": "feature-execution-proof-source-of-truth--evaluate-service-level-objectives-from-scenario-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "inventory-every-feature-scenario-and-proof-state",
+      "qaRunId": "feature-execution-proof-source-of-truth--inventory-every-feature-scenario-and-proof-state--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "keep-json-proof-portable-for-downstream-analysis",
+      "qaRunId": "feature-execution-proof-source-of-truth--keep-json-proof-portable-for-downstream-analysis--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing",
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING_JSON_PROOF_AND_CSV_OUTPUT",
+        "EVIDENCE_MISSING_TABULAR_PROJECTION",
+        "EVIDENCE_INSUFFICIENT_FOR_IMPLEMENTATION_PROOF"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "preserve-method-call-drill-down-inside-observed-body-nodes",
+      "qaRunId": "feature-execution-proof-source-of-truth--preserve-method-call-drill-down-inside-observed-body-nodes--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_INSUFFICIENT"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "preserve-repeated-calls-in-the-execution-proof",
+      "qaRunId": "feature-execution-proof-source-of-truth--preserve-repeated-calls-in-the-execution-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "preserve-sla-evidence-without-turning-reports-into-contracts",
+      "qaRunId": "feature-execution-proof-source-of-truth--preserve-sla-evidence-without-turning-reports-into-contracts--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_JSON_PROOF_EVIDENCE",
+        "MISSING_REPORT_MD_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "reject-report-facts-not-backed-by-json-proof",
+      "qaRunId": "feature-execution-proof-source-of-truth--reject-report-facts-not-backed-by-json-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-report-md",
+        "missing-report-md-and-receipt"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "render-human-report-from-canonical-json-proof",
+      "qaRunId": "feature-execution-proof-source-of-truth--render-human-report-from-canonical-json-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "tie-json-proof-to-raw-telemetry-and-receipts",
+      "qaRunId": "feature-execution-proof-source-of-truth--tie-json-proof-to-raw-telemetry-and-receipts--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_OR_RECEIPT"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "write-canonical-json-execution-proof-for-a-scenario",
+      "qaRunId": "feature-execution-proof-source-of-truth--write-canonical-json-execution-proof-for-a-scenario--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_ARTIFACTS"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "write-human-readable-scenario-proof-report-beside-json-proof",
+      "qaRunId": "feature-execution-proof-source-of-truth--write-human-readable-scenario-proof-report-beside-json-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-execution-proof-source-of-truth",
+      "scenarioId": "write-shareable-timing-table-projection",
+      "qaRunId": "feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "block-hand-authored-status-claims",
+      "qaRunId": "feature-filesystem-quality-status-projection--block-hand-authored-status-claims--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "INSUFFICIENT_END_USER_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "keep-status-truth-separate-from-status-projection",
+      "qaRunId": "feature-filesystem-quality-status-projection--keep-status-truth-separate-from-status-projection--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "NO_SENTINEL_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-a-feature-untested-from-the-filesystem-body",
+      "qaRunId": "feature-filesystem-quality-status-projection--mark-a-feature-untested-from-the-filesystem-body--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-qa-blocked-from-the-filesystem-body",
+      "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-qa-passed-and-promoted-from-the-filesystem-body",
+      "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-passed-and-promoted-from-the-filesystem-body--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EXECUTION_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-qa-passed-but-not-promoted-from-the-filesystem-body",
+      "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-passed-but-not-promoted-from-the-filesystem-body--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EXECUTION_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "mark-stale-filesystem-status-when-evidence-changes",
+      "qaRunId": "feature-filesystem-quality-status-projection--mark-stale-filesystem-status-when-evidence-changes--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "project-one-visible-status-sentinel-for-every-feature",
+      "qaRunId": "feature-filesystem-quality-status-projection--project-one-visible-status-sentinel-for-every-feature--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "remove-stale-or-duplicate-status-sentinels-for-the-same-feature",
+      "qaRunId": "feature-filesystem-quality-status-projection--remove-stale-or-duplicate-status-sentinels-for-the-same-feature--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "not-testable-external-system"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "support-future-feature-body-folders-without-breaking-flat-feature-files",
+      "qaRunId": "feature-filesystem-quality-status-projection--support-future-feature-body-folders-without-breaking-flat-feature-files--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "NO_EXECUTION_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "use-a-constrained-filesystem-status-vocabulary",
+      "qaRunId": "feature-filesystem-quality-status-projection--use-a-constrained-filesystem-status-vocabulary--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-filesystem-quality-status-projection",
+      "scenarioId": "write-machine-readable-status-beside-the-filesystem-sentinel",
+      "qaRunId": "feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "block-stale-quality-board-promotion-in-ci",
+      "qaRunId": "feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "insufficient-evidence-report-content-missing"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "detect-missing-status-projection-for-a-feature",
+      "qaRunId": "feature-quality-board-filesystem-body--detect-missing-status-projection-for-a-feature--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing_evidence_report"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "detect-status-sentinel-and-json-contract-mismatch",
+      "qaRunId": "feature-quality-board-filesystem-body--detect-status-sentinel-and-json-contract-mismatch--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing_evidence_report"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "generate-a-filesystem-tree-projection-for-review",
+      "qaRunId": "feature-quality-board-filesystem-body--generate-a-filesystem-tree-projection-for-review--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "generate-the-product-owner-quality-board",
+      "qaRunId": "feature-quality-board-filesystem-body--generate-the-product-owner-quality-board--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "keep-qa-pass-separate-from-promotion",
+      "qaRunId": "feature-quality-board-filesystem-body--keep-qa-pass-separate-from-promotion--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "populate-the-board-with-scan-friendly-product-fields",
+      "qaRunId": "feature-quality-board-filesystem-body--populate-the-board-with-scan-friendly-product-fields--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "preserve-existing-feature-document-paths-during-rollout",
+      "qaRunId": "feature-quality-board-filesystem-body--preserve-existing-feature-document-paths-during-rollout--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "promote-only-through-deterministic-evidence",
+      "qaRunId": "feature-quality-board-filesystem-body--promote-only-through-deterministic-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "provide-pi-ready-summary-counts",
+      "qaRunId": "feature-quality-board-filesystem-body--provide-pi-ready-summary-counts--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "show-feature-status-without-opening-feature-documents",
+      "qaRunId": "feature-quality-board-filesystem-body--show-feature-status-without-opening-feature-documents--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "tie-board-status-to-immutable-qa-bundle-evidence",
+      "qaRunId": "feature-quality-board-filesystem-body--tie-board-status-to-immutable-qa-bundle-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT"
+      ]
+    },
+    {
+      "featureId": "feature-quality-board-filesystem-body",
+      "scenarioId": "write-a-machine-readable-board-contract",
+      "qaRunId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "preserve-product-readable-execution-tree-shape",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--preserve-product-readable-execution-tree-shape--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-boxed-node-list-when-hierarchical-body-tree-is-required",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-duration-inferred-without-timing-evidence",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-duration-inferred-without-timing-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-evidence-report-or-receipt"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-invented-fallback-execution-body-tree-for-promotion",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-invented-fallback-execution-body-tree-for-promotion--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING_OR_INSUFFICIENT",
+        "REPORT_MD_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "reject-telemetry-inferred-from-verdict",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-telemetry-inferred-from-verdict--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-precondition-or-negative-case-evidence-missing",
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING_PRECONDITION_VERIFICATION",
+        "EVIDENCE_MISSING_REPORT_MD",
+        "EVIDENCE_MISSING_REPORT_OR_RECEIPT"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-a-compact-blocked-sketch",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-a-compact-blocked-sketch--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-a-compact-happy-path-sketch",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-a-compact-happy-path-sketch--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_CONTENT"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-blocked-ascii-body-tree-shape",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-blocked-ascii-body-tree-shape--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-clean-ascii-only",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-clean-ascii-only--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-executable-body-contract-as-file-system-execution-tree",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-executable-body-contract-as-file-system-execution-tree--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-executive-execution-flow-first",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-executive-execution-flow-first--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-hierarchical-ascii-executable-body-tree",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-hierarchical-ascii-executable-body-tree--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-method-drill-down-under-each-observed-body-node",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-method-drill-down-under-each-observed-body-node--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-required-ascii-body-tree-shape",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-required-ascii-body-tree-shape--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "render-timing-and-call-count-facts-from-canonical-json-proof",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--render-timing-and-call-count-facts-from-canonical-json-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "require-branch-assertions-in-report-tests",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--require-branch-assertions-in-report-tests--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_CONTENT",
+        "MISSING_EVIDENCE_TEST_FAILURE_BEHAVIOR"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "show-blocked-report-as-a-worklist",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--show-blocked-report-as-a-worklist--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "feature-scoped-ascii-execution-flow-report",
+      "scenarioId": "use-fallback-only-as-a-non-promotable-development-diagnostic",
+      "qaRunId": "feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_INSUFFICIENT"
+      ]
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "child-harness-proposes-the-next-harness",
+      "qaRunId": "fractal-llm-harness--child-harness-proposes-the-next-harness--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_AND_RECEIPT"
+      ]
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "generated-harness-proves-its-own-execution",
+      "qaRunId": "fractal-llm-harness--generated-harness-proves-its-own-execution--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "llm-generates-a-child-harness-from-a-parent-harness-contract",
+      "qaRunId": "fractal-llm-harness--llm-generates-a-child-harness-from-a-parent-harness-contract--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "fractal-llm-harness",
+      "scenarioId": "llm-unsafe-output-is-blocked",
+      "qaRunId": "fractal-llm-harness--llm-unsafe-output-is-blocked--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "gherkin-driven-report-development",
+      "scenarioId": "require-gherkin-before-report-feature-implementation",
+      "qaRunId": "gherkin-driven-report-development--require-gherkin-before-report-feature-implementation--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE"
+      ]
+    },
+    {
+      "featureId": "gherkin-driven-report-development",
+      "scenarioId": "trace-report-sections-to-scenarios",
+      "qaRunId": "gherkin-driven-report-development--trace-report-sections-to-scenarios--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "analyze-executable-file-name-grammar",
+      "qaRunId": "llm-domain-body-analysis-and-tie-out--analyze-executable-file-name-grammar--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING_REPORT_OR_RECEIPT"
+      ]
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "produce-an-llm-handoff-artifact-from-deterministic-facts",
+      "qaRunId": "llm-domain-body-analysis-and-tie-out--produce-an-llm-handoff-artifact-from-deterministic-facts--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE"
+      ]
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "recommend-decomposition-without-promoting-the-llm-recommendation",
+      "qaRunId": "llm-domain-body-analysis-and-tie-out--recommend-decomposition-without-promoting-the-llm-recommendation--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_OR_CLI"
+      ]
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "tie-every-executable-file-to-a-file-body-contract",
+      "qaRunId": "llm-domain-body-analysis-and-tie-out--tie-every-executable-file-to-a-file-body-contract--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "llm-domain-body-analysis-and-tie-out",
+      "scenarioId": "tie-file-bodies-to-features-and-scenarios",
+      "qaRunId": "llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "assign-a-feature-scenario-to-the-llm-testing-conveyor",
+      "qaRunId": "llm-end-user-testing-conveyor--assign-a-feature-scenario-to-the-llm-testing-conveyor--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "block-unsafe-or-out-of-bounds-llm-testing",
+      "qaRunId": "llm-end-user-testing-conveyor--block-unsafe-or-out-of-bounds-llm-testing--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "build-the-llm-handoff-packet",
+      "qaRunId": "llm-end-user-testing-conveyor--build-the-llm-handoff-packet--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE_CONTENT"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "decide-qa-pass-or-fail-outside-the-llm",
+      "qaRunId": "llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "execute-the-feature-as-an-end-user",
+      "qaRunId": "llm-end-user-testing-conveyor--execute-the-feature-as-an-end-user--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "generate-the-llm-user-experience-report",
+      "qaRunId": "llm-end-user-testing-conveyor--generate-the-llm-user-experience-report--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_FILE",
+        "MISSING_EVIDENCE_REPORT_CONTENT",
+        "MISSING_EVIDENCE_REPORT_CONTENT_AND_QA_BUNDLE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "let-the-llm-propose-seed-data-before-testing",
+      "qaRunId": "llm-end-user-testing-conveyor--let-the-llm-propose-seed-data-before-testing--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing",
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EXECUTION_EVIDENCE",
+        "MISSING_OUTPUT_ARTIFACT",
+        "MISSING_OUTPUT_ARTIFACT_CONTENT"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "materialize-seed-data-through-a-deterministic-gate",
+      "qaRunId": "llm-end-user-testing-conveyor--materialize-seed-data-through-a-deterministic-gate--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "package-the-llm-qa-evidence-bundle",
+      "qaRunId": "llm-end-user-testing-conveyor--package-the-llm-qa-evidence-bundle--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "prepare-future-notification-without-sending-it",
+      "qaRunId": "llm-end-user-testing-conveyor--prepare-future-notification-without-sending-it--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient",
+        "qa-cleanup-precondition-or-negative-case-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_NOT_PRESENT_IN_SURFACE",
+        "DEPENDENT_CRITERION_NOT_TESTABLE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "preserve-replayability-for-human-reviewers",
+      "qaRunId": "llm-end-user-testing-conveyor--preserve-replayability-for-human-reviewers--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence",
+      "qaRunId": "llm-end-user-testing-conveyor--review-acceptance-criteria-with-llm-reasoning-but-deterministic-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "support-feature-wide-scenario-conveyor-runs",
+      "qaRunId": "llm-end-user-testing-conveyor--support-feature-wide-scenario-conveyor-runs--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "tie-llm-observations-to-executable-proof",
+      "qaRunId": "llm-end-user-testing-conveyor--tie-llm-observations-to-executable-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE_CONTENT"
+      ]
+    },
+    {
+      "featureId": "llm-end-user-testing-conveyor",
+      "scenarioId": "validate-generated-markdown-and-html-projections-as-user-facing-surfaces",
+      "qaRunId": "llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient",
+        "qa-cleanup-precondition-or-negative-case-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE",
+        "DEPENDENCY_BLOCKED"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "distinguish-discovered-methods-from-observed-method-calls",
+      "qaRunId": "method-level-execution-drill-down--distinguish-discovered-methods-from-observed-method-calls--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-evidence-report-content"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "extend-canonical-json-proof-with-method-calls-under-each-body-node",
+      "qaRunId": "method-level-execution-drill-down--extend-canonical-json-proof-with-method-calls-under-each-body-node--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "gate-method-drill-down-completeness",
+      "qaRunId": "method-level-execution-drill-down--gate-method-drill-down-completeness--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-evidence"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "gate-method-drill-down-projection-against-canonical-json",
+      "qaRunId": "method-level-execution-drill-down--gate-method-drill-down-projection-against-canonical-json--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-report-and-json-evidence",
+        "missing-report-and-receipt-evidence",
+        "missing-gate-failure-evidence",
+        "missing-gate-failure-output"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "keep-method-drill-down-portable-for-html-and-visual-review",
+      "qaRunId": "method-level-execution-drill-down--keep-method-drill-down-portable-for-html-and-visual-review--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_CONTENT",
+        "UNSUPPORTED_TEST_SURFACE_REQUIRED_FOR_CRITERION"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "preserve-repeated-method-calls-in-order",
+      "qaRunId": "method-level-execution-drill-down--preserve-repeated-method-calls-in-order--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "preserve-the-three-level-execution-review-model",
+      "qaRunId": "method-level-execution-drill-down--preserve-the-three-level-execution-review-model--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-required-artifact-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_ARTIFACT"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-blocked-method-call-inline",
+      "qaRunId": "method-level-execution-drill-down--render-blocked-method-call-inline--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing_evidence_surface"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-compact-method-timeline-table",
+      "qaRunId": "method-level-execution-drill-down--render-compact-method-timeline-table--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_OR_CLI"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-method-drill-down-inside-each-body-node",
+      "qaRunId": "method-level-execution-drill-down--render-method-drill-down-inside-each-body-node--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-method-evidence-appendix-for-deep-review",
+      "qaRunId": "method-level-execution-drill-down--render-method-evidence-appendix-for-deep-review--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT",
+        "MISSING_EVIDENCE_REPORT_CONTENT"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "render-runtime-file-drill-down-before-method-calls",
+      "qaRunId": "method-level-execution-drill-down--render-runtime-file-drill-down-before-method-calls--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "show-slow-methods-and-wait-time-as-product-signals",
+      "qaRunId": "method-level-execution-drill-down--show-slow-methods-and-wait-time-as-product-signals--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing",
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_EVIDENCE",
+        "NOT_VERIFIABLE_FROM_END_USER_SURFACE"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "tie-method-calls-to-receipt-proof",
+      "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-receipt-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "method-level-execution-drill-down",
+      "scenarioId": "tie-method-calls-to-telemetry-event-pairs",
+      "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "block-scenario-promotion-when-feature-evidence-report-is-missing",
+      "qaRunId": "per-feature-executable-body-evidence-reports--block-scenario-promotion-when-feature-evidence-report-is-missing--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "EVIDENCE_MISSING"
+      ]
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "do-not-promote-unexecuted-features",
+      "qaRunId": "per-feature-executable-body-evidence-reports--do-not-promote-unexecuted-features--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-assigned-surface-insufficient"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_SURFACE"
+      ]
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "keep-generated-run-evidence-out-of-source-control",
+      "qaRunId": "per-feature-executable-body-evidence-reports--keep-generated-run-evidence-out-of-source-control--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_REPORT_CONTENT"
+      ]
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "preserve-feature-evidence-from-source-controlled-templates",
+      "qaRunId": "per-feature-executable-body-evidence-reports--preserve-feature-evidence-from-source-controlled-templates--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "INSUFFICIENT_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "per-feature-executable-body-evidence-reports",
+      "scenarioId": "render-the-executable-body-tree-in-the-feature-report",
+      "qaRunId": "per-feature-executable-body-evidence-reports--render-the-executable-body-tree-in-the-feature-report--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "pi-readiness-gate-for-report-truth",
+      "scenarioId": "block-pi-readiness-when-report-truth-is-incomplete",
+      "qaRunId": "pi-readiness-gate-for-report-truth--block-pi-readiness-when-report-truth-is-incomplete--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-precondition-or-negative-case-evidence-missing",
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_PRECONDITION",
+        "MISSING_EVIDENCE_OUTCOME",
+        "MISSING_EVIDENCE_REPORT_CONTENT"
+      ]
+    },
+    {
+      "featureId": "pi-readiness-gate-for-report-truth",
+      "scenarioId": "block-pi-readiness-without-end-user-qa-proof",
+      "qaRunId": "pi-readiness-gate-for-report-truth--block-pi-readiness-without-end-user-qa-proof--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "missing-evidence-report-md"
+      ]
+    },
+    {
+      "featureId": "pi-readiness-gate-for-report-truth",
+      "scenarioId": "pass-pi-readiness",
+      "qaRunId": "pi-readiness-gate-for-report-truth--pass-pi-readiness--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE_REPORT_MD"
+      ]
+    },
+    {
+      "featureId": "portable-evidence-paths",
+      "scenarioId": "block-machine-local-path-leakage",
+      "qaRunId": "portable-evidence-paths--block-machine-local-path-leakage--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-executable-proof-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EXECUTION_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "portable-evidence-paths",
+      "scenarioId": "render-repo-relative-paths",
+      "qaRunId": "portable-evidence-paths--render-repo-relative-paths--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "allow-execution-step-only-with-telemetry-evidence",
+      "qaRunId": "projection-language-honesty--allow-execution-step-only-with-telemetry-evidence--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "no_evidence_provided"
+      ]
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "block-proof-language-without-evidence-paths",
+      "qaRunId": "projection-language-honesty--block-proof-language-without-evidence-paths--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "label-inventory-order-honestly",
+      "qaRunId": "projection-language-honesty--label-inventory-order-honestly--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "mark-unobserved-runtime-methods-explicitly",
+      "qaRunId": "projection-language-honesty--mark-unobserved-runtime-methods-explicitly--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "require-duration-evidence-for-execution-time",
+      "qaRunId": "projection-language-honesty--require-duration-evidence-for-execution-time--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "projection-language-honesty",
+      "scenarioId": "separate-source-location-from-runtime-observation",
+      "qaRunId": "projection-language-honesty--separate-source-location-from-runtime-observation--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-human-report-evidence-missing"
+      ],
+      "rawLlmBlockerCodes": [
+        "MISSING_EVIDENCE"
+      ]
+    },
+    {
+      "featureId": "report-contract-schema-enforcement",
+      "scenarioId": "block-empty-report-schema",
+      "qaRunId": "report-contract-schema-enforcement--block-empty-report-schema--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "report-contract-schema-enforcement",
+      "scenarioId": "validate-non-empty-sterility-report-schema",
+      "qaRunId": "report-contract-schema-enforcement--validate-non-empty-sterility-report-schema--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "report-provenance-and-freshness-gate",
+      "scenarioId": "block-stale-report-projection",
+      "qaRunId": "report-provenance-and-freshness-gate--block-stale-report-projection--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "report-provenance-and-freshness-gate",
+      "scenarioId": "render-report-provenance",
+      "qaRunId": "report-provenance-and-freshness-gate--render-report-provenance--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "summary-findings-and-method-row-tie-out",
+      "scenarioId": "block-clean-label-with-nonzero-findings",
+      "qaRunId": "summary-findings-and-method-row-tie-out--block-clean-label-with-nonzero-findings--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "summary-findings-and-method-row-tie-out",
+      "scenarioId": "recompute-summary-from-method-rows",
+      "qaRunId": "summary-findings-and-method-row-tie-out--recompute-summary-from-method-rows--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "summary-findings-and-method-row-tie-out",
+      "scenarioId": "tie-findings-to-table-rows",
+      "qaRunId": "summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "verdict-derivation-consistency",
+      "scenarioId": "allow-sterile-verdict-only-when-all-gates-pass",
+      "qaRunId": "verdict-derivation-consistency--allow-sterile-verdict-only-when-all-gates-pass--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    },
+    {
+      "featureId": "verdict-derivation-consistency",
+      "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+      "qaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+      "blockerCodes": [
+        "qa-cleanup-external-surface-not-testable-locally"
+      ],
+      "rawLlmBlockerCodes": [
+        "llm-end-user-surface-insufficient"
+      ]
+    }
+  ],
+  "writtenAt": "2026-07-10T02:36:11.067Z"
+}

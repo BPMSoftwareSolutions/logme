@@ -1,0 +1,10 @@
+# End User Test Session: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini
+- Feature id: per-feature-executable-body-evidence-reports
+- Scenario id: write-one-feature-scenario-evidence-packet-for-an-executed-scenario
+
+| step | surface | action | expected | observed | status | evidence |
+| ---: | --- | --- | --- | --- | --- | --- |
+| 1 | Markdown report review and CLI evidence review | Live Gemini reviewed Write one feature scenario evidence packet for an executed scenario | A feature execution should generate an evidence packet under the specified path, containing a defined set of artifacts. Every artifact should consistently include the same run id, feature id, and scenario id, and `feature-execution.contract.v1.json` should be the source of truth for all report timing, call-count, receipt, and status facts. | The `report.md` explicitly states that the evidence packet was written to the correct path, lists all required artifacts as present, confirms consistent ID inclusion across artifacts, and verifies `feature-execution.contract.v1.json` as the source of truth for timing, call-count, receipt, and status facts. | met | docs/features/per-feature-executable-body-evidence-reports.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini/gemini-live-call.receipt.v1.json |

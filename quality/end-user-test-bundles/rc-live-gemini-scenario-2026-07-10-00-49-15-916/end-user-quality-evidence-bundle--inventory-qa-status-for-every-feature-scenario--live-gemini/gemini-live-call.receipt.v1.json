@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--inventory-qa-status-for-every-feature-scenario--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "inventory-qa-status-for-every-feature-scenario",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 657,
+    "candidatesTokenCount": 776,
+    "totalTokenCount": 3079,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 657
+      }
+    ],
+    "thoughtsTokenCount": 1646,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e4340e2bca0114a8619eae8ab82f0490ff3335c2d59b0ca070c3176844c5a843",
+  "responseSha256": "e9d80933eb7adafaec3d6afd360d00821dfb2ffb63b2cf1890878d83f78dd9a1",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/inventory-qa-status-for-every-feature-scenario.response.v1.json",
+  "calledAt": "2026-07-10T00:55:38.999Z"
+}

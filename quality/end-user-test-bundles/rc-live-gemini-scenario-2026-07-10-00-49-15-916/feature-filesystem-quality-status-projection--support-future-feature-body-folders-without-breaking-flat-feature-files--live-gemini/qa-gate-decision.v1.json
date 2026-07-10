@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--support-future-feature-body-folders-without-breaking-flat-feature-files--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "support-future-feature-body-folders-without-breaking-flat-feature-files",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-executable-proof-missing"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T01:05:08.105Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.970Z",
+  "rawLlmBlockerCodes": [
+    "NO_EXECUTION_EVIDENCE"
+  ]
+}

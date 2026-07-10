@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-hierarchical-ascii-executable-body-tree--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-hierarchical-ascii-executable-body-tree",
+  "scenarioName": "Render hierarchical ASCII executable body tree",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render hierarchical ASCII executable body tree",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:106-192; report.md; live Gemini prompt",
+      "expectedResult": "The `report.md` should contain a hierarchical ASCII tree matching the specified structure, showing body ownership with nested branches, appearing before dense method tables, and displaying inline blockers under relevant body nodes.",
+      "observedResult": "The `report.md` file was not available for observation.",
+      "timestamp": "2026-07-10T01:08:47.720Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-hierarchical-ascii-executable-body-tree--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-hierarchical-ascii-executable-body-tree--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

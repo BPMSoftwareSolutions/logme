@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "block-stale-quality-board-promotion-in-ci",
+  "scenarioName": "Block stale quality board promotion in CI",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block stale quality board promotion in CI",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-quality-board-filesystem-body.feature.md:190-204; report.md; live Gemini prompt",
+      "expectedResult": "The CI quality board gate should regenerate specified artifacts, fail if generated artifacts differ from committed artifacts, include the 'feature-quality-board-stale' finding code in the failure, and block release promotion if the board is stale.",
+      "observedResult": "No direct observation of artifact regeneration, CI failure, specific finding code inclusion, or release promotion blocking could be made. The 'report.md' content, which would provide this evidence, was not supplied for review.",
+      "timestamp": "2026-07-10T01:07:08.616Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-quality-board-filesystem-body.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--block-stale-quality-board-promotion-in-ci--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

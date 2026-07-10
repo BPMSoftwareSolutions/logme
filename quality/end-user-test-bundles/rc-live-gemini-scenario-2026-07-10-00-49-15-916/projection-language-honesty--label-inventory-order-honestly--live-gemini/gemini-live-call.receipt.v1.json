@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--label-inventory-order-honestly--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "label-inventory-order-honestly",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:23:16.696Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 296,
+    "candidatesTokenCount": 702,
+    "totalTokenCount": 2208,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 296
+      }
+    ],
+    "thoughtsTokenCount": 1210,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "d304e18560f633beb3c41992ec8ce028f269a13bfec2cea8b5d9fad568daf76d",
+  "responseSha256": "140b0268c65d35d2db33b121a2ab13bf13a0a6083df73039ed58042c235370a5",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/label-inventory-order-honestly.response.v1.json"
+}

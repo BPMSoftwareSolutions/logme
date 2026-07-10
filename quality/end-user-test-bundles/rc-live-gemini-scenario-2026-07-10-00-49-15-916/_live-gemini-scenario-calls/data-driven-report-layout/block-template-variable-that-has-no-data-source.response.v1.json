@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "block-template-variable-that-has-no-data-source",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 531,
+    "candidatesTokenCount": 716,
+    "totalTokenCount": 3166,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 531
+      }
+    ],
+    "thoughtsTokenCount": 1919,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "Cannot verify the scenario's expected outcomes as the `report.md` file and the Gemini live-call receipt, which would contain evidence of generation failure and specific finding codes, were not provided. All 'Then' conditions are blocked.",
+    "expectedResult": "Report generation should fail, producing the 'report-template-variable-unbound' finding code, and `report.md` should not be written with incorrect values.",
+    "observedResult": "Not observable due to missing evidence.",
+    "confusingOrRiskyExperiencePoints": "The lack of observable output means an end-user would not be able to confirm the expected failure or the specific error message, leading to a confusing debugging experience.",
+    "accessibilityOrReadabilityObservations": "N/A - No output to evaluate for accessibility or readability.",
+    "recommendedFollowUps": "Provide the `report.md` file and the Gemini live-call receipt for this scenario to enable verification of the expected generation failure and finding code.",
+    "criteriaReviews": [
+      {
+        "criterionText": "But the variable is not declared in the report data contract",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This is a precondition for the scenario. As an end-user QA tester, I cannot verify the internal setup of the report template or data contract from the provided Gherkin alone.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide access to the report template and data contract definitions, or a log showing their configuration."
+      },
+      {
+        "criterionText": "Then generation should fail",
+        "status": "blocked",
+        "llmObservationSummary": "The Gherkin states generation should fail. However, no evidence (like a console output, error log, or a Gemini live-call receipt indicating failure) is provided to confirm this outcome from an end-user perspective.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the Gemini live-call receipt or a console output/log showing the report generation failure."
+      },
+      {
+        "criterionText": "And the finding code should be: | finding | | report-template-variable-unbound |",
+        "status": "blocked",
+        "llmObservationSummary": "No output (console, log, or `report.md`) is provided to verify if the specific finding code `report-template-variable-unbound` was present upon generation failure.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the Gemini live-call receipt or a console output/log showing the specific finding code."
+      },
+      {
+        "criterionText": "And report.md should not be written with a blank, invented, or misleading value.",
+        "status": "blocked",
+        "llmObservationSummary": "The `report.md` file was not provided, so it's impossible to verify its content or lack thereof.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` file for inspection."
+      }
+    ]
+  }
+}

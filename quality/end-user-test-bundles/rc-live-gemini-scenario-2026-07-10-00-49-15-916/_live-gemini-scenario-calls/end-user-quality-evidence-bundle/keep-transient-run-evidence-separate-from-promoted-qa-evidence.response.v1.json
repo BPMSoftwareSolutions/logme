@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "keep-transient-run-evidence-separate-from-promoted-qa-evidence",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 598,
+    "candidatesTokenCount": 1048,
+    "totalTokenCount": 4611,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 598
+      }
+    ],
+    "thoughtsTokenCount": 2965,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The scenario's core claims regarding QA bundle promotion, its location, content, and authority cannot be fully verified from the provided Gherkin and the description of future evidence. While the prompt indicates a Gemini live-call receipt will be included, direct observation of the promoted bundle, its structure, and its properties is missing from the assigned end-user surfaces.",
+    "expectedResult": "A QA bundle is promoted, stored under `quality/end-user-test-bundles/`, contains hashes or copied snapshots of the evidence needed for human review, and serves as the durable, source-controlled promotion record, with transient evidence paths alone not being the release authority.",
+    "observedResult": "The `report.md` is stated to have passed locally, and a Gemini live-call receipt is promised to be included in the QA bundle. However, the actual promoted bundle, its location, its full contents, its source control status, and its durability are not directly observable or verifiable from the provided end-user surfaces.",
+    "confusingOrRiskyExperiencePoints": "The reliance on a promise of future evidence ('will be written') rather than actual, present evidence makes verification difficult and introduces ambiguity. As an end-user QA tester, I need to see the *result* of the promotion, not just be told it *will happen*.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is clear and readable. The lack of concrete evidence (e.g., actual file system output, a detailed report of the promoted bundle) makes it hard to 'read' the system's behavior and verify the criteria.",
+    "recommendedFollowUps": "Provide the actual `report.md` content. More importantly, provide concrete evidence of the promoted QA bundle, such as a file system listing of `quality/end-user-test-bundles/` after promotion, a manifest of the bundle's contents, and confirmation of its source control status and durability.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And a QA bundle is promoted",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The prompt states a Gemini live-call receipt *will be written* into the QA bundle, implying promotion, but the actual promoted bundle or receipt is not provided for direct verification by an end-user tester.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+        "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+      },
+      {
+        "criterionText": "Then the promoted bundle should live under `quality/end-user-test-bundles/`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence (report.md, Gherkin, or promise of receipt) directly shows the file path of the promoted bundle to confirm its location.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+        "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+      },
+      {
+        "criterionText": "And it should include hashes or copied snapshots of the evidence needed for human review",
+        "status": "partially met",
+        "llmObservationSummary": "The prompt indicates a Gemini live-call receipt *will be written* into the QA bundle, confirming *some* evidence inclusion. However, it doesn't confirm if it's a hash/snapshot or if *all* necessary evidence for human review is included.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+        "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+      },
+      {
+        "criterionText": "And transient `evidence/runs/` paths alone should not be release authority",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion describes a system policy/behavior. While the promotion of a QA bundle implies a separate authority, the provided surfaces do not offer direct evidence to confirm that transient paths *alone* are explicitly excluded as release authority.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+        "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+      },
+      {
+        "criterionText": "And the source-controlled QA bundle should be the durable promotion record.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No evidence is provided to confirm that the QA bundle is source-controlled or that it serves as a durable promotion record.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT_DETAIL",
+        "recommendedFixRoute": "ADD_DETAIL_TO_EVIDENCE"
+      }
+    ]
+  }
+}

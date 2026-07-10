@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--show-feature-status-without-opening-feature-documents--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "show-feature-status-without-opening-feature-documents",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 607,
+    "candidatesTokenCount": 904,
+    "totalTokenCount": 3002,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 607
+      }
+    ],
+    "thoughtsTokenCount": 1491,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0395940fb8c0d0d6b400655e20cf10e6f647c833f4a13cc98ab3c05090db2acb",
+  "responseSha256": "41ba3c49abfe5f85af99938baaee431f3a425717ddd9173078a7e08b56c3c8c0",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/show-feature-status-without-opening-feature-documents.response.v1.json",
+  "calledAt": "2026-07-10T01:05:37.253Z"
+}

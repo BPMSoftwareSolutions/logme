@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-domain-gate-and-template-directories--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-domain-gate-and-template-directories",
+  "scenarioName": "Rename domain, gate, and template directories",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Rename domain, gate, and template directories\n    Given domain contracts live under `contracts/domains/logme2/`\n    And gate contracts live under `contracts/gates/logme2/`\n    And templates live under `contracts/templates/logme2/`\n    When the domain naming convention correction is applied\n    Then the directories should be renamed to `contracts/domains/logme/`,\n      `contracts/gates/logme/`, and `contracts/templates/logme/`\n    And every path string inside contract JSON files, source modules, and tests\n      that references the old directories should be updated to the renamed paths\n    And no runtime read or write should target a `logme2` path.\n",
+    "acceptanceCriteria": [
+      "And gate contracts live under `contracts/gates/logme2/`",
+      "And templates live under `contracts/templates/logme2/`",
+      "Then the directories should be renamed to `contracts/domains/logme/`,",
+      "And every path string inside contract JSON files, source modules, and tests",
+      "And no runtime read or write should target a `logme2` path."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T00:55:05.843Z"
+}

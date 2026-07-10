@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-boxed-node-list-when-hierarchical-body-tree-is-required--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-boxed-node-list-when-hierarchical-body-tree-is-required",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 601,
+    "candidatesTokenCount": 992,
+    "totalTokenCount": 3539,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 601
+      }
+    ],
+    "thoughtsTokenCount": 1946,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "c37db308abc64a8dbeafa42898413deaef47f97c4df3c6c85b13bf4bc8f17931",
+  "responseSha256": "ddc2ac0316bc24df47ddef9cecf659021486e6c4b0fe781a7755769f08e9b701",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/reject-boxed-node-list-when-hierarchical-body-tree-is-required.response.v1.json",
+  "calledAt": "2026-07-10T01:09:37.703Z"
+}

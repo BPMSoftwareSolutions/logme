@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini",
+  "featureId": "verdict-derivation-consistency",
+  "scenarioId": "block-sterile-verdict-when-any-hard-law-is-violated",
+  "scenarioName": "Block sterile verdict when any hard law is violated",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block sterile verdict when any hard law is violated",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/verdict-derivation-consistency.feature.md:8-14; report.md; live Gemini prompt",
+      "expectedResult": "The verdict should be 'DOMAIN BODY CONTAMINATED' and the report must include the silent method finding.",
+      "observedResult": "The verdict was 'STERILE' and the silent method finding was omitted from the final report.",
+      "timestamp": "2026-07-10T01:45:05.050Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "fail",
+      "evidencePaths": [
+        "docs/features/verdict-derivation-consistency.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

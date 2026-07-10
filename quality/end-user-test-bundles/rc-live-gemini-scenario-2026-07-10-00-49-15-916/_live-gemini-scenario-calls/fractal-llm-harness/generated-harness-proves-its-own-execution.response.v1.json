@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "generated-harness-proves-its-own-execution",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 497,
+    "candidatesTokenCount": 814,
+    "totalTokenCount": 2358,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 497
+      }
+    ],
+    "thoughtsTokenCount": 1047,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario's acceptance criteria could not be verified as the required end-user evidence surfaces (report.md content and Gemini live-call receipt content) were not provided for review. Without access to these outputs, it is impossible to confirm the successful execution and self-proving capabilities of the generated child harness.",
+    "expectedResult": "The report.md and Gemini live-call receipt should contain explicit evidence confirming that every declared executable node testified, telemetry matched the execution order, every receipt-writing node wrote proof, and a self-conformance report was produced.",
+    "observedResult": "The content of report.md and the Gemini live-call receipt were not available for review, preventing any verification of the scenario's expected outcomes.",
+    "confusingOrRiskyExperiencePoints": "The inability to review the actual evidence (report.md and live-call receipt) creates a significant risk. Without concrete proof, there's no way to confirm that the 'local test suite passed' claim translates to the expected end-user observable behavior, potentially leading to undetected issues in the harness's self-proving mechanism.",
+    "accessibilityOrReadabilityObservations": "N/A, as no content was provided to evaluate for accessibility or readability.",
+    "recommendedFollowUps": "Provide the actual content of the 'report.md' file and the 'Gemini live-call receipt' within the QA bundle for thorough review. This is essential to validate the scenario's success from an end-user perspective.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then every declared executable node should testify",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if every declared executable node testified, as the content of report.md and the Gemini live-call receipt were not provided for review.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the content of report.md and the Gemini live-call receipt to allow verification of node testimony."
+      },
+      {
+        "criterionText": "And telemetry should match the child harness execution order",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if telemetry matched the child harness execution order, as the content of report.md and the Gemini live-call receipt were not provided for review.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the content of report.md and the Gemini live-call receipt to allow verification of telemetry order."
+      },
+      {
+        "criterionText": "And every receipt-writing node should write proof",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if every receipt-writing node wrote proof, as the content of report.md and the Gemini live-call receipt were not provided for review.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the content of report.md and the Gemini live-call receipt to allow verification of receipt generation."
+      },
+      {
+        "criterionText": "And the child harness should produce a self-conformance report.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Cannot verify if the child harness produced a self-conformance report, as the content of report.md was not provided for review.",
+        "blockerCode": "EVIDENCE_MISSING",
+        "recommendedFixRoute": "Provide the content of report.md to allow verification of the self-conformance report generation."
+      }
+    ]
+  }
+}

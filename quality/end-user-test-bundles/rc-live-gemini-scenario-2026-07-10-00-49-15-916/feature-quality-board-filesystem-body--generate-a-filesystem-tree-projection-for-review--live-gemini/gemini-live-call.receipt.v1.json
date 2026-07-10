@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--generate-a-filesystem-tree-projection-for-review--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "generate-a-filesystem-tree-projection-for-review",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 576,
+    "candidatesTokenCount": 803,
+    "totalTokenCount": 2720,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 576
+      }
+    ],
+    "thoughtsTokenCount": 1341,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "d77dc5ba170ec9bb31c95fee995c89412df1e30283ad559f824ed710a991a54c",
+  "responseSha256": "a336e96e36db077cb3abc046f7d1940b492e5775fc595b6c4c2c82f37056e527",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/generate-a-filesystem-tree-projection-for-review.response.v1.json",
+  "calledAt": "2026-07-10T01:06:07.802Z"
+}

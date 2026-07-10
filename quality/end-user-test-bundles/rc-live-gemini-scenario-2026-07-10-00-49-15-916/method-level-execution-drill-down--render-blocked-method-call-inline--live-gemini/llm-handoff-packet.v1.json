@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--render-blocked-method-call-inline--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "render-blocked-method-call-inline",
+  "scenarioName": "Render blocked method call inline",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render blocked method call inline\n    Given a body node has a method call missing telemetry or receipt evidence\n    When the method drill-down is rendered\n    Then the blocked method should appear inline under its body node\n    And the blocked method should be shaped like:\n      \"\"\"\n      [METHOD] inventoriesExecutableDomainMethods\n      |-- source\n      |   `-- src/inventories-executable-domain-methods/inventories-executable-domain-methods.js:32-64\n      |\n      |-- ownership\n      |   |-- feature   : logme-domain-audit\n      |   |-- scenario  : report-truth\n      |   |-- body node : 03 INVENTORIES EXECUTABLE DOMAIN METHODS\n      |   `-- contract  : contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json\n      |\n      |-- telemetry\n      |   |-- status      : not observed\n      |   |-- call index  : not observed\n      |   |-- started at  : not observed\n      |   |-- ended at    : not observed\n      |   |-- duration ms : not observed\n      |   `-- event ids   : not observed\n      |\n      |-- receipt\n      |   `-- missing\n      |\n      `-- status\n          |-- blocked\n          |-- blocker : declared-method-but-silent\n          `-- fix     : add LogMe testimony and write method-level receipt coverage\n      \"\"\"\n    And blocked method details should appear before the dense static method inventory\n    And the product owner should not have to infer the broken method from a global findings table.\n",
+    "acceptanceCriteria": [
+      "Then the blocked method should appear inline under its body node",
+      "And the blocked method should be shaped like:",
+      "And blocked method details should appear before the dense static method inventory",
+      "And the product owner should not have to infer the broken method from a global findings table."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:19:42.888Z"
+}

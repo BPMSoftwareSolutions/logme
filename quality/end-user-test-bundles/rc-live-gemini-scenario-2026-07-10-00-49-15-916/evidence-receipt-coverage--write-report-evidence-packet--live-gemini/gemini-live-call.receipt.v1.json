@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "evidence-receipt-coverage--write-report-evidence-packet--live-gemini",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "write-report-evidence-packet",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 812,
+    "candidatesTokenCount": 491,
+    "totalTokenCount": 2668,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 812
+      }
+    ],
+    "thoughtsTokenCount": 1365,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "8a63eb5158e4ddc41eec41c6ed84889a5287c134aea5eedbe223fdd1d2cc77cd",
+  "responseSha256": "8a1f9bd63c333ef6cb812ec3b6c1704170a7e789bbe1bfed67746deca8637d02",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/evidence-receipt-coverage/write-report-evidence-packet.response.v1.json",
+  "calledAt": "2026-07-10T00:57:31.674Z"
+}

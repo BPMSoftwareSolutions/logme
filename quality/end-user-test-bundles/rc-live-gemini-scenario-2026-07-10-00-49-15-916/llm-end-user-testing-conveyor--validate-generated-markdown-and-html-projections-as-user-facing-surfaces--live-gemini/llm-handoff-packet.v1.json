@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "validate-generated-markdown-and-html-projections-as-user-facing-surfaces",
+  "scenarioName": "Validate generated Markdown and HTML projections as user-facing surfaces",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Validate generated Markdown and HTML projections as user-facing surfaces\n    Given the tested feature produces Markdown, ASCII, or HTML reports\n    When the LLM runs end-user testing\n    Then it should inspect the generated Markdown report as a human-facing artifact\n    And it should inspect the HTML projection when HTML rendering is available\n    And the inspection should verify:\n      | expectation |\n      | executive summary is understandable |\n      | ASCII sketches render clearly |\n      | links use repo-relative or artifact-relative paths |\n      | evidence paths resolve |\n      | blocker states are visible before dense details |\n      | timing and call-count facts are readable |\n      | no JSON-only evidence is presented as product-ready |\n      | report can be shared with architects and business owners |\n    And visual or readability blockers should be recorded in the QA bundle\n    And a screenshot index should be written when visual surfaces are inspected.\n",
+    "acceptanceCriteria": [
+      "Then it should inspect the generated Markdown report as a human-facing artifact",
+      "And it should inspect the HTML projection when HTML rendering is available",
+      "And the inspection should verify:",
+      "And visual or readability blockers should be recorded in the QA bundle",
+      "And a screenshot index should be written when visual surfaces are inspected."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:15:51.063Z"
+}

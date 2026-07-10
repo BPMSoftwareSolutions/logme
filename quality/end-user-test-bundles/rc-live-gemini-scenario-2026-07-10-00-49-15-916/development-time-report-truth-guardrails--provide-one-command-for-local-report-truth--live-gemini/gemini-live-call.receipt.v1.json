@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "development-time-report-truth-guardrails--provide-one-command-for-local-report-truth--live-gemini",
+  "featureId": "development-time-report-truth-guardrails",
+  "scenarioId": "provide-one-command-for-local-report-truth",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 561,
+    "candidatesTokenCount": 976,
+    "totalTokenCount": 2710,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 561
+      }
+    ],
+    "thoughtsTokenCount": 1173,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "71c00b4a32dd14c9244076a4f21c58c54d1ae3f514eefbd203544221cb78b17c",
+  "responseSha256": "d22981bc9b2284310f48e7ef759f52620e4ed9254ec8922639f00c1f9a2d795f",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/development-time-report-truth-guardrails/provide-one-command-for-local-report-truth.response.v1.json",
+  "calledAt": "2026-07-10T00:52:12.111Z"
+}

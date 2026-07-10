@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--mark-qa-blocked-from-the-filesystem-body--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "mark-qa-blocked-from-the-filesystem-body",
+  "criteria": [
+    {
+      "criterionText": "And its QA gate decision is `BLOCKED`",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The precondition that the QA gate decision is `BLOCKED` could not be verified from the provided surfaces, as `report.md` or other evidence of the initial state was not available.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide `report.md` or other evidence confirming the initial state of the QA gate decision."
+    },
+    {
+      "criterionText": "Then the status sentinel should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The existence and path of the status sentinel file `docs/features/_STATUS.qa-blocked.<feature-id>.md` could not be verified as the generated `report.md` or filesystem output was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide `report.md` or the content of the generated sentinel file."
+    },
+    {
+      "criterionText": "And the sentinel should include blocker count and blocker codes",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the status sentinel file, specifically the inclusion of blocker count and blocker codes, could not be verified as the file content was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of the generated sentinel file."
+    },
+    {
+      "criterionText": "And the sentinel should link to:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the status sentinel file, specifically the links to `qa-evidence-bundle.report.md`, `blocker-worklist.md`, and `qa-gate-decision.v1.json`, could not be verified as the file content was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of the generated sentinel file."
+    },
+    {
+      "criterionText": "And the next recommended action should point to the first blocker route.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the status sentinel file, specifically that the next recommended action points to the first blocker route, could not be verified as the file content was not provided.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the content of the generated sentinel file."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:04:18.957Z"
+}

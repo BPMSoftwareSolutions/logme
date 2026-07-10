@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--use-a-constrained-filesystem-status-vocabulary--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "use-a-constrained-filesystem-status-vocabulary",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 630,
+    "candidatesTokenCount": 791,
+    "totalTokenCount": 2407,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 630
+      }
+    ],
+    "thoughtsTokenCount": 986,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0bbc65c648e5558e29e068070463b19587b3398a34e60426a94acc4a3c55c205",
+  "responseSha256": "f97f9f051a6095a6c3516e4d1e650f60c6a28883d494644f1ebb95b15c8ee6d1",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/use-a-constrained-filesystem-status-vocabulary.response.v1.json",
+  "calledAt": "2026-07-10T01:02:53.353Z"
+}

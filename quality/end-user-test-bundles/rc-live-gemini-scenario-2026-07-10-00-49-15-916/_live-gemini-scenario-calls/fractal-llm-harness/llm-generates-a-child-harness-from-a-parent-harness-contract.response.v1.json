@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "llm-generates-a-child-harness-from-a-parent-harness-contract",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 604,
+    "candidatesTokenCount": 1247,
+    "totalTokenCount": 3601,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 604
+      }
+    ],
+    "thoughtsTokenCount": 1750,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The scenario outlines the generation of a child harness by an LLM. However, the promised evidence surfaces, 'report.md' and 'Gemini live-call receipt', were not provided. Without these, it is impossible to verify any of the 'Given' prerequisites or 'Then' outcomes described in the Gherkin.",
+    "expectedResult": "The LLM should generate a child harness that includes a body contract, an execution path, tests, telemetry testimony requirements, and receipt coverage. Additionally, the proposal should not be promoted automatically, and the prerequisites regarding parent harness conformance and LLM assignment should be met.",
+    "observedResult": "No evidence was provided to observe the generated child harness, its components, its promotion status, or the fulfillment of the prerequisite conditions.",
+    "confusingOrRiskyExperiencePoints": "The inability to access the actual test results or LLM output means the feature's behavior cannot be confirmed, posing a risk that the implementation might not align with the acceptance criteria despite the scenario definition.",
+    "accessibilityOrReadabilityObservations": "The Gherkin scenario is clear and readable. However, the absence of the promised evidence surfaces makes the testing process inaccessible and incomplete.",
+    "recommendedFollowUps": "Provide the 'report.md' and the 'Gemini live-call receipt' as specified in the available evidence surfaces to enable a complete and verifiable test of this scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And the parent harness has passed self-conformance",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to confirm that the parent harness passed self-conformance.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      },
+      {
+        "criterionText": "And the LLM receives an allowed harness-generation assignment",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to confirm that the LLM received an allowed harness-generation assignment.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      },
+      {
+        "criterionText": "Then the child harness should include a body contract",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of a body contract.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      },
+      {
+        "criterionText": "And the child harness should include an execution path",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of an execution path.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      },
+      {
+        "criterionText": "And the child harness should include tests",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of tests.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      },
+      {
+        "criterionText": "And the child harness should include telemetry testimony requirements",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of telemetry testimony requirements.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      },
+      {
+        "criterionText": "And the child harness should include receipt coverage",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to inspect the generated child harness and verify the inclusion of receipt coverage.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      },
+      {
+        "criterionText": "And the proposal should not be promoted automatically.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "No 'report.md' or 'Gemini live-call receipt' was provided to confirm that the proposal was not promoted automatically.",
+        "blockerCode": "MISSING_EVIDENCE",
+        "recommendedFixRoute": "Provide 'report.md' and 'Gemini live-call receipt' for verification."
+      }
+    ]
+  }
+}

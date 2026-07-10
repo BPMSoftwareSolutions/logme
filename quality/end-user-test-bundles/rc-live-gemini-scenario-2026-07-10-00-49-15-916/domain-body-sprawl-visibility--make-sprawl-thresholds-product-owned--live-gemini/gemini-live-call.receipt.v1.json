@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--make-sprawl-thresholds-product-owned--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "make-sprawl-thresholds-product-owned",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 548,
+    "candidatesTokenCount": 622,
+    "totalTokenCount": 2110,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 548
+      }
+    ],
+    "thoughtsTokenCount": 940,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "11319b818a4fae06afb93ab6352f0caa4934d94ece193129c116d24ad955b59c",
+  "responseSha256": "cd707c30bf0d7d92a789b29c3233508114c537ea9b9a0f3046ee6847c2cf7ae4",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/make-sprawl-thresholds-product-owned.response.v1.json",
+  "calledAt": "2026-07-10T00:54:35.847Z"
+}

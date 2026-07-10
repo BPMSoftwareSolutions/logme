@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "use-fallback-only-as-a-non-promotable-development-diagnostic",
+  "scenarioName": "Use fallback only as a non-promotable development diagnostic",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Use fallback only as a non-promotable development diagnostic\n    Given the renderer is running in an explicitly requested local diagnostic mode\n    And no executable body contract nodes are available\n    When a fallback sketch is rendered\n    Then the fallback sketch should be labeled:\n      \"\"\"\n      DIAGNOSTIC FALLBACK - NOT PROMOTION EVIDENCE\n      \"\"\"\n    And the report verdict should not be promoted from the fallback sketch\n    And telemetry, receipt, status, and duration fields should not show successful values unless backed by real evidence.\n",
+    "acceptanceCriteria": [
+      "And no executable body contract nodes are available",
+      "Then the fallback sketch should be labeled:",
+      "And the report verdict should not be promoted from the fallback sketch",
+      "And telemetry, receipt, status, and duration fields should not show successful values unless backed by real evidence."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:10:31.866Z"
+}

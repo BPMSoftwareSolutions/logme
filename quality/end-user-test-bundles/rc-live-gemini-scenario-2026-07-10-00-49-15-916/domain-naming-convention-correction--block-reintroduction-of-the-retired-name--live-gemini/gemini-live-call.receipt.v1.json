@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--block-reintroduction-of-the-retired-name--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "block-reintroduction-of-the-retired-name",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 530,
+    "candidatesTokenCount": 628,
+    "totalTokenCount": 1996,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 530
+      }
+    ],
+    "thoughtsTokenCount": 838,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "7fa3d4d7275e26240cab8c080312f1d35ced4cea4cde4cd925d2bc1de9e14c18",
+  "responseSha256": "e135fcfb506d350a7db53ab99cab725eb4c3c878f8b9058f5dbf94193f860531",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-naming-convention-correction/block-reintroduction-of-the-retired-name.response.v1.json",
+  "calledAt": "2026-07-10T00:55:15.508Z"
+}

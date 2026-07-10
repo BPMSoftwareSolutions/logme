@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini",
+  "featureId": "domain-ownership-boundary-proof",
+  "scenarioId": "require-ownership-evidence-for-domain-bound-methods",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 506,
+    "candidatesTokenCount": 648,
+    "totalTokenCount": 2012,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 506
+      }
+    ],
+    "thoughtsTokenCount": 858,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "bc541e8f7b58aaf4981630892e3f73b54d709762ab3b070ec3aaa9ca862187db",
+  "responseSha256": "0fc77e7de1fbbe4705b3345526191b2a9700a3db6700f08c385fde169759d553",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-ownership-boundary-proof/require-ownership-evidence-for-domain-bound-methods.response.v1.json",
+  "calledAt": "2026-07-10T00:55:22.777Z"
+}

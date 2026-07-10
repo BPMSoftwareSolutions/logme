@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "portable-evidence-paths--block-machine-local-path-leakage--live-gemini",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "block-machine-local-path-leakage",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:23:07.677Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 287,
+    "candidatesTokenCount": 428,
+    "totalTokenCount": 1674,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 287
+      }
+    ],
+    "thoughtsTokenCount": 959,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "f6e3586ec5b185bfe4e95b06eca38beab12d80e805424ecdb9da03deea096f45",
+  "responseSha256": "bdceeeda62d66ce356161b9de9fc6386298e219a3b56a5d63718c5758ce3af9e",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/portable-evidence-paths/block-machine-local-path-leakage.response.v1.json"
+}

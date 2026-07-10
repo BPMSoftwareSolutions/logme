@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "portable-evidence-paths--render-repo-relative-paths--live-gemini",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "render-repo-relative-paths",
+  "scenarioName": "Render repo-relative paths",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Render repo-relative paths",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/portable-evidence-paths.feature.md:8-14; report.md; live Gemini prompt",
+      "expectedResult": "The `report.md` should display repo-relative paths for locations, include line start and end numbers, and show the configured root once in the provenance section.",
+      "observedResult": "No `report.md` or Gemini live-call receipt was provided, so the expected rendering could not be observed.",
+      "timestamp": "2026-07-10T01:22:07.105Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/portable-evidence-paths--render-repo-relative-paths--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/portable-evidence-paths.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/portable-evidence-paths--render-repo-relative-paths--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

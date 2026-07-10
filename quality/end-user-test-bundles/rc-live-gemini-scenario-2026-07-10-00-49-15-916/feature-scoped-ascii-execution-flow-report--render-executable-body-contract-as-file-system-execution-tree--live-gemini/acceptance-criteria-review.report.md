@@ -1,0 +1,15 @@
+# Acceptance Criteria Review: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+
+- Release candidate id: rc-live-gemini-scenario-2026-07-10-00-49-15-916
+- QA run id: feature-scoped-ascii-execution-flow-report--render-executable-body-contract-as-file-system-execution-tree--live-gemini
+- Feature id: feature-scoped-ascii-execution-flow-report
+- Scenario id: render-executable-body-contract-as-file-system-execution-tree
+
+| criterion | status | observation | evidence paths | blocker code | recommended fix route |
+| --- | --- | --- | --- | --- | --- |
+| And each node may declare contract paths, runtime paths, telemetry paths, receipt paths, gates, or parity evidence | met | The Gherkin scenario explicitly states that 'each node may declare contract paths, runtime paths, telemetry paths, receipt paths, gates, or parity evidence', directly confirming this capability of the executable body contract. | docs/features/feature-scoped-ascii-execution-flow-report.feature.md, report.md, quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--render-executable-body-contract-as-file-system-execution-tree--live-gemini/gemini-live-call.receipt.v1.json | not observed | none |
+| Then every declared body node should appear in execution order | not testable from assigned surface | Verification requires inspection of the generated ASCII execution sketch in `report.md` to confirm nodes appear in execution order. The `report.md` was not provided. | not observed | MISSING_REPORT_EVIDENCE | Provide the `report.md` content for review. |
+| And each node should show: | not testable from assigned surface | Verification requires inspection of the generated ASCII execution sketch in `report.md` to confirm all specified fields (node id, node label, contract path, etc.) are present for each node. The `report.md` was not provided. | not observed | MISSING_REPORT_EVIDENCE | Provide the `report.md` content for review. |
+| And missing telemetry should render as `not observed` | not testable from assigned surface | Verification requires inspecting the `report.md` to see how missing telemetry is rendered in the ASCII execution sketch. The `report.md` was not provided. | not observed | MISSING_REPORT_EVIDENCE | Provide the `report.md` content for review. |
+| And missing receipts should render as `missing` | not testable from assigned surface | Verification requires inspecting the `report.md` to see how missing receipts are rendered in the ASCII execution sketch. The `report.md` was not provided. | not observed | MISSING_REPORT_EVIDENCE | Provide the `report.md` content for review. |
+| And no runtime observation field should be populated from the static contract alone. | not testable from assigned surface | Verification requires inspecting the `report.md` to confirm that runtime observation fields (e.g., 'observed runtime step', 'first seen at') are not populated from static contract data when no runtime observation is available. The `report.md` was not provided. | not observed | MISSING_REPORT_EVIDENCE | Provide the `report.md` content for review. |

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-blocked-ascii-body-tree-shape--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-blocked-ascii-body-tree-shape",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 669,
+    "candidatesTokenCount": 635,
+    "totalTokenCount": 2661,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 669
+      }
+    ],
+    "thoughtsTokenCount": 1357,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "bdd9ce00e72dc37285e989ee02d728ebc760e09c2a00f021dd2298c8261e4e46",
+  "responseSha256": "565882f0f422b37ec5c6c33910a5abb65f62c196fbcbc3ef27e366d2617e5f89",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-scoped-ascii-execution-flow-report/render-blocked-ascii-body-tree-shape.response.v1.json",
+  "calledAt": "2026-07-10T01:10:31.878Z"
+}

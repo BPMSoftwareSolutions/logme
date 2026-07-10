@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "qa-gate-decision.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-naming-convention-correction--rename-the-declared-file-system-body-contract--live-gemini",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-the-declared-file-system-body-contract",
+  "qualityGateDecision": "BLOCKED",
+  "promotable": false,
+  "llmPromotionAllowed": false,
+  "blockerCount": 1,
+  "blockerCodes": [
+    "qa-cleanup-assigned-surface-insufficient"
+  ],
+  "missingHumanReports": [],
+  "decidedAt": "2026-07-10T00:54:53.823Z",
+  "cleanupClassification": "normalized deterministic cleanup taxonomy",
+  "cleanedAt": "2026-07-10T02:36:10.924Z",
+  "rawLlmBlockerCodes": [
+    "MISSING_EVIDENCE_SURFACE"
+  ]
+}

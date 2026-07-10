@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--use-a-constrained-filesystem-status-vocabulary--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "use-a-constrained-filesystem-status-vocabulary",
+  "scenarioName": "Use a constrained filesystem status vocabulary",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Use a constrained filesystem status vocabulary\n    Given the feature status projection has calculated implementation proof, QA, and promotion state\n    When it chooses the display status for the sentinel filename\n    Then the display status should be one of:\n      | display status |\n      | not-implemented |\n      | implemented.not-tested |\n      | proof-blocked |\n      | qa-not-run |\n      | qa-blocked |\n      | qa-failed |\n      | qa-passed |\n      | qa-passed.promoted |\n      | qa-waived |\n      | stale |\n    And the projection should prefer the most urgent product signal\n    And `stale` should override a previously passing status when source evidence no longer matches the projection\n    And `qa-passed.promoted` should only be used when both QA pass evidence and deterministic promotion evidence exist.\n",
+    "acceptanceCriteria": [
+      "Then the display status should be one of:",
+      "And the projection should prefer the most urgent product signal",
+      "And `stale` should override a previously passing status when source evidence no longer matches the projection",
+      "And `qa-passed.promoted` should only be used when both QA pass evidence and deterministic promotion evidence exist."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:03:16.836Z"
+}

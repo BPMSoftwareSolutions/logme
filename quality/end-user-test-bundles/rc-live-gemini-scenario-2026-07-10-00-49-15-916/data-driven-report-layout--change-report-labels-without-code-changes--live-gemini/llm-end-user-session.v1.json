@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "data-driven-report-layout--change-report-labels-without-code-changes--live-gemini",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "change-report-labels-without-code-changes",
+  "scenarioName": "Change report labels without code changes",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Change report labels without code changes",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/data-driven-report-layout.feature.md:16-22; report.md; live Gemini prompt",
+      "expectedResult": "The 'report.md' file should render updated labels as per a product owner's changes in the layout contract, and the underlying evidence fields should remain schema-validated.",
+      "observedResult": "No 'report.md' file or Gemini live-call receipt was provided, preventing observation of updated labels or confirmation of schema validation.",
+      "timestamp": "2026-07-10T00:50:39.307Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--change-report-labels-without-code-changes--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/data-driven-report-layout.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/data-driven-report-layout--change-report-labels-without-code-changes--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

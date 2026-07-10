@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "feature-proof-links.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--separate-source-location-from-runtime-observation--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "separate-source-location-from-runtime-observation",
+  "proofReportPaths": [],
+  "missingReports": []
+}

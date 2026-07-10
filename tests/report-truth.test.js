@@ -7,6 +7,7 @@ const {
   buildsFailureBlockers,
   buildsReportTruthHookMessage,
   formatsReportTruthSummary,
+  readsMarkdownMethodTable,
   runsReportTruthCommand,
 } = require('../src/report-truth/report-truth');
 
@@ -62,6 +63,25 @@ test('buildsFailureBlockers surfaces a single blocker and stops early when repor
   assert.equal(blockers.length, 1);
   assert.equal(blockers[0].code, 'report-layout-validation-failed');
   assert.match(blockers[0].reason, /report-layout-truth-field-omitted/);
+});
+
+test('readsMarkdownMethodTable stops before later report sections', () => {
+  const rows = readsMarkdownMethodTable([
+    '## Discovered Methods',
+    '',
+    '| Scan Order | Execution Step | Method | Kind | Has LogMe | Source |',
+    '| --- | --- | --- | --- | --- | --- |',
+    '| 1 | 1 | runsReportTruthCommand | function | yes | src/report-truth/report-truth.js:1-2 |',
+    '',
+    '## QA Readiness',
+    '',
+    '| release candidate id | latest QA run id |',
+    '| --- | --- |',
+    '| rc-001 | qa-001 |',
+  ].join('\n'));
+
+  assert.equal(rows.length, 1);
+  assert.equal(rows[0][2], 'runsReportTruthCommand');
 });
 
 test('report truth CLI is quiet enough to use in fast mode', () => {

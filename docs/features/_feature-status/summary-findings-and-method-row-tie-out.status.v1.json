@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "feature-status.v1",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "featureName": "Summary, findings, and method row tie-out",
+  "sourceFeaturePath": "docs/features/summary-findings-and-method-row-tie-out.feature.md",
+  "sourceFeatureContentHash": "60ed0fc9f74af1e30e97b6a740b1b6ec03b8c7c673999ed631ef85a1765bf10d",
+  "displayStatus": "qa-blocked",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "not proven",
+  "endUserQaStatus": "BLOCKED",
+  "promotionStatus": "not promoted",
+  "latestExecutionRunId": "missing",
+  "latestQaRunId": "summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini",
+  "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "latestExecutionProofPath": "missing",
+  "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini",
+  "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini/qa-gate-decision.v1.json",
+  "latestPromotionDecisionPath": "missing",
+  "evidenceHashes": {
+    "latestQaBundleManifest": {
+      "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini/qa-evidence-bundle.manifest.v1.json",
+      "sha256": "8ef40ba99b436da7e167fe2ef1a552b3b45ea52c8e735c9cffbfc377e2be10fc"
+    }
+  },
+  "blockerCodes": [
+    "llm-acceptance-criterion-not-evidence-backed",
+    "qa-cleanup-external-surface-not-testable-locally"
+  ],
+  "staleReasons": [],
+  "blockerCount": 2,
+  "generatedAt": "2026-07-10T09:04:04.704Z",
+  "generatorName": "LogMe feature filesystem quality status projection",
+  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "productOwnerSummary": "Summary, findings, and method row tie-out is currently qa-blocked."
+}

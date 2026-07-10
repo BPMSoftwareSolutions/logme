@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "domain-body-sprawl-visibility--detect-mixed-responsibility-clusters-in-one-file--live-gemini",
+  "featureId": "domain-body-sprawl-visibility",
+  "scenarioId": "detect-mixed-responsibility-clusters-in-one-file",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 597,
+    "candidatesTokenCount": 693,
+    "totalTokenCount": 2270,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 597
+      }
+    ],
+    "thoughtsTokenCount": 980,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "ef8a4020224009d5719be4ff9090201fdcfb898c5ce3da38a4decaf874b057d0",
+  "responseSha256": "0441e79d724b49d98a589c9d4a4af6484578112535f33d3c404d836c035bd157",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/domain-body-sprawl-visibility/detect-mixed-responsibility-clusters-in-one-file.response.v1.json",
+  "calledAt": "2026-07-10T00:53:51.836Z"
+}

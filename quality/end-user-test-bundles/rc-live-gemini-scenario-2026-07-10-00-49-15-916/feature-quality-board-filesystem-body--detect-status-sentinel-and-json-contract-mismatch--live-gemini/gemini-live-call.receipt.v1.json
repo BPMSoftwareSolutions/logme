@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-status-sentinel-and-json-contract-mismatch--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-status-sentinel-and-json-contract-mismatch",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 580,
+    "candidatesTokenCount": 1009,
+    "totalTokenCount": 2453,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 580
+      }
+    ],
+    "thoughtsTokenCount": 864,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "e61a68143a5a1d6316537e37e9deeb2d40b1a4dfd5aa6d21d4a05b370d59dce5",
+  "responseSha256": "6b5e603d810335020ef8b3f4926c0a4a5f0bd43d7b9c2a9cdc4e7921b40a84d9",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/detect-status-sentinel-and-json-contract-mismatch.response.v1.json",
+  "calledAt": "2026-07-10T01:06:27.123Z"
+}

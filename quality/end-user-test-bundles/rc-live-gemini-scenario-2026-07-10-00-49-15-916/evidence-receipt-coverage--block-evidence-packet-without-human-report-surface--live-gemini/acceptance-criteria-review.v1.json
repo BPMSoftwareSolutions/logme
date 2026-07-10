@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "evidence-receipt-coverage--block-evidence-packet-without-human-report-surface--live-gemini",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "block-evidence-packet-without-human-report-surface",
+  "criteria": [
+    {
+      "criterionText": "But the corresponding Markdown report is missing",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "This criterion describes a precondition for the scenario. As an end-user QA tester, I cannot directly verify the absence of a file from the provided surfaces. Its fulfillment is assumed by the test setup, and its impact is to be observed in 'report.md'.",
+      "evidencePaths": [],
+      "blockerCode": "precondition-not-directly-observable",
+      "recommendedFixRoute": "Provide relevant logs or system state information if direct verification of preconditions is expected, or clarify that this is a setup step."
+    },
+    {
+      "criterionText": "Then the report verdict should be BLOCKED",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of 'report.md' was not provided, preventing verification of the report verdict.",
+      "evidencePaths": [],
+      "blockerCode": "missing-evidence-surface-content",
+      "recommendedFixRoute": "Provide the content of 'report.md' for review."
+    },
+    {
+      "criterionText": "And the finding code should be:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of 'report.md' was not provided, preventing verification of the finding code 'evidence-json-without-human-report'.",
+      "evidencePaths": [],
+      "blockerCode": "missing-evidence-surface-content",
+      "recommendedFixRoute": "Provide the content of 'report.md' for review."
+    },
+    {
+      "criterionText": "And `report.md` should not present the JSON-only evidence as product-owner ready.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of 'report.md' was not provided, preventing verification of how the JSON-only evidence is presented or if it's marked as product-owner ready.",
+      "evidencePaths": [],
+      "blockerCode": "missing-evidence-surface-content",
+      "recommendedFixRoute": "Provide the content of 'report.md' for review."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:57:53.222Z"
+}

@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--tie-file-bodies-to-features-and-scenarios--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "tie-file-bodies-to-features-and-scenarios",
+  "criteria": [
+    {
+      "criterionText": "Then the file should tie to one or more feature ids and scenario ids",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or Gemini live-call receipt was provided to verify this criterion. The Gherkin only describes the expected outcome.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And a file with no scenario tie-out should receive:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or Gemini live-call receipt was provided to verify this criterion. The Gherkin only describes the expected outcome.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    },
+    {
+      "criterionText": "And the analysis should not treat a method name, folder name, or loose report text as scenario proof.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No `report.md` or Gemini live-call receipt was provided to verify this criterion. The Gherkin only describes the expected outcome.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide `report.md` and Gemini live-call receipt."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:13:37.555Z"
+}

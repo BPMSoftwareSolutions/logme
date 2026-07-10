@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--reject-telemetry-inferred-from-verdict--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-telemetry-inferred-from-verdict",
+  "scenarioName": "Reject telemetry inferred from verdict",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Reject telemetry inferred from verdict",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-scoped-ascii-execution-flow-report.feature.md:320-330; report.md; live Gemini prompt",
+      "expectedResult": "The node telemetry branch in the ASCII execution sketch should show 'not observed'. The report should not show 'observed' because the verdict is clean. The report should fail promotion, and the finding code should be 'telemetry-observation-inferred-from-verdict'.",
+      "observedResult": "No report.md or Gemini live-call receipt was provided, so no observations could be made regarding the actual output of the scenario.",
+      "timestamp": "2026-07-10T01:10:53.645Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-telemetry-inferred-from-verdict--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-scoped-ascii-execution-flow-report.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--reject-telemetry-inferred-from-verdict--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

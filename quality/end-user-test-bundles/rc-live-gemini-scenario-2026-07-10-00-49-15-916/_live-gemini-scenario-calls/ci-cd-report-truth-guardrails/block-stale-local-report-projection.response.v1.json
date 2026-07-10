@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "block-stale-local-report-projection",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 523,
+    "candidatesTokenCount": 952,
+    "totalTokenCount": 3374,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 523
+      }
+    ],
+    "thoughtsTokenCount": 1899,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The scenario describes CI behavior regarding local vs. freshly generated reports. The provided evidence, consisting of the scenario Gherkin and a local `report.md`, is insufficient to observe or confirm CI's internal processes, specifically whether it ignores local reports or compares only freshly generated evidence.",
+    "expectedResult": "CI should ignore the developer's local `report.md`, compare only freshly generated evidence, and ensure any stale local projection has no promotion authority.",
+    "observedResult": "The provided evidence (Gherkin and local `report.md`) does not allow for observation of CI's behavior regarding ignoring local reports, comparing fresh evidence, or the authority of stale projections. The `report.md` provided is a local artifact, not a CI output.",
+    "confusingOrRiskyExperiencePoints": "The scenario's core assertions relate to CI's internal logic and data handling, which are not exposed through the provided end-user surfaces. This makes it impossible for an end-user QA tester to verify the feature's implementation.",
+    "accessibilityOrReadabilityObservations": "The Gherkin is clear and the `report.md` is a standard markdown file. The issue is not with readability but with the lack of relevant evidence to test the scenario's assertions.",
+    "recommendedFollowUps": "To enable testing of this scenario from an end-user perspective, provide evidence surfaces that expose CI's behavior, such as: 1. CI build logs showing the report generation and comparison steps. 2. A CI-generated report or summary explicitly stating which report was used for comparison (e.g., \"Compared against freshly generated report, local report ignored\"). 3. A \"Gemini live-call receipt\" that contains verifiable details about the report comparison process and the source of truth used.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And a developer has a locally generated report",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This is a precondition (Given step) for the scenario, not a testable outcome from the provided end-user surfaces. The presence of `report.md` locally implies this precondition is met, but the act of a 'developer generating' it cannot be verified.",
+        "blockerCode": "N/A",
+        "recommendedFixRoute": "N/A"
+      },
+      {
+        "criterionText": "Then CI should ignore the developer's local `report.md`",
+        "status": "blocked",
+        "llmObservationSummary": "The provided `report.md` is a local artifact. There is no evidence from the available surfaces (Gherkin, local `report.md`) to confirm that CI *ignored* this specific local file during its process.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE_CI_BEHAVIOR",
+        "recommendedFixRoute": "Provide CI logs or a CI report that explicitly shows which `report.md` was used for comparison (local vs. freshly generated) or that the local one was disregarded."
+      },
+      {
+        "criterionText": "And CI should compare only freshly generated evidence",
+        "status": "blocked",
+        "llmObservationSummary": "There is no evidence from the available surfaces (Gherkin, local `report.md`) to confirm that CI compared *only* freshly generated evidence. I cannot see the CI's comparison inputs or outputs.",
+        "blockerCode": "INSUFFICIENT_EVIDENCE_CI_BEHAVIOR",
+        "recommendedFixRoute": "Provide CI logs or a CI report that details the source of the evidence used for comparison, explicitly showing it was freshly generated."
+      },
+      {
+        "criterionText": "And any stale local projection should have no promotion authority.",
+        "status": "blocked",
+        "llmObservationSummary": "This criterion is a consequence of CI ignoring local reports and comparing fresh evidence. Since there is no evidence to verify those preceding actions, this outcome cannot be confirmed.",
+        "blockerCode": "DEPENDENT_CRITERIA_BLOCKED",
+        "recommendedFixRoute": "Address the blockers for \"CI should ignore the developer's local `report.md`\" and \"CI should compare only freshly generated evidence\" first."
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--tie-method-calls-to-telemetry-event-pairs--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "tie-method-calls-to-telemetry-event-pairs",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 652,
+    "candidatesTokenCount": 995,
+    "totalTokenCount": 3159,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 652
+      }
+    ],
+    "thoughtsTokenCount": 1512,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "0b66326f015e586adfda11d09218340024567aa62705ff8390b938d84f8381c5",
+  "responseSha256": "99b61d97dc5eddb92d1f8f0e295d902b40bdd9fb8fc00187851afe5b4b1faa38",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/tie-method-calls-to-telemetry-event-pairs.response.v1.json",
+  "calledAt": "2026-07-10T01:18:15.597Z"
+}

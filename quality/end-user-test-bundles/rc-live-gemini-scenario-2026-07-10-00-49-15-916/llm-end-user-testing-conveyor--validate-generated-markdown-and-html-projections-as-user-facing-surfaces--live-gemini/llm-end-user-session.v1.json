@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "validate-generated-markdown-and-html-projections-as-user-facing-surfaces",
+  "scenarioName": "Validate generated Markdown and HTML projections as user-facing surfaces",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Validate generated Markdown and HTML projections as user-facing surfaces",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:137-154; report.md; live Gemini prompt",
+      "expectedResult": "The LLM should have been provided with the actual content of the 'report.md' file and, if applicable, the HTML projection or a rendered view, to inspect them against the specified criteria.",
+      "observedResult": "The LLM was informed that 'report.md' and an HTML projection were available surfaces, but their content was not supplied, making direct inspection impossible.",
+      "timestamp": "2026-07-10T01:15:02.138Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--validate-generated-markdown-and-html-projections-as-user-facing-surfaces--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

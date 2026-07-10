@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "preserve-machine-and-execution-provenance",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 589,
+    "candidatesTokenCount": 525,
+    "totalTokenCount": 2540,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 589
+      }
+    ],
+    "thoughtsTokenCount": 1426,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file, which is crucial for verifying the contents of `machine-environment.v1.json` and the redaction of sensitive information, was not provided. Without this evidence, it is impossible to confirm if the acceptance criteria have been met.",
+    "expectedResult": "`machine-environment.v1.json` should be created within the QA evidence bundle, containing all specified fields and with all sensitive information (secrets, API keys, PATs) redacted.",
+    "observedResult": "No `report.md` was provided, so the contents of `machine-environment.v1.json` and the redaction status could not be observed.",
+    "confusingOrRiskyExperiencePoints": "The absence of the `report.md` file makes it impossible to verify the core functionality of this scenario, representing a significant gap in the testing process.",
+    "accessibilityOrReadabilityObservations": "N/A, as the core evidence is missing. The Gherkin itself is clear.",
+    "recommendedFollowUps": "Provide the `report.md` file for review. Ensure all expected evidence surfaces are actually provided when evaluating a scenario.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then `machine-environment.v1.json` should include:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain evidence of `machine-environment.v1.json`'s contents, was not provided. Therefore, the inclusion of the specified fields cannot be verified.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And secrets, API keys, and personal access tokens should be redacted.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain evidence to verify redaction, was not provided. Therefore, the redaction of sensitive information cannot be confirmed.",
+        "blockerCode": "MISSING_EVIDENCE_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      }
+    ]
+  }
+}

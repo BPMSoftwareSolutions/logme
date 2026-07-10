@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "end-user-quality-evidence-bundle--create-a-qa-evidence-bundle-for-every-qa-attempt--live-gemini",
+  "featureId": "end-user-quality-evidence-bundle",
+  "scenarioId": "create-a-qa-evidence-bundle-for-every-qa-attempt",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 804,
+    "candidatesTokenCount": 1013,
+    "totalTokenCount": 3028,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 804
+      }
+    ],
+    "thoughtsTokenCount": 1211,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "22b831d674a57c715ac896d075652feaa319c16435e05b3db85ca2fffc9750b5",
+  "responseSha256": "439ad876242d41288ed1df11de08c2297b2da667fe700db2f08f5912f9c51d69",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/end-user-quality-evidence-bundle/create-a-qa-evidence-bundle-for-every-qa-attempt.response.v1.json",
+  "calledAt": "2026-07-10T00:55:59.767Z"
+}

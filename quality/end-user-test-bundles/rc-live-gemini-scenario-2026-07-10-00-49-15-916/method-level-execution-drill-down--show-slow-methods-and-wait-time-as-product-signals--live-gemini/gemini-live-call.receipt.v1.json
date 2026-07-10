@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--show-slow-methods-and-wait-time-as-product-signals--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "show-slow-methods-and-wait-time-as-product-signals",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 566,
+    "candidatesTokenCount": 672,
+    "totalTokenCount": 2150,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 566
+      }
+    ],
+    "thoughtsTokenCount": 912,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "5a6c97826b31f035c365d594db1ef84f22e477aa9b8a431dc0cb95248ab890fa",
+  "responseSha256": "04c0062d19fa00fa6197741ed565b19e11bff574944dd4feebf4222ee492d343",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/show-slow-methods-and-wait-time-as-product-signals.response.v1.json",
+  "calledAt": "2026-07-10T01:19:28.090Z"
+}

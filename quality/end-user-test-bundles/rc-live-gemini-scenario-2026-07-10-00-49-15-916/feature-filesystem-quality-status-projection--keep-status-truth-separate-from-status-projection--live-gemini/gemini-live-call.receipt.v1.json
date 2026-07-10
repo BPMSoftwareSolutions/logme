@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--keep-status-truth-separate-from-status-projection--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "keep-status-truth-separate-from-status-projection",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 631,
+    "candidatesTokenCount": 863,
+    "totalTokenCount": 3345,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 631
+      }
+    ],
+    "thoughtsTokenCount": 1851,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "32f5c44709190903374d18fb989e767346e1a88cdc79750f6b1258414e41feb2",
+  "responseSha256": "f509c491809a5cffd0ffc6fc016bb5d4cae2d0e953ed9c099a687e201a53ee18",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-filesystem-quality-status-projection/keep-status-truth-separate-from-status-projection.response.v1.json",
+  "calledAt": "2026-07-10T01:03:16.850Z"
+}

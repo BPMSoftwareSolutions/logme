@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--separate-source-location-from-runtime-observation--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "separate-source-location-from-runtime-observation",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "calledAt": "2026-07-10T01:23:34.572Z",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 400,
+    "candidatesTokenCount": 710,
+    "totalTokenCount": 2372,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 400
+      }
+    ],
+    "thoughtsTokenCount": 1262,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "3045ad7df53940675bf430e451e40f855676986e376d06df6c298ef985328d9f",
+  "responseSha256": "386c8f19b51a5400577fbb8196910730ca699f31a01ffc24ee63c766cc322f07",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/projection-language-honesty/separate-source-location-from-runtime-observation.response.v1.json"
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini",
+  "featureId": "feature-filesystem-quality-status-projection",
+  "scenarioId": "write-machine-readable-status-beside-the-filesystem-sentinel",
+  "criteria": [
+    {
+      "criterionText": "Then it should write a machine-readable status contract at:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (e.g., `report.md` or file system output) was provided to confirm the creation of the JSON status contract at the specified path.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the `report.md` or CLI evidence showing the file creation at `docs/features/_feature-status/<feature-id>.status.v1.json`."
+    },
+    {
+      "criterionText": "And the JSON status contract should contain:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The actual content of the generated JSON status contract was not provided, making it impossible to verify if it contains all the required fields.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the generated JSON file (`docs/features/_feature-status/<feature-id>.status.v1.json`) for content verification."
+    },
+    {
+      "criterionText": "And the JSON should be the source used to regenerate the sentinel Markdown",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence was provided to demonstrate the regeneration process or confirm that the JSON contract serves as the source for the sentinel Markdown.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide test logs or a report confirming the JSON's role as the source for Markdown regeneration, or the regenerated Markdown itself for comparison."
+    },
+    {
+      "criterionText": "And the sentinel Markdown should include a repo-relative link to this JSON contract.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The content of the sentinel Markdown file was not provided, preventing verification of the inclusion of a repo-relative link to the JSON contract.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING",
+      "recommendedFixRoute": "Provide the generated sentinel Markdown file for review to confirm the presence and correctness of the link."
+    }
+  ],
+  "reviewedAt": "2026-07-10T01:03:38.866Z"
+}

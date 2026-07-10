@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "scenarioId": "calculate-product-timing-metrics-from-observed-evidence",
+  "scenarioName": "Calculate product timing metrics from observed evidence",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Calculate product timing metrics from observed evidence",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-execution-proof-source-of-truth.feature.md:179-195; report.md; live Gemini prompt",
+      "expectedResult": "The JSON proof should include 'scenario lead time ms', 'scenario cycle time ms', 'active execution time ms', 'waiting time ms', 'node duration ms', 'elapsed between nodes ms', 'slowest node id', and 'total observed calls'. Lead time should be measured from scenario request acceptance to final required receipt write. Cycle time should be measured from the first executable runtime node to the last executable runtime node. Any metric without enough telemetry should be 'not observed', not zero.",
+      "observedResult": "No 'report.md' or 'Gemini live-call receipt' was provided, therefore no observed result could be confirmed against the expected outcomes.",
+      "timestamp": "2026-07-10T00:59:30.123Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "blocked",
+      "evidencePaths": [
+        "docs/features/feature-execution-proof-source-of-truth.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--calculate-product-timing-metrics-from-observed-evidence--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

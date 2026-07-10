@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "method-level-execution-drill-down--preserve-the-three-level-execution-review-model--live-gemini",
+  "featureId": "method-level-execution-drill-down",
+  "scenarioId": "preserve-the-three-level-execution-review-model",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 630,
+    "candidatesTokenCount": 792,
+    "totalTokenCount": 3093,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 630
+      }
+    ],
+    "thoughtsTokenCount": 1671,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "cd3e197290c6ffb21e75a0b7348a3a5498c29f008d1188f28b8487e68c25bb23",
+  "responseSha256": "27b22da7896d0e736b55bc3f8bdad1d818f23adb0d7585a05abc7b65deec2dc1",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/method-level-execution-drill-down/preserve-the-three-level-execution-review-model.response.v1.json",
+  "calledAt": "2026-07-10T01:17:42.284Z"
+}

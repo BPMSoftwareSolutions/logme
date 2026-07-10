@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-domain-body-analysis-and-tie-out--produce-an-llm-handoff-artifact-from-deterministic-facts--live-gemini",
+  "featureId": "llm-domain-body-analysis-and-tie-out",
+  "scenarioId": "produce-an-llm-handoff-artifact-from-deterministic-facts",
+  "scenarioName": "Produce an LLM handoff artifact from deterministic facts",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Produce an LLM handoff artifact from deterministic facts",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-domain-body-analysis-and-tie-out.feature.md:56-72; report.md; live Gemini prompt",
+      "expectedResult": "The LLM handoff artifact should contain only the specified deterministic facts and no invented information regarding ownership, scenario proof, or promotion status, as evidenced by the 'report.md' and 'Gemini live-call receipt'.",
+      "observedResult": "No observable result could be determined as the necessary evidence surfaces ('report.md' and 'Gemini live-call receipt') were not supplied for review.",
+      "timestamp": "2026-07-10T01:13:51.434Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--produce-an-llm-handoff-artifact-from-deterministic-facts--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-domain-body-analysis-and-tie-out.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-domain-body-analysis-and-tie-out--produce-an-llm-handoff-artifact-from-deterministic-facts--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

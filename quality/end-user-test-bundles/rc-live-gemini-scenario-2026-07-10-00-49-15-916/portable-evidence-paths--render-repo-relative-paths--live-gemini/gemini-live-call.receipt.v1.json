@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "portable-evidence-paths--render-repo-relative-paths--live-gemini",
+  "featureId": "portable-evidence-paths",
+  "scenarioId": "render-repo-relative-paths",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 460,
+    "candidatesTokenCount": 523,
+    "totalTokenCount": 1607,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 460
+      }
+    ],
+    "thoughtsTokenCount": 624,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "72a68af177808b991cc6d364653ff5615ec53bab52bb30541bf5b66754455b73",
+  "responseSha256": "eabb9b105de153085fea27b22ee9fbc4c31cb4a9167630e1ce2a42a3f74fc2a3",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/portable-evidence-paths/render-repo-relative-paths.response.v1.json",
+  "calledAt": "2026-07-10T01:22:07.105Z"
+}

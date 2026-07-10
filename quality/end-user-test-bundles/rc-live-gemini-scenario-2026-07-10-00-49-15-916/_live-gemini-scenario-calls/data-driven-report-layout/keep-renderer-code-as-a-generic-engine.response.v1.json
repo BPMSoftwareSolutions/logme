@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "data-driven-report-layout",
+  "scenarioId": "keep-renderer-code-as-a-generic-engine",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 505,
+    "candidatesTokenCount": 677,
+    "totalTokenCount": 2657,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 505
+      }
+    ],
+    "thoughtsTokenCount": 1475,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided evidence surfaces (Gherkin, generated report.md, and confirmation of a Gemini live-call receipt) do not offer sufficient visibility into the internal development process or source code changes required to verify the acceptance criteria. The criteria describe how changes *should be made* and *when renderer code should change*, which are internal implementation details not exposed through end-user facing artifacts like a rendered report.",
+    "expectedResult": "The system should demonstrate that report presentation changes are made exclusively in product-owned contracts/templates, and renderer source code changes are restricted to new rendering primitives, validators, or data fields.",
+    "observedResult": "The `report.md` shows a rendered report, but provides no insight into the process of making presentation changes or the conditions under which renderer source code is modified. The Gherkin describes the intent but doesn't provide verifiable evidence of the implementation.",
+    "confusingOrRiskyExperiencePoints": "None directly observed from the end-user perspective, as the scenario focuses on internal development practices rather than user-facing functionality. The risk lies in the inability to verify adherence to architectural principles without appropriate evidence.",
+    "accessibilityOrReadabilityObservations": "None. The `report.md` is a standard markdown file, and the Gherkin is readable.",
+    "recommendedFollowUps": "To properly test these criteria, access to source code repositories, change logs, or specific documentation detailing the change management process for report layouts would be necessary. Alternatively, a test scenario could be designed to simulate a presentation change and then provide diffs of relevant files (contracts/templates vs. renderer code) as evidence.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the expected change should be made in product-owned report contracts or templates",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "Verification requires observing the process of making a report presentation change and confirming that only product-owned contracts or templates were modified. The `report.md` only shows the final output, not the input contracts/templates or the change process.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT",
+        "recommendedFixRoute": "Provide access to version control history or diffs of relevant contract/template files and renderer source code before and after a simulated presentation change."
+      },
+      {
+        "criterionText": "And renderer source code should change only when a new rendering primitive, validator, or data field is needed.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This criterion requires inspecting renderer source code changes in the context of presentation updates to ensure modifications are limited to new primitives, validators, or data fields. The `report.md` does not provide source code access or change history.",
+        "blockerCode": "EVIDENCE_INSUFFICIENT",
+        "recommendedFixRoute": "Provide access to renderer source code, change logs, or specific examples demonstrating when renderer code changes are (or are not) made in response to presentation updates."
+      }
+    ]
+  }
+}

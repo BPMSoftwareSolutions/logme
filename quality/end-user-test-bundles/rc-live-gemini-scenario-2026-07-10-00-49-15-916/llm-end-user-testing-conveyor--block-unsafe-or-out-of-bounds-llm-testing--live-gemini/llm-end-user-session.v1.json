@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--block-unsafe-or-out-of-bounds-llm-testing--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "block-unsafe-or-out-of-bounds-llm-testing",
+  "scenarioName": "Block unsafe or out-of-bounds LLM testing",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Block unsafe or out-of-bounds LLM testing",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:261-277; report.md; live Gemini prompt",
+      "expectedResult": "An LLM QA run attempting unsafe or out-of-bounds actions should be blocked, produce the 'llm-end-user-testing-guardrail-violation' finding code, and still generate a QA bundle containing evidence of the blocker.",
+      "observedResult": "Cannot observe the actual system behavior or verify the blocking mechanism as no execution evidence was provided. Only the Gherkin specification was available for review.",
+      "timestamp": "2026-07-10T01:16:52.862Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--block-unsafe-or-out-of-bounds-llm-testing--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--block-unsafe-or-out-of-bounds-llm-testing--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

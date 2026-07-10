@@ -1,0 +1,67 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "reject-invented-fallback-execution-body-tree-for-promotion",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 553,
+    "candidatesTokenCount": 939,
+    "totalTokenCount": 3609,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 553
+      }
+    ],
+    "thoughtsTokenCount": 2117,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The `report.md` file, which is critical for verifying the rendered output, promotion status, and finding code, was not provided. Therefore, direct verification of the scenario's `Then` clauses is impossible from the assigned end-user surfaces.",
+    "expectedResult": "The feature-scoped executable body report should be rendered without invented fallback body nodes, displaying 'EXECUTABLE BODY TREE: missing', and promotion should be BLOCKED with the finding code 'executable-body-contract-missing'.",
+    "observedResult": "The `report.md` file was not provided, preventing observation of the rendered report content, promotion status, or finding code.",
+    "confusingOrRiskyExperiencePoints": "The absence of the `report.md` file makes it impossible to confirm the expected user experience. If the report were to invent fallback nodes or fail to block promotion, it would be a critical failure.",
+    "accessibilityOrReadabilityObservations": "N/A - The primary evidence (report.md) is missing, preventing any observations related to the accessibility or readability of the generated report.",
+    "recommendedFollowUps": "Provide the `report.md` file for this scenario to enable complete verification of the acceptance criteria. Without it, the scenario cannot be fully tested from the end-user surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And no product-owned report data contract declares `executionNodes`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This is a `Given` condition describing an internal system state, not an end-user observable outcome. It cannot be verified from the provided end-user surfaces (Gherkin, missing report.md, missing live-call receipt).",
+        "blockerCode": "EVIDENCE_MISSING_OR_INSUFFICIENT",
+        "recommendedFixRoute": "This criterion describes a precondition. If it needs to be tested, it would require access to internal code or system configuration, which is outside the scope of end-user QA surfaces."
+      },
+      {
+        "criterionText": "Then the renderer should not invent fallback body nodes",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "This `Then` clause's observable outcome is the report content. The `report.md` file was not provided, making it impossible to verify if fallback nodes were invented or if the 'missing' message was correctly displayed.",
+        "blockerCode": "REPORT_MD_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` file to verify the rendered output."
+      },
+      {
+        "criterionText": "And the report should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain the rendered output, was not provided. Therefore, it's impossible to confirm if 'EXECUTABLE BODY TREE: missing' was displayed.",
+        "blockerCode": "REPORT_MD_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` file to verify the report content."
+      },
+      {
+        "criterionText": "And promotion should be BLOCKED",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would indicate the promotion status, was not provided. It's impossible to confirm if promotion was indeed BLOCKED.",
+        "blockerCode": "REPORT_MD_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` file to verify the promotion status."
+      },
+      {
+        "criterionText": "And the finding code should be:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file, which would contain the finding code, was not provided. It's impossible to confirm if the finding code 'executable-body-contract-missing' was present.",
+        "blockerCode": "REPORT_MD_MISSING",
+        "recommendedFixRoute": "Provide the `report.md` file to verify the finding code."
+      }
+    ]
+  }
+}

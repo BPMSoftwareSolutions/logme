@@ -1,0 +1,46 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "evidence-receipt-coverage",
+  "scenarioId": "write-report-evidence-packet",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 812,
+    "candidatesTokenCount": 491,
+    "totalTokenCount": 2668,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 812
+      }
+    ],
+    "thoughtsTokenCount": 1365,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "blocked",
+    "observationSummary": "The primary evidence surface, 'report.md', was stated to be available but its content was not provided. This prevents verification of whether the evidence packet was written, what it contains, or how 'report.md' links to its contents.",
+    "expectedResult": "An evidence packet containing all listed artifacts should be generated, and 'report.md' should contain repo-relative links to each of them.",
+    "observedResult": "Cannot observe due to missing 'report.md' content.",
+    "confusingOrRiskyExperiencePoints": "The lack of access to the 'report.md' content makes it impossible to perform the requested QA. This is a critical gap in the testing process.",
+    "accessibilityOrReadabilityObservations": "N/A, as the content itself is missing.",
+    "recommendedFollowUps": "Ensure all promised evidence surfaces (especially their content) are provided to the LLM for review.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then it should write an evidence packet containing:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The content of the 'report.md' file, which would link to the evidence packet artifacts, was not provided. Without this content, it's impossible to verify if the evidence packet was written or if it contains the specified artifacts.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE_CONTENT",
+        "recommendedFixRoute": "Provide the actual content of the 'report.md' file for review."
+      },
+      {
+        "criterionText": "And report.md should link to each artifact using repo-relative paths.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The content of the 'report.md' file was not provided. Without this content, it's impossible to verify if 'report.md' links to each artifact or if the paths are repo-relative.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE_CONTENT",
+        "recommendedFixRoute": "Provide the actual content of the 'report.md' file for review."
+      }
+    ]
+  }
+}

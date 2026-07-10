@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--provide-pi-ready-summary-counts--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "provide-pi-ready-summary-counts",
+  "scenarioName": "Provide PI-ready summary counts",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Provide PI-ready summary counts\n    Given the feature quality board has been generated\n    When PI planning review asks for feature readiness\n    Then the board should show summary counts for:\n      | count |\n      | total features |\n      | not implemented |\n      | implemented not tested |\n      | proof blocked |\n      | QA not run |\n      | QA blocked |\n      | QA failed |\n      | QA passed |\n      | QA passed promoted |\n      | stale |\n    And the board should show the top blocker codes by frequency\n    And the board should show the oldest untested implemented feature when dates are available\n    And the board should show the newest promoted feature when dates are available.\n",
+    "acceptanceCriteria": [
+      "Then the board should show summary counts for:",
+      "And the board should show the top blocker codes by frequency",
+      "And the board should show the oldest untested implemented feature when dates are available",
+      "And the board should show the newest promoted feature when dates are available."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:07:50.896Z"
+}

@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "domain-naming-convention-correction",
+  "scenarioId": "rename-the-declared-file-system-body-contract",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 615,
+    "candidatesTokenCount": 953,
+    "totalTokenCount": 2740,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 615
+      }
+    ],
+    "thoughtsTokenCount": 1172,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The provided Gherkin describes the expected behavior, but no evidence surface (like `report.md` content or CLI output) was supplied to confirm the observed results of the scenario. Therefore, the actual outcome of the file renaming and content modification cannot be verified from the assigned surfaces.",
+    "expectedResult": "The file `contracts/file-system-bodies/02_declared/logme2.file-system-body.contract.v1.json` should be renamed to `contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json`. Its `featureId` field should be `logme` and `bodyId` field should be `logme.workspace-observability-domain`. No file named with `logme2` should remain declared as required.",
+    "observedResult": "Not observable from the provided Gherkin. No `report.md` content or other output evidence was supplied to confirm the actual state after the scenario execution.",
+    "confusingOrRiskyExperiencePoints": "The lack of concrete evidence surfaces (like `report.md` content) makes it impossible to confirm if the feature behaves as expected from an end-user perspective. This is a critical gap for QA, as the Gherkin alone only states intent, not outcome.",
+    "accessibilityOrReadabilityObservations": "The Gherkin itself is clear and readable, outlining the intent well. However, without the corresponding test report or other evidence, the overall testability and verification are severely limited.",
+    "recommendedFollowUps": "Provide the `report.md` content or a direct link to the generated report, and any relevant CLI evidence or live-call receipts, to enable proper verification of the scenario's outcome.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the file should be renamed to",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected outcome, but no `report.md` or other evidence surface was provided to confirm if the file was actually renamed during execution.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` or other relevant output that details the actual state of the file system after the scenario execution."
+      },
+      {
+        "criterionText": "And its `featureId` field should read `logme`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected outcome, but no `report.md` or other evidence surface was provided to confirm if the `featureId` field was updated as specified during execution.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` or other relevant output that details the actual content of the file after the scenario execution."
+      },
+      {
+        "criterionText": "And its `bodyId` field should read `logme.workspace-observability-domain`",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected outcome, but no `report.md` or other evidence surface was provided to confirm if the `bodyId` field was updated as specified during execution.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` or other relevant output that details the actual content of the file after the scenario execution."
+      },
+      {
+        "criterionText": "And no file named with `logme2` should remain declared as required.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The Gherkin describes the expected outcome, but no `report.md` or other evidence surface was provided to confirm if the old file was removed or no longer declared as required during execution.",
+        "blockerCode": "MISSING_EVIDENCE_SURFACE",
+        "recommendedFixRoute": "Provide the `report.md` or other relevant output that details the actual state of the file system after the scenario execution."
+      }
+    ]
+  }
+}

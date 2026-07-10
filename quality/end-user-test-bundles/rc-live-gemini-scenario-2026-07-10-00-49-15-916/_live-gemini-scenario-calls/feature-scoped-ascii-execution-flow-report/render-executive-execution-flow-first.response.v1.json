@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-executive-execution-flow-first",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 561,
+    "candidatesTokenCount": 612,
+    "totalTokenCount": 2142,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 561
+      }
+    ],
+    "thoughtsTokenCount": 969,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "not testable from assigned surface",
+    "observationSummary": "The `report.md` file, which is critical for verifying the rendering of the feature-scoped ASCII execution flow report, was not provided as an evidence surface. Therefore, no observations could be made regarding the report's content or structure.",
+    "expectedResult": "The `report.md` should display an ASCII execution flow sketch as the first product-facing section, containing specific elements (verdict, run id, declared source authority, static source inventory, telemetry observation, receipt evidence, blocker count, promotion decision), and dense method tables should appear only after the sketch and blocker summary.",
+    "observedResult": "The `report.md` file was not available for review, preventing any observation of its content or structure.",
+    "confusingOrRiskyExperiencePoints": "The inability to access the generated `report.md` makes it impossible to confirm the feature's intended user experience. This poses a risk that the feature might not meet user expectations regarding report clarity and structure.",
+    "accessibilityOrReadabilityObservations": "No observations could be made regarding accessibility or readability as the primary output (`report.md`) was not provided.",
+    "recommendedFollowUps": "Provide the `report.md` file for review to enable verification of the acceptance criteria. Without this evidence, the feature cannot be adequately tested from the assigned surfaces.",
+    "criteriaReviews": [
+      {
+        "criterionText": "Then the first product-facing section should be an ASCII execution flow sketch",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification of this criterion.",
+        "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And the sketch should show:",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification of this criterion.",
+        "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      },
+      {
+        "criterionText": "And dense method tables should appear only after the sketch and blocker summary.",
+        "status": "not testable from assigned surface",
+        "llmObservationSummary": "The `report.md` file was not provided, preventing verification of this criterion.",
+        "blockerCode": "EVIDENCE_MISSING_REPORT_MD",
+        "recommendedFixRoute": "Provide the `report.md` file for review."
+      }
+    ]
+  }
+}

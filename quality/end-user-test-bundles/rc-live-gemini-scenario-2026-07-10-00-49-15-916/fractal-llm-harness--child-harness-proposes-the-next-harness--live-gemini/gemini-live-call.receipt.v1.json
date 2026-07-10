@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "fractal-llm-harness--child-harness-proposes-the-next-harness--live-gemini",
+  "featureId": "fractal-llm-harness",
+  "scenarioId": "child-harness-proposes-the-next-harness",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 465,
+    "candidatesTokenCount": 634,
+    "totalTokenCount": 2392,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 465
+      }
+    ],
+    "thoughtsTokenCount": 1293,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "8ff66f05a67be062cb8174b986e373060524f2b15914d386fe56ec5f2bd60845",
+  "responseSha256": "0e3ac8d4b055fee02c55c29b89aa97990b238339c2b5e3bdca4a60c82e710b60",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/fractal-llm-harness/child-harness-proposes-the-next-harness.response.v1.json",
+  "calledAt": "2026-07-10T01:12:33.992Z"
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "write-a-machine-readable-board-contract",
+  "scenarioName": "Write a machine-readable board contract",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Write a machine-readable board contract\n    Given the board projection has calculated all feature rows\n    When it writes `docs/features/_FEATURE-QUALITY-BOARD.v1.json`\n    Then the JSON board should contain:\n      | field |\n      | schema version |\n      | generated at |\n      | generator name |\n      | repository root |\n      | git branch |\n      | git commit or working-tree marker |\n      | total features |\n      | features not implemented |\n      | features implemented not tested |\n      | features QA blocked |\n      | features QA failed |\n      | features QA passed |\n      | features QA passed promoted |\n      | stale features |\n      | board rows |\n      | source status contract hashes |\n      | blocker summary |\n    And each board row should include the repo-relative path to its status sentinel\n    And each board row should include the repo-relative path to its feature specification\n    And every count in the Markdown board should be derived from the JSON board.\n",
+    "acceptanceCriteria": [
+      "Then the JSON board should contain:",
+      "And each board row should include the repo-relative path to its status sentinel",
+      "And each board row should include the repo-relative path to its feature specification",
+      "And every count in the Markdown board should be derived from the JSON board."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:06:07.781Z"
+}

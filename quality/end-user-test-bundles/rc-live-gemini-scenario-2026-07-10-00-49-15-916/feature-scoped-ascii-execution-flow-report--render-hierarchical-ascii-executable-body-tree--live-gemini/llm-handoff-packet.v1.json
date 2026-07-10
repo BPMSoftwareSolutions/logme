@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-hierarchical-ascii-executable-body-tree--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-hierarchical-ascii-executable-body-tree",
+  "scenarioName": "Render hierarchical ASCII executable body tree",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render hierarchical ASCII executable body tree\n    Given an executable body contract declares a product-readable execution spine\n    When the ASCII execution sketch is rendered\n    Then the report should include a hierarchical tree shaped like:\n      \"\"\"\n      +----------------------------------------------------------------------+\n      | EXECUTABLE BODY CONTRACT - FILE-SYSTEM EXECUTION TREE                |\n      | Feature : <feature-id>                                               |\n      | Scenario: <scenario-name>                                            |\n      +----------------------------------------------------------------------+\n\n      [00] ACCEPTANCE SOURCE\n      |-- gherkin\n      |   `-- docs/features/<feature>.feature.md\n      |\n      |-- acceptance criteria\n      |   `-- contracts/file-system-bodies/<body>.contract.v1.json\n      |\n      `-- proves\n          `-- <plain-language-proof>\n\n      [01] SURFACE RECEIVES REQUEST\n      |-- contract\n      |   `-- contracts/commands/<surface-command>.command.v1.json\n      |\n      |-- runtime\n      |   `-- src/<surface>/<entrypoint>.js:<line-start>-<line-end>\n      |\n      |-- telemetry\n      |   |-- status        : observed\n      |   |-- runtime step  : 1\n      |   |-- first seen at : <timestamp>\n      |   |-- last seen at  : <timestamp>\n      |   |-- duration ms   : <duration-ms>\n      |   |-- elapsed prev  : <elapsed-ms>\n      |   `-- call count    : <count>\n      |\n      |-- receipt\n      |   `-- evidence/runs/<run-id>/<surface>.receipt.v1.json\n      |\n      `-- status\n          `-- ok\n\n      [02] CANONICAL REQUEST BINDING\n      |-- contract\n      |   `-- contracts/<feature>/canonical-request.schema.v1.json\n      |\n      |-- runtime\n      |   `-- src/<feature>/canonical-request.js:<line-start>-<line-end>\n      |\n      |-- telemetry\n      |   |-- status        : not observed\n      |   |-- runtime step  : not observed\n      |   |-- first seen at : not observed\n      |   |-- last seen at  : not observed\n      |   |-- duration ms   : not observed\n      |   |-- elapsed prev  : not observed\n      |   `-- call count    : not observed\n      |\n      |-- receipt\n      |   `-- missing\n      |\n      `-- status\n          |-- blocked\n          |-- blocker : declared-but-silent\n          `-- fix     : add runtime testimony and receipt proof\n\n      [03] SHARED RUNNER EXECUTES\n      |-- contract\n      |   `-- contracts/file-system-bodies/<body>.contract.v1.json\n      |\n      |-- runtime\n      |   `-- src/<feature>/runner.js:<line-start>-<line-end>\n      |\n      |-- telemetry\n      |   `-- evidence/runs/<run-id>/telemetry.events.v1.jsonl\n      |\n      |-- receipt\n      |   `-- evidence/runs/<run-id>/runner.receipt.v1.json\n      |\n      `-- status\n          `-- ok\n      \"\"\"\n    And the tree should use nested ASCII branches to show body ownership\n    And the tree should appear before dense method tables\n    And the tree should show blockers inline under the body node where truth broke.\n",
+    "acceptanceCriteria": [
+      "Then the report should include a hierarchical tree shaped like:",
+      "And the tree should use nested ASCII branches to show body ownership",
+      "And the tree should appear before dense method tables",
+      "And the tree should show blockers inline under the body node where truth broke."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:08:57.804Z"
+}

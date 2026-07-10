@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--detect-status-sentinel-and-json-contract-mismatch--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "detect-status-sentinel-and-json-contract-mismatch",
+  "scenarioName": "Detect status sentinel and JSON contract mismatch",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Detect status sentinel and JSON contract mismatch",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/feature-quality-board-filesystem-body.feature.md:134-145; report.md; live Gemini prompt",
+      "expectedResult": "The quality board should detect a mismatch between the filesystem status sentinel and the JSON contract, add a 'feature-status-filesystem-mismatch' finding, mark the feature row as 'stale', and display both expected and observed sentinel paths.",
+      "observedResult": "No observable results could be confirmed from the provided Gherkin alone. The actual output of the quality board projection or a generated report was missing.",
+      "timestamp": "2026-07-10T01:06:27.123Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--detect-status-sentinel-and-json-contract-mismatch--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/feature-quality-board-filesystem-body.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--detect-status-sentinel-and-json-contract-mismatch--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

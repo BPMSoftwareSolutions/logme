@@ -111,6 +111,26 @@ test('detectsRetiredDomainNameReintroduction excludes .git, node_modules, and ev
   }
 });
 
+test('detectsRetiredDomainNameReintroduction respects configured excluded directories', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'retired-name-lab-'));
+
+  try {
+    const qualityDir = path.join(tempDir, 'quality', 'bundle');
+    fs.mkdirSync(qualityDir, { recursive: true });
+    fs.writeFileSync(path.join(qualityDir, 'report.md'), 'historical logme2 reference in generated QA evidence');
+
+    const findings = detectsRetiredDomainNameReintroduction({
+      rootDir: tempDir,
+      domainContract: buildsDomainContract(),
+      excludeDirectories: ['quality'],
+    });
+
+    assert.deepEqual(findings, []);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
 test('detectsRetiredDomainNameReintroduction reports a single finding per path even if both name and contents match', () => {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'retired-name-lab-'));
 

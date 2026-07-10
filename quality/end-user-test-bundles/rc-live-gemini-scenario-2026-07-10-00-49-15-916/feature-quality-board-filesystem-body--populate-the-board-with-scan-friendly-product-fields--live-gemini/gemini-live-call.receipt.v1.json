@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "gemini-live-call.receipt.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-quality-board-filesystem-body--populate-the-board-with-scan-friendly-product-fields--live-gemini",
+  "featureId": "feature-quality-board-filesystem-body",
+  "scenarioId": "populate-the-board-with-scan-friendly-product-fields",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "finishReason": "STOP",
+  "usageMetadata": {
+    "promptTokenCount": 639,
+    "candidatesTokenCount": 550,
+    "totalTokenCount": 1970,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 639
+      }
+    ],
+    "thoughtsTokenCount": 781,
+    "serviceTier": "standard"
+  },
+  "promptSha256": "4a4c09a10c407dd419892f9d0459bf3b063271f1a804a0d9998190a6059ac0bd",
+  "responseSha256": "fdc61f9017c6e85c0ec8150add553d345688d85b0ce634df87a243703ad7ffd0",
+  "rawScenarioResponsePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/_live-gemini-scenario-calls/feature-quality-board-filesystem-body/populate-the-board-with-scan-friendly-product-fields.response.v1.json",
+  "calledAt": "2026-07-10T01:05:48.303Z"
+}

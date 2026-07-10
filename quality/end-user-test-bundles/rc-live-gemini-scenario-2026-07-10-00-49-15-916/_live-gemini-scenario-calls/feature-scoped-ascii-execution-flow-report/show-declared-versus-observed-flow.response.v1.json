@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "gemini-scenario-call.response.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "show-declared-versus-observed-flow",
+  "modelName": "gemini-2.5-flash",
+  "usageMetadata": {
+    "promptTokenCount": 513,
+    "candidatesTokenCount": 682,
+    "totalTokenCount": 2983,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 513
+      }
+    ],
+    "thoughtsTokenCount": 1788,
+    "serviceTier": "standard"
+  },
+  "finishReason": "STOP",
+  "parsed": {
+    "status": "met",
+    "observationSummary": "The generated ASCII execution flow report successfully separates declared flow, observed telemetry, receipt proof, and blockers into distinct lanes. Runtime observations are clearly derived from telemetry events, and source inventory is not conflated with runtime execution.",
+    "expectedResult": "The ASCII execution flow report should clearly delineate declared flow, observed telemetry, receipt proof, and blockers in separate lanes. Runtime observations should be exclusively from telemetry, and static source inventory should not be presented as runtime execution.",
+    "observedResult": "The report.md contains an ASCII execution sketch with four distinct, labeled lanes: \"Declared Flow\", \"Observed Telemetry\", \"Receipt Proof\", and \"Blockers\". The \"Observed Telemetry\" lane contains specific telemetry events, confirming runtime telemetry existence and its use for observations. The content of the \"Observed Telemetry\" lane is distinct from the \"Declared Flow\" lane, which contains the Gherkin steps, ensuring source inventory is not presented as runtime execution.",
+    "confusingOrRiskyExperiencePoints": "None. The separation of concerns within the report is clear and unambiguous.",
+    "accessibilityOrReadabilityObservations": "The ASCII art format is generally readable, and the distinct column headers enhance clarity for understanding the different flow types.",
+    "recommendedFollowUps": "None.",
+    "criteriaReviews": [
+      {
+        "criterionText": "And runtime telemetry exists for that feature run",
+        "status": "met",
+        "llmObservationSummary": "The 'Observed Telemetry' lane in the ASCII sketch contains specific telemetry events, confirming their existence and use for runtime observations.",
+        "blockerCode": "N/A",
+        "recommendedFixRoute": "N/A"
+      },
+      {
+        "criterionText": "Then it should separate:",
+        "status": "met",
+        "llmObservationSummary": "The ASCII execution sketch clearly presents four distinct, labeled lanes: 'Declared Flow', 'Observed Telemetry', 'Receipt Proof', and 'Blockers', fulfilling the separation requirement.",
+        "blockerCode": "N/A",
+        "recommendedFixRoute": "N/A"
+      },
+      {
+        "criterionText": "And runtime observation should come only from telemetry events",
+        "status": "met",
+        "llmObservationSummary": "The 'Observed Telemetry' lane exclusively displays entries identified as telemetry events, with no static Gherkin steps or source inventory present, confirming observations are telemetry-derived.",
+        "blockerCode": "N/A",
+        "recommendedFixRoute": "N/A"
+      },
+      {
+        "criterionText": "And source inventory should not be presented as runtime execution.",
+        "status": "met",
+        "llmObservationSummary": "The 'Declared Flow' lane contains the Gherkin steps, while the 'Observed Telemetry' lane contains distinct runtime events. There is no overlap or misrepresentation of source inventory as runtime execution.",
+        "blockerCode": "N/A",
+        "recommendedFixRoute": "N/A"
+      }
+    ]
+  }
+}

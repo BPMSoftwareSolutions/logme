@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "acceptance-criteria-review.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "ci-cd-report-truth-guardrails--publish-report-evidence-packet-as-ci-artifact--live-gemini",
+  "featureId": "ci-cd-report-truth-guardrails",
+  "scenarioId": "publish-report-evidence-packet-as-ci-artifact",
+  "criteria": [
+    {
+      "criterionText": "Then it should publish an artifact containing:",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "The Gherkin describes the expected artifact contents, but no actual artifact or manifest of its contents was provided for verification. `report.md` is only one file, not the full artifact.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING_ARTIFACT_OR_MANIFEST",
+      "recommendedFixRoute": "Provide access to the published CI artifact, a manifest of its contents, or a log confirming its publication."
+    },
+    {
+      "criterionText": "And the pull request summary should link to the artifact.",
+      "status": "not testable from assigned surface",
+      "llmObservationSummary": "No evidence (e.g., screenshot, text excerpt) of the pull request summary was provided to verify the presence of a link to the artifact.",
+      "evidencePaths": [],
+      "blockerCode": "EVIDENCE_MISSING_PR_SUMMARY",
+      "recommendedFixRoute": "Provide a screenshot or text excerpt of the pull request summary showing the link."
+    }
+  ],
+  "reviewedAt": "2026-07-10T00:49:53.115Z"
+}

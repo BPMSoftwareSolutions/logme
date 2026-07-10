@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "projection-language-honesty--label-inventory-order-honestly--live-gemini",
+  "featureId": "projection-language-honesty",
+  "scenarioId": "label-inventory-order-honestly",
+  "scenarioName": "Label inventory order honestly",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Label inventory order honestly",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/projection-language-honesty.feature.md:8-14; report.md; live Gemini prompt",
+      "expectedResult": "The method table column should be labeled `Inventory Step` and the report should not refer to it as `Execution Step`, given that method ordering is derived from source scan order and no runtime telemetry event is tied to the method row.",
+      "observedResult": "The necessary evidence (rendered method table, report content, and confirmation of telemetry event absence) was missing, preventing any observation of the expected behavior.",
+      "timestamp": "2026-07-10T01:23:16.696Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/projection-language-honesty--label-inventory-order-honestly--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "BLOCKED",
+      "evidencePaths": [
+        "docs/features/projection-language-honesty.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/projection-language-honesty--label-inventory-order-honestly--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

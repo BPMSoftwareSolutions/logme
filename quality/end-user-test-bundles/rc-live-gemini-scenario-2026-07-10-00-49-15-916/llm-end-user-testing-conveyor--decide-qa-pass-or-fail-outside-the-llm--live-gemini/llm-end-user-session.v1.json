@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "llm-end-user-session.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini",
+  "featureId": "llm-end-user-testing-conveyor",
+  "scenarioId": "decide-qa-pass-or-fail-outside-the-llm",
+  "scenarioName": "Decide QA pass or fail outside the LLM",
+  "steps": [
+    {
+      "stepIndex": 1,
+      "action": "Live Gemini reviewed Decide QA pass or fail outside the LLM",
+      "targetSurface": "Markdown report review and CLI evidence review",
+      "inputUsed": "docs/features/llm-end-user-testing-conveyor.feature.md:241-260; report.md; live Gemini prompt",
+      "expectedResult": "The QA gate should successfully calculate a quality decision based on evidence, enforce specific pass requirements, prevent LLM self-promotion, and write the decision to the specified JSON file, all verifiable through end-user surfaces.",
+      "observedResult": "No direct observation of the QA gate's execution, decision calculation, enforcement of requirements, or file output could be made from the provided Gherkin. The content of report.md was not supplied for review.",
+      "timestamp": "2026-07-10T01:16:37.608Z",
+      "screenshotOrOutputPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini/gemini-live-call.receipt.v1.json",
+      "status": "not testable from assigned surface",
+      "evidencePaths": [
+        "docs/features/llm-end-user-testing-conveyor.feature.md",
+        "report.md",
+        "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/llm-end-user-testing-conveyor--decide-qa-pass-or-fail-outside-the-llm--live-gemini/gemini-live-call.receipt.v1.json"
+      ]
+    }
+  ]
+}

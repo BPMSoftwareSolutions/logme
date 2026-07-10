@@ -1,0 +1,58 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "summary-findings-and-method-row-tie-out--recompute-summary-from-method-rows--live-gemini",
+  "featureId": "summary-findings-and-method-row-tie-out",
+  "scenarioId": "recompute-summary-from-method-rows",
+  "scenarioName": "Recompute summary from method rows",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Recompute summary from method rows\n    Given the report method table contains method rows\n    When the report validator recomputes summary metrics\n    Then `localExecutableMethods` should equal the number of method rows\n    And `methodsWithLogMeCall` should equal rows where LogMe is `yes`\n    And `silentLocalMethods` should equal rows where LogMe is `no`\n    And `methodsWithLogMeCall + silentLocalMethods` should equal `localExecutableMethods`\n    And `coverage` should equal `methodsWithLogMeCall / localExecutableMethods`\n",
+    "acceptanceCriteria": [
+      "Then `localExecutableMethods` should equal the number of method rows",
+      "And `methodsWithLogMeCall` should equal rows where LogMe is `yes`",
+      "And `silentLocalMethods` should equal rows where LogMe is `no`",
+      "And `methodsWithLogMeCall + silentLocalMethods` should equal `localExecutableMethods`",
+      "And `coverage` should equal `methodsWithLogMeCall / localExecutableMethods`"
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:41:11.861Z"
+}

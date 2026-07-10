@@ -1,0 +1,57 @@
+{
+  "schemaVersion": "llm-handoff-packet.v1",
+  "releaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
+  "qaRunId": "feature-scoped-ascii-execution-flow-report--render-method-drill-down-under-each-observed-body-node--live-gemini",
+  "featureId": "feature-scoped-ascii-execution-flow-report",
+  "scenarioId": "render-method-drill-down-under-each-observed-body-node",
+  "scenarioName": "Render method drill-down under each observed body node",
+  "providerName": "Gemini",
+  "modelName": "gemini-2.5-flash",
+  "boundedContext": {
+    "featureGherkin": "  Scenario: Render method drill-down under each observed body node\n    Given an executable body node has ordered method calls in canonical JSON proof\n    When the ASCII execution sketch is rendered\n    Then the node should include a `method drill-down` branch\n    And each method call should show:\n      | method fact |\n      | call index |\n      | method name |\n      | source path and line range |\n      | started at |\n      | completed at |\n      | duration ms |\n      | elapsed since previous call ms |\n      | telemetry event ids |\n      | receipt path |\n      | status |\n    And a body node with no method calls should show `method detail missing`\n    And method drill-down facts should match `feature-execution.contract.v1.json` exactly.\n",
+    "acceptanceCriteria": [
+      "Then the node should include a `method drill-down` branch",
+      "And each method call should show:",
+      "And a body node with no method calls should show `method detail missing`",
+      "And method drill-down facts should match `feature-execution.contract.v1.json` exactly."
+    ],
+    "currentProofReports": [],
+    "currentDomainAnalysisReports": [],
+    "targetUserSurfaceInstructions": [
+      "Markdown report review",
+      "CLI evidence review"
+    ],
+    "seedDataRules": [
+      "seed data must be synthetic unless fixture data is explicitly allowed",
+      "seed data writes must stay inside allowed seed data paths"
+    ],
+    "evidenceBundleRequirements": [
+      "llm-qa-assignment.v1.json",
+      "llm-handoff-packet.report.md",
+      "llm-handoff-packet.v1.json",
+      "llm-seed-data-proposal.v1.json",
+      "seed-data.receipt.v1.json",
+      "llm-end-user-session.v1.json",
+      "end-user-test-session.md",
+      "llm-user-experience.report.md",
+      "acceptance-criteria-review.v1.json",
+      "acceptance-criteria-review.report.md",
+      "qa-evidence-bundle.manifest.v1.json",
+      "qa-evidence-bundle.report.md",
+      "qa-gate-decision.v1.json",
+      "machine-environment.v1.json",
+      "feature-proof-links.v1.json",
+      "report-artifact-index.v1.json",
+      "blocker-worklist.md"
+    ],
+    "forbiddenActions": [
+      "mutate outside allowed paths",
+      "use secrets or personal data in seed data",
+      "claim acceptance without evidence",
+      "mark this LLM run as QA passed",
+      "send external notifications"
+    ],
+    "passFailReportingExpectations": "report user-visible observations and link every pass or fail claim to evidence"
+  },
+  "assembledAt": "2026-07-10T01:09:37.688Z"
+}
