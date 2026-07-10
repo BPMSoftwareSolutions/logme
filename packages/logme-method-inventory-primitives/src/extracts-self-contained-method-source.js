@@ -1,6 +1,8 @@
 const ts = require('typescript');
 const { LogMe } = require('../../logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../logme-testimony-core/src/sample-method');
+const { collectsReferencedIdentifiers } = require('./collects-referenced-identifiers');
+const { collectsDeclaredNames } = require('./collects-declared-names');
 
 function findsFunctionDeclarationByName(sourceFile, methodName) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -31,55 +33,8 @@ function collectsFreeIdentifiers(functionNode) {
     LogMe(sampleMethod);
   }
 
-  const declaredNames = new Set();
-  const referencedNames = new Set();
-
-  for (const parameter of functionNode.parameters) {
-    if (ts.isIdentifier(parameter.name)) {
-      declaredNames.add(parameter.name.text);
-    }
-  }
-
-  function visitsNode(node) {
-    if (process.env.LOGME_AUDIT === '1') {
-      LogMe(sampleMethod);
-    }
-
-    if (ts.isVariableDeclaration(node) && ts.isIdentifier(node.name)) {
-      declaredNames.add(node.name.text);
-    }
-
-    if (ts.isFunctionDeclaration(node) && node.name) {
-      declaredNames.add(node.name.text);
-    }
-
-    if (ts.isPropertyAccessExpression(node)) {
-      visitsNode(node.expression);
-      return;
-    }
-
-    if (ts.isPropertyAssignment(node)) {
-      if (ts.isComputedPropertyName(node.name)) {
-        visitsNode(node.name);
-      }
-
-      visitsNode(node.initializer);
-      return;
-    }
-
-    if (ts.isShorthandPropertyAssignment(node)) {
-      referencedNames.add(node.name.text);
-      return;
-    }
-
-    if (ts.isIdentifier(node)) {
-      referencedNames.add(node.text);
-    }
-
-    ts.forEachChild(node, visitsNode);
-  }
-
-  visitsNode(functionNode.body);
+  const declaredNames = collectsDeclaredNames(functionNode);
+  const referencedNames = collectsReferencedIdentifiers(functionNode.body);
 
   const freeIdentifiers = [];
   for (const referencedName of referencedNames) {

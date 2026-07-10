@@ -2,3 +2,4 @@ node_modules/
 report.md
 evidence/runs/*
 !evidence/runs/.gitkeep
+quality/domain-remediation/

@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
+const { checksUnsupportedSlaClaims } = require('./checks-unsupported-sla-claims/checks-unsupported-sla-claims');
 
 const FEATURE_PROOF_SCHEMA_VERSION = 'feature-execution.contract.v1';
 const FEATURE_PROOF_GENERATOR_NAME = 'LogMe feature execution proof';
@@ -1896,52 +1897,6 @@ function projectsFeatureExecutionProofToCsv(proofs) {
   return `${renderedRows.join('\n')}\n`;
 }
 
-function indexesSloEvaluationsById(evaluations) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  const evaluationsById = new Map();
-
-  for (const evaluation of evaluations) {
-    evaluationsById.set(evaluation.sloId, evaluation);
-  }
-
-  return evaluationsById;
-}
-
-function readsSupportingEvaluations(evaluationsById, supportingSloIds) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  const supportingEvaluations = [];
-
-  for (const sloId of supportingSloIds) {
-    supportingEvaluations.push(evaluationsById.get(sloId));
-  }
-
-  return supportingEvaluations;
-}
-
-function detectsUnsupportedSupportingEvaluation(supportingEvaluations) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  if (supportingEvaluations.length === 0) {
-    return true;
-  }
-
-  for (const evaluation of supportingEvaluations) {
-    if (!evaluation || evaluation.status !== 'met') {
-      return true;
-    }
-  }
-
-  return false;
-}
-
 function checksFeatureReportTruthGate(reportContent, proof) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -1995,30 +1950,6 @@ function checksFeatureReportTruthGate(reportContent, proof) {
     verdict: findings.length === 0 ? 'PASS' : 'BLOCKED',
     findings,
   };
-}
-
-function checksUnsupportedSlaClaims(proof, slaClaims = []) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  const evaluationsById = indexesSloEvaluationsById(proof.sloEvaluations || []);
-  const findings = [];
-
-  for (const claim of slaClaims) {
-    const supportingEvaluations = readsSupportingEvaluations(evaluationsById, claim.supportingSloIds || []);
-    const hasUnsupportedEvidence = detectsUnsupportedSupportingEvaluation(supportingEvaluations);
-
-    if (hasUnsupportedEvidence) {
-      findings.push({
-        code: 'sla-claim-without-slo-evidence',
-        slaId: claim.slaId,
-        reason: 'the SLA claim is not supported by met SLO evidence in the canonical proof',
-      });
-    }
-  }
-
-  return findings;
 }
 
 module.exports = {

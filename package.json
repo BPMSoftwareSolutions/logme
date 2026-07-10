@@ -16,6 +16,7 @@
     "remediation:verify-packet": "node scripts/verify-remediation-packet.js",
     "remediation:promote-body-contract": "node scripts/promote-body-contract.js",
     "remediation:promote-package-extraction": "node scripts/promote-package-extraction.js",
+    "remediation:promote-decomposition": "node scripts/promote-decomposition.js",
     "test": "node --test tests/"
   },
   "dependencies": {
