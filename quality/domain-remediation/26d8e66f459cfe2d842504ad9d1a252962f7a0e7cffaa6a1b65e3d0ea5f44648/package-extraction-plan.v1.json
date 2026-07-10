@@ -1,0 +1,802 @@
+{
+  "schemaVersion": "package-extraction-plan.report.v1",
+  "sourceRunId": "26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648",
+  "evidencePath": "quality/domain-remediation/26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648/package-extraction-plan.v1.json",
+  "reportPath": "quality/domain-remediation/26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648/package-extraction-plan.report.md",
+  "sourceArtifacts": {
+    "domainSprawlContractPath": "evidence/runs/26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648/sprawl/domain-body-sprawl.contract.v1.json"
+  },
+  "summary": {
+    "totalCandidates": 68,
+    "resolvedSections": 27,
+    "unresolvedSections": 41
+  },
+  "sections": [
+    {
+      "filePath": "src/blocks-path-only-body-contracts/blocks-path-only-body-contracts.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/blocks-unsupported-scenario-tieouts/blocks-unsupported-scenario-tieouts.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/builds-domain-body-analysis-contract/builds-domain-body-analysis-contract.js",
+      "classification": "new package",
+      "targetPackage": "logme-string-primitives",
+      "extractedMethodNames": [
+        "formatsAcceptancePaths",
+        "formatsRepoRelativePath",
+        "normalizesVerbToken"
+      ],
+      "domainCallSiteGuidance": "Domain call sites should replace direct calls with `LogmeStringPrimitives.formatsAcceptancePaths(...)`, `LogmeStringPrimitives.formatsRepoRelativePath(...)`, and `LogmeStringPrimitives.normalizesVerbToken(...)` respectively.",
+      "findingCodes": [],
+      "reasoningNote": "The methods 'formatsAcceptancePaths', 'formatsRepoRelativePath', and 'normalizesVerbToken' perform generic string formatting, path formatting, and string normalization, which are reusable utilities not specific to the current domain or any existing packages. These methods collectively form a cohesive set of string-related primitives. The proposed new package 'logme-string-primitives' aligns with the existing 'logme-' naming convention for utility packages. The methods 'readsOwnedRuntimePaths' and 'isOwnedByRuntimePath' were associated with 'timestamp arithmetic' but their names indicate path-related logic, not timestamp operations, making the extraction for 'timestamp arithmetic' unclear. Similarly, 'filtersExecutableSourceFiles' was associated with 'table formatting' but its name suggests file system filtering, not table formatting. Therefore, extraction for the latter two mechanic candidates is rejected due to a mismatch between the mechanic description and the provided method names."
+    },
+    {
+      "filePath": "src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract.js",
+      "classification": "retained domain body",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": "The methods normalizesSprawlThresholds and comparesSprawlHotspots will remain within the current domain body, with call sites unchanged.",
+      "findingCodes": [],
+      "reasoningNote": "Both normalizesSprawlThresholds and comparesSprawlHotspots incorporate domain-specific terms in their names ('SprawlThresholds', 'SprawlHotspots'), indicating they operate on domain-specific data structures or concepts, making them specific implementations rather than generic utilities. Therefore, they should be retained in the domain body."
+    },
+    {
+      "filePath": "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+      "classification": "new package",
+      "targetPackage": "logme-common-primitives",
+      "extractedMethodNames": [
+        "lowercasesPathPart",
+        "lowercasesWord",
+        "getRelativePathParts"
+      ],
+      "domainCallSiteGuidance": "Call sites should import and use these methods from the new 'logme-common-primitives' package, for example, `logmeCommonPrimitives.lowercasesPathPart(...)` or `logmeCommonPrimitives.getRelativePathParts(...)`.",
+      "findingCodes": [],
+      "reasoningNote": "The methods 'lowercasesPathPart' and 'lowercasesWord' provide generic string formatting utilities, while 'getRelativePathParts' offers generic path manipulation. None of these functionalities are specific to the domain body, nor do they fit into any of the existing specialized 'logme' primitive packages. They are reusable and broadly applicable, justifying extraction into a new 'logme-common-primitives' package."
+    },
+    {
+      "filePath": "src/calls-contract-steward-worker/calls-contract-steward-worker.js",
+      "classification": "retained domain body",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "worker returned an empty domainCallSiteGuidance"
+    },
+    {
+      "filePath": "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+      "classification": "retained domain body",
+      "targetPackage": null,
+      "extractedMethodNames": [
+        "buildsLlmHarnessOutputResponseSchema"
+      ],
+      "domainCallSiteGuidance": "The method builds the specific LLM harness output response schema and should remain within the calls-llm-harness-worker domain.",
+      "findingCodes": [],
+      "reasoningNote": "The method name 'buildsLlmHarnessOutputResponseSchema' clearly indicates it constructs a schema specific to the LLM harness output, making it domain-specific to the 'calls-llm-harness-worker' context rather than a generic schema-agnostic JSON writing utility."
+    },
+    {
+      "filePath": "src/calls-naming-decomposition-worker/calls-naming-decomposition-worker.js",
+      "classification": "retained domain body",
+      "targetPackage": null,
+      "extractedMethodNames": [
+        "buildsNamingDecompositionResponseSchema"
+      ],
+      "domainCallSiteGuidance": "Calls to buildsNamingDecompositionResponseSchema remain within the calls-naming-decomposition-worker domain logic.",
+      "findingCodes": [],
+      "reasoningNote": "The method 'buildsNamingDecompositionResponseSchema' is named with direct reference to a 'NamingDecompositionResponseSchema', which is highly specific to the 'calls-naming-decomposition-worker' domain. Although the underlying mechanic is described as 'schema-agnostic JSON writing', the method's specific purpose of building a domain-specific response schema indicates it is not a generic, reusable primitive suitable for extraction."
+    },
+    {
+      "filePath": "src/calls-package-extraction-worker/calls-package-extraction-worker.js",
+      "classification": "retained domain body",
+      "targetPackage": null,
+      "extractedMethodNames": [
+        "buildsPackageExtractionResponseSchema"
+      ],
+      "domainCallSiteGuidance": "The method buildsPackageExtractionResponseSchema should remain within the package extraction worker's domain body as it defines the output schema for this specific worker's response.",
+      "findingCodes": [],
+      "reasoningNote": "The method `buildsPackageExtractionResponseSchema` explicitly creates the schema for the 'PackageExtractionResponse'. This direct naming convention indicates a tight coupling to the specific domain of the package extraction worker, defining the structure of its own output, rather than a generic, reusable schema-building utility applicable across different domains."
+    },
+    {
+      "filePath": "src/calls-scenario-tieout-worker/calls-scenario-tieout-worker.js",
+      "classification": "retained domain body",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": "No change required, the method remains in the calls-scenario-tieout-worker domain file.",
+      "findingCodes": [],
+      "reasoningNote": "The method 'buildsScenarioTieOutResponseSchema' is specifically responsible for constructing the schema for a 'Scenario Tie Out Response'. Despite the mechanic's description as 'schema-agnostic JSON writing', the method name and its implied purpose are highly domain-specific to scenario tie-out operations, making it unsuitable for extraction into a generic package."
+    },
+    {
+      "filePath": "src/challenges-worker-proposal/challenges-worker-proposal.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/detects-domain-language-impurity/detects-anonymous-local-methods.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/detects-domain-language-impurity/detects-forbidden-local-utility-paths.js",
+      "classification": "new package",
+      "targetPackage": "logme-path-primitives",
+      "extractedMethodNames": [
+        "lowercasesPathPart",
+        "getRelativePathParts"
+      ],
+      "domainCallSiteGuidance": "Domain call sites should import PathPrimitives and use PathPrimitives.lowercasesPathPart(...) and PathPrimitives.getRelativePathParts(...).",
+      "findingCodes": [],
+      "reasoningNote": "The methods `lowercasesPathPart` and `getRelativePathParts` are generic utility functions for path string manipulation and decomposition. They do not fit into any existing specialized `logme-...-primitives` package (e.g., config, LLM, method inventory, report, source body, testimony core) but are clearly reusable across different domains, warranting a new dedicated primitives package for general path operations."
+    },
+    {
+      "filePath": "src/detects-domain-language-impurity/detects-out-of-vocabulary-local-methods.js",
+      "classification": "new package",
+      "targetPackage": "logme-string-primitives",
+      "extractedMethodNames": [
+        "lowercasesWord"
+      ],
+      "domainCallSiteGuidance": "Change direct calls to 'lowercasesWord(...)' to 'stringPrimitives.lowercasesWord(...)'.",
+      "findingCodes": [],
+      "reasoningNote": "The method 'lowercasesWord' performs a generic string formatting operation (lowercasing) that is highly reusable and not specific to any existing primitive package. It is a fundamental string utility, warranting a new dedicated 'string primitives' package for common text manipulations."
+    },
+    {
+      "filePath": "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+      "classification": "new package",
+      "targetPackage": "logme-path-primitives",
+      "extractedMethodNames": [
+        "formatsRepoRelativePath"
+      ],
+      "domainCallSiteGuidance": "Call sites currently using `formatsRepoRelativePath(path)` would be updated to use `pathPrimitives.formatRepoRelative(path)`.",
+      "findingCodes": [],
+      "reasoningNote": "The `formatsRepoRelativePath` method performs generic string and path formatting, a reusable utility that does not fit into any of the existing domain-specific `logme-*primitives` packages. Establishing `logme-path-primitives` will centralize path manipulation logic, promoting reuse and modularity across the codebase."
+    },
+    {
+      "filePath": "src/feature-execution-proof/feature-execution-proof.js",
+      "classification": "existing package",
+      "targetPackage": "logme-report-primitives",
+      "extractedMethodNames": [
+        "formatsSourceLineRange",
+        "formatsValue",
+        "formatsProofPathForReport",
+        "rendersScenarioMethodTimelineTable",
+        "rendersScenarioTimingTable"
+      ],
+      "domainCallSiteGuidance": "The methods involved in formatting and rendering related to reports indicate that they fit well into the 'logme-report-primitives' package, which is designed for handling report-related functionalities.",
+      "findingCodes": [],
+      "reasoningNote": "The identified methods focus on formatting and rendering aspects that align with report generation, suggesting they should be part of existing reporting primitives."
+    },
+    {
+      "filePath": "src/feature-quality-board/feature-quality-board.js",
+      "classification": "new package",
+      "targetPackage": "logme-board-formatting-primitives",
+      "extractedMethodNames": [
+        "buildsBoardRows",
+        "buildsBoardRow",
+        "sortsBoardRowsByProductUrgency",
+        "rendersBoardRows"
+      ],
+      "domainCallSiteGuidance": "Methods related to formatting and rendering board rows are likely to be used across various domains and should be considered for extraction into a dedicated packaging for board formatting utilities.",
+      "findingCodes": [],
+      "reasoningNote": "The methods related to table formatting (buildsBoardRows, buildsBoardRow, etc.) are generic mechanics that can be reused in other contexts outside of this specific domain, justifying the creation of a new package."
+    },
+    {
+      "filePath": "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+      "classification": "new package",
+      "targetPackage": "logme-formatting-primitives",
+      "extractedMethodNames": [
+        "formatsRepoRelativePath",
+        "formatsRuntimePath",
+        "formatsFirstValue",
+        "formatsRuntimeStep",
+        "formatsReceiptValue",
+        "formatsNodeStatus",
+        "formatsBlockerValue",
+        "formatsFixRoute",
+        "formatsMethodSource"
+      ],
+      "domainCallSiteGuidance": "These formatting methods are generic and could be reused across different features and domains, making them ideal candidates for a dedicated formatting-related package.",
+      "findingCodes": [],
+      "reasoningNote": "The methods listed perform various formatting tasks that are not domain-specific and could benefit multiple areas, thereby justifying the creation of a new package."
+    },
+    {
+      "filePath": "src/inventories-executable-domain-methods/inventories-executable-domain-methods.js",
+      "classification": "retained domain body",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": "No extraction is proposed; call sites for 'inventoriesExecutableDomainMethods' should remain unchanged within the domain body.",
+      "findingCodes": [],
+      "reasoningNote": "The method 'inventoriesExecutableDomainMethods' is identified as the implementation for the 'table formatting' mechanic. Its name, and the context of the file path (src/inventories-executable-domain-methods/inventories-executable-domain-methods.js), strongly suggest that this table formatting logic is specialized for inventories of executable domain methods, making it domain-specific rather than a generic, reusable utility. Therefore, it should be retained within its current domain body."
+    },
+    {
+      "filePath": "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+      "classification": "new package",
+      "targetPackage": "logme-path-primitives",
+      "extractedMethodNames": [
+        "formatsRepoRelativePath",
+        "readsFormattedRequiredReportPaths",
+        "normalizesPathForComparison"
+      ],
+      "domainCallSiteGuidance": "Calls to path formatting, slugging, and normalization utilities should be routed to the new PathPrimitives package.",
+      "findingCodes": [],
+      "reasoningNote": "The identified mechanics related to path formatting, slugging, and normalization are generic and reusable across different contexts involving file paths. They do not fit into any existing specialized 'logme' primitive packages which focus on specific data types or system aspects. Creating a dedicated 'logme-path-primitives' package will centralize path manipulation utilities, improving reusability and separation of concerns."
+    },
+    {
+      "filePath": "src/loads-report-layout-contract/loads-report-layout-contract.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/loads-workspace-observability-config/loads-workspace-observability-config.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/maps-domain-body-responsibilities/maps-domain-body-responsibilities.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/materializes-approved-harness/materializes-approved-harness.js",
+      "classification": "existing package",
+      "targetPackage": "logme-method-inventory-primitives",
+      "extractedMethodNames": [
+        "isStringStep"
+      ],
+      "domainCallSiteGuidance": "The function `isStringStep` applies to validating and formatting string inputs, which aligns with the purposes of existing methods in `logme-method-inventory-primitives`. This package handles general-purpose method functionalities that deal with validations and transformations, making it suitable for the extraction of generic mechanics like string formatting.",
+      "findingCodes": [],
+      "reasoningNote": "The method `isStringStep` serves a generic function related to string validation and formatting, which is relevant to the utilities typically found in `logme-method-inventory-primitives`. Since it does not align specifically with business logic nor is it domain-specific, it qualifies for existing package classification."
+    },
+    {
+      "filePath": "src/parses-llm-harness-output/parses-llm-harness-output.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+      "classification": "existing package",
+      "targetPackage": "logme-report-primitives",
+      "extractedMethodNames": [
+        "rendersExecutableBodyTree",
+        "rendersExecutableBodyTreeArtifact",
+        "rendersExecutableBodyContractReport",
+        "buildsFeatureEvidenceIndexRow",
+        "buildsNotExecutedFeatureEvidenceIndexRow"
+      ],
+      "domainCallSiteGuidance": "After extraction, domain call sites for report rendering will delegate to methods within 'logme-report-primitives', e.g., 'reportPrimitives.renderExecutableBodyTree(...)'.",
+      "findingCodes": [],
+      "reasoningNote": "The listed methods are responsible for formatting and rendering structured reports, specifically trees and tables for feature evidence, which aligns directly with the purpose of the 'logme-report-primitives' package."
+    },
+    {
+      "filePath": "src/plans-remediation-backlog/plans-remediation-backlog.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/promotes-body-contract-patch/promotes-body-contract-patch.js",
+      "classification": "existing package",
+      "targetPackage": "logme-report-primitives",
+      "extractedMethodNames": [
+        "selectsPromotableEntries"
+      ],
+      "domainCallSiteGuidance": "The domain body would invoke the reporting package's primitive to select entries, for example: 'reportPrimitives.selectPromotableEntries(data)'",
+      "findingCodes": [],
+      "reasoningNote": "The method 'selectsPromotableEntries' directly aligns with the 'table formatting' mechanic, as it implies selecting specific data for presentation. This is a fundamental operation for report generation and fits perfectly within the 'logme-report-primitives' package."
+    },
+    {
+      "filePath": "src/proposes-body-contract-patch/proposes-body-contract-patch.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/proposes-decomposition-plan/proposes-decomposition-plan.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/proposes-next-harness/proposes-next-harness.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/proposes-package-extraction-plan/proposes-package-extraction-plan.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/proposes-rename-plan/proposes-rename-plan.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/proposes-scenario-tieout/proposes-scenario-tieout.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
+      "classification": "new package",
+      "targetPackage": "logme-string-formatting-primitives",
+      "extractedMethodNames": [
+        "formatsLayoutFindingAsText"
+      ],
+      "domainCallSiteGuidance": "This formatting method can be used in other areas where string formatting is required, making it reusable across different reports and contexts.",
+      "findingCodes": [],
+      "reasoningNote": "The method 'formatsLayoutFindingAsText' is generic and reusable for string formatting, which does not fit any existing package, justifying the proposal of a new package."
+    },
+    {
+      "filePath": "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+      "classification": "new package",
+      "targetPackage": "logme-formatting",
+      "extractedMethodNames": [
+        "formatsBlockerFixRoute",
+        "formatsBlockerLine",
+        "formatsLawAsMarkdown",
+        "formatsSprawlHotspotRow",
+        "formatsDomainAnalysisFindingRow"
+      ],
+      "domainCallSiteGuidance": "Domain call sites should delegate text and row formatting responsibilities to the new logme-formatting package, for example: 'Formatting.formatsBlockerFixRoute(...)'",
+      "findingCodes": [],
+      "reasoningNote": "The methods formatsBlockerFixRoute, formatsBlockerLine, formatsLawAsMarkdown, formatsSprawlHotspotRow, and formatsDomainAnalysisFindingRow are generic text and table row formatting utilities. They are reusable across different domains and do not fit within the scope of existing 'primitives' packages, which seem to handle foundational data structures or operations rather than presentation formatting. A new dedicated package for formatting will improve modularity and reusability."
+    },
+    {
+      "filePath": "src/report-provenance/report-provenance.js",
+      "classification": "new package",
+      "targetPackage": "logme-string-formatting-primitives",
+      "extractedMethodNames": [
+        "stableStringify",
+        "stringifiesStableValue",
+        "stringifiesObjectEntry",
+        "formatsCommandLine",
+        "formatsCommandLineSegment",
+        "trimsProvenanceLine"
+      ],
+      "domainCallSiteGuidance": "Domain call sites like formatsCommandLine(args) would become StringFormatting.formatsCommandLine(args), leveraging the new StringFormatting package.",
+      "findingCodes": [],
+      "reasoningNote": "The identified methods provide generic string formatting and stable stringification capabilities that are reusable across different parts of the system. They are not domain-specific to 'report-provenance' and do not fit into any of the existing package definitions, warranting a new dedicated package for string and formatting primitives."
+    },
+    {
+      "filePath": "src/report-truth/report-truth.js",
+      "classification": "new package",
+      "targetPackage": "logme-markdown-table-primitives",
+      "extractedMethodNames": [
+        "readsMarkdownMethodTable",
+        "isMarkdownTableRow",
+        "isMarkdownHeaderRow",
+        "isMarkdownSeparatorRow",
+        "splitsMarkdownTableRow"
+      ],
+      "domainCallSiteGuidance": "Domain call sites should now invoke methods from the new 'MarkdownTablePrimitives' package, for example, `MarkdownTablePrimitives.readsMarkdownMethodTable(...)` and `MarkdownTablePrimitives.isMarkdownTableRow(...)`.",
+      "findingCodes": [],
+      "reasoningNote": "The methods pertaining to Markdown table parsing (readsMarkdownMethodTable, isMarkdownTableRow, isMarkdownHeaderRow, isMarkdownSeparatorRow, splitsMarkdownTableRow) offer generic and reusable functionality for interpreting and manipulating Markdown table structures. This mechanic does not align with any of the existing packages. The method 'validatesSummaryToRowConsistency' is excluded from this extraction due to its domain-specific name ('SummaryToRowConsistency') and should be retained within the domain body."
+    },
+    {
+      "filePath": "src/runs-adversarial-review-worker/runs-adversarial-review-worker.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-body-contract-promotion/runs-body-contract-promotion.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-contract-steward-worker/runs-contract-steward-worker.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-domain-cartographer/runs-domain-cartographer.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-generated-harness/runs-generated-harness.js",
+      "classification": "new package",
+      "targetPackage": "logme-timing-primitives",
+      "extractedMethodNames": [
+        "detectsTimeout"
+      ],
+      "domainCallSiteGuidance": "Replace `detectsTimeout(...)` with `timingPrimitives.detectsTimeout(...)` to explicitly use the new timing utility package.",
+      "findingCodes": [],
+      "reasoningNote": "The `detectsTimeout` method implements generic timestamp arithmetic logic to check for timeouts. This is a reusable utility that does not align with the specific purviews of existing primitive packages. A new `logme-timing-primitives` package is proposed to house such generic timing utilities."
+    },
+    {
+      "filePath": "src/runs-naming-decomposition-worker/runs-naming-decomposition-worker.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-package-extraction-worker/runs-package-extraction-worker.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-remediation-planner/runs-remediation-planner.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-report-truth-gate/runs-report-truth-gate.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-scenario-tieout-worker/runs-scenario-tieout-worker.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/runs-verification-worker/runs-verification-worker.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/validates-generated-harness/validates-generated-harness.js",
+      "classification": "new package",
+      "targetPackage": "logme-string-primitives",
+      "extractedMethodNames": [
+        "collectsStringValues",
+        "collectsAllDraftStrings"
+      ],
+      "domainCallSiteGuidance": "Replace direct calls to collectsStringValues and collectsAllDraftStrings with calls to the new 'StringPrimitives' package.",
+      "findingCodes": [],
+      "reasoningNote": "The identified methods perform generic string collection and formatting, which are reusable utilities not specific to the 'validates-generated-harness' domain or any existing 'logme' primitive package. A new package, 'logme-string-primitives', is proposed to encapsulate these common string-related operations."
+    },
+    {
+      "filePath": "src/validates-report-contract/validates-report-contract.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "worker returned an empty domainCallSiteGuidance"
+    },
+    {
+      "filePath": "src/validates-report-layout-contract/validates-report-layout-contract.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/verifies-generated-harness/verifies-generated-harness.js",
+      "classification": "new package",
+      "targetPackage": "logme-string-primitives",
+      "extractedMethodNames": [
+        "collectsStringValues"
+      ],
+      "domainCallSiteGuidance": "Use the new string primitive for collecting string values from various inputs.",
+      "findingCodes": [],
+      "reasoningNote": "The 'collectsStringValues' method offers generic string formatting and collection capabilities that are reusable across different domain contexts and do not align with the specialized functions of any existing primitive package."
+    },
+    {
+      "filePath": "src/verifies-remediation-packet/verifies-remediation-packet.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-adversarial-review-evidence/writes-adversarial-review-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-body-contract-patch-evidence/writes-body-contract-patch-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-decomposition-plan-evidence/writes-decomposition-plan-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-domain-body-analysis-evidence/writes-domain-body-analysis-evidence.js",
+      "classification": "product-owner review required",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "worker returned an empty domainCallSiteGuidance"
+    },
+    {
+      "filePath": "src/writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence.js",
+      "classification": "existing package",
+      "targetPackage": "logme-report-primitives",
+      "extractedMethodNames": [
+        "formatsMarkdownCell",
+        "rendersDomainBodySprawlHotspotTable",
+        "rendersRankedHotspotRows",
+        "rendersHotspotRowsTable"
+      ],
+      "domainCallSiteGuidance": "The domain body's report generation logic should now delegate string and table formatting tasks to the corresponding methods in the 'logme-report-primitives' package. For example, instead of direct formatting, it should invoke `reportPrimitives.formatsMarkdownCell(cellContent)` or `reportPrimitives.rendersHotspotRowsTable(dataRows)`.",
+      "findingCodes": [],
+      "reasoningNote": "The identified methods perform generic string formatting (markdown cells) and table rendering, which are core primitives for constructing reports. These responsibilities align directly with the purpose of the 'logme-report-primitives' package, making it the most suitable home for these reusable mechanics."
+    },
+    {
+      "filePath": "src/writes-domain-map-evidence/writes-domain-map-evidence.js",
+      "classification": "existing package",
+      "targetPackage": "logme-report-primitives",
+      "extractedMethodNames": [
+        "formatsMarkdownCell",
+        "rendersFileInventoryTable"
+      ],
+      "domainCallSiteGuidance": "Call the new functions from the logme-report-primitives package to format markdown cells and render file inventory tables.",
+      "findingCodes": [],
+      "reasoningNote": "Both `formatsMarkdownCell` and `rendersFileInventoryTable` are generic formatting and rendering utilities that are highly reusable in the context of generating reports. The `logme-report-primitives` package is the most suitable existing package for these functionalities."
+    },
+    {
+      "filePath": "src/writes-harness-receipt/writes-harness-receipt.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-package-extraction-plan-evidence/writes-package-extraction-plan-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-remediation-backlog-evidence/writes-remediation-backlog-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-rename-plan-evidence/writes-rename-plan-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-scenario-tieout-evidence/writes-scenario-tieout-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    },
+    {
+      "filePath": "src/writes-verification-report-evidence/writes-verification-report-evidence.js",
+      "classification": "rejected extraction",
+      "targetPackage": null,
+      "extractedMethodNames": [],
+      "domainCallSiteGuidance": null,
+      "findingCodes": [
+        "package-extraction-ungrounded"
+      ],
+      "reasoningNote": "no generic mechanic candidate for this file cites a real method name; the sprawl pattern match is unsupported and cannot justify an extraction"
+    }
+  ]
+}

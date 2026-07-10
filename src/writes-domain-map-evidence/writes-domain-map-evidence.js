@@ -2,6 +2,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
+const { formatsMarkdownCell } = require('../../packages/logme-report-primitives/src/formats-markdown-cell');
 
 function writesDomainMapEvidence(config, domainMap) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -115,14 +116,6 @@ function rendersFileInventoryTable(fileEntries) {
   }
 
   return rows.join('\n');
-}
-
-function formatsMarkdownCell(value) {
-  if (process.env.LOGME_AUDIT === '1') {
-    LogMe(sampleMethod);
-  }
-
-  return String(value).replace(/\|/gu, '\\|').replace(/\r?\n/gu, ' ');
 }
 
 module.exports = {

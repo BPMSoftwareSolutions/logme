@@ -74,7 +74,13 @@
         "classify",
         "trace",
         "recommend",
-        "resolve"
+        "resolve",
+        "read",
+        "normalize",
+        "exclude",
+        "filter",
+        "walk",
+        "lowercase"
       ],
       "forbiddenMethodNames": [
         "arrow-function",

@@ -1,0 +1,1321 @@
+{
+  "schemaVersion": "domain-map.proposal.v1",
+  "sourceRunId": "26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648",
+  "evidencePath": "quality/domain-remediation/26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648/domain-map.proposal.v1.json",
+  "reportPath": "quality/domain-remediation/26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648/domain-map.report.md",
+  "sourceArtifacts": {
+    "domainAnalysisContractPath": "evidence/runs/26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648/domain-analysis/domain-body-analysis.contract.v1.json",
+    "domainSprawlContractPath": "evidence/runs/26d8e66f459cfe2d842504ad9d1a252962f7a0e7cffaa6a1b65e3d0ea5f44648/sprawl/domain-body-sprawl.contract.v1.json"
+  },
+  "summary": {
+    "totalFilesMapped": 102,
+    "classificationCounts": {
+      "product-domain body": 5,
+      "package primitive": 22,
+      "generated evidence": 0,
+      "test body": 0,
+      "scaffold or entrypoint": 6,
+      "ambiguous": 69
+    },
+    "ambiguousFileCount": 69,
+    "ambiguousFilePaths": [
+      "src/blocks-path-only-body-contracts/blocks-path-only-body-contracts.js",
+      "src/blocks-unsupported-scenario-tieouts/blocks-unsupported-scenario-tieouts.js",
+      "src/builds-domain-body-analysis-contract/builds-domain-body-analysis-contract.js",
+      "src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract.js",
+      "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+      "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+      "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+      "src/calls-contract-steward-worker/calls-contract-steward-worker.js",
+      "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+      "src/calls-naming-decomposition-worker/calls-naming-decomposition-worker.js",
+      "src/calls-package-extraction-worker/calls-package-extraction-worker.js",
+      "src/calls-scenario-tieout-worker/calls-scenario-tieout-worker.js",
+      "src/challenges-worker-proposal/challenges-worker-proposal.js",
+      "src/detects-domain-language-impurity/detects-anonymous-local-methods.js",
+      "src/detects-domain-language-impurity/detects-forbidden-local-utility-paths.js",
+      "src/detects-domain-language-impurity/detects-out-of-vocabulary-local-methods.js",
+      "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+      "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+      "src/feature-execution-proof/feature-execution-proof.js",
+      "src/feature-quality-board/feature-quality-board.js",
+      "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+      "src/inventories-executable-domain-methods/inventories-executable-domain-methods.js",
+      "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+      "src/loads-report-layout-contract/loads-report-layout-contract.js",
+      "src/loads-workspace-observability-config/loads-workspace-observability-config.js",
+      "src/maps-domain-body-responsibilities/maps-domain-body-responsibilities.js",
+      "src/materializes-approved-harness/materializes-approved-harness.js",
+      "src/parses-llm-harness-output/parses-llm-harness-output.js",
+      "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+      "src/plans-remediation-backlog/plans-remediation-backlog.js",
+      "src/promotes-body-contract-patch/promotes-body-contract-patch.js",
+      "src/proposes-body-contract-patch/proposes-body-contract-patch.js",
+      "src/proposes-decomposition-plan/proposes-decomposition-plan.js",
+      "src/proposes-next-harness/proposes-next-harness.js",
+      "src/proposes-package-extraction-plan/proposes-package-extraction-plan.js",
+      "src/proposes-rename-plan/proposes-rename-plan.js",
+      "src/proposes-scenario-tieout/proposes-scenario-tieout.js",
+      "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
+      "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+      "src/report-provenance/report-provenance.js",
+      "src/report-truth/report-truth.js",
+      "src/runs-adversarial-review-worker/runs-adversarial-review-worker.js",
+      "src/runs-body-contract-promotion/runs-body-contract-promotion.js",
+      "src/runs-contract-steward-worker/runs-contract-steward-worker.js",
+      "src/runs-domain-cartographer/runs-domain-cartographer.js",
+      "src/runs-generated-harness/runs-generated-harness.js",
+      "src/runs-naming-decomposition-worker/runs-naming-decomposition-worker.js",
+      "src/runs-package-extraction-worker/runs-package-extraction-worker.js",
+      "src/runs-remediation-planner/runs-remediation-planner.js",
+      "src/runs-report-truth-gate/runs-report-truth-gate.js",
+      "src/runs-scenario-tieout-worker/runs-scenario-tieout-worker.js",
+      "src/runs-verification-worker/runs-verification-worker.js",
+      "src/validates-generated-harness/validates-generated-harness.js",
+      "src/validates-report-contract/validates-report-contract.js",
+      "src/validates-report-layout-contract/validates-report-layout-contract.js",
+      "src/verifies-generated-harness/verifies-generated-harness.js",
+      "src/verifies-remediation-packet/verifies-remediation-packet.js",
+      "src/writes-adversarial-review-evidence/writes-adversarial-review-evidence.js",
+      "src/writes-body-contract-patch-evidence/writes-body-contract-patch-evidence.js",
+      "src/writes-decomposition-plan-evidence/writes-decomposition-plan-evidence.js",
+      "src/writes-domain-body-analysis-evidence/writes-domain-body-analysis-evidence.js",
+      "src/writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence.js",
+      "src/writes-domain-map-evidence/writes-domain-map-evidence.js",
+      "src/writes-harness-receipt/writes-harness-receipt.js",
+      "src/writes-package-extraction-plan-evidence/writes-package-extraction-plan-evidence.js",
+      "src/writes-remediation-backlog-evidence/writes-remediation-backlog-evidence.js",
+      "src/writes-rename-plan-evidence/writes-rename-plan-evidence.js",
+      "src/writes-scenario-tieout-evidence/writes-scenario-tieout-evidence.js",
+      "src/writes-verification-report-evidence/writes-verification-report-evidence.js"
+    ]
+  },
+  "fileEntries": [
+    {
+      "filePath": "packages/logme-config-primitives/src/lowercases-string-list.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "lowercase",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-config-primitives/src/normalizes-config-string-array.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "normalize",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-config-primitives/src/reads-json-config-file.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "read",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-config-primitives/src/resolves-configured-root-path.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "resolve",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-llm-provider-primitives/src/calls-openai-chat-completion.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-method-inventory-primitives/src/detects-logme-call-in-node.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-method-inventory-primitives/src/extracts-executable-method-nodes.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-method-inventory-primitives/src/parses-javascript-typescript-source.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-method-inventory-primitives/src/resolves-method-kind.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "resolve",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-method-inventory-primitives/src/resolves-method-name.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "resolve",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-report-primitives/src/parses-execution-sketch-template.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "parse",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-report-primitives/src/renders-ascii-execution-flow.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "resolve",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-report-primitives/src/renders-ascii-tree.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "render",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-report-primitives/src/renders-markdown-summary.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "render",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-report-primitives/src/renders-markdown-table.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "render",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-source-body-primitives/src/excludes-configured-directories.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "exclude",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-source-body-primitives/src/filters-source-files-by-extension.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "filter",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-source-body-primitives/src/walks-configured-source-files.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "walk",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-testimony-core/src/LogMe.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-testimony-core/src/sample-method.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "packages/logme-testimony-core/src/writes-domain-receipt.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "packages/logme-testimony-core/src/writes-telemetry-event.js",
+      "classification": "package primitive",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is under packages/ and is a reusable mechanic, not a domain body",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "scaffold.js",
+      "classification": "scaffold or entrypoint",
+      "primaryBodyResponsibility": "read",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is outside src/ and functions as a scaffold or workspace entrypoint",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "scripts/contract-steward.js",
+      "classification": "scaffold or entrypoint",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is outside src/ and functions as a scaffold or workspace entrypoint",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "scripts/naming-decomposition.js",
+      "classification": "scaffold or entrypoint",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is outside src/ and functions as a scaffold or workspace entrypoint",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "scripts/package-extraction.js",
+      "classification": "scaffold or entrypoint",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is outside src/ and functions as a scaffold or workspace entrypoint",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "scripts/promote-body-contract.js",
+      "classification": "scaffold or entrypoint",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is outside src/ and functions as a scaffold or workspace entrypoint",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "scripts/scenario-tieout.js",
+      "classification": "scaffold or entrypoint",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file path is outside src/ and functions as a scaffold or workspace entrypoint",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/blocks-path-only-body-contracts/blocks-path-only-body-contracts.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/blocks-unsupported-scenario-tieouts/blocks-unsupported-scenario-tieouts.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/builds-domain-body-analysis-contract/builds-domain-body-analysis-contract.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/builds-domain-body-sterility-contract/builds-domain-body-sterility-contract.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "inventory",
+      "hasScenarioTieOut": true,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/builds-domain-body-sterility-findings/builds-domain-body-sterility-findings.js",
+      "classification": "product-domain body",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file is within sprawl responsibility-cluster thresholds and is declared in a file-system body contract",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/builds-llm-harness-assignment/builds-llm-harness-assignment.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/calculates-domain-body-sterility-summary/calculates-domain-body-sterility-summary.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/calls-contract-steward-worker/calls-contract-steward-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/calls-llm-harness-worker/calls-llm-harness-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/calls-naming-decomposition-worker/calls-naming-decomposition-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/calls-package-extraction-worker/calls-package-extraction-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/calls-scenario-tieout-worker/calls-scenario-tieout-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/challenges-worker-proposal/challenges-worker-proposal.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/detects-domain-language-impurity/detects-anonymous-local-methods.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "detect",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/detects-domain-language-impurity/detects-forbidden-local-utility-paths.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/detects-domain-language-impurity/detects-out-of-vocabulary-local-methods.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/detects-method-testimony/detects-method-testimony.js",
+      "classification": "product-domain body",
+      "primaryBodyResponsibility": "detect",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file is within sprawl responsibility-cluster thresholds and is declared in a file-system body contract",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/detects-retired-domain-name-reintroduction/detects-retired-domain-name-reintroduction.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "exclude",
+      "hasScenarioTieOut": true,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/discovers-configured-source-bodies/discovers-configured-source-bodies.js",
+      "classification": "product-domain body",
+      "primaryBodyResponsibility": "discover",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file is within sprawl responsibility-cluster thresholds and is declared in a file-system body contract",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/feature-execution-proof/feature-execution-proof.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/feature-quality-board/feature-quality-board.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/inventories-executable-domain-methods/inventories-executable-domain-methods.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/loads-report-layout-contract/loads-report-layout-contract.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "load",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/loads-workspace-observability-config/loads-workspace-observability-config.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "load",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/maps-domain-body-responsibilities/maps-domain-body-responsibilities.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/materializes-approved-harness/materializes-approved-harness.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file was flagged mixed-responsibility-file by sprawl analysis (5 responsibility clusters) and cannot be assigned one primary body responsibility without product-owner review",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/parses-llm-harness-output/parses-llm-harness-output.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "build",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/plans-remediation-backlog/plans-remediation-backlog.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/promotes-body-contract-patch/promotes-body-contract-patch.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/proposes-body-contract-patch/proposes-body-contract-patch.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "propose",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/proposes-decomposition-plan/proposes-decomposition-plan.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "propose",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/proposes-next-harness/proposes-next-harness.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/proposes-package-extraction-plan/proposes-package-extraction-plan.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "propose",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/proposes-rename-plan/proposes-rename-plan.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "propose",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/proposes-scenario-tieout/proposes-scenario-tieout.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "propose",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/renders-domain-body-sterility-report/renders-domain-body-sterility-report.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "render",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/renders-report-from-layout-contract/renders-report-from-layout-contract.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/report-provenance/report-provenance.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/report-truth/report-truth.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "executable-file-name-missing-action-verb",
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-adversarial-review-worker/runs-adversarial-review-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/runs-body-contract-promotion/runs-body-contract-promotion.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/runs-contract-steward-worker/runs-contract-steward-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-domain-cartographer/runs-domain-cartographer.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-generated-harness/runs-generated-harness.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "detect",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-logme-domain-audit.js",
+      "classification": "product-domain body",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file is within sprawl responsibility-cluster thresholds and is declared in a file-system body contract",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/runs-naming-decomposition-worker/runs-naming-decomposition-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-package-extraction-worker/runs-package-extraction-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-remediation-planner/runs-remediation-planner.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-report-truth-gate/runs-report-truth-gate.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "read",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-scenario-tieout-worker/runs-scenario-tieout-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/runs-verification-worker/runs-verification-worker.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "run",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/validates-generated-harness/validates-generated-harness.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "collect",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/validates-report-contract/validates-report-contract.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "resolve",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/validates-report-layout-contract/validates-report-layout-contract.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/verifies-generated-harness/verifies-generated-harness.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/verifies-remediation-packet/verifies-remediation-packet.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "verify",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-adversarial-review-evidence/writes-adversarial-review-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-body-contract-patch-evidence/writes-body-contract-patch-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/writes-decomposition-plan-evidence/writes-decomposition-plan-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-domain-body-analysis-evidence/writes-domain-body-analysis-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-domain-body-sprawl-evidence/writes-domain-body-sprawl-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-domain-body-sterility-receipt/writes-domain-body-sterility-receipt.js",
+      "classification": "product-domain body",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": false,
+      "classificationReason": "file is within sprawl responsibility-cluster thresholds and is declared in a file-system body contract",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/writes-domain-map-evidence/writes-domain-map-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-harness-receipt/writes-harness-receipt.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "unclear-action",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-package-extraction-plan-evidence/writes-package-extraction-plan-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    },
+    {
+      "filePath": "src/writes-remediation-backlog-evidence/writes-remediation-backlog-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/writes-rename-plan-evidence/writes-rename-plan-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/writes-scenario-tieout-evidence/writes-scenario-tieout-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing"
+      ]
+    },
+    {
+      "filePath": "src/writes-verification-report-evidence/writes-verification-report-evidence.js",
+      "classification": "ambiguous",
+      "primaryBodyResponsibility": "write",
+      "hasScenarioTieOut": false,
+      "waiverClassCandidate": true,
+      "classificationReason": "file contains a package-worthy generic mechanic inside the domain body and needs a product-owner decision on extraction",
+      "findingCodes": [
+        "scenario-tieout-missing",
+        "decomposition-recommended"
+      ]
+    }
+  ]
+}

@@ -42,6 +42,7 @@ async function proposesPackageExtractionPlan(config, sprawlContract, options = {
   return {
     schemaVersion: PACKAGE_EXTRACTION_PLAN_SCHEMA_VERSION,
     sourceRunId: sprawlContract.runId,
+    evidencePath: `quality/domain-remediation/${sprawlContract.runId}/package-extraction-plan.v1.json`,
     reportPath: `quality/domain-remediation/${sprawlContract.runId}/package-extraction-plan.report.md`,
     sourceArtifacts: {
       domainSprawlContractPath: sprawlContract.evidencePath,

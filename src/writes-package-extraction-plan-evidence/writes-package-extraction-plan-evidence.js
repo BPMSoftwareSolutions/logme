@@ -8,14 +8,19 @@ function writesPackageExtractionPlanEvidence(config, packageExtractionPlan) {
     LogMe(sampleMethod);
   }
 
+  const evidencePath = path.join(config.rootDir, packageExtractionPlan.evidencePath);
+  const evidenceContent = `${JSON.stringify(packageExtractionPlan, null, 2)}\n`;
   const reportPath = path.join(config.rootDir, packageExtractionPlan.reportPath);
   const reportContent = rendersPackageExtractionPlanReport(packageExtractionPlan);
 
-  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+  fs.mkdirSync(path.dirname(evidencePath), { recursive: true });
+  fs.writeFileSync(evidencePath, evidenceContent, 'utf8');
   fs.writeFileSync(reportPath, reportContent, 'utf8');
 
   return {
+    evidencePath,
     reportPath,
+    bytesWritten: Buffer.byteLength(evidenceContent, 'utf8'),
     reportBytesWritten: Buffer.byteLength(reportContent, 'utf8'),
     sectionCount: packageExtractionPlan.sections.length,
   };
