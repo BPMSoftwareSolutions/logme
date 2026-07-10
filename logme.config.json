@@ -50,7 +50,17 @@
         "seed",
         "lease",
         "capability",
-        "contract"
+        "contract",
+        "evidence",
+        "retention",
+        "cleanup",
+        "catalog",
+        "digest",
+        "pin",
+        "archive",
+        "approval",
+        "budget",
+        "noise"
       ],
       "verbs": [
         "load",
@@ -80,7 +90,15 @@
         "exclude",
         "filter",
         "walk",
-        "lowercase"
+        "lowercase",
+        "select",
+        "plan",
+        "guard",
+        "approve",
+        "archive",
+        "execute",
+        "gate",
+        "pin"
       ],
       "forbiddenMethodNames": [
         "arrow-function",

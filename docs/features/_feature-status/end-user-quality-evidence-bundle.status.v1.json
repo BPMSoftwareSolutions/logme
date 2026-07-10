@@ -28,7 +28,7 @@
   ],
   "staleReasons": [],
   "blockerCount": 2,
-  "generatedAt": "2026-07-10T17:28:07.006Z",
+  "generatedAt": "2026-07-10T18:49:59.574Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
   "productOwnerSummary": "End-user quality evidence bundle is currently qa-blocked."
