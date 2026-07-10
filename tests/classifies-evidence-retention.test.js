@@ -86,6 +86,15 @@ test('classifiesEvidenceRetention marks a run with no report verdict or report t
   assert.equal(result.classification, RETENTION_CLASSIFICATIONS.UNSAFE_TO_DELETE);
 });
 
+test('classifiesEvidenceRetention respects a custom keep-recent window override', () => {
+  const run = buildsRun({ lastModifiedAt: '2026-07-09T00:00:00.000Z' });
+  const referenceContext = buildsReferenceContext({ keepRecentWindowMilliseconds: 0 });
+
+  const result = classifiesEvidenceRetention(run, referenceContext);
+
+  assert.equal(result.classification, RETENTION_CLASSIFICATIONS.ARCHIVE_CANDIDATE);
+});
+
 test('classifiesEvidenceRetention prioritizes pinned over other protecting references', () => {
   const run = buildsRun();
   const referenceContext = buildsReferenceContext({

@@ -6,6 +6,7 @@ const os = require('node:os');
 
 const {
   writesEvidenceCleanupApproval,
+  writesArchivePurgeApproval,
   approvesEvidenceCleanup,
   MISSING_APPROVAL_FINDING,
   PLAN_HASH_MISMATCH_FINDING,
@@ -62,6 +63,25 @@ test('writesEvidenceCleanupApproval writes an approval record with the required 
     assert.equal(approval.approvedBy, 'po@example.com');
     assert.ok(approval.approvedAt);
     assert.deepEqual(approval.approvedActions, ['archive', 'delete']);
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('writesArchivePurgeApproval writes a distinct approval record for archive purges', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-approval-'));
+
+  try {
+    const { approvalPath, approval } = writesArchivePurgeApproval(tempDir, {
+      approvedBy: 'po@example.com',
+      cleanupPlanPath: 'evidence/cleanup/archive-purge-plan.v1.json',
+      cleanupPlanHash: 'hash-456',
+      approvedActions: ['purge'],
+    });
+
+    assert.match(approvalPath, /archive-purge-approval\.v1\.json$/);
+    assert.equal(approval.approvedBy, 'po@example.com');
+    assert.deepEqual(approval.approvedActions, ['purge']);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }

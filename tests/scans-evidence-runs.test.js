@@ -40,6 +40,61 @@ test('scansEvidenceRuns inventories run metadata without deleting any artifact',
   }
 });
 
+test('scansEvidenceRuns derives a report verdict from a domain analysis contract when no sterility receipt exists', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-scan-'));
+
+  try {
+    writesFile(
+      path.join(tempDir, 'evidence/runs/run-1/domain-analysis/domain-body-analysis.contract.v1.json'),
+      JSON.stringify({ summary: { totalBlockers: 3 } }),
+    );
+
+    const runs = scansEvidenceRuns(tempDir);
+
+    assert.equal(runs[0].reportVerdict, 'domain analysis has 3 blocker(s)');
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('scansEvidenceRuns reports a clean domain analysis verdict when there are no blockers', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-scan-'));
+
+  try {
+    writesFile(
+      path.join(tempDir, 'evidence/runs/run-1/domain-analysis/domain-body-analysis.contract.v1.json'),
+      JSON.stringify({ summary: { totalBlockers: 0 } }),
+    );
+
+    const runs = scansEvidenceRuns(tempDir);
+
+    assert.equal(runs[0].reportVerdict, 'domain analysis clean');
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
+test('scansEvidenceRuns prefers the sterility receipt verdict over the domain analysis verdict when both exist', () => {
+  const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-scan-'));
+
+  try {
+    writesFile(
+      path.join(tempDir, 'evidence/runs/run-1/domain-analysis/domain-body-analysis.contract.v1.json'),
+      JSON.stringify({ summary: { totalBlockers: 3 } }),
+    );
+    writesFile(
+      path.join(tempDir, 'evidence/runs/run-1/domain-body-sterility.receipt.v1.json'),
+      JSON.stringify({ verdict: 'STERILE DOMAIN BODY' }),
+    );
+
+    const runs = scansEvidenceRuns(tempDir);
+
+    assert.equal(runs[0].reportVerdict, 'STERILE DOMAIN BODY');
+  } finally {
+    fs.rmSync(tempDir, { recursive: true, force: true });
+  }
+});
+
 test('scansEvidenceRuns sorts run ids alphabetically', () => {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-scan-'));
 

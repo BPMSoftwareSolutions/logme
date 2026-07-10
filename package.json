@@ -18,6 +18,11 @@
     "remediation:promote-package-extraction": "node scripts/promote-package-extraction.js",
     "remediation:promote-decomposition": "node scripts/promote-decomposition.js",
     "evidence:curate": "node scripts/evidence-curation.js",
+    "evidence:cleanup-approve": "node scripts/evidence-cleanup-approve.js",
+    "evidence:cleanup": "node scripts/evidence-cleanup-execute.js",
+    "evidence:archive-purge-plan": "node scripts/archive-purge-plan.js",
+    "evidence:archive-purge-approve": "node scripts/archive-purge-approve.js",
+    "evidence:archive-purge": "node scripts/archive-purge-execute.js",
     "test": "node --test tests/"
   },
   "dependencies": {

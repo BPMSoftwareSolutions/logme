@@ -159,12 +159,14 @@ function readsReportVerdict(runDir, artifactPaths) {
   }
 
   const receiptPath = artifactPaths.find(isSterilityReceiptPath);
-  if (!receiptPath) {
-    return null;
+  if (receiptPath) {
+    const receipt = readsJsonArtifactSafely(receiptPath);
+    if (receipt && receipt.verdict) {
+      return receipt.verdict;
+    }
   }
 
-  const receipt = readsJsonArtifactSafely(receiptPath);
-  return receipt && receipt.verdict ? receipt.verdict : null;
+  return readsDomainAnalysisVerdict(artifactPaths);
 }
 
 function isSterilityReceiptPath(artifactPath) {
@@ -173,6 +175,32 @@ function isSterilityReceiptPath(artifactPath) {
   }
 
   return artifactPath.endsWith('domain-body-sterility.receipt.v1.json');
+}
+
+function readsDomainAnalysisVerdict(artifactPaths) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const analysisPath = artifactPaths.find(isDomainAnalysisContractPath);
+  if (!analysisPath) {
+    return null;
+  }
+
+  const analysis = readsJsonArtifactSafely(analysisPath);
+  if (!analysis || !analysis.summary || typeof analysis.summary.totalBlockers !== 'number') {
+    return null;
+  }
+
+  return analysis.summary.totalBlockers === 0 ? 'domain analysis clean' : `domain analysis has ${analysis.summary.totalBlockers} blocker(s)`;
+}
+
+function isDomainAnalysisContractPath(artifactPath) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  return artifactPath.endsWith('domain-body-analysis.contract.v1.json');
 }
 
 function readsReportTruthStatus(runDir, artifactPaths) {

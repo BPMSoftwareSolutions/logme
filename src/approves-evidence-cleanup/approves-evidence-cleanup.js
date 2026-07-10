@@ -28,6 +28,27 @@ function writesEvidenceCleanupApproval(rootDir, approval) {
   return { approvalPath, approval: record };
 }
 
+function writesArchivePurgeApproval(rootDir, approval) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const record = {
+    schemaVersion: APPROVAL_SCHEMA_VERSION,
+    approvedBy: approval.approvedBy,
+    approvedAt: approval.approvedAt || new Date().toISOString(),
+    cleanupPlanPath: approval.cleanupPlanPath,
+    cleanupPlanHash: approval.cleanupPlanHash,
+    approvedActions: approval.approvedActions,
+  };
+
+  const approvalPath = path.join(rootDir, 'evidence', 'cleanup', 'archive-purge-approval.v1.json');
+  fs.mkdirSync(path.dirname(approvalPath), { recursive: true });
+  fs.writeFileSync(approvalPath, `${JSON.stringify(record, null, 2)}\n`, 'utf8');
+
+  return { approvalPath, approval: record };
+}
+
 function approvesEvidenceCleanup(approvalRecord, currentPlanHash) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -68,5 +89,6 @@ module.exports = {
   MISSING_APPROVAL_FINDING,
   PLAN_HASH_MISMATCH_FINDING,
   writesEvidenceCleanupApproval,
+  writesArchivePurgeApproval,
   approvesEvidenceCleanup,
 };

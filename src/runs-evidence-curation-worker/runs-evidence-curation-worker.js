@@ -10,12 +10,12 @@ const { detectsNoisyEvidenceRuns } = require('../detects-noisy-evidence-runs/det
 const { selectsLatestMeaningfulEvidence } = require('../selects-latest-meaningful-evidence/selects-latest-meaningful-evidence');
 const { gatesEvidenceSprawlBudget } = require('../gates-evidence-sprawl-budget/gates-evidence-sprawl-budget');
 
-function runsEvidenceCurationWorker(rootDir) {
+function runsEvidenceCurationWorker(rootDir, options = {}) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  const { catalog } = writesEvidenceCatalog(rootDir);
+  const { catalog } = writesEvidenceCatalog(rootDir, { keepRecentWindowMilliseconds: options.keepRecentWindowMilliseconds });
   const { reportPath: latestEvidenceReportPath, selection } = writesLatestEvidenceReport(rootDir, catalog);
   const { index: featureIndex, indexPath: featureIndexPath } = writesFeatureEvidenceIndex(rootDir, catalog);
   const { plan: cleanupPlan, planHash, planPath } = writesEvidenceCleanupPlan(rootDir, catalog);

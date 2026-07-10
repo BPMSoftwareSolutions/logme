@@ -202,8 +202,8 @@ test('renders global feature evidence index as links without embedding full tree
 test('generated run evidence stays ignored by source control defaults', () => {
   const gitignore = readsText(path.join(process.cwd(), '.gitignore'));
 
-  assert.match(gitignore, /evidence\/runs\/\*/);
-  assert.match(gitignore, /!evidence\/runs\/\.gitkeep/);
+  assert.match(gitignore, /evidence\/runs\//);
+  assert.doesNotMatch(gitignore, /!evidence\/runs/);
 });
 
 test('regenerated evidence report uses updated source-controlled template', () => {

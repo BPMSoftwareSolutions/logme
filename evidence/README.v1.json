@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "evidence-directory.readme.v1",
+  "purpose": "This directory is the root of all LogMe evidence: raw per-run output, an archive of superseded runs, a curated product-owner index, and dry-run/approval/receipt artifacts for evidence cleanup.",
+  "gitPolicy": {
+    "evidence/runs/": "fully excluded from version control (.gitignore: evidence/runs/). Raw per-run evidence is bulky, machine-local, and regenerable.",
+    "evidence/archive/": "fully excluded from version control (.gitignore: evidence/archive/). Archived runs moved out of evidence/runs/ by the Cleanup Executor are equally bulky and regenerable.",
+    "evidence/index/": "not excluded. Small, curated JSON/markdown (catalog, latest-evidence report, feature evidence index, PI digests, pins) meant to be reviewed and diffed via git.",
+    "evidence/cleanup/": "not excluded. Cleanup and archive-purge plans, approvals, and receipts -- small artifacts meant to be reviewed and diffed via git.",
+    "thisFile": "evidence/README.v1.json itself lives directly under evidence/ (not inside runs/ or archive/) so it can be tracked without carving a negation exception into an otherwise fully ignored directory."
+  },
+  "reproducibility": "On a fresh clone, evidence/runs/ and evidence/archive/ will not exist. That is expected and requires no setup: every source body that writes into them calls fs.mkdirSync(..., { recursive: true }) before writing, so they are created on first use by npm run report:truth, npm run evidence:curate, or npm run evidence:cleanup. There is no historical run or archive content to restore from git.",
+  "curationSurface": "npm run evidence:curate scans evidence/runs/ and writes a compact index at evidence/index/ so raw run folders do not need to be inspected directly. npm run evidence:archive-purge-plan performs the same role for evidence/archive/, with an approval-gated purge instead of open-ended accumulation.",
+  "relatedContracts": [
+    "contracts/file-system-bodies/02_declared/logme.file-system-body.contract.v1.json"
+  ]
+}

@@ -29,7 +29,7 @@ function classifiesEvidenceRetention(run, referenceContext) {
     return buildsRetentionResult(RETENTION_CLASSIFICATIONS.UNSAFE_TO_DELETE, [], run, 'run has no report verdict or report truth status to reason from');
   }
 
-  if (isWithinKeepRecentWindow(run, referenceContext.now)) {
+  if (isWithinKeepRecentWindow(run, referenceContext.now, referenceContext.keepRecentWindowMilliseconds)) {
     return buildsRetentionResult(RETENTION_CLASSIFICATIONS.KEEP_RECENT, [], run, 'run was modified within the keep-recent window');
   }
 
@@ -113,7 +113,7 @@ function hasReferenceWithClassification(references, classification) {
   return false;
 }
 
-function isWithinKeepRecentWindow(run, now) {
+function isWithinKeepRecentWindow(run, now, keepRecentWindowMilliseconds) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
@@ -122,10 +122,11 @@ function isWithinKeepRecentWindow(run, now) {
     return false;
   }
 
+  const windowMilliseconds = typeof keepRecentWindowMilliseconds === 'number' ? keepRecentWindowMilliseconds : KEEP_RECENT_WINDOW_MILLISECONDS;
   const lastModifiedTime = new Date(run.lastModifiedAt).getTime();
   const nowTime = now instanceof Date ? now.getTime() : new Date(now).getTime();
 
-  return nowTime - lastModifiedTime <= KEEP_RECENT_WINDOW_MILLISECONDS;
+  return nowTime - lastModifiedTime <= windowMilliseconds;
 }
 
 function buildsRetentionResult(classification, references, run, reason) {

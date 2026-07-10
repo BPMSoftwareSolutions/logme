@@ -49,6 +49,7 @@ function buildsReferenceContext(rootDir, overrides) {
     reportTruthReceiptRunIds: overrides.reportTruthReceiptRunIds || new Set(),
     manualPinRunIds: overrides.manualPinRunIds || readsActivePinnedRunIds(rootDir),
     now: overrides.now || new Date(),
+    keepRecentWindowMilliseconds: overrides.keepRecentWindowMilliseconds,
   };
 }
 
