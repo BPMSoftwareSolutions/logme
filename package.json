@@ -10,6 +10,7 @@
     "remediation:cartography": "node scripts/domain-cartography.js",
     "remediation:scenario-tieout": "node scripts/scenario-tieout.js",
     "remediation:contract-steward": "node scripts/contract-steward.js",
+    "remediation:naming-decomposition": "node scripts/naming-decomposition.js",
     "test": "node --test tests/"
   },
   "dependencies": {

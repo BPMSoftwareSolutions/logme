@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "rename-plan.v1",
+  "sourceRunId": "162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd",
+  "evidencePath": "quality/domain-remediation/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/rename-plan.v1.json",
+  "sourceArtifacts": {
+    "domainAnalysisContractPath": "evidence/runs/162db37c732514fdf33a2a30c417802dff3efbfda085f4e8e3d37876d49e04dd/domain-analysis/domain-body-analysis.contract.v1.json"
+  },
+  "summary": {
+    "totalCandidates": 18,
+    "resolvedEntries": 10,
+    "unresolvedEntries": 8
+  },
+  "entries": [
+    {
+      "currentPath": "packages/logme-config-primitives/src/lowercases-string-list.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"packages/logme-config-primitives/src/lowercase.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "packages/logme-config-primitives/src/normalizes-config-string-array.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"packages/logme-config-primitives/src/normalize-config-string-array.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "packages/logme-config-primitives/src/reads-json-config-file.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"packages/logme-config-primitives/src/reads-json-config-file.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "packages/logme-method-inventory-primitives/src/extracts-executable-method-nodes.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "Responsibility cluster count: 2. Methods: isMethodLikeNode, extractsExecutableMethodNodes, collectsMethodLikeNode",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file has more than one responsibility cluster (2 clusters), indicating it performs multiple distinct actions. Decomposition into separate files, each with a single responsibility, should precede any renaming efforts."
+    },
+    {
+      "currentPath": "packages/logme-source-body-primitives/src/excludes-configured-directories.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"packages/logme-source-body-primitives/src/exclude-configured-directories.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "packages/logme-source-body-primitives/src/filters-source-files-by-extension.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"packages/logme-source-body-primitives/src/filter-source-files-by-extension.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "packages/logme-source-body-primitives/src/walks-configured-source-files.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"packages/logme-source-body-primitives/src/walk-configured-source-files.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "packages/logme-testimony-core/src/LogMe.js",
+      "proposedPath": null,
+      "classification": "package-contract exception",
+      "actionVerb": null,
+      "responsibilityEvidence": "Method name: LogMe. Cluster count: 1.",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file 'LogMe.js' is located within the 'packages/logme-testimony-core' path, strongly indicating it is a foundational logging primitive. The generic method name 'LogMe' is consistent with intentional naming for core logging infrastructure, which falls under the 'package-contract exception' rule."
+    },
+    {
+      "currentPath": "packages/logme-testimony-core/src/sample-method.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"packages/logme-testimony-core/src/sample.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "scaffold.js",
+      "proposedPath": null,
+      "classification": "mechanical rename",
+      "actionVerb": null,
+      "responsibilityEvidence": null,
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [
+        "rename-plan-unresolved"
+      ],
+      "reasoningNote": "proposed path \"ScaffoldStub.js\" is itself noun-only; a rename must not introduce another noun-only executable body"
+    },
+    {
+      "currentPath": "src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file has 7 responsibility clusters: unclear-action, build, write, run, classify, detect, render. This is more than one cluster.",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file 'src/end-user-quality-evidence-bundle/end-user-quality-evidence-bundle.js' has 7 distinct responsibility clusters, indicating that it performs multiple, separable actions. A single action-bearing name cannot accurately represent its current functionality, so decomposition into smaller, single-responsibility modules is required before a meaningful rename can occur."
+    },
+    {
+      "currentPath": "src/feature-execution-proof/feature-execution-proof.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file contains 8 distinct responsibility clusters, evidenced by methods such as discoversFeatureScenarios (discover), buildsFeatureExecutionProof (build), writesFeatureExecutionProof (write), calculatesServiceLevelIndicators (calculate), summarizesCalls (call), rendersFeatureExecutionReport (render), detectsUnsupportedSupportingEvaluation (detect), and slugifies (unclear-action).",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file 'src/feature-execution-proof/feature-execution-proof.js' has 8 distinct responsibility clusters. This indicates that the file is performing multiple, separable actions and should be decomposed into smaller, single-responsibility units before any renaming can occur."
+    },
+    {
+      "currentPath": "src/feature-quality-board/feature-quality-board.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file `src/feature-quality-board/feature-quality-board.js` has 10 distinct responsibility clusters (unclear-action, discover, run, collect, render, recommend, build, detect, write, verify), clearly exceeding the single cluster criterion for a mechanical rename. Examples of methods include `recordsAuditTestimony`, `discoversFeatureSpecFiles`, `sortsQaBundlesByRunId`, `collectsBlockerCodes`, `rendersStaleReason`, `recommendsNextAction`, `buildsEvidenceHashes`, `detectsBundleVerificationFindings`, `writesJsonArtifact`, and `verifiesSentinelMatchesStatus`.",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The presence of 10 distinct responsibility clusters indicates that this file performs a wide array of actions, making it multifarious. A single action-bearing name cannot encapsulate its current scope. Decomposition into smaller, more focused units is required before any meaningful renaming can occur."
+    },
+    {
+      "currentPath": "src/feature-scoped-ascii-execution-flow-report/feature-scoped-ascii-execution-flow-report.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file contains 7 distinct responsibility clusters: unclear-action, build, call, detect, load, render, and write. Examples include: formatsRepoRelativePath, buildsAcceptanceSourceNode, groupsMethodCallsByRuntimeFile, detectsMissingTelemetry, loadsExecutionSketchTemplate, rendersFeatureScopedAsciiExecutionFlowReport, and writesFeatureScopedAsciiExecutionFlowReport.",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file 'feature-scoped-ascii-execution-flow-report.js' has more than one responsibility cluster (7 in total), indicating multiple distinct concerns. Therefore, it should be decomposed into smaller, more focused files before attempting to rename any single file."
+    },
+    {
+      "currentPath": "src/llm-end-user-testing-conveyor/llm-end-user-testing-conveyor.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file contains 8 distinct responsibility clusters, indicated by methods such as 'formatsRepoRelativePath', 'buildsLlmQaBundlePath', 'writesJsonArtifact', 'rendersLlmHandoffPacketReport', 'detectsSensitiveSeedText', 'validatesSeedProposal', 'materializesSeedProposal', and 'summarizesFeatureScenarioConveyorRuns'.",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file has more than one responsibility cluster (specifically 8), which indicates that it performs multiple distinct actions. Before a meaningful single action-bearing name can be proposed for the file, its responsibilities must be decomposed into separate, more focused units."
+    },
+    {
+      "currentPath": "src/per-feature-executable-body-evidence-reports/per-feature-executable-body-evidence-reports.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file exhibits 4 distinct responsibility clusters: 'build' (e.g., buildsFeatureScenarioEvidencePacketPath, buildsPacketArtifactPath, buildsTelemetryTieout), 'write' (e.g., writesJsonArtifact, writesMarkdownArtifact, writesFeatureScenarioEvidencePacket), 'unclear-action' (e.g., formatsRepoRelativePath, checksFeatureScenarioPromotionEvidence), and 'render' (e.g., rendersBranchLines, rendersExecutionNode, rendersExecutableBodyTree).",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file contains multiple, distinct responsibility clusters (build, write, unclear-action, render), indicating that it performs more than one primary action. Decomposition into more cohesive units is required before a single action-bearing rename can be proposed for the current file."
+    },
+    {
+      "currentPath": "src/report-provenance/report-provenance.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file contains 3 distinct responsibility clusters: 'unclear-action' (e.g., stableStringify, computesConfigHash, readsReportProvenance), 'inventory' (computesSourceInventoryHash), and 'build' (buildsReportProvenance).",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The presence of more than one responsibility cluster (3 in this case) indicates that the file should be decomposed into smaller, single-responsibility units before a meaningful action-bearing name can be assigned to each."
+    },
+    {
+      "currentPath": "src/report-truth/report-truth.js",
+      "proposedPath": null,
+      "classification": "decompose before rename",
+      "actionVerb": null,
+      "responsibilityEvidence": "The file exhibits 7 distinct responsibility clusters, including 'unclear-action' (e.g., sha256Hex, formatsReportTruthSummary), 'parse' (e.g., parsesSummaryLine), 'validate' (e.g., validatesReportFreshness), 'build' (e.g., buildsReportTruthSnapshotCore), 'collect' (e.g., collectsTopFindingCodes), 'write' (e.g., writesReportTruthEvidence), and 'run' (e.g., runsReportTruthCommand).",
+      "importMigrationPlan": [],
+      "affectedTests": [],
+      "findingCodes": [],
+      "reasoningNote": "The file has 7 distinct responsibility clusters, indicating it performs multiple, unrelated actions. A single action-bearing name cannot accurately describe its full scope, necessitating decomposition into smaller, more focused units before a meaningful rename can occur."
+    }
+  ]
+}
