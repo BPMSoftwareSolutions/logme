@@ -29,7 +29,7 @@
   ],
   "staleReasons": [],
   "blockerCount": 3,
-  "generatedAt": "2026-07-10T11:23:56.343Z",
+  "generatedAt": "2026-07-10T11:51:21.488Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
   "productOwnerSummary": "LLM end-user testing conveyor is currently qa-blocked."

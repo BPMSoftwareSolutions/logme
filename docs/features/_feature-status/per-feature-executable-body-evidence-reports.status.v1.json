@@ -25,7 +25,7 @@
   "blockerCodes": [],
   "staleReasons": [],
   "blockerCount": 0,
-  "generatedAt": "2026-07-10T11:23:56.343Z",
+  "generatedAt": "2026-07-10T11:51:21.488Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "run deterministic promotion gate",
   "productOwnerSummary": "Per-feature executable body evidence reports passed QA, but release promotion is still separate."

@@ -12,6 +12,8 @@
     "remediation:contract-steward": "node scripts/contract-steward.js",
     "remediation:naming-decomposition": "node scripts/naming-decomposition.js",
     "remediation:package-extraction": "node scripts/package-extraction.js",
+    "remediation:adversarial-review": "node scripts/adversarial-review.js",
+    "remediation:verify-packet": "node scripts/verify-remediation-packet.js",
     "test": "node --test tests/"
   },
   "dependencies": {
