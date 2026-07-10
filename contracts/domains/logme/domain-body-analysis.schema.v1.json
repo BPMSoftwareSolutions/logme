@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "domain-body-analysis.schema.v1",
+  "requiredFields": [
+    "schemaVersion",
+    "runId",
+    "evidencePath",
+    "summary",
+    "sourceFiles",
+    "findingCodes"
+  ],
+  "requiredSummaryFields": [
+    "totalExecutableFiles",
+    "actionBearingExecutableFiles",
+    "executableFileNamesMissingActionVerb",
+    "filesMissingBodyContract",
+    "filesMissingScenarioTieOut",
+    "decompositionCandidates",
+    "totalBlockers"
+  ],
+  "requiredSourceFileFields": [
+    "filePath",
+    "executableMethodCount",
+    "fileNameGrammar",
+    "owningBodyContracts",
+    "featureScenarioTieOut",
+    "responsibilityClusters",
+    "decomposition",
+    "findingCodes"
+  ],
+  "protectedFindingCodes": [
+    "executable-file-name-missing-action-verb",
+    "file-body-contract-missing",
+    "scenario-tieout-missing",
+    "decomposition-recommended"
+  ]
+}
