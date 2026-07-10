@@ -7,6 +7,8 @@
     "report:truth": "node scripts/report-truth.js",
     "report:truth:fast": "node scripts/report-truth.js --fast",
     "remediation:plan": "node scripts/remediation-plan.js",
+    "remediation:cartography": "node scripts/domain-cartography.js",
+    "remediation:scenario-tieout": "node scripts/scenario-tieout.js",
     "test": "node --test tests/"
   },
   "dependencies": {
