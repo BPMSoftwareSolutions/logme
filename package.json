@@ -9,6 +9,7 @@
     "remediation:plan": "node scripts/remediation-plan.js",
     "remediation:cartography": "node scripts/domain-cartography.js",
     "remediation:scenario-tieout": "node scripts/scenario-tieout.js",
+    "remediation:contract-steward": "node scripts/contract-steward.js",
     "test": "node --test tests/"
   },
   "dependencies": {

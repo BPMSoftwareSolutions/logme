@@ -68,9 +68,15 @@
       "src/blocks-unsupported-scenario-tieouts/blocks-unsupported-scenario-tieouts.js",
       "src/writes-scenario-tieout-evidence/writes-scenario-tieout-evidence.js",
       "src/runs-scenario-tieout-worker/runs-scenario-tieout-worker.js",
+      "src/calls-contract-steward-worker/calls-contract-steward-worker.js",
+      "src/proposes-body-contract-patch/proposes-body-contract-patch.js",
+      "src/blocks-path-only-body-contracts/blocks-path-only-body-contracts.js",
+      "src/writes-body-contract-patch-evidence/writes-body-contract-patch-evidence.js",
+      "src/runs-contract-steward-worker/runs-contract-steward-worker.js",
       "scripts/remediation-plan.js",
       "scripts/domain-cartography.js",
       "scripts/scenario-tieout.js",
+      "scripts/contract-steward.js",
       "tests/loads-workspace-observability-config.test.js",
       "tests/discovers-configured-source-bodies.test.js",
       "tests/inventories-executable-domain-methods.test.js",
@@ -97,6 +103,11 @@
       "tests/blocks-unsupported-scenario-tieouts.test.js",
       "tests/writes-scenario-tieout-evidence.test.js",
       "tests/runs-scenario-tieout-worker.test.js",
+      "tests/calls-contract-steward-worker.test.js",
+      "tests/proposes-body-contract-patch.test.js",
+      "tests/blocks-path-only-body-contracts.test.js",
+      "tests/writes-body-contract-patch-evidence.test.js",
+      "tests/runs-contract-steward-worker.test.js",
       "packages/logme-config-primitives/src/reads-json-config-file.js",
       "packages/logme-config-primitives/src/resolves-configured-root-path.js",
       "packages/logme-config-primitives/src/lowercases-string-list.js",
@@ -118,8 +129,10 @@
       "packages/logme-testimony-core/src/writes-telemetry-event.js",
       "packages/logme-testimony-core/src/writes-domain-receipt.js",
       "packages/logme-testimony-core/src/sample-method.js",
+      "packages/logme-llm-provider-primitives/src/calls-openai-chat-completion.js",
       "tests/writes-telemetry-event.test.js",
-      "tests/LogMe.test.js"
+      "tests/LogMe.test.js",
+      "tests/calls-openai-chat-completion.test.js"
     ],
     "directories": [
       "contracts",
@@ -162,6 +175,11 @@
       "src/blocks-unsupported-scenario-tieouts",
       "src/writes-scenario-tieout-evidence",
       "src/runs-scenario-tieout-worker",
+      "src/calls-contract-steward-worker",
+      "src/proposes-body-contract-patch",
+      "src/blocks-path-only-body-contracts",
+      "src/writes-body-contract-patch-evidence",
+      "src/runs-contract-steward-worker",
       "scripts",
       "tests",
       "evidence",
@@ -176,7 +194,9 @@
       "packages/logme-report-primitives",
       "packages/logme-report-primitives/src",
       "packages/logme-testimony-core",
-      "packages/logme-testimony-core/src"
+      "packages/logme-testimony-core/src",
+      "packages/logme-llm-provider-primitives",
+      "packages/logme-llm-provider-primitives/src"
     ]
   },
   "owns": {
@@ -216,9 +236,15 @@
       "src/blocks-unsupported-scenario-tieouts/",
       "src/writes-scenario-tieout-evidence/",
       "src/runs-scenario-tieout-worker/",
+      "src/calls-contract-steward-worker/",
+      "src/proposes-body-contract-patch/",
+      "src/blocks-path-only-body-contracts/",
+      "src/writes-body-contract-patch-evidence/",
+      "src/runs-contract-steward-worker/",
       "scripts/remediation-plan.js",
       "scripts/domain-cartography.js",
-      "scripts/scenario-tieout.js"
+      "scripts/scenario-tieout.js",
+      "scripts/contract-steward.js"
     ],
     "evidence": [
       "evidence/runs/<run-id>/"
@@ -239,7 +265,8 @@
     "packages/logme-source-body-primitives/",
     "packages/logme-method-inventory-primitives/",
     "packages/logme-report-primitives/",
-    "packages/logme-testimony-core/"
+    "packages/logme-testimony-core/",
+    "packages/logme-llm-provider-primitives/"
   ],
   "verification": {
     "requiredFindingsMustBeZero": [

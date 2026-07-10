@@ -68,12 +68,21 @@ test('callsScenarioTieOutWorker returns authentication-error when no API key is 
   }
 });
 
-test('callsScenarioTieOutWorker classifies a 429 as rate-limit-error', async () => {
+test('callsScenarioTieOutWorker classifies a 429 as rate-limit-error when no OpenAI fallback key is available', async () => {
   async function fakeFetch() { return buildsFakeJsonResponse({ error: 'too many requests' }, 429); }
 
-  const result = await callsScenarioTieOutWorker(buildsRequest(), { apiKey: 'test-key', fetchImpl: fakeFetch });
+  const originalOpenAiKey = process.env.OPENAI_API_KEY;
+  delete process.env.OPENAI_API_KEY;
 
-  assert.equal(result.callFailure.type, 'rate-limit-error');
+  try {
+    const result = await callsScenarioTieOutWorker(buildsRequest(), { apiKey: 'test-key', fetchImpl: fakeFetch });
+
+    assert.equal(result.callFailure.type, 'rate-limit-error');
+  } finally {
+    if (originalOpenAiKey !== undefined) {
+      process.env.OPENAI_API_KEY = originalOpenAiKey;
+    }
+  }
 });
 
 test('callsScenarioTieOutWorker returns a safety-blocked callFailure when finishReason is SAFETY', async () => {
@@ -84,5 +93,66 @@ test('callsScenarioTieOutWorker returns a safety-blocked callFailure when finish
   const result = await callsScenarioTieOutWorker(buildsRequest(), { apiKey: 'test-key', fetchImpl: fakeFetch });
 
   assert.equal(result.rawResponseText, null);
+  assert.equal(result.callFailure.type, 'safety-blocked');
+});
+
+test('callsScenarioTieOutWorker falls back to OpenAI when Gemini is provider-overloaded', async () => {
+  async function fakeGeminiFetch() { return buildsFakeJsonResponse({ error: 'overloaded' }, 503); }
+  async function fakeOpenAiFetch() {
+    return buildsFakeJsonResponse({
+      choices: [{ finish_reason: 'stop', message: { content: '{"featureId":"example-openai"}' } }],
+      usage: { prompt_tokens: 3, completion_tokens: 4 },
+    });
+  }
+
+  const result = await callsScenarioTieOutWorker(buildsRequest(), {
+    apiKey: 'test-key',
+    fetchImpl: fakeGeminiFetch,
+    openAiApiKey: 'openai-test-key',
+    openAiFetchImpl: fakeOpenAiFetch,
+  });
+
+  assert.equal(result.callFailure, null);
+  assert.equal(result.provider, 'openai');
+  assert.equal(result.fallbackFrom, 'provider-overloaded');
+  assert.match(result.rawResponseText, /example-openai/u);
+});
+
+test('callsScenarioTieOutWorker does not fall back to OpenAI when no OpenAI key is available', async () => {
+  async function fakeGeminiFetch() { return buildsFakeJsonResponse({ error: 'overloaded' }, 503); }
+
+  const originalOpenAiKey = process.env.OPENAI_API_KEY;
+  delete process.env.OPENAI_API_KEY;
+
+  try {
+    const result = await callsScenarioTieOutWorker(buildsRequest(), { apiKey: 'test-key', fetchImpl: fakeGeminiFetch });
+
+    assert.equal(result.callFailure.type, 'provider-overloaded');
+  } finally {
+    if (originalOpenAiKey !== undefined) {
+      process.env.OPENAI_API_KEY = originalOpenAiKey;
+    }
+  }
+});
+
+test('callsScenarioTieOutWorker does not fall back to OpenAI for a non-retryable Gemini failure like safety-blocked', async () => {
+  async function fakeGeminiFetch() {
+    return buildsFakeJsonResponse({ candidates: [{ finishReason: 'SAFETY', content: { parts: [] } }] });
+  }
+
+  let openAiCalled = false;
+  async function fakeOpenAiFetch() {
+    openAiCalled = true;
+    return buildsFakeJsonResponse({ choices: [{ finish_reason: 'stop', message: { content: '{}' } }] });
+  }
+
+  const result = await callsScenarioTieOutWorker(buildsRequest(), {
+    apiKey: 'test-key',
+    fetchImpl: fakeGeminiFetch,
+    openAiApiKey: 'openai-test-key',
+    openAiFetchImpl: fakeOpenAiFetch,
+  });
+
+  assert.equal(openAiCalled, false);
   assert.equal(result.callFailure.type, 'safety-blocked');
 });

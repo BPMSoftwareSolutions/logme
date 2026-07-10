@@ -60,12 +60,21 @@ test('callsLlmHarnessWorker returns a safety-blocked callFailure when finishReas
   assert.equal(result.callFailure.type, 'safety-blocked');
 });
 
-test('callsLlmHarnessWorker classifies a 429 as rate-limit-error', async () => {
+test('callsLlmHarnessWorker classifies a 429 as rate-limit-error when no OpenAI fallback key is available', async () => {
   const fakeFetch = buildsFakeFetch(buildsFakeJsonResponse({ error: 'too many requests' }, 429));
 
-  const result = await callsLlmHarnessWorker(buildsAssignment(), { apiKey: 'test-key', fetchImpl: fakeFetch });
+  const originalOpenAiKey = process.env.OPENAI_API_KEY;
+  delete process.env.OPENAI_API_KEY;
 
-  assert.equal(result.callFailure.type, 'rate-limit-error');
+  try {
+    const result = await callsLlmHarnessWorker(buildsAssignment(), { apiKey: 'test-key', fetchImpl: fakeFetch });
+
+    assert.equal(result.callFailure.type, 'rate-limit-error');
+  } finally {
+    if (originalOpenAiKey !== undefined) {
+      process.env.OPENAI_API_KEY = originalOpenAiKey;
+    }
+  }
 });
 
 test('callsLlmHarnessWorker classifies a 401 as authentication-error', async () => {
@@ -76,12 +85,43 @@ test('callsLlmHarnessWorker classifies a 401 as authentication-error', async () 
   assert.equal(result.callFailure.type, 'authentication-error');
 });
 
-test('callsLlmHarnessWorker classifies a 500 as provider-overloaded', async () => {
+test('callsLlmHarnessWorker classifies a 500 as provider-overloaded when no OpenAI fallback key is available', async () => {
   const fakeFetch = buildsFakeFetch(buildsFakeJsonResponse({ error: 'internal' }, 500));
 
-  const result = await callsLlmHarnessWorker(buildsAssignment(), { apiKey: 'test-key', fetchImpl: fakeFetch });
+  const originalOpenAiKey = process.env.OPENAI_API_KEY;
+  delete process.env.OPENAI_API_KEY;
 
-  assert.equal(result.callFailure.type, 'provider-overloaded');
+  try {
+    const result = await callsLlmHarnessWorker(buildsAssignment(), { apiKey: 'test-key', fetchImpl: fakeFetch });
+
+    assert.equal(result.callFailure.type, 'provider-overloaded');
+  } finally {
+    if (originalOpenAiKey !== undefined) {
+      process.env.OPENAI_API_KEY = originalOpenAiKey;
+    }
+  }
+});
+
+test('callsLlmHarnessWorker falls back to OpenAI when Gemini is provider-overloaded', async () => {
+  const fakeGeminiFetch = buildsFakeFetch(buildsFakeJsonResponse({ error: 'internal' }, 500));
+  async function fakeOpenAiFetch() {
+    return buildsFakeJsonResponse({
+      choices: [{ finish_reason: 'stop', message: { content: '{"harnessId":"harness-openai"}' } }],
+      usage: { prompt_tokens: 3, completion_tokens: 4 },
+    });
+  }
+
+  const result = await callsLlmHarnessWorker(buildsAssignment(), {
+    apiKey: 'test-key',
+    fetchImpl: fakeGeminiFetch,
+    openAiApiKey: 'openai-test-key',
+    openAiFetchImpl: fakeOpenAiFetch,
+  });
+
+  assert.equal(result.callFailure, null);
+  assert.equal(result.provider, 'openai');
+  assert.equal(result.fallbackFrom, 'provider-overloaded');
+  assert.match(result.rawResponseText, /harness-openai/u);
 });
 
 test('callsLlmHarnessWorker returns authentication-error when no API key is available', async () => {

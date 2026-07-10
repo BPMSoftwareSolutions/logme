@@ -1,8 +1,10 @@
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
+const { callsOpenAiChatCompletion } = require('../../packages/logme-llm-provider-primitives/src/calls-openai-chat-completion');
 
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
+const RETRYABLE_TO_FALLBACK_FAILURE_TYPES = new Set(['provider-overloaded', 'rate-limit-error', 'model-not-found', 'unknown-error', 'timeout-error']);
 
 const HARNESS_OUTPUT_DRAFT_FIELDS = [
   'harnessId',
@@ -185,6 +187,25 @@ async function callsLlmHarnessWorker(assignment, options = {}) {
     LogMe(sampleMethod);
   }
 
+  const geminiResult = await callsGeminiForHarnessWorker(assignment, options);
+
+  if (!geminiResult.callFailure || !RETRYABLE_TO_FALLBACK_FAILURE_TYPES.has(geminiResult.callFailure.type)) {
+    return geminiResult;
+  }
+
+  const openAiApiKey = options.openAiApiKey || process.env.OPENAI_API_KEY;
+  if (!openAiApiKey) {
+    return geminiResult;
+  }
+
+  return callsOpenAiForHarnessWorker(assignment, options, openAiApiKey, geminiResult.callFailure);
+}
+
+async function callsGeminiForHarnessWorker(assignment, options) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const apiKey = options.apiKey || process.env.LOC_GEMINI_API_KEY;
   const model = options.model || GEMINI_MODEL;
   const fetchImpl = options.fetchImpl || fetch;
@@ -215,6 +236,37 @@ async function callsLlmHarnessWorker(assignment, options = {}) {
   } catch (callError) {
     return buildsWorkerResultFromFailure(assignment, classifiesGeminiNetworkFailure(callError));
   }
+}
+
+async function callsOpenAiForHarnessWorker(assignment, options, openAiApiKey, geminiCallFailure) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const openAiResult = await callsOpenAiChatCompletion(
+    rendersHarnessAssignmentPrompt(assignment),
+    buildsLlmHarnessOutputResponseSchema(),
+    { apiKey: openAiApiKey, fetchImpl: options.openAiFetchImpl || options.fetchImpl, model: options.openAiModel },
+  );
+
+  if (openAiResult.callFailure) {
+    return buildsWorkerResultFromFailure(assignment, {
+      type: openAiResult.callFailure.type,
+      message: `gemini fallback to openai also failed: gemini(${geminiCallFailure.type}) then openai(${openAiResult.callFailure.type}): ${openAiResult.callFailure.message}`,
+    });
+  }
+
+  return {
+    runId: assignment.runId,
+    rawResponseText: openAiResult.rawResponseText,
+    rawResponseJson: null,
+    model: openAiResult.model,
+    finishReason: openAiResult.finishReason,
+    usage: openAiResult.usage,
+    callFailure: null,
+    provider: 'openai',
+    fallbackFrom: geminiCallFailure.type,
+  };
 }
 
 module.exports = { callsLlmHarnessWorker, buildsLlmHarnessOutputResponseSchema };

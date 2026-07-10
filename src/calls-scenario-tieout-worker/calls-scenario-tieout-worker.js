@@ -1,8 +1,10 @@
 const { LogMe } = require('../../packages/logme-testimony-core/src/LogMe');
 const { sampleMethod } = require('../../packages/logme-testimony-core/src/sample-method');
+const { callsOpenAiChatCompletion } = require('../../packages/logme-llm-provider-primitives/src/calls-openai-chat-completion');
 
 const GEMINI_MODEL = 'gemini-2.5-flash';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
+const RETRYABLE_TO_FALLBACK_FAILURE_TYPES = new Set(['provider-overloaded', 'rate-limit-error', 'model-not-found', 'unknown-error', 'timeout-error']);
 
 function buildsScenarioTieOutResponseSchema() {
   if (process.env.LOGME_AUDIT === '1') {
@@ -183,6 +185,25 @@ async function callsScenarioTieOutWorker(request, options = {}) {
     LogMe(sampleMethod);
   }
 
+  const geminiResult = await callsGeminiForScenarioTieOut(request, options);
+
+  if (!geminiResult.callFailure || !RETRYABLE_TO_FALLBACK_FAILURE_TYPES.has(geminiResult.callFailure.type)) {
+    return geminiResult;
+  }
+
+  const openAiApiKey = options.openAiApiKey || process.env.OPENAI_API_KEY;
+  if (!openAiApiKey) {
+    return geminiResult;
+  }
+
+  return callsOpenAiForScenarioTieOut(request, options, openAiApiKey, geminiResult.callFailure);
+}
+
+async function callsGeminiForScenarioTieOut(request, options) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
   const apiKey = options.apiKey || process.env.LOC_GEMINI_API_KEY;
   const model = options.model || GEMINI_MODEL;
   const fetchImpl = options.fetchImpl || fetch;
@@ -213,6 +234,36 @@ async function callsScenarioTieOutWorker(request, options = {}) {
   } catch (callError) {
     return buildsWorkerResultFromFailure(request, classifiesGeminiNetworkFailure(callError));
   }
+}
+
+async function callsOpenAiForScenarioTieOut(request, options, openAiApiKey, geminiCallFailure) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  const openAiResult = await callsOpenAiChatCompletion(
+    rendersScenarioTieOutPrompt(request),
+    buildsScenarioTieOutResponseSchema(),
+    { apiKey: openAiApiKey, fetchImpl: options.openAiFetchImpl || options.fetchImpl, model: options.openAiModel },
+  );
+
+  if (openAiResult.callFailure) {
+    return buildsWorkerResultFromFailure(request, {
+      type: openAiResult.callFailure.type,
+      message: `gemini fallback to openai also failed: gemini(${geminiCallFailure.type}) then openai(${openAiResult.callFailure.type}): ${openAiResult.callFailure.message}`,
+    });
+  }
+
+  return {
+    filePath: request.filePath,
+    rawResponseText: openAiResult.rawResponseText,
+    model: openAiResult.model,
+    finishReason: openAiResult.finishReason,
+    usage: openAiResult.usage,
+    callFailure: null,
+    provider: 'openai',
+    fallbackFrom: geminiCallFailure.type,
+  };
 }
 
 module.exports = {
