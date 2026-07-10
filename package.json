@@ -11,6 +11,7 @@
     "remediation:scenario-tieout": "node scripts/scenario-tieout.js",
     "remediation:contract-steward": "node scripts/contract-steward.js",
     "remediation:naming-decomposition": "node scripts/naming-decomposition.js",
+    "remediation:package-extraction": "node scripts/package-extraction.js",
     "test": "node --test tests/"
   },
   "dependencies": {
