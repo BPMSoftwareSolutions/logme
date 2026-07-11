@@ -55,19 +55,16 @@ Run     : proposed-source-truth
 `-- blocker policy
     `-- product-method-name-not-observed blocks proof promotion until the code body name is known
 
-[00B] PROPOSED METHOD NAME MAP
+[00B] PROPOSED NATIVE METHOD NAME MAP
+|-- rule
+|   `-- this map is the source-domain feature whitelist, not a dependency inventory
+|
 |-- inventory-every-feature-scenario-and-proof-state
 |   |-- buildsFeatureProofInventory
-|   |-- discoversFeatureFiles
-|   |-- discoversFeatureScenarios
-|   |-- selectsScenarioProofStatus
 |   `-- writesFeatureProofInventory
 |
 |-- write-canonical-json-execution-proof-for-a-scenario
 |   |-- buildsFeatureExecutionProof
-|   |-- normalizesDeclaredNodes
-|   |-- buildsObservedExecutionTimeline
-|   |-- buildsPromotionDecision
 |   `-- writesFeatureExecutionProof
 |
 |-- write-human-readable-scenario-proof-report-beside-json-proof
@@ -78,106 +75,58 @@ Run     : proposed-source-truth
 |   |-- rendersServiceLevelIndicatorSummary
 |   |-- rendersServiceLevelObjectiveEvaluation
 |   |-- rendersSlaSupportEvidence
-|   |-- rendersMethodCallEvidenceReport
-|   |-- rendersScenarioTimingTable
-|   `-- rendersScenarioMethodTimelineTable
+|   |-- rendersBlockerWorklist
+|   `-- rendersSourceEvidenceLinks
 |
 |-- promote-a-selected-proof-run-into-a-source-controlled-feature-proof-body
 |   |-- runsFeatureProofPromotion
-|   |-- readsScenarioProofsFromRun
-|   |-- buildsArtifactHashesForScenario
 |   |-- buildsFeatureProofBody
-|   |-- computesFeatureProofBodyHash
 |   `-- rendersFeatureProofBody
 |
 |-- publish-one-feature-level-proof-body-for-the-whole-feature
 |   |-- buildsFeatureProofBody
-|   |-- buildsScenarioCoverageSection
-|   |-- findsMissingScenarios
-|   |-- collectsBlockerSummary
 |   `-- rendersFeatureProofBody
 |
 |-- block-proven-feature-status-without-a-committed-proof-body
-|   |-- checksFeatureStatusClaimsProofBody
-|   |-- readsProofBodyHashFromContent
-|   `-- buildsFeatureProofBodyPath
+|   `-- checksFeatureStatusClaimsProofBody
 |
 |-- mark-feature-proof-body-stale-when-source-or-selected-proof-changes
-|   |-- checksFeatureProofBodyFreshness
-|   |-- readsProofBodyHashFromContent
-|   |-- discoversFeatureScenarios
-|   |-- findsScenariosMissingFromBody
-|   `-- sha256Hex
+|   `-- checksFeatureProofBodyFreshness
 |
 |-- opt-out-of-routine-proof-evidence-when-source-controlled-proof-is-current
-|   |-- checksFeatureProofOptOut
-|   |-- checksFeatureProofBodyFreshness
-|   `-- buildsFeatureProofBodyPath
+|   `-- checksFeatureProofOptOut
 |
 |-- re-enter-proof-execution-when-opt-out-is-invalidated
 |   `-- checksFeatureProofOptOut
 |
 |-- block-opt-out-when-proof-body-does-not-cover-every-current-scenario
-|   |-- checksFeatureProofBodyFreshness
-|   |-- findsScenariosMissingFromBody
-|   `-- discoversFeatureScenarios
+|   `-- checksFeatureProofBodyFreshness
 |
 |-- keep-raw-run-evidence-out-of-version-control
-|   |-- buildsFeatureProofBodyPath
-|   |-- rendersFeatureProofBody
-|   `-- runsFeatureProofPromotion
+|   `-- no source-domain-native method; policy is proven through boundary receipts
 |
 |-- write-shareable-timing-table-projection
-|   |-- rendersScenarioTimingTable
-|   `-- writesScenarioTimingTable
+|   `-- rendersScenarioTimingTable
 |
 |-- tie-json-proof-to-raw-telemetry-and-receipts
-|   |-- readsTelemetrySourcePaths
-|   |-- readsTelemetryEventIds
-|   |-- readsTelemetryEventPaths
-|   |-- findsReceiptPathsForNode
-|   `-- readsReceiptPathsForMethod
+|   `-- no source-domain-native method; telemetry mechanics are boundary-owned
 |
 |-- preserve-method-call-drill-down-inside-observed-body-nodes
-|   |-- buildsMethodCall
-|   |-- buildsMethodCalls
-|   |-- readsMethodCalls
-|   |-- stampsMethodCallOwnership
-|   `-- rendersMethodCallEvidenceReport
+|   `-- no source-domain-native method; drill-down mechanics are boundary-owned
 |
 |-- preserve-repeated-calls-in-the-execution-proof
-|   |-- readsObservedCalls
-|   |-- buildsObservedCalls
-|   |-- countsObservedCalls
-|   |-- buildsNodeCallCountMetric
-|   |-- buildsNodeCallCountMetrics
-|   `-- calculatesCallCountMetrics
+|   `-- no source-domain-native method; call-count mechanics are boundary-owned
 |
 |-- calculate-product-timing-metrics-from-observed-evidence
-|   |-- calculatesDurationMs
-|   |-- calculatesTimingMetrics
-|   |-- calculatesMethodTimingMetrics
-|   |-- calculatesTotalObservedWaitTimeMs
-|   |-- findsSlowestMethodCall
-|   |-- findsSlowestNode
-|   |-- buildsNodeDurationMetric
-|   `-- buildsNodeDurationMetrics
+|   `-- no source-domain-native method; timing mechanics are boundary-owned
 |
 |-- establish-service-level-indicators-from-execution-proof
-|   |-- buildsSli
-|   |-- calculatesServiceLevelIndicators
-|   |-- countsNodesWithObservedTelemetry
-|   |-- countsNodesWithObservedReceipts
-|   `-- indexesSlisByName
+|   `-- no source-domain-native method; SLI calculation mechanics are boundary-owned
 |
 |-- evaluate-service-level-objectives-from-scenario-evidence
-|   |-- evaluatesSingleServiceLevelObjective
-|   `-- evaluatesServiceLevelObjectives
+|   `-- no source-domain-native method; SLO evaluation mechanics are boundary-owned
 |
 |-- preserve-sla-evidence-without-turning-reports-into-contracts
-|   |-- indexesSloEvaluationsById
-|   |-- readsSupportingEvaluations
-|   |-- detectsUnsupportedSupportingEvaluation
 |   `-- checksUnsupportedSlaClaims
 |
 |-- render-human-report-from-canonical-json-proof
@@ -187,16 +136,65 @@ Run     : proposed-source-truth
 |   |-- rendersScenarioProofPromotionDecision
 |   |-- rendersScenarioProofAsciiSketch
 |   |-- rendersBlockerWorklist
-|   |-- rendersSourceEvidenceLinks
-|   `-- rendersDenseTelemetryAppendix
+|   `-- rendersSourceEvidenceLinks
 |
 |-- reject-report-facts-not-backed-by-json-proof
 |   `-- checksFeatureReportTruthGate
 |
 `-- keep-json-proof-portable-for-downstream-analysis
-    |-- projectsFeatureExecutionProofToCsv
-    |-- escapesCsv
-    `-- formatsValue
+    `-- no source-domain-native method; downstream projection is boundary-owned
+
+[00C] SUPPORT BOUNDARY METHOD MAP
+|-- rule
+|   `-- support methods required by the feature are classified outside the native feature body
+|
+|-- product-domain-boundary-case
+|   |-- discoversFeatureFiles
+|   |-- discoversFeatureScenarios
+|   |-- selectsScenarioProofStatus
+|   |-- buildsObservedExecutionTimeline
+|   |-- buildsPromotionDecision
+|   |-- rendersMethodCallEvidenceReport
+|   |-- rendersScenarioMethodTimelineTable
+|   |-- computesFeatureProofBodyHash
+|   |-- buildsScenarioCoverageSection
+|   |-- checksFeatureProofBodyFreshness
+|   |-- findsScenariosMissingFromBody
+|   |-- writesScenarioTimingTable
+|   |-- readsTelemetrySourcePaths
+|   |-- readsTelemetryEventIds
+|   |-- readsTelemetryEventPaths
+|   |-- findsReceiptPathsForNode
+|   |-- readsReceiptPathsForMethod
+|   |-- buildsMethodCall
+|   |-- buildsMethodCalls
+|   |-- readsMethodCalls
+|   |-- stampsMethodCallOwnership
+|   |-- countsObservedCalls
+|   |-- calculatesTimingMetrics
+|   |-- calculatesServiceLevelIndicators
+|   |-- evaluatesServiceLevelObjectives
+|   `-- projectsFeatureExecutionProofToCsv
+|
+|-- package-boundary-summarized
+|   |-- readsScenarioProofsFromRun
+|   |-- buildsArtifactHashesForScenario
+|   |-- findsMissingScenarios
+|   |-- collectsBlockerSummary
+|   |-- readsProofBodyHashFromContent
+|   |-- buildsFeatureProofBodyPath
+|   |-- indexesSloEvaluationsById
+|   |-- readsSupportingEvaluations
+|   `-- detectsUnsupportedSupportingEvaluation
+|
+|-- pure-utility-extract
+|   |-- normalizesDeclaredNodes
+|   |-- sha256Hex
+|   |-- escapesCsv
+|   `-- formatsValue
+|
+`-- blocker policy
+    `-- any observed support method not listed here is actual-execution-body-has-unclassified-support-method
 
 [01] INVENTORY EVERY FEATURE SCENARIO AND PROOF STATE
 |-- scenario id   : inventory-every-feature-scenario-and-proof-state
@@ -312,7 +310,7 @@ Run     : proposed-source-truth
 |   |
 |   |-- call 002
 |   |   |-- method       : readsScenarioProofsFromRun
-|   |   |-- kind         : product-domain-native
+|   |   |-- kind         : package-boundary-summarized
 |   |   |-- source       : src/runs-feature-proof-promotion/runs-feature-proof-promotion.js:16-49
 |   |   |-- expected started at   : <run-start + 40ms>
 |   |   |-- expected completed at : <run-start + 100ms>
@@ -326,7 +324,7 @@ Run     : proposed-source-truth
 |   |
 |   |-- call 003
 |   |   |-- method       : buildsArtifactHashesForScenario
-|   |   |-- kind         : product-domain-boundary-case
+|   |   |-- kind         : package-boundary-summarized
 |   |   |-- source       : src/runs-feature-proof-promotion/runs-feature-proof-promotion.js:51-67
 |   |   |-- expected started at   : <run-start + 100ms>
 |   |   |-- expected completed at : <run-start + 150ms>
@@ -385,7 +383,9 @@ Run     : proposed-source-truth
 |   |-- expected cycle time ms       : <= 450
 |   |-- expected active execution ms : <= 400
 |   |-- expected waiting time ms     : <= 50
-|   |-- expected total calls         : 6 named product/boundary calls
+|   |-- expected native calls        : 3 named product-domain-native calls
+|   |-- expected boundary calls      : 1 approved product-domain-boundary-case call
+|   |-- expected package summaries   : 2 package-boundary-summarized calls
 |   `-- expected blocker count      : 0
 `-- blocker policy
     |-- product-method-name-not-observed

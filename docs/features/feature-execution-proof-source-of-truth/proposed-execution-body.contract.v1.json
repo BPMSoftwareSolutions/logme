@@ -27,7 +27,7 @@
     "classification",
     "expectedNodeLabel",
     "runtimeBoundary",
-    "proposedMethodMapEntry",
+    "methodBoundaryClassification",
     "expectedTelemetry",
     "methodDrillDown",
     "requiredReceipts",
@@ -72,21 +72,16 @@
       "missing"
     ],
     "blockingFinding": "product-method-name-not-observed",
-    "proofRule": "A product-domain proof node is not proven unless observed proof includes the actual method names, method kind, runtime path, source line range, telemetry event ids, and receipt paths when receipts are expected."
+    "proofRule": "A product-domain proof node is not proven unless observed proof includes the actual product-domain-native or approved product-domain-boundary-case method names, method kind, runtime path, source line range, telemetry event ids, and receipt paths when receipts are expected. Support and utility methods are not allowed in proposedMethodMap; they must be represented in supportBoundaryMethodMap.",
+    "nativeMapRule": "proposedMethodMap is a whitelist of feature-native and approved product-boundary methods only, not a dependency inventory."
   },
   "proposedMethodMap": {
     "inventory-every-feature-scenario-and-proof-state": [
       "buildsFeatureProofInventory",
-      "discoversFeatureFiles",
-      "discoversFeatureScenarios",
-      "selectsScenarioProofStatus",
       "writesFeatureProofInventory"
     ],
     "write-canonical-json-execution-proof-for-a-scenario": [
       "buildsFeatureExecutionProof",
-      "normalizesDeclaredNodes",
-      "buildsObservedExecutionTimeline",
-      "buildsPromotionDecision",
       "writesFeatureExecutionProof"
     ],
     "write-human-readable-scenario-proof-report-beside-json-proof": [
@@ -97,108 +92,44 @@
       "rendersServiceLevelIndicatorSummary",
       "rendersServiceLevelObjectiveEvaluation",
       "rendersSlaSupportEvidence",
-      "rendersMethodCallEvidenceReport",
-      "rendersScenarioTimingTable",
-      "rendersScenarioMethodTimelineTable"
+      "rendersBlockerWorklist",
+      "rendersSourceEvidenceLinks"
     ],
     "promote-a-selected-proof-run-into-a-source-controlled-feature-proof-body": [
       "runsFeatureProofPromotion",
-      "readsScenarioProofsFromRun",
-      "buildsArtifactHashesForScenario",
       "buildsFeatureProofBody",
-      "computesFeatureProofBodyHash",
       "rendersFeatureProofBody"
     ],
     "publish-one-feature-level-proof-body-for-the-whole-feature": [
       "buildsFeatureProofBody",
-      "buildsScenarioCoverageSection",
-      "findsMissingScenarios",
-      "collectsBlockerSummary",
       "rendersFeatureProofBody"
     ],
     "block-proven-feature-status-without-a-committed-proof-body": [
-      "checksFeatureStatusClaimsProofBody",
-      "readsProofBodyHashFromContent",
-      "buildsFeatureProofBodyPath"
+      "checksFeatureStatusClaimsProofBody"
     ],
     "mark-feature-proof-body-stale-when-source-or-selected-proof-changes": [
-      "checksFeatureProofBodyFreshness",
-      "readsProofBodyHashFromContent",
-      "discoversFeatureScenarios",
-      "findsScenariosMissingFromBody",
-      "sha256Hex"
+      "checksFeatureProofBodyFreshness"
     ],
     "opt-out-of-routine-proof-evidence-when-source-controlled-proof-is-current": [
-      "checksFeatureProofOptOut",
-      "checksFeatureProofBodyFreshness",
-      "buildsFeatureProofBodyPath"
+      "checksFeatureProofOptOut"
     ],
     "re-enter-proof-execution-when-opt-out-is-invalidated": [
       "checksFeatureProofOptOut"
     ],
     "block-opt-out-when-proof-body-does-not-cover-every-current-scenario": [
-      "checksFeatureProofBodyFreshness",
-      "findsScenariosMissingFromBody",
-      "discoversFeatureScenarios"
+      "checksFeatureProofBodyFreshness"
     ],
-    "keep-raw-run-evidence-out-of-version-control": [
-      "buildsFeatureProofBodyPath",
-      "rendersFeatureProofBody",
-      "runsFeatureProofPromotion"
-    ],
+    "keep-raw-run-evidence-out-of-version-control": [],
     "write-shareable-timing-table-projection": [
-      "rendersScenarioTimingTable",
-      "writesScenarioTimingTable"
+      "rendersScenarioTimingTable"
     ],
-    "tie-json-proof-to-raw-telemetry-and-receipts": [
-      "readsTelemetrySourcePaths",
-      "readsTelemetryEventIds",
-      "readsTelemetryEventPaths",
-      "findsReceiptPathsForNode",
-      "readsReceiptPathsForMethod"
-    ],
-    "preserve-method-call-drill-down-inside-observed-body-nodes": [
-      "buildsMethodCall",
-      "buildsMethodCalls",
-      "readsMethodCalls",
-      "stampsMethodCallOwnership",
-      "rendersMethodCallEvidenceReport"
-    ],
-    "preserve-repeated-calls-in-the-execution-proof": [
-      "readsObservedCalls",
-      "buildsObservedCalls",
-      "countsObservedCalls",
-      "buildsNodeCallCountMetric",
-      "buildsNodeCallCountMetrics",
-      "calculatesCallCountMetrics"
-    ],
-    "calculate-product-timing-metrics-from-observed-evidence": [
-      "calculatesDurationMs",
-      "calculatesTimingMetrics",
-      "calculatesMethodTimingMetrics",
-      "calculatesTotalObservedWaitTimeMs",
-      "findsSlowestMethodCall",
-      "findsSlowestNode",
-      "buildsNodeDurationMetric",
-      "buildsNodeDurationMetrics"
-    ],
-    "establish-service-level-indicators-from-execution-proof": [
-      "buildsSli",
-      "calculatesServiceLevelIndicators",
-      "countsNodesWithObservedTelemetry",
-      "countsNodesWithObservedReceipts",
-      "indexesSlisByName"
-    ],
-    "evaluate-service-level-objectives-from-scenario-evidence": [
-      "evaluatesSingleServiceLevelObjective",
-      "evaluatesServiceLevelObjectives"
-    ],
-    "preserve-sla-evidence-without-turning-reports-into-contracts": [
-      "indexesSloEvaluationsById",
-      "readsSupportingEvaluations",
-      "detectsUnsupportedSupportingEvaluation",
-      "checksUnsupportedSlaClaims"
-    ],
+    "tie-json-proof-to-raw-telemetry-and-receipts": [],
+    "preserve-method-call-drill-down-inside-observed-body-nodes": [],
+    "preserve-repeated-calls-in-the-execution-proof": [],
+    "calculate-product-timing-metrics-from-observed-evidence": [],
+    "establish-service-level-indicators-from-execution-proof": [],
+    "evaluate-service-level-objectives-from-scenario-evidence": [],
+    "preserve-sla-evidence-without-turning-reports-into-contracts": [],
     "render-human-report-from-canonical-json-proof": [
       "rendersScenarioProofReport",
       "rendersScenarioProofExecutiveSummary",
@@ -206,17 +137,12 @@
       "rendersScenarioProofPromotionDecision",
       "rendersScenarioProofAsciiSketch",
       "rendersBlockerWorklist",
-      "rendersSourceEvidenceLinks",
-      "rendersDenseTelemetryAppendix"
+      "rendersSourceEvidenceLinks"
     ],
     "reject-report-facts-not-backed-by-json-proof": [
       "checksFeatureReportTruthGate"
     ],
-    "keep-json-proof-portable-for-downstream-analysis": [
-      "projectsFeatureExecutionProofToCsv",
-      "escapesCsv",
-      "formatsValue"
-    ]
+    "keep-json-proof-portable-for-downstream-analysis": []
   },
   "nodes": [
     {
@@ -552,12 +478,210 @@
     "filesystem read/write mechanics"
   ],
   "tieOutRules": [
+    "proposedMethodMap is the source-domain native whitelist; support methods outside that whitelist must appear only in supportBoundaryMethodMap with a boundary classification.",
     "Every scenario in feature.feature.md should have a proposed execution node.",
-    "Every proposed execution node should define expected telemetry, timing, method drill-down, receipts, and blocker policy.",
     "Observed proof passes when the actual executable-body-tree.ascii.md ties out to the proposed node shape.",
     "Method call numbers without observed method names should become blockers or classification work, not silent accepted proof.",
     "SLI values must be derived from observed telemetry or receipts.",
     "SLO and SLA claims must not be promoted without supporting SLI evidence.",
     "Source-controlled proof must point to the selected proof run and artifact hashes."
-  ]
+  ],
+  "supportBoundaryMethodMap": {
+    "inventory-every-feature-scenario-and-proof-state": {
+      "product-domain-boundary-case": [
+        "discoversFeatureFiles",
+        "discoversFeatureScenarios",
+        "selectsScenarioProofStatus"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "write-canonical-json-execution-proof-for-a-scenario": {
+      "product-domain-boundary-case": [
+        "buildsObservedExecutionTimeline",
+        "buildsPromotionDecision"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": [
+        "normalizesDeclaredNodes"
+      ]
+    },
+    "write-human-readable-scenario-proof-report-beside-json-proof": {
+      "product-domain-boundary-case": [
+        "rendersMethodCallEvidenceReport",
+        "rendersScenarioMethodTimelineTable"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "promote-a-selected-proof-run-into-a-source-controlled-feature-proof-body": {
+      "product-domain-boundary-case": [
+        "computesFeatureProofBodyHash"
+      ],
+      "package-boundary-summarized": [
+        "readsScenarioProofsFromRun",
+        "buildsArtifactHashesForScenario"
+      ],
+      "pure-utility-extract": []
+    },
+    "publish-one-feature-level-proof-body-for-the-whole-feature": {
+      "product-domain-boundary-case": [
+        "buildsScenarioCoverageSection"
+      ],
+      "package-boundary-summarized": [
+        "findsMissingScenarios",
+        "collectsBlockerSummary"
+      ],
+      "pure-utility-extract": []
+    },
+    "block-proven-feature-status-without-a-committed-proof-body": {
+      "product-domain-boundary-case": [],
+      "package-boundary-summarized": [
+        "readsProofBodyHashFromContent",
+        "buildsFeatureProofBodyPath"
+      ],
+      "pure-utility-extract": []
+    },
+    "mark-feature-proof-body-stale-when-source-or-selected-proof-changes": {
+      "product-domain-boundary-case": [
+        "discoversFeatureScenarios",
+        "findsScenariosMissingFromBody"
+      ],
+      "package-boundary-summarized": [
+        "readsProofBodyHashFromContent"
+      ],
+      "pure-utility-extract": [
+        "sha256Hex"
+      ]
+    },
+    "opt-out-of-routine-proof-evidence-when-source-controlled-proof-is-current": {
+      "product-domain-boundary-case": [
+        "checksFeatureProofBodyFreshness"
+      ],
+      "package-boundary-summarized": [
+        "buildsFeatureProofBodyPath"
+      ],
+      "pure-utility-extract": []
+    },
+    "block-opt-out-when-proof-body-does-not-cover-every-current-scenario": {
+      "product-domain-boundary-case": [
+        "findsScenariosMissingFromBody",
+        "discoversFeatureScenarios"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "keep-raw-run-evidence-out-of-version-control": {
+      "product-domain-boundary-case": [
+        "runsFeatureProofPromotion",
+        "rendersFeatureProofBody"
+      ],
+      "package-boundary-summarized": [
+        "buildsFeatureProofBodyPath"
+      ],
+      "pure-utility-extract": []
+    },
+    "write-shareable-timing-table-projection": {
+      "product-domain-boundary-case": [
+        "writesScenarioTimingTable"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "tie-json-proof-to-raw-telemetry-and-receipts": {
+      "product-domain-boundary-case": [
+        "readsTelemetrySourcePaths",
+        "readsTelemetryEventIds",
+        "readsTelemetryEventPaths",
+        "findsReceiptPathsForNode",
+        "readsReceiptPathsForMethod"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "preserve-method-call-drill-down-inside-observed-body-nodes": {
+      "product-domain-boundary-case": [
+        "buildsMethodCall",
+        "buildsMethodCalls",
+        "readsMethodCalls",
+        "stampsMethodCallOwnership",
+        "rendersMethodCallEvidenceReport"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "preserve-repeated-calls-in-the-execution-proof": {
+      "product-domain-boundary-case": [
+        "readsObservedCalls",
+        "buildsObservedCalls",
+        "countsObservedCalls",
+        "buildsNodeCallCountMetric",
+        "buildsNodeCallCountMetrics",
+        "calculatesCallCountMetrics"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "calculate-product-timing-metrics-from-observed-evidence": {
+      "product-domain-boundary-case": [
+        "calculatesDurationMs",
+        "calculatesTimingMetrics",
+        "calculatesMethodTimingMetrics",
+        "calculatesTotalObservedWaitTimeMs",
+        "findsSlowestMethodCall",
+        "findsSlowestNode",
+        "buildsNodeDurationMetric",
+        "buildsNodeDurationMetrics"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "establish-service-level-indicators-from-execution-proof": {
+      "product-domain-boundary-case": [
+        "buildsSli",
+        "calculatesServiceLevelIndicators",
+        "countsNodesWithObservedTelemetry",
+        "countsNodesWithObservedReceipts",
+        "indexesSlisByName"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "evaluate-service-level-objectives-from-scenario-evidence": {
+      "product-domain-boundary-case": [
+        "evaluatesSingleServiceLevelObjective",
+        "evaluatesServiceLevelObjectives"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "preserve-sla-evidence-without-turning-reports-into-contracts": {
+      "product-domain-boundary-case": [
+        "checksUnsupportedSlaClaims"
+      ],
+      "package-boundary-summarized": [
+        "indexesSloEvaluationsById",
+        "readsSupportingEvaluations",
+        "detectsUnsupportedSupportingEvaluation"
+      ],
+      "pure-utility-extract": []
+    },
+    "render-human-report-from-canonical-json-proof": {
+      "product-domain-boundary-case": [
+        "rendersDenseTelemetryAppendix"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": []
+    },
+    "keep-json-proof-portable-for-downstream-analysis": {
+      "product-domain-boundary-case": [
+        "projectsFeatureExecutionProofToCsv"
+      ],
+      "package-boundary-summarized": [],
+      "pure-utility-extract": [
+        "escapesCsv",
+        "formatsValue"
+      ]
+    }
+  }
 }

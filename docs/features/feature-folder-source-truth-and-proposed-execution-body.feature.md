@@ -139,6 +139,67 @@ Feature: Feature folder source truth and proposed execution body
     And pure utility methods should not appear as first-class feature body nodes
     And generated evidence mechanics should not appear as first-class feature body nodes.
 
+  Scenario: Route required support methods outside the feature boundary
+    Given `proposed-execution-body.contract.v1.json` defines the product-domain-native methods for `<feature-id>`
+    And implementation planning discovers an additional method required to support the feature
+    But the additional method is not listed as a product-domain-native or product-domain-boundary-case method in the proposed body
+    When the feature boundary classifier evaluates the additional method
+    Then it should classify the method as one of:
+      | classification |
+      | package-boundary-summarized |
+      | pure-utility-extract |
+      | external-service-boundary |
+      | generated-evidence-ignore |
+      | product-owner-review-required |
+    And a method classified as `pure-utility-extract` should receive a package extraction proposal
+    And a method classified as `package-boundary-summarized` should require a package audit receipt
+    And a method classified as `external-service-boundary` should require external proof, release proof, or integrity proof
+    And the proposed feature body should cite the support method only as a boundary summary
+    And the source-domain proof should not expand the support method as a feature-native method call.
+
+  Scenario: Keep proposed method map from becoming a dependency inventory
+    Given `docs/features/<feature-id>/proposed-execution-body.contract.v1.json` exists
+    When the proposed method map is validated
+    Then `proposedMethodMap` should include only:
+      | allowed method kind |
+      | product-domain-native |
+      | product-domain-boundary-case approved by product owner |
+    And required support methods should be listed outside `proposedMethodMap` under a boundary classification such as:
+      | boundary classification |
+      | package-boundary-summarized |
+      | pure-utility-extract |
+      | external-service-boundary |
+      | generated-evidence-ignore |
+    And `proposedMethodMap` should not include pure utility, package-internal, generated evidence, path, formatting, hashing, or filesystem mechanics
+    And the blocker code should be:
+      | blocker code |
+      | proposed-method-map-contains-support-method |
+
+  Scenario: Block source contamination from methods outside the proposed native body
+    Given a proposed execution body declares the allowed product-domain-native method set for `<feature-id>`
+    And observed proof contains an extra method call inside the source-domain body
+    When the proposed-to-observed tie-out gate runs
+    Then the extra method call should be accepted only when it is:
+      | allowed reason |
+      | listed in the proposed method map |
+      | listed as a product-domain-boundary-case |
+      | summarized by a current package audit receipt |
+      | covered by an external boundary proof |
+      | explicitly approved by product-owner review |
+    And the gate should block the proof when the extra method is an unclassified helper, utility, or generated evidence mechanic
+    And the blocker code should be:
+      | blocker code |
+      | actual-execution-body-has-unclassified-support-method |
+    And the remediation action should be one of:
+      | remediation action |
+      | add the method to the proposed native body with method telemetry and SLO budget |
+      | classify the method as a product-domain-boundary-case |
+      | extract the method to a package boundary |
+      | summarize an existing package boundary with a package audit receipt |
+      | suppress generated evidence mechanics |
+      | ask for product-owner review |
+    And proof promotion should remain blocked until zero unclassified support methods remain in the source-domain body.
+
   Scenario: Reject proposed execution bodies that hide product meaning
     Given `proposed-execution-body.contract.v1.json` exists
     When the proposed execution body gate runs
@@ -152,6 +213,7 @@ Feature: Feature folder source truth and proposed execution body
       | proposed-body-missing-method-telemetry-budget |
       | proposed-body-missing-method-slo-target |
       | proposed-body-missing-method-source-range |
+      | proposed-body-has-unclassified-support-method |
       | proposed-body-has-product-owner-review-required-node |
     And each blocker should include the feature id, scenario id when available, node id, classification, and recommended next action
     And the recommendation should be actionable enough for an LLM remediation worker to prepare a focused update packet.
