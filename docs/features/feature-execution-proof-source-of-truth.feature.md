@@ -2,8 +2,8 @@
 Feature: Feature execution proof source of truth
 
   As an adversarial product owner
-  I want every executed feature scenario to produce canonical JSON execution proof
-  So that human reports are readable projections of telemetry and receipts, not hand-authored claims.
+  I want every executed feature scenario to produce run-scoped JSON proof and every proven feature to publish a source-controlled Markdown proof body
+  So that raw evidence can stay untracked while product owners still have durable feature proof in version control.
 
   Scenario: Inventory every feature scenario and proof state
     Given committed feature files exist under `docs/features/`
@@ -87,6 +87,138 @@ Feature: Feature execution proof source of truth
       | dense telemetry appendix |
       | method-by-method execution drill-down |
     And the report should link back to the canonical JSON proof using a repo-relative path.
+    And the run-scoped report should be treated as transient evidence, not the source-controlled product proof body.
+
+  Scenario: Promote a selected proof run into a source-controlled feature proof body
+    Given one or more scenario proof reports exist under `evidence/runs/<run-id>/features/<feature-id>/`
+    And a product owner selects `<run-id>` as the proof run for `<feature-id>`
+    When the feature proof publisher runs
+    Then it should write a compact Markdown proof body at:
+      """
+      docs/feature-proofs/<feature-id>.proof.md
+      """
+    And the proof body should be safe to commit to version control
+    And the proof body should include:
+      | section |
+      | feature identity |
+      | selected proof run id |
+      | proof run generated-at timestamp |
+      | proof run artifact hashes |
+      | scenario coverage summary |
+      | scenario execution outcomes |
+      | promotion decision |
+      | blocker summary |
+      | SLI and SLO summary |
+      | source feature document link |
+      | source-controlled proof body generated-at timestamp |
+      | regeneration command |
+    And the proof body should summarize raw telemetry and receipts instead of copying dense raw evidence
+    And the proof body should link to the original run-scoped proof artifacts using repo-relative paths for local review.
+
+  Scenario: Publish one feature-level proof body for the whole feature
+    Given a feature has multiple Gherkin scenarios
+    When a selected proof run is promoted into `docs/feature-proofs/<feature-id>.proof.md`
+    Then the proof body should contain one section per scenario
+    And each scenario section should include:
+      | field |
+      | scenario id |
+      | scenario name |
+      | acceptance source line range |
+      | proof status |
+      | selected run id |
+      | execution summary |
+      | blocker codes |
+      | source proof artifact hashes |
+    And scenarios without a proven run should remain visible as `not proven`
+    And the product owner should not need to inspect every run folder to understand whole-feature proof status.
+
+  Scenario: Block proven feature status without a committed proof body
+    Given a feature status projection claims a feature is `proven`, `qa-passed`, or `promoted`
+    When the feature proof source-truth gate runs
+    Then a committed proof body should exist at:
+      """
+      docs/feature-proofs/<feature-id>.proof.md
+      """
+    And the proof body should cite the selected proof run id
+    And the proof body should include the source proof artifact hashes used to generate it
+    And the gate should block the claim when the proof body is missing
+    And the finding code should be:
+      | finding |
+      | feature-status-without-source-controlled-proof-body |
+
+  Scenario: Mark feature proof body stale when source or selected proof changes
+    Given `docs/feature-proofs/<feature-id>.proof.md` exists
+    When the feature source document, selected proof run hash, scenario list, or promotion decision changes
+    Then the feature proof body should be marked stale
+    And the finding code should be:
+      | finding |
+      | source-controlled-feature-proof-stale |
+    And the recommended fix should regenerate the proof body from a selected proof run
+    And the feature should not be promoted from a stale proof body.
+
+  Scenario: Opt out of routine proof evidence when source-controlled proof is current
+    Given `docs/feature-proofs/<feature-id>.proof.md` exists
+    And the proof body cites a selected proof run id
+    And the proof body artifact hashes match the current feature source, scenario list, executable body contract, and selected proof artifacts
+    When a routine report truth run or feature truth inventory runs
+    Then the feature should be classified as:
+      | proof execution mode |
+      | source-controlled proof satisfied |
+    And the run should not regenerate dense feature proof evidence at:
+      """
+      evidence/runs/<current-run-id>/features/<feature-id>/
+      """
+    And the run may write only a lightweight inventory reference to:
+      | field |
+      | feature id |
+      | proof body path |
+      | selected proof run id |
+      | proof body hash |
+      | opt-out reason |
+    And the opt-out reason should be:
+      | reason |
+      | source-controlled-feature-proof-current |
+    And the feature should not be treated as missing proof merely because the current run skipped dense proof generation.
+
+  Scenario: Re-enter proof execution when opt-out is invalidated
+    Given `docs/feature-proofs/<feature-id>.proof.md` exists
+    When any proof invalidation condition is detected:
+      | condition |
+      | feature source hash changed |
+      | scenario added or removed |
+      | scenario acceptance text changed |
+      | executable body contract hash changed |
+      | selected proof artifact hash changed |
+      | selected proof run no longer exists locally and no proof body hash is available |
+      | product owner requests proof refresh |
+      | release-candidate or PI validation requires fresh proof |
+      | SLO measurement window requires fresh execution |
+    Then the feature should leave opt-out mode
+    And the feature should be scheduled for proof execution
+    And a new run-scoped proof packet may be written under:
+      """
+      evidence/runs/<current-run-id>/features/<feature-id>/
+      """
+    And the new proof run should not become source-controlled truth until it is promoted into `docs/feature-proofs/<feature-id>.proof.md`.
+
+  Scenario: Block opt-out when proof body does not cover every current scenario
+    Given a feature file contains scenarios under `docs/features/<feature-id>.feature.md`
+    And `docs/feature-proofs/<feature-id>.proof.md` exists
+    But one or more current scenarios are missing from the proof body
+    When the feature proof source-truth gate runs
+    Then the feature should not opt out of proof execution
+    And the finding code should be:
+      | finding |
+      | source-controlled-feature-proof-missing-scenario |
+    And the recommended fix should regenerate the proof body from a selected proof run that covers the current scenario list.
+
+  Scenario: Keep raw run evidence out of version control
+    Given feature proof evidence exists under `evidence/runs/<run-id>/`
+    When a source-controlled proof body is published
+    Then raw telemetry, dense receipts, run archives, screenshots, and large evidence packets should remain outside version control
+    And the committed proof body should preserve only the product-readable proof summary, selected run id, artifact hashes, and links
+    And the committed proof body should be enough for PI review without committing `evidence/runs/` or `evidence/archive/`
+    And a pull request that adds raw run evidence should be blocked unless the product owner explicitly changes the repository evidence policy.
 
   Scenario: Write shareable timing table projection
     Given canonical JSON proof exists for a feature scenario

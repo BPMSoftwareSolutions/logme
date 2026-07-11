@@ -3,7 +3,7 @@
   "featureId": "feature-quality-board-filesystem-body",
   "featureName": "Feature quality board filesystem body",
   "sourceFeaturePath": "docs/features/feature-quality-board-filesystem-body.feature.md",
-  "sourceFeatureContentHash": "d8e8e9bd4c64d20171bb053a43dcc82537e12f977004aa283f45a8c34e5ad3f0",
+  "sourceFeatureContentHash": "d7a6a4e98b94ea014f4d10064abce37338f4006e4ed687e42db8706eee86e24d",
   "displayStatus": "qa-blocked",
   "implementationStatus": "implemented",
   "executionProofStatus": "not proven",
@@ -28,7 +28,7 @@
   ],
   "staleReasons": [],
   "blockerCount": 2,
-  "generatedAt": "2026-07-10T21:21:48.965Z",
+  "generatedAt": "2026-07-11T11:59:34.958Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
   "productOwnerSummary": "Feature quality board filesystem body is currently qa-blocked."

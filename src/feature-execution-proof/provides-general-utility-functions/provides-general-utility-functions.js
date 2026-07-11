@@ -50,10 +50,42 @@ function summarizesCalls(calls) {
     firstCallTimestamp: calls[0].timestamp,
     lastCallTimestamp: calls[calls.length - 1].timestamp,
     totalDurationMs,
-    minimumCallDurationMs: durations.length > 0 ? Math.min(...durations) : NOT_OBSERVED,
-    maximumCallDurationMs: durations.length > 0 ? Math.max(...durations) : NOT_OBSERVED,
+    minimumCallDurationMs: durations.length > 0 ? findsMinimum(durations) : NOT_OBSERVED,
+    maximumCallDurationMs: durations.length > 0 ? findsMaximum(durations) : NOT_OBSERVED,
     averageCallDurationMs: durations.length > 0 ? totalDurationMs / durations.length : NOT_OBSERVED,
   };
+}
+
+function findsMinimum(numbers) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  let minimum = numbers[0];
+
+  for (const number of numbers) {
+    if (number < minimum) {
+      minimum = number;
+    }
+  }
+
+  return minimum;
+}
+
+function findsMaximum(numbers) {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(sampleMethod);
+  }
+
+  let maximum = numbers[0];
+
+  for (const number of numbers) {
+    if (number > maximum) {
+      maximum = number;
+    }
+  }
+
+  return maximum;
 }
 
 module.exports = { sumsNumbers, summarizesCalls };

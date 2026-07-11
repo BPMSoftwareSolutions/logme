@@ -54,7 +54,7 @@ function buildsCleanupPlanEntry(run) {
     protectionChecks: run.referencedBy.length > 0 ? run.referencedBy : ['none found'],
     referencesFound: run.referencedBy,
     approvalRequired: ACTIONS_REQUIRING_APPROVAL.has(action),
-    rollbackOrRestorePath: action === CLEANUP_ACTIONS.DELETE ? `evidence/archive/<year>/${run.runId}/` : null,
+    rollbackOrRestorePath: action === CLEANUP_ACTIONS.DELETE ? `evidence/archive/<year>/${run.runId}.zip` : null,
   };
 }
 

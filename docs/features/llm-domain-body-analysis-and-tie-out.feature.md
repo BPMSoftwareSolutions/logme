@@ -56,7 +56,8 @@ Feature: LLM domain body analysis and tie-out
   Scenario: Produce an LLM handoff artifact from deterministic facts
     Given domain body analysis has completed
     When an LLM receives the analysis packet
-    Then the packet should include only deterministic facts:
+    Then the packet should be a machine-readable JSON artifact
+    And it should include only deterministic facts:
       | fact |
       | file path |
       | executable method count |
@@ -68,4 +69,20 @@ Feature: LLM domain body analysis and tie-out
       | decomposition recommendations |
       | finding codes |
     And the LLM should not invent ownership, scenario proof, or promotion status.
+    And the JSON handoff should be concise enough for a bounded worker assignment
+    And the Markdown report should link to the JSON handoff instead of embedding all handoff facts.
+
+  Scenario: Keep the Markdown analysis report product-owner readable
+    Given domain body analysis has completed
+    When the Markdown analysis report is rendered
+    Then it should summarize:
+      | section |
+      | executive metrics |
+      | product-owner interpretation |
+      | priority work queues |
+      | top domain body risks |
+      | links to canonical JSON and LLM handoff JSON |
+    And it should not dump every executable file into the Markdown body
+    And it should not embed the full LLM handoff table
+    And exhaustive machine facts should remain in JSON artifacts.
 ```

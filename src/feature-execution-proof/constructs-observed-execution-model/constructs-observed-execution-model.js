@@ -5,6 +5,86 @@ const { eventMatchesNode, findsReceiptPathsForNode, formatsSourceLineRange, read
 const { calculatesDurationMs } = require('../calculates-timing-and-performance-metrics/calculates-timing-and-performance-metrics');
 const { summarizesCalls } = require('../provides-general-utility-functions/provides-general-utility-functions');
 
+const PRODUCT_DOMAIN_NATIVE = 'product-domain-native';
+const PACKAGE_BOUNDARY_SUMMARIZED = 'package-boundary-summarized';
+const TELEMETRY_INFRASTRUCTURE_SUPPRESS = 'telemetry-infrastructure-suppress';
+
+function readsAuditBoundary(event) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(readsAuditBoundary);
+  return event.auditBoundary || event.testimonyClassification || event.classification || PRODUCT_DOMAIN_NATIVE;
+}
+
+function isMethodDrillDownEvent(event) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(isMethodDrillDownEvent);
+  return ![PACKAGE_BOUNDARY_SUMMARIZED, TELEMETRY_INFRASTRUCTURE_SUPPRESS, 'generated-evidence-ignore'].includes(readsAuditBoundary(event));
+}
+
+function buildsTelemetryInfrastructureSummary(events) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(buildsTelemetryInfrastructureSummary);
+  const suppressedEvents = [];
+  for (const event of events) {
+    if (readsAuditBoundary(event) === TELEMETRY_INFRASTRUCTURE_SUPPRESS) suppressedEvents.push(event);
+  }
+  if (suppressedEvents.length === 0) {
+    return null;
+  }
+
+  const suppressedMethodNames = [];
+  const sourceEvidencePaths = [];
+  for (const event of suppressedEvents) {
+    suppressedMethodNames.push(event.methodName || event.name || NOT_OBSERVED);
+    if (event.telemetryEventPath || event.eventPath) sourceEvidencePaths.push(event.telemetryEventPath || event.eventPath);
+  }
+  return {
+    eventCount: suppressedEvents.length,
+    suppressedMethodNames: [...new Set(suppressedMethodNames)].sort(),
+    telemetryPackagePath: suppressedEvents[0].telemetryPackagePath || suppressedEvents[0].methodRuntimePath || suppressedEvents[0].runtimePath || NOT_OBSERVED,
+    suppressionReason: 'classified telemetry infrastructure is retained as a summary outside product method drill-down',
+    sourceEvidencePaths: [...new Set(sourceEvidencePaths)].sort(),
+  };
+}
+
+function buildsPackageBoundarySummaries(events) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(buildsPackageBoundarySummaries);
+  const summariesByPath = new Map();
+  for (const event of events) {
+    if (readsAuditBoundary(event) !== PACKAGE_BOUNDARY_SUMMARIZED) {
+      continue;
+    }
+    const packagePath = event.packagePath || event.methodRuntimePath || event.runtimePath || NOT_OBSERVED;
+    if (!summariesByPath.has(packagePath)) {
+      summariesByPath.set(packagePath, { packagePath, callCount: 0, methodNames: [], sourceEvidencePaths: [] });
+    }
+    const summary = summariesByPath.get(packagePath);
+    summary.callCount += 1;
+    summary.methodNames.push(event.methodName || event.name || NOT_OBSERVED);
+    if (event.telemetryEventPath || event.eventPath) {
+      summary.sourceEvidencePaths.push(event.telemetryEventPath || event.eventPath);
+    }
+  }
+
+  const summaries = [];
+  for (const summary of summariesByPath.values()) {
+    summaries.push({
+      ...summary,
+      methodNames: [...new Set(summary.methodNames)].sort(),
+      sourceEvidencePaths: [...new Set(summary.sourceEvidencePaths)].sort(),
+      summaryReason: 'package behavior is summarized at the product-domain audit boundary',
+    });
+  }
+  return summaries;
+}
+
+function rangeFallsOutsideDeclaredBody(event, node) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(rangeFallsOutsideDeclaredBody);
+  const observedRange = event.workSourceLineRange || event.methodSourceLineRange || event.sourceLineRange;
+  const declaredRange = node.sourceLineRange;
+  if (!observedRange || !declaredRange || !Number.isFinite(Number(observedRange.start)) || !Number.isFinite(Number(observedRange.end)) || !Number.isFinite(Number(declaredRange.start)) || !Number.isFinite(Number(declaredRange.end))) {
+    return false;
+  }
+  return Number(observedRange.start) < Number(declaredRange.start) || Number(observedRange.end) > Number(declaredRange.end);
+}
+
 function buildsObservedCall(event, index, previousTimestampMs, runStartMs) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -59,6 +139,7 @@ function buildsMethodCall(event, node, index, previousMethodTimestampMs, nodeSta
     callIndex: index,
     methodName: event.methodName || event.name || NOT_OBSERVED,
     methodKind: event.methodKind || event.kind || NOT_OBSERVED,
+    auditBoundary: readsAuditBoundary(event),
     runtimeFilePath: event.methodRuntimePath || event.runtimeFilePath || event.runtimePath || node.runtimePath,
     runtimePath: event.methodRuntimePath || event.runtimeFilePath || event.runtimePath || node.runtimePath,
     sourceLineRange,
@@ -98,10 +179,13 @@ function buildsMethodCalls(sortedEvents, node, nodeReceiptPaths, receiptStatus) 
   let previousMethodTimestampMs = nodeStartMs;
 
   for (let index = 0; index < sortedEvents.length; index += 1) {
+    if (!isMethodDrillDownEvent(sortedEvents[index])) {
+      continue;
+    }
     const methodCall = buildsMethodCall(
       sortedEvents[index],
       node,
-      index + 1,
+      methodCalls.length + 1,
       previousMethodTimestampMs,
       nodeStartMs,
       nodeReceiptPaths,
@@ -127,6 +211,8 @@ function buildsObservedNode(node, matchingEvents, receiptPaths, previousTimestam
     ? 'observed'
     : MISSING;
   const methodCalls = buildsMethodCalls(sortedEvents, node, nodeReceiptPaths, receiptStatus);
+  const telemetryInfrastructureSummary = buildsTelemetryInfrastructureSummary(sortedEvents);
+  const packageBoundarySummaries = buildsPackageBoundarySummaries(sortedEvents);
   const telemetryEventIds = readsTelemetryEventIds(calls);
   const telemetryEventPaths = readsTelemetryEventPaths(calls);
   const lastCall = calls[calls.length - 1] || null;
@@ -140,14 +226,30 @@ function buildsObservedNode(node, matchingEvents, receiptPaths, previousTimestam
     blockerCodes.push('required-receipt-missing');
   }
 
-  if (calls.length > 0 && methodCalls.length === 0) {
+  if (calls.length > 0 && methodCalls.length === 0 && !telemetryInfrastructureSummary && packageBoundarySummaries.length === 0) {
     blockerCodes.push('observed-body-node-without-method-drilldown');
   }
 
   for (const methodCall of methodCalls) {
+    if (methodCall.auditBoundary === PRODUCT_DOMAIN_NATIVE && (methodCall.methodName === NOT_OBSERVED || methodCall.methodKind === NOT_OBSERVED)) {
+      if (!blockerCodes.includes('product-method-name-not-observed')) {
+        blockerCodes.push('product-method-name-not-observed');
+      }
+      methodCall.status = 'blocked';
+      methodCall.blockerCode = 'product-method-name-not-observed';
+      methodCall.fixRoute = 'create a bounded Gemini testimony remediation packet for this native product call';
+    }
     if (methodCall.blockerCode !== NOT_OBSERVED && !blockerCodes.includes(methodCall.blockerCode)) {
       blockerCodes.push(methodCall.blockerCode);
     }
+  }
+
+  let rangeIncomplete = false;
+  for (const event of sortedEvents) {
+    if (rangeFallsOutsideDeclaredBody(event, node)) rangeIncomplete = true;
+  }
+  if (rangeIncomplete) {
+    blockerCodes.push('executable-body-source-range-incomplete');
   }
 
   return {
@@ -167,6 +269,8 @@ function buildsObservedNode(node, matchingEvents, receiptPaths, previousTimestam
     callCount: callSummary.callCount,
     calls,
     methodCalls,
+    packageBoundarySummaries,
+    telemetryInfrastructureSummary,
     callSummary,
     receiptPaths: nodeReceiptPaths,
     receiptStatus,
@@ -253,4 +357,4 @@ function normalizesDeclaredNodes(declaredExecutableBody) {
   return declaredNodes;
 }
 
-module.exports = { buildsObservedCall, buildsObservedCalls, buildsMethodCall, buildsMethodCalls, buildsObservedNode, buildsObservedExecutionTimeline, stampsMethodCallOwnership, normalizesDeclaredNode, normalizesDeclaredNodes };
+module.exports = { buildsObservedCall, buildsObservedCalls, buildsMethodCall, buildsMethodCalls, buildsObservedNode, buildsObservedExecutionTimeline, stampsMethodCallOwnership, normalizesDeclaredNode, normalizesDeclaredNodes, buildsPackageBoundarySummaries, buildsTelemetryInfrastructureSummary, rangeFallsOutsideDeclaredBody, readsAuditBoundary };

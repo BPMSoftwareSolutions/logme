@@ -2,8 +2,8 @@
 Feature: Feature quality board filesystem body
 
   As an adversarial product owner
-  I want `docs/features/` to include a generated feature quality board
-  So that the repository itself shows what is releasable, blocked, untested, stale, or promoted before I drill into reports.
+  I want `docs/features/` to include a stable generated feature quality board
+  So that the repository itself shows what is releasable, blocked, untested, stale, or promoted without rewriting status files when nothing changed.
 
   Background:
     Given feature status contracts may exist under `docs/features/_feature-status/`
@@ -11,6 +11,7 @@ Feature: Feature quality board filesystem body
     And end-user QA evidence bundles may exist under `quality/end-user-test-bundles/`
     And execution proof may exist under `evidence/runs/`
     And the feature quality board is a generated projection from evidence-backed status contracts
+    And unchanged status contracts should not be rewritten just because a verification run happened
 
   Scenario: Generate the product-owner quality board
     Given feature status contracts have been generated
@@ -84,7 +85,7 @@ Feature: Feature quality board filesystem body
     Then the JSON board should contain:
       | field |
       | schema version |
-      | generated at |
+      | board generated at |
       | generator name |
       | repository root |
       | git branch |
@@ -103,6 +104,31 @@ Feature: Feature quality board filesystem body
     And each board row should include the repo-relative path to its status sentinel
     And each board row should include the repo-relative path to its feature specification
     And every count in the Markdown board should be derived from the JSON board.
+
+  Scenario: Do not churn the board when source status contracts are unchanged
+    Given `docs/features/_FEATURE-QUALITY-BOARD.v1.json` exists
+    And the source status contract hashes are unchanged
+    And the calculated board rows, counts, blocker summary, and stale indicators are unchanged
+    When the feature quality board projection runs
+    Then it should not rewrite:
+      | artifact |
+      | docs/features/_FEATURE-QUALITY-BOARD.md |
+      | docs/features/_FEATURE-QUALITY-BOARD.v1.json |
+      | docs/features/_FEATURE-QUALITY-TREE.txt |
+    And the board generated-at timestamp should remain unchanged
+    And the run may write a run-scoped board verification receipt under:
+      """
+      evidence/runs/<run-id>/feature-status-checks/feature-quality-board.receipt.v1.json
+      """
+    And a fresh verification timestamp alone should not dirty the source-controlled board artifacts.
+
+  Scenario: Rewrite the board only for product-visible board changes
+    Given the feature quality board projection has calculated the current board state
+    When any board row, summary count, blocker summary, stale indicator, source status hash, or displayed next action changes
+    Then it should rewrite the board JSON and Markdown
+    And it should update the board generated-at timestamp
+    And it should preserve the reason for the board rewrite
+    And it should not rewrite the board solely because a status check was executed.
 
   Scenario: Generate a filesystem tree projection for review
     Given the status sentinels and board have been generated
@@ -197,6 +223,7 @@ Feature: Feature quality board filesystem body
       | docs/features/_FEATURE-QUALITY-TREE.txt |
       | docs/features/_STATUS.<display-status>.<feature-id>.md |
     And it should fail if generated artifacts differ from committed artifacts
+    And it should not fail because an unchanged board kept its previous board generated-at timestamp
     And the failure should include:
       | finding code |
       | feature-quality-board-stale |

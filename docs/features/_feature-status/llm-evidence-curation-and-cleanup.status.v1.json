@@ -3,25 +3,30 @@
   "featureId": "llm-evidence-curation-and-cleanup",
   "featureName": "LLM evidence curation and cleanup",
   "sourceFeaturePath": "docs/features/llm-evidence-curation-and-cleanup.feature.md",
-  "sourceFeatureContentHash": "b4f893cc5ad3f736c3e26fb0202d2e66cf07cd13542ccab6d8dfdff98cacba48",
-  "displayStatus": "not-implemented",
-  "implementationStatus": "not implemented",
-  "executionProofStatus": "not proven",
+  "sourceFeatureContentHash": "c790265f2d6c357686dd729531ff1e691c7d8d8ed5abc59fa71101408cfd6d97",
+  "displayStatus": "implemented.not-tested",
+  "implementationStatus": "implemented",
+  "executionProofStatus": "proven",
   "endUserQaStatus": "not QAed",
   "promotionStatus": "not promoted",
-  "latestExecutionRunId": "missing",
+  "latestExecutionRunId": "evidence-curate-dd3f8b362b63f58e",
   "latestQaRunId": "missing",
   "latestReleaseCandidateId": "missing",
-  "latestExecutionProofPath": "missing",
+  "latestExecutionProofPath": "evidence/runs/evidence-curate-dd3f8b362b63f58e/features/llm-evidence-curation-and-cleanup/scenarios/produce-a-product-owner-latest-evidence-surface/feature-execution.contract.v1.json",
   "latestQaBundlePath": "missing",
   "latestQaGateDecisionPath": "missing",
   "latestPromotionDecisionPath": "missing",
-  "evidenceHashes": {},
+  "evidenceHashes": {
+    "latestExecutionProof": {
+      "path": "evidence/runs/evidence-curate-dd3f8b362b63f58e/features/llm-evidence-curation-and-cleanup/scenarios/produce-a-product-owner-latest-evidence-surface/feature-execution.contract.v1.json",
+      "sha256": "439fde6474bcde9726996de1f697dc0461333a5210d59c4da25a2780c1c70cf9"
+    }
+  },
   "blockerCodes": [],
   "staleReasons": [],
   "blockerCount": 0,
-  "generatedAt": "2026-07-10T21:21:48.965Z",
+  "generatedAt": "2026-07-11T11:59:34.958Z",
   "generatorName": "LogMe feature filesystem quality status projection",
-  "nextRecommendedAction": "implement the feature and generate execution proof",
-  "productOwnerSummary": "LLM evidence curation and cleanup is currently not-implemented."
+  "nextRecommendedAction": "run the LLM end-user testing conveyor",
+  "productOwnerSummary": "LLM evidence curation and cleanup has implementation proof but no end-user QA bundle."
 }

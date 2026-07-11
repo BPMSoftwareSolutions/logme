@@ -3,7 +3,7 @@
   "featureId": "llm-domain-body-analysis-and-tie-out",
   "featureName": "LLM domain body analysis and tie-out",
   "sourceFeaturePath": "docs/features/llm-domain-body-analysis-and-tie-out.feature.md",
-  "sourceFeatureContentHash": "88e8f752a52858574ac2b98829c5da559f3552821704d884f2ea4b88cb75cf53",
+  "sourceFeatureContentHash": "9d7573548b8e0519d13c99645287335ff90a14f4c57be8b9f2ed99d6cc6a234e",
   "displayStatus": "qa-blocked",
   "implementationStatus": "implemented",
   "executionProofStatus": "not proven",
@@ -28,7 +28,7 @@
   ],
   "staleReasons": [],
   "blockerCount": 2,
-  "generatedAt": "2026-07-10T21:21:48.965Z",
+  "generatedAt": "2026-07-11T11:59:34.958Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
   "productOwnerSummary": "LLM domain body analysis and tie-out is currently qa-blocked."

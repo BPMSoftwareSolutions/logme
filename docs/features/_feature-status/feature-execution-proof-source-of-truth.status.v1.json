@@ -3,33 +3,38 @@
   "featureId": "feature-execution-proof-source-of-truth",
   "featureName": "Feature execution proof source of truth",
   "sourceFeaturePath": "docs/features/feature-execution-proof-source-of-truth.feature.md",
-  "sourceFeatureContentHash": "61602e1e2ddfa7d437ff425636c9b14a33791dd24bad970c191b78b2848ed393",
+  "sourceFeatureContentHash": "09635382e7d04bc60067ac04c2614e4bde84a30b1281b321550cd38230dd5ca4",
   "displayStatus": "qa-blocked",
   "implementationStatus": "implemented",
-  "executionProofStatus": "not proven",
+  "executionProofStatus": "blocked",
   "endUserQaStatus": "BLOCKED",
   "promotionStatus": "not promoted",
-  "latestExecutionRunId": "missing",
+  "latestExecutionRunId": "self-proof-run-2",
   "latestQaRunId": "feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
   "latestReleaseCandidateId": "rc-live-gemini-scenario-2026-07-10-00-49-15-916",
-  "latestExecutionProofPath": "missing",
+  "latestExecutionProofPath": "evidence/runs/self-proof-run-2/features/feature-execution-proof-source-of-truth/scenarios/write-shareable-timing-table-projection/feature-execution.contract.v1.json",
   "latestQaBundlePath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini",
   "latestQaGateDecisionPath": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini/qa-gate-decision.v1.json",
   "latestPromotionDecisionPath": "missing",
   "evidenceHashes": {
+    "latestExecutionProof": {
+      "path": "evidence/runs/self-proof-run-2/features/feature-execution-proof-source-of-truth/scenarios/write-shareable-timing-table-projection/feature-execution.contract.v1.json",
+      "sha256": "6c9217922206f86c7596c32013f89d3c10e62125949921ff3189de309eabba4f"
+    },
     "latestQaBundleManifest": {
       "path": "quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini/qa-evidence-bundle.manifest.v1.json",
       "sha256": "da3d53dc1ebe18cdfa64cd2f1626d99484db6e95813379032a33b38d3d8584b2"
     }
   },
   "blockerCodes": [
+    "telemetry-not-observed",
     "llm-acceptance-criterion-not-evidence-backed",
     "qa-cleanup-human-report-evidence-missing"
   ],
   "staleReasons": [],
-  "blockerCount": 2,
-  "generatedAt": "2026-07-10T21:21:48.965Z",
+  "blockerCount": 3,
+  "generatedAt": "2026-07-11T11:59:34.958Z",
   "generatorName": "LogMe feature filesystem quality status projection",
-  "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
+  "nextRecommendedAction": "resolve QA blocker telemetry-not-observed",
   "productOwnerSummary": "Feature execution proof source of truth is currently qa-blocked."
 }

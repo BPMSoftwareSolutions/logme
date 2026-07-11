@@ -41,12 +41,13 @@ test('executesArchivePurge blocks a purge on a pinned archived run even when app
   }
 });
 
-test('executesArchivePurge deletes an approved, unreferenced expired archived run', () => {
+test('executesArchivePurge deletes an approved, unreferenced expired compressed archived run', () => {
   const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'logme-archive-execute-'));
 
   try {
-    fs.mkdirSync(path.join(tempDir, 'evidence/archive/2026/run-1'), { recursive: true });
-    fs.writeFileSync(path.join(tempDir, 'evidence/archive/2026/run-1/notes.md'), 'content', 'utf8');
+    fs.mkdirSync(path.join(tempDir, 'evidence/archive/2026'), { recursive: true });
+    fs.writeFileSync(path.join(tempDir, 'evidence/archive/2026/run-1.zip'), 'PK content', 'utf8');
+    fs.writeFileSync(path.join(tempDir, 'evidence/archive/2026/run-1.archive-manifest.v1.json'), '{}', 'utf8');
 
     const plan = { entries: [{ runId: 'run-1', year: '2026', action: 'purge', referencesFound: [], bytesReclaimable: 10 }] };
 
@@ -54,7 +55,8 @@ test('executesArchivePurge deletes an approved, unreferenced expired archived ru
 
     assert.equal(result.verdict, 'EXECUTED');
     assert.equal(result.executionResult.purgedRuns.length, 1);
-    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2026/run-1')), false);
+    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2026/run-1.zip')), false);
+    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2026/run-1.archive-manifest.v1.json')), false);
     assert.equal(fs.existsSync(result.receiptPath), true);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });

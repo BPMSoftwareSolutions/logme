@@ -4,9 +4,9 @@
 
 ## PI Summary Counts
 
-- total features: 28
-- not implemented: 2
-- implemented not tested: 0
+- total features: 29
+- not implemented: 1
+- implemented not tested: 2
 - proof blocked: 0
 - QA not run: 0
 - QA blocked: 25
@@ -23,6 +23,7 @@
 - qa-cleanup-assigned-surface-insufficient: 2
 - qa-cleanup-precondition-or-negative-case-evidence-missing: 2
 - qa-cleanup-required-artifact-evidence-missing: 2
+- telemetry-not-observed: 1
 
 ## Features Needing Action
 
@@ -37,7 +38,7 @@
 | domain-ownership-boundary-proof | Domain ownership boundary proof | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/domain-ownership-boundary-proof--require-ownership-evidence-for-domain-bound-methods--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
 | end-user-quality-evidence-bundle | End-user quality evidence bundle | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/end-user-quality-evidence-bundle--render-qa-status-in-the-global-report--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
 | evidence-receipt-coverage | Evidence receipt coverage | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | evidence-receipt-coverage--write-report-evidence-packet--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/evidence-receipt-coverage--write-report-evidence-packet--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
-| feature-execution-proof-source-of-truth | Feature execution proof source of truth | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
+| feature-execution-proof-source-of-truth | Feature execution proof source of truth | qa-blocked | implemented | blocked | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-execution-proof-source-of-truth--write-shareable-timing-table-projection--live-gemini | 3 | telemetry-not-observed | current | resolve QA blocker telemetry-not-observed |
 | feature-filesystem-quality-status-projection | Feature filesystem quality status projection | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-filesystem-quality-status-projection--write-machine-readable-status-beside-the-filesystem-sentinel--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
 | feature-quality-board-filesystem-body | Feature quality board filesystem body | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-quality-board-filesystem-body--write-a-machine-readable-board-contract--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
 | feature-scoped-ascii-execution-flow-report | Feature-scoped ASCII execution flow report | qa-blocked | implemented | proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/feature-scoped-ascii-execution-flow-report--use-fallback-only-as-a-non-promotable-development-diagnostic--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
@@ -53,8 +54,9 @@
 | report-provenance-and-freshness-gate | Report provenance and freshness gate | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | report-provenance-and-freshness-gate--render-report-provenance--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/report-provenance-and-freshness-gate--render-report-provenance--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
 | summary-findings-and-method-row-tie-out | Summary, findings, and method row tie-out | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/summary-findings-and-method-row-tie-out--tie-findings-to-table-rows--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
 | verdict-derivation-consistency | Verdict derivation consistency | qa-blocked | implemented | not proven | BLOCKED | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/verdict-derivation-consistency--block-sterile-verdict-when-any-hard-law-is-violated--live-gemini | 2 | llm-acceptance-criterion-not-evidence-backed | current | resolve QA blocker llm-acceptance-criterion-not-evidence-backed |
-| llm-domain-remediation | LLM domain remediation | not-implemented | not implemented | not proven | not QAed | not promoted | missing | missing | missing | 0 | none | current | implement the feature and generate execution proof |
-| llm-evidence-curation-and-cleanup | LLM evidence curation and cleanup | not-implemented | not implemented | not proven | not QAed | not promoted | missing | missing | missing | 0 | none | current | implement the feature and generate execution proof |
+| llm-domain-remediation | LLM domain remediation | implemented.not-tested | implemented | proven | not QAed | not promoted | missing | missing | missing | 0 | none | current | run the LLM end-user testing conveyor |
+| llm-evidence-curation-and-cleanup | LLM evidence curation and cleanup | implemented.not-tested | implemented | proven | not QAed | not promoted | missing | missing | missing | 0 | none | current | run the LLM end-user testing conveyor |
+| llm-testimony-accuracy-remediation | LLM testimony accuracy remediation | not-implemented | not implemented | not proven | not QAed | not promoted | missing | missing | missing | 0 | none | current | implement the feature and generate execution proof |
 | per-feature-executable-body-evidence-reports | Per-feature executable body evidence reports | qa-passed | implemented | not proven | QA passed | not promoted | rc-live-gemini-scenario-2026-07-10-00-49-15-916 | per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini | quality/end-user-test-bundles/rc-live-gemini-scenario-2026-07-10-00-49-15-916/per-feature-executable-body-evidence-reports--write-one-feature-scenario-evidence-packet-for-an-executed-scenario--live-gemini | 0 | none | current | run deterministic promotion gate |
 
 ## Promoted Features
@@ -65,5 +67,5 @@ _No promoted features._
 
 _No board findings._
 
-Generated at: 2026-07-10T21:21:48.965Z
+Generated at: 2026-07-11T11:59:34.958Z
 Generated by: LogMe feature quality board filesystem body

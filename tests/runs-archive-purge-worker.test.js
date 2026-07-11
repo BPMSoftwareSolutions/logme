@@ -16,9 +16,10 @@ test('runsArchivePurgeWorker scans archived runs and writes a dry-run purge plan
 
   try {
     writesFile(
-      path.join(tempDir, 'evidence/archive/2025/run-1/archive-manifest.v1.json'),
-      JSON.stringify({ archivedAt: '2025-01-01T00:00:00.000Z', byteSize: 200, artifactCount: 1, cleanupApprovalId: 'po' }),
+      path.join(tempDir, 'evidence/archive/2025/run-1.archive-manifest.v1.json'),
+      JSON.stringify({ archivedAt: '2025-01-01T00:00:00.000Z', byteSize: 200, compressedByteSize: 20, compressionRatio: 0.1, artifactCount: 1, cleanupApprovalId: 'po' }),
     );
+    writesFile(path.join(tempDir, 'evidence/archive/2025/run-1.zip'), 'PK content');
 
     const result = runsArchivePurgeWorker(tempDir, { now: new Date('2026-07-10T00:00:00.000Z') });
 
@@ -26,7 +27,8 @@ test('runsArchivePurgeWorker scans archived runs and writes a dry-run purge plan
     assert.equal(fs.existsSync(result.planPath), true);
     assert.equal(fs.existsSync(result.reportPath), true);
     assert.equal(result.plan.entries[0].action, 'purge');
-    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2025/run-1/archive-manifest.v1.json')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2025/run-1.zip')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2025/run-1.archive-manifest.v1.json')), true);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }

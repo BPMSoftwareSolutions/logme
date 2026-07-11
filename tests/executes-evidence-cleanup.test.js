@@ -64,7 +64,9 @@ test('executesEvidenceCleanup archives before deleting an approved, unreferenced
     assert.equal(result.verdict, 'EXECUTED');
     assert.equal(result.executionResult.archivedRuns.length, 1);
     assert.equal(result.executionResult.deletedRuns[0].archivedFirst, true);
-    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2026/run-1/notes.md')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2026/run-1.zip')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2026/run-1.archive-manifest.v1.json')), true);
+    assert.equal(fs.existsSync(path.join(tempDir, 'evidence/archive/2026/run-1/notes.md')), false);
     assert.equal(fs.existsSync(result.receiptPath), true);
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });

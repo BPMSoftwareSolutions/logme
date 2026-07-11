@@ -20,13 +20,25 @@ function buildsPromotionDecision(nodes, blockerFindings) {
     }
   }
 
+  const uniqueBlockerCodes = [...new Set(blockerCodes)];
+
   return {
-    status: blockerCodes.length === 0 ? 'proven' : 'blocked',
-    blockerCodes,
-    reason: blockerCodes.length === 0
+    status: uniqueBlockerCodes.length === 0 ? 'proven' : 'blocked',
+    blockerCodes: uniqueBlockerCodes,
+    recommendedFixes: uniqueBlockerCodes.map(buildsRecommendedFix),
+    reason: uniqueBlockerCodes.length === 0
       ? 'all declared executable body nodes have observed telemetry and required receipts'
-      : 'one or more executable body nodes lack observed telemetry, required receipts, or explicit blocker clearance',
+      : 'one or more executable body nodes failed a deterministic testimony, source-range, telemetry, receipt, or blocker-clearance gate',
   };
+}
+
+function buildsRecommendedFix(blockerCode) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(buildsRecommendedFix);
+  const fixes = {
+    'product-method-name-not-observed': 'create a bounded Gemini testimony remediation packet and replace generic testimony only after accepted classification',
+    'executable-body-source-range-incomplete': 'require the Gemini worker to propose an updated source range or a decomposed executable body node',
+  };
+  return { blockerCode, fix: fixes[blockerCode] || 'resolve the cited proof blocker and rerun deterministic verification' };
 }
 
 function readsBlockerFindingCode(finding) {
@@ -45,4 +57,4 @@ function readsNodeBlockerCodes(node) {
   return node.blockerCodes;
 }
 
-module.exports = { buildsPromotionDecision, readsBlockerFindingCode, readsNodeBlockerCodes };
+module.exports = { buildsPromotionDecision, buildsRecommendedFix, readsBlockerFindingCode, readsNodeBlockerCodes };

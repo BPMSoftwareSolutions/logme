@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "evidence-cleanup-approval.v1",
+  "approvedBy": "sjones.presence@gmail.com",
+  "approvedAt": "2026-07-10T20:18:30.645Z",
+  "cleanupPlanPath": "evidence/cleanup/evidence-cleanup-plan.v1.json",
+  "cleanupPlanHash": "5f375e4bb882ea90aa06d85a7d751a2ffd61e0f4fccadf8802a8296693f8ee40",
+  "approvedActions": [
+    "archive"
+  ]
+}

@@ -15,6 +15,7 @@ Feature: LLM evidence curation and cleanup
     And feature status projections may reference evidence paths under:
       | path |
       | docs/features/_feature-status/ |
+    And archived evidence should be compressed because archive folders can become too large for local developer storage.
 
   Scenario: Inventory evidence runs without deleting anything
     Given the repository contains many evidence run folders
@@ -182,14 +183,71 @@ Feature: LLM evidence curation and cleanup
   Scenario: Archive before deleting high-volume evidence
     Given a run is a delete candidate but contains artifacts that may be useful later
     When the Cleanup Executor prepares destructive cleanup
-    Then it should prefer archive before delete unless policy explicitly allows direct deletion
-    And archived evidence should be written under:
+    Then it should prefer compressed archive before delete unless policy explicitly allows direct deletion
+    And the archive of record should be a zip file at:
       | path |
-      | evidence/archive/<year>/<run-id>/ |
-    And an archive manifest should be written at:
+      | evidence/archive/<year>/<run-id>.zip |
+    And a sidecar archive manifest should be written at:
       | artifact |
-      | evidence/archive/<year>/<run-id>/archive-manifest.v1.json |
-    And the manifest should include source path, destination path, artifact count, byte size, content hashes, and cleanup approval id.
+      | evidence/archive/<year>/<run-id>.archive-manifest.v1.json |
+    And the manifest should include:
+      | field |
+      | source path |
+      | archive path |
+      | compression format |
+      | artifact count |
+      | uncompressed byte size |
+      | compressed byte size |
+      | compression ratio |
+      | content hashes |
+      | cleanup approval id |
+      | archive retention expiry |
+    And the source run folder should be deleted only after the zip archive and manifest are written and verified
+    And uncompressed archive folders should be treated as temporary staging, not the durable archive of record.
+
+  Scenario: Verify compressed archive integrity before deleting source evidence
+    Given the Cleanup Executor has written `evidence/archive/<year>/<run-id>.zip`
+    When the archive integrity check runs
+    Then it should verify:
+      | check |
+      | zip file exists |
+      | sidecar manifest exists |
+      | compressed byte size is greater than zero |
+      | every manifest content hash was calculated before source deletion |
+      | archive path in the manifest matches the zip path |
+      | cleanup approval id is present |
+    And the source run folder should remain in place when any integrity check fails
+    And the finding code should be:
+      | finding |
+      | compressed-archive-integrity-check-failed |
+
+  Scenario: Expire compressed archives or move them to cold storage
+    Given compressed archive manifests exist under `evidence/archive/<year>/`
+    When the Archive Purge Planner evaluates archive retention
+    Then each compressed archive should be classified as one of:
+      | classification |
+      | protected-pinned |
+      | within-retention-window |
+      | cold-storage-candidate |
+      | expired-delete-candidate |
+      | unsafe-to-delete |
+    And supported post-archive actions should be:
+      | action |
+      | keep |
+      | move-to-cold-storage |
+      | delete-local-archive |
+      | investigate |
+    And cold storage movement should write a transfer receipt containing:
+      | field |
+      | provider |
+      | bucket or container |
+      | object key |
+      | remote URI |
+      | local archive path |
+      | archive hash |
+      | transferred at |
+      | approved by |
+    And local compressed archives should be deleted only after transfer receipt verification or explicit delete approval.
 
   Scenario: Preserve the small set of evidence that matters for daily product work
     Given evidence cleanup has been executed
@@ -220,6 +278,9 @@ Feature: LLM evidence curation and cleanup
       | cleanup plan hash |
       | kept runs |
       | archived runs |
+      | compressed archive paths |
+      | compressed bytes written |
+      | compression ratio |
       | deleted runs |
       | blocked actions |
       | bytes reclaimed |
@@ -234,6 +295,7 @@ Feature: LLM evidence curation and cleanup
       | protected reference check |
       | approval check |
       | plan hash check |
+      | compressed archive integrity check |
       | archive manifest check |
       | cleanup receipt check |
     And the LLM should not be able to bypass a failed gate by changing narrative language.

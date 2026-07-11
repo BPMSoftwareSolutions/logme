@@ -101,7 +101,7 @@ function executesApprovedDestructiveAction(rootDir, entry, archiveFirst, approva
   try {
     if (entry.action === CLEANUP_ACTIONS.ARCHIVE || archiveFirst) {
       const { manifest } = archivesEvidenceRun(rootDir, entry.runId, approvalRecord.approvedBy, now);
-      archivedRuns.push({ runId: entry.runId, manifestPath: manifest.destinationPath });
+      archivedRuns.push({ runId: entry.runId, archivePath: manifest.archivePath, manifestPath: manifest.manifestPath });
 
       if (entry.action === CLEANUP_ACTIONS.DELETE) {
         deletedRuns.push({ runId: entry.runId, archivedFirst: true });

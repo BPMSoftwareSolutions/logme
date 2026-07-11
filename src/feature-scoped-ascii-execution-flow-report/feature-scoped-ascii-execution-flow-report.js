@@ -116,6 +116,8 @@ function formatsFixRoute(blockerCode) {
     'declared-but-silent': 'add runtime testimony and receipt proof',
     'runtime-duration-evidence-missing': 'emit start, end, or explicit duration evidence',
     'telemetry-observation-inferred-from-verdict': 'tie telemetry observation to raw runtime events',
+    'product-method-name-not-observed': 'create a bounded Gemini testimony remediation packet',
+    'executable-body-source-range-incomplete': 'propose an updated source range or decomposed body node',
   };
 
   return fixRoutes[blockerCode] || 'inspect the body node and rerun the feature proof';
@@ -296,6 +298,37 @@ function buildsMethodDrillDownBranch(node, rootDir) {
   };
 }
 
+function buildsPackageBoundaryBranch(node, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(buildsPackageBoundaryBranch);
+  const children = [];
+  for (const summary of node.packageBoundarySummaries || []) {
+    children.push({
+      label: `${formatsRepoRelativePath(rootDir, summary.packagePath)} (${summary.callCount} call(s): ${summary.methodNames.join(', ')})`,
+    });
+  }
+  return {
+    label: 'package-boundary summaries',
+    children: children.length > 0 ? children : [{ label: 'none' }],
+  };
+}
+
+function buildsTelemetryInfrastructureBranch(node, rootDir) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(buildsTelemetryInfrastructureBranch);
+  const summary = node.telemetryInfrastructureSummary;
+  if (!summary) {
+    return { label: 'telemetry infrastructure summary', children: [{ label: 'none suppressed' }] };
+  }
+  return {
+    label: 'telemetry infrastructure summary',
+    children: [
+      { label: `event count       : ${summary.eventCount}` },
+      { label: `suppressed methods: ${summary.suppressedMethodNames.join(', ')}` },
+      { label: `package path      : ${formatsRepoRelativePath(rootDir, summary.telemetryPackagePath)}` },
+      { label: `reason            : ${summary.suppressionReason}` },
+    ],
+  };
+}
+
 function buildsExecutionNodeFromProofNode(node, rootDir) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
@@ -311,7 +344,9 @@ function buildsExecutionNodeFromProofNode(node, rootDir) {
         label: 'telemetry',
         children: buildsTelemetryChildren(node, rootDir),
       },
+      buildsPackageBoundaryBranch(node, rootDir),
       buildsMethodDrillDownBranch(node, rootDir),
+      buildsTelemetryInfrastructureBranch(node, rootDir),
       { label: 'receipt', value: formatsReceiptValue(rootDir, node) },
       {
         label: 'status',

@@ -15,7 +15,13 @@ test('writesEvidenceCleanupReceipt writes a receipt with the required fields', (
       approvedAt: '2026-07-01T00:00:00.000Z',
       cleanupPlanHash: 'hash-abc',
       keptRuns: ['run-1'],
-      archivedRuns: [{ runId: 'run-2', manifestPath: 'evidence/archive/2026/run-2' }],
+      archivedRuns: [
+        {
+          runId: 'run-2',
+          archivePath: 'evidence/archive/2026/run-2.zip',
+          manifestPath: 'evidence/archive/2026/run-2.archive-manifest.v1.json',
+        },
+      ],
       deletedRuns: [],
       blockedActions: [],
       bytesReclaimed: 500,

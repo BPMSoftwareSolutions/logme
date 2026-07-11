@@ -7,6 +7,7 @@
     "report:truth": "node scripts/report-truth.js",
     "report:truth:fast": "node scripts/report-truth.js --fast",
     "remediation:plan": "node scripts/remediation-plan.js",
+    "remediation:testimony-accuracy": "node scripts/testimony-accuracy-remediation.js",
     "remediation:cartography": "node scripts/domain-cartography.js",
     "remediation:scenario-tieout": "node scripts/scenario-tieout.js",
     "remediation:contract-steward": "node scripts/contract-steward.js",
@@ -23,6 +24,7 @@
     "evidence:archive-purge-plan": "node scripts/archive-purge-plan.js",
     "evidence:archive-purge-approve": "node scripts/archive-purge-approve.js",
     "evidence:archive-purge": "node scripts/archive-purge-execute.js",
+    "feature:proof:promote": "node scripts/feature-proof-promote.js",
     "test": "node --test tests/"
   },
   "dependencies": {

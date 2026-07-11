@@ -3,7 +3,7 @@
   "featureId": "feature-filesystem-quality-status-projection",
   "featureName": "Feature filesystem quality status projection",
   "sourceFeaturePath": "docs/features/feature-filesystem-quality-status-projection.feature.md",
-  "sourceFeatureContentHash": "e18ba67ed83a9c79492717d8a6fcb18cf7eb96a1042a002b0e41e9e80009a4db",
+  "sourceFeatureContentHash": "ea6573836e56ff200be073210e87bc72245f9cde5ec0d95a98701ef4aef0090d",
   "displayStatus": "qa-blocked",
   "implementationStatus": "implemented",
   "executionProofStatus": "not proven",
@@ -28,7 +28,7 @@
   ],
   "staleReasons": [],
   "blockerCount": 2,
-  "generatedAt": "2026-07-10T21:21:48.965Z",
+  "generatedAt": "2026-07-11T11:59:34.958Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
   "productOwnerSummary": "Feature filesystem quality status projection is currently qa-blocked."

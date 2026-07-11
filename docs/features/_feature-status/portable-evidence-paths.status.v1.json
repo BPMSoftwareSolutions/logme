@@ -28,7 +28,7 @@
   ],
   "staleReasons": [],
   "blockerCount": 2,
-  "generatedAt": "2026-07-10T21:21:48.965Z",
+  "generatedAt": "2026-07-11T11:59:34.958Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
   "productOwnerSummary": "Portable evidence paths is currently qa-blocked."

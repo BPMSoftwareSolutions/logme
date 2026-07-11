@@ -96,7 +96,12 @@ function executesApprovedPurge(rootDir, entry, purgedRuns, errors) {
 
   try {
     const archivedRunDir = path.join(rootDir, 'evidence', 'archive', entry.year, entry.runId);
+    const archiveZipPath = path.join(rootDir, 'evidence', 'archive', entry.year, `${entry.runId}.zip`);
+    const archiveManifestPath = path.join(rootDir, 'evidence', 'archive', entry.year, `${entry.runId}.archive-manifest.v1.json`);
+
     fs.rmSync(archivedRunDir, { recursive: true, force: true });
+    fs.rmSync(archiveZipPath, { force: true });
+    fs.rmSync(archiveManifestPath, { force: true });
     purgedRuns.push({ runId: entry.runId, year: entry.year });
   } catch (executionError) {
     errors.push({ runId: entry.runId, action: entry.action, message: executionError.message });
