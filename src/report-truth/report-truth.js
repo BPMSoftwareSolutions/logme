@@ -29,7 +29,7 @@ function sha256Hex(value) {
   return crypto.createHash('sha256').update(value, 'utf8').digest('hex');
 }
 
-function suppressTelemetryDuring(callback) {
+function suppressTelemetryDuring(callback, ...args) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
@@ -38,7 +38,7 @@ function suppressTelemetryDuring(callback) {
   delete process.env.LOGME_AUDIT;
 
   try {
-    return callback();
+    return callback(...args);
   } finally {
     if (previousAudit === undefined) {
       delete process.env.LOGME_AUDIT;
@@ -363,12 +363,14 @@ function buildsDomainBodySterilityContractSafely(config) {
   }
 }
 
-function buildsReportTruthSnapshotCore() {
+function buildsReportTruthSnapshotCore(options = {}) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
   const config = loadsWorkspaceObservabilityConfig();
+  config.auditScope = options.auditScope || 'source-domain audit';
+  config.packageAuditPaths = options.packageAuditPaths || [];
   const { built, layoutFailureReason } = buildsDomainBodySterilityContractSafely(config);
 
   if (layoutFailureReason) {
@@ -400,12 +402,12 @@ function buildsReportTruthSnapshotCore() {
   };
 }
 
-function buildsReportTruthSnapshot() {
+function buildsReportTruthSnapshot(options = {}) {
   if (process.env.LOGME_AUDIT === '1') {
     LogMe(sampleMethod);
   }
 
-  return suppressTelemetryDuring(buildsReportTruthSnapshotCore);
+  return suppressTelemetryDuring(buildsReportTruthSnapshotCore, options);
 }
 
 function collectsTopFindingCodes(findings, limit = 3) {
@@ -575,7 +577,7 @@ function runsReportTruthCommand(options = {}) {
     LogMe(sampleMethod);
   }
 
-  const snapshot = buildsReportTruthSnapshot();
+  const snapshot = buildsReportTruthSnapshot(options);
   const featureQualityProjection = snapshot.layoutFailureReason || options.writeFeatureQualityBoard === false
     ? null
     : writesFeatureQualityBoardProjection({ rootDir: snapshot.config.rootDir });

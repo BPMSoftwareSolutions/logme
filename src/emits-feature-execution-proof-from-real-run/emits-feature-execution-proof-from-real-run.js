@@ -14,7 +14,8 @@ function capturesRealTelemetryForRealInvocation(scriptPath, scriptArgs) {
     LogMe(sampleMethod);
   }
 
-  return new Promise((resolve, reject) => {
+  function runsCapturedChildInvocation(resolve, reject) {
+    if (process.env.LOGME_AUDIT === '1') LogMe(runsCapturedChildInvocation);
     const runStartedAt = new Date();
     const child = spawn(process.execPath, [scriptPath, ...scriptArgs], {
       env: { ...process.env, LOGME_AUDIT: '1', EVIDENCE_PROOF_CAPTURE_CHILD: '1' },
@@ -24,27 +25,27 @@ function capturesRealTelemetryForRealInvocation(scriptPath, scriptArgs) {
     let stdoutTail = '';
     const stderrChunks = [];
 
-    child.stdout.on('data', (chunk) => {
+    function capturesChildStdout(chunk) {
+      if (process.env.LOGME_AUDIT === '1') LogMe(capturesChildStdout);
       const receivedAt = new Date();
       stdoutTail += chunk.toString('utf8');
       consumesStreamChunk(chunk.toString('utf8'), streamState, telemetryEvents, receivedAt);
-    });
-    child.stderr.on('data', (chunk) => {
+    }
+    function capturesChildStderr(chunk) {
+      if (process.env.LOGME_AUDIT === '1') LogMe(capturesChildStderr);
       stderrChunks.push(chunk.toString('utf8'));
-    });
-    child.on('error', reject);
-    child.on('close', (status) => {
+    }
+    function closesCapturedChild(status) {
+      if (process.env.LOGME_AUDIT === '1') LogMe(closesCapturedChild);
       const runFinishedAt = new Date();
-      resolve({
-        telemetryEvents,
-        runStartedAt,
-        runFinishedAt,
-        stdout: stdoutTail,
-        stderr: stderrChunks.join(''),
-        status,
-      });
-    });
-  });
+      resolve({ telemetryEvents, runStartedAt, runFinishedAt, stdout: stdoutTail, stderr: stderrChunks.join(''), status });
+    }
+    child.stdout.on('data', capturesChildStdout);
+    child.stderr.on('data', capturesChildStderr);
+    child.on('error', reject);
+    child.on('close', closesCapturedChild);
+  }
+  return new Promise(runsCapturedChildInvocation);
 }
 
 function consumesStreamChunk(text, streamState, telemetryEvents, receivedAt) {
@@ -168,7 +169,8 @@ function buildsTelemetryEventsFromCapturedStream(declaredNodes, capturedTelemetr
     LogMe(sampleMethod);
   }
 
-  const nodesWithPath = declaredNodes.map((node) => ({ ...node, telemetryEventPath }));
+  const nodesWithPath = [];
+  for (const node of declaredNodes) nodesWithPath.push({ ...node, telemetryEventPath });
   const slices = slicesTelemetryEventsAcrossNodes(capturedTelemetry, nodesWithPath.length);
   const telemetryEvents = [];
 
@@ -193,7 +195,8 @@ function writesRealTelemetryEventLog(rootDir, runId, capturedTelemetryEvents) {
   }
 
   fs.mkdirSync(path.dirname(telemetryLogPath), { recursive: true });
-  const lines = capturedTelemetryEvents.map((event) => JSON.stringify(event));
+  const lines = [];
+  for (const event of capturedTelemetryEvents) lines.push(JSON.stringify(event));
   fs.writeFileSync(telemetryLogPath, `${lines.join('\n')}\n`, 'utf8');
 
   return telemetryLogPath;

@@ -248,9 +248,11 @@ function buildsWorkQueue(sourceFiles, findingCode) {
     LogMe(sampleMethod);
   }
 
-  return sourceFiles
-    .filter((sourceFile) => sourceFile.findingCodes.includes(findingCode))
-    .map(buildsHandoffWorkItem);
+  const workQueue = [];
+  for (const sourceFile of sourceFiles) {
+    if (sourceFile.findingCodes.includes(findingCode)) workQueue.push(buildsHandoffWorkItem(sourceFile));
+  }
+  return workQueue;
 }
 
 function buildsHandoffWorkItem(sourceFile) {
@@ -281,10 +283,12 @@ function readsTopDomainAnalysisRisks(sourceFiles, limit) {
     LogMe(sampleMethod);
   }
 
-  return sourceFiles
-    .filter((sourceFile) => sourceFile.findingCodes.length > 0)
-    .sort(comparesDomainRiskDescending)
-    .slice(0, limit);
+  const risks = [];
+  for (const sourceFile of sourceFiles) {
+    if (sourceFile.findingCodes.length > 0) risks.push(sourceFile);
+  }
+  risks.sort(comparesDomainRiskDescending);
+  return risks.slice(0, limit);
 }
 
 function comparesDomainRiskDescending(left, right) {
@@ -320,7 +324,11 @@ function countsFilesWithFinding(sourceFiles, findingCode) {
     LogMe(sampleMethod);
   }
 
-  return sourceFiles.filter((sourceFile) => sourceFile.findingCodes.includes(findingCode)).length;
+  let count = 0;
+  for (const sourceFile of sourceFiles) {
+    if (sourceFile.findingCodes.includes(findingCode)) count += 1;
+  }
+  return count;
 }
 
 function countsFindingCodes(sourceFiles) {

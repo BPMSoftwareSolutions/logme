@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const os = require('node:os');
 
-const { buildsDomainBodySprawlContract } = require('../src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract');
+const { appliesDomainSpecificMechanicAllowances, buildsDomainBodySprawlContract } = require('../src/builds-domain-body-sprawl-contract/builds-domain-body-sprawl-contract');
 
 function writesFile(filePath, content) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
@@ -92,4 +92,19 @@ test('buildsDomainBodySprawlContract inventories file responsibility signals and
   } finally {
     fs.rmSync(tempDir, { recursive: true, force: true });
   }
+});
+
+test('domain-specific mechanic allowances suppress only an exact documented mechanic match', () => {
+  const result = appliesDomainSpecificMechanicAllowances({
+    declaredBodies: [{
+      path: 'src/plans-scan/plans-scan.js',
+      domainSpecificMechanicAllowances: [{ mechanic: 'timestamp arithmetic', reason: 'scan duration is an acceptance metric' }],
+    }],
+  }, 'src/plans-scan/plans-scan.js', [
+    { mechanic: 'timestamp arithmetic' },
+    { mechanic: 'path joining or path normalization' },
+  ]);
+
+  assert.deepEqual(result.allowedMechanics, [{ mechanic: 'timestamp arithmetic', reason: 'scan duration is an acceptance metric' }]);
+  assert.deepEqual(result.unallowedCandidates, [{ mechanic: 'path joining or path normalization' }]);
 });

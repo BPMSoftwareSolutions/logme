@@ -93,12 +93,14 @@
         "lowercase",
         "select",
         "plan",
+        "prepare",
         "guard",
         "approve",
         "archive",
         "execute",
         "gate",
-        "pin"
+        "pin",
+        "regenerate"
       ],
       "forbiddenMethodNames": [
         "arrow-function",

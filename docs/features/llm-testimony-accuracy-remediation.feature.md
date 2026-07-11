@@ -130,6 +130,67 @@ Feature: LLM testimony accuracy remediation
       | rollback note |
     And the product-domain proof should summarize the package call instead of expanding every utility method call.
 
+  Scenario: Move extracted utilities out of source-domain audit scope
+    Given a pure utility method has been accepted for package extraction
+    When the utility is moved or mapped behind a package boundary
+    Then the source-domain audit should stop treating that utility method as a product-domain executable body
+    And the package audit should own the utility's testimony, behavior tests, and package contract
+    And the source-domain proof should retain only:
+      | field |
+      | package name |
+      | package operation summary |
+      | package version or local package path |
+      | package audit receipt path |
+      | product-domain call site |
+      | reason the package boundary is allowed |
+    And the source-domain scan should not expand package-internal utility methods unless a complete workspace audit is requested.
+
+  Scenario: Select audit scope from changed paths
+    Given workspace changes have been detected
+    When the audit planner calculates scan scope
+    Then each changed path should be classified into one of:
+      | audit scope |
+      | source-domain audit |
+      | package audit |
+      | generated-evidence audit |
+      | documentation-only audit |
+      | complete workspace audit |
+    And `src/` product-domain changes should trigger source-domain audit
+    And package-owned changes should trigger only the owning package audit by default
+    And changes that cross source and package boundaries should trigger both audits
+    And a complete workspace audit should run only when explicitly requested, scheduled, or required by a boundary contract change.
+
+  Scenario: Keep package audits independently provable
+    Given a utility package owns extracted behavior
+    When the package audit runs
+    Then it should write a package audit receipt containing:
+      | field |
+      | package id |
+      | package path |
+      | package version or content hash |
+      | changed files |
+      | package methods audited |
+      | package tests run |
+      | package testimony status |
+      | source-domain dependents |
+      | audit decision |
+    And the source-domain proof should cite the package audit receipt instead of duplicating package internals
+    And the package audit should be reusable by any source-domain feature that depends on the package.
+
+  Scenario: Support package externalization without weakening source-domain proof
+    Given a package boundary has a current package audit receipt
+    When the package is externalized into a separate repository or installed dependency
+    Then the source-domain audit should require:
+      | field |
+      | package name |
+      | package version |
+      | package integrity hash |
+      | external package audit receipt or release proof |
+      | allowed API surface |
+      | source-domain dependents |
+    And source-domain agents should not mutate externalized package internals from this repository
+    And the source-domain proof should fail if it depends on an external package without a current package proof.
+
   Scenario: Keep boundary cases visible for product-owner review
     Given the Gemini classification proposal contains `product-domain-boundary-case`
     When the remediation backlog is rendered for product-owner review
@@ -305,8 +366,30 @@ Feature: LLM testimony accuracy remediation
       | sampleMethod telemetry events after |
       | package-boundary summarized calls |
       | product-domain-native calls with accurate names |
+      | source-domain audit file count before |
+      | source-domain audit file count after |
+      | package audit file count |
+      | skipped package-internal utility methods |
       | proof report byte size before |
       | proof report byte size after |
+
+  Scenario: Prove scan efficiency improved after utility extraction
+    Given a testimony sterilization packet extracts utility methods to package boundaries
+    When the post-remediation scan metrics are calculated
+    Then the verification report should compare:
+      | metric |
+      | source-domain files scanned before |
+      | source-domain files scanned after |
+      | source-domain methods scanned before |
+      | source-domain methods scanned after |
+      | package methods scanned separately |
+      | source-domain scan duration before |
+      | source-domain scan duration after |
+      | source-domain proof rows before |
+      | source-domain proof rows after |
+      | package audit receipts reused |
+    And the packet should not claim efficiency improvement unless source-domain scan scope, proof noise, or scan duration decreases
+    And any package scan cost should be reported separately from source-domain scan cost.
 
   Scenario: Regenerate source truth after sterilization
     Given the sterilization gate passes

@@ -30,8 +30,19 @@ async function runsCallWithTelemetryWindow(sharedCapturedEvents, work) {
   const windowStartedAt = new Date();
   const originalConsoleLog = console.log;
   const windowEvents = [];
+  let capturingConsoleLogHasTestified = false;
 
   console.log = function capturingConsoleLog(...args) {
+    if (process.env.LOGME_AUDIT === '1' && !capturingConsoleLogHasTestified) {
+      capturingConsoleLogHasTestified = true;
+      const activeConsoleLog = console.log;
+      console.log = originalConsoleLog;
+      try {
+        LogMe(capturingConsoleLog);
+      } finally {
+        console.log = activeConsoleLog;
+      }
+    }
     const observedAt = new Date();
     if (args.length === 1 && typeof args[0] === 'string') {
       try {

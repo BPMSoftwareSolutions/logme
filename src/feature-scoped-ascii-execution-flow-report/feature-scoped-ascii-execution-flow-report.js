@@ -305,6 +305,7 @@ function buildsPackageBoundaryBranch(node, rootDir) {
     children.push({
       label: `${formatsRepoRelativePath(rootDir, summary.packagePath)} (${summary.callCount} call(s): ${summary.methodNames.join(', ')})`,
     });
+    children.push({ label: `package audit receipt: ${formatsRepoRelativePath(rootDir, summary.packageAuditReceiptPath)}` });
   }
   return {
     label: 'package-boundary summaries',

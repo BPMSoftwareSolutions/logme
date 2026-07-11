@@ -7,6 +7,24 @@ const { calculatesMethodTimingMetrics, calculatesTimingMetrics } = require('../c
 const { buildsObservedExecutionTimeline, normalizesDeclaredNodes, stampsMethodCallOwnership } = require('../constructs-observed-execution-model/constructs-observed-execution-model');
 const { buildsPromotionDecision } = require('../determines-promotion-eligibility/determines-promotion-eligibility');
 const { calculatesServiceLevelIndicators, evaluatesServiceLevelObjectives } = require('../evaluates-service-level-indicators-objectives/evaluates-service-level-indicators-objectives');
+const { checksExternalizedPackageProof } = require('../../writes-package-audit-receipt/writes-package-audit-receipt');
+
+function buildsExternalPackageProofFindings(externalPackageDependencies) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(buildsExternalPackageProofFindings);
+  const findings = [];
+  for (const dependency of externalPackageDependencies || []) {
+    const proofCheck = checksExternalizedPackageProof(dependency);
+    if (proofCheck.verdict === 'BLOCKED') {
+      findings.push({
+        code: proofCheck.findingCode,
+        packageName: dependency.packageName || NOT_OBSERVED,
+        reason: `external package proof is missing required fields: ${proofCheck.missingFields.join(', ')}`,
+        recommendedFix: 'provide a current external package audit receipt or release proof without mutating external package internals',
+      });
+    }
+  }
+  return findings;
+}
 
 function buildsFeatureExecutionProof(input) {
   if (process.env.LOGME_AUDIT === '1') {
@@ -23,7 +41,8 @@ function buildsFeatureExecutionProof(input) {
     input.runStartedAt,
   );
   stampsMethodCallOwnership(observedExecutionTimeline, input.featureId, input.scenarioId);
-  const blockerFindings = input.blockerFindings || [];
+  const blockerFindings = [...(input.blockerFindings || [])];
+  for (const finding of buildsExternalPackageProofFindings(input.externalPackageDependencies)) blockerFindings.push(finding);
   const promotionDecision = buildsPromotionDecision(observedExecutionTimeline, blockerFindings);
   const proof = {
     schemaVersion: FEATURE_PROOF_SCHEMA_VERSION,
@@ -55,4 +74,4 @@ function buildsFeatureExecutionProof(input) {
   return proof;
 }
 
-module.exports = { buildsFeatureExecutionProof };
+module.exports = { buildsExternalPackageProofFindings, buildsFeatureExecutionProof };

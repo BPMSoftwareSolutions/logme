@@ -106,7 +106,9 @@ function buildsSourceFileSprawlEntry(config, thresholds, declaredBody, filePath,
     }
   }
   const responsibilityClusters = buildsResponsibilityClusters(config, relativePath, fileMethods, astSignals);
-  const genericMechanicCandidates = buildsGenericMechanicCandidates(fileMethods, content);
+  const detectedGenericMechanicCandidates = buildsGenericMechanicCandidates(fileMethods, content);
+  const mechanicAllowance = appliesDomainSpecificMechanicAllowances(declaredBody, relativePath, detectedGenericMechanicCandidates);
+  const genericMechanicCandidates = mechanicAllowance.unallowedCandidates;
   const sideEffectLanes = detectsSideEffectLanes(content);
   const contractPathsReferenced = extractsContractPaths(content);
   const featureIdsReferenced = extractsFeatureIds(content);
@@ -146,11 +148,31 @@ function buildsSourceFileSprawlEntry(config, thresholds, declaredBody, filePath,
     featureIdsReferenced,
     contractPathsReferenced,
     genericMechanicCandidates,
+    allowedDomainSpecificMechanics: mechanicAllowance.allowedMechanics,
     findingCodes,
     classification,
     signalsTriggered: buildsTriggeredSignals(thresholds, content, fileMethods, responsibilityClusters, genericMechanicCandidates, sideEffectLanes),
     fixRoute: buildsSprawlFixRoute(classification, findingCodes, relativePath, contractPathsReferenced),
   };
+}
+
+function appliesDomainSpecificMechanicAllowances(declaredBody, relativePath, candidates) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(appliesDomainSpecificMechanicAllowances);
+  let allowances = [];
+  for (const body of declaredBody.declaredBodies || []) {
+    if (body.path === relativePath && Array.isArray(body.domainSpecificMechanicAllowances)) allowances = body.domainSpecificMechanicAllowances;
+  }
+  const allowedMechanics = [];
+  const unallowedCandidates = [];
+  for (const candidate of candidates) {
+    let matchingAllowance = null;
+    for (const allowance of allowances) {
+      if (allowance.mechanic === candidate.mechanic && allowance.reason) matchingAllowance = allowance;
+    }
+    if (matchingAllowance) allowedMechanics.push(matchingAllowance);
+    else unallowedCandidates.push(candidate);
+  }
+  return { allowedMechanics, unallowedCandidates };
 }
 
 function inventoriesAstSignals(sourceFile, content) {
@@ -665,5 +687,6 @@ function isDeclaredSourceFile(declaredBody, relativePath) {
 
 module.exports = {
   DEFAULT_SPRAWL_THRESHOLDS,
+  appliesDomainSpecificMechanicAllowances,
   buildsDomainBodySprawlContract,
 };

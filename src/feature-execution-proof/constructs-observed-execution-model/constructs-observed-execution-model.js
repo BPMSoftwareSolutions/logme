@@ -53,7 +53,18 @@ function buildsPackageBoundarySummaries(events) {
     }
     const packagePath = event.packagePath || event.methodRuntimePath || event.runtimePath || NOT_OBSERVED;
     if (!summariesByPath.has(packagePath)) {
-      summariesByPath.set(packagePath, { packagePath, callCount: 0, methodNames: [], sourceEvidencePaths: [] });
+      summariesByPath.set(packagePath, {
+        packagePath,
+        packageName: event.packageName || packagePath,
+        packageOperationSummary: event.packageOperationSummary || null,
+        packageVersionOrLocalPackagePath: event.packageVersion || event.packageVersionOrLocalPackagePath || packagePath,
+        packageAuditReceiptPath: event.packageAuditReceiptPath || NOT_OBSERVED,
+        productDomainCallSite: event.productDomainCallSite || event.callSite || nodePathFromEvent(event),
+        allowedBoundaryReason: event.allowedBoundaryReason || event.boundaryReason || 'accepted package audit boundary',
+        callCount: 0,
+        methodNames: [],
+        sourceEvidencePaths: [],
+      });
     }
     const summary = summariesByPath.get(packagePath);
     summary.callCount += 1;
@@ -68,11 +79,18 @@ function buildsPackageBoundarySummaries(events) {
     summaries.push({
       ...summary,
       methodNames: [...new Set(summary.methodNames)].sort(),
+      packageOperationSummary: summary.packageOperationSummary || [...new Set(summary.methodNames)].sort().join(', '),
       sourceEvidencePaths: [...new Set(summary.sourceEvidencePaths)].sort(),
       summaryReason: 'package behavior is summarized at the product-domain audit boundary',
+      packageInternalMethodsExpanded: false,
     });
   }
   return summaries;
+}
+
+function nodePathFromEvent(event) {
+  if (process.env.LOGME_AUDIT === '1') LogMe(nodePathFromEvent);
+  return event.productRuntimePath || event.owningRuntimePath || NOT_OBSERVED;
 }
 
 function rangeFallsOutsideDeclaredBody(event, node) {
@@ -357,4 +375,4 @@ function normalizesDeclaredNodes(declaredExecutableBody) {
   return declaredNodes;
 }
 
-module.exports = { buildsObservedCall, buildsObservedCalls, buildsMethodCall, buildsMethodCalls, buildsObservedNode, buildsObservedExecutionTimeline, stampsMethodCallOwnership, normalizesDeclaredNode, normalizesDeclaredNodes, buildsPackageBoundarySummaries, buildsTelemetryInfrastructureSummary, rangeFallsOutsideDeclaredBody, readsAuditBoundary };
+module.exports = { buildsObservedCall, buildsObservedCalls, buildsMethodCall, buildsMethodCalls, buildsObservedNode, buildsObservedExecutionTimeline, stampsMethodCallOwnership, normalizesDeclaredNode, normalizesDeclaredNodes, buildsPackageBoundarySummaries, buildsTelemetryInfrastructureSummary, nodePathFromEvent, rangeFallsOutsideDeclaredBody, readsAuditBoundary };

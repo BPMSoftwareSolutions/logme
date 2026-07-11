@@ -228,6 +228,10 @@ function calculatesCrc32(content) {
 const CRC32_TABLE = buildsCrc32Table();
 
 function buildsCrc32Table() {
+  if (process.env.LOGME_AUDIT === '1') {
+    LogMe(buildsCrc32Table);
+  }
+
   const table = [];
 
   for (let index = 0; index < 256; index += 1) {

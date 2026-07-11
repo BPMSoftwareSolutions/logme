@@ -25,7 +25,7 @@
   "blockerCodes": [],
   "staleReasons": [],
   "blockerCount": 0,
-  "generatedAt": "2026-07-11T11:59:34.958Z",
+  "generatedAt": "2026-07-11T12:35:55.586Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "run the LLM end-user testing conveyor",
   "productOwnerSummary": "LLM domain remediation has implementation proof but no end-user QA bundle."
