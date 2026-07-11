@@ -2,7 +2,7 @@
   "schemaVersion": "feature-status.v1",
   "featureId": "feature-execution-proof-source-of-truth",
   "featureName": "Feature execution proof source of truth",
-  "sourceFeaturePath": "docs/features/feature-execution-proof-source-of-truth.feature.md",
+  "sourceFeaturePath": "docs/features/feature-execution-proof-source-of-truth/feature.feature.md",
   "sourceFeatureContentHash": "09635382e7d04bc60067ac04c2614e4bde84a30b1281b321550cd38230dd5ca4",
   "displayStatus": "qa-blocked",
   "implementationStatus": "implemented",

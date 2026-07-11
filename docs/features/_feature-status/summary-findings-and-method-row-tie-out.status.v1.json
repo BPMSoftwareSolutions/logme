@@ -28,7 +28,7 @@
   ],
   "staleReasons": [],
   "blockerCount": 2,
-  "generatedAt": "2026-07-11T12:35:55.586Z",
+  "generatedAt": "2026-07-11T12:45:38.759Z",
   "generatorName": "LogMe feature filesystem quality status projection",
   "nextRecommendedAction": "resolve QA blocker llm-acceptance-criterion-not-evidence-backed",
   "productOwnerSummary": "Summary, findings, and method row tie-out is currently qa-blocked."

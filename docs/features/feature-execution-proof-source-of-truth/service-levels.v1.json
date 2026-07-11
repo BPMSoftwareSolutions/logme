@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "feature-service-levels.v1",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "featureName": "Feature execution proof source of truth",
+  "sourceFeaturePath": "docs/features/feature-execution-proof-source-of-truth/feature.feature.md",
+  "serviceLevels": [
+    {
+      "serviceLevelId": "feature-proof-scenario-coverage",
+      "userVisibleCapability": "Product owners can see proof state for every current scenario.",
+      "sliName": "scenario proof coverage percentage",
+      "sliMeasurementSource": "feature-execution.contract.v1.json and promoted proof body scenario list",
+      "sloTarget": "100 percent of current scenarios represented",
+      "sloThreshold": 100,
+      "unit": "percent",
+      "slaDependency": "PI planning proof readiness",
+      "evidenceRequired": [
+        "current scenario inventory",
+        "selected proof run id",
+        "promoted proof scenario coverage summary"
+      ],
+      "productOwnerDecision": "blocking"
+    },
+    {
+      "serviceLevelId": "feature-proof-json-backed-reporting",
+      "userVisibleCapability": "Product-facing proof facts are backed by canonical JSON proof.",
+      "sliName": "report facts backed by JSON percentage",
+      "sliMeasurementSource": "feature report truth gate findings",
+      "sloTarget": "100 percent of timing, call count, receipt, service-level, and promotion facts backed by JSON proof",
+      "sloThreshold": 100,
+      "unit": "percent",
+      "slaDependency": "auditable delivery evidence",
+      "evidenceRequired": [
+        "feature-execution.contract.v1.json",
+        "scenario proof report",
+        "feature-report-fact-without-json-proof findings"
+      ],
+      "productOwnerDecision": "blocking"
+    },
+    {
+      "serviceLevelId": "feature-proof-source-controlled-body-current",
+      "userVisibleCapability": "A proven feature has a durable source-controlled proof body.",
+      "sliName": "current source-controlled proof body status",
+      "sliMeasurementSource": "feature proof source-truth gate",
+      "sloTarget": "committed proof body exists, cites selected proof run id, and matches current source hashes",
+      "sloThreshold": 1,
+      "unit": "boolean",
+      "slaDependency": "release and PI review proof",
+      "evidenceRequired": [
+        "proof.md or compatibility proof body",
+        "selected proof run id",
+        "artifact hashes",
+        "feature source hash"
+      ],
+      "productOwnerDecision": "blocking for proven or promoted claims"
+    },
+    {
+      "serviceLevelId": "feature-proof-no-raw-evidence-committed",
+      "userVisibleCapability": "Version control remains small and reviewable.",
+      "sliName": "raw evidence committed count",
+      "sliMeasurementSource": "version control evidence policy gate",
+      "sloTarget": "zero raw run evidence or archive artifacts committed",
+      "sloThreshold": 0,
+      "unit": "count",
+      "slaDependency": "repository maintainability",
+      "evidenceRequired": [
+        "git change inventory",
+        "evidence policy finding codes"
+      ],
+      "productOwnerDecision": "blocking unless explicitly waived"
+    }
+  ]
+}

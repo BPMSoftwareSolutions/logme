@@ -1,0 +1,563 @@
+{
+  "schemaVersion": "proposed-execution-body.contract.v1",
+  "featureId": "feature-execution-proof-source-of-truth",
+  "featureName": "Feature execution proof source of truth",
+  "bodyStatus": "proposed",
+  "sourceTruthRole": "product intent, not observed proof",
+  "shape": "scenario-level executable body tree with expected telemetry, timing, method drill-down, receipts, service-level evidence, and blocker policy",
+  "sourceFeaturePath": "docs/features/feature-execution-proof-source-of-truth/feature.feature.md",
+  "compatibilitySourceFeaturePath": "docs/features/feature-execution-proof-source-of-truth.feature.md",
+  "proposedBodyPath": "docs/features/feature-execution-proof-source-of-truth/proposed-execution-body.ascii.md",
+  "evidenceShapeReferences": [
+    "evidence/runs/self-proof-run-2/features/feature-execution-proof-source-of-truth/scenarios/*/executable-body-tree.ascii.md",
+    "evidence/runs/self-proof-run-2/features/feature-execution-proof-source-of-truth/scenarios/*/execution-timeline.table.md",
+    "evidence/runs/self-proof-run-2/features/feature-execution-proof-source-of-truth/scenarios/*/method-call-evidence.report.md",
+    "evidence/runs/self-proof-run-2/features/feature-execution-proof-source-of-truth/scenarios/*/feature-execution.contract.v1.json"
+  ],
+  "allowedClassifications": [
+    "product-domain-native",
+    "product-domain-boundary-case",
+    "package-boundary-summarized",
+    "external-service-boundary",
+    "generated-evidence-ignore",
+    "product-owner-review-required"
+  ],
+  "requiredNodeFields": [
+    "scenarioId",
+    "classification",
+    "expectedNodeLabel",
+    "runtimeBoundary",
+    "proposedMethodMapEntry",
+    "expectedTelemetry",
+    "methodDrillDown",
+    "requiredReceipts",
+    "projectionOutputs",
+    "blockerPolicy"
+  ],
+  "expectedTelemetryShape": {
+    "status": "proposed until observed",
+    "runtimeStep": "to be observed",
+    "firstSeenAt": "to be observed",
+    "lastSeenAt": "to be observed",
+    "durationMs": "to be measured",
+    "elapsedSincePreviousNodeMs": "to be measured",
+    "callCount": "to be counted",
+    "telemetryPath": "evidence/runs/<run-id>/features/<feature-id>/scenarios/<scenario-id>/telemetry.events.v1.jsonl"
+  },
+  "methodDrillDownShape": {
+    "callIndex": "required when observed",
+    "methodName": "must be observed or blocked",
+    "methodKind": "native, boundary, package summary, or blocked",
+    "runtimePath": "required",
+    "sourceLineRange": "required",
+    "startedAt": "to be observed",
+    "completedAt": "to be observed",
+    "durationMs": "to be measured",
+    "elapsedSincePreviousCallMs": "to be measured",
+    "telemetryEventIds": "required when observed",
+    "receiptPaths": "required when receipts are expected",
+    "status": "ok, missing, or blocked",
+    "blockerCode": "not observed until proven"
+  },
+  "methodNamePolicy": {
+    "requiredForClassifications": [
+      "product-domain-native",
+      "product-domain-boundary-case"
+    ],
+    "unacceptableProductDomainValues": [
+      "not observed",
+      "sampleMethod",
+      "anonymous",
+      "call only",
+      "missing"
+    ],
+    "blockingFinding": "product-method-name-not-observed",
+    "proofRule": "A product-domain proof node is not proven unless observed proof includes the actual method names, method kind, runtime path, source line range, telemetry event ids, and receipt paths when receipts are expected."
+  },
+  "proposedMethodMap": {
+    "inventory-every-feature-scenario-and-proof-state": [
+      "buildsFeatureProofInventory",
+      "discoversFeatureFiles",
+      "discoversFeatureScenarios",
+      "selectsScenarioProofStatus",
+      "writesFeatureProofInventory"
+    ],
+    "write-canonical-json-execution-proof-for-a-scenario": [
+      "buildsFeatureExecutionProof",
+      "normalizesDeclaredNodes",
+      "buildsObservedExecutionTimeline",
+      "buildsPromotionDecision",
+      "writesFeatureExecutionProof"
+    ],
+    "write-human-readable-scenario-proof-report-beside-json-proof": [
+      "rendersScenarioProofReport",
+      "rendersScenarioProofAsciiSketch",
+      "rendersScenarioProofOrderedTimeline",
+      "rendersScenarioTimingMetrics",
+      "rendersServiceLevelIndicatorSummary",
+      "rendersServiceLevelObjectiveEvaluation",
+      "rendersSlaSupportEvidence",
+      "rendersMethodCallEvidenceReport",
+      "rendersScenarioTimingTable",
+      "rendersScenarioMethodTimelineTable"
+    ],
+    "promote-a-selected-proof-run-into-a-source-controlled-feature-proof-body": [
+      "runsFeatureProofPromotion",
+      "readsScenarioProofsFromRun",
+      "buildsArtifactHashesForScenario",
+      "buildsFeatureProofBody",
+      "computesFeatureProofBodyHash",
+      "rendersFeatureProofBody"
+    ],
+    "publish-one-feature-level-proof-body-for-the-whole-feature": [
+      "buildsFeatureProofBody",
+      "buildsScenarioCoverageSection",
+      "findsMissingScenarios",
+      "collectsBlockerSummary",
+      "rendersFeatureProofBody"
+    ],
+    "block-proven-feature-status-without-a-committed-proof-body": [
+      "checksFeatureStatusClaimsProofBody",
+      "readsProofBodyHashFromContent",
+      "buildsFeatureProofBodyPath"
+    ],
+    "mark-feature-proof-body-stale-when-source-or-selected-proof-changes": [
+      "checksFeatureProofBodyFreshness",
+      "readsProofBodyHashFromContent",
+      "discoversFeatureScenarios",
+      "findsScenariosMissingFromBody",
+      "sha256Hex"
+    ],
+    "opt-out-of-routine-proof-evidence-when-source-controlled-proof-is-current": [
+      "checksFeatureProofOptOut",
+      "checksFeatureProofBodyFreshness",
+      "buildsFeatureProofBodyPath"
+    ],
+    "re-enter-proof-execution-when-opt-out-is-invalidated": [
+      "checksFeatureProofOptOut"
+    ],
+    "block-opt-out-when-proof-body-does-not-cover-every-current-scenario": [
+      "checksFeatureProofBodyFreshness",
+      "findsScenariosMissingFromBody",
+      "discoversFeatureScenarios"
+    ],
+    "keep-raw-run-evidence-out-of-version-control": [
+      "buildsFeatureProofBodyPath",
+      "rendersFeatureProofBody",
+      "runsFeatureProofPromotion"
+    ],
+    "write-shareable-timing-table-projection": [
+      "rendersScenarioTimingTable",
+      "writesScenarioTimingTable"
+    ],
+    "tie-json-proof-to-raw-telemetry-and-receipts": [
+      "readsTelemetrySourcePaths",
+      "readsTelemetryEventIds",
+      "readsTelemetryEventPaths",
+      "findsReceiptPathsForNode",
+      "readsReceiptPathsForMethod"
+    ],
+    "preserve-method-call-drill-down-inside-observed-body-nodes": [
+      "buildsMethodCall",
+      "buildsMethodCalls",
+      "readsMethodCalls",
+      "stampsMethodCallOwnership",
+      "rendersMethodCallEvidenceReport"
+    ],
+    "preserve-repeated-calls-in-the-execution-proof": [
+      "readsObservedCalls",
+      "buildsObservedCalls",
+      "countsObservedCalls",
+      "buildsNodeCallCountMetric",
+      "buildsNodeCallCountMetrics",
+      "calculatesCallCountMetrics"
+    ],
+    "calculate-product-timing-metrics-from-observed-evidence": [
+      "calculatesDurationMs",
+      "calculatesTimingMetrics",
+      "calculatesMethodTimingMetrics",
+      "calculatesTotalObservedWaitTimeMs",
+      "findsSlowestMethodCall",
+      "findsSlowestNode",
+      "buildsNodeDurationMetric",
+      "buildsNodeDurationMetrics"
+    ],
+    "establish-service-level-indicators-from-execution-proof": [
+      "buildsSli",
+      "calculatesServiceLevelIndicators",
+      "countsNodesWithObservedTelemetry",
+      "countsNodesWithObservedReceipts",
+      "indexesSlisByName"
+    ],
+    "evaluate-service-level-objectives-from-scenario-evidence": [
+      "evaluatesSingleServiceLevelObjective",
+      "evaluatesServiceLevelObjectives"
+    ],
+    "preserve-sla-evidence-without-turning-reports-into-contracts": [
+      "indexesSloEvaluationsById",
+      "readsSupportingEvaluations",
+      "detectsUnsupportedSupportingEvaluation",
+      "checksUnsupportedSlaClaims"
+    ],
+    "render-human-report-from-canonical-json-proof": [
+      "rendersScenarioProofReport",
+      "rendersScenarioProofExecutiveSummary",
+      "rendersScenarioProofIdentity",
+      "rendersScenarioProofPromotionDecision",
+      "rendersScenarioProofAsciiSketch",
+      "rendersBlockerWorklist",
+      "rendersSourceEvidenceLinks",
+      "rendersDenseTelemetryAppendix"
+    ],
+    "reject-report-facts-not-backed-by-json-proof": [
+      "checksFeatureReportTruthGate"
+    ],
+    "keep-json-proof-portable-for-downstream-analysis": [
+      "projectsFeatureExecutionProofToCsv",
+      "escapesCsv",
+      "formatsValue"
+    ]
+  },
+  "nodes": [
+    {
+      "nodeId": "01",
+      "scenarioId": "inventory-every-feature-scenario-and-proof-state",
+      "expectedNodeLabel": "BUILDS AND WRITES FEATURE PROOF INVENTORY",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/feature-execution-proof/discovers-feature-and-scenario-metadata",
+      "requiredReceipts": [
+        "run-scoped feature proof inventory"
+      ],
+      "projectionOutputs": [],
+      "blockerPolicy": "No current scenario may be omitted because it has no implementation or proof yet."
+    },
+    {
+      "nodeId": "02",
+      "scenarioId": "write-canonical-json-execution-proof-for-a-scenario",
+      "expectedNodeLabel": "READS SCENARIO PROOFS FROM A REAL RUN",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/runs-feature-proof-promotion/runs-feature-proof-promotion.js",
+      "requiredReceipts": [
+        "feature-execution.contract.v1.json",
+        "feature-execution.receipt.v1.json"
+      ],
+      "projectionOutputs": [],
+      "blockerPolicy": "Report facts cannot be promoted unless backed by canonical JSON proof."
+    },
+    {
+      "nodeId": "03",
+      "scenarioId": "write-human-readable-scenario-proof-report-beside-json-proof",
+      "expectedNodeLabel": "READS SCENARIO PROOF REPORTS FROM A REAL RUN",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/feature-execution-proof/renders-scenario-proof-report",
+      "requiredReceipts": [
+        "feature-execution.contract.v1.json"
+      ],
+      "projectionOutputs": [
+        "executable-body-contract.report.md",
+        "executable-body-tree.ascii.md",
+        "execution-timeline.table.md",
+        "method-call-evidence.report.md"
+      ],
+      "blockerPolicy": "Human report must be projection, not source truth."
+    },
+    {
+      "nodeId": "04",
+      "scenarioId": "promote-a-selected-proof-run-into-a-source-controlled-feature-proof-body",
+      "expectedNodeLabel": "RUNS FEATURE PROOF PROMOTION (DRY RUN)",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/runs-feature-proof-promotion + src/promotes-feature-execution-proof",
+      "requiredReceipts": [
+        "selected proof run id",
+        "proof artifact hashes",
+        "promotion decision"
+      ],
+      "projectionOutputs": [
+        "docs/features/<feature-id>/proof.md",
+        "docs/feature-proofs/<feature-id>.proof.md"
+      ],
+      "blockerPolicy": "Raw telemetry, dense receipts, and run archives must not be copied into source control."
+    },
+    {
+      "nodeId": "05",
+      "scenarioId": "publish-one-feature-level-proof-body-for-the-whole-feature",
+      "expectedNodeLabel": "BUILDS FEATURE PROOF BODY WITH ONE SECTION PER SCENARIO",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/promotes-feature-execution-proof",
+      "requiredReceipts": [
+        "scenario coverage summary"
+      ],
+      "projectionOutputs": [
+        "feature-level proof body"
+      ],
+      "blockerPolicy": "Every current scenario must appear as proven, blocked, or not proven."
+    },
+    {
+      "nodeId": "06",
+      "scenarioId": "block-proven-feature-status-without-a-committed-proof-body",
+      "expectedNodeLabel": "CHECKS FEATURE STATUS CLAIMS PROOF BODY",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/checks-feature-proof-source-truth-gate",
+      "requiredReceipts": [
+        "status.v1.json",
+        "proof body"
+      ],
+      "projectionOutputs": [
+        "finding: feature-status-without-source-controlled-proof-body"
+      ],
+      "blockerPolicy": "Proven, QA-passed, or promoted status cannot stand without committed proof body."
+    },
+    {
+      "nodeId": "07",
+      "scenarioId": "mark-feature-proof-body-stale-when-source-or-selected-proof-changes",
+      "expectedNodeLabel": "CHECKS FEATURE PROOF BODY FRESHNESS",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/checks-feature-proof-source-truth-gate",
+      "requiredReceipts": [
+        "feature source hash",
+        "scenario list hash",
+        "selected proof artifact hashes"
+      ],
+      "projectionOutputs": [
+        "finding: source-controlled-feature-proof-stale"
+      ],
+      "blockerPolicy": "Stale proof body cannot promote feature status."
+    },
+    {
+      "nodeId": "08",
+      "scenarioId": "opt-out-of-routine-proof-evidence-when-source-controlled-proof-is-current",
+      "expectedNodeLabel": "CHECKS FEATURE PROOF OPT-OUT",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/checks-feature-proof-source-truth-gate",
+      "requiredReceipts": [
+        "proof body path",
+        "selected proof run id",
+        "proof body hash",
+        "opt-out reason"
+      ],
+      "projectionOutputs": [
+        "source-controlled-feature-proof-current"
+      ],
+      "blockerPolicy": "Current run must not regenerate dense proof evidence for a satisfied feature."
+    },
+    {
+      "nodeId": "09",
+      "scenarioId": "re-enter-proof-execution-when-opt-out-is-invalidated",
+      "expectedNodeLabel": "CHECKS FEATURE PROOF OPT-OUT WITH INVALIDATION CONDITION",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/checks-feature-proof-source-truth-gate",
+      "requiredReceipts": [
+        "invalidation condition"
+      ],
+      "projectionOutputs": [
+        "proof execution scheduled"
+      ],
+      "blockerPolicy": "New run-scoped proof may be written, but proof.md changes only after selected promotion."
+    },
+    {
+      "nodeId": "10",
+      "scenarioId": "block-opt-out-when-proof-body-does-not-cover-every-current-scenario",
+      "expectedNodeLabel": "FINDS SCENARIOS MISSING FROM A PROOF RUN",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/checks-feature-proof-source-truth-gate",
+      "requiredReceipts": [
+        "current scenario list",
+        "proof body scenario list"
+      ],
+      "projectionOutputs": [
+        "finding: source-controlled-feature-proof-missing-scenario"
+      ],
+      "blockerPolicy": "A proof body missing current scenarios cannot opt out."
+    },
+    {
+      "nodeId": "11",
+      "scenarioId": "keep-raw-run-evidence-out-of-version-control",
+      "expectedNodeLabel": "BUILDS FEATURE PROOF BODY PATH UNDER DOCS/FEATURE-PROOFS",
+      "classification": "external-service-boundary",
+      "runtimeBoundary": "version control evidence policy",
+      "requiredReceipts": [
+        "proof artifact hashes",
+        "repo-relative links"
+      ],
+      "projectionOutputs": [
+        "proof.md"
+      ],
+      "blockerPolicy": "Raw run evidence and archives stay outside committed feature truth."
+    },
+    {
+      "nodeId": "12",
+      "scenarioId": "write-shareable-timing-table-projection",
+      "expectedNodeLabel": "READS A REAL EXECUTION TIMELINE TABLE FROM A DONOR RUN",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/feature-execution-proof/renders-supplementary-reports-and-tables",
+      "requiredReceipts": [
+        "feature-execution.contract.v1.json"
+      ],
+      "projectionOutputs": [
+        "execution-timeline.table.md"
+      ],
+      "blockerPolicy": "Table values derive from canonical JSON proof only."
+    },
+    {
+      "nodeId": "13",
+      "scenarioId": "tie-json-proof-to-raw-telemetry-and-receipts",
+      "expectedNodeLabel": "READS ONE REAL DONOR PROOF AND ITS TELEMETRY TIE-OUT",
+      "classification": "product-domain-boundary-case",
+      "runtimeBoundary": "src/feature-execution-proof/acquires-and-processes-telemetry-data",
+      "requiredReceipts": [
+        "telemetry.events.v1.jsonl",
+        "telemetry.tieout.v1.json",
+        "receipt-coverage.v1.json"
+      ],
+      "projectionOutputs": [],
+      "blockerPolicy": "Timing, call counts, and receipt status cannot be inferred from static source inventory."
+    },
+    {
+      "nodeId": "14",
+      "scenarioId": "preserve-method-call-drill-down-inside-observed-body-nodes",
+      "expectedNodeLabel": "READS METHOD CALLS FROM A REAL DONOR PROOF NODE",
+      "classification": "product-domain-boundary-case",
+      "runtimeBoundary": "src/feature-execution-proof/constructs-observed-execution-model",
+      "requiredReceipts": [
+        "methodCalls in feature-execution.contract.v1.json"
+      ],
+      "projectionOutputs": [
+        "method-call-evidence.report.md",
+        "method-execution-timeline.table.md"
+      ],
+      "blockerPolicy": "Method names must be observed or classified as blockers, not left as anonymous call numbers."
+    },
+    {
+      "nodeId": "15",
+      "scenarioId": "preserve-repeated-calls-in-the-execution-proof",
+      "expectedNodeLabel": "READS CALL COUNT SUMMARY FROM A REAL DONOR PROOF NODE",
+      "classification": "product-domain-boundary-case",
+      "runtimeBoundary": "src/feature-execution-proof/calculates-call-count-metrics",
+      "requiredReceipts": [
+        "ordered repeated call list",
+        "call count summary"
+      ],
+      "projectionOutputs": [
+        "method-execution-timeline.table.md"
+      ],
+      "blockerPolicy": "Repeated calls remain ordered and inspectable without changing source JSON."
+    },
+    {
+      "nodeId": "16",
+      "scenarioId": "calculate-product-timing-metrics-from-observed-evidence",
+      "expectedNodeLabel": "READS TIMING METRICS FROM A REAL DONOR PROOF",
+      "classification": "product-domain-boundary-case",
+      "runtimeBoundary": "src/feature-execution-proof/calculates-timing-and-performance-metrics",
+      "requiredReceipts": [
+        "observed timing metrics"
+      ],
+      "projectionOutputs": [
+        "execution-timeline.table.md"
+      ],
+      "blockerPolicy": "Missing telemetry is not observed, not zero."
+    },
+    {
+      "nodeId": "17",
+      "scenarioId": "establish-service-level-indicators-from-execution-proof",
+      "expectedNodeLabel": "READS SERVICE LEVEL INDICATORS FROM A REAL DONOR PROOF",
+      "classification": "product-domain-boundary-case",
+      "runtimeBoundary": "src/feature-execution-proof/evaluates-service-level-indicators-objectives",
+      "requiredReceipts": [
+        "SLI measurements with evidence source paths"
+      ],
+      "projectionOutputs": [
+        "SLI summary"
+      ],
+      "blockerPolicy": "No SLI may come from report labels or manual claims."
+    },
+    {
+      "nodeId": "18",
+      "scenarioId": "evaluate-service-level-objectives-from-scenario-evidence",
+      "expectedNodeLabel": "READS SERVICE LEVEL OBJECTIVE EVALUATION FROM A REAL DONOR PROOF",
+      "classification": "product-domain-boundary-case",
+      "runtimeBoundary": "src/feature-execution-proof/evaluates-service-level-indicators-objectives",
+      "requiredReceipts": [
+        "SLO evaluations with measurement windows"
+      ],
+      "projectionOutputs": [
+        "SLO evaluation"
+      ],
+      "blockerPolicy": "Missing telemetry produces not enough evidence."
+    },
+    {
+      "nodeId": "19",
+      "scenarioId": "preserve-sla-evidence-without-turning-reports-into-contracts",
+      "expectedNodeLabel": "READS SLA SUPPORT EVIDENCE FROM A REAL DONOR PROOF",
+      "classification": "product-domain-boundary-case",
+      "runtimeBoundary": "src/feature-execution-proof/checks-unsupported-sla-claims",
+      "requiredReceipts": [
+        "supporting SLO evaluations"
+      ],
+      "projectionOutputs": [
+        "SLA support evidence"
+      ],
+      "blockerPolicy": "SLA claims require satisfied SLO evidence."
+    },
+    {
+      "nodeId": "20",
+      "scenarioId": "render-human-report-from-canonical-json-proof",
+      "expectedNodeLabel": "RENDERS FEATURE PROOF BODY FROM A REAL DONOR RUN",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/feature-execution-proof/renders-scenario-proof-report",
+      "requiredReceipts": [
+        "feature-execution.contract.v1.json"
+      ],
+      "projectionOutputs": [
+        "executable-body-contract.report.md",
+        "executable-body-tree.ascii.md"
+      ],
+      "blockerPolicy": "Product owner should not need to open JSON to understand what happened."
+    },
+    {
+      "nodeId": "21",
+      "scenarioId": "reject-report-facts-not-backed-by-json-proof",
+      "expectedNodeLabel": "CHECKS FEATURE REPORT TRUTH GATE AGAINST A REAL DONOR PROOF",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "src/feature-execution-proof/feature-execution-proof.js",
+      "requiredReceipts": [
+        "report fact to JSON proof tie-out"
+      ],
+      "projectionOutputs": [
+        "finding: feature-report-fact-without-json-proof"
+      ],
+      "blockerPolicy": "Every report fact ties back to JSON proof and raw evidence."
+    },
+    {
+      "nodeId": "22",
+      "scenarioId": "keep-json-proof-portable-for-downstream-analysis",
+      "expectedNodeLabel": "PROJECTS A REAL DONOR PROOF TO CSV",
+      "classification": "product-domain-native",
+      "runtimeBoundary": "downstream analysis projection",
+      "requiredReceipts": [
+        "feature-execution.contract.v1.json"
+      ],
+      "projectionOutputs": [
+        "CSV rows",
+        "Markdown projections",
+        "ASCII projections"
+      ],
+      "blockerPolicy": "CSV, Markdown, and ASCII projections are projections, not source truth."
+    }
+  ],
+  "suppressedUtilityKinds": [
+    "path and filename management",
+    "JSON formatting and serialization",
+    "hash calculation",
+    "Markdown table rendering",
+    "filesystem read/write mechanics"
+  ],
+  "tieOutRules": [
+    "Every scenario in feature.feature.md should have a proposed execution node.",
+    "Every proposed execution node should define expected telemetry, timing, method drill-down, receipts, and blocker policy.",
+    "Observed proof passes when the actual executable-body-tree.ascii.md ties out to the proposed node shape.",
+    "Method call numbers without observed method names should become blockers or classification work, not silent accepted proof.",
+    "SLI values must be derived from observed telemetry or receipts.",
+    "SLO and SLA claims must not be promoted without supporting SLI evidence.",
+    "Source-controlled proof must point to the selected proof run and artifact hashes."
+  ]
+}
