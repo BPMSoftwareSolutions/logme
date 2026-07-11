@@ -56,6 +56,72 @@ Feature: Feature folder source truth and proposed execution body
     And the proposed execution body should be source-controlled
     And the proposed execution body should be reviewed as product intent, not treated as observed proof.
 
+  Scenario: Specify scenario-level method telemetry and timing budgets in the proposed body
+    Given a proposed execution body is prepared for `<feature-id>`
+    When the proposed body writer renders `proposed-execution-body.ascii.md`
+    Then each scenario section should include:
+      | section |
+      | scenario id |
+      | classification |
+      | expected executable node label |
+      | contract path |
+      | runtime body file path |
+      | expected service level |
+      | method drill-down |
+      | expected scenario timing |
+      | blocker policy |
+    And each method drill-down call should include:
+      | field |
+      | call index |
+      | method name |
+      | method kind |
+      | source file and line range |
+      | expected started at |
+      | expected completed at |
+      | expected duration ms |
+      | expected elapsed previous ms |
+      | SLO target |
+      | SLO breach |
+      | telemetry event expectation |
+      | receipt expectation |
+      | expected status |
+    And the expected service level should define:
+      | field |
+      | SLI name |
+      | SLO target |
+      | SLO warning |
+      | SLO breach |
+      | SLA expectation |
+      | measurement source |
+    And simulated timing values may be used before runtime proof exists
+    But simulated timing values should still be explicit enough for observed proof to compare against them.
+
+  Scenario: Reject proposed execution bodies without named method proof shape
+    Given `docs/features/<feature-id>/proposed-execution-body.ascii.md` exists
+    And `docs/features/<feature-id>/proposed-execution-body.contract.v1.json` exists
+    When the proposed execution body gate runs
+    Then it should fail the feature source-truth check when any product-domain method call has:
+      | unacceptable value |
+      | not observed |
+      | sampleMethod |
+      | anonymous |
+      | call only |
+      | missing |
+    And it should fail when a product-domain method call omits:
+      | required field |
+      | method name |
+      | method kind |
+      | source file and line range |
+      | expected duration ms |
+      | SLO target |
+      | SLO breach |
+      | telemetry event expectation |
+      | receipt expectation |
+    And the blocker code should be:
+      | blocker code |
+      | product-method-name-not-observed |
+    And the proposed body should not be accepted as product source truth until the missing method proof shape is repaired.
+
   Scenario: Keep proposed execution bodies focused on native and boundary calls
     Given an LLM worker proposes an execution body for `<feature-id>`
     When the proposed execution body is validated
@@ -83,6 +149,9 @@ Feature: Feature folder source truth and proposed execution body
       | proposed-body-contains-raw-utility-call |
       | proposed-body-contains-generated-evidence-mechanic |
       | proposed-body-has-unnamed-call-node |
+      | proposed-body-missing-method-telemetry-budget |
+      | proposed-body-missing-method-slo-target |
+      | proposed-body-missing-method-source-range |
       | proposed-body-has-product-owner-review-required-node |
     And each blocker should include the feature id, scenario id when available, node id, classification, and recommended next action
     And the recommendation should be actionable enough for an LLM remediation worker to prepare a focused update packet.
